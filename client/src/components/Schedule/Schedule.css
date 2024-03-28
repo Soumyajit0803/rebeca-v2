@@ -1,0 +1,184 @@
+.schedule {
+    padding: 5rem;
+    font-size: 1.6rem;
+}
+
+.schedule .intro {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 5rem;
+}
+
+.schedule .intro .heading {
+    z-index: 1;
+    position: relative;
+    font-size: 2.5rem;
+}
+
+.schedule .intro .heading::before {
+    content: "";
+    background-image: url("./assets/imgs/Schedule/schedule-before.png");
+    background-size: cover;
+    position: absolute;
+    opacity: 0.5;
+    box-shadow: inset 0 0 30px 30px #171717;
+    top: -3rem;
+    left: -65px;
+    z-index: -1;
+    aspect-ratio: 750/250;
+    height: 150px;
+}
+
+.schedule .intro .paragraph {
+    line-height: 1.5em;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    padding-top: 0.3rem;
+    width: min(70ch, 100%);
+    color: #ffffff8c;
+    text-align: center;
+}
+
+.schedule .intro .paragraph span {
+    font-weight: 900;
+    background-image: linear-gradient(45deg, #5075f6, #cd40ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.schedule .event {
+    margin-top: 7rem;
+}
+
+.schedule .event .event-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-right: 3rem;
+    padding-top: 3rem;
+}
+.schedule .event .event-content::before {
+    content: "";
+    mask-image: linear-gradient(transparent, black 30%, transparent);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+
+.schedule .event .heading {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    width: max-content;
+    position: relative;
+    z-index: 2;
+}
+
+.schedule .event .heading .before {
+    position: absolute;
+    z-index: -1;
+    aspect-ratio: 454/110;
+    width: 20rem;
+    top: 3.4rem;
+    left: 6.5rem;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.saptami {
+    background-image: url("./assets/imgs/Schedule/saptami-text.png");
+}
+.ashtami {
+    background-image: url("./assets/imgs/Schedule/ashtami-text.png");
+}
+.navami {
+    background-image: url("./assets/imgs/Schedule/navami-text.png");
+}
+.dashami {
+    background-image: url("./assets/imgs/Schedule/dashami-text.png");
+}
+
+.schedule .saptami-back .event-content::before {
+    background-image: url("./assets/imgs/Schedule/saptami.png");
+}
+.schedule .ashtami-back .event-content::before {
+    background-image: url("./assets/imgs/Schedule/ashtami.png");
+}
+.schedule .navami-back .event-content::before {
+    background-image: url("./assets/imgs/Schedule/navami.png");
+}
+.schedule .dashami-back .event-content::before {
+    background-image: url("./assets/imgs/Schedule/dashami.png");
+}
+
+.schedule .event .heading .big {
+    position: relative;
+    z-index: 1;
+    font-size: 5rem;
+}
+.schedule .event .heading .small {
+    position: relative;
+    z-index: 1;
+    line-height: 0.8em;
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+.schedule * {
+    background-color: transparent;
+}
+
+.schedule .event .event-content .timings {
+    display: flex;
+    align-items: space-between;
+    flex-direction: column;
+    gap: 2rem;
+    width: 26rem;
+}
+
+.schedule .event .event-content .timings .row {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.schedule .event .event-content .list .timings .row .linespace {
+    background-color: rgba(255, 255, 255, 0.333);
+    height: 1.3px;
+    flex-grow: 1;
+}
+
+.schedule .event .event-content .list .timings .row .time {
+    width: max-content;
+}
+
+.schedule .event .event-content .description {
+    text-align: right;
+    align-self: center;
+}
+
+.schedule .event .event-content .description .topic {
+    font-size: 2.5rem;
+}
+
+.schedule .event .event-content .description .about {
+    padding-top: 1.5rem;
+    width: 30ch;
+}
