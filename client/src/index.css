@@ -1,16 +1,46 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  /* line-height: 1.5; */
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #171717;
+
+  --accent1: #5075F6;
+  --accent1-50: rgba(80, 116, 246, 0.5);
+  --accent2: #705DEA;
+  --accent3: #CD40FF;
+
+  --primary: var(--accent1);
+  --primary50: var(--accent1-50);
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.display-font{
+  font-family: "Sedgwick Ave Display", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 50px;
 }
 
 a {
@@ -25,7 +55,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
