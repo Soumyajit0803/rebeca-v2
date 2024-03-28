@@ -31,7 +31,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Schedule />
+			{/* <Schedule /> for testing only ~ Abhijit */}
 		</div>
 	);
 }

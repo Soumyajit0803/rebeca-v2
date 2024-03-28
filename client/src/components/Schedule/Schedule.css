@@ -1,6 +1,7 @@
 .schedule {
+    font-family: "Sedgwick Ave Display", cursive;
     padding: 5rem;
-    font-size: 1.6rem;
+    font-size: 30px;
 }
 
 .schedule .intro {
@@ -175,7 +176,7 @@
 }
 
 .schedule .event .event-content .description .topic {
-    font-size: 2.5rem;
+    font-size: 50px;
 }
 
 .schedule .event .event-content .description .about {
