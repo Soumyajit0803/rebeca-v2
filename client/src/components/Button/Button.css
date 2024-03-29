@@ -1,0 +1,211 @@
+.button{
+	padding: 12px 20px;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	font-size: 15px;
+	cursor: pointer;
+	font-weight: 600;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	/* line-height: 18px; */
+	background-color: var(--primary);
+	
+}
+.button .start-icon .material-icons, .button .end-icon .material-icons{
+	font-size: 15px;
+	height: 15px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.button.small{
+	font-size: 12px;
+}
+.button.large{
+	font-size: 20px;
+	padding: 15px 25px;
+	font-weight: 600;
+}
+.button.icon{
+	padding: 10px;
+	border-radius: 50%;
+}
+.button.filled.orange{
+	background-color: var(--orange);
+	transition: 0.25s all;
+}
+.button.filled.orange:hover{
+	background-color: var(--orange-dark);
+}
+.button.filled.white{
+	background-color: white;
+	transition: 0.25s all;
+	color: black;
+}
+.button.filled.white:hover{
+	background-color: rgb(229, 227, 227);
+}
+.button.filled.yellow{
+	background-color: var(--yellow);
+	transition: 0.25s all;
+}
+.button.filled.yellow:hover{
+	background-color: var(--yellow-dark);
+}
+.button.filled.teal{
+	background-color: var(--teal);
+	transition: 0.25s all;
+}
+.button.filled.teal:hover{
+	background-color: var(--teal-dark);
+}
+.button.filled.purple{
+	background-color: var(--purple);
+	transition: 0.25s all;
+}
+.button.filled.purple:hover{
+	background-color: var(--purple-dark);
+}
+.button.filled.red{
+	background-color: var(--red);
+	transition: 0.25s all;
+}
+.button.filled.red:hover{
+	background-color: var(--red-dark);
+}
+.button.filled.black{
+	background-color: rgb(30, 30, 30);
+	transition: 0.25s all;
+}
+.button.filled.black:hover{
+	background-color: black;
+}
+.button.outlined{
+	background-color: transparent;
+}
+.button.outlined:hover{
+	color: white;
+}
+.button.outlined.orange{
+	border: 2px solid var(--orange);
+	transition: 0.25s all;
+	color: var(--orange);
+}
+.button.outlined.orange:hover{
+	background-color: var(--orange-dark);
+	color: white;
+}
+.button.outlined.white{
+	/* background-color: white; */
+	border: 2px solid white;
+	transition: 0.25s all;
+	color: white;
+}
+.button.outlined.white:hover{
+	background-color: rgb(229, 227, 227);
+	color: black;
+}
+.button.outlined.yellow{
+	border: 2px solid var(--yellow);
+	transition: 0.25s all;
+	color: var(--yellow);
+}
+.button.outlined.yellow:hover{
+	background-color: var(--yellow-dark);
+	color: white;
+}
+.button.outlined.teal{
+	border: 2px solid var(--teal);
+	transition: 0.25s all;
+	color: var(--teal);
+}
+.button.outlined.teal:hover{
+	background-color: var(--teal-dark);
+	color: white;
+}
+.button.outlined.purple{
+	border: 2px solid var(--purple);
+	transition: 0.25s all;
+	color: var(--purple);
+}
+.button.outlined.purple:hover{
+	background-color: var(--purple-dark);
+	color: white;
+}
+.button.outlined.black{
+	border: 2px solid rgb(21, 21, 21);
+	transition: 0.25s all;
+	color: rgb(21, 21, 21);
+}
+.button.outlined.black:hover{
+	background-color: black;
+	color: white;
+}
+.button.outlined.red{
+	border: 2px solid var(--red);
+	transition: 0.25s all;
+	color: var(--red);
+}
+.button.outlined.red:hover{
+	background-color: var(--red-dark);
+	color: white;
+}
+.button.text{
+	background-color: transparent;
+}
+.button.text.orange{
+	color: var(--orange);
+	transition: 0.25s all;
+}
+.button.text.orange:hover{
+	color: var(--orange-dark);
+}
+.button.text.yellow{
+	color: var(--yellow);
+	transition: 0.25s all;
+}
+.button.text.yellow:hover{
+	color: var(--yellow-dark);
+}
+.button.text.teal{
+	color: var(--teal);
+	transition: 0.25s all;
+}
+.button.text.teal:hover{
+	color: var(--teal-dark);
+}
+.button.text.black{
+	color: var(--black);
+	transition: 0.25s all;
+}
+.button.text.black:hover{
+	color: var(--black-dark);
+}
+.button.text.purple{
+	color: var(--purple);
+	transition: 0.25s all;
+}
+.button.text.purple:hover{
+	color: var(--purple-dark);
+}
+.button .loading{
+	animation: loading infinite linear 1s;
+}
+@keyframes loading {
+	0%{
+		transform: rotate(0deg);
+	}
+	50%{
+		transform: rotate(-180deg);
+	}
+	100%{
+		transform: rotate(-360deg);
+	}
+}

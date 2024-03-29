@@ -12,14 +12,8 @@ import {
 	Stack
 } from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
-import Button from "../../atoms/Button/Button";
+import Button from "../Button/Button";
 import "./Navbar.css";
-import ComingSoonDialog from "../ComingSoonDialog/ComingSoonDialog";
-import AuthForm from "../AuthForm/AuthForm";
-import VerifyForm from "../VerifyForm/VerifyForm";
-import { logoutAuth } from "../../../services/api";
-import { alert } from "../../molecules/CustomAlert/alert";
-import UserMenu from "../UserMenu/UserMenu";
 
 
 const Navbar = ({
@@ -121,10 +115,8 @@ const Navbar = ({
 				<div className="left-col">
 					<Link to="/" className="logo">
 						<div>
-							<img
-								src="/assets/logo/logo-full-black.png"
-								alt=""
-							/>
+							<img src="/assets/logo/logo_white.png" alt="" />
+							{/* REBECA */}
 						</div>
 					</Link>
 
@@ -155,25 +147,32 @@ const Navbar = ({
 								Home
 							</NavLink>
 							<NavLink
-								id="nav-resorts"
+								id="nav-events"
 								className={"item"}
-								to="/resorts"
+								to="/events"
 							>
-								Resorts
+								Events
 							</NavLink>
 							<NavLink
-								id="nav-membership"
+								id="nav-schedule"
 								className={"item"}
-								to="/membership"
+								to="/schedule"
 							>
-								Membership
+								Schedule
 							</NavLink>
 							<NavLink
-								to="/about"
-								id="nav-about"
+								to="/sponsorship"
+								id="nav-sponsorship"
 								className={"item"}
 							>
-								About Us
+								Sponsorship
+							</NavLink>
+							<NavLink
+								id="nav-team"
+								to="/team"
+								className={"item"}
+							>
+								Our Team
 							</NavLink>
 							<NavLink
 								id="nav-contact"
@@ -185,7 +184,7 @@ const Navbar = ({
 							<NavLink id="nav-faq" to="/faq" className={"item"}>
 								FAQs
 							</NavLink>
-							{user ? (
+							{/* {user ? (
 								<div
 									className="item"
 									id="nav-avatar"
@@ -209,9 +208,9 @@ const Navbar = ({
 										innerText={"Log in"}
 										onClick={handleAuthOpen}
 									></Button>
-									{/* <ComingSoonDialog open={dialogOpen}></ComingSoonDialog> */}
+									<ComingSoonDialog open={dialogOpen}></ComingSoonDialog>
 								</div>
-							)}
+							)} */}
 						</>
 					)}
 				</div>
@@ -276,154 +275,16 @@ const Navbar = ({
 					>
 						FAQs
 					</NavLink>
-
-					{user ? (
-						<div className="item" id="nav-avatar">
-							<Accordion
-								sx={{
-									background: "none",
-									color: "black",
-									border: "0px solid rgba(150, 150, 150, 0.30)",
-									borderRadius: "5px",
-									// margin: "10px 0",
-									width: {
-										xs: "100%",
-										md: "100%",
-										xl: "100%",
-									},
-									p: "0px 0px",
-									boxShadow: "none",
-									"&.MuiPaper-root": {
-										p: 0,
-									},
-								}}
-							>
-								<AccordionSummary
-									sx={{
-										p: "0 0px",
-										width: "100%",
-									}}
-									expandIcon={
-										<span
-											className="material-icons"
-											style={{
-												color: "black",
-											}}
-										>
-											expand_more
-										</span>
-									}
-								>
-									<Stack
-										direction={"row"}
-										alignItems={"center"}
-										gap="10px"
-										p={"0 0px 10px 0"}
-									>
-										{/* <Avatar alt={user.name}></Avatar> */}
-										{user.name}
-									</Stack>
-								</AccordionSummary>
-								<AccordionDetails
-									sx={{
-										"& ul": {
-											listStyle: "none",
-											p: "0",
-										},
-										"& ul li": {
-											padding: "10px 30px",
-											transition: "0.25s all",
-											fontWeight: "bold",
-											fontSize: "20px",
-											borderRadius: "5px",
-											color: "black",
-											// fontSize: '15px',
-											"&:hover": {
-												// bgcolor: "black",
-												color: "red",
-											},
-											"&.active": {
-												color: "var(--red)",
-											},
-										},
-										"& ul li  a": {
-											// padding: "10px 30px",
-											transition: "0.25s all",
-											fontWeight: "bold",
-											fontSize: "20px",
-											borderRadius: "5px",
-											color: "black",
-											// fontSize: '15px',
-											"&:hover": {
-												// bgcolor: "black",
-												color: "red",
-											},
-											"&.active": {
-												color: "var(--red)",
-											},
-										},
-									}}
-								>
-									<ul>
-										<li>
-											<NavLink
-												to={"/user/"}
-												onClick={handleLinkClick}
-											>
-												Profile
-											</NavLink>
-										</li>
-										{/* <li>Account Settings</li> */}
-										<li>
-											<NavLink
-												to="/user/membership"
-												onClick={handleLinkClick}
-											>
-												Membership
-											</NavLink>
-										</li>
-										<li>
-											<NavLink
-												to="/user/bookings"
-												onClick={handleLinkClick}
-											>
-												Bookings
-											</NavLink>
-										</li>
-										<li>
-											<Button
-												variant={"filled"}
-												onClick={handleLogout}
-												innerText={"Logout"}
-												color={"black"}
-											></Button>
-										</li>
-									</ul>
-								</AccordionDetails>
-							</Accordion>
-						</div>
-					) : (
-						<div className="item">
-							<Button
-								// size="large"
-								variant="filled"
-								color="red"
-								innerText={"Log in"}
-								onClick={handleAuthOpen}
-							></Button>
-							{/* <ComingSoonDialog open={dialogOpen}></ComingSoonDialog> */}
-						</div>
-					)}
 				</div>
 			</Drawer>
-			{user && (
-				<UserMenu
-					user={user}
-					logout={handleLogout}
-					anchorEl={anchorEl}
-					handleMenuClose={handleMenuClose}
-				></UserMenu>
-			)}
+			{/* {user && (
+				// <UserMenu
+				// 	user={user}
+				// 	logout={handleLogout}
+				// 	anchorEl={anchorEl}
+				// 	handleMenuClose={handleMenuClose}
+				// ></UserMenu>
+			)} */}
 		</>
 	);
 };

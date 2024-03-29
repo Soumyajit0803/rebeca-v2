@@ -1,0 +1,146 @@
+.home{
+	position: relative;
+}
+.home .bg{
+	position: absolute;
+	z-index: -10;
+	opacity: 80%;
+	width: 100%;
+	top: 80vh;
+}
+.home .bg img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.home section {
+	width: 100%;
+}
+.home .section-1 {
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+.home .section-1 .heading {
+	z-index: 1;
+}
+.home .section-1 .cover-img {
+	width: 55%;
+	position: absolute;
+	bottom: 0;
+	border: 0px solid red;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 0;
+}
+.home .section-1 .cover-img img {
+	width: 100%;
+}
+.home .section-2 .banner {
+	background-color: var(--primary);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 40px 0;
+	gap: 10px;
+}
+.home .section-2 .banner .display-font {
+	font-size: 40px;
+}
+.home .section-3 {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.home .section-3 .list {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 50px;
+	width: 150vw;
+	/* height: 300px; */
+	border: 0px solid red;
+	margin-left: 0;
+	transition: 0.25s all;
+}
+.home .section-3 .list .artist {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	border: 0px solid red;
+	width: fit-content;
+}
+.home .section-3 .list .artist .img {
+	position: relative;
+	height: 300px;
+}
+.home .section-3 .list .artist .img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.home .section-3 .list .artist .display-font {
+	position: absolute;
+	bottom: 0;
+	line-height: 70%;
+}
+.home .section-3 .controls {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 20px;
+}
+.home .section-3 .controls.display-font {
+	font-size: 30px;
+}
+.home .section-3 .controls .control {
+	opacity: 50%;
+	cursor: pointer;
+}
+.home .section-3 .controls .control:hover {
+	opacity: 100%;
+}
+.home .section-4 .row {
+	width: 100%;
+	padding: 0 5%;
+}
+.home .section-4 .row .heading {
+	align-items: flex-end;
+}
+.home .section-4 .row .heading .title {
+	text-align: left;
+	background: linear-gradient(87deg, #5075f6 0.67%, #705dea 103.88%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 60px;
+}
+.home .section-4 .row .heading .sub-title {
+	font-family: "Sedgwick Ave Display", cursive;
+	text-align: left;
+	color: white;
+	font-size: 40px;
+}
+.home .section-4 .row .contents {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 20px;
+	font-size: 30px;
+	line-height: 1.6;
+	width: 100%;
+}
+.home .section-4 .collage{
+	width: 100%;
+	margin: auto;
+}
+.home .section-4 .collage img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}

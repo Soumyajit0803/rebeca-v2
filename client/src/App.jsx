@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import AllRoutes from "./Routes";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 	const [user, setUser] = useState(
@@ -31,6 +32,7 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
+				<Navbar></Navbar>
 				<AllRoutes
 					onAuthClose={handleAuthClose}
 					onAuthOpen={handleAuthOpen}

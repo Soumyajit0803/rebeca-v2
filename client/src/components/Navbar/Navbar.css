@@ -4,10 +4,10 @@
 	justify-content: space-between;
 	align-items: center;
 
-	/* border: 1px solid red; */
-	padding: 0 50px;
+	border: 0px solid red;
+	padding: 10px 50px;
 	/* background: var(--teal); */
-	background-color: rgba(255, 255, 255, 1);
+	background-color: #171717;
 	/* background: black; */
 	margin: 0;
 	/* backdrop-filter: blur(20px); */
@@ -15,10 +15,11 @@
 	/* box-shadow: 0px 4px 83px 0px rgba(59, 59, 59, 0.14); */
 	/* positio%n: fixed; */
 	width: 100%;
-	height: var(--navbar-height);
+	height: 70px;
 	position: fixed;
 	z-index: 100;
 	/* overflow-x: hidden; */
+	color: black;
 	
 }
 .navbar .left-col{
@@ -41,9 +42,9 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	gap: 50px;
-	color: var(--purple);
-	color: black;
+	gap: 40px;
+	/* color: var(--purple); */
+	color: white;
 	transition: 0.25s all;
 	/* padding-top: 30px; */
 	height: 100%;
@@ -52,11 +53,11 @@
 .navbar .nav-items .item{
 	transition: 0.25s all;
 	cursor: pointer;
-	font-weight: 600;
+	font-weight: 400;
 	
-	font-size: 1rem;
+	font-size: 20px;
 	color: var(--purple);
-	color: black;
+	color: rgba(255, 255, 255, 0.527);
 	position: relative;
 	border: 0px solid green;
 	height: 100%;
@@ -66,15 +67,12 @@
 	justify-content: flex-start;
 	align-items: center;
 }
-.navbar .nav-items .item:hover::after, .navbar .nav-items .item.active::after{
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 4px;
-	background-color: var(--red);
+.navbar .nav-items .item:hover, .navbar .nav-items .item.active{
+	
+	color: var(--primary);
 	content: "";
 	transition: 0.25s all;
+	font-weight: 600;
 }
 .MuiDrawer-root .MuiPaper-root{
 	width: 100% !important;
