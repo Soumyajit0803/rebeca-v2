@@ -47,7 +47,7 @@ const Home = () => {
 
 	return (
 		<div className="home">
-			<div className="bg">
+			<div className="wave-bg">
 				<img src="/assets/imgs/home/wavy_bg.png" alt="" />
 			</div>
 			<section className="section-1">

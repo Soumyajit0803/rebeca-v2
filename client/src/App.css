@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   width: 100%;
-  width: min(100%, 1500px);
+  /* width: min(100%, 1500px); */
 }
 .row{
   display: flex;
