@@ -1,5 +1,5 @@
 .schedule {
-    font-family: "Sedgwick Ave Display", cursive;
+    /* font-family: "Sedgwick Ave Display", cursive; */
     padding: 5rem;
     font-size: 30px;
     min-width: 460px;
@@ -69,6 +69,7 @@
     background-color: transparent;
     background-repeat: no-repeat;
     padding: 3rem;
+    
 }
 .schedule .event .event-content::before {
     content: "";
@@ -145,16 +146,13 @@
     width: 100%;
 }
 
-.schedule * {
-    background-color: transparent;
-}
-
 .schedule .event .event-content .timings {
     display: flex;
     align-items: space-between;
     flex-direction: column;
     gap: 2rem;
     width: 26rem;
+    color: white;
 }
 
 .schedule .event .event-content .timings .row {
@@ -176,6 +174,7 @@
 .schedule .event .event-content .description {
     text-align: right;
     align-self: center;
+    color: white;
 }
 
 .schedule .event .event-content .description .topic {
@@ -201,6 +200,7 @@
     .schedule .event .event-content .description {
         text-align: center;
         margin-bottom: 8rem;
+
     }
 
     .schedule .event .event-content .description .about {

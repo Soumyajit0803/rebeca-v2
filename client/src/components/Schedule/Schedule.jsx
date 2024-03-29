@@ -36,36 +36,40 @@ Get ready to soak in the rich heritage of Indian culture as talented artists fro
 function EventSection({ date, datetxt, eventlist, topic, about }) {
     var bgsetter = datetxt.toLowerCase();
     return (
-        <div className={"event "+bgsetter+"-back"}>
-            <div className="eheading">
-                <div className={`before ${datetxt.toLowerCase(bgsetter)}`}></div>
-                <div className="big">{date}</div>
-                <div className="small">
-                    <span>April</span>
-                    <span style={{ paddingLeft: "1rem", fontSize: "3rem" }}>{datetxt}</span>
-                </div>
-            </div>
-            <div className={"event-content"}>
-                <div className="list">
-                    <div className="timings">
-                        {eventlist.map((a, i) => {
-                            return (
-                                <div className="row" key={i}>
-                                    <div className="time">{a[0]}</div>
-                                    <div className="linespace"></div>
-                                    <div className="eventname">{a[1]}</div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-                <div className="description">
-                    <div className="topic">{topic}</div>
-                    <div className="about">{about}</div>
-                </div>
-            </div>
-        </div>
-    );
+		<div className={"event " + bgsetter + "-back"}>
+			<div className="eheading">
+				<div
+					className={`before ${datetxt.toLowerCase(bgsetter)}`}
+				></div>
+				<div className="big display-font">{date}</div>
+				<div className="small display-font">
+					<span>April</span>
+					<span style={{ paddingLeft: "1rem", fontSize: "3rem" }}>
+						{datetxt}
+					</span>
+				</div>
+			</div>
+			<div className={"event-content"}>
+				<div className="list">
+					<div className="timings">
+						{eventlist.map((a, i) => {
+							return (
+								<div className="row" key={i}>
+									<div className="time">{a[0]}</div>
+									<div className="linespace"></div>
+									<div className="eventname">{a[1]}</div>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div className="description">
+					<div className="topic display-font">{topic}</div>
+					<div className="about">{about}</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 function Schedule() {
