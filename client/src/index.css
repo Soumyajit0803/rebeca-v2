@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
 
-*,
-*::before,
-*::after {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	background-color: #171717;
-	color: #fff;
-}
 :root {
   font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;

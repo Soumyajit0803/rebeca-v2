@@ -2,5 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  width: min(100%, 1500px);
+  width: 100%;
+  /* width: min(100%, 1500px); */
 }
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+  
+
