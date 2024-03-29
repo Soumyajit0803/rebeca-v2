@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./screens/Home/Home";
+import Schedule from "./components/Schedule/Schedule";
 
 
 const AllRoutes = ({
@@ -40,8 +41,23 @@ const AllRoutes = ({
 					></Home>
 				}
 			></Route>
-			
-			
+			<Route
+				exact
+				path="/schedule"
+				element={
+					<Schedule
+						onAuthClose={onAuthClose}
+						onAuthOpen={onAuthOpen}
+						onEmailverifyOpen={onEmailverifyOpen}
+						onEmailverifyClose={onEmailverifyClose}
+						authOpen={authOpen}
+						emailVerificationOpen={emailVerificationOpen}
+						login={login}
+						logout={logout}
+						user={user}
+					></Schedule>
+				}
+			></Route>
 		</Routes>
 	);
 };

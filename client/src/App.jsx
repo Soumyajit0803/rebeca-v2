@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import AllRoutes from "./Routes";
+import Schedule from "./components/Schedule/Schedule";
+import AllRoutes from "/.Routes.jsx";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 

@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #171717;
+	color: #fff;
+}
 :root {
   font-family: "Exo 2", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 30px;
+  /* font-size: 30px; */
   /* line-height: 1.5; */
 
   color-scheme: light dark;
@@ -55,7 +66,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  /* place-items: center; */
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
