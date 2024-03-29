@@ -2,7 +2,8 @@ import { useState } from "react";
 import "./App.css";
 import Schedule from "./components/Schedule/Schedule";
 // import AllRoutes;
-import { BrowserRouter as Router, useLocation } from "react-router-dom";
+import { BrowserRouter, Route , Routes} from "react-router-dom";
+
 
 function App() {
 	// const [user, setUser] = useState(
@@ -31,7 +32,11 @@ function App() {
 
 	return (
 		<div className="App">
-			{/* <Schedule />  for testing purposes ~ Abhijit*/}
+			<BrowserRouter>
+			<Routes>
+				<Route path="schedule" element={<Schedule />}/>
+			</Routes>
+			</BrowserRouter>
 		</div>
 	);
 }
