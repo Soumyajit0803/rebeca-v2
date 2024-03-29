@@ -1,0 +1,130 @@
+*,html{
+    margin:0 auto;
+}
+
+.sponsor{
+    padding-top:5rem;
+    font-size: 30px;
+}
+
+.sponsor .section-1 {
+    width: 100%;
+    padding:0 5rem;
+    /* border: 2px solid red; */
+    position: relative;
+    /* height: 100vh; */
+} 
+.sponsor .section-1 .side-img {
+    /* width: 50%; */
+	position: absolute;
+	right: 0;
+    bottom:0;
+    /* border: 2px solid red; */
+    /* bottom: 0; */
+	/* left: 0; */
+	/* transform: translateX(-50%); */
+	z-index: 0;
+}
+.sponsor .section-1 .side-img img{
+    width: 100%;
+    max-width: 844px;
+}
+.sponsor .section-2{
+    width: 100%;
+    /* border:2px solid green; */
+}
+.sponsor .section-2 .flow-chart{
+    width:90%;
+    margin:0 auto;
+    margin-top: 4rem;
+    /* padding:0 5rem; */
+    display: flex;
+    justify-content: center;
+    /* border: 2px solid red; */
+    /* position: relative;
+    top:-15rem; */
+}
+
+.sponsor .section-2 .flow-chart img{
+    width:100%;
+    max-width: 1305px;
+}
+.sponsor .section-2 .cover-pic{
+    width:100%;
+    margin-top: 2rem;
+    /* border: 2px solid red; */
+    /* position: relative;
+    top:-15rem; */
+}
+
+.sponsor .section-2 .cover-pic img{
+    width:100%;
+}
+
+.sponsor .section-3 {
+    padding:0 5rem;
+}
+.sponsor .section-3 .sponsor-categories{
+    width:80%;
+    margin: 0 auto;
+}
+.sponsor .section-3 .sponsor-categories img{
+    width:100%;
+}
+
+.sponsor .section-4 {
+    padding:0 5rem;
+}
+.sponsor .section-4 .past-sponsor{
+    width:100%;
+}
+.sponsor .section-4 .past-sponsor img{
+    width:100%;
+}
+
+
+@media screen and (max-width:1800px) {
+    .sponsor .section-1 .side-img {
+        width: 50%;
+    }
+}
+@media screen and (max-width:1000px) {
+    .heading_spon {
+        width:90% !important;
+    }
+    .sponsor{
+        font-size: 25px;
+    }
+
+    .sponsor .section-1 {
+        padding:0 2rem;
+    } 
+
+    .sponsor .section-2 .flow-chart{
+        width:100%;
+        padding:0 1rem;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .sponsor .section-2 .flow-chart{
+        padding:0 7rem;
+    }
+}
+@media screen and (max-width:600px) {
+    .sponsor .section-2 .flow-chart{
+        padding:0 3.5rem;
+    }
+}
+@media screen and (max-width:400px) {
+    .sponsor .section-2 .flow-chart{
+        padding:0 1rem;
+    }
+    .sponsor .section-3{
+        padding:0 2rem;
+    }
+    .heading_spon {
+        padding: 0 !important;
+        padding-bottom: 4rem !important;
+    }
+}
