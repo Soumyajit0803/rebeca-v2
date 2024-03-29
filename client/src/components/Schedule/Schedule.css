@@ -2,6 +2,8 @@
     font-family: "Sedgwick Ave Display", cursive;
     padding: 5rem;
     font-size: 30px;
+    min-width: 460px;
+    /* transform: scale(calc(100vw/450px)); */
 }
 
 .schedule .intro {
@@ -14,13 +16,13 @@
     margin-bottom: 5rem;
 }
 
-.schedule .intro .heading {
+.schedule .intro .eheading {
     z-index: 1;
     position: relative;
     font-size: 2.5rem;
 }
 
-.schedule .intro .heading::before {
+.schedule .intro .eheading::before {
     content: "";
     background-image: url("./assets/imgs/Schedule/schedule-before.png");
     background-size: cover;
@@ -31,7 +33,8 @@
     left: -65px;
     z-index: -1;
     aspect-ratio: 750/250;
-    height: 150px;
+    /* height: 150px; */
+    width: 450px;
 }
 
 .schedule .intro .paragraph {
@@ -65,8 +68,7 @@
     background-size: cover;
     background-color: transparent;
     background-repeat: no-repeat;
-    padding-right: 3rem;
-    padding-top: 3rem;
+    padding: 3rem;
 }
 .schedule .event .event-content::before {
     content: "";
@@ -74,6 +76,8 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: -1;
     background-size: cover;
     background-position: center;
@@ -81,8 +85,7 @@
     background-repeat: no-repeat;
 }
 
-
-.schedule .event .heading {
+.schedule .event .eheading {
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -91,7 +94,7 @@
     z-index: 2;
 }
 
-.schedule .event .heading .before {
+.schedule .event .eheading .before {
     position: absolute;
     z-index: -1;
     aspect-ratio: 454/110;
@@ -129,12 +132,12 @@
     background-image: url("./assets/imgs/Schedule/dashami.png");
 }
 
-.schedule .event .heading .big {
+.schedule .event .eheading .big {
     position: relative;
     z-index: 1;
     font-size: 5rem;
 }
-.schedule .event .heading .small {
+.schedule .event .eheading .small {
     position: relative;
     z-index: 1;
     line-height: 0.8em;
@@ -182,4 +185,35 @@
 .schedule .event .event-content .description .about {
     padding-top: 1.5rem;
     width: 30ch;
+}
+
+@media screen and (max-width: 1150px) {
+    .schedule {
+        padding: 2rem;
+    }
+
+    .schedule .event .event-content {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .schedule .event .event-content .description {
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+
+    .schedule .event .event-content .description .about {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 532px) {
+    .schedule {
+        padding: 0.5rem;
+    }
+
+    .schedule .event .eheading {
+        transform: scale(calc(100vw / 455px));
+    }
 }

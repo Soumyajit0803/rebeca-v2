@@ -1,5 +1,6 @@
 import React from "react";
 import "./Schedule.css";
+import Heading from "../Heading/Heading";   
 
 function ScheduleIntro() {
     return (
@@ -14,6 +15,9 @@ function ScheduleIntro() {
         </div>
     );
 }
+
+var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back
+with a bang!`
 
 var eventlist = [
     ["10AM - 11AM", "Inauguration"],
@@ -33,7 +37,7 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
     var bgsetter = datetxt.toLowerCase();
     return (
         <div className={"event "+bgsetter+"-back"}>
-            <div className="heading">
+            <div className="eheading">
                 <div className={`before ${datetxt.toLowerCase(bgsetter)}`}></div>
                 <div className="big">{date}</div>
                 <div className="small">
@@ -67,7 +71,8 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
 function Schedule() {
     return (
         <div className="schedule">
-            <ScheduleIntro />
+            {/* <ScheduleIntro /> */}
+            <Heading title={"REBECA SCHEDULE"} subTitle={introtext}/>
             <EventSection
                 date={"20"}
                 datetxt={"SAPTAMI"}
