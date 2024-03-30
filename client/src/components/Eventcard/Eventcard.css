@@ -1,0 +1,70 @@
+.event-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  gap: 0.5rem;
+  transition: all ease 0.3s;
+}
+
+.event-data {
+  border: 1px solid white;
+  padding: 1.2rem;
+  transition: all ease 0.2s;
+  display: flex;
+  justify-content: center;
+}
+
+.event-data .data-header {
+  font-size: 1.2rem;
+  font-family: "Sedgwick Ave Display";
+  display: flex;
+  align-items: last baseline;
+  justify-content: space-between;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  /* flex-direction: column; */
+}
+
+.event-data .data-header p {
+  font-size: 0.8rem;
+}
+
+.event-data .data-body img {
+  height: 15rem;
+  transition: all ease 0.2s;
+  position: relative;
+}
+
+.event-data .data-body {
+  position: relative;
+}
+
+.event-data .data-body::before {
+  content: "learn more";
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.511);
+  color: white;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all ease 0.2s;
+}
+
+.event-data .data-body:hover::before {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.event-data:hover {
+  cursor: pointer;
+  color: var(--accent3);
+}
