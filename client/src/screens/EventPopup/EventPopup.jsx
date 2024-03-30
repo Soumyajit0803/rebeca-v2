@@ -4,23 +4,6 @@ import "./EventPopup.css";
 import events from "../../../src/assets/data/events.json";
 import { useParams } from "react-router-dom";
 
-var eventName = "Kolkata Night";
-var desc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget dignissim velit rhoncus ut. Quisque efficitur velit ac euismod cursus. Curabitur at erat eu mi gravida scelerisque. Aenean quis interdum nibh.`;
-var rules = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-];
-
-var judges = ["person", "person", "person", "person"];
-
 const EventPopup = () => {
     const {eventName} = useParams();
     var [eventInfo, setEventInfo] = useState(null);
@@ -29,14 +12,13 @@ const EventPopup = () => {
             let i = 0;
             for (let eventinfo of events[d]["eventList"]) {
                 if (eventinfo.eventName === eventName) {
-                    // setDay(d); setI(i)
                     setEventInfo(events[d].eventList[i])
                     return;
                 }
                 i += 1;
             }
         }
-        console.log("did not find anything\n"+eventName);;
+        console.log("did not find anything\n"+eventName);
     }
     if (events && !eventInfo) findTheDay();
 

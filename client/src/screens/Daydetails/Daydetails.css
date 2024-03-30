@@ -1,7 +1,5 @@
 .day-details-wrapper {
-  /* padding: 1rem; */
   padding: 5rem;
-  padding-top: 7rem;
   display: flex;
   align-items: start;
   justify-content: center;
@@ -9,7 +7,6 @@
   position:relative;
   color: white;
   overflow-x: hidden;
-  line-height: 200%;
 }
 
 .behind-banner{
@@ -47,12 +44,12 @@
   right: -10vw;
   z-index: 0;
   opacity: 0.4;
-  line-height: 100%;
 }
 
 .day-details-wrapper .section-1, .section-2, .section-3, .section-5{
   padding-top: 5rem;
   font-size: 1.5rem;
+  line-height: 150%
 }
 
 .day-details-wrapper .section-1, .section-2{
