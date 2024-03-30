@@ -1,0 +1,161 @@
+.day-details-wrapper {
+  /* padding: 1rem; */
+  padding: 5rem;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  position:relative;
+  color: white;
+  overflow-x: hidden;
+}
+
+.behind-banner{
+  background: url("/assets/imgs/Schedule/saptami.png");
+  z-index: -1;
+  position:absolute;
+  right: -15rem;
+  top: 2rem;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  mask-image: linear-gradient(to bottom, black 50%, transparent)
+}
+.hatchline-banner{
+  background: url("/assets/imgs/hatch_lines.png");
+  z-index: -1;
+  position:absolute;
+  right: -20rem;
+  top: 2rem;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.section-head{
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
+  font-family: "Sedgwick Ave Display";
+  gap: 2rem;
+
+}
+
+.section-head .full-date{
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.full-date div{
+  font-size: 4rem;
+}
+
+.full-date p{
+  font-size: 2rem;
+}
+
+.section-head .day-nickname{
+  font-size: 3rem;
+}
+
+.section-1, .section-2, .section-3, .section-5{
+  padding-top: 5rem;
+  font-size: 1.5rem;
+}
+
+.section-3{
+  position: relative;
+}
+
+.section-4{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.section-4 img{
+  width: 15rem;
+}
+
+.section-subhead{
+  font-size: 3rem;
+  color :white;
+  font-family: "Sedgwick Ave Display";
+}
+
+.artist-banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.artist-label{
+  font-family: "Sedgwick Ave Display";
+  font-size: 3rem;
+  color: white;
+  position: relative;
+  bottom: 3rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .day-details-wrapper, .section-1, .section-2, .section-3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .day-details-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section-head{
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .section-head .full-date{
+    flex-direction: row;
+    align-items: last baseline;
+  }
+
+  .behind-banner, .hatchline-banner{
+    left: 0;
+  }
+}
+
+.section-event{
+  /* background-color: green; */
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.event-controller{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.controller-btn{
+  color: red;
+  cursor: pointer;
+}
+
+
+

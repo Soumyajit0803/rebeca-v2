@@ -3,6 +3,7 @@ import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./screens/Home/Home";
 import Schedule from "./components/Schedule/Schedule";
 import Sponsorship from "./components/Sponsors/Sponsorship";
+import Daydetails from "./components/Daydetails/Daydetails";
 
 
 const AllRoutes = ({
@@ -46,17 +47,18 @@ const AllRoutes = ({
 				exact
 				path="/schedule"
 				element={
-					<Schedule
-						onAuthClose={onAuthClose}
-						onAuthOpen={onAuthOpen}
-						onEmailverifyOpen={onEmailverifyOpen}
-						onEmailverifyClose={onEmailverifyClose}
-						authOpen={authOpen}
-						emailVerificationOpen={emailVerificationOpen}
-						login={login}
-						logout={logout}
-						user={user}
-					></Schedule>
+					// <Schedule
+					// 	onAuthClose={onAuthClose}
+					// 	onAuthOpen={onAuthOpen}
+					// 	onEmailverifyOpen={onEmailverifyOpen}
+					// 	onEmailverifyClose={onEmailverifyClose}
+					// 	authOpen={authOpen}
+					// 	emailVerificationOpen={emailVerificationOpen}
+					// 	login={login}
+					// 	logout={logout}
+					// 	user={user}
+					// ></Schedule>
+					<Daydetails />
 				}
 			></Route>
 			<Route
