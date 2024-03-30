@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import "./Daydetails.css";
 
-import Eventcard from "../Eventcard/Eventcard";
+import Eventcard from "../../components/Eventcard/Eventcard";
 
 const Artist = ({ artistName }) => {
   return (

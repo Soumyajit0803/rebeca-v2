@@ -4,6 +4,8 @@ import Home from "./screens/Home/Home";
 import Schedule from "./screens/Schedule/Schedule";
 import Sponsorship from "./screens/Sponsors/Sponsorship";
 
+import Daydetails from "./screens/Daydetails/Daydetails";
+
 
 const AllRoutes = ({
 	login,
