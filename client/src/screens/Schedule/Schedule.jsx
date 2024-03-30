@@ -2,7 +2,7 @@ import React from "react";
 import "./Schedule.css";
 import Heading from "../../components/Heading/Heading";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
-import eventDetails from "../../../public/assets/eventDetails.json";
+// import eventDetails from "../../../public/assets/eventDetails.json";
 import { Link } from "react-router-dom";
 import rebeca from "../../../public/assets/rebeca.json";
 
@@ -48,9 +48,6 @@ function Schedule() {
         }
         return res
     }
-    // console.log(res);
-    return res;
-  }
 
     
     var nights = ["saptami", "ashtami", "navami", "dashami"];

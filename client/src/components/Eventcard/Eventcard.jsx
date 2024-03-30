@@ -8,8 +8,6 @@ const Eventcard = ({ controlProp, Eventdata, FocusEvent }) => {
     else setexpand(idx);
   };
 
-  const majorEvents = [0, 3, 6];
-
   return (
     <div style = {controlProp} className="event-card">
       {Eventdata.map((value, index) => {

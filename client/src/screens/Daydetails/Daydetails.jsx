@@ -3,7 +3,7 @@ import "./Daydetails.css";
 
 import Eventcard from "../../components/Eventcard/Eventcard";
 
-import Rebeca from "../../../public/assets/eventDetails.json";
+import Rebeca from "../../../public/assets/rebeca.json";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
 import { useParams } from "react-router-dom";
 
@@ -18,7 +18,6 @@ const Artist = ({ artistName }) => {
 
 const Daydetails = () => {
   const {DayID} = useParams();
-  console.log("Inside the daydetails");
   const Day = Rebeca[DayID];
 
   const [controlMargin, setControlMargin] = useState(0);
@@ -35,14 +34,7 @@ const Daydetails = () => {
   return (
     <div className="day-details-wrapper">
       <div className="behind-banner"></div>
-      {/* <div className="section-head">
-        <div className="full-date">
-          <div>{Day.date}</div>
-          <p>April</p>
-        </div>
-        <div className="day-nickname">{"Saptami"}</div>
-      </div> */}
-      <PujaHeading date={20} datetxt={"SAPTAMI"} />
+      <PujaHeading date={Day.date} datetxt={DayID.toUpperCase()} />
       <div className="section-1">{Day.intro}</div>
 
       <div className="section-2">
@@ -51,7 +43,7 @@ const Daydetails = () => {
       </div>
       <div className="section-3">
         <div className="hatchline-banner"></div>
-        <div className="section-subhead">SAPTAMI LINE UP</div>
+        <div className="section-subhead">{DayID.toUpperCase() + " LINE UP!"}</div>
         Brace Yourself for an Unforgettable Showcase, As We Proudly Unveil Our Stellar Lineup
       </div>
       <div className="section-4">

@@ -36,33 +36,6 @@
   background-size: contain;
 }
 
-.section-head{
-  display: flex;
-  align-items: last baseline;
-  justify-content: center;
-  font-family: "Sedgwick Ave Display";
-  gap: 2rem;
-}
-
-.section-head .full-date{
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.full-date div{
-  font-size: 4rem;
-}
-
-.full-date p{
-  font-size: 2rem;
-}
-
-.section-head .day-nickname{
-  font-size: 3rem;
-}
-
 .section-1, .section-2, .section-3, .section-5{
   padding-top: 5rem;
   font-size: 1.5rem;
