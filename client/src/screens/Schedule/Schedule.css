@@ -2,58 +2,8 @@
     /* font-family: "Sedgwick Ave Display", cursive; */
     padding: 5rem;
     font-size: 30px;
-    min-width: 460px;
-    /* transform: scale(calc(100vw/450px)); */
-}
-
-.schedule .intro {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    margin-bottom: 5rem;
-}
-
-.schedule .intro .eheading {
-    z-index: 1;
-    position: relative;
-    font-size: 2.5rem;
-}
-
-.schedule .intro .eheading::before {
-    content: "";
-    background-image: url("./assets/imgs/Schedule/schedule-before.png");
-    background-size: cover;
-    position: absolute;
-    opacity: 0.5;
-    box-shadow: inset 0 0 30px 30px #171717;
-    top: -3rem;
-    left: -65px;
-    z-index: -1;
-    aspect-ratio: 750/250;
-    /* height: 150px; */
-    width: 450px;
-}
-
-.schedule .intro .paragraph {
-    line-height: 1.5em;
-    background-color: transparent;
-    position: relative;
-    z-index: 1;
-    padding-top: 0.3rem;
-    width: min(70ch, 100%);
-    color: #ffffff8c;
-    text-align: center;
-}
-
-.schedule .intro .paragraph span {
-    font-weight: 900;
-    background-image: linear-gradient(45deg, #5075f6, #cd40ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    /* min-width: 525px; */
+    color: #fff;
 }
 
 .schedule .event {
@@ -86,40 +36,6 @@
     background-repeat: no-repeat;
 }
 
-.schedule .event .eheading {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    width: max-content;
-    position: relative;
-    z-index: 2;
-}
-
-.schedule .event .eheading .before {
-    position: absolute;
-    z-index: -1;
-    aspect-ratio: 454/110;
-    width: 20rem;
-    top: 3.4rem;
-    left: 6.5rem;
-    background-size: contain;
-    background-color: transparent;
-    background-repeat: no-repeat;
-}
-
-.saptami {
-    background-image: url("/assets/imgs/Schedule/saptami-text.png");
-}
-.ashtami {
-    background-image: url("/assets/imgs/Schedule/ashtami-text.png");
-}
-.navami {
-    background-image: url("/assets/imgs/Schedule/navami-text.png");
-}
-.dashami {
-    background-image: url("/assets/imgs/Schedule/dashami-text.png");
-}
-
 .schedule .saptami-back .event-content::before {
     background-image: url("/assets/imgs/Schedule/saptami.png");
 }
@@ -133,12 +49,12 @@
     background-image: url("/assets/imgs/Schedule/dashami.png");
 }
 
-.schedule .event .eheading .big {
+.eheading .big {
     position: relative;
     z-index: 1;
     font-size: 5rem;
 }
-.schedule .event .eheading .small {
+.eheading .small {
     position: relative;
     z-index: 1;
     line-height: 0.8em;
@@ -146,16 +62,29 @@
     width: 100%;
 }
 
-.schedule .event .event-content .timings {
+.schedule .heading .title{
+	width: min(15ch, 100%);
+	text-align: center;
+}
+
+.schedule * {
+    background-color: transparent;
+}
+
+.schedule .event .event-content .list .timings {
     display: flex;
     align-items: space-between;
     flex-direction: column;
     gap: 2rem;
-    width: 26rem;
-    color: white;
+    width: 100%;
+    flex-grow: 1;
 }
 
-.schedule .event .event-content .timings .row {
+.schedule .event .event-content .list {
+    width: 40%;
+}
+
+.schedule .event .event-content .list .timings .row {
     display: flex;
     align-items: center;
     gap: 0.3rem;
@@ -186,7 +115,17 @@
     width: 30ch;
 }
 
+.left-padding {
+    margin-left: 3rem;
+}
+
 @media screen and (max-width: 1150px) {
+    .schedule .event .event-content .list {
+        width: 100%;
+    }
+    .left-padding {
+        margin: 0;
+    }
     .schedule {
         padding: 2rem;
     }
@@ -209,11 +148,29 @@
 }
 
 @media screen and (max-width: 532px) {
+    .schedule .event .event-content{
+        padding: 1rem;
+        padding-top: 3rem;
+    }
+    .schedule .event .event-content .list,
+    .schedule .heading .sub-title {
+        font-size: 1rem;
+    }
     .schedule {
         padding: 0.5rem;
+        padding-top: 5rem;
     }
 
-    .schedule .event .eheading {
-        transform: scale(calc(100vw / 455px));
+    .schedule .heading {
+        padding: 0;
+    }
+
+    .schedule .heading .sub-title{
+        width: 95%;
+        text-align: center;
+    }
+
+    .schedule .event .event-content .description {
+        display: none;
     }
 }

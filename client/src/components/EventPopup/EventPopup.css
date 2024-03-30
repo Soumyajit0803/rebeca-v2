@@ -1,0 +1,106 @@
+.event-popup {
+    font-size: 1.7rem;
+    color: #fff !important;
+    padding: 4rem;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.event-popup .event-head {
+    font-family: "Sedgwick Ave Display", cursive;
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+}
+
+.event-popup .event-desc {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.event-popup .event-details {
+    position: relative;
+    margin: 5rem 0 1rem 0;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: max-content;
+    gap: 3rem;
+}
+
+.event-popup .event-details > * {
+    position: static;
+    font-size: 1.5rem !important;
+}
+
+.event-popup .event-details .event-time::before {
+    content: "TIME";
+    font-size: 2.5rem;
+    font-family: "Sedgwick Ave Display", cursive;
+    position: absolute;
+    top: -1.1em;
+}
+
+.event-popup .event-details .event-venue {
+    width: 15ch;
+}
+
+.event-popup .event-details .event-venue::before {
+    content: "VENUE";
+    font-size: 2.5rem;
+    font-family: "Sedgwick Ave Display", cursive;
+    position: absolute;
+    top: -1.1em;
+}
+
+.event-popup .rules-list-contain {
+    padding: 1rem;
+}
+
+.event-popup .rules-list-contain .rules-list .rule-item {
+    padding-bottom: 0.5em;
+}
+
+.event-popup .judges {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.event-popup .judges .judge .judge-pic {
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 2px -2px 0 3px var(--accent1);
+}
+.event-popup .judges .judge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 10rem;
+}
+
+.event-popup .judges .judge span {
+    font-size: 1.4rem;
+    font-family: "Sedgwick Ave Display", cursive;
+}
+
+@media screen and (max-width:500px) {
+    .event-popup {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .event-popup .judges {
+        justify-content: center;
+    }
+}
+
+.event-popup {
+    padding-top: 6rem;
+}
