@@ -1,0 +1,156 @@
+.day-details-wrapper {
+  /* padding: 1rem; */
+  padding: 5rem;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  position:relative;
+  color: white;
+  overflow-x: hidden;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.behind-banner{
+  z-index: -1;
+  position:absolute;
+  top: 10%;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  mask-image: linear-gradient(to bottom,transparent,  black 50%, transparent)
+}
+
+.hatchline-banner{
+  background: url("/assets/imgs/hatch_lines.png");
+  z-index: -1;
+  position:absolute;
+  right: -20rem;
+  top: 2rem;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.tonight-special{
+  font-size: 6rem;
+  font-weight: 900;
+  position:absolute;
+  text-align: right;
+  transform: rotate(90deg);
+  top: 20rem;
+  right: -10vw;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.section-1, .section-2, .section-3, .section-5{
+  padding-top: 5rem;
+  font-size: 1.5rem;
+}
+
+.section-1, .section-2{
+  width: min(50ch, 100%);
+}
+
+.section-3{
+  position: relative;
+}
+
+.section-4{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.section-4 img{
+  width: 15rem;
+}
+
+.section-subhead{
+  font-size: 3rem;
+  color :white;
+  font-family: "Sedgwick Ave Display";
+}
+
+.artist-banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.artist-label{
+  font-family: "Sedgwick Ave Display";
+  font-size: 3rem;
+  color: white;
+  position: relative;
+  bottom: 3rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .section-1, .section-2, .section-3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .day-details-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 8rem;
+  }
+
+  .section-head{
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .section-head .full-date{
+    flex-direction: row;
+    align-items: last baseline;
+  }
+
+  .behind-banner, .hatchline-banner{
+    left: 0;
+  }
+
+  .tonight-special{
+    display: none;
+  }
+}
+
+.section-event{
+  /* background-color: green; */
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.event-controller{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.controller-btn{
+  color: red;
+  cursor: pointer;
+}
+
+
+

@@ -1,0 +1,5 @@
+.fancy-font {
+    font-size: inherit;
+    font-family: "Sedgwick Ave Display", cursive;
+    background-image: linear-gradient(var(--acsent1), var(--ascent2));
+}
