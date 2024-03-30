@@ -14,7 +14,7 @@
     position: absolute;
     z-index: -1;
     aspect-ratio: 454/110;
-    width: 20rem;
+    width: 16rem;
     left: 40%;
     bottom: 15px;
     background-size: contain;
@@ -35,24 +35,38 @@
     width: 100%;
 }
 
+.eheading .small .big1 {
+    padding-left: 0.5ch;
+    font-size: 3.5rem;
+}
+
 .saptami {
-    background-image: url("./assets/imgs/Schedule/saptami-text.png");
+    background-image: url("/assets/imgs/Schedule/saptami-text.png");
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
 }
 .ashtami {
-    background-image: url("./assets/imgs/Schedule/ashtami-text.png");
+    background-image: url("/assets/imgs/Schedule/ashtami-text.png");
 }
 .navami {
-    background-image: url("./assets/imgs/Schedule/navami-text.png");
+    background-image: url("/assets/imgs/Schedule/navami-text.png");
 }
 .dashami {
-    background-image: url("./assets/imgs/Schedule/dashami-text.png");
+    background-image: url("/assets/imgs/Schedule/dashami-text.png");
 }
 
 @media screen and (max-width: 440px) {
     .eheading .before {
-        width: 60vw;
+        width: 57vw;
+    }
+
+    .eheading .big,
+    .eheading .small .big1 {
+        font-size: 2.75rem;
+    }
+
+    .eheading .small {
+        font-size: 1.5rem;
     }
 }

@@ -1,12 +1,13 @@
 {
     "saptami": {
-        "date": "23",
-        "nightType": "Classical Night",
+        "date": "18",
+        "nightType": "The Classical Night",
         "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
         "significance": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
         "lineUps": ["artist1", "artist2", "artist3"],
-        "eventList": {
-            "Inauguration1": {
+        "eventList": [
+            {
+                "eventName":"Inauguration1",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -22,7 +23,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration2": {
+            {
+                "eventName":"Inauguration2",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -38,7 +40,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration3": {
+            {
+                "eventName":"Inauguration3",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -54,7 +57,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration4": {
+            {
+                "eventName":"Inauguration4",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -70,7 +74,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration5": {
+            {
+                "eventName":"Inauguration5",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -86,7 +91,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration6": {
+            {
+                "eventName":"Inauguration6",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -102,7 +108,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration7": {
+            {
+                "eventName":"Inauguration7",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -118,7 +125,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration8": {
+            {
+                "eventName":"Inauguration8",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -134,16 +142,17 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             }
-        }
+        ]
     },
     "ashtami": {
-        "date": "20",
-        "nightType": "Classical Night",
+        "date": "19",
+        "nightType": "The BEings Night",
         "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
         "significance": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
         "lineUps": ["artist1", "artist2", "artist3"],
-        "eventList": {
-            "Inauguration1": {
+        "eventList": [
+            {
+                "eventName":"Inauguration1",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -159,7 +168,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration2": {
+            {
+                "eventName":"Inauguration2",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -175,7 +185,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration3": {
+            {
+                "eventName":"Inauguration3",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -191,7 +202,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration4": {
+            {
+                "eventName":"Inauguration4",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -207,7 +219,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration5": {
+            {
+                "eventName":"Inauguration5",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -223,7 +236,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration6": {
+            {
+                "eventName":"Inauguration6",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -239,7 +253,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration7": {
+            {
+                "eventName":"Inauguration7",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -255,7 +270,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration8": {
+            {
+                "eventName":"Inauguration8",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -271,16 +287,17 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             }
-        }
+        ]
     },
     "navami": {
         "date": "20",
-        "nightType": "Classical Night",
+        "nightType": "The Kolkata Night",
         "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
         "significance": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
         "lineUps": ["artist1", "artist2", "artist3"],
-        "eventList": {
-            "Inauguration1": {
+        "eventList": [
+            {
+                "eventName":"Inauguration1",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -296,7 +313,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration2": {
+            {
+                "eventName":"Inauguration2",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -312,7 +330,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration3": {
+            {
+                "eventName":"Inauguration3",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -328,7 +347,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration4": {
+            {
+                "eventName":"Inauguration4",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -344,7 +364,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration5": {
+            {
+                "eventName":"Inauguration5",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -360,7 +381,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration6": {
+            {
+                "eventName":"Inauguration6",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -376,7 +398,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration7": {
+            {
+                "eventName":"Inauguration7",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -392,7 +415,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration8": {
+            {
+                "eventName":"Inauguration8",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -408,16 +432,17 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             }
-        }
+        ]
     },
     "dashami": {
-        "date": "20",
-        "nightType": "Classical Night",
+        "date": "21",
+        "nightType": "The Mumbai Night",
         "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
         "significance": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
         "lineUps": ["artist1", "artist2", "artist3"],
-        "eventList": {
-            "Inauguration1": {
+        "eventList": [
+            {
+                "eventName":"Inauguration1",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -433,7 +458,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration2": {
+            {
+                "eventName":"Inauguration2",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -449,7 +475,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration3": {
+            {
+                "eventName":"Inauguration3",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -465,7 +492,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration4": {
+            {
+                "eventName":"Inauguration4",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -481,7 +509,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration5": {
+            {
+                "eventName":"Inauguration5",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -497,7 +526,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration6": {
+            {
+                "eventName":"Inauguration6",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -513,7 +543,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration7": {
+            {
+                "eventName":"Inauguration7",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -529,7 +560,8 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             },
-            "Inauguration8": {
+            {
+                "eventName":"Inauguration8",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -545,6 +577,6 @@
                 "judges": ["person", "person", "person", "person"],
                 "artists": ["person", "person", "person", "person"]
             }
-        }
+        ]
     }
 }

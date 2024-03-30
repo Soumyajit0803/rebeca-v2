@@ -147,26 +147,26 @@
     }
 }
 
-@media screen and (max-width: 532px) {
+@media screen and (max-width: 580px) {
+    .schedule .heading {
+        padding: 0;
+        padding-top: 64px;
+    }
     .schedule .event .event-content{
         padding: 1rem;
         padding-top: 3rem;
     }
+    .schedule .heading .sub-title{
+        width: 100%;
+    }
     .schedule .event .event-content .list,
-    .schedule .heading .sub-title {
-        font-size: 1rem;
-    }
     .schedule {
+        font-size: 20px;
         padding: 0.5rem;
-        padding-top: 5rem;
-    }
-
-    .schedule .heading {
-        padding: 0;
     }
 
     .schedule .heading .sub-title{
-        width: 95%;
+        font-size: 20px;
         text-align: center;
     }
 
