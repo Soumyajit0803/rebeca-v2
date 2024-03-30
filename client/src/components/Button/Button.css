@@ -1,5 +1,5 @@
-.button{
-	padding: 12px 20px;
+.button {
+	padding: 12px 25px;
 	border-radius: 5px;
 	outline: none;
 	border: none;
@@ -8,14 +8,40 @@
 	font-weight: 600;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: center;
-	gap: 10px;
+	
+	gap: 20px;
 	/* line-height: 18px; */
 	background-color: var(--primary);
-	
+	transition: 0.25s all;
+	position: relative;
 }
-.button .start-icon .material-icons, .button .end-icon .material-icons{
+.button .before {
+	font-size: 12px;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	right: 1rem;
+	top: 2px;
+	opacity: 0;
+	height: 100%;
+	width: 0;
+	transition: all 0.2s linear 0s;
+	color: white;
+}
+.button .before .material-icons {
+	font-size: 15px;
+}
+.button:hover .before {
+	opacity: 1;
+	text-indent: 0px;
+	width: 0px;
+}
+.button .start-icon .material-icons,
+.button .end-icon .material-icons,
+.button .material-icons {
 	font-size: 15px;
 	height: 15px;
 	display: flex;
@@ -23,189 +49,192 @@
 	align-items: center;
 	justify-content: center;
 }
+.button:hover {
+	background-color: var(--primaryDark);
+	padding: 12px 35px 12px 15px;
+}
 
-
-.button.small{
+.button.small {
 	font-size: 12px;
 }
-.button.large{
+.button.large {
 	font-size: 20px;
 	padding: 15px 25px;
 	font-weight: 600;
 }
-.button.icon{
+.button.icon {
 	padding: 10px;
 	border-radius: 50%;
 }
-.button.filled.orange{
+.button.filled.orange {
 	background-color: var(--orange);
 	transition: 0.25s all;
 }
-.button.filled.orange:hover{
+.button.filled.orange:hover {
 	background-color: var(--orange-dark);
 }
-.button.filled.white{
+.button.filled.white {
 	background-color: white;
 	transition: 0.25s all;
 	color: black;
 }
-.button.filled.white:hover{
+.button.filled.white:hover {
 	background-color: rgb(229, 227, 227);
 }
-.button.filled.yellow{
+.button.filled.yellow {
 	background-color: var(--yellow);
 	transition: 0.25s all;
 }
-.button.filled.yellow:hover{
+.button.filled.yellow:hover {
 	background-color: var(--yellow-dark);
 }
-.button.filled.teal{
+.button.filled.teal {
 	background-color: var(--teal);
 	transition: 0.25s all;
 }
-.button.filled.teal:hover{
+.button.filled.teal:hover {
 	background-color: var(--teal-dark);
 }
-.button.filled.purple{
+.button.filled.purple {
 	background-color: var(--purple);
 	transition: 0.25s all;
 }
-.button.filled.purple:hover{
+.button.filled.purple:hover {
 	background-color: var(--purple-dark);
 }
-.button.filled.red{
+.button.filled.red {
 	background-color: var(--red);
 	transition: 0.25s all;
 }
-.button.filled.red:hover{
+.button.filled.red:hover {
 	background-color: var(--red-dark);
 }
-.button.filled.black{
+.button.filled.black {
 	background-color: rgb(30, 30, 30);
 	transition: 0.25s all;
 }
-.button.filled.black:hover{
+.button.filled.black:hover {
 	background-color: black;
 }
-.button.outlined{
+.button.outlined {
 	background-color: transparent;
 }
-.button.outlined:hover{
+.button.outlined:hover {
 	color: white;
 }
-.button.outlined.orange{
+.button.outlined.orange {
 	border: 2px solid var(--orange);
 	transition: 0.25s all;
 	color: var(--orange);
 }
-.button.outlined.orange:hover{
+.button.outlined.orange:hover {
 	background-color: var(--orange-dark);
 	color: white;
 }
-.button.outlined.white{
+.button.outlined.white {
 	/* background-color: white; */
 	border: 2px solid white;
 	transition: 0.25s all;
 	color: white;
 }
-.button.outlined.white:hover{
+.button.outlined.white:hover {
 	background-color: rgb(229, 227, 227);
 	color: black;
 }
-.button.outlined.yellow{
+.button.outlined.yellow {
 	border: 2px solid var(--yellow);
 	transition: 0.25s all;
 	color: var(--yellow);
 }
-.button.outlined.yellow:hover{
+.button.outlined.yellow:hover {
 	background-color: var(--yellow-dark);
 	color: white;
 }
-.button.outlined.teal{
+.button.outlined.teal {
 	border: 2px solid var(--teal);
 	transition: 0.25s all;
 	color: var(--teal);
 }
-.button.outlined.teal:hover{
+.button.outlined.teal:hover {
 	background-color: var(--teal-dark);
 	color: white;
 }
-.button.outlined.purple{
+.button.outlined.purple {
 	border: 2px solid var(--purple);
 	transition: 0.25s all;
 	color: var(--purple);
 }
-.button.outlined.purple:hover{
+.button.outlined.purple:hover {
 	background-color: var(--purple-dark);
 	color: white;
 }
-.button.outlined.black{
+.button.outlined.black {
 	border: 2px solid rgb(21, 21, 21);
 	transition: 0.25s all;
 	color: rgb(21, 21, 21);
 }
-.button.outlined.black:hover{
+.button.outlined.black:hover {
 	background-color: black;
 	color: white;
 }
-.button.outlined.red{
+.button.outlined.red {
 	border: 2px solid var(--red);
 	transition: 0.25s all;
 	color: var(--red);
 }
-.button.outlined.red:hover{
+.button.outlined.red:hover {
 	background-color: var(--red-dark);
 	color: white;
 }
-.button.text{
+.button.text {
 	background-color: transparent;
 }
-.button.text.orange{
+.button.text.orange {
 	color: var(--orange);
 	transition: 0.25s all;
 }
-.button.text.orange:hover{
+.button.text.orange:hover {
 	color: var(--orange-dark);
 }
-.button.text.yellow{
+.button.text.yellow {
 	color: var(--yellow);
 	transition: 0.25s all;
 }
-.button.text.yellow:hover{
+.button.text.yellow:hover {
 	color: var(--yellow-dark);
 }
-.button.text.teal{
+.button.text.teal {
 	color: var(--teal);
 	transition: 0.25s all;
 }
-.button.text.teal:hover{
+.button.text.teal:hover {
 	color: var(--teal-dark);
 }
-.button.text.black{
+.button.text.black {
 	color: var(--black);
 	transition: 0.25s all;
 }
-.button.text.black:hover{
+.button.text.black:hover {
 	color: var(--black-dark);
 }
-.button.text.purple{
+.button.text.purple {
 	color: var(--purple);
 	transition: 0.25s all;
 }
-.button.text.purple:hover{
+.button.text.purple:hover {
 	color: var(--purple-dark);
 }
-.button .loading{
+.button .loading {
 	animation: loading infinite linear 1s;
 }
 @keyframes loading {
-	0%{
+	0% {
 		transform: rotate(0deg);
 	}
-	50%{
+	50% {
 		transform: rotate(-180deg);
 	}
-	100%{
+	100% {
 		transform: rotate(-360deg);
 	}
 }

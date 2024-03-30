@@ -14,11 +14,13 @@
 
 	--accent1: #5075f6;
 	--accent1-50: rgba(80, 116, 246, 0.5);
+	--accent1dark: #3955ba;
 	--accent2: #705dea;
 	--accent3: #cd40ff;
 
 	--primary: var(--accent1);
 	--primary50: var(--accent1-50);
+	--primaryDark: var(--accent1dark);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -77,7 +79,7 @@ button {
 	transition: border-color 0.25s;
 }
 button:hover {
-	border-color: #646cff;
+	/* border-color: #646cff; */
 }
 button:focus,
 button:focus-visible {
