@@ -5,6 +5,7 @@ import Schedule from "./screens/Schedule/Schedule";
 import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
+import EventPopup from "./screens/EventPopup/EventPopup";
 
 const AllRoutes = ({
   login,
@@ -61,6 +62,7 @@ const AllRoutes = ({
       >
       </Route>
       <Route exact path="/events/:DayID" element={<Daydetails />} />
+      <Route exact path="/eventdata/:eventName" element={<EventPopup />} />
       <Route
         exact
         path="/sponsorship"

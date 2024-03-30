@@ -1,594 +1,598 @@
 {
-    "saptami": {
-        "eventList": [
-            {
-                "eventName":"saptami-I1",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"saptami-I2",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"saptami-I3",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"saptami-I4",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"saptami-I5",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"saptami-I6",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"saptami-I7",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"saptami-I8",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            }
-        ]
-    },
-    "ashtami": {
-        "eventList": [
-            {
-                "eventName":"ashtami-I1",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"ashtami-I2",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"ashtami-I3",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"ashtami-I4",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"ashtami-I5",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"ashtami-I6",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"ashtami-I7",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"ashtami-I8",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            }
-        ]
-    },
-    "navami": {
-        "eventList": [
-            {
-                "eventName":"navami-I1",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"navami-I2",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"navami-I3",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"navami-I4",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"navami-I5",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"navami-I6",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"navami-I7",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"navami-I8",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            }
-        ]
-    },
-    "dashami": {
-        "eventList": [
-            {
-                "eventName":"dashami-I1",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"dashami-I2",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"dashami-I3",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"dashami-I4",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"dashami-I5",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"dashami-I6",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"dashami-I7",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            },
-            {
-                "eventName":"dashami-I8",
-                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
-                "time": "10 AM",
-                "venue": "Lords Ground",
-                "rules": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
-                ],
-                "judges": ["person", "person", "person", "person"],
-                "artists": ["person", "person", "person", "person"]
-            }
-        ]
-    }
+  "saptami": {
+    "majorEvents": [0, 3, 6],
+    "eventList": [
+      {
+        "eventName": "saptami-I1",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "saptami-I2",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "saptami-I3",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "saptami-I4",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "saptami-I5",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "saptami-I6",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "saptami-I7",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "saptami-I8",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      }
+    ]
+  },
+  "ashtami": {
+    "majorEvents": [0, 3, 6],
+    "eventList": [
+      {
+        "eventName": "ashtami-I1",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "ashtami-I2",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "ashtami-I3",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "ashtami-I4",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "ashtami-I5",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "ashtami-I6",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "ashtami-I7",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "ashtami-I8",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      }
+    ]
+  },
+  "navami": {
+    "majorEvents": [0, 3, 6],
+    "eventList": [
+      {
+        "eventName": "navami-I1",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "navami-I2",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "navami-I3",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "navami-I4",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "navami-I5",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "navami-I6",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "navami-I7",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "navami-I8",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      }
+    ]
+  },
+  "dashami": {
+    "majorEvents": [0, 3, 6],
+    "eventList": [
+      {
+        "eventName": "dashami-I1",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "dashami-I2",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "dashami-I3",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "dashami-I4",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "dashami-I5",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "dashami-I6",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "dashami-I7",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      },
+      {
+        "eventName": "dashami-I8",
+        "desc": "This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
+        "time": "10 AM",
+        "venue": "Lords Ground",
+        "rules": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget"
+        ],
+        "judges": ["person", "person", "person", "person"],
+        "artists": ["person", "person", "person", "person"]
+      }
+    ]
+  }
 }

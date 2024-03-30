@@ -8,8 +8,7 @@
   position:relative;
   color: white;
   overflow-x: hidden;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  line-height: 200%;
 }
 
 .behind-banner{
@@ -41,27 +40,29 @@
   font-weight: 900;
   position:absolute;
   text-align: right;
+  width: 10ch;
   transform: rotate(90deg);
   top: 20rem;
   right: -10vw;
   z-index: 0;
   opacity: 0.4;
+  line-height: 100%;
 }
 
-.section-1, .section-2, .section-3, .section-5{
+.day-details-wrapper .section-1, .section-2, .section-3, .section-5{
   padding-top: 5rem;
   font-size: 1.5rem;
 }
 
-.section-1, .section-2{
+.day-details-wrapper .section-1, .section-2{
   width: min(50ch, 100%);
 }
 
-.section-3{
+.day-details-wrapper .section-3{
   position: relative;
 }
 
-.section-4{
+.day-details-wrapper .section-4{
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -69,7 +70,7 @@
   width: 100%;
 }
 
-.section-4 img{
+.day-details-wrapper .section-4 img{
   width: 15rem;
 }
 
@@ -77,6 +78,7 @@
   font-size: 3rem;
   color :white;
   font-family: "Sedgwick Ave Display";
+  padding-bottom: 2rem;
 }
 
 .artist-banner{
@@ -95,7 +97,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .section-1, .section-2, .section-3{
+  .day-details-wrapper .section-1, .section-2, .section-3{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,8 +106,8 @@
   }
 
   .day-details-wrapper{
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 8rem;
   }
 

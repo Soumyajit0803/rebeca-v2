@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Button from "../Button/Button.jsx";
+import Button from "../../components/Button/Button";
 import "./EventPopup.css";
-import events from "../../assets/data/events.json";
+import events from "../../../src/assets/data/events.json";
+import { useParams } from "react-router-dom";
 
 var eventName = "Kolkata Night";
 var desc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget dignissim velit rhoncus ut. Quisque efficitur velit ac euismod cursus. Curabitur at erat eu mi gravida scelerisque. Aenean quis interdum nibh.`;
@@ -20,7 +21,8 @@ var rules = [
 
 var judges = ["person", "person", "person", "person"];
 
-const EventPopup = ({ eventName }) => {
+const EventPopup = () => {
+    const {eventName} = useParams();
     var [eventInfo, setEventInfo] = useState(null);
     function findTheDay() {
         for (let d in events) {
@@ -34,7 +36,7 @@ const EventPopup = ({ eventName }) => {
                 i += 1;
             }
         }
-        console.log("did not find anything");;
+        console.log("did not find anything\n"+eventName);;
     }
     if (events && !eventInfo) findTheDay();
 
@@ -88,9 +90,9 @@ const EventPopup = ({ eventName }) => {
 function Check() {
     return (
         <EventPopup
-            eventName={"ashtami-Inauguration5"}
+            // eventName={"ashtami-Inauguration5"}
         />
     );
 }
 
-export default Check;
+export default EventPopup;
