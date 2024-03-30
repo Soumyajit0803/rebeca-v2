@@ -5,6 +5,7 @@ import Eventcard from "../../components/Eventcard/Eventcard";
 
 import Rebeca from "../../../public/assets/eventDetails.json";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
+import { useParams } from "react-router-dom";
 
 const Artist = ({ artistName }) => {
   return (
@@ -16,7 +17,9 @@ const Artist = ({ artistName }) => {
 };
 
 const Daydetails = () => {
-  const Day = Rebeca.saptami;
+  const {DayID} = useParams();
+  console.log("Inside the daydetails");
+  const Day = Rebeca[DayID];
 
   const [controlMargin, setControlMargin] = useState(0);
   const handleMargin = (direction) => {
