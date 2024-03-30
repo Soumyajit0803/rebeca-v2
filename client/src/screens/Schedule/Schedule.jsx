@@ -1,6 +1,6 @@
 import React from "react";
 import "./Schedule.css";
-import Heading from "../Heading/Heading";   
+import Heading from "../../components/Heading/Heading";   
 
 function ScheduleIntro() {
     return (

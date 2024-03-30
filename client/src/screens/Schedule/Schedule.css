@@ -108,29 +108,29 @@
 }
 
 .saptami {
-    background-image: url("./assets/imgs/Schedule/saptami-text.png");
+    background-image: url("/assets/imgs/Schedule/saptami-text.png");
 }
 .ashtami {
-    background-image: url("./assets/imgs/Schedule/ashtami-text.png");
+    background-image: url("/assets/imgs/Schedule/ashtami-text.png");
 }
 .navami {
-    background-image: url("./assets/imgs/Schedule/navami-text.png");
+    background-image: url("/assets/imgs/Schedule/navami-text.png");
 }
 .dashami {
-    background-image: url("./assets/imgs/Schedule/dashami-text.png");
+    background-image: url("/assets/imgs/Schedule/dashami-text.png");
 }
 
 .schedule .saptami-back .event-content::before {
-    background-image: url("./assets/imgs/Schedule/saptami.png");
+    background-image: url("/assets/imgs/Schedule/saptami.png");
 }
 .schedule .ashtami-back .event-content::before {
-    background-image: url("./assets/imgs/Schedule/ashtami.png");
+    background-image: url("/assets/imgs/Schedule/ashtami.png");
 }
 .schedule .navami-back .event-content::before {
-    background-image: url("./assets/imgs/Schedule/navami.png");
+    background-image: url("/assets/imgs/Schedule/navami.png");
 }
 .schedule .dashami-back .event-content::before {
-    background-image: url("./assets/imgs/Schedule/dashami.png");
+    background-image: url("/assets/imgs/Schedule/dashami.png");
 }
 
 .schedule .event .eheading .big {

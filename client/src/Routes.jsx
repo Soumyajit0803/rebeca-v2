@@ -1,9 +1,8 @@
 import React, {useEffect} from "react";
 import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./screens/Home/Home";
-import Schedule from "./components/Schedule/Schedule";
-import Sponsorship from "./components/Sponsors/Sponsorship";
-import Daydetails from "./components/Daydetails/Daydetails";
+import Schedule from "./screens/Schedule/Schedule";
+import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 
 const AllRoutes = ({

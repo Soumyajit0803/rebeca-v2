@@ -175,11 +175,11 @@ const Navbar = ({
 								Our Team
 							</NavLink>
 							<NavLink
-								id="nav-contact"
-								to="/contact"
+								id="nav-merchandise"
+								to="/merchandise"
 								className={"item"}
 							>
-								Contact Us
+								Merchandise
 							</NavLink>
 							<NavLink id="nav-faq" to="/faq" className={"item"}>
 								FAQs
@@ -262,11 +262,11 @@ const Navbar = ({
 						About Us
 					</NavLink>
 					<NavLink
-						to="/contact"
+						to="/merchandise"
 						onClick={handleLinkClick}
 						className={"item"}
 					>
-						Contact Us
+						Merchandise
 					</NavLink>
 					<NavLink
 						onClick={handleLinkClick}
