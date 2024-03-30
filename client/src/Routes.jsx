@@ -46,7 +46,7 @@ const AllRoutes = ({
 			></Route>
 			<Route
 				exact
-				path="/schedule"
+				path="/events"
 				element={
 					// <Schedule
 					// 	onAuthClose={onAuthClose}
