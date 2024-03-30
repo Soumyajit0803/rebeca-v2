@@ -1,15 +1,18 @@
-.home{
+.home {
 	position: relative;
 	font-size: 30px;
+	max-width: 100%;
+	/* border: 1px solid red; */
+	/* overflow-x: hidden; */
 }
-.home .wave-bg{
+.home .wave-bg {
 	position: absolute;
 	z-index: -10;
 	opacity: 80%;
 	width: 100%;
 	top: 80vh;
 }
-.home .wave-bg img{
+.home .wave-bg img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -19,7 +22,7 @@
 }
 .home .section-1 {
 	height: 100vh;
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 }
 .home .section-1 .heading {
@@ -27,7 +30,7 @@
 	margin-top: 50px;
 }
 .home .section-1 .cover-img {
-	width: 55%;
+	width: 60%;
 	position: absolute;
 	bottom: 0;
 	border: 0px solid red;
@@ -60,7 +63,7 @@
 	align-items: flex-start;
 	justify-content: flex-start;
 	gap: 50px;
-	width: 150vw;
+	width: max-content;
 	/* height: 300px; */
 	border: 0px solid red;
 	margin-left: 0;
@@ -72,7 +75,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	border: 0px solid red;
+	/* border: 1px solid red; */
 	width: fit-content;
 }
 .home .section-3 .list .artist .img {
@@ -88,6 +91,9 @@
 	position: absolute;
 	bottom: 0;
 	line-height: 70%;
+	/* border: 1px solid red; */
+	line-break: strict;
+	
 }
 .home .section-3 .controls {
 	display: flex;
@@ -137,12 +143,93 @@
 	line-height: 1.6;
 	width: 100%;
 }
-.home .section-4 .collage{
+.home .section-4 .collage {
 	width: 100%;
 	margin: auto;
 }
-.home .section-4 .collage img{
+.home .section-4 .collage img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+}
+@media only screen and (max-width: 1100px),
+	only screen and (max-device-width: 1100px) {
+	.home {
+		font-size: 20px;
+		line-height: 1.4;
+	}
+	.home .section-1 .cover-img {
+		width: 80%;
+	}
+	.home .section-2 .banner .display-font {
+		font-size: 30px;
+		text-align: center;
+	}
+	.home .section-3 .list{
+		gap: 20px;
+	}
+	.home .section-4{
+		margin-top: 50px;
+	}
+	.home .section-4 .row .heading .title{
+		font-size: 50px;
+	}
+	.home .section-4 .row .heading .sub-title{
+		font-size: 30px;
+	}
+	.home .section-4 .row .contents{
+		font-size: 20px;
+	}
+
+}
+
+@media only screen and (max-width: 480px),
+	only screen and (max-device-width: 480px) {
+	.home .section-1 {
+		height: 80vh;
+	}
+	.home .section-1 .cover-img {
+		width: 150%;
+	}
+	.home .section-2 .banner {
+		gap: 20px;
+		padding: 40px 20px;
+	}
+	.home .section-2 .banner .display-font {
+		font-size: 30px;
+		text-align: center;
+	}
+	.home .section-3 .list{
+		width: 100%;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+
+	}
+	.home .section-3 .list .artist .img{
+		height: 200px;
+	}
+	.home .section-3 .list .artist .display-font{
+		/* width: 110%; */
+		text-align: center;
+		font-size: 30px;
+	}
+	.home .section-3 .controls{
+		display: none;
+	}
+	.home .section-4 .row{
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		height: fit-content;
+	}
+	.home .section-4 .row .heading{
+		align-items: flex-start;
+		padding: 40px 0;
+	}
+	.home .section-4 .collage{
+		margin: auto;
+		margin-top: 40px;
+		border: 0px solid red;
+	}
 }

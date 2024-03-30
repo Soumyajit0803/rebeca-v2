@@ -45,6 +45,8 @@ const Home = () => {
 			setArtistmargin(artistMargin + move);
 	};
 
+	const { innerWidth: width, innerHeight: height } = window;
+
 	return (
 		<div className="home">
 			<div className="wave-bg">
@@ -112,7 +114,9 @@ const Home = () => {
 					></Heading>
 					<div className="contents">
 						<p>
-							From the pulsating beats of the music to the kaleidoscope of colors lighting up the night sky. Here's to reliving those cherished moments and
+							From the pulsating beats of the music to the
+							kaleidoscope of colors lighting up the night sky.
+							Here's to reliving those cherished moments and
 							having a blast along the way!
 						</p>
 						<Button
@@ -122,7 +126,11 @@ const Home = () => {
 					</div>
 				</div>
 				<div className="collage">
-					<img src="/assets/imgs/home/collage.png" alt="" />
+					{width > 480 ? (
+						<img src="/assets/imgs/home/collage.png" alt="" />
+					) : (
+						<img src="/assets/imgs/home/collage-mobile.png" alt="" />
+					)}
 				</div>
 			</section>
 			<section className="section-5">

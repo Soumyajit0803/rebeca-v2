@@ -37,16 +37,16 @@
 }
 
 .schedule .saptami-back .event-content::before {
-    background-image: url("./assets/imgs/Schedule/saptami.png");
+    background-image: url("/assets/imgs/Schedule/saptami.png");
 }
 .schedule .ashtami-back .event-content::before {
-    background-image: url("./assets/imgs/Schedule/ashtami.png");
+    background-image: url("/assets/imgs/Schedule/ashtami.png");
 }
 .schedule .navami-back .event-content::before {
-    background-image: url("./assets/imgs/Schedule/navami.png");
+    background-image: url("/assets/imgs/Schedule/navami.png");
 }
 .schedule .dashami-back .event-content::before {
-    background-image: url("./assets/imgs/Schedule/dashami.png");
+    background-image: url("/assets/imgs/Schedule/dashami.png");
 }
 
 .eheading .big {
@@ -154,7 +154,7 @@
     }
     .schedule .event .event-content .list,
     .schedule .heading .sub-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .schedule {
         padding: 0.5rem;

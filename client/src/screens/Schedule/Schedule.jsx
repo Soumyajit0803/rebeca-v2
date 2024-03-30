@@ -1,7 +1,7 @@
 import React from "react";
 import "./Schedule.css";
-import Heading from "../Heading/Heading";
-import PujaHeading from "../PujaHeading/PujaHeading";
+import Heading from "../../components/Heading/Heading";
+import PujaHeading from "../../components/PujaHeading/PujaHeading";
 import eventDetails from "../../../public/assets/eventDetails.json";
 
 var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back
