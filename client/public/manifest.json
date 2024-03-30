@@ -1,0 +1,21 @@
+{
+	"short_name": "Rebeca",
+	"description": "Rebeca. Get ready as the 83rd edition of REBECA is right around the corner. BEings, Pujo asche!",
+	"name": "Rebeca",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "16x16",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "/assets/logo/logo_white.png",
+			"sizes": "72x72 96x96 128x128 144x144 196x196",
+			"type": "image/png"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#5075f6",
+	"background_color": "#171717"
+}

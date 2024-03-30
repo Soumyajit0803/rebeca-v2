@@ -187,6 +187,7 @@
 	only screen and (max-device-width: 480px) {
 	.home .section-1 {
 		height: 80vh;
+		margin-top: 10vh;
 	}
 	.home .section-1 .cover-img {
 		width: 150%;
