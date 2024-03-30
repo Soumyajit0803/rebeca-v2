@@ -71,11 +71,13 @@ const Daydetails = () => {
           FocusEvent={Eventcontent[DayID].majorEvents}
         />
         <div className="event-controller">
-          <div className="controller-btn material-icons" onClick={() => handleMargin(1)}>
-            arrow_back
+          <div className="controller-btn" onClick={() => handleMargin(1)}>
+            <span className="material-icons">arrow_back</span>
+            PREVIOUS
           </div>
-          <div className="controller-btn material-icons" onClick={() => handleMargin(0)}>
-            arrow_forward
+          <div className="controller-btn" onClick={() => handleMargin(0)}>
+            NEXT
+            <span className="material-icons">arrow_forward</span>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 .day-details-wrapper {
   /* padding: 1rem; */
   padding: 5rem;
+  padding-top: 7rem;
   display: flex;
   align-items: start;
   justify-content: center;
@@ -141,6 +142,30 @@
   flex-direction: column;
 }
 
+.section-event::-webkit-scrollbar{
+  display: none;
+}
+
+/* .section-event::-webkit-scrollbar {
+  width: 5px !important;
+  background-color: var(--accent1-50);
+  border-radius: 10px !important;
+}
+
+.section-event::-webkit-scrollbar-track{
+  width: 5px !important;
+}
+
+.section-event::-webkit-scrollbar-thumb {
+  width: 5px !important;
+  border-radius: 10px;
+  background: var(--accent2);
+}
+.section-event::-webkit-scrollbar-button,
+.section-event::-webkit-scrollbar-corner {
+  display: none;
+} */
+
 .event-controller{
   display: flex;
   align-items: center;
@@ -150,8 +175,22 @@
 }
 
 .controller-btn{
-  color: red;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-family: "Sedgwick Ave Display";
+  font-size: 1.2rem;
+  transition: all ease 0.2s;
+}
+
+.controller-btn:hover{
+  color: var(--accent1);
+}
+
+.controller-btn::selection{
+  display: none
 }
 
 

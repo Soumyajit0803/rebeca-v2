@@ -33,7 +33,7 @@ const Eventpanel = ({ value, index, FocusEvent }) => {
   );
 };
 
-const Eventcard = ({ controlProp, Eventdata, FocusEvent }) => {
+const Eventcard = ({ controlProp , Eventdata, FocusEvent }) => {
   return (
     <div style={controlProp} className="event-card">
       {Eventdata.map((value, index) => (
