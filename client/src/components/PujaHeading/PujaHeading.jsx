@@ -9,7 +9,7 @@ function PujaHeading({date, datetxt, customcss}) {
             <div className="big">{date}</div>
             <div className="small">
                 <span>April</span>
-                <span style={{ paddingLeft: "1rem", fontSize: "3rem" }}>{datetxt}</span>
+                <span className="big1">{datetxt}</span>
             </div>
         </div>
     );
