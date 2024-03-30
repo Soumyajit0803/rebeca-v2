@@ -4,7 +4,8 @@
 
 .sponsor{
     padding-top:5rem;
-    font-size: 30px;
+    font-size: 25px;
+    line-height: 1.5;
 }
 
 .sponsor .section-1 {
@@ -13,21 +14,26 @@
     /* border: 2px solid red; */
     position: relative;
     /* height: 100vh; */
+    /* overflow-x: hidden; */
+    /* overflow-y: visible; */
 } 
 .sponsor .section-1 .side-img {
     /* width: 50%; */
 	position: absolute;
-	right: 0;
-    bottom:0;
+	right: 0%;
+    top: -200px;
     /* border: 2px solid red; */
     /* bottom: 0; */
 	/* left: 0; */
 	/* transform: translateX(-50%); */
 	z-index: 0;
+    overflow: hidden;
 }
 .sponsor .section-1 .side-img img{
     width: 100%;
     max-width: 844px;
+    object-fit: cover;
+    transform: translateX(15%);
 }
 .sponsor .section-2{
     width: 100%;
@@ -47,7 +53,7 @@
 
 .sponsor .section-2 .flow-chart img{
     width:100%;
-    max-width: 1305px;
+    /* max-width: 1305px; */
 }
 .sponsor .section-2 .cover-pic{
     width:100%;
