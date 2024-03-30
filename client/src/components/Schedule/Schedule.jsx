@@ -1,33 +1,20 @@
 import React from "react";
 import "./Schedule.css";
 import Heading from "../Heading/Heading";
-import EventPopup from "../EventPopup/EventPopup";
 import PujaHeading from "../PujaHeading/PujaHeading";
+import eventDetails from "../../../public/assets/eventDetails.json";
 
 var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back
 with a bang!`;
 
-var eventlist = [
-    ["10AM - 11AM", "Inauguration"],
-    ["11AM", "SaturnWalia"],
-    ["11AM", "Arrival"],
-    ["11AM", "Typist Journey"],
-    ["11AM", "Verse Wars"],
-    ["11AM", "Arrival"],
-    ["11AM", "SaturnWalia"],
-    ["11AM", "Verse Wars"],
-];
-
 var about = `The classical night
 Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.`;
-
-
 
 function EventSection({ date, datetxt, eventlist, topic, about }) {
     var bgsetter = datetxt.toLowerCase();
     return (
         <div className={"event " + bgsetter + "-back"}>
-            <PujaHeading date={date} datetxt={datetxt} customcss={"left-padding"}/>
+            <PujaHeading date={date} datetxt={datetxt} customcss={"left-padding"} />
             <div className={"event-content"}>
                 <div className="list">
                     <div className="timings">
@@ -43,7 +30,7 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
                     </div>
                 </div>
                 <div className="description">
-                    <div className="topic">{topic}</div>
+                    <div className="topic display-font">{topic}</div>
                     <div className="about">{about}</div>
                 </div>
             </div>
@@ -51,39 +38,39 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
     );
 }
 
+
 function Schedule() {
+
+    function eventListSummarizer(eventlist) {
+        var res = []
+        for (let key in eventlist) {
+            console.log(key);
+            res.push([eventlist[key].time, key])
+        }
+        console.log(res);
+        return res
+    }
+
+    
+    var nights = ["saptami", "ashtami", "navami", "dashami"];
     return (
-        <div className="schedule">
-            <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
-            <EventSection
-                date={"20"}
-                datetxt={"SAPTAMI"}
-                eventlist={eventlist}
-                topic={"Classical Night"}
-                about={about}
-            />
-            <EventSection
-                date={"20"}
-                datetxt={"ASHTAMI"}
-                eventlist={eventlist}
-                topic={"Classical Night"}
-                about={about}
-            />
-            <EventSection
-                date={"20"}
-                datetxt={"NAVAMI"}
-                eventlist={eventlist}
-                topic={"Classical Night"}
-                about={about}
-            />
-            <EventSection
-                date={"20"}
-                datetxt={"DASHAMI"}
-                eventlist={eventlist}
-                topic={"Classical Night"}
-                about={about}
-            />
-        </div>
+        eventDetails && (
+            <div className="schedule">
+                <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
+                {nights.map((night, i) => {
+                    return (
+                        <EventSection
+                            date={eventDetails[night].date}
+                            datetxt={night.toUpperCase()}
+                            eventlist={eventListSummarizer(eventDetails[night].eventList)}
+                            topic={eventDetails[night].nightType}
+                            about={eventDetails[night].intro}
+                            key = {i}
+                        />
+                    );
+                })}
+            </div>
+        )
     );
 }
 

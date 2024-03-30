@@ -69,4 +69,4 @@ function Check() {
     return <EventPopup img={"saptami"} title={title} desc={desc} rules={rules} judges={judges} time={"12:00 AM"} venue={"Lords Ground"}/>;
 }
 
-export default EventPopup;
+export default Check;

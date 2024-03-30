@@ -27,8 +27,10 @@
 .heading .title{
 	width: 55%;
 	text-align: center;
+	z-index: 1;
 }
 .heading .sub-title{
 	width: 70%;
 	text-align: center;
+	z-index: 1;
 }

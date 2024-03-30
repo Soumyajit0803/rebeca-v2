@@ -1,4 +1,5 @@
 .eheading {
+    font-family: "Sedgwick Ave Display", cursive;
     display: flex;
     align-items: start;
     flex-direction: column;
