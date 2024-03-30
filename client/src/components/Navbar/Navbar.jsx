@@ -151,15 +151,9 @@ const Navbar = ({
 								className={"item"}
 								to="/events"
 							>
-								Events
+								Events & Schedule
 							</NavLink>
-							<NavLink
-								id="nav-schedule"
-								className={"item"}
-								to="/schedule"
-							>
-								Schedule
-							</NavLink>
+							
 							<NavLink
 								to="/sponsorship"
 								id="nav-sponsorship"
@@ -221,6 +215,15 @@ const Navbar = ({
 				open={drawerOpen}
 				className="drawer"
 			>
+				<div className="bg">
+					<img src="/assets/imgs/menu.png" alt="" />
+				</div>
+				<Link to="/" className="logo">
+					<div>
+						<img src="/assets/logo/logo_white.png" alt="" />
+						{/* REBECA */}
+					</div>
+				</Link>
 				<Button
 					id="drawer-close-btn"
 					onClick={handleDrawerClose}
@@ -231,7 +234,7 @@ const Navbar = ({
 					innerText={<span className="material-icons">close</span>}
 				></Button>
 				{/* <div className="title">Good Times Vacation</div> */}
-				<Divider />
+				{/* <Divider /> */}
 				<div className="nav-items">
 					<NavLink
 						className={"item"}
@@ -242,24 +245,24 @@ const Navbar = ({
 					</NavLink>
 					<NavLink
 						className={"item"}
-						to="/resorts"
+						to="/events"
 						onClick={handleLinkClick}
 					>
-						Resorts
+						Events & Schedule
 					</NavLink>
 					<NavLink
 						className={"item"}
-						to="/membership"
+						to="/sponsorship"
 						onClick={handleLinkClick}
 					>
-						Membership
+						Sponsorship
 					</NavLink>
 					<NavLink
-						to="/about"
+						to="/team"
 						onClick={handleLinkClick}
 						className={"item"}
 					>
-						About Us
+						Our Team
 					</NavLink>
 					<NavLink
 						to="/merchandise"
