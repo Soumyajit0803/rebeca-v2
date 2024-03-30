@@ -66,5 +66,5 @@
 
 .event-data:hover {
   cursor: pointer;
-  color: var(--accent3);
+  color: var(--accent1);
 }
