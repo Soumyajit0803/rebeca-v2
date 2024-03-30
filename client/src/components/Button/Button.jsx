@@ -17,6 +17,9 @@ const Button = ({ id, innerText, className, variant, onClick, disabled, color, s
 			)}
 			{!loading && innerText}
 			{!loading && endIcon && <div className="start-icon">{endIcon}</div>}
+			<div className="before">
+				<span className="material-icons">chevron_right</span>
+			</div>
 		</button>
 	);
 };
