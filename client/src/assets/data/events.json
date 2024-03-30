@@ -2,7 +2,8 @@
     "saptami": {
         "eventList": [
             {
-                "eventName":"Inauguration1",
+                "eventName":"saptami-I1",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -19,7 +20,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration2",
+                "eventName":"saptami-I2",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -36,7 +38,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration3",
+                "eventName":"saptami-I3",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -53,7 +56,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration4",
+                "eventName":"saptami-I4",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -70,7 +74,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration5",
+                "eventName":"saptami-I5",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -87,7 +92,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration6",
+                "eventName":"saptami-I6",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -104,7 +110,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration7",
+                "eventName":"saptami-I7",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -121,7 +128,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration8",
+                "eventName":"saptami-I8",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -142,7 +150,8 @@
     "ashtami": {
         "eventList": [
             {
-                "eventName":"Inauguration1",
+                "eventName":"ashtami-I1",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -159,7 +168,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration2",
+                "eventName":"ashtami-I2",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -176,7 +186,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration3",
+                "eventName":"ashtami-I3",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -193,7 +204,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration4",
+                "eventName":"ashtami-I4",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -210,7 +222,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration5",
+                "eventName":"ashtami-I5",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -227,7 +240,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration6",
+                "eventName":"ashtami-I6",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -244,7 +258,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration7",
+                "eventName":"ashtami-I7",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -261,7 +276,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration8",
+                "eventName":"ashtami-I8",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -282,7 +298,8 @@
     "navami": {
         "eventList": [
             {
-                "eventName":"Inauguration1",
+                "eventName":"navami-I1",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -299,7 +316,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration2",
+                "eventName":"navami-I2",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -316,7 +334,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration3",
+                "eventName":"navami-I3",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -333,7 +352,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration4",
+                "eventName":"navami-I4",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -350,7 +370,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration5",
+                "eventName":"navami-I5",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -367,7 +388,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration6",
+                "eventName":"navami-I6",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -384,7 +406,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration7",
+                "eventName":"navami-I7",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -401,7 +424,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration8",
+                "eventName":"navami-I8",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -422,7 +446,8 @@
     "dashami": {
         "eventList": [
             {
-                "eventName":"Inauguration1",
+                "eventName":"dashami-I1",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -439,7 +464,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration2",
+                "eventName":"dashami-I2",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -456,7 +482,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration3",
+                "eventName":"dashami-I3",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -473,7 +500,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration4",
+                "eventName":"dashami-I4",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -490,7 +518,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration5",
+                "eventName":"dashami-I5",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -507,7 +536,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration6",
+                "eventName":"dashami-I6",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -524,7 +554,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration7",
+                "eventName":"dashami-I7",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [
@@ -541,7 +572,8 @@
                 "artists": ["person", "person", "person", "person"]
             },
             {
-                "eventName":"Inauguration8",
+                "eventName":"dashami-I8",
+                "desc":"This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome This is an amazing event so awesome.",
                 "time": "10 AM",
                 "venue": "Lords Ground",
                 "rules": [

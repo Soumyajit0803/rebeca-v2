@@ -2,8 +2,9 @@ import React from "react";
 import "./Schedule.css";
 import Heading from "../../components/Heading/Heading";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
-import contents from "../../../public/assets/data/contents.json"
-import events from "../../../public/assets/data/events.json"
+import contents from "../../assets/data/contents.json"
+import events from "../../assets/data/events.json"
+// import EventPopup from "../../components/EventPopup/EventPopup"
 
 var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back
 with a bang!`;
@@ -67,6 +68,7 @@ function Schedule() {
                 })}
             </div>
         )
+        // <EventPopup />
     );
 }
 

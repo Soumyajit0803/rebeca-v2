@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button.jsx";
 import "./EventPopup.css";
+import events from "../../assets/data/events.json";
 
-var title = "Kolkata Night";
+var eventName = "Kolkata Night";
 var desc = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget dignissim velit rhoncus ut. Quisque efficitur velit ac euismod cursus. Curabitur at erat eu mi gravida scelerisque. Aenean quis interdum nibh.`;
 var rules = [
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros lacus, condimentum in laoreet in, congue in libero. Ut viverra cursus diam, eget",
@@ -19,54 +20,77 @@ var rules = [
 
 var judges = ["person", "person", "person", "person"];
 
-const EventPopup = ({ img, title, desc, judges, rules, time, venue }) => {
+const EventPopup = ({ eventName }) => {
+    var [eventInfo, setEventInfo] = useState(null);
+    function findTheDay() {
+        for (let d in events) {
+            let i = 0;
+            for (let eventinfo of events[d]["eventList"]) {
+                if (eventinfo.eventName === eventName) {
+                    // setDay(d); setI(i)
+                    setEventInfo(events[d].eventList[i])
+                    return;
+                }
+                i += 1;
+            }
+        }
+        console.log("did not find anything");;
+    }
+    if (events && !eventInfo) findTheDay();
+
     return (
-        <div className={"event-popup " + img + "-event-popup"}>
-            <div className="event-head">{title}</div>
-            <div className="event-desc">{desc}</div>
-            <div className="event-details">
-              <div className="event-time">{time}</div>
-              <div className="event-venue">{venue}</div>
-            </div>
-            <Button innerText={"RSVP NOW"} />
-            <div className="event-head" style={{ marginBottom: "0em", marginTop: "1em" }}>
-                Rules
-            </div>
-            <div className="rules-list-contain">
-                <ul className="rules-list">
-                    {rules.map((rule, i) => {
+        events && eventInfo && (
+            <div className={"event-popup " + eventName + "-event-popup"}>
+                <div className="event-head">{eventName}</div>
+                <div className="event-desc">{eventInfo.desc}</div>
+                <div className="event-details">
+                    <div className="event-time">{eventInfo.time}</div>
+                    <div className="event-venue">{eventInfo.venue}</div>
+                </div>
+                <Button innerText={"RSVP NOW"} id={""} className={""} variant={""} onClick={()=>{}} disabled={""} color={""} size={""} startIcon={""} endIcon={""} loading={""} type={""}/>
+                <div className="event-head event-customhead">
+                    Rules
+                </div>
+                <div className="rules-list-contain">
+                    <ul className="rules-list">
+                        {eventInfo.rules.map((rule, i) => {
+                            return (
+                                <li key={i} className="rule-item">
+                                    {rule}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+                <div className="event-head event-customhead">
+                    Judges
+                </div>
+                <div className="judges">
+                    {eventInfo.judges.map((judge, i) => {
                         return (
-                            <li key={i} className="rule-item">
-                                {rule}
-                            </li>
+                            <div className="judge" key={i}>
+                                <img
+                                    src={`/assets/imgs/ProfileImg/${judge}.png`}
+                                    alt=""
+                                    srcSet=""
+                                    className="judge-pic"
+                                />
+                                <span>{judge}</span>
+                            </div>
                         );
                     })}
-                </ul>
+                </div>
             </div>
-            <div className="event-head" style={{ marginBottom: "0em", marginTop: "1em" }}>
-                Judges
-            </div>
-            <div className="judges">
-                {judges.map((judge, i) => {
-                    return (
-                        <div className="judge" key={i}>
-                            <img
-                                src={`/assets/imgs/ProfileImg/${judge}.png`}
-                                alt=""
-                                srcSet=""          
-                                className="judge-pic"
-                            />
-                            <span>{judge}</span>
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
+        )
     );
 };
 
 function Check() {
-    return <EventPopup img={"saptami"} title={title} desc={desc} rules={rules} judges={judges} time={"12:00 AM"} venue={"Lords Ground"}/>;
+    return (
+        <EventPopup
+            eventName={"ashtami-Inauguration5"}
+        />
+    );
 }
 
 export default Check;
