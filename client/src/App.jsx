@@ -38,12 +38,11 @@ function App() {
 					onAuthClose={handleAuthClose}
 					onAuthOpen={handleAuthOpen}
 					authOpen={authOpen}
-					// emailVerificationOpen={emailVerificationOpen}
 					user={user}
 					login={login}
 					logout={logout}
 				></AllRoutes>
-				
+
 			</Router>
 		</div>
 	);

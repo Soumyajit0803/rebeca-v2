@@ -1,23 +1,11 @@
 import React from "react";
 import "./Schedule.css";
-import Heading from "../Heading/Heading";   
-
-function ScheduleIntro() {
-    return (
-        <div className="intro">
-            <div className="heading">REBECA SCHEDULE</div>
-            <div className="paragraph">
-                Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and
-                culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your
-                water bottles handy and get ready to feel the heat cuz the 83rd edition of <span>REBECA</span> is back
-                with a bang!
-            </div>
-        </div>
-    );
-}
+import Heading from "../Heading/Heading";
+import EventPopup from "../EventPopup/EventPopup";
+import PujaHeading from "../PujaHeading/PujaHeading";
 
 var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back
-with a bang!`
+with a bang!`;
 
 var eventlist = [
     ["10AM - 11AM", "Inauguration"],
@@ -33,18 +21,13 @@ var eventlist = [
 var about = `The classical night
 Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.`;
 
+
+
 function EventSection({ date, datetxt, eventlist, topic, about }) {
     var bgsetter = datetxt.toLowerCase();
     return (
-        <div className={"event "+bgsetter+"-back"}>
-            <div className="eheading">
-                <div className={`before ${datetxt.toLowerCase(bgsetter)}`}></div>
-                <div className="big">{date}</div>
-                <div className="small">
-                    <span>April</span>
-                    <span style={{ paddingLeft: "1rem", fontSize: "3rem" }}>{datetxt}</span>
-                </div>
-            </div>
+        <div className={"event " + bgsetter + "-back"}>
+            <PujaHeading date={date} datetxt={datetxt} customcss={"left-padding"}/>
             <div className={"event-content"}>
                 <div className="list">
                     <div className="timings">
@@ -71,8 +54,7 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
 function Schedule() {
     return (
         <div className="schedule">
-            {/* <ScheduleIntro /> */}
-            <Heading title={"REBECA SCHEDULE"} subTitle={introtext}/>
+            <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
             <EventSection
                 date={"20"}
                 datetxt={"SAPTAMI"}
