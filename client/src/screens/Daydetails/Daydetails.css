@@ -14,13 +14,13 @@
   background: url("/assets/imgs/Schedule/saptami.png");
   z-index: -1;
   position:absolute;
-  right: -15rem;
-  top: 2rem;
+  top: 10%;
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
-  background-size: contain;
-  mask-image: linear-gradient(to bottom, black 50%, transparent)
+  background-size: cover;
+  background-position: center;
+  mask-image: linear-gradient(to bottom,transparent,  black 50%, transparent)
 }
 .hatchline-banner{
   background: url("/assets/imgs/hatch_lines.png");
@@ -40,7 +40,6 @@
   justify-content: center;
   font-family: "Sedgwick Ave Display";
   gap: 2rem;
-
 }
 
 .section-head .full-date{
@@ -105,7 +104,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .day-details-wrapper, .section-1, .section-2, .section-3{
+  .section-1, .section-2, .section-3{
     display: flex;
     align-items: center;
     justify-content: center;
