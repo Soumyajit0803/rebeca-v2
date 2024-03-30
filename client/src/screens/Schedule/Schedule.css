@@ -1,176 +1,205 @@
 .schedule {
-    /* font-family: "Sedgwick Ave Display", cursive; */
-    padding: 5rem;
-    font-size: 30px;
-    /* min-width: 525px; */
-    color: #fff;
+  /* font-family: "Sedgwick Ave Display", cursive; */
+  padding: 5rem;
+  font-size: 30px;
+  /* min-width: 525px; */
+  color: #fff;
 }
 
 .schedule .event {
-    margin-top: 7rem;
+  margin-top: 7rem;
 }
 
 .schedule .event .event-content {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    justify-content: space-between;
-    background-size: cover;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    padding: 3rem;
-    
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  padding: 3rem;
 }
 .schedule .event .event-content::before {
-    content: "";
-    mask-image: linear-gradient(transparent, black 30%, transparent);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-    background-color: transparent;
-    background-repeat: no-repeat;
+  content: "";
+  mask-image: linear-gradient(transparent, black 30%, transparent);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
 }
 
 .schedule .saptami-back .event-content::before {
-    background-image: url("/assets/imgs/Schedule/saptami.png");
+  background-image: url("/assets/imgs/Schedule/saptami.png");
 }
 .schedule .ashtami-back .event-content::before {
-    background-image: url("/assets/imgs/Schedule/ashtami.png");
+  background-image: url("/assets/imgs/Schedule/ashtami.png");
 }
 .schedule .navami-back .event-content::before {
-    background-image: url("/assets/imgs/Schedule/navami.png");
+  background-image: url("/assets/imgs/Schedule/navami.png");
 }
 .schedule .dashami-back .event-content::before {
-    background-image: url("/assets/imgs/Schedule/dashami.png");
+  background-image: url("/assets/imgs/Schedule/dashami.png");
 }
 
 .eheading .big {
-    position: relative;
-    z-index: 1;
-    font-size: 5rem;
+  position: relative;
+  z-index: 1;
+  font-size: 5rem;
 }
 .eheading .small {
-    position: relative;
-    z-index: 1;
-    line-height: 0.8em;
-    font-size: 2.5rem;
-    width: 100%;
+  position: relative;
+  z-index: 1;
+  line-height: 0.8em;
+  font-size: 2.5rem;
+  width: 100%;
 }
 
-.schedule .heading .title{
-	width: min(15ch, 100%);
-	text-align: center;
+.schedule .heading .title {
+  width: min(15ch, 100%);
+  text-align: center;
 }
 
 .schedule * {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .schedule .event .event-content .list .timings {
-    display: flex;
-    align-items: space-between;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    flex-grow: 1;
+  display: flex;
+  align-items: space-between;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  flex-grow: 1;
 }
 
 .schedule .event .event-content .list {
-    width: 40%;
+  width: 40%;
 }
 
 .schedule .event .event-content .list .timings .row {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .schedule .event .event-content .list .timings .row .linespace {
-    background-color: rgba(255, 255, 255, 0.333);
-    height: 1.3px;
-    flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.333);
+  height: 1.3px;
+  flex-grow: 1;
 }
 
 .schedule .event .event-content .list .timings .row .time {
-    width: max-content;
+  width: max-content;
 }
 
 .schedule .event .event-content .description {
-    text-align: right;
-    align-self: center;
-    color: white;
+  text-align: right;
+  align-self: center;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .schedule .event .event-content .description .topic {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .schedule .event .event-content .description .about {
-    padding-top: 1.5rem;
-    width: 30ch;
+  padding-top: 1.5rem;
+  width: 30ch;
+  font-size: 1.5rem;
+}
+
+.about-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+  /* margin-top: 1.5rem; */
+  color: white;
+  transition: all ease 0.2s;
+  width: max-content;
+  background-color: var(--accent1);
+  border-radius: 5px;
+  padding: 0.5rem;
+  align-self: end
+}
+
+
+.about-link:hover {
+  cursor: pointer;
+  /* color: black;
+  box-shadow: 0 0 10px 5px var(--accent1); */
 }
 
 .left-padding {
-    margin-left: 3rem;
+  margin-left: 3rem;
 }
 
 @media screen and (max-width: 1150px) {
-    .schedule .event .event-content .list {
-        width: 100%;
-    }
-    .left-padding {
-        margin: 0;
-    }
-    .schedule {
-        padding: 2rem;
-    }
+  .schedule .event .event-content .list {
+    width: 100%;
+  }
+  .left-padding {
+    margin: 0;
+  }
+  .schedule {
+    padding: 2rem;
+  }
 
-    .schedule .event .event-content {
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
+  .about-link{
+    align-self: center;
+  }
 
-    .schedule .event .event-content .description {
-        text-align: center;
-        margin-bottom: 8rem;
+  .schedule .event .event-content {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 
-    }
+  .schedule .event .event-content .description {
+    text-align: center;
+    margin-bottom: 8rem;
+  }
 
-    .schedule .event .event-content .description .about {
-        width: 100%;
-    }
+  .schedule .event .event-content .description .about {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 580px) {
-    .schedule .heading {
-        padding: 0;
-        padding-top: 104px;
-    }
-    .schedule .event .event-content{
-        padding: 1rem;
-        padding-top: 3rem;
-    }
-    .schedule .heading .sub-title{
-        width: 100%;
-    }
-    .schedule .event .event-content .list,
-    .schedule {
-        font-size: 20px;
-        padding: 0.5rem;
-    }
+  .schedule .heading {
+    padding: 0;
+    padding-top: 104px;
+  }
+  .schedule .event .event-content {
+    padding: 1rem;
+    padding-top: 3rem;
+  }
+  .schedule .heading .sub-title {
+    width: 100%;
+  }
+  .schedule .event .event-content .list,
+  .schedule {
+    font-size: 20px;
+    padding: 0.5rem;
+  }
 
-    .schedule .heading .sub-title{
-        font-size: 20px;
-        text-align: center;
-    }
+  .schedule .heading .sub-title {
+    font-size: 20px;
+    text-align: center;
+  }
 
-    .schedule .event .event-content .description {
-        display: none;
-    }
+  .schedule .event .event-content .description {
+    display: none;
+  }
 }

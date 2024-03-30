@@ -13,7 +13,6 @@
 }
 
 .behind-banner{
-  background: url("/assets/imgs/Schedule/saptami.png");
   z-index: -1;
   position:absolute;
   top: 10%;
@@ -24,6 +23,7 @@
   background-position: center;
   mask-image: linear-gradient(to bottom,transparent,  black 50%, transparent)
 }
+
 .hatchline-banner{
   background: url("/assets/imgs/hatch_lines.png");
   z-index: -1;
@@ -36,9 +36,25 @@
   background-size: contain;
 }
 
+.tonight-special{
+  font-size: 6rem;
+  font-weight: 900;
+  position:absolute;
+  text-align: right;
+  transform: rotate(90deg);
+  top: 20rem;
+  right: -10vw;
+  z-index: 0;
+  opacity: 0.4;
+}
+
 .section-1, .section-2, .section-3, .section-5{
   padding-top: 5rem;
   font-size: 1.5rem;
+}
+
+.section-1, .section-2{
+  width: min(50ch, 100%);
 }
 
 .section-3{
@@ -106,6 +122,10 @@
 
   .behind-banner, .hatchline-banner{
     left: 0;
+  }
+
+  .tonight-special{
+    display: none;
   }
 }
 

@@ -17,7 +17,7 @@ const Artist = ({ artistName }) => {
 };
 
 const Daydetails = () => {
-  const {DayID} = useParams();
+  const { DayID } = useParams();
   const Day = Rebeca[DayID];
 
   const [controlMargin, setControlMargin] = useState(0);
@@ -33,7 +33,13 @@ const Daydetails = () => {
   };
   return (
     <div className="day-details-wrapper">
-      <div className="behind-banner"></div>
+      <div
+        className="behind-banner"
+        style={{
+          background: `url("/assets/imgs/Schedule/${DayID.toLowerCase()}.png"`,
+        }}
+      ></div>
+      <div className="tonight-special">CLASSICAL<br/>NIGHT</div>
       <PujaHeading date={Day.date} datetxt={DayID.toUpperCase()} />
       <div className="section-1">{Day.intro}</div>
 
@@ -47,7 +53,6 @@ const Daydetails = () => {
         Brace Yourself for an Unforgettable Showcase, As We Proudly Unveil Our Stellar Lineup
       </div>
       <div className="section-4">
-
         {Day.lineUps.map((value, index) => {
           return <Artist artistName={value} key={index} />;
         })}
@@ -61,8 +66,8 @@ const Daydetails = () => {
           controlProp={{
             marginLeft: `${controlMargin}rem`,
           }}
-          Eventdata = {Day.eventList}
-          FocusEvent = {Day.majorEvents}
+          Eventdata={Day.eventList}
+          FocusEvent={Day.majorEvents}
         />
         <div className="event-controller">
           <div className="controller-btn material-icons" onClick={() => handleMargin(1)}>
