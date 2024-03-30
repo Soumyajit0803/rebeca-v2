@@ -150,7 +150,7 @@
 @media screen and (max-width: 580px) {
     .schedule .heading {
         padding: 0;
-        padding-top: 64px;
+        padding-top: 104px;
     }
     .schedule .event .event-content{
         padding: 1rem;

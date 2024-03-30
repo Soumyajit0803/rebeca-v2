@@ -2,7 +2,8 @@ import React from "react";
 import "./Schedule.css";
 import Heading from "../../components/Heading/Heading";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
-import rebeca from "../../../public/assets/rebeca.json";
+import contents from "../../../public/assets/data/contents.json"
+import events from "../../../public/assets/data/events.json"
 
 var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back
 with a bang!`;
@@ -49,17 +50,17 @@ function Schedule() {
     
     var nights = ["saptami", "ashtami", "navami", "dashami"];
     return (
-        rebeca && (
+        contents && events && (
             <div className="schedule">
                 <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
                 {nights.map((night, i) => {
                     return (
                         <EventSection
-                            date={rebeca[night].date}
+                            date={contents[night].date}
                             datetxt={night.toUpperCase()}
-                            eventlist={eventListSummarizer(rebeca[night].eventList)}
-                            topic={rebeca[night].nightType}
-                            about={rebeca[night].intro}
+                            eventlist={eventListSummarizer(events[night].eventList)}
+                            topic={contents[night].nightType}
+                            about={contents[night].intro}
                             key = {i}
                         />
                     );
