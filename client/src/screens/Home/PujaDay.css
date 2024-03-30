@@ -18,7 +18,7 @@
 .puja-day .img img{
 	width: 100%;
 	height: 100%;
-	object-fit: fill;
+	object-fit: cover;
 }
 .puja-day .contents{
 	border: 0px solid red;
@@ -35,16 +35,20 @@
 	right: 5%;
 }
 .puja-day.alt .contents{
-	border: 0px solid red;
-	width: 40%;
-	z-index: 1;
 	text-align: left;
-	display: flex;
-	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
-	gap: 20px;
-
 	position: absolute;
 	left: 5%;
 }
+
+@media only screen and (max-width: 480px),
+	only screen and (max-device-width: 480px){
+		.puja-day .img{
+			width: 100%;
+			height: 50vh;
+		}
+		.puja-day .contents{
+			width: 80%;
+		}
+	}
