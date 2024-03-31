@@ -12,52 +12,46 @@ var introtext = `Prepare to be swept away as you put your best foot forward in t
 with a bang!`;
 
 function EventSection({ date, datetxt, eventlist, topic, about }) {
-    var bgsetter = datetxt.toLowerCase();
-    return (
-        <div className={"event " + bgsetter + "-back"}>
-            <Link to={`/events/${bgsetter}`}>
-                <PujaHeading date={date} datetxt={datetxt} customcss={"left-padding"} />
-            </Link>
-            <div className={"event-content"}>
-                <div className="list">
-                    <div className="timings">
-                        {eventlist.map((a, i) => {
-                            return (
-                                <div className="row" key={i}>
-                                    <div className="time">{a[0]}</div>
-                                    <div className="linespace"></div>
-                                    <div className="eventname">{a[1]}</div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-                <div className="description">
-                    <div className="topic display-font">{topic}</div>
-                    <div className="about">{about}</div>
+  var bgsetter = datetxt.toLowerCase();
+  return (
+		<div className={"event " + bgsetter + "-back"}>
+			<Link to={`/events/${bgsetter}`}>
+				<PujaHeading
+					date={date}
+					datetxt={datetxt}
+					customcss={"left-padding"}
+				/>
+			</Link>
+			<div className={"event-content"}>
+				<div className="list">
+					<div className="timings">
+						{eventlist.map((a, i) => {
+							return (
+								<div className="row" key={i}>
+									<div className="time">{a[0]}</div>
+									<div className="linespace"></div>
+									<Link to={`/event/${a[1]}`}>
+										<div className="eventname">{a[1]}</div>
+									</Link>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div className="description">
+					<div className="topic display-font">{topic}</div>
+					<div className="about">{about}</div>
 
-                    <div className="about-link">
-                        <Link to={`/events/${bgsetter}`}>
-                            <Button
-                                innerText={"LEARN MORE"}
-                                id={""}
-                                className={""}
-                                variant={""}
-                                onClick={() => {}}
-                                disabled={""}
-                                color={""}
-                                size={""}
-                                startIcon={""}
-                                endIcon={""}
-                                loading={""}
-                                type={""}
-                            />
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+					<Link to={`/events/${bgsetter}`}>
+						<Button
+							variant={"filled"}
+							innerText={"Learn more"}
+						></Button>
+					</Link>
+				</div>
+			</div>
+		</div>
+  );
 }
 
 function Schedule() {

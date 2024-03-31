@@ -3,6 +3,7 @@ import "./Home.css";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
 import PujaDay from "./PujaDay";
+import ArtistCard from "../../components/ArtistCard/ArtistCard";
 
 const Home = () => {
   const artists = [
@@ -32,14 +33,14 @@ const Home = () => {
     },
   ];
 
-  const [artistMargin, setArtistmargin] = useState(0);
+  // const [artistMargin, setArtistmargin] = useState(0);
 
-  const handleMoveArtists = (dir) => {
-    const move = dir == "left" ? 200 : -200;
-    dir == "left" && artistMargin < 0 && setArtistmargin(artistMargin + move);
+  // const handleMoveArtists = (dir) => {
+  //   const move = dir == "left" ? 200 : -200;
+  //   dir == "left" && artistMargin < 0 && setArtistmargin(artistMargin + move);
 
-    dir == "right" && artistMargin <= 0 && setArtistmargin(artistMargin + move);
-  };
+  //   dir == "right" && artistMargin <= 0 && setArtistmargin(artistMargin + move);
+  // };
 
   const { innerWidth: width, innerHeight: height } = window;
 
@@ -66,7 +67,7 @@ const Home = () => {
           subTitle={"Brace yourself for an unforgettable showcase, as we proudly unveil our stellar lineup"}
         ></Heading>
 
-        <div className="list" style={{ marginLeft: `${artistMargin}px` }}>
+        <div className="list">
           <div className="list-scroller">
             {artists.map((artist) => (
               <div className="artist" key={artist.name}>

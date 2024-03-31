@@ -67,38 +67,14 @@
   border: 0px solid red;
   /* overflow: hidden; */
 }
-
-/* .home .section-3 .list {
-	overflow-x: scroll;
-} */
-
-/* .home .section-3 .list::-webkit-scrollbar {
-	height: 7px !important;
-	border-radius: 10px !important;
-  }
-  
-  .home .section-3 .list::-webkit-scrollbar-track{
-	height: 5px !important;
-  }
-  
-  .home .section-3 .list::-webkit-scrollbar-thumb {
-	height: 5px !important;
-	border-radius: 10px;
-	background: var(--accent2);
-  }
-  .home .section-3 .list::-webkit-scrollbar-button,
-  .home .section-3 .list::-webkit-scrollbar-corner {
-	display: none;
-  } */
-
-.home .section-3 .list .list-scroller .artist {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  /* border: 1px solid red; */
-  width: fit-content;
+.home .section-3 .list .artist {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	/* border: 1px solid red; */
+	/* width: fit-content; */
 }
 .home .section-3 .list .list-scroller .artist .img {
   position: relative;

@@ -18,7 +18,7 @@ const Eventpanel = ({ value, index, FocusEvent }) => {
         {value.eventName}
         <p>{value.time}</p>
       </div>
-      <Link to={`/eventdata/${value.eventName}`}>
+      <Link to={`/event/${value.eventName}`}>
         <div className="data-body">
           <img
             style={{

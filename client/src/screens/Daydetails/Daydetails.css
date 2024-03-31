@@ -1,4 +1,5 @@
-.day-details-wrapper {
+.day-details {
+  /* padding: 1rem; */
   padding: 5rem;
   display: flex;
   align-items: start;
@@ -9,7 +10,7 @@
   overflow-x: hidden;
 }
 
-.behind-banner{
+.day-details .behind-banner{
   z-index: -1;
   position:absolute;
   top: 10%;
@@ -21,7 +22,7 @@
   mask-image: linear-gradient(to bottom,transparent,  black 50%, transparent)
 }
 
-.hatchline-banner{
+.day-details .hatchline-banner{
   background: url("/assets/imgs/hatch_lines.png");
   z-index: -1;
   position:absolute;
@@ -33,7 +34,7 @@
   background-size: contain;
 }
 
-.tonight-special{
+.day-details .tonight-special{
   font-size: 6rem;
   font-weight: 900;
   position:absolute;
@@ -46,62 +47,40 @@
   opacity: 0.4;
 }
 
-.day-details-wrapper .section-1, 
-.day-details-wrapper .section-2, 
-.day-details-wrapper .section-3, 
-.day-details-wrapper .section-5{
+.day-details .section-1,.day-details-wrapper .section-2,.day-details-wrapper .section-3,.day-details-wrapper .section-5{
   padding-top: 5rem;
   font-size: 1.5rem;
   line-height: 150%
 }
 
-.day-details-wrapper .section-1,
-.day-details-wrapper .section-2{
+.day-details .section-1,.day-details-wrapper .section-2{
   width: min(50ch, 100%);
 }
 
-.day-details-wrapper .section-3{
+.day-details .section-3{
   position: relative;
 }
 
-.day-details-wrapper .section-4{
+.day-details .section-4{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 2rem;
 }
 
-.day-details-wrapper .section-4 img{
-  width: 15rem;
-}
 
-.section-subhead{
+
+.day-details .section-subhead{
   font-size: 3rem;
   color :white;
   font-family: "Sedgwick Ave Display";
   padding-bottom: 2rem;
 }
 
-.artist-banner{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.artist-label{
-  font-family: "Sedgwick Ave Display";
-  font-size: 3rem;
-  color: white;
-  position: relative;
-  bottom: 3rem;
-}
-
 @media only screen and (max-width: 700px) {
-  .day-details-wrapper .section-1,
-  .day-details-wrapper .section-2, 
-  .day-details-wrapper .section-3{
+  .day-details-wrapper .section-1, .day-details-wrapper .section-2, .day-details-wrapper .section-3{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,27 +94,27 @@
     padding-top: 8rem;
   }
 
-  .section-head{
+  .day-details-wrapper .section-head{
     flex-direction: column;
     align-items: center;
     gap: 0;
   }
 
-  .section-head .full-date{
+  .day-details-wrapper .section-head .full-date{
     flex-direction: row;
     align-items: last baseline;
   }
 
-  .behind-banner, .hatchline-banner{
+  .day-details-wrapper .behind-banner, .hatchline-banner{
     left: 0;
   }
 
-  .tonight-special{
+  .day-details-wrapper .tonight-special{
     display: none;
   }
 }
 
-.section-event{
+.day-details-wrapper .day-details-wrapper .section-event{
   /* background-color: green; */
   width: 100%;
   overflow-x: hidden;
@@ -145,7 +124,27 @@
   flex-direction: column;
 }
 
-/* .section-event::-webkit-scrollbar{
+.day-details-wrapper .section-event::-webkit-scrollbar{
+  display: none;
+}
+
+/* .section-event::-webkit-scrollbar {
+  width: 5px !important;
+  background-color: var(--accent1-50);
+  border-radius: 10px !important;
+}
+
+.section-event::-webkit-scrollbar-track{
+  width: 5px !important;
+}
+
+.section-event::-webkit-scrollbar-thumb {
+  width: 5px !important;
+  border-radius: 10px;
+  background: var(--accent2);
+}
+.section-event::-webkit-scrollbar-button,
+.section-event::-webkit-scrollbar-corner {
   display: none;
 } */
 

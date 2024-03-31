@@ -76,18 +76,20 @@
     padding-top: 2rem;
 }
 
-.event-popup .judges .judge .judge-pic {
-    aspect-ratio: 1/1;
-    width: 100%;
-    border-radius: 50%;
-    box-shadow: 2px -2px 0 3px var(--accent1);
-}
+
 .event-popup .judges .judge {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 10rem;
+}
+
+.event-popup .judges .judge .judge-pic {
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 2px -2px 0 3px var(--accent1);
 }
 
 .event-popup .judges .judge span {
@@ -117,6 +119,9 @@
 
     .event-popup .judges {
         justify-content: center;
+    }
+    .event-popup .judges .judge{
+        width: 40%;
     }
 }
 
