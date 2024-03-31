@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { useEffect, useState } from "react";
 import "./Sponsorship.css";
-import SponsorsContent from "./SponsorsContent";
+import SponsorCard from "./SponsorsCard";
 import Heading from "../../components/Heading/Heading";
 
 const Heading1 = ({ title, subTitle, w }) => {
@@ -75,6 +75,29 @@ function Sponsorship() {
 		};
 	}, []);
 
+	const sponsorData = {
+		sponsor1: { imgname: "IOCL.jpg" },
+		sponsor2: { imgname: "ADOBE.jpg" },
+		sponsor3: { imgname: "RR.png" },
+		sponsor4: { imgname: "COAL.png" },
+		sponsor5: { imgname: "LAKME.jpg" },
+		sponsor6: { imgname: "SAIL.jpg" },
+		sponsor7: { imgname: "DUCKBACK.jpg" },
+		sponsor8: { imgname: "DOMINOS.jpg" },
+		sponsor9: { imgname: "FRIENDSFM.jpg" },
+		sponsor10: { imgname: "KTM.jpg" },
+		sponsor11: { imgname: "COKESTUDIO.jpg" },
+		sponsor12: { imgname: "OLA.png" },
+		sponsor13: { imgname: "CESC.jpg" },
+		sponsor14: { imgname: "Zomato.png" },
+		sponsor15: { imgname: "WOW.png" },
+		sponsor16: { imgname: "LINC.png" },
+		sponsor17: { imgname: "Shapoorji.png" },
+		sponsor18: { imgname: "simoco.png" },
+	  };
+	  
+	  
+
 	return (
 		<>
 			<div className="sponsor">
@@ -119,6 +142,14 @@ function Sponsorship() {
 						/>
 					</div>
 				</section>
+				<section className="section-2">
+					<div className="cover-pic">
+						<img
+							src="/assets/imgs/sponsorship/coverPic1.png"
+							alt=""
+						/>
+					</div>
+				</section>
 
 				<section className="section-3">
 					<Heading1 title={"Sponsor Categories"} w={"60%"}></Heading1>
@@ -131,12 +162,13 @@ function Sponsorship() {
 				</section>
 
 				<section className="section-4">
-					<Heading1 title={"past-sponsors"} w={"60%"}></Heading1>
-					<div className="past-sponsor">
-						<img
-							src="/assets/imgs/sponsorship/pastSponsors.png"
-							alt=""
-						/>
+					<Heading1 title={"Past-sponsors"} w={"60%"}></Heading1>
+					<div className="center1">
+						<div className="cards">
+							{Object.values(sponsorData).map((sponsor, index) => (
+								<SponsorCard key={index} sponsor={sponsor} />
+							))}							
+						</div>
 					</div>
 				</section>
 			</div>
