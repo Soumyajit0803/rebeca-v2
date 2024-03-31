@@ -33,9 +33,9 @@ const Eventpanel = ({ value, index, FocusEvent }) => {
   );
 };
 
-const Eventcard = ({ controlProp , Eventdata, FocusEvent }) => {
+const Eventcard = ({ Eventdata, FocusEvent }) => {
   return (
-    <div style={controlProp} className="event-card">
+    <div className="event-card">
       {Eventdata.map((value, index) => (
         <Eventpanel key={index} value={value} index={index} FocusEvent={FocusEvent} />
       ))}

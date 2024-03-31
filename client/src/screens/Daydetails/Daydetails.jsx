@@ -5,8 +5,8 @@ import Eventcard from "../../components/Eventcard/Eventcard";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
 import { useParams } from "react-router-dom";
 
-import Daycontent from "../../assets/data/contents.json"
-import Eventcontent from "../../assets/data/events.json"
+import Daycontent from "../../assets/data/contents.json";
+import Eventcontent from "../../assets/data/events.json";
 
 const Artist = ({ artistName }) => {
   return (
@@ -21,17 +21,6 @@ const Daydetails = () => {
   const { DayID } = useParams();
   const Day = Daycontent[DayID];
 
-  const [controlMargin, setControlMargin] = useState(0);
-  const handleMargin = (direction) => {
-    if (direction === 1) {
-      if (controlMargin === 0) return;
-
-      setControlMargin(controlMargin + 10);
-    } else {
-      if (controlMargin <= -100) return;
-      setControlMargin(controlMargin - 10);
-    }
-  };
   return (
     <div className="day-details-wrapper">
       <div
@@ -63,23 +52,13 @@ const Daydetails = () => {
         <div className="section-subhead">Events</div>
       </div>
       <div className="section-event">
-        <Eventcard
-          controlProp={{
-            marginLeft: `${controlMargin}rem`,
-          }}
-          Eventdata={Eventcontent[DayID].eventList}
-          FocusEvent={Eventcontent[DayID].majorEvents}
-        />
-        <div className="event-controller">
-          <div className="controller-btn" onClick={() => handleMargin(1)}>
-            <span className="material-icons">arrow_back</span>
-            PREVIOUS
-          </div>
-          <div className="controller-btn" onClick={() => handleMargin(0)}>
-            NEXT
-            <span className="material-icons">arrow_forward</span>
-          </div>
+        <div className="scroll-section-event">
+          <Eventcard
+            Eventdata={Eventcontent[DayID].eventList}
+            FocusEvent={Eventcontent[DayID].majorEvents}
+          />
         </div>
+        
       </div>
     </div>
   );

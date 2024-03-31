@@ -1,0 +1,32 @@
+.autocarousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 5rem;
+  color: white;
+  /* gap: 5rem; */
+}
+
+.autocarousel-wrapper img{
+  width: 15rem;
+}
+
+.autocarousel-wrapper .elements{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scrollanim 10s linear infinite;
+}
+
+
+@keyframes scrollanim {
+  0%{
+    transform: translateX(0);
+  }
+
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+
