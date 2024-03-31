@@ -2,8 +2,8 @@ import React from "react";
 import "./Schedule.css";
 import Heading from "../../components/Heading/Heading";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
-import contents from "../../assets/data/contents.json"
-import events from "../../assets/data/events.json"
+import contents from "../../assets/data/contents.json";
+import events from "../../assets/data/events.json";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 // import EventPopup from "../../components/EventPopup/EventPopup"
@@ -12,33 +12,29 @@ var introtext = `Prepare to be swept away as you put your best foot forward in t
 with a bang!`;
 
 function EventSection({ date, datetxt, eventlist, topic, about }) {
-  var bgsetter = datetxt.toLowerCase();
-  return (
-		<div className={"event " + bgsetter + "-back"}>
-			<Link to={`/events/${bgsetter}`}>
-				<PujaHeading
-					date={date}
-					datetxt={datetxt}
-					customcss={"left-padding"}
-				/>
-			</Link>
-			<div className={"event-content"}>
-				<div className="list">
-					<div className="timings">
-						{eventlist.map((a, i) => {
-							return (
-								<div className="row" key={i}>
-									<div className="time">{a[0]}</div>
-									<div className="linespace"></div>
-									<div className="eventname">{a[1]}</div>
-								</div>
-							);
-						})}
-					</div>
-				</div>
-				<div className="description">
-					<div className="topic display-font">{topic}</div>
-					<div className="about">{about}</div>
+    var bgsetter = datetxt.toLowerCase();
+    return (
+        <div className={"event " + bgsetter + "-back"}>
+            <Link to={`/events/${bgsetter}`}>
+                <PujaHeading date={date} datetxt={datetxt} customcss={"left-padding"} />
+            </Link>
+            <div className={"event-content"}>
+                <div className="list">
+                    <div className="timings">
+                        {eventlist.map((a, i) => {
+                            return (
+                                <div className="row" key={i}>
+                                    <div className="time">{a[0]}</div>
+                                    <div className="linespace"></div>
+                                    <div className="eventname">{a[1]}</div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+                <div className="description">
+                    <div className="topic display-font">{topic}</div>
+                    <div className="about">{about}</div>
 
 					<Link to={`/events/${bgsetter}`}>
 						<Button
@@ -53,18 +49,18 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
 }
 
 function Schedule() {
-  function eventListSummarizer(eventlist) {
-    var res = [];
-    for (let key in eventlist) {
-      res.push([eventlist[key].time, eventlist[key].eventName]);
+    function eventListSummarizer(eventlist) {
+        var res = [];
+        for (let key in eventlist) {
+            res.push([eventlist[key].time, eventlist[key].eventName]);
+        }
+        return res;
     }
-    return res;
-  }
 
-    
     var nights = ["saptami", "ashtami", "navami", "dashami"];
     return (
-        contents && events && (
+        contents &&
+        events && (
             <div className="schedule">
                 <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
                 {nights.map((night, i) => {
@@ -75,7 +71,7 @@ function Schedule() {
                             eventlist={eventListSummarizer(events[night].eventList)}
                             topic={contents[night].nightType}
                             about={contents[night].intro}
-                            key = {i}
+                            key={i}
                         />
                     );
                 })}

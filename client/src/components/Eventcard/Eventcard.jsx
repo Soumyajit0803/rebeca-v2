@@ -1,38 +1,44 @@
-import {React, useState} from "react";
-import "./Eventcard.css"
+import { React, useState } from "react";
+import "./Eventcard.css";
+import { Link } from "react-router-dom";
 
-const Eventcard = ({ controlProp, Eventdata, FocusEvent }) => {
+const Eventpanel = ({ value, index, FocusEvent }) => {
   const [expand, setexpand] = useState(0);
   const handleExpand = (idx) => {
-    if(expand===idx)setexpand(null);
+    if (expand === idx) setexpand(null);
     else setexpand(idx);
   };
-
+  var show = expand === index ? true : false;
+  if (FocusEvent.includes(index)) {
+    show = true;
+  }
   return (
-    <div style = {controlProp} className="event-card">
-      {Eventdata.map((value, index) => {
-        var show = expand === index ? true : false;
-        if (FocusEvent.includes(index)) {
-          show = true;
-        }
-        return (
-          <div key={index} className="event-data">
-            <div onClick={() => handleExpand(index)} className="data-header">
-              {value.eventName}
-              <p>{value.time}</p>
-            </div>
-            <div className="data-body">
-              <img
-                style={{
-                  width: show ? "22rem" : "0",
-                }}
-                src={`/assets/imgs/home/${value.eventName}.png`}
-                alt=""
-              />
-            </div>
-          </div>
-        );
-      })}
+    <div key={index} className="event-data">
+      <div onClick={() => handleExpand(index)} className="data-header">
+        {value.eventName}
+        <p>{value.time}</p>
+      </div>
+      <Link to={`/eventdata/${value.eventName}`}>
+        <div className="data-body">
+          <img
+            style={{
+              width: show ? "22rem" : "0",
+            }}
+            src={`/assets/imgs/home/${value.eventName}.png`}
+            alt=""
+          />
+        </div>
+      </Link>
+    </div>
+  );
+};
+
+const Eventcard = ({ controlProp , Eventdata, FocusEvent }) => {
+  return (
+    <div style={controlProp} className="event-card">
+      {Eventdata.map((value, index) => (
+        <Eventpanel key={index} value={value} index={index} FocusEvent={FocusEvent} />
+      ))}
     </div>
   );
 };

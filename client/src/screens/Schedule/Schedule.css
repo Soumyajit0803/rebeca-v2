@@ -66,10 +66,6 @@
   text-align: center;
 }
 
-/* .schedule * {
-  background-color: transparent;
-} */
-
 .schedule .event .event-content .list .timings {
   display: flex;
   align-items: space-between;
@@ -121,8 +117,8 @@
   font-size: 1.5rem;
 }
 
-.about-link {
-  font-size: 1.2rem;
+.schedule .event .event-content .description .about-link {
+  /* font-size: 1.2rem; */
   font-weight: 600;
   /* margin-top: 1.5rem; */
   color: white;
@@ -130,15 +126,13 @@
   width: max-content;
   background-color: var(--accent1);
   border-radius: 5px;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   align-self: end
 }
 
 
-.about-link:hover {
+.schedule .event .event-content .description .about-link:hover {
   cursor: pointer;
-  /* color: black;
-  box-shadow: 0 0 10px 5px var(--accent1); */
 }
 
 .left-padding {
@@ -204,4 +198,8 @@
     /* display: none; */
     align-items: center;
   }
+}
+
+.schedule .eheading:hover {
+  color: var(--accent3);
 }

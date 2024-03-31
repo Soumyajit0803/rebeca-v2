@@ -1,33 +1,31 @@
 {
-    "saptami": {
-        "date": "18",
-        "nightType": "The Classical Night",
-        "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
-        "significance": "The classical theme of Saptami is a window into history and culture and fosters a sense of deep appreciation for the beauty of our traditions and heritage.",
+  "saptami": {
+    "date": "18",
+    "nightType": "The Classical\nNight",
+    "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
+    "significance": "The classical theme of Saptami is a window into history and culture and fosters a sense of deep appreciation for the beauty of our traditions and heritage.",
 
-        "lineUps": ["artist1", "artist2", "artist3"]
-        
-    },
-    "ashtami": {
-        "date": "19",
-        "nightType": "The BEings Night",
-        "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
-        "significance": "The BEings' night on Ashtami gives a stage to the incredible budding talents of our college, providing them with an opportunity to showcase their creativity. This gives an immense boost to their confidence and helps build mutual support and teamwork, all qualities that will propel them towards success in their bright futures.",
-        "lineUps": ["artist1", "artist2", "artist3"]
-    },
-    "navami": {
-        "date": "20",
-        "nightType": "The Kolkata Night",
-        "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
-        "significance": "The Kolkata night on Navami takes a dive into the vibrant musical scene of the city. From the seasoned fans who sway to their favourite artists, to the ones who get a grand glimpse into the soul of Kolkata, this night reminds everyone why it is called the City of Joy.",
-        "lineUps": ["artist1", "artist2", "artist3"]
-        
-    },
-    "dashami": {
-        "date": "21",
-        "nightType": "The Mumbai Night",
-        "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
-        "significance": "The Mumbai night on Dashami serves as the ultimate grand finale, a grand showdown of our grand festival. As the final artist of the year takes the center stage by storm, the BEings make sure to dance and cheer like nobody's watching, till the break of dawn!",
-        "lineUps": ["artist1", "artist2", "artist3"]
-    }
+    "lineUps": ["artist1", "artist2", "artist3"]
+  },
+  "ashtami": {
+    "date": "19",
+    "nightType": "The BEings Night",
+    "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
+    "significance": "The BEings' night on Ashtami gives a stage to the incredible budding talents of our college, providing them with an opportunity to showcase their creativity. This gives an immense boost to their confidence and helps build mutual support and teamwork, all qualities that will propel them towards success in their bright futures.",
+    "lineUps": ["artist1", "artist2", "artist3"]
+  },
+  "navami": {
+    "date": "20",
+    "nightType": "The Kolkata Night",
+    "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
+    "significance": "The Kolkata night on Navami takes a dive into the vibrant musical scene of the city. From the seasoned fans who sway to their favourite artists, to the ones who get a grand glimpse into the soul of Kolkata, this night reminds everyone why it is called the City of Joy.",
+    "lineUps": ["artist1", "artist2", "artist3"]
+  },
+  "dashami": {
+    "date": "21",
+    "nightType": "The Mumbai Night",
+    "intro": "The classical night Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
+    "significance": "The Mumbai night on Dashami serves as the ultimate grand finale, a grand showdown of our grand festival. As the final artist of the year takes the center stage by storm, the BEings make sure to dance and cheer like nobody's watching, till the break of dawn!",
+    "lineUps": ["artist1", "artist2", "artist3"]
+  }
 }

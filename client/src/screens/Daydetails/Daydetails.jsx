@@ -2,11 +2,12 @@ import { React, useState } from "react";
 import "./Daydetails.css";
 
 import Eventcard from "../../components/Eventcard/Eventcard";
-
-import Rebeca from "../../../public/assets/rebeca.json";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
 import { useParams } from "react-router-dom";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
+
+import Daycontent from "../../assets/data/contents.json"
+import Eventcontent from "../../assets/data/events.json"
 
 const Artist = ({ artistName }) => {
   return (
@@ -22,7 +23,7 @@ const Artist = ({ artistName }) => {
 
 const Daydetails = () => {
   const { DayID } = useParams();
-  const Day = Rebeca[DayID];
+  const Day = Daycontent[DayID];
 
   const [controlMargin, setControlMargin] = useState(0);
   const handleMargin = (direction) => {
@@ -43,7 +44,7 @@ const Daydetails = () => {
           background: `url("/assets/imgs/Schedule/${DayID.toLowerCase()}.png"`,
         }}
       ></div>
-      <div className="tonight-special">CLASSICAL<br/>NIGHT</div>
+      <div className="tonight-special">{Day.nightType}</div>
       <PujaHeading date={Day.date} datetxt={DayID.toUpperCase()} />
       <div className="section-1">{Day.intro}</div>
 
@@ -76,15 +77,17 @@ const Daydetails = () => {
           controlProp={{
             marginLeft: `${controlMargin}rem`,
           }}
-          Eventdata={Day.eventList}
-          FocusEvent={Day.majorEvents}
+          Eventdata={Eventcontent[DayID].eventList}
+          FocusEvent={Eventcontent[DayID].majorEvents}
         />
         <div className="event-controller">
-          <div className="controller-btn material-icons" onClick={() => handleMargin(1)}>
-            arrow_back
+          <div className="controller-btn" onClick={() => handleMargin(1)}>
+            <span className="material-icons">arrow_back</span>
+            PREVIOUS
           </div>
-          <div className="controller-btn material-icons" onClick={() => handleMargin(0)}>
-            arrow_forward
+          <div className="controller-btn" onClick={() => handleMargin(0)}>
+            NEXT
+            <span className="material-icons">arrow_forward</span>
           </div>
         </div>
       </div>

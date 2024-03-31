@@ -8,6 +8,7 @@
     z-index: 2;
     color: #fff;
     width: max-content;
+    transition: all 0.3s;
 }
 
 .eheading .before {
