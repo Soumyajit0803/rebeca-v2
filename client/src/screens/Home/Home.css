@@ -251,7 +251,7 @@
 }
 
 .home .section-3 .list .list-scroller {
-  animation: infinitescroll 8s linear infinite;
+  animation: infinitescroll 20s linear infinite;
 }
 /* .home .section-3 .list:hover  .list-scroller,
 .home .section-3 .list:active .list-scroller{

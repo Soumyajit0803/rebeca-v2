@@ -238,8 +238,8 @@
 			flex-direction: row;
 			justify-content: flex-end;
 			align-items: center;
-			height: 100px;
-			border: =px solid red;
+			height: 80px;
+			border: 0px solid red;
 		} 
 		.navbar  .left-col{
 			justify-content: space-between;

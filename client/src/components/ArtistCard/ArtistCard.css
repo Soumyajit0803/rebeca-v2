@@ -14,10 +14,10 @@
 	height: 350px;
 }
 .artist-card .img img {
-	height: 350px;
+	height: 100%;
 	object-fit: cover;
-	margin-left: 2rem;
-	/* margin-right: 2rem; */
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 .artist-card .display-font {
 	position: absolute;
@@ -27,9 +27,9 @@
 }
 @media only screen and (max-width: 480px),
 	only screen and (max-device-width: 480px) {
-	/* .artist-card .img{
-		height: 350px;
-	} */
+	.artist-card .img{
+		height: 200px;
+	}
 	.artist-card .display-font {
 		/* width: 110%; */
 		text-align: center;
