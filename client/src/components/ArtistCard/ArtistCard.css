@@ -22,5 +22,15 @@
 	line-height: 70%;
 	/* border: 1px solid red; */
 	line-break: strict;
-	
+}
+@media only screen and (max-width: 480px),
+	only screen and (max-device-width: 480px) {
+	.artist-card .img {
+		height: 200px;
+	}
+	.artist-card .display-font {
+		/* width: 110%; */
+		text-align: center;
+		font-size: 30px;
+	}
 }
