@@ -72,7 +72,7 @@
 .schedule .event .event-content .list {
   width: 40%;
   color: white;
-  /* font-size: 30px; */
+  font-size: 30px;
 }
 .schedule .event .event-content .list .timings {
   display: flex;
