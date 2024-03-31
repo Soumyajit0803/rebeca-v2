@@ -69,43 +69,6 @@
 }
 
 
-.schedule .event .event-content .list {
-  width: 40%;
-  color: white;
-  font-size: 30px;
-}
-.schedule .event .event-content .list .timings {
-  display: flex;
-  align-items: space-between;
-  flex-direction: column;
-  gap: 2rem;
-  width: 100%;
-  flex-grow: 1;
-}
-
-
-.schedule .event .event-content .list .timings .row {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.schedule .event .event-content .list .timings .row .linespace {
-  background-color: rgba(255, 255, 255, 0.333);
-  height: 1.3px;
-  flex-grow: 1;
-}
-
-.schedule .event .event-content .list .timings .row .time {
-  width: max-content;
-}
-.schedule .event .event-content .list .timings .row .eventname{
-  color: white;
-}
-.schedule .event .event-content .list .timings .row .eventname:hover{
-  text-decoration: underline;
-}
-
 .schedule .event .event-content .description {
   text-align: right;
   align-self: center;
@@ -150,9 +113,6 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .schedule .event .event-content .list {
-    width: 100%;
-  }
   .left-padding {
     margin-left: 2rem;
   }
@@ -194,29 +154,11 @@
     padding: 1rem;
     padding-top: 3rem;
   }
-  /* .schedule .heading .sub-title {
-    width: 100%;
-  } */
-  .schedule .event .event-content .list{
-    font-size: 20px;
-    padding: 0.5rem;
-  }
-
-  /* .schedule .heading .sub-title {
-    font-size: 20px;
-    text-align: center;
-  } */
-
-  .schedule .event .event-content .description {
-    /* display: none; */
-    /* align-items: center; */
-  }
-
   .schedule .event .event-content .description .about{
     font-size: 20px;
   }
 }
 
 .schedule .eheading:hover {
-  color: var(--accent1);
+  color: var(--accent3);
 }
