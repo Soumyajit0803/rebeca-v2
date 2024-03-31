@@ -16,16 +16,16 @@ const Home = () => {
       img: "artist2.png",
     },
     {
+      name: "King",
+      img: "artist2.png",
+    },
+    {
       name: "Sunidhi Chauhan",
       img: "artist3.png",
     },
     {
-      name: "Baadshah",
-      img: "artist1.png",
-    },
-    {
-      name: "King",
-      img: "artist2.png",
+      name: "Sunidhi Chauhan",
+      img: "artist3.png",
     },
     {
       name: "Sunidhi Chauhan",
@@ -69,23 +69,13 @@ const Home = () => {
 
         <div className="list">
           <div className="list-scroller">
-            {artists.map((artist) => (
-              <div className="artist" key={artist.name}>
-                <div className="img">
-                  <img src={"/assets/imgs/artists/" + artist.img} alt="" />
-                </div>
-                <div className="display-font">{artist.name}</div>
-              </div>
+            {artists.map((artist, i) => (
+              <ArtistCard key={i} name={artist.name} img={artist.img}></ArtistCard>
             ))}
           </div>
           <div className="list-scroller">
-            {artists.map((artist) => (
-              <div className="artist" key={artist.name}>
-                <div className="img">
-                  <img src={"/assets/imgs/artists/" + artist.img} alt="" />
-                </div>
-                <div className="display-font">{artist.name}</div>
-              </div>
+            {artists.map((artist, i) => (
+              <ArtistCard key={i} name={artist.name} img={artist.img}></ArtistCard>
             ))}
           </div>
         </div>

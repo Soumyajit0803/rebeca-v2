@@ -9,28 +9,34 @@
 }
 .artist-card .img {
 	position: relative;
-	height: 300px;
+	/* height: 100%; */
+	/* width: 100%; */
+	height: 350px;
 }
 .artist-card .img img {
-	width: 100%;
-	height: 100%;
+	height: 350px;
 	object-fit: cover;
+	margin-left: 2rem;
+	/* margin-right: 2rem; */
 }
 .artist-card .display-font {
 	position: absolute;
 	bottom: 0;
 	line-height: 70%;
-	/* border: 1px solid red; */
 	line-break: strict;
 }
 @media only screen and (max-width: 480px),
 	only screen and (max-device-width: 480px) {
-	.artist-card .img {
-		height: 200px;
-	}
+	/* .artist-card .img{
+		height: 350px;
+	} */
 	.artist-card .display-font {
 		/* width: 110%; */
 		text-align: center;
 		font-size: 30px;
+	}
+
+	.artist-card .img img{
+		margin: none;
 	}
 }

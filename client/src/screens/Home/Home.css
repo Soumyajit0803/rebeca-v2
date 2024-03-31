@@ -59,13 +59,9 @@
 }
 .home .section-3 .list .list-scroller {
   display: flex;
-  align-items: flex-start;
-  justify-content: start;
-  /* gap: 50px; */
-  /* /* width: max-content; */
-  height: 300px;
+  align-items: flex-end;
+  justify-content: flex-end;
   border: 0px solid red;
-  /* overflow: hidden; */
 }
 .home .section-3 .list .artist {
 	position: relative;
@@ -250,10 +246,15 @@
 
 .home .section-3 .list {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: start;
 }
 
 .home .section-3 .list .list-scroller {
   animation: infinitescroll 8s linear infinite;
 }
+/* .home .section-3 .list:hover  .list-scroller,
+.home .section-3 .list:active .list-scroller{
+  animation-play-state: paused;
+} */
+

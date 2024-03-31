@@ -26,7 +26,7 @@ const Daydetails = () => {
   const Day = Daycontent[DayID];
 
   return (
-    <div className="day-details">
+    <div className="day-details-wrapper">
       <div
         className="behind-banner"
         style={{
@@ -42,7 +42,6 @@ const Daydetails = () => {
         {Day.significance}
       </div>
       <div className="section-3">
-        {/* <div className="hatchline-banner"></div> */}
         <div className="section-subhead">{DayID.toUpperCase() + " LINE UP!"}</div>
         Brace Yourself for an Unforgettable Showcase, As We Proudly Unveil Our Stellar Lineup
       </div>

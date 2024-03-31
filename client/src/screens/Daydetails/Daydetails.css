@@ -1,31 +1,31 @@
-.day-details {
+.day-details-wrapper {
   /* padding: 1rem; */
   padding: 5rem;
   display: flex;
   align-items: start;
   justify-content: center;
   flex-direction: column;
-  position:relative;
+  position: relative;
   color: white;
   overflow-x: hidden;
 }
 
-.day-details .behind-banner{
+.day-details-wrapper .behind-banner {
   z-index: -1;
-  position:absolute;
+  position: absolute;
   top: 10%;
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  mask-image: linear-gradient(to bottom,transparent,  black 50%, transparent)
+  mask-image: linear-gradient(to bottom, transparent, black 50%, transparent);
 }
 
-.day-details .hatchline-banner{
+.day-details-wrapper .hatchline-banner {
   background: url("/assets/imgs/hatch_lines.png");
   z-index: -1;
-  position:absolute;
+  position: absolute;
   right: -20rem;
   top: 2rem;
   height: 100vh;
@@ -34,10 +34,10 @@
   background-size: contain;
 }
 
-.day-details .tonight-special{
+.day-details-wrapper .tonight-special {
   font-size: 6rem;
   font-weight: 900;
-  position:absolute;
+  position: absolute;
   text-align: right;
   width: 10ch;
   transform: rotate(90deg);
@@ -47,21 +47,25 @@
   opacity: 0.4;
 }
 
-.day-details .section-1,.day-details-wrapper .section-2,.day-details-wrapper .section-3,.day-details-wrapper .section-5{
+.day-details-wrapper .section-1,
+.day-details-wrapper .section-2,
+.day-details-wrapper .section-3,
+.day-details-wrapper .section-5 {
   padding-top: 5rem;
   font-size: 1.5rem;
-  line-height: 150%
+  line-height: 150%;
 }
 
-.day-details .section-1,.day-details-wrapper .section-2{
+.day-details-wrapper .section-1,
+.day-details-wrapper .section-2 {
   width: min(50ch, 100%);
 }
 
-.day-details .section-3{
+.day-details-wrapper .section-3 {
   position: relative;
 }
 
-.day-details .section-4{
+.day-details-wrapper .section-4 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -70,17 +74,17 @@
   margin-top: 2rem;
 }
 
-
-
-.day-details .section-subhead{
+.day-details-wrapper .section-subhead {
   font-size: 3rem;
-  color :white;
+  color: white;
   font-family: "Sedgwick Ave Display";
   padding-bottom: 2rem;
 }
 
 @media only screen and (max-width: 700px) {
-  .day-details-wrapper .section-1, .day-details-wrapper .section-2, .day-details-wrapper .section-3{
+  .day-details-wrapper .section-1,
+  .day-details-wrapper .section-2,
+  .day-details-wrapper .section-3 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,91 +92,57 @@
     text-align: center;
   }
 
-  .day-details-wrapper{
+  .day-details-wrapper {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 8rem;
   }
 
-  .day-details-wrapper .section-head{
+  .day-details-wrapper .section-head {
     flex-direction: column;
     align-items: center;
     gap: 0;
   }
 
-  .day-details-wrapper .section-head .full-date{
+  .day-details-wrapper .section-head .full-date {
     flex-direction: row;
     align-items: last baseline;
   }
 
-  .day-details-wrapper .behind-banner, .hatchline-banner{
+  .day-details-wrapper .behind-banner,
+  .hatchline-banner {
     left: 0;
   }
 
-  .day-details-wrapper .tonight-special{
+  .day-details-wrapper .tonight-special {
     display: none;
   }
 }
 
-.day-details-wrapper .day-details-wrapper .section-event{
-  /* background-color: green; */
+.day-details-wrapper .section-event {
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: scroll;
   display: flex;
   align-items: start;
   justify-content: start;
   flex-direction: column;
 }
 
-.day-details-wrapper .section-event::-webkit-scrollbar{
-  display: none;
-}
-
-/* .section-event::-webkit-scrollbar {
-  width: 5px !important;
-  background-color: var(--accent1-50);
+.section-event::-webkit-scrollbar {
+  height: 7px !important;
   border-radius: 10px !important;
 }
 
-.section-event::-webkit-scrollbar-track{
-  width: 5px !important;
+.section-event::-webkit-scrollbar-track {
+  height: 5px !important;
 }
 
 .section-event::-webkit-scrollbar-thumb {
-  width: 5px !important;
+  height: 5px !important;
   border-radius: 10px;
   background: var(--accent2);
 }
 .section-event::-webkit-scrollbar-button,
 .section-event::-webkit-scrollbar-corner {
   display: none;
-} */
-
-.scroll-section-event{
-  overflow-x: scroll;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: start;
 }
-
-.scroll-section-event::-webkit-scrollbar {
-  height: 7px !important;
-  border-radius: 10px !important;
-}
-
-.scroll-section-event::-webkit-scrollbar-track{
-  height: 5px !important;
-}
-
-.scroll-section-event::-webkit-scrollbar-thumb {
-  height: 5px !important;
-  border-radius: 10px;
-  background: var(--accent2);
-}
-.scroll-section-event::-webkit-scrollbar-button,
-.scroll-section-event::-webkit-scrollbar-corner {
-  display: none;
-}
-
-
