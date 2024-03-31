@@ -30,7 +30,9 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
 								<div className="row" key={i}>
 									<div className="time">{a[0]}</div>
 									<div className="linespace"></div>
-									<div className="eventname">{a[1]}</div>
+									<Link to={`/event/${a[1]}`}>
+										<div className="eventname">{a[1]}</div>
+									</Link>
 								</div>
 							);
 						})}

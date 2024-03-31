@@ -99,6 +99,12 @@
 .schedule .event .event-content .list .timings .row .time {
   width: max-content;
 }
+.schedule .event .event-content .list .timings .row .eventname{
+  color: white;
+}
+.schedule .event .event-content .list .timings .row .eventname:hover{
+  text-decoration: underline;
+}
 
 .schedule .event .event-content .description {
   text-align: right;
