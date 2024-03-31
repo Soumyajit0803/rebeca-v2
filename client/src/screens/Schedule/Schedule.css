@@ -66,9 +66,9 @@
   text-align: center;
 }
 
-.schedule * {
+/* .schedule * {
   background-color: transparent;
-}
+} */
 
 .schedule .event .event-content .list .timings {
   display: flex;
@@ -105,7 +105,7 @@
   color: white;
 
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
@@ -169,6 +169,7 @@
   .schedule .event .event-content .description {
     text-align: center;
     margin-bottom: 8rem;
+    align-items: center;
   }
 
   .schedule .event .event-content .description .about {
@@ -200,6 +201,7 @@
   }
 
   .schedule .event .event-content .description {
-    display: none;
+    /* display: none; */
+    align-items: center;
   }
 }

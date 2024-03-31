@@ -6,13 +6,17 @@ import Eventcard from "../../components/Eventcard/Eventcard";
 import Rebeca from "../../../public/assets/rebeca.json";
 import PujaHeading from "../../components/PujaHeading/PujaHeading";
 import { useParams } from "react-router-dom";
+import ArtistCard from "../../components/ArtistCard/ArtistCard";
 
 const Artist = ({ artistName }) => {
   return (
-    <div className="artist-banner">
-      <img src={`/assets/imgs/artists/${artistName}.png`} />
-      <p className="artist-label">{artistName}</p>
-    </div>
+		<div className="artist-banner">
+			<div className="img">
+				<img src={`/assets/imgs/artists/${artistName}.png`} />
+			</div>
+
+			<p className="artist-label">{artistName}</p>
+		</div>
   );
 };
 
@@ -32,7 +36,7 @@ const Daydetails = () => {
     }
   };
   return (
-    <div className="day-details-wrapper">
+    <div className="day-details">
       <div
         className="behind-banner"
         style={{
@@ -48,13 +52,19 @@ const Daydetails = () => {
         {Day.significance}
       </div>
       <div className="section-3">
-        <div className="hatchline-banner"></div>
+        {/* <div className="hatchline-banner"></div> */}
         <div className="section-subhead">{DayID.toUpperCase() + " LINE UP!"}</div>
         Brace Yourself for an Unforgettable Showcase, As We Proudly Unveil Our Stellar Lineup
       </div>
       <div className="section-4">
         {Day.lineUps.map((value, index) => {
-          return <Artist artistName={value} key={index} />;
+          return (
+				<ArtistCard
+					key={index}
+					name={value}
+					img={`${value}.png`}
+				></ArtistCard>
+			);
         })}
       </div>
 

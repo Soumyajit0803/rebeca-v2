@@ -5,6 +5,7 @@ import PujaHeading from "../../components/PujaHeading/PujaHeading";
 import contents from "../../assets/data/contents.json"
 import events from "../../assets/data/events.json"
 import { Link } from "react-router-dom";
+import Button from "../../components/Button/Button";
 // import EventPopup from "../../components/EventPopup/EventPopup"
 
 var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back
@@ -13,34 +14,41 @@ with a bang!`;
 function EventSection({ date, datetxt, eventlist, topic, about }) {
   var bgsetter = datetxt.toLowerCase();
   return (
-    <div className={"event " + bgsetter + "-back"}>
-      <Link to={`/events/${bgsetter}`}>
-        <PujaHeading date={date} datetxt={datetxt} customcss={"left-padding"} />
-      </Link>
-      <div className={"event-content"}>
-        <div className="list">
-          <div className="timings">
-            {eventlist.map((a, i) => {
-              return (
-                <div className="row" key={i}>
-                  <div className="time">{a[0]}</div>
-                  <div className="linespace"></div>
-                  <div className="eventname">{a[1]}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        <div className="description">
-          <div className="topic display-font">{topic}</div>
-          <div className="about">{about}</div>
+		<div className={"event " + bgsetter + "-back"}>
+			<Link to={`/events/${bgsetter}`}>
+				<PujaHeading
+					date={date}
+					datetxt={datetxt}
+					customcss={"left-padding"}
+				/>
+			</Link>
+			<div className={"event-content"}>
+				<div className="list">
+					<div className="timings">
+						{eventlist.map((a, i) => {
+							return (
+								<div className="row" key={i}>
+									<div className="time">{a[0]}</div>
+									<div className="linespace"></div>
+									<div className="eventname">{a[1]}</div>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div className="description">
+					<div className="topic display-font">{topic}</div>
+					<div className="about">{about}</div>
 
-          <div className="about-link">
-            Learn more
-          </div>
-        </div>
-      </div>
-    </div>
+					<Link to={`/events/${bgsetter}`}>
+						<Button
+							variant={"filled"}
+							innerText={"Create lifelong memories"}
+						></Button>
+					</Link>
+				</div>
+			</div>
+		</div>
   );
 }
 

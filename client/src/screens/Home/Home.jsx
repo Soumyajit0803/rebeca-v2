@@ -3,6 +3,7 @@ import "./Home.css";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
 import PujaDay from "./PujaDay";
+import ArtistCard from "../../components/ArtistCard/ArtistCard";
 
 const Home = () => {
 	const artists = [
@@ -77,16 +78,8 @@ const Home = () => {
 					className="list"
 					style={{ marginLeft: `${artistMargin}px` }}
 				>
-					{artists.map((artist) => (
-						<div className="artist" key={artist.name}>
-							<div className="img">
-								<img
-									src={"/assets/imgs/artists/" + artist.img}
-									alt=""
-								/>
-							</div>
-							<div className="display-font">{artist.name}</div>
-						</div>
+					{artists.map((artist, i) => (
+						<ArtistCard key={i} name={artist.name} img={artist.img}></ArtistCard>
 					))}
 				</div>
 				<div className="controls display-font">

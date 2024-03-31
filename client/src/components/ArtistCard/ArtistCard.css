@@ -1,0 +1,26 @@
+.artist-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	/* border: 1px solid red; */
+	/* width: fit-content; */
+}
+.artist-card .img {
+	position: relative;
+	height: 300px;
+}
+.artist-card .img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.artist-card .display-font {
+	position: absolute;
+	bottom: 0;
+	line-height: 70%;
+	/* border: 1px solid red; */
+	line-break: strict;
+	
+}
