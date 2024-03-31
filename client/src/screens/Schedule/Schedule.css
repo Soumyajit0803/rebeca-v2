@@ -1,13 +1,15 @@
 .schedule {
   /* font-family: "Sedgwick Ave Display", cursive; */
   padding: 5rem;
-  font-size: 30px;
+  font-size: 20px;
   /* min-width: 525px; */
-  color: #fff;
+  /* color: #fff; */
+  border: 1px solid red;
 }
 
 .schedule .event {
-  margin-top: 7rem;
+  margin-top: 5rem;
+  /* border: 1px solid red; */
 }
 
 .schedule .event .event-content {
@@ -61,11 +63,17 @@
   width: 100%;
 }
 
-.schedule .heading .title {
+.schedule .eheading .title {
   width: min(15ch, 100%);
   text-align: center;
 }
 
+
+.schedule .event .event-content .list {
+  width: 40%;
+  color: white;
+  /* font-size: 30px; */
+}
 .schedule .event .event-content .list .timings {
   display: flex;
   align-items: space-between;
@@ -75,9 +83,6 @@
   flex-grow: 1;
 }
 
-.schedule .event .event-content .list {
-  width: 40%;
-}
 
 .schedule .event .event-content .list .timings .row {
   display: flex;
@@ -107,14 +112,13 @@
   gap: 1rem;
 }
 
-.schedule .event .event-content .description .topic {
-  font-size: 50px;
-}
+
 
 .schedule .event .event-content .description .about {
-  padding-top: 1.5rem;
+  /* padding-top: 1.5rem; */
   width: 30ch;
   font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.537);
 }
 
 .schedule .event .event-content .description .about-link {
@@ -144,7 +148,7 @@
     width: 100%;
   }
   .left-padding {
-    margin: 0;
+    margin-left: 2rem;
   }
   .schedule {
     padding: 2rem;
@@ -161,9 +165,9 @@
   }
 
   .schedule .event .event-content .description {
-    text-align: center;
-    margin-bottom: 8rem;
-    align-items: center;
+    text-align: left;
+    margin-bottom: 4rem;
+    align-items: flex-start;
   }
 
   .schedule .event .event-content .description .about {
@@ -172,34 +176,41 @@
 }
 
 @media screen and (max-width: 580px) {
-  .schedule .heading {
-    padding: 0;
+  .left-padding {
+    margin-left: 1rem;
+  }
+  .schedule {
+    padding: 0rem;
     padding-top: 104px;
+    font-size: 20px;
   }
   .schedule .event .event-content {
     padding: 1rem;
     padding-top: 3rem;
   }
-  .schedule .heading .sub-title {
+  /* .schedule .heading .sub-title {
     width: 100%;
-  }
-  .schedule .event .event-content .list,
-  .schedule {
+  } */
+  .schedule .event .event-content .list{
     font-size: 20px;
     padding: 0.5rem;
   }
 
-  .schedule .heading .sub-title {
+  /* .schedule .heading .sub-title {
     font-size: 20px;
     text-align: center;
-  }
+  } */
 
   .schedule .event .event-content .description {
     /* display: none; */
-    align-items: center;
+    /* align-items: center; */
+  }
+
+  .schedule .event .event-content .description .about{
+    font-size: 20px;
   }
 }
 
 .schedule .eheading:hover {
-  color: var(--accent3);
+  color: var(--accent1);
 }

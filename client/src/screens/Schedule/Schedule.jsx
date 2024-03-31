@@ -12,34 +12,38 @@ var introtext = `Prepare to be swept away as you put your best foot forward in t
 with a bang!`;
 
 function EventSection({ date, datetxt, eventlist, topic, about }) {
-    var bgsetter = datetxt.toLowerCase();
-    return (
-        <div className={"event " + bgsetter + "-back"}>
-            <Link to={`/events/${bgsetter}`}>
-                <PujaHeading date={date} datetxt={datetxt} customcss={"left-padding"} />
-            </Link>
-            <div className={"event-content"}>
-                <div className="list">
-                    <div className="timings">
-                        {eventlist.map((a, i) => {
-                            return (
-                                <div className="row" key={i}>
-                                    <div className="time">{a[0]}</div>
-                                    <div className="linespace"></div>
-                                    <div className="eventname">{a[1]}</div>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-                <div className="description">
-                    <div className="topic display-font">{topic}</div>
-                    <div className="about">{about}</div>
+  var bgsetter = datetxt.toLowerCase();
+  return (
+		<div className={"event " + bgsetter + "-back"}>
+			<Link to={`/events/${bgsetter}`}>
+				<PujaHeading
+					date={date}
+					datetxt={datetxt}
+					customcss={"left-padding"}
+				/>
+			</Link>
+			<div className={"event-content"}>
+				<div className="list">
+					<div className="timings">
+						{eventlist.map((a, i) => {
+							return (
+								<div className="row" key={i}>
+									<div className="time">{a[0]}</div>
+									<div className="linespace"></div>
+									<div className="eventname">{a[1]}</div>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+				<div className="description">
+					<div className="topic display-font">{topic}</div>
+					<div className="about">{about}</div>
 
 					<Link to={`/events/${bgsetter}`}>
 						<Button
 							variant={"filled"}
-							innerText={"Create lifelong memories"}
+							innerText={"Learn more"}
 						></Button>
 					</Link>
 				</div>
