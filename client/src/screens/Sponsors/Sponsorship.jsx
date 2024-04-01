@@ -102,9 +102,6 @@ function Sponsorship() {
 		sponsor24: { imgname: "Shapoorji.png" },
 		sponsor25: { imgname: "KTM.jpg" },
 	};
-	
-	  
-	  
 
 	return (
 		<>
@@ -119,7 +116,7 @@ function Sponsorship() {
 				<section className="section-1">
 					<div className="side-img">
 						<img
-							src="/assets/imgs/sponsorship/clockTower1.png"
+							src="/assets/imgs/sponsorship/clockTower1.webp"
 							alt=""
 						/>
 					</div>
@@ -145,7 +142,7 @@ function Sponsorship() {
 				<section className="section-2">
 					<div className="flow-chart">
 						<img
-							src={`/assets/imgs/sponsorship/${fileName}.png`}
+							src={`/assets/imgs/sponsorship/${fileName}.webp`}
 							alt=""
 						/>
 					</div>
@@ -153,7 +150,7 @@ function Sponsorship() {
 				<section className="section-2">
 					<div className="cover-pic">
 						<img
-							src="/assets/imgs/sponsorship/coverPic1.png"
+							src="/assets/imgs/sponsorship/coverPic1.webp"
 							alt=""
 						/>
 					</div>
@@ -163,7 +160,7 @@ function Sponsorship() {
 					<Heading1 title={"Sponsor Categories"} w={"60%"}></Heading1>
 					<div className="sponsor-categories">
 						<img
-							src={`/assets/imgs/sponsorship/${sponsorCategories}.png`}
+							src={`/assets/imgs/sponsorship/${sponsorCategories}.webp`}
 							alt=""
 						/>
 					</div>
@@ -173,9 +170,14 @@ function Sponsorship() {
 					<Heading1 title={"Past-sponsors"} w={"60%"}></Heading1>
 					<div className="center1">
 						<div className="cards">
-							{Object.values(sponsorData).map((sponsor, index) => (
-								<SponsorCard key={index} sponsor={sponsor} />
-							))}							
+							{Object.values(sponsorData).map(
+								(sponsor, index) => (
+									<SponsorCard
+										key={index}
+										sponsor={sponsor}
+									/>
+								)
+							)}
 						</div>
 					</div>
 				</section>

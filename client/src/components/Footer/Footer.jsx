@@ -11,11 +11,11 @@ const Footer = () => {
 				{/* <div className="name">Rebeca '24</div> */}
 				{/* <div className="logos">
 					<div className="item">
-						<img src="/assets/EES_edited.png" alt="" />
+						<img src="/assets/EES_edited.webp" alt="" />
 					</div>
 					<div className="divider"></div>
 					<div className="item">
-						<img src="/assets/iiest-logo-white.png" alt="" />
+						<img src="/assets/iiest-logo-white.webp" alt="" />
 					</div>
 				</div> */}
 				<div className="address">
@@ -28,10 +28,19 @@ const Footer = () => {
 					© rebeca.in 2024. All right reserved
 				</div>
 				<div className="address">
-					Made with 💙 by <a href="https://dugarrishab.github.io/RishabDugar/">Rishab Dugar</a>,{" "}
-					<a href="https://abhijit-karmakar.vercel.app/">Abhijit Karmakar</a>,{" "}
-					<a href="https://soumyajit-dev.vercel.app/">Soumyajit Karmakar</a> and{" "}
-					<a href="">Utsab Kundu</a>
+					Made with 💙 by{" "}
+					<a href="https://dugarrishab.github.io/RishabDugar/">
+						Rishab Dugar
+					</a>
+					,{" "}
+					<a href="https://abhijit-karmakar.vercel.app/">
+						Abhijit Karmakar
+					</a>
+					,{" "}
+					<a href="https://soumyajit-dev.vercel.app/">
+						Soumyajit Karmakar
+					</a>{" "}
+					and <a href="">Utsab Kundu</a>
 				</div>
 			</div>
 			<div className="right-col">

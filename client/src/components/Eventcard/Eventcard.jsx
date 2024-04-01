@@ -17,26 +17,36 @@ const Eventpanel = ({ value, index, FocusEvent }) => {
   const propsWidth = { width: show ? "22rem" : "0px" };
 
   return (
-    <div key={index} className="event-data">
-      <div onClick={() => handleExpand(index)} className="data-header">
-        {value.eventName}
-        <p>{value.time}</p>
-      </div>
+		<div key={index} className="event-data">
+			<div onClick={() => handleExpand(index)} className="data-header">
+				{value.eventName}
+				<p>{value.time}</p>
+			</div>
 
-      <div className="data-body">
-        <Link to={`/event/${value.eventName}`}>
-          <div className="img" style = {{
-            display: 
-         (window.innerWidth > 500 || show)?"contents":"none" }}>
-            <img
-              style={window.innerWidth <= 500 ? propsHeight : propsWidth}
-              src={`/assets/imgs/home/${value.eventName}.png`}
-              alt=""
-            />
-          </div>
-        </Link>
-      </div>
-    </div>
+			<div className="data-body">
+				<Link to={`/event/${value.eventName}`}>
+					<div
+						className="img"
+						style={{
+							display:
+								window.innerWidth > 500 || show
+									? "contents"
+									: "none",
+						}}
+					>
+						<img
+							style={
+								window.innerWidth <= 500
+									? propsHeight
+									: propsWidth
+							}
+							src={`/assets/imgs/home/${value.eventName}.webp`}
+							alt=""
+						/>
+					</div>
+				</Link>
+			</div>
+		</div>
   );
 };
 

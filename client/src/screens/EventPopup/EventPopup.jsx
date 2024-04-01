@@ -52,16 +52,16 @@ const EventPopup = () => {
                 <div className="judges">
                     {eventInfo.judges.map((judge, i) => {
                         return (
-                            <div className="judge" key={i}>
-                                <img
-                                    src={`/assets/imgs/ProfileImg/${judge}.png`}
-                                    alt=""
-                                    srcSet=""
-                                    className="judge-pic"
-                                />
-                                <span>{judge}</span>
-                            </div>
-                        );
+							<div className="judge" key={i}>
+								<img
+									src={`/assets/imgs/ProfileImg/${judge}.webp`}
+									alt=""
+									srcSet=""
+									className="judge-pic"
+								/>
+								<span>{judge}</span>
+							</div>
+						);
                     })}
                 </div>
             </div>

@@ -153,7 +153,7 @@ const Navbar = ({
 							>
 								Events & Schedule
 							</NavLink>
-							
+
 							<NavLink
 								to="/sponsorship"
 								id="nav-sponsorship"
@@ -216,11 +216,11 @@ const Navbar = ({
 				className="drawer"
 			>
 				<div className="bg">
-					<img src="/assets/imgs/menu.png" alt="" />
+					<img src="/assets/imgs/menu.webp" alt="" />
 				</div>
 				<Link to="/" className="logo">
 					<div>
-						<img src="/assets/logo/logo_white.png" alt="" />
+						<img src="/assets/logo/logo_white.webp" alt="" />
 						{/* REBECA */}
 					</div>
 				</Link>
