@@ -76,25 +76,33 @@ function Sponsorship() {
 	}, []);
 
 	const sponsorData = {
-		sponsor1: { imgname: "IOCL.jpg" },
-		sponsor2: { imgname: "ADOBE.jpg" },
-		sponsor3: { imgname: "RR.png" },
-		sponsor4: { imgname: "COAL.png" },
-		sponsor5: { imgname: "LAKME.jpg" },
-		sponsor6: { imgname: "SAIL.jpg" },
-		sponsor7: { imgname: "DUCKBACK.jpg" },
-		sponsor8: { imgname: "DOMINOS.jpg" },
-		sponsor9: { imgname: "FRIENDSFM.jpg" },
-		sponsor10: { imgname: "KTM.jpg" },
-		sponsor11: { imgname: "COKESTUDIO.jpg" },
-		sponsor12: { imgname: "OLA.png" },
-		sponsor13: { imgname: "CESC.jpg" },
-		sponsor14: { imgname: "Zomato.png" },
-		sponsor15: { imgname: "WOW.png" },
-		sponsor16: { imgname: "LINC.png" },
-		sponsor17: { imgname: "Shapoorji.png" },
-		sponsor18: { imgname: "simoco.png" },
-	  };
+		sponsor1: { imgname: "CocaCola.png" },
+		sponsor2: { imgname: "COKESTUDIO.jpg" },
+		sponsor3: { imgname: "RollsRoyce.png" },
+		sponsor4: { imgname: "IOCL.jpg" },
+		sponsor5: { imgname: "SAIL.jpg" },
+		sponsor6: { imgname: "RedFM.jpg" },
+		sponsor7: { imgname: "FRIENDSFM.jpg" },
+		sponsor8: { imgname: "ADOBE.jpg" },
+		sponsor9: { imgname: "simoco.jpg" },
+		sponsor10: { imgname: "LAKME.jpg" },
+		sponsor11: { imgname: "duckback.png" },
+		sponsor12: { imgname: "L&T.png" },
+		sponsor13: { imgname: "Microsoft.png" },
+		sponsor14: { imgname: "cryAmerica.png" },
+		sponsor15: { imgname: "Zomato.png" },
+		sponsor16: { imgname: "Trends.png" },
+		sponsor17: { imgname: "cesc.png" },
+		sponsor18: { imgname: "Linc.jpg" },
+		sponsor19: { imgname: "COAL.png" },
+		sponsor20: { imgname: "DOMINOS.jpg" },
+		sponsor21: { imgname: "wowMomo.jpg" },
+		sponsor22: { imgname: "pantaloons.png" },
+		sponsor23: { imgname: "OLA.png" },
+		sponsor24: { imgname: "Shapoorji.png" },
+		sponsor25: { imgname: "KTM.jpg" },
+	};
+	
 	  
 	  
 
