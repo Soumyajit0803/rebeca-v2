@@ -126,7 +126,7 @@ const Navbar = ({
 								id="drawer-open-btn"
 								onClick={handleDrawerOpen}
 								variant="filled"
-								color="white"
+								color="black"
 								innerText={
 									<span
 										className="material-icons"
