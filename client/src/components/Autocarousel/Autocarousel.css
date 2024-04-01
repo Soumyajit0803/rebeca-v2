@@ -7,15 +7,16 @@
   /* gap: 5rem; */
 }
 
-.autocarousel-wrapper img{
-  width: 15rem;
+.autocarousel-wrapper img,
+.autocarousel-wrapper video{
+  height: 300px
 }
 
 .autocarousel-wrapper .elements{
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: scrollanim 10s linear infinite;
+  animation: scrollanim 20s linear infinite;
 }
 
 
@@ -28,5 +29,3 @@
     transform: translateX(-100%);
   }
 }
-
-

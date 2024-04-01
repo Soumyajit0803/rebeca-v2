@@ -28,9 +28,9 @@ const Footer = () => {
 					© rebeca.in 2024. All right reserved
 				</div>
 				<div className="address">
-					Made with 💙 by <a href="">Rishab Dugar</a>,{" "}
-					<a href="">Abhijit Karmakar</a>,{" "}
-					<a href="">Soumyajit karmakar</a> and{" "}
+					Made with 💙 by <a href="https://dugarrishab.github.io/RishabDugar/">Rishab Dugar</a>,{" "}
+					<a href="https://abhijit-karmakar.vercel.app/">Abhijit Karmakar</a>,{" "}
+					<a href="https://soumyajit-dev.vercel.app/">Soumyajit Karmakar</a> and{" "}
 					<a href="">Utsab Kundu</a>
 				</div>
 			</div>
