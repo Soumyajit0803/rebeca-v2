@@ -175,9 +175,9 @@ const Navbar = ({
 							>
 								Merchandise
 							</NavLink>
-							<NavLink id="nav-faq" to="/faq" className={"item"}>
+							{/* <NavLink id="nav-faq" to="/faq" className={"item"}>
 								FAQs
-							</NavLink>
+							</NavLink> */}
 							{/* {user ? (
 								<div
 									className="item"
@@ -271,13 +271,13 @@ const Navbar = ({
 					>
 						Merchandise
 					</NavLink>
-					<NavLink
+					{/* <NavLink
 						onClick={handleLinkClick}
 						to="/faq"
 						className={"item"}
 					>
 						FAQs
-					</NavLink>
+					</NavLink> */}
 				</div>
 			</Drawer>
 			{/* {user && (

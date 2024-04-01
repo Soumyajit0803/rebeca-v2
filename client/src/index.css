@@ -78,30 +78,26 @@ button {
 	cursor: pointer;
 	transition: border-color 0.25s;
 }
-button:hover {
-	/* border-color: #646cff; */
-}
+
 button:focus,
 button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* @media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-	a:hover {
+@media (prefers-color-scheme: light) {
+	/* :root {
+		color: #ffffff;
+	} */
+	/* a:hover {
 		color: #747bff;
-	}
+	}*/
 	button {
-		background-color: #f9f9f9;
+		color: #f9f9f9;
 	}
-} */
+}
 @media only screen and (max-width: 1100px),
 	only screen and (max-device-width: 1100px) {
 	.display-font {
 		font-size: 40px;
 	}
-	
 }
