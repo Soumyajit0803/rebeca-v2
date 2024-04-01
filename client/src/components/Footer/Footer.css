@@ -69,6 +69,7 @@
 }
 .footer .left-col a {
 	color: rgb(208, 208, 208, 0.75);
+	transition: all ease 0.2s;
 }
 .footer .left-col a:hover {
 	color: var(--primary);
