@@ -6,7 +6,6 @@ import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
 import EventPopup from "./screens/EventPopup/EventPopup";
-import Autocarousel from "./components/Autocarousel/Autocarousel";
 
 const AllRoutes = ({
   login,

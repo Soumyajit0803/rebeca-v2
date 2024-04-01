@@ -23,6 +23,9 @@
   justify-content: space-between;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+  padding: 1rem;
+  padding-left: 0;
+  padding-right: 0;
   /* flex-direction: column; */
 }
 
@@ -30,17 +33,20 @@
   font-size: 0.8rem;
 }
 
-.event-data .data-body img {
+.event-data .data-body .img img {
   height: 15rem;
+  width: 0px;
   transition: all ease 0.2s;
   position: relative;
+  object-fit: cover;
 }
 
 .event-data .data-body {
   position: relative;
+  transition: all ease 0.2s;
 }
 
-.event-data .data-body::before {
+.event-data .data-body .img::before {
   content: "learn more";
   font-size: 1rem;
   width: 100%;
@@ -59,12 +65,55 @@
   transition: all ease 0.2s;
 }
 
-.event-data .data-body:hover::before {
+.event-data .data-body .img:hover::before {
   transform: scaleX(1);
   opacity: 1;
 }
 
-.event-data:hover {
+.event-data .data-header:hover {
   cursor: pointer;
   color: var(--accent1);
+}
+.data-body{
+  /* background-color: red; */
+}
+
+@media only screen and (max-width: 500px){
+  .event-card, .event-data{
+    flex-direction: column;
+    /* width: 100%; */
+  }
+
+  .event-data {
+    width: 100%;
+  }
+
+  .event-data .data-header{
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+  }
+
+  .event-data .data-body .img::before{
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+
+  .event-data .data-body:hover::before{
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  .event-data .data-body .img img {
+    width: 70vw;
+    height: 0px;
+  }
+
+  .day-details-wrapper .section-event {
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.remove{
+  display: none
 }

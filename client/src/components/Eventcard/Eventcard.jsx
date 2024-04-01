@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "./Eventcard.css";
 import { Link } from "react-router-dom";
 
@@ -12,23 +12,30 @@ const Eventpanel = ({ value, index, FocusEvent }) => {
   if (FocusEvent.includes(index)) {
     show = true;
   }
+
+  const propsHeight = { height: show ? "15rem" : "0px" };
+  const propsWidth = { width: show ? "22rem" : "0px" };
+
   return (
     <div key={index} className="event-data">
       <div onClick={() => handleExpand(index)} className="data-header">
         {value.eventName}
         <p>{value.time}</p>
       </div>
-      <Link to={`/event/${value.eventName}`}>
-        <div className="data-body">
-          <img
-            style={{
-              width: show ? "22rem" : "0",
-            }}
-            src={`/assets/imgs/home/${value.eventName}.png`}
-            alt=""
-          />
-        </div>
-      </Link>
+
+      <div className="data-body">
+        <Link to={`/event/${value.eventName}`}>
+          <div className="img" style = {{
+            display: 
+         (window.innerWidth > 500 || show)?"contents":"none" }}>
+            <img
+              style={window.innerWidth <= 500 ? propsHeight : propsWidth}
+              src={`/assets/imgs/home/${value.eventName}.png`}
+              alt=""
+            />
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };
