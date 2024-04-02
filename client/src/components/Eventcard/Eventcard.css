@@ -17,7 +17,7 @@
 
 .event-data .data-header {
   font-size: 1.2rem;
-  font-family: "Sedgwick Ave Display";
+  font-family: "Sedgwick Ave Display", cursive;
   display: flex;
   align-items: last baseline;
   justify-content: space-between;
@@ -73,9 +73,6 @@
 .event-data .data-header:hover {
   cursor: pointer;
   color: var(--accent1);
-}
-.data-body{
-  /* background-color: red; */
 }
 
 @media only screen and (max-width: 500px){
