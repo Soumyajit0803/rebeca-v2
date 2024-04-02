@@ -25,7 +25,7 @@ const SponsorCard = ({sponsor}) => {
     console.log(sponsor.imgname);
   return (
     <div style={styles} className="card" >        
-      <img src={`/assets/imgs/sponsorship/SponsorsImg/${sponsor.imgname}`} alt="" style={
+      <img src={`/assets/imgs/sponsorship/SponsorsImg/${sponsor.imgname}.webp`} alt="" style={
         {
             width:"300px",
             height:"210px",
