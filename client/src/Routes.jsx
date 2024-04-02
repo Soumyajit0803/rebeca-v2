@@ -6,6 +6,7 @@ import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
 import EventPopup from "./screens/EventPopup/EventPopup";
+import Merchandise from "./screens/Merchandise/Merchandise";
 
 const AllRoutes = ({
   login,
@@ -60,8 +61,7 @@ const AllRoutes = ({
           ></Schedule>
           // <Autocarousel />
         }
-      >
-      </Route>
+      ></Route>
       <Route exact path="/events/:DayID" element={<Daydetails />} />
       <Route exact path="/event/:eventName" element={<EventPopup />} />
       <Route
@@ -79,6 +79,23 @@ const AllRoutes = ({
             logout={logout}
             user={user}
           ></Sponsorship>
+        }
+      ></Route>
+      <Route
+        exact
+        path="/merchandise"
+        element={
+          <Merchandise
+            onAuthClose={onAuthClose}
+            onAuthOpen={onAuthOpen}
+            onEmailverifyOpen={onEmailverifyOpen}
+            onEmailverifyClose={onEmailverifyClose}
+            authOpen={authOpen}
+            emailVerificationOpen={emailVerificationOpen}
+            login={login}
+            logout={logout}
+            user={user}
+          ></Merchandise>
         }
       ></Route>
     </Routes>
