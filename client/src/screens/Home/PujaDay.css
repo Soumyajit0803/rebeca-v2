@@ -33,6 +33,10 @@
 
 	position: absolute;
 	right: 5%;
+	transition: 0.5s all;
+}
+.puja-day .contents .title:hover{
+	color: var(--primary);
 }
 .puja-day.alt .contents{
 	text-align: left;

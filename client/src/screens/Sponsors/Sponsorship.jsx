@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import "./Sponsorship.css";
 import SponsorCard from "./SponsorsCard";
 import Heading from "../../components/Heading/Heading";
+import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 
 const Heading1 = ({ title, subTitle, w }) => {
 	return (
@@ -103,6 +105,16 @@ function Sponsorship() {
 		sponsor25: { imgname: "KTM" },
 	};
 
+	 const onButtonClick = () => {
+			const pdfUrl = "/assets/rebeca83brochure.pdf";
+			const link = document.createElement("a");
+			link.href = pdfUrl;
+			link.download = "rebeca83brochure.pdf"; // specify the filename
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		};
+
 	return (
 		<>
 			<div className="sponsor">
@@ -112,7 +124,19 @@ function Sponsorship() {
 						"Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back with a bang!"
 					}
 				></Heading>
-
+				<Link to={"#"}>
+					<Button
+						className="download_btn"
+						variant={"filled"}
+						innerText={"Download the brochure"}
+						endIcon={
+							<span className="material-icons">
+								file_download
+							</span>
+						}
+						onClick={onButtonClick}
+					></Button>
+				</Link>
 				<section className="section-1">
 					<div className="side-img">
 						<img
@@ -167,9 +191,9 @@ function Sponsorship() {
 				</section>
 
 				<section className="section-4">
-					<div style={{padding:"0 5rem"}}>
+					<div style={{ padding: "0 1rem" }}>
 						<Heading1 title={"Past-sponsors"} w={"60%"}></Heading1>
-					</div>					
+					</div>
 					<div className="center1">
 						<div className="cards">
 							{Object.values(sponsorData).map(

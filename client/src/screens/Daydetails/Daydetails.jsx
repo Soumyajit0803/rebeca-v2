@@ -13,7 +13,7 @@ const Artist = ({ artistName }) => {
 	return (
 		<div className="artist-banner">
 			<div className="img">
-				<img src={`/assets/imgs/artists/${artistName}.webp`} />
+				<img src={`/assets/imgs/artists/${artistName}.png`} />
 			</div>
 
 			<p className="artist-label">{artistName}</p>
@@ -45,8 +45,8 @@ const Daydetails = () => {
 				<div className="section-subhead">
 					{DayID.toUpperCase() + " LINE UP!"}
 				</div>
-				Brace Yourself for an Unforgettable Showcase, As We Proudly
-				Unveil Our Stellar Lineup
+				{/* Brace Yourself for an Unforgettable Showcase, As We Proudly */}
+				
 			</div>
 			<div className="section-4">
 				{Day.lineUps.map((value, index) => {
@@ -54,10 +54,11 @@ const Daydetails = () => {
 						<ArtistCard
 							key={index}
 							name={value}
-							img={`${value}.webp`}
+							img={`${value}.png`}
 						></ArtistCard>
 					);
 				})}
+				
 			</div>
 
 			<div className="section-5">

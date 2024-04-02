@@ -24,6 +24,8 @@
 	bottom: 0;
 	line-height: 70%;
 	line-break: strict;
+	width: 100%;
+	text-align: center;
 }
 @media only screen and (max-width: 480px),
 	only screen and (max-device-width: 480px) {
