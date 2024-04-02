@@ -87,7 +87,7 @@ const Footer = () => {
 				<div className="socials">
 					<div className="item">
 						<div className="logo">
-							<i class="fa-brands fa-facebook-f"></i>
+							<i className="fa-brands fa-facebook-f"></i>
 						</div>
 						<div className="link">
 							<a href="https://www.facebook.com/rebeca.iiests">
@@ -97,7 +97,7 @@ const Footer = () => {
 					</div>
 					<div className="item">
 						<div className="logo">
-							<i class="fa-brands fa-instagram"></i>
+							<i className="fa-brands fa-instagram"></i>
 						</div>
 						<a href="https://www.instagram.com/rebeca_iiests">
 							<div className="link">/rebeca_iiests</div>
@@ -106,7 +106,7 @@ const Footer = () => {
 
 					<div className="item">
 						<div className="logo">
-							<i class="fa-brands fa-youtube"></i>
+							<i className="fa-brands fa-youtube"></i>
 						</div>
 						<div className="link">
 							<a href="https://www.youtube.com/@rebecaiiests7685">
