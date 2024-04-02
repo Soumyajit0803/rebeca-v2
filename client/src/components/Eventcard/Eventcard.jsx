@@ -40,8 +40,8 @@ const Eventpanel = ({ value, index, FocusEvent }) => {
 									? propsHeight
 									: propsWidth
 							}
-							src={`/assets/imgs/home/${value.eventName}.webp`}
-							alt=""
+							src={`/assets/imgs/home/${"ashtami"}.webp`}
+							alt="event-icon"
 						/>
 					</div>
 				</Link>
