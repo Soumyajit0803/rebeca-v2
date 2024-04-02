@@ -1,0 +1,7 @@
+.page-scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--accent1);
+}

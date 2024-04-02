@@ -14,6 +14,7 @@ import {
 import { Link, NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 import "./Navbar.css";
+import Progressbar from "../Progressbar/Progressbar";
 
 
 const Navbar = ({
@@ -112,10 +113,11 @@ const Navbar = ({
 	return (
 		<>
 			<div className="navbar">
+				<Progressbar />
 				<div className="left-col">
 					<Link to="/" className="logo">
 						<div>
-							<img src="/assets/logo/logo_white.png" alt="" />
+							<img src="/assets/logo/logo_white.webp" alt="rebeca_logo" />
 							{/* REBECA */}
 						</div>
 					</Link>
