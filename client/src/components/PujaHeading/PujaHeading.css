@@ -42,19 +42,19 @@
 }
 
 .saptami {
-    background-image: url("/assets/imgs/Schedule/saptami-text.png");
+    background-image: url("/assets/imgs/Schedule/saptami-text.webp");
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
 }
 .ashtami {
-    background-image: url("/assets/imgs/Schedule/ashtami-text.png");
+    background-image: url("/assets/imgs/Schedule/ashtami-text.webp");
 }
 .navami {
-    background-image: url("/assets/imgs/Schedule/navami-text.png");
+    background-image: url("/assets/imgs/Schedule/navami-text.webp");
 }
 .dashami {
-    background-image: url("/assets/imgs/Schedule/dashami-text.png");
+    background-image: url("/assets/imgs/Schedule/dashami-text.webp");
 }
 
 @media screen and (max-width: 440px) {

@@ -38,16 +38,16 @@
 }
 
 .schedule .saptami-back .event-content::before {
-  background-image: url("/assets/imgs/Schedule/saptami.png");
+  background-image: url("/assets/imgs/Schedule/saptami.webp");
 }
 .schedule .ashtami-back .event-content::before {
-  background-image: url("/assets/imgs/Schedule/ashtami.png");
+  background-image: url("/assets/imgs/Schedule/ashtami.webp");
 }
 .schedule .navami-back .event-content::before {
-  background-image: url("/assets/imgs/Schedule/navami.png");
+  background-image: url("/assets/imgs/Schedule/navami.webp");
 }
 .schedule .dashami-back .event-content::before {
-  background-image: url("/assets/imgs/Schedule/dashami.png");
+  background-image: url("/assets/imgs/Schedule/dashami.webp");
 }
 
 .eheading .big {
