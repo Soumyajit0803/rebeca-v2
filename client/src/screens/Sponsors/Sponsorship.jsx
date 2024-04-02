@@ -167,7 +167,9 @@ function Sponsorship() {
 				</section>
 
 				<section className="section-4">
-					<Heading1 title={"Past-sponsors"} w={"60%"}></Heading1>
+					<div style={{padding:"0 5rem"}}>
+						<Heading1 title={"Past-sponsors"} w={"60%"}></Heading1>
+					</div>					
 					<div className="center1">
 						<div className="cards">
 							{Object.values(sponsorData).map(

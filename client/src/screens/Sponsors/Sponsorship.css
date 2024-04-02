@@ -79,7 +79,8 @@
 }
 
 .sponsor .section-4 {
-    padding:0 5rem;
+    /* padding:0 5rem; */
+    padding:0 1rem;
     padding-top: 40px;
 }
 .sponsor .section-4 .past-sponsor{
