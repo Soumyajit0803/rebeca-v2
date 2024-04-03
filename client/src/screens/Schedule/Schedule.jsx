@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import EventList from "../../components/EventList/EventList";
 
-var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back
-with a bang!`;
+var introtext = `Experience the timeless tradition of REBECA! Join us for an unforgettable celebration filled with music, dance, competitions, and workshops. Embrace the vibrant spirit of our community as we come together to create lasting memories and forge new friendships. From electrifying performances to engaging activities, there's something for everyone to enjoy. Don't miss out on this exciting event that honors our college's rich heritage and brings us closer together.`;
 
 function EventSection({ date, datetxt, eventlist, topic, about }) {
   var bgsetter = datetxt.toLowerCase();

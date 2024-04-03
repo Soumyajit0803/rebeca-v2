@@ -19,27 +19,27 @@ const Home = () => {
 		},
 		{
 			name: "Anurag Haldar",
-			img: "artist2.webp",
+			img: "artist3.webp",
 		},
 		{
 			name: "Destorted Chromosomes",
-			img: "artist1.webp",
+			img: "artist4.webp",
 		},
 		{
 			name: "Pata Ar Morudyan",
-			img: "artist3.webp",
+			img: "artist5.webp",
 		},
 		{
 			name: "DJ Nilashree",
-			img: "artist2.webp",
+			img: "artist6.webp",
 		},
 		{
 			name: "Ahsas India",
-			img: "artist3.webp",
+			img: "artist7.webp",
 		},
 		{
 			name: "DJ Abhi",
-			img: "artist1.webp",
+			img: "artist8.webp",
 		},
 		{
 			name: "DJ Rakso",

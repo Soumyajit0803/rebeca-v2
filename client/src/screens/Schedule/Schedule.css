@@ -1,10 +1,6 @@
 .schedule {
-  /* font-family: "Sedgwick Ave Display", cursive; */
   padding: 5rem;
-  font-size: 20px;
-  /* min-width: 525px; */
-  /* color: #fff; */
-  /* border: 1px solid red; */
+  font-size: 22px;
 }
 
 .schedule .event {
@@ -17,10 +13,12 @@
   z-index: 3;
   display: flex;
   justify-content: space-between;
+  align-items:start;
   background-size: cover;
   background-color: transparent;
   background-repeat: no-repeat;
   padding: 3rem;
+  gap: 2rem;
 }
 .schedule .event .event-content::before {
   content: "";
@@ -71,9 +69,7 @@
 
 .schedule .event .event-content .description {
   text-align: right;
-  align-self: center;
   color: white;
-
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -86,7 +82,7 @@
 .schedule .event .event-content .description .about {
   /* padding-top: 1.5rem; */
   width: 30ch;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: rgba(255, 255, 255, 0.537);
 }
 
