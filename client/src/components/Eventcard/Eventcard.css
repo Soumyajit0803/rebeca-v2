@@ -5,6 +5,7 @@
   border: 1px solid white;
   gap: 0.5rem;
   transition: all ease 0.3s;
+  height: max-content;
 }
 
 .event-data {
@@ -13,13 +14,15 @@
   transition: all ease 0.2s;
   display: flex;
   justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .event-data .data-header {
   font-size: 1.2rem;
   font-family: "Sedgwick Ave Display", cursive;
   display: flex;
-  align-items: last baseline;
+  align-items: center;
   justify-content: space-between;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -27,6 +30,8 @@
   padding-left: 0;
   padding-right: 0;
   transition: all ease 0.2s;
+  gap: 2rem;
+  height: 50%;
   /* flex-direction: column; */
 }
 
@@ -34,11 +39,16 @@
   font-size: 0.8rem;
 }
 
+.event-data .data-body .img{
+  width: 100%;
+  /* height: 100%; */
+}
+
 .event-data .data-body .img img {
   height: 15rem;
   width: 0px;
   transition: all ease 0.2s;
-  position: relative;
+  /* position: relative; */
   object-fit: cover;
 }
 
