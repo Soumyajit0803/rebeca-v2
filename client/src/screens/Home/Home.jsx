@@ -8,7 +8,7 @@ import ArtistCard from "../../components/ArtistCard/ArtistCard";
 const Home = () => {
   const artists = [
 		{
-			name: "Baadshah",
+			name: "DJ Nilashree",
 			img: "artist1.webp",
 		},
 		{
@@ -17,20 +17,28 @@ const Home = () => {
 		},
 		{
 			name: "King",
-			img: "artist2.webp",
-		},
-		{
-			name: "Sunidhi Chauhan",
 			img: "artist3.webp",
 		},
 		{
 			name: "Sunidhi Chauhan",
-			img: "artist3.webp",
+			img: "artist4.webp",
 		},
 		{
 			name: "Sunidhi Chauhan",
-			img: "artist3.webp",
+			img: "artist5.webp",
 		},
+		{
+			name: "Sunidhi Chauhan",
+			img: "artist6.webp",
+		},
+		{
+			name: "Anupam Roy",
+			img: "artist7.webp",
+		},
+		{
+			name: "The Anupam Roy Band",
+			img: "artist8.webp",
+		}
   ];
 
   // const [artistMargin, setArtistmargin] = useState(0);

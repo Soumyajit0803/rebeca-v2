@@ -46,11 +46,19 @@
 }
 
 .event-popup .event-details .event-venue {
-    width: 15ch;
+    width: 10ch;
 }
 
 .event-popup .event-details .event-venue::before {
     content: "VENUE";
+    font-size: 2rem;
+    font-family: "Sedgwick Ave Display", cursive;
+    position: absolute;
+    top: -1.1em;
+}
+
+.event-popup .event-details .event-club::before {
+    content: "Club/Society";
     font-size: 2rem;
     font-family: "Sedgwick Ave Display", cursive;
     position: absolute;
@@ -93,8 +101,8 @@
 }
 
 .event-popup .judges .judge span {
-    font-size: 1.4rem;
-    font-family: "Sedgwick Ave Display", cursive;
+    font-size: 1.1rem;
+    /* font-family: "Sedgwick Ave Display", cursive; */
 }
 
 @media screen and (max-width:500px) {

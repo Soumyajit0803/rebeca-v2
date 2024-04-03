@@ -7,6 +7,8 @@ import Sponsorship from "./screens/Sponsors/Sponsorship";
 import Daydetails from "./screens/Daydetails/Daydetails";
 import EventPopup from "./screens/EventPopup/EventPopup";
 import Merchandise from "./screens/Merchandise/Merchandise";
+// import Autocarousel from "./components/Autocarousel/Autocarousel"
+// import Gallery from "./components/Gallery/Gallery";
 
 const AllRoutes = ({
   login,
@@ -96,6 +98,7 @@ const AllRoutes = ({
             logout={logout}
             user={user}
           ></Merchandise>
+          // <Gallery />
         }
       ></Route>
     </Routes>
