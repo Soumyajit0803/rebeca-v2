@@ -8,37 +8,49 @@ import ArtistCard from "../../components/ArtistCard/ArtistCard";
 const Home = () => {
   const artists = [
 		{
-			name: "DJ Nilashree",
+			name: "Ash King",
 			img: "artist1.webp",
 		},
 		{
-			name: "King",
+			name: "Anupam Roy Band",
 			img: "artist2.webp",
 		},
 		{
-			name: "King",
+			name: "Anurag Haldar",
 			img: "artist3.webp",
 		},
 		{
-			name: "Sunidhi Chauhan",
+			name: "Destorted Chromosomes",
 			img: "artist4.webp",
 		},
 		{
-			name: "Sunidhi Chauhan",
+			name: "Pata Ar Morudyan",
 			img: "artist5.webp",
 		},
 		{
-			name: "Sunidhi Chauhan",
+			name: "DJ Nilashree",
 			img: "artist6.webp",
 		},
 		{
-			name: "Anupam Roy",
+			name: "Ahsas India",
 			img: "artist7.webp",
 		},
 		{
-			name: "The Anupam Roy Band",
+			name: "DJ Abhi",
 			img: "artist8.webp",
-		}
+		},
+		{
+			name: "DJ Rakso",
+			img: "artist3.webp",
+		},
+		{
+			name: "DJ Aerreo",
+			img: "artist2.webp",
+		},
+		{
+			name: "DJ Roop",
+			img: "artist1.webp",
+		},
   ];
 
   // const [artistMargin, setArtistmargin] = useState(0);
@@ -113,10 +125,10 @@ const Home = () => {
 							Here's to reliving those cherished moments and
 							having a blast along the way!
 						</p>
-						<Button
+						{/* <Button
 							variant={"filled"}
 							innerText={"Create lifelong memories"}
-						></Button>
+						></Button> */}
 					</div>
 				</div>
 				<div className="collage">

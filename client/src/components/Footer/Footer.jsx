@@ -1,13 +1,17 @@
 import React from 'react';
 import "./Footer.css";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
 		<div className="footer">
 			<div className="left-col">
-				<div className="logo">
-					<img src="/assets/logo/logo_white.webp" alt="" />
-				</div>
+				<Link to="/">
+					<div className="logo">
+						<img src="/assets/logo/logo_white.webp" alt="" />
+					</div>
+				</Link>
+
 				{/* <div className="name">Rebeca '24</div> */}
 				{/* <div className="logos">
 					<div className="item">
@@ -27,7 +31,7 @@ const Footer = () => {
 				<div className="address">
 					© rebeca.in 2024. All right reserved
 				</div>
-				<div className="address">
+				{/* <div className="address">
 					Made with 💙 by{" "}
 					<a href="https://dugarrishab.github.io/RishabDugar/">
 						Rishab Dugar
@@ -41,43 +45,45 @@ const Footer = () => {
 						Soumyajit Karmakar
 					</a>{" "}
 					and <a href="">Utsab Kundu</a>
-				</div>
+				</div> */}
 			</div>
 			<div className="right-col">
 				<div className="title">Contacts</div>
 				<div className="contacts">
 					<div className="contact">
-						<div className="name">Rebeca</div>
-						<div className="mail">
-							<a href="mailto: 83rebeca2k24@gmail.com">
-								83rebeca2k24@gmail.com
-							</a>
-						</div>
+						<div className="name">Dr. Nityananda Nandi</div>
+
+						<div className="ph-num">Chairperson</div>
 					</div>
 					<div className="contact">
-						<div className="name">Sabbani Vihan</div>
+						<div className="name">Dr. Ananya Buri</div>
 
-						<div className="ph-num">ph: +91 79935 95464</div>
+						<div className="ph-num">Joint Convenor</div>
 					</div>
 					<div className="contact">
-						<div className="name">Vasu Krishna Khemka</div>
+						<div className="name">Dr. Subhabrata Koley</div>
 
-						<div className="ph-num">ph: +91 78088 14413</div>
+						<div className="ph-num">Joint Convenor</div>
 					</div>
 					<div className="contact">
-						<div className="name"> Subham Dutta </div>
+						<div className="name">Dr. Santanu Maity</div>
 
-						<div className="ph-num">ph: +91 80840 15396</div>
+						<div className="ph-num">Treasurer</div>
 					</div>
 					<div className="contact">
-						<div className="name"> Sayantan Biswas </div>
+						<div className="name">Ujjwal Chaudhari</div>
 
-						<div className="ph-num">ph: +91 97631 30860</div>
+						<div className="ph-num">Ph: +91 95552 09179</div>
 					</div>
 					<div className="contact">
-						<div className="name"> Pururav Singh Gautam </div>
+						<div className="name">Bipro Bhadra</div>
 
-						<div className="ph-num">ph: +91 86989 61728</div>
+						<div className="ph-num">Ph: +91 7890938525</div>
+					</div>
+					<div className="contact">
+						<div className="name">Ankur Roy Chowdhury</div>
+
+						<div className="ph-num">Ph: +91 84204 74705</div>
 					</div>
 				</div>
 			</div>
@@ -85,6 +91,16 @@ const Footer = () => {
 			<div className="right-col-2">
 				<div className="title">Visit us Virtually</div>
 				<div className="socials">
+					<div className="item">
+						<div className="logo">
+							<i className="fa-solid fa-envelope"></i>
+						</div>
+						<div className="link">
+							<a href="mailto: 83rebeca2k24@gmail.com">
+								83rebeca2k24@gmail.com
+							</a>
+						</div>
+					</div>
 					<div className="item">
 						<div className="logo">
 							<i className="fa-brands fa-facebook-f"></i>
