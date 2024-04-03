@@ -3,7 +3,7 @@ import "./Merchandise.css";
 
 const Merchandise = () => {
   return (<div className="merch-wrapper">
-    Coming Soon
+    Coming Soon !!!
   </div>);
 };
 

@@ -25,19 +25,29 @@ const Daydetails = () => {
       <PujaHeading date={Day.date} datetxt={DayID.toUpperCase()} />
       <div className="section-1">{Day.intro}</div>
 
-      <div className="section-2">
-        <div className="section-subhead">Significance</div>
-        {Day.significance}
-      </div>
-      <div className="section-3">
-        <div className="section-subhead">{DayID.toUpperCase() + " LINE UP!"}</div>
-        Brace Yourself for an Unforgettable Showcase, As We Proudly Unveil Our Stellar Lineup
-      </div>
-      <div className="section-4">
-        {Day.lineUps.map((value, index) => {
-          return <ArtistCard key={index} name={value} img={`${value}.webp`}></ArtistCard>;
-        })}
-      </div>
+			<div className="section-2">
+				<div className="section-subhead">Significance</div>
+				{Day.significance}
+			</div>
+			<div className="section-3">
+				<div className="section-subhead">
+					{DayID.toUpperCase() + " LINE UP!"}
+				</div>
+				{/* Brace Yourself for an Unforgettable Showcase, As We Proudly */}
+				
+			</div>
+			<div className="section-4">
+				{Day.lineUps.map((value, index) => {
+					return (
+						<ArtistCard
+							key={index}
+							name={value}
+							img={`${value}.png`}
+						></ArtistCard>
+					);
+				})}
+				
+			</div>
 
       <div className="section-5">
         <div className="section-subhead">Events</div>

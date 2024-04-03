@@ -10,28 +10,48 @@ import Nightbanner from "../../components/Nightbanner/Nightbanner";
 const Home = () => {
   const artists = [
 		{
-			name: "Baadshah",
+			name: "Ash King",
 			img: "artist1.webp",
 		},
 		{
-			name: "King",
+			name: "Anupam Roy Band",
 			img: "artist2.webp",
 		},
 		{
-			name: "King",
+			name: "Anurag Haldar",
 			img: "artist2.webp",
 		},
 		{
-			name: "Sunidhi Chauhan",
+			name: "Destorted Chromosomes",
+			img: "artist1.webp",
+		},
+		{
+			name: "Pata Ar Morudyan",
 			img: "artist3.webp",
 		},
 		{
-			name: "Sunidhi Chauhan",
+			name: "DJ Nilashree",
+			img: "artist2.webp",
+		},
+		{
+			name: "Ahsas India",
 			img: "artist3.webp",
 		},
 		{
-			name: "Sunidhi Chauhan",
+			name: "DJ Abhi",
+			img: "artist1.webp",
+		},
+		{
+			name: "DJ Rakso",
 			img: "artist3.webp",
+		},
+		{
+			name: "DJ Aerreo",
+			img: "artist2.webp",
+		},
+		{
+			name: "DJ Roop",
+			img: "artist1.webp",
 		},
   ];
 
@@ -107,10 +127,10 @@ const Home = () => {
 							Here's to reliving those cherished moments and
 							having a blast along the way!
 						</p>
-						<Button
+						{/* <Button
 							variant={"filled"}
 							innerText={"Create lifelong memories"}
-						></Button>
+						></Button> */}
 					</div>
 				</div>
 				<div className="collage">
