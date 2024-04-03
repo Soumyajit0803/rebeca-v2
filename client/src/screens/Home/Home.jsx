@@ -5,6 +5,8 @@ import Button from "../../components/Button/Button";
 import PujaDay from "./PujaDay";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
 
+import Nightbanner from "../../components/Nightbanner/Nightbanner";
+
 const Home = () => {
   const artists = [
 		{
@@ -112,14 +114,15 @@ const Home = () => {
 					</div>
 				</div>
 				<div className="collage">
-					{width > 480 ? (
+					{/* {width > 480 ? (
 						<img src="/assets/imgs/home/collage.webp" alt="" />
 					) : (
 						<img
 							src="/assets/imgs/home/collage-mobile.webp"
 							alt=""
 						/>
-					)}
+					)} */}
+					<img src = "/assets/imgs/home/rebecalove1.webp" />
 				</div>
 			</section>
 			<section className="section-5">
@@ -129,7 +132,7 @@ const Home = () => {
 						"Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back with a bang!"
 					}
 				></Heading>
-				<div className="events">
+				{/* <div className="events">
 					<PujaDay
 						title="Saptami"
 						desc={
@@ -160,7 +163,8 @@ const Home = () => {
 						img="./assets/imgs/home/dashami.webp"
 						alt={true}
 					></PujaDay>
-				</div>
+				</div> */}
+				<Nightbanner />
 			</section>
 		</div>
   );

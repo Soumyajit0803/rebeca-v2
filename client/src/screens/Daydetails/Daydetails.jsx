@@ -9,70 +9,46 @@ import ArtistCard from "../../components/ArtistCard/ArtistCard";
 import Daycontent from "../../assets/data/contents.json";
 import Eventcontent from "../../assets/data/events.json";
 
-const Artist = ({ artistName }) => {
-	return (
-		<div className="artist-banner">
-			<div className="img">
-				<img src={`/assets/imgs/artists/${artistName}.webp`} />
-			</div>
-
-			<p className="artist-label">{artistName}</p>
-		</div>
-	);
-};
-
 const Daydetails = () => {
-	const { DayID } = useParams();
-	const Day = Daycontent[DayID];
+  const { DayID } = useParams();
+  const Day = Daycontent[DayID];
 
-	return (
-		<div className="day-details-wrapper">
-			<div
-				className="behind-banner"
-				style={{
-					background: `url("/assets/imgs/Schedule/${DayID.toLowerCase()}.webp"`,
-				}}
-			></div>
-			<div className="tonight-special">{Day.nightType}</div>
-			<PujaHeading date={Day.date} datetxt={DayID.toUpperCase()} />
-			<div className="section-1">{Day.intro}</div>
+  return (
+    <div className="day-details-wrapper">
+      <div
+        className="behind-banner"
+        style={{
+          background: `url("/assets/imgs/Schedule/${DayID.toLowerCase()}.webp"`,
+        }}
+      ></div>
+      <div className="tonight-special">{Day.nightType}</div>
+      <PujaHeading date={Day.date} datetxt={DayID.toUpperCase()} />
+      <div className="section-1">{Day.intro}</div>
 
-			<div className="section-2">
-				<div className="section-subhead">Significance</div>
-				{Day.significance}
-			</div>
-			<div className="section-3">
-				<div className="section-subhead">
-					{DayID.toUpperCase() + " LINE UP!"}
-				</div>
-				Brace Yourself for an Unforgettable Showcase, As We Proudly
-				Unveil Our Stellar Lineup
-			</div>
-			<div className="section-4">
-				{Day.lineUps.map((value, index) => {
-					return (
-						<ArtistCard
-							key={index}
-							name={value}
-							img={`${value}.webp`}
-						></ArtistCard>
-					);
-				})}
-			</div>
+      <div className="section-2">
+        <div className="section-subhead">Significance</div>
+        {Day.significance}
+      </div>
+      <div className="section-3">
+        <div className="section-subhead">{DayID.toUpperCase() + " LINE UP!"}</div>
+        Brace Yourself for an Unforgettable Showcase, As We Proudly Unveil Our Stellar Lineup
+      </div>
+      <div className="section-4">
+        {Day.lineUps.map((value, index) => {
+          return <ArtistCard key={index} name={value} img={`${value}.webp`}></ArtistCard>;
+        })}
+      </div>
 
-			<div className="section-5">
-				<div className="section-subhead">Events</div>
-			</div>
-			<div className="section-event">
-				<div className="scroll-section-event">
-					<Eventcard
-						Eventdata={Eventcontent[DayID].eventList}
-						FocusEvent={Eventcontent[DayID].majorEvents}
-					/>
-				</div>
-			</div>
-		</div>
-	);
+      <div className="section-5">
+        <div className="section-subhead">Events</div>
+      </div>
+      <div className="section-event">
+        <div className="scroll-section-event">
+          <Eventcard Eventdata={Eventcontent[DayID].eventList} FocusEvent={Eventcontent[DayID].majorEvents} />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Daydetails;
