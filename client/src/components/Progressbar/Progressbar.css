@@ -1,7 +1,8 @@
 .page-scrolled{
-    position: fixed;
-    top: 0;
+    position: absolute;
+    bottom: 0;
     left: 0;
-    height: 3px;
+    height: 4px;
     background-color: var(--accent1);
+    border-radius: 2px;
 }

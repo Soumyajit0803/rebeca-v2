@@ -35,7 +35,9 @@ const BannerLeft = ({ day }) => {
         </div>
       </div>
       <div className="typography-section">
-        <div>{day.toUpperCase()}</div>
+        <Link to={`/events/${day.toLowerCase()}`}>
+          <div>{day.toUpperCase()}</div>
+        </Link>
         <p>{Description[day.toLowerCase()]}</p>
         <Link to={`/events/${day.toLowerCase()}`}>
           <Button variant={"filled"} innerText={"Learn More"}></Button>
@@ -48,7 +50,9 @@ const BannerRight = ({ day }) => {
   return (
     <div className={`banner-wrapper-2 banner-${day.toLowerCase()}`}>
       <div className="typography-section">
-        <div>{day.toUpperCase()}</div>
+        <Link to={`/events/${day.toLowerCase()}`}>
+          <div>{day.toUpperCase()}</div>
+        </Link>
         <p>{Description[day.toLowerCase()]}</p>
         <Link to={`/events/${day.toLowerCase()}`}>
           <Button variant={"filled"} innerText={"Learn More"}></Button>

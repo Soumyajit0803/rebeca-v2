@@ -31,6 +31,9 @@ function App() {
 
 	return (
 		<div className="App">
+			{/* <div className="preloader">
+				<div className="preloader-icon"></div>
+			</div> */}
 			<Router>
 				<Navbar></Navbar>
 				<AllRoutes
