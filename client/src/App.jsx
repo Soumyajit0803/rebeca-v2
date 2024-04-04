@@ -42,7 +42,7 @@ function App() {
 					login={login}
 					logout={logout}
 				></AllRoutes>
-				<Footer></Footer>
+				{/* <Footer></Footer> */}
 				<Footer2></Footer2>
 			</Router>
 		</div>
