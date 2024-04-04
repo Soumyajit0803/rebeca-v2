@@ -5,6 +5,8 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+  animation: fadeIn 0.5s linear forwards;
+
 }
 
 .event-popup .event-head {

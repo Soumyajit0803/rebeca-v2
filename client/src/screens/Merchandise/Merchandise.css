@@ -8,13 +8,6 @@
   text-align: center;
   animation: appear 0.6s linear forwards;
   height: 100vh;
-}
+  animation: fadeIn 0.5s linear forwards;
 
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }

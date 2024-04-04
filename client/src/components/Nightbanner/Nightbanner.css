@@ -26,7 +26,7 @@
 }
 
 .typography-section div{
-  font-size: 5rem;
+  font-size: 4rem;
 	font-family: "Sedgwick Ave Display", cursive;
   color: white;
   /* margin-bottom: 3rem; */
@@ -147,6 +147,10 @@
 
   .typography-section{
     width: 95%;
+  }
+
+  .typography-section div{
+    font-size: 3rem;
   }
 
   .banner-wrapper .img-section{

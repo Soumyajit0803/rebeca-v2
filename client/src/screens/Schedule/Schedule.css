@@ -1,6 +1,8 @@
 .schedule {
   padding: 5rem;
   font-size: 22px;
+  animation: fadeIn 0.5s linear forwards;
+
 }
 
 .schedule .event {

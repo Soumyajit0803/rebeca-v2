@@ -4,6 +4,7 @@
   max-width: 100%;
   /* border: 1px solid red; */
   /* overflow-x: hidden; */
+  animation: fadeIn 0.5s linear forwards;
 }
 .home .wave-bg {
   position: absolute;
