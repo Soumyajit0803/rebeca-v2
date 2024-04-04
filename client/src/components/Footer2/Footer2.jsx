@@ -1,5 +1,5 @@
 import React from "react";
-import "./Newfooter.css";
+import "./Footer2.css";
 import { Link } from "react-router-dom";
 
 function Insta() {
@@ -95,9 +95,9 @@ function Email() {
     );
 }
 
-const Footer = () => {
+const Footer2 = () => {
     return (
-        <div className="footer">
+        <div className="footer2">
             <div className="left-col">
                 <Link to="/">
                     <div className="logo">
@@ -189,4 +189,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default Footer2;

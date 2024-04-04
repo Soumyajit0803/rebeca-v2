@@ -3,8 +3,8 @@ import "./App.css";
 import AllRoutes from "./Routes.jsx";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-// import Footer from "./components/Footer/Footer.jsx";
-import Footer from "./components/Newfooter/Newfooter.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import Footer2 from "./components/Footer2/Footer2.jsx";
 function App() {
 	const [user, setUser] = useState(
 		JSON.parse(localStorage.getItem("user")) || null
@@ -43,6 +43,7 @@ function App() {
 					logout={logout}
 				></AllRoutes>
 				<Footer></Footer>
+				<Footer2></Footer2>
 			</Router>
 		</div>
 	);
