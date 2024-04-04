@@ -3,7 +3,8 @@ import "./App.css";
 import AllRoutes from "./Routes.jsx";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer.jsx";
+// import Footer from "./components/Footer/Footer.jsx";
+import Footer from "./components/Newfooter/Newfooter.jsx";
 function App() {
 	const [user, setUser] = useState(
 		JSON.parse(localStorage.getItem("user")) || null

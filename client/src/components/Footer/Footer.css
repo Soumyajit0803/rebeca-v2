@@ -160,4 +160,8 @@
 	.footer .right-col-2 .socials {
 		justify-content: flex-start;
 	}
+
+	/* .footer .right-col {
+		height: max-content
+	} */
 }
