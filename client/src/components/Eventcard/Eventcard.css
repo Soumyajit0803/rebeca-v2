@@ -8,7 +8,7 @@
   height: max-content;
 }
 
-.event-data {
+.event-card .event-data {
   border: 1px solid white;
   padding: 1.2rem;
   transition: all ease 0.2s;
@@ -18,9 +18,10 @@
   padding-bottom: 0;
 }
 
-.event-data .data-header {
+.event-card .event-data .data-header {
   font-size: 1.2rem;
-  font-family: "Sedgwick Ave Display", cursive;
+  /* font-family: ; */
+  font-weight: 600;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,29 +36,35 @@
   /* flex-direction: column; */
 }
 
-.event-data .data-header p {
+.event-card .event-data .data-header p {
   font-size: 0.8rem;
+  text-align: right;
 }
 
-.event-data .data-body .img{
+.event-card .event-data .data-body .img{
   width: 100%;
+  height: 100%;
+  transition: all ease 0.2s;
   /* height: 100%; */
 }
 
-.event-data .data-body .img img {
+.event-card .event-data .data-body .img img {
   height: 15rem;
-  width: 0px;
-  transition: all ease 0.2s;
-  /* position: relative; */
+  width: 100%;
   object-fit: cover;
+  transition: all ease 0.2s;
+  transform-origin: left;
 }
 
-.event-data .data-body {
+.event-card .event-data .data-body {
   position: relative;
   transition: all ease 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.event-data .data-body .img::before {
+.event-card .event-data .data-body .img::before {
   content: "learn more";
   font-size: 1rem;
   width: 100%;
@@ -74,14 +81,15 @@
   transform: scaleX(0);
   transform-origin: left;
   transition: all ease 0.2s;
+  top: 0;
 }
 
-.event-data .data-body .img:hover::before {
+.event-card .event-data .data-body .img:hover::before {
   transform: scaleX(1);
   opacity: 1;
 }
 
-.event-data .data-header:hover {
+.event-card .event-data .data-header:hover {
   cursor: pointer;
   color: var(--accent1);
 }
@@ -92,36 +100,42 @@
     /* width: 100%; */
   }
 
-  .event-data {
+  .event-card .event-data {
     width: 100%;
   }
 
-  .event-data .data-header{
+  .event-card .event-data .data-header{
     writing-mode: horizontal-tb;
     transform: rotate(0deg);
   }
 
-  .event-data .data-body .img::before{
+  .event-card .event-data .data-body .img::before{
     transform-origin: bottom;
     transform: scaleY(0);
   }
 
-  .event-data .data-body:hover::before{
+  .event-card .event-data .data-body:hover::before{
     transform: scaleY(1);
     opacity: 1;
   }
 
-  .event-data .data-body .img img {
+  .event-card .event-data .data-body .img img {
+    transform-origin: top;
     width: 70vw;
-    height: 0px;
+    height: 100%;
   }
 
   .day-details-wrapper .section-event {
     overflow-x: hidden;
+    overflow-y: hidden;
     align-items: center;
     justify-content: center;
   }
 }
-.remove{
-  display: none
+
+@media only screen and (max-width: 400px){
+  .event-card .event-data{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }

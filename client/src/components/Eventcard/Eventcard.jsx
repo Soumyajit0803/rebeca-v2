@@ -15,6 +15,8 @@ const Eventpanel = ({ value, index, day, FocusEvent }) => {
 
   const propsHeight = { height: show ? "15rem" : "0px" };
   const propsWidth = { width: show ? "22rem" : "0px" };
+  const propsImgHeight = { transform: show ? "scaleY(1)" : "scaleY(0)" };
+  const propsImgWidth = { transform: show ? "scaleX(1)" : "scaleX(0)" };
 
   return (
     <div key={index} className="event-data">
@@ -27,12 +29,12 @@ const Eventpanel = ({ value, index, day, FocusEvent }) => {
         <Link to={`/event/${value.eventName}`}>
           <div
             className="img"
-            style={{
-              display: window.innerWidth > 500 || show ? "contents" : "none",
-            }}
+            style={window.innerWidth <= 500 ? propsHeight : propsWidth
+            }
           >
             <img
-              style={window.innerWidth <= 500 ? propsHeight : propsWidth}
+            style={window.innerWidth <= 500 ? propsImgHeight : propsImgWidth
+            }
               src={`/assets/imgs/home/${day}.webp`}
               alt="event-icon"
             />

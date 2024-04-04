@@ -7,6 +7,8 @@
     font-size: 25px;
     line-height: 1.5;
     width: 100%;
+  animation: fadeIn 0.5s linear forwards;
+
 }
 .sponsor .heading{
     padding: 4rem 2rem 1rem 4rem;

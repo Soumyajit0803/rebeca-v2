@@ -8,6 +8,7 @@
   position: relative;
   color: white;
   overflow-x: hidden;
+  animation: fadeIn 0.5s linear forwards;
 }
 
 .day-details-wrapper .behind-banner {
@@ -116,6 +117,13 @@
 
   .day-details-wrapper .tonight-special {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 370px){
+  .day-details-wrapper {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 
