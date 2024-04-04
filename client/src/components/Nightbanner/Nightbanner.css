@@ -1,0 +1,197 @@
+.banner-wrapper, .banner-wrapper-2 {
+  margin: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  /* line-height: 220%; */
+}
+
+.typography-section{
+  flex-grow: 1;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  text-align: right;
+}
+
+.banner-wrapper-2 .typography-section{
+  align-items: start;
+}
+
+.banner-wrapper-2 .typography-section {
+  text-align: left;
+  /* flex-grow: 0; */
+}
+
+.typography-section div{
+  font-size: 5rem;
+	font-family: "Sedgwick Ave Display", cursive;
+  color: white;
+  /* margin-bottom: 3rem; */
+}
+
+.typography-section p{
+  padding-bottom: 2rem;
+}
+
+.img-section{
+  display: grid;
+  grid-template-rows: repeat(10, 3rem);
+  grid-template-columns: repeat(5, 6rem);
+  gap: 0.5rem;
+}
+
+.img-section {
+  /* border: 1px solid white; */
+  border-radius: 15px;
+}
+
+.img-section .f1{
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 4;
+  grid-column-end: 4;
+}
+.banner-wrapper-2 .img-section .f1{
+  grid-column-start: 3;
+  grid-column-end: 6;
+}
+
+.img-section .f2{
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-row-end: 8;
+  grid-column-end: 6;
+}
+
+.img-section .f3{
+  grid-row-start: 8;
+  grid-column-start: 1;
+  grid-row-end: 10;
+  grid-column-end: 3;
+}
+.banner-wrapper-2 .img-section .f3{
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.img-section .f4{
+  grid-row-start: 8;
+  grid-column-start: 3;
+  grid-row-end: 11;
+  grid-column-end: 5;
+}
+.banner-wrapper-2 .img-section .f4{
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+
+.banner-wrapper img, 
+.banner-wrapper-2 img,
+.banner-wrapper video,
+.banner-wrapper-2 video{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.banner-ashtami .img-section .f3{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+.banner-ashtami .img-section .f4{
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
+
+.banner-navami .f3{
+  grid-column-end: 4;
+  grid-row-end: 11;
+}
+
+.banner-navami .f4{
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-end: 10;
+}
+
+@media only screen and (max-width: 1000px){
+  .img-section{
+    grid-template-columns: repeat(5, 4rem);
+  }
+  .banner-wrapper, .banner-wrapper-2{
+    padding-left: 0rem;
+    padding-right: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .typography-section{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 750px){
+  .banner-wrapper-2{
+    flex-direction: column;
+  }
+
+  .banner-wrapper{
+    flex-direction: column-reverse;
+  }
+
+  .typography-section{
+    width: 95%;
+  }
+
+  .banner-wrapper .img-section{
+    align-self: start
+  }
+
+  .banner-wrapper-2 .img-section{
+    align-self: end;
+  }
+
+  .img-section{
+    grid-template-columns: repeat(5, 5.5rem);
+  }
+
+
+  /* .banner-wrapper-2 .img-section .f1,
+  .banner-wrapper .img-section .f1{
+    grid-column-start: 1;
+    grid-column-end: 6;
+  }
+
+  .banner-wrapper-2 .img-section .f3,
+  .banner-wrapper .img-section .f3{
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .banner-wrapper-2 .img-section .f4,
+  .banner-wrapper .img-section .f4{
+    grid-column-start: 4;
+    grid-column-end: 6;
+  } */
+}
+
+@media only screen and (max-width: 500px){
+  .img-section{
+    grid-template-columns: repeat(5, 4rem);
+  }
+}
+
+.check{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+

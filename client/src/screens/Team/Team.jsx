@@ -492,8 +492,8 @@ const Team = () => {
 						<>
 							<div className="title">{selectedTeam.name}</div>
 							<div className="members">
-								{selectedTeam.members.map((mem) => (
-									<div className="member" key={mem.id}>
+								{selectedTeam.members.map((mem, index) => (
+									<div className="member" key={index}>
 										<div className="img">
 											<img
 												src="/assets/circlex300.png"
