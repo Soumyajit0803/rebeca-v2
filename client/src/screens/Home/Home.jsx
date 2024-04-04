@@ -11,47 +11,35 @@ const Home = () => {
   const artists = [
 		{
 			name: "Ash King",
-			img: "artist1.webp",
+			img: "ashking.webp",
 		},
 		{
 			name: "Anupam Roy Band",
-			img: "artist2.webp",
+			img: "anupamroyband.webp",
 		},
 		{
 			name: "Anurag Haldar",
-			img: "artist3.webp",
+			img: "anuraghalder.webp",
 		},
 		{
 			name: "Destorted Chromosomes",
-			img: "artist4.webp",
+			img: "destortedchromosomes.webp",
 		},
 		{
-			name: "Pata Ar Morudyan",
-			img: "artist5.webp",
+			name: "Pata R Moruddyan",
+			img: "pata.webp",
 		},
 		{
-			name: "DJ Nilashree",
-			img: "artist6.webp",
+			name: "DJ Neelashree",
+			img: "djneelashree.webp",
 		},
 		{
-			name: "Ahsas India",
-			img: "artist7.webp",
-		},
-		{
-			name: "DJ Abhi",
-			img: "artist8.webp",
-		},
-		{
-			name: "DJ Rakso",
-			img: "artist3.webp",
-		},
-		{
-			name: "DJ Aerreo",
-			img: "artist2.webp",
+			name: "DJ Raxo",
+			img: "djraxo.webp",
 		},
 		{
 			name: "DJ Roop",
-			img: "artist1.webp",
+			img: "djroop.webp",
 		},
   ];
 
@@ -142,7 +130,7 @@ const Home = () => {
 							alt=""
 						/>
 					)} */}
-					<img src = "/assets/imgs/home/rebecalove1.webp" />
+					<img src = "/assets/imgs/home/rebecalove2.webp" />
 				</div>
 			</section>
 			<section className="section-5">
