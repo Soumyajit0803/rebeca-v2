@@ -156,36 +156,6 @@
                 "rules": [],
                 "artists": ["tbd", "tbd", "tbd", "tbd"],
                 "judges": ["tbd", "tbd", "tbd", "tbd"]
-            },
-            {
-                "time": "11:30-12:30 AM",
-                "eventName": "Alumni Bands",
-                "club": "Euphony",
-                "venue": "Lord's",
-                "desc": "",
-                "rules": [],
-                "artists": ["tbd", "tbd", "tbd", "tbd"],
-                "judges": ["tbd", "tbd", "tbd", "tbd"]
-            },
-            {
-                "time": "1:00-2:30 AM",
-                "eventName": "Main Artists",
-                "club": [],
-                "venue": "Lord's",
-                "desc": "",
-                "rules": [],
-                "artists": ["tbd", "tbd", "tbd", "tbd"],
-                "judges": ["tbd", "tbd", "tbd", "tbd"]
-            },
-            {
-                "time": "3:00 AM Onwards",
-                "eventName": "DJ Performance",
-                "club": [],
-                "venue": "Lord's",
-                "desc": "",
-                "rules": [],
-                "artists": ["tbd", "tbd", "tbd", "tbd"],
-                "judges": ["tbd", "tbd", "tbd", "tbd"]
             }
         ]
     },
@@ -420,16 +390,6 @@
             {
                 "time": "2:30-4:00 AM",
                 "eventName": "DJ Performance 2",
-                "club": [],
-                "venue": "Lord's",
-                "desc": "",
-                "rules": [],
-                "artists": ["tbd", "tbd", "tbd", "tbd"],
-                "judges": ["tbd", "tbd", "tbd", "tbd"]
-            },
-            {
-                "time": "3:00 AM Onwards",
-                "eventName": "DJ Performance",
                 "club": [],
                 "venue": "Lord's",
                 "desc": "",

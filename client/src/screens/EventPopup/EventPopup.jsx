@@ -28,9 +28,9 @@ const EventPopup = () => {
             <div className={"event-popup " + eventName + "-event-popup"}>
                 <div className="event-head">{eventName}</div>
                 <div className="event-desc">{eventInfo.desc}</div>
-                <div className="event-details">
+                {eventInfo.club != "-" ? <div className="event-details">
                     <div className="event-club">{eventInfo.club}</div>
-                </div>
+                </div>:""}
                 <div className="event-details">
                     <div className="event-time">{eventInfo.time}</div>
                     <div className="event-venue">{eventInfo.venue}</div>

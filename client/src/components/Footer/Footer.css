@@ -20,10 +20,7 @@
 	align-items: flex-start;
 	width: 30%;
 }
-.footer .right-col {
-	width: 40%;
-	
-}
+
 .footer .left-col .logo {
 	width: 200px;
 }
@@ -73,6 +70,9 @@
 }
 .footer .left-col a:hover {
 	color: var(--primary);
+}
+.footer .right-col {
+	width: 40%;
 }
 .footer .right-col .title,
 .footer .right-col-2 .title {
@@ -160,4 +160,8 @@
 	.footer .right-col-2 .socials {
 		justify-content: flex-start;
 	}
+
+	/* .footer .right-col {
+		height: max-content
+	} */
 }
