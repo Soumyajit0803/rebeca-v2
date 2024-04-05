@@ -1,1 +1,321 @@
-[{"id":1,"name":"Secretary","members":[{"name":"Ujjwal Chaudhari","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Bipro Bhadra","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ankur Roy Chowdhury","position":"Head","img":"./assets/imgs/team/tbd.webp"}]},{"id":2,"name":"Finance","members":[{"name":"Priyanshu Agrawal","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Vipul Yadav","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Harsh Joshi","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sanghamitra De","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"}]},{"id":3,"name":"Cultural","members":[{"name":"Divyanshu Bajpai","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Amrish Kumar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Aayush Yadav","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Priyangshu Pramanick","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sankalp Sanjay Mukhedkar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Abhishek Das","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shankha Maji","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sudhanshu Mishra","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rajashree Banerjee","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Devadeep Dutta","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sourik Saha","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Twameka Sinha","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Pratik Ganpat Kadam","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Swayam Tiwari","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Mayukh Mondal","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"V.M .Ramyasri","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Deeksha Yadav","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Srijan Yadav","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":4,"name":"Event","members":[{"name":"Neelam Venkat Sai Dheeraj","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Arushi Das","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sayantan Paul","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sumit Godara","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Nikhil Singh","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Debojyoti Bhattacharya","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Devans Soni","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Hamsa Tejaswini","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ajay Sarang","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shradhanand Prasad","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Krishnendu Mondal","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Oishika Datta","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Varun Gautam","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Ajeet Kumar","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Animesh Vijay Bawane","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Saurav Kumar","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Sanjit Yadubanshi","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":5,"name":"Resource Information","members":[{"name":"Avi Ambbast","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Palash Mondal","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Briti Sundar Mondal","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Khush Viren Sanghani","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Abhinav Singh","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Piyal Bhowmik","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"V Surya Teja","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Manas Bihani","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Supratim Bhattacharya","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"}]},{"id":6,"name":"Travel and Logistics","members":[{"name":"Krishna Kant Drolia","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Jay Prakash Meel","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sujaj Mondal","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rithik Rai","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Aditya Nilesh Dhamne","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Pulkit","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ratandeep Kumar","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ankit Kumar Singh","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ankit Kumar Hore","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sumit Soreng","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shashank Kumar","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Kumar Arunoday","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Aditi Mondal","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Kalyan Satwik","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Divyanshu Kashyap","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":7,"name":"Sponsorship","members":[{"name":"Sabbani Vihan","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Vasu Krishna Khemka","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sayantan Biswas","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shubham Dutta","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Paurav Singh Gautam","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ketan Mohan Masurkar","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Amartya Singh","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sakshi Mishra","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sanjay Sharma","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sourish Pal","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Sujan Sharma","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Sadhan Das","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Vedant Bagde","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":8,"name":"Publication","members":[{"name":"Prashant Abhishek","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sarthak Shetty","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"TVSS Sriharsha","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Devanshu Chatterjee","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Poorva Mondal","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Abhnav Kumar","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Gotham Popuri","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Akash Das","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Siddharth Paul","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Pratik Srivastava","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Viresh Awasthi","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Kishore Pal","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Rupsha Barman","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Soumyajit Kushari","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Avishikta Das","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Kaladhar Gopal","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":9,"name":"Publicity","members":[{"name":"Anuva Ghosh","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Cheruku Shailendra","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Deendayal Upadhyay","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Pritam Nayek","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Kavita Jain","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Protik Saha Palash","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Karan Kabiraj","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rousham Das","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Amit Kumar Lodh","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Naveen Rajpurohit","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ahishek Bhatt","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Mainak Laskar","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Niloy Mondal","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Aniket Nimjhe","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Archit Ranjan","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":10,"name":"Stage Decoration","members":[{"name":"Balaga Ajay Kumar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Akshat","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Md. Ajib K.P","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Apurv Manoj","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Nancy","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Siddharth Paul","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Oswin Joy","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Kazi Nishan","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":11,"name":"Business and Alumni Meet","members":[{"name":"Jay Ram Abhimanyu","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Subhojit Adhikari","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Nishan Muraka","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Abhijeet Anand","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shivang Agrahari","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Aman Tiwari","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Amrit Keshri","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sahil Nikam","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Lalit Kumar Meena","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shreyansh Srivastava","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Yogesh Mangawa","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Shivansh Mohabiya","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Ayush Tejaswi","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Tamal Mahanti","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":12,"name":"Competitions and Seminars","members":[{"name":"Himanshu Shivam","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rick Kundu","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ramavath Nokshit","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Raushan Singh","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Angana Mondal","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sabavath Akash Ram Naik","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Manas Tripathi","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Prasanjeet Kumar","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Tanis Ahmed","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ayush Goyal","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Hitesh Choumal","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Alok Pal","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Shush Ashutosh","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":13,"name":"Web Development","members":[{"name":"Prince Kumar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Tanmoy Mahato","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ayan Paul","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Aditya Das","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Utsab Kundu","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Raksha Pahariya","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Nafis Adnan Mondal","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rishab Dugar","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Krishnendu Saha","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Abhijeet Karmakar","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Sarah Jane Topno","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":14,"name":"Refreshments","members":[{"name":"Argha Swarnakar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Ravi Kumar Kesari","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Narendra Kumar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Goutham Rathod","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Kishore Palacharla","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Aman Singh","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sulagno Mukherjee","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Gourav Das","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Satyam Kumar","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Sayak Bal","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Shibam Rai","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Amit Kumar","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":15,"name":"Volunteers","members":[{"name":"Viay Prakash","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Abhijeet Anand","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Harshal Sharma","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shreya Kundu","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shivam Madhesiya","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Priya Rajkumar","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sree Sanjana Neettam","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rahul Kumar","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Sanatan Santosh","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Samantara","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Aryan D. Rozario","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Rishabh Jha","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Barun Chaudhary","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":16,"name":"Photography","members":[{"name":"Maheswar Reddy","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Talasila Bharath Kumar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Tanisha Ghosh","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Varnit Jain","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Junayaet Islam Sarkar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Chhandam Daripa","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shraddha Gawhade","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Shivanshu Gupta","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Puru Maharshi","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Karan Mahato","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Diya Hansda","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Akshat Gupta","position":"Associate","img":"./assets/imgs/team/tbd.webp"},{"name":"Uma Shankar","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]},{"id":17,"name":"Joint Secretary","members":[{"name":"Suyash Tiwari","position":"","img":"./assets/imgs/team/tbd.webp"},{"name":"Ivan Jacob Thomas","position":"","img":"./assets/imgs/team/tbd.webp"}]},{"id":18,"name":"Fixed Signatory","members":[{"name":"Sanghamitra De","position":"","img":"./assets/imgs/team/tbd.webp"}]},{"id":19,"name":"BECA Magazine","members":[{"name":"Thokala Yashwant Babu","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Aman Raj","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Joybrata Dhar","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Tathagata Ghosh","position":"Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Abhinav Ghosh","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rajneesh Pathak","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Bhaswar Dutta","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rohan Dasa","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"Rajdeep Barai","position":"Associate Head","img":"./assets/imgs/team/tbd.webp"},{"name":"S. Vidya Teja","position":"Associate","img":"./assets/imgs/team/tbd.webp"}]}]
+[
+    {
+        "id": 1,
+        "name": "Secretary",
+        "members": [
+            { "name": "Ujjwal Chaudhari", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Bipro Bhadra", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ankur Roy Chowdhury", "position": "Head", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Finance",
+        "members": [
+            { "name": "Priyanshu Agrawal", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Vipul Yadav", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Harsh Joshi", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sanghamitra De", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Cultural",
+        "members": [
+            { "name": "Divyanshu Bajpai", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Amrish Kumar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aayush Yadav", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Priyangshu Pramanick", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sankalp Sanjay Mukhedkar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Abhishek Das", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shankha Maji", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sudhanshu Mishra", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rajashree Banerjee", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Devadeep Dutta", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sourik Saha", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Twameka Sinha", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Pratik Ganpat Kadam", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Swayam Tiwari", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Mayukh Mondal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "V.M .Ramyasri", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Deeksha Yadav", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Srijan Yadav", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Event",
+        "members": [
+            { "name": "Neelam Venkat Sai Dheeraj", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Arushi Das", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sayantan Paul", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sumit Godara", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Nikhil Singh", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Debojyoti Bhattacharya", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Devans Soni", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Hamsa Tejaswini", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ajay Sarang", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shradhanand Prasad", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Krishnendu Mondal", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Oishika Datta", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Varun Gautam", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ajeet Kumar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Animesh Vijay Bawane", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Saurav Kumar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sanjit Yadubanshi", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Resource Information",
+        "members": [
+            { "name": "Avi Ambbast", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Palash Mondal", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Briti Sundar Mondal", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Khush Viren Sanghani", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Abhinav Singh", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Piyal Bhowmik", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "V Surya Teja", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Manas Bihani", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Supratim Bhattacharya", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Travel and Logistics",
+        "members": [
+            { "name": "Krishna Kant Drolia", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Jay Prakash Meel", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sujaj Mondal", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rithik Rai", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aditya Nilesh Dhamne", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Pulkit", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ratandeep Kumar", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ankit Kumar Singh", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ankit Kumar Hore", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sumit Soreng", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shashank Kumar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Kumar Arunoday", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aditi Mondal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Kalyan Satwik", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Divyanshu Kashyap", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Sponsorship",
+        "members": [
+            { "name": "Sabbani Vihan", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Vasu Krishna Khemka", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sayantan Biswas", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shubham Dutta", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Paurav Singh Gautam", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ketan Mohan Masurkar", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Amartya Singh", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sakshi Mishra", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sanjay Sharma", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sourish Pal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sujan Sharma", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sadhan Das", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Vedant Bagde", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Publication",
+        "members": [
+            { "name": "Prashant Abhishek", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sarthak Shetty", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "TVSS Sriharsha", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Devanshu Chatterjee", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Poorva Mondal", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Abhnav Kumar", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Gotham Popuri", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Akash Das", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Siddharth Paul", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Pratik Srivastava", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Viresh Awasthi", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Kishore Pal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rupsha Barman", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Soumyajit Kushari", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Avishikta Das", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Kaladhar Gopal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Publicity",
+        "members": [
+            { "name": "Anuva Ghosh", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Cheruku Shailendra", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Deendayal Upadhyay", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Pritam Nayek", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Kavita Jain", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Protik Saha Palash", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Karan Kabiraj", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rousham Das", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Amit Kumar Lodh", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Naveen Rajpurohit", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ahishek Bhatt", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Mainak Laskar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Niloy Mondal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aniket Nimjhe", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Archit Ranjan", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Stage Decoration",
+        "members": [
+            { "name": "Balaga Ajay Kumar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Akshat", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Md. Ajib K.P", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Apurv Manoj", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Nancy", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Siddharth Paul", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Oswin Joy", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Kazi Nishan", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Business and Alumni Meet",
+        "members": [
+            { "name": "Jay Ram Abhimanyu", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Subhojit Adhikari", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Nishan Muraka", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Abhijeet Anand", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shivang Agrahari", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aman Tiwari", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Amrit Keshri", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sahil Nikam", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Lalit Kumar Meena", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shreyansh Srivastava", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Yogesh Mangawa", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shivansh Mohabiya", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ayush Tejaswi", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Tamal Mahanti", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Competitions and Seminars",
+        "members": [
+            { "name": "Himanshu Shivam", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rick Kundu", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ramavath Nokshit", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Raushan Singh", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Angana Mondal", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sabavath Akash Ram Naik", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Manas Tripathi", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Prasanjeet Kumar", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Tanis Ahmed", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ayush Goyal", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Hitesh Choumal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Alok Pal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shush Ashutosh", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Web Development",
+        "members": [
+            { "name": "Prince Kumar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Tanmoy Mahato", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ayan Paul", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aditya Das", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Utsab Kundu", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Raksha Pahariya", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Nafis Adnan Mondal", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rishab Dugar", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Krishnendu Saha", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Abhijit Karmakar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sarah Jane Topno", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Refreshments",
+        "members": [
+            { "name": "Argha Swarnakar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ravi Kumar Kesari", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Narendra Kumar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Goutham Rathod", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Kishore Palacharla", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aman Singh", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sulagno Mukherjee", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Gourav Das", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Satyam Kumar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sayak Bal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shibam Rai", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Amit Kumar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Volunteers",
+        "members": [
+            { "name": "Viay Prakash", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Abhijeet Anand", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Harshal Sharma", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shreya Kundu", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shivam Madhesiya", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Priya Rajkumar", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sree Sanjana Neettam", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rahul Kumar", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Sanatan Santosh", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Samantara", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aryan D. Rozario", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rishabh Jha", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Barun Chaudhary", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Photography",
+        "members": [
+            { "name": "Maheswar Reddy", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Talasila Bharath Kumar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Tanisha Ghosh", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Varnit Jain", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Junayaet Islam Sarkar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Chhandam Daripa", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shraddha Gawhade", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Shivanshu Gupta", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Puru Maharshi", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Karan Mahato", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Diya Hansda", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Akshat Gupta", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Uma Shankar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Joint Secretary",
+        "members": [
+            { "name": "Suyash Tiwari", "position": "", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ivan Jacob Thomas", "position": "", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Fixed Signatory",
+        "members": [{ "name": "Sanghamitra De", "position": "", "img": "./assets/imgs/team/tbd.webp" }]
+    },
+    {
+        "id": 19,
+        "name": "BECA Magazine",
+        "members": [
+            { "name": "Thokala Yashwant Babu", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Aman Raj", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Joybrata Dhar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Tathagata Ghosh", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Abhinav Ghosh", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rajneesh Pathak", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Bhaswar Dutta", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rohan Dasa", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Rajdeep Barai", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "S. Vidya Teja", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
+        ]
+    }
+]
