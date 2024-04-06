@@ -21,25 +21,25 @@
 	/* overflow-y: scroll; */
 	background-color: rgba(255, 255, 255, 0.05);
 	color: white;
-	padding: 60px 40px;
+	padding: 40px 20px;
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
 	border-radius: 20px;
 	border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .team .lower-body .menu .item {
-	padding: 5px 10px;
-	margin: 5px;
+	padding: 10px 10px;
+	margin: 0px 0px;
 	background-color: rgba(255, 255, 255, 0);
 	border-radius: 5px;
 	box-shadow: 5px 5px 0 rgba(0, 0, 0, 0);
-	width: 80%;
+	width: 100%;
 	font-size: 20px;
 	cursor: pointer;
 }
 .team .lower-body .menu .item.active {
 	/* background-color: rgba(255, 255, 255, 0.25); */
-	box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1);
+	/* box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1); */
 	/* border: 1px solid var(--primary); */
 	color: var(--primary);
 	font-weight: bold;
@@ -117,8 +117,8 @@
 	color: rgb(208, 208, 208, 0.75);
 }
 
-@media only screen and (max-width: 1100px),
-	only screen and (max-device-width: 1100px){
+@media only screen and (max-width: 720px),
+	only screen and (max-device-width: 720px){
 		.team .lower-body{
 			flex-direction: column;
 			padding: 0 20px;
