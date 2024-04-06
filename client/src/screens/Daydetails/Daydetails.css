@@ -148,7 +148,7 @@
 .section-event::-webkit-scrollbar-thumb {
   height: 5px !important;
   border-radius: 10px;
-  background: var(--accent2);
+  background: var(--accent1);
 }
 .section-event::-webkit-scrollbar-button,
 .section-event::-webkit-scrollbar-corner {
