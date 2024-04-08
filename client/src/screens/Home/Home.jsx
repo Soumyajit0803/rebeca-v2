@@ -22,7 +22,7 @@ const Home = () => {
 			img: "anuraghalder.webp",
 		},
 		{
-			name: "Destorted Chromosomes",
+			name: "Distorted Chromosomes",
 			img: "destortedchromosomes.webp",
 		},
 		{
@@ -75,7 +75,7 @@ const Home = () => {
 			</section>
 			<section className="section-3">
 				<Heading
-					title={"Rebeca! Line up"}
+					title={"82nd Rebeca! Line up"}
 					subTitle={
 						"Brace yourself for an unforgettable showcase, as we proudly unveil our stellar lineup"
 					}
