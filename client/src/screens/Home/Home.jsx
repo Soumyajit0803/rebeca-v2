@@ -62,7 +62,7 @@ const Home = () => {
 			<section className="section-1">
 				<Heading title="Get ready to dance, laugh, celebrate like never before - this is Rebeca!"></Heading>
 				<div className="cover-img">
-					<img src="/assets/imgs/home/cover_img.webp" alt="" />
+					<img src="/assets/imgs/home/cover_img2.webp" alt="" />
 				</div>
 			</section>
 			<section className="section-2">
