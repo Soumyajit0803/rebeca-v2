@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "name": "Secretary",
+        "name": "Secretary General",
         "members": [
-            { "name": "Ujjwal Chaudhari", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Bipro Bhadra", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Ankur Roy Chowdhury", "position": "Head", "img": "./assets/imgs/team/tbd.webp" }
+            { "name": "Ujjwal Chaudhari", "position": "Secretary General", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Bipro Bhadra", "position": "Secretary General", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Ankur Roy Chowdhury", "position": "Secretary General", "img": "./assets/imgs/team/tbd.webp" }
         ]
     },
     {
@@ -28,12 +28,13 @@
             { "name": "Priyangshu Pramanick", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Sankalp Sanjay Mukhedkar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Abhishek Das", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Twameka Sinha", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Shankha Maji", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Sudhanshu Mishra", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Rajashree Banerjee", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Devadeep Dutta", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Sourik Saha", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Twameka Sinha", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
+            
             { "name": "Pratik Ganpat Kadam", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Swayam Tiwari", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Mayukh Mondal", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
@@ -182,7 +183,7 @@
         "name": "Business and Alumni Meet",
         "members": [
             { "name": "Jay Ram Abhimanyu", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Subhojit Adhikari", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
+            { "name": "Subhajit Adhikari", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Nishan Muraka", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Abhijeet Anand", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
             { "name": "Shivang Agrahari", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
@@ -220,20 +221,69 @@
         "id": 13,
         "name": "Web Development",
         "members": [
-            { "name": "Prince Kumar", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Tanmoy Mahato", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Ayan Paul", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Aditya Das", "position": "Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Rishab Dugar", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Utsab Kundu", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Raksha Pahariya", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Nafis Adnan Mondal", "position": "Associate Head", "img": "./assets/imgs/team/tbd.webp" },
-            
-            { "name": "Krishnendu Saha", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Abhijit Karmakar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Soumyajit Karmakar", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" },
-            { "name": "Sarah Jane Topno", "position": "Associate", "img": "./assets/imgs/team/tbd.webp" }
-        ]
+			{
+				"name": "Ayan Paul",
+				"position": "Head",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Prince Kumar",
+				"position": "Head",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Tanmoy Mahato",
+				"position": "Head",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+
+			{
+				"name": "Aditya Das",
+				"position": "Head",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Rishab Dugar",
+				"position": "Associate Head",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Utsab Kundu",
+				"position": "Associate Head",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Raksha Pahariya",
+				"position": "Associate Head",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Nafis Adnan Mondal",
+				"position": "Associate Head",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+
+			{
+				"name": "Krishnendu Saha",
+				"position": "Associate",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Abhijit Karmakar",
+				"position": "Associate",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Soumyajit Karmakar",
+				"position": "Associate",
+				"img": "./assets/imgs/team/tbd.webp"
+			},
+			{
+				"name": "Sarah Jane Topno",
+				"position": "Associate",
+				"img": "./assets/imgs/team/tbd.webp"
+			}
+		]
     },
     {
         "id": 14,
