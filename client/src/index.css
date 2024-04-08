@@ -84,6 +84,37 @@ button:focus-visible {
 	outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+::-webkit-scrollbar {
+  /* height: 7px !important; */
+  border-radius: 20px !important;
+  overflow: hidden;
+  width: 5px;
+  border: 0px solid red;
+  height: 90%;
+  padding: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  /* height: 5px !important; */
+  padding: 1rem;
+  border: 0px solid green;
+}
+
+::-webkit-scrollbar-thumb {
+  /* height: 5px !important; */
+  border-radius: 10px;
+  background: var(--primary50);
+  transition: 0.5s all;
+}
+::-webkit-scrollbar-thumb:hover{
+	background: var(--primary);
+}
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner {
+  /* display: none; */
+}
+
 @media (prefers-color-scheme: light) {
 	/* :root {
 		color: #ffffff;

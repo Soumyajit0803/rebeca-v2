@@ -17,8 +17,9 @@
 .team .lower-body .menu {
 	width: 30%;
 	max-width: 300px;
-	/* max-height: 500px; */
-	/* overflow-y: scroll; */
+	max-height: 500px;
+	overflow-y: scroll;
+	/* overflow-x: hidden; */
 	background-color: rgba(255, 255, 255, 0.05);
 	color: white;
 	padding: 40px 20px;

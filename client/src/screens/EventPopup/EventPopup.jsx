@@ -69,7 +69,7 @@ const EventPopup = () => {
                 )}
                 <div className="event-head event-customhead">Judges</div>
                 <div className="judges">
-                    {eventInfo.judges.map((judge, i) => {
+                    {eventInfo.judges && eventInfo.judges.map((judge, i) => {
                         return (
                             <div className="judge" key={i}>
                                 <img
