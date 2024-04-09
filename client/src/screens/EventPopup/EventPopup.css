@@ -6,7 +6,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     animation: fadeIn 0.5s linear forwards;
+}
 
+.event-popup ::before {
+    color: #fff;
 }
 
 .event-popup .event-head {
@@ -20,7 +23,23 @@
     margin-top: 1em;
 }
 
-.event-popup .event-desc {
+.event-popup .event-desc-img {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.event-popup .event-desc-img .event-poster {
+    max-width: 400px;
+}
+
+.event-popup .event-desc-img .event-poster img {
+    width: 100%;
+}
+
+
+.event-popup .event-desc-img .event-desc {
+    color: #ffffffbe;
     width: 100%;
     margin-bottom: 1em;
 }
@@ -32,7 +51,9 @@
     justify-content: start;
     align-items: start;
     width: max-content;
+    height: max-content;
     gap: 1rem;
+    color: #ffffffbe
 }
 
 .event-popup .event-details > * {
@@ -49,7 +70,7 @@
 
 .event-popup .event-details .event-time {
     /* background-color: green; */
-    width: 10ch
+    width: 10ch;
 }
 
 .event-popup .event-details .event-venue {
@@ -78,6 +99,7 @@
 }
 
 .event-popup .rules-list-contain .rules-list .rule-item {
+    color: #ffffffbe;
     padding-bottom: 0.5em;
 }
 
@@ -91,7 +113,6 @@
     gap: 30px;
     padding-top: 2rem;
 }
-
 
 .event-popup .judges .judge {
     display: flex;
@@ -113,8 +134,41 @@
     /* font-family: "Sedgwick Ave Display", cursive; */
 }
 
-@media screen and (max-width:500px) {
-    .event-popup .event-details .event-time::before ,
+.event-popup .event-details .rules-link a {
+    cursor: pointer;
+    color: #fff;
+    font-size: 2.5rem;
+    transition: all 0.3s;
+}
+.event-popup .event-details .rules-link a:hover {
+    color: var(--accent1);
+}
+
+.event-popup .event-details .rules-link a {
+    color: #fff;
+    font-size: 2.5rem;
+    transition: all 0.3s;
+}
+.event-popup .event-details .rules-link .material-icons {
+    font-size: 2.5rem;
+    color: var(--accent1);
+    position: relative;
+    bottom: -0.15em;
+}
+
+@media screen and (max-width: 950px) {
+    .event-popup .event-desc-img {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .event-popup .event-desc-img .event-desc {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .event-popup .event-details .event-time::before,
     .event-popup .event-details .event-venue::before {
         font-size: 1.8rem;
     }
@@ -136,7 +190,7 @@
     .event-popup .judges {
         justify-content: center;
     }
-    .event-popup .judges .judge{
+    .event-popup .judges .judge {
         width: 40%;
     }
 

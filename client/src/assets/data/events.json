@@ -134,7 +134,9 @@
                 "registrationFee": "Nil",
                 "Awards": "Trophies for the Champions.",
                 "coordinators": ["Samriddhi Mukhopadhyay", "Nafis Adnan Mondal"],
-                "register": " https://forms.gle/Cow7ZXj4nMwtyqiB8"
+                "register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
+                "artists": ["tbd", "tbd", "tbd", "tbd"],
+                "judges": ["tbd", "tbd", "tbd", "tbd"]
             },
             {
                 "time": "2:00 PM - 6:00 PM",

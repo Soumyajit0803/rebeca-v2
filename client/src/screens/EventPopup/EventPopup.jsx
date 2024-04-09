@@ -27,7 +27,16 @@ const EventPopup = () => {
         eventInfo && (
             <div className={"event-popup " + eventName + "-event-popup"}>
                 <div className="event-head">{eventName}</div>
-                <div className="event-desc">{eventInfo.desc}</div>
+                <div className="event-desc-img">
+                    {eventInfo.desc ? <div className="event-desc">{eventInfo.desc}</div> : ""}
+                    <div className="event-poster">
+                        <img
+                            src={`/assets/imgs/events/posters/${eventName.toLowerCase().replace(" ", "_")}.png`}
+                            alt={eventName}
+                            srcSet=""
+                        />
+                    </div>
+                </div>
                 {eventInfo.club != "-" ? (
                     <div className="event-details">
                         <div className="event-club">{eventInfo.club}</div>
@@ -69,7 +78,13 @@ const EventPopup = () => {
                         </div>
                     </>
                 ) : (
-                    ""
+                    <div className="event-details">
+                        <div className="rules-link">
+                            <a href={eventInfo.rulesLink}>
+                                Rules Link<div className="material-icons">open_in_new</div>
+                            </a>
+                        </div>
+                    </div>
                 )}
                 <div className="event-head event-customhead">Judges</div>
                 <div className="judges">
