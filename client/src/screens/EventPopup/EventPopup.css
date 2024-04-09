@@ -5,7 +5,7 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-  animation: fadeIn 0.5s linear forwards;
+    animation: fadeIn 0.5s linear forwards;
 
 }
 
@@ -32,11 +32,11 @@
     justify-content: start;
     align-items: start;
     width: max-content;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .event-popup .event-details > * {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
 }
 
 .event-popup .event-details .event-time::before {
@@ -47,7 +47,13 @@
     top: -1.1em;
 }
 
+.event-popup .event-details .event-time {
+    /* background-color: green; */
+    width: 10ch
+}
+
 .event-popup .event-details .event-venue {
+    /* background-color: red; */
     width: 10ch;
 }
 
@@ -132,6 +138,10 @@
     }
     .event-popup .judges .judge{
         width: 40%;
+    }
+
+    .event-popup {
+        font-size: 1.3rem;
     }
 }
 
