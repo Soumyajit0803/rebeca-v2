@@ -28,9 +28,13 @@ const EventPopup = () => {
             <div className={"event-popup " + eventName + "-event-popup"}>
                 <div className="event-head">{eventName}</div>
                 <div className="event-desc">{eventInfo.desc}</div>
-                {eventInfo.club != "-" ? <div className="event-details">
-                    <div className="event-club">{eventInfo.club}</div>
-                </div>:""}
+                {eventInfo.club != "-" ? (
+                    <div className="event-details">
+                        <div className="event-club">{eventInfo.club}</div>
+                    </div>
+                ) : (
+                    ""
+                )}
                 <div className="event-details">
                     <div className="event-time">{eventInfo.time}</div>
                     <div className="event-venue">{eventInfo.venue}</div>
@@ -69,19 +73,20 @@ const EventPopup = () => {
                 )}
                 <div className="event-head event-customhead">Judges</div>
                 <div className="judges">
-                    {eventInfo.judges && eventInfo.judges.map((judge, i) => {
-                        return (
-                            <div className="judge" key={i}>
-                                <img
-                                    src={`/assets/imgs/ProfileImg/${judge}.webp`}
-                                    alt="judge"
-                                    srcSet=""
-                                    className="judge-pic"
-                                />
-                                <span>{judge}</span>
-                            </div>
-                        );
-                    })}
+                    {eventInfo.judges &&
+                        eventInfo.judges.map((judge, i) => {
+                            return (
+                                <div className="judge" key={i}>
+                                    <img
+                                        src={`/assets/imgs/ProfileImg/${judge}.webp`}
+                                        alt="judge"
+                                        srcSet=""
+                                        className="judge-pic"
+                                    />
+                                    <span>{judge}</span>
+                                </div>
+                            );
+                        })}
                 </div>
             </div>
         )

@@ -34,7 +34,6 @@
   width: 90%;
   position: absolute;
   bottom: 0;
-  border: 0px solid yellow;
   left: 50%;
   transform: translateX(-50%);
   z-index: 0;
@@ -267,4 +266,3 @@
 .home .section-3 .list:active .list-scroller{
   animation-play-state: paused;
 } */
-
