@@ -62,7 +62,11 @@ const Home = () => {
 			<section className="section-1">
 				<Heading title="Get ready to dance, laugh, celebrate like never before - this is Rebeca!"></Heading>
 				<div className="cover-img">
-					<img src="/assets/imgs/home/cover_img2.webp" alt="" />
+					{width <= 720 ? (
+						<img src="/assets/imgs/home/cover_img5.webp" alt="" />
+					) : (
+						<img src="/assets/imgs/home/cover_img3.webp" alt="" />
+					)}
 				</div>
 			</section>
 			<section className="section-2">
@@ -130,7 +134,7 @@ const Home = () => {
 							alt=""
 						/>
 					)} */}
-					<img src = "/assets/imgs/home/rebecalove2.webp" />
+					<img src="/assets/imgs/home/rebecalove2.webp" />
 				</div>
 			</section>
 			<section className="section-5">
