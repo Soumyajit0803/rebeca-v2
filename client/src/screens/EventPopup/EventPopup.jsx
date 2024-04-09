@@ -25,13 +25,13 @@ const EventPopup = () => {
     return (
         events &&
         eventInfo && (
-            <div className={"event-popup " + eventName + "-event-popup"}>
+            <div className={"event-popup"}>
                 <div className="event-head">{eventName}</div>
                 <div className="event-desc-img">
                     {eventInfo.desc ? <div className="event-desc">{eventInfo.desc}</div> : ""}
                     <div className="event-poster">
                         <img
-                            src={`/assets/imgs/events/posters/${eventName.toLowerCase().replace(" ", "_")}.png`}
+                            src={`/assets/imgs/events/posters/${eventName.toLowerCase().replaceAll(" ", "_")}.png`}
                             alt={eventName}
                             srcSet=""
                         />
