@@ -110,10 +110,10 @@
 }
 .team .lower-body .results .members .member .img .dp img {
 	width: 100%;
-	/* min-width: 100%; */
-	/* min-height: 100%; */
+	min-width: 100%;
+	min-height: 100%;
 	object-position: center;
-	object-fit: fill;
+	object-fit: cover;
 	/* border-radius: 50%; */
 }
 .team .lower-body .results .members .member .position {

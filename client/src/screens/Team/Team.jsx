@@ -104,6 +104,11 @@ const Team = () => {
 											<div className="position">
 												{mem.position}
 											</div>
+											{/* <div className="position">
+												{
+													mem.st
+												}
+											</div> */}
 										</div>
 									</div>
 								))}
