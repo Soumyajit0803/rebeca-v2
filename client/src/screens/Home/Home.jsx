@@ -81,7 +81,8 @@ const Home = () => {
 				<Heading
 					title={"82nd Rebeca! Line up"}
 					subTitle={
-						"Brace yourself for an unforgettable showcase, as we proudly unveil our stellar lineup"
+						// "Brace yourself for an unforgettable showcase, as we proudly unveil our stellar lineup"
+						"Showcasing all the wonderful artists to ever grace Rebeca"
 					}
 				></Heading>
 

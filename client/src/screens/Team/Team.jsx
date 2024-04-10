@@ -89,7 +89,7 @@ const Team = () => {
 									<div className="member" key={index}>
 										<div className="img">
 											<img
-												src="/assets/circlex300.png"
+												src="/assets/imgs/circle.png"
 												alt=""
 												className="circle"
 											/>

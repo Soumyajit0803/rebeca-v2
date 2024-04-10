@@ -16,7 +16,8 @@
 				"eventName": "Artival",
 				"club": "SCAGE",
 				"venue": "Volleyball Court",
-				"coordinators": ["Krishnendu Mondal", "Akash Das"]
+				"coordinators": ["Krishnendu Mondal", "Akash Das"],
+				"major": true
 			},
 			{
 				"desc": "",
@@ -25,46 +26,44 @@
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
 				"time": "5:30 PM - 7:30 PM",
 				"eventName": "Inauguration Ceremony",
-				"club": "-",
+				
 				"venue": "Lord's"
 			},
 			{
-				"desc": "",
-				"rules": [],
-				"judges": ["tbd", "tbd", "tbd", "tbd"],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
+				"desc": "The classical dance performance on the classical night of Rebeca, 18th of april. Showcasing the rich cultural heritage of Indian classical dances through the labyrinth of rhythm that the dancers create with ghoongru tied to their feet. ",
+				
+				
 				"time": "7:30 PM - 8:30 PM",
-				"eventName": "RXB Performance",
+				"eventName": "Ghoongru",
 				"club": "Reflexobeta",
-				"venue": "Lord's"
+				"venue": "Lord's",
+				"major": true
 			},
 			{
-				"desc": "",
-				"rules": [],
-				"judges": ["tbd", "tbd", "tbd", "tbd"],
+				"desc": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
+
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
 				"time": "8:30 PM - 1:30 AM",
 				"eventName": "The Classical Night",
-				"club": "-",
-				"venue": "Lord's"
+
+				"venue": "Lord's",
+				"major": true
 			},
 
 			{
 				"desc": "",
-				"rules": [],
-				"judges": ["tbd", "tbd", "tbd", "tbd"],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
+				
 				"time": "1:30 AM - 3:30 AM",
 				"eventName": "Movie Screening",
 				"club": "Camerabuff",
 				"venue": "Lord's"
 			},
 			{
-				"desc": "",
+				"desc": "Participants need to make an advertisement within 50 hours based on the product and theme provided to them at the start of the event.",
 				"rules": ["link: https://drive.google.com/drive/folders/1oRjJbHJcc8ZBVWq2G_vccO8FGjuWGxEJ"],
 				"judges": ["tbd", "tbd", "tbd", "tbd"],
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"time": "Deadline: 20th April, 10pm",
+				"time": "8:00 PM Onwards",
 				"eventName": "CINEAURA",
 				"club": "Camerabuff",
 				"venue": "Lord's",
@@ -173,10 +172,10 @@
 			},
 			{
 				"time": "7:30 PM - 8:30 PM",
-				"eventName": "RxB 2 Performances",
+				"eventName": "Stream of Western Dance",
 				"club": "Reflexobeta",
 				"venue": "Lord's",
-				"desc": "",
+				"desc": "Reflexobeta has given a chance and choreographed the performances of everyone who wants to dance and showcase their talents on the main stage of Rebeca who has not been a part of the club on the occasion of the annual cultural fest. The club members are ready to bang the stage with their series of sizzling and high energy performances",
 				"rules": [],
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
 				"judges": ["tbd", "tbd", "tbd", "tbd"]

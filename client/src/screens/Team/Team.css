@@ -81,7 +81,7 @@
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
-	background: rgba(0, 0, 0, 0.1);
+	/* background: var(--primary); */
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -97,22 +97,24 @@
 	left: 50%;
 	transform: translateY(-50%) translateX(-50%);
 	z-index: 1;
+	/* transform: translateX(-10px); */
 	/* border: 1px solid red; */
 }
 .team .lower-body .results .members .member .img .dp {
-	width: 150px;
-	height: 150px;
+	width: 180px;
+	height: 180px;
 	z-index: 2;
 	border-radius: 50%;
 	overflow: hidden;
+	transform: translateX(+5px) translateY(+5px);
 }
 .team .lower-body .results .members .member .img .dp img {
 	width: 100%;
-	min-width: 100%;
-	min-height: 100%;
+	/* min-width: 100%; */
+	/* min-height: 100%; */
 	object-position: center;
-	object-fit: cover;
-	border-radius: 50%;
+	object-fit: fill;
+	/* border-radius: 50%; */
 }
 .team .lower-body .results .members .member .position {
 	color: rgb(208, 208, 208, 0.75);
