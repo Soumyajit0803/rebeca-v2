@@ -25,17 +25,20 @@ const EventPopup = () => {
     return (
         events &&
         eventInfo && (
-            <div className={"event-popup " + eventName + "-event-popup"}>
+            <div className={"event-popup"}>
                 <div className="event-head">{eventName}</div>
-                <div className="event-desc">{eventInfo.desc}</div>
-                {eventInfo.club != "-" ? (
-                    <div className="event-details">
-                        <div className="event-club">{eventInfo.club}</div>
+                <div className="event-desc-img">
+                    <div className="event-poster">
+                        <img
+                            src={`/assets/imgs/events/posters/${eventName.toLowerCase().replaceAll(" ", "_")}.png`}
+                            alt={eventName}
+                            srcSet=""
+                        />
                     </div>
-                ) : (
-                    ""
-                )}
+                    {eventInfo.desc ? <div className="event-desc">{eventInfo.desc}</div> : ""}
+                </div>
                 <div className="event-details">
+                    {eventInfo.club != "-" ? <div className="event-club">{eventInfo.club}</div> : ""}
                     <div className="event-time">{eventInfo.time}</div>
                     <div className="event-venue">{eventInfo.venue}</div>
                 </div>
@@ -53,23 +56,25 @@ const EventPopup = () => {
                     loading={""}
                     type={""}
                 />
+                <div className="event-head event-customhead">Rules</div>
                 {eventInfo.rules.length ? (
-                    <>
-                        <div className="event-head event-customhead">Rules</div>
-                        <div className="rules-list-contain">
-                            <ul className="rules-list">
-                                {eventInfo.rules.map((rule, i) => {
-                                    return (
-                                        <li key={i} className="rule-item">
-                                            {rule}
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
-                    </>
+                    <div className="rules-list-contain">
+                        <ul className="rules-list">
+                            {eventInfo.rules.map((rule, i) => {
+                                return (
+                                    <li key={i} className="rule-item">
+                                        {rule}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
                 ) : (
-                    ""
+                    <div className="rules-link">
+                        <a href={eventInfo.rulesLink}>
+                            Open list of rules<div className="material-icons">open_in_new</div>
+                        </a>
+                    </div>
                 )}
                 <div className="event-head event-customhead">Judges</div>
                 <div className="judges">

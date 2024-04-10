@@ -31,7 +31,6 @@
 .list .timings .row .eventname {
     transition: all 0.2s;
     color: white;
-    /* min-width: 15ch; */
     text-align: right;
 }
 .list .timings .row .eventname:hover {

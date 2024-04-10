@@ -6,7 +6,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     animation: fadeIn 0.5s linear forwards;
+}
 
+.event-popup ::before {
+    color: #fff;
 }
 
 .event-popup .event-head {
@@ -20,7 +23,23 @@
     margin-top: 1em;
 }
 
-.event-popup .event-desc {
+.event-popup .event-desc-img {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.event-popup .event-desc-img .event-poster {
+    max-width: 400px;
+}
+
+.event-popup .event-desc-img .event-poster img {
+    width: 100%;
+}
+
+
+.event-popup .event-desc-img .event-desc {
+    color: #ffffffbe;
     width: 100%;
     margin-bottom: 1em;
 }
@@ -31,11 +50,15 @@
     display: flex;
     justify-content: start;
     align-items: start;
-    width: max-content;
-    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    gap: 5rem 1rem;
+    color: #ffffffbe;
+    flex-wrap: wrap;
 }
 
 .event-popup .event-details > * {
+    position: relative;
     font-size: 1.5rem;
 }
 
@@ -49,7 +72,7 @@
 
 .event-popup .event-details .event-time {
     /* background-color: green; */
-    width: 10ch
+    width: 10ch;
 }
 
 .event-popup .event-details .event-venue {
@@ -65,6 +88,10 @@
     top: -1.1em;
 }
 
+.event-popup .event-details .event-club {
+    min-width: 12ch;
+}
+
 .event-popup .event-details .event-club::before {
     content: "Club/Society";
     font-size: 2rem;
@@ -78,6 +105,7 @@
 }
 
 .event-popup .rules-list-contain .rules-list .rule-item {
+    color: #ffffffbe;
     padding-bottom: 0.5em;
 }
 
@@ -91,7 +119,6 @@
     gap: 30px;
     padding-top: 2rem;
 }
-
 
 .event-popup .judges .judge {
     display: flex;
@@ -113,8 +140,40 @@
     /* font-family: "Sedgwick Ave Display", cursive; */
 }
 
-@media screen and (max-width:500px) {
-    .event-popup .event-details .event-time::before ,
+.event-popup .rules-link a {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+.event-popup .rules-link a:hover {
+    color: var(--accent1);
+}
+
+.event-popup .rules-link a {
+    color: #ffffffbe;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+.event-popup .rules-link .material-icons {
+    font-size: 1.5rem;
+    color: var(--accent1);
+    position: relative;
+    bottom: -0.15em;
+}
+
+@media screen and (max-width: 950px) {
+    .event-popup .event-desc-img {
+        flex-direction: column;
+        align-items: center;
+    }
+    .event-popup .event-desc-img .event-desc {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .event-popup .event-details .event-time::before,
     .event-popup .event-details .event-venue::before {
         font-size: 1.8rem;
     }
@@ -136,13 +195,24 @@
     .event-popup .judges {
         justify-content: center;
     }
-    .event-popup .judges .judge{
+    .event-popup .judges .judge {
         width: 40%;
     }
 
     .event-popup {
         font-size: 1.3rem;
     }
+}
+
+@media screen and (max-width: 624px) {
+    /* .event-popup .event-details .event-time, */
+    .event-popup .event-details .event-venue {
+        flex-grow: 1;
+    }
+    .event-popup .event-details .event-club {
+        width: 100%;
+    }
+    
 }
 
 .event-popup {
