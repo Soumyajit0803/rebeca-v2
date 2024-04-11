@@ -14,11 +14,6 @@ const Eventpanel = ({ value, index, day, FocusEvent }) => {
 		show = true;
 	}
 
-	const propsHeight = { height: show ? "15rem" : "0px" };
-	const propsWidth = { width: show ? "22rem" : "0px" };
-	const propsImgHeight = { transform: show ? "scaleY(1)" : "scaleY(0)" };
-	const propsImgWidth = { transform: show ? "scaleX(1)" : "scaleX(0)" };
-
 	return (
 		<div key={index} className={`event-data ${show && "expand"}`}>
 			<div onClick={() => handleExpand(index)} className="data-header">
