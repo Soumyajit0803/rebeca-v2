@@ -135,7 +135,7 @@
 @media only screen and (max-width: 500px){
   .event-card, .event-data{
     flex-direction: column;
-    /* width: 100%; */
+    width: 100%;
   }
 
   .event-card .event-data {
@@ -144,6 +144,7 @@
   }
   .event-card .event-data.expand{
     height: 300px;
+    width: 100%;
   }
 
   .event-card .event-data .data-header{
@@ -153,21 +154,12 @@
     height: fit-content;
   }
 
-  .event-card .event-data .data-body .img::before{
-    transform-origin: bottom;
-    transform: scaleY(0);
-  }
 
-  .event-card .event-data .data-body:hover::before{
-    transform: scaleY(1);
-    opacity: 1;
-  }
-
-  .event-card .event-data .data-body .img img {
+  /* .event-card .event-data .data-body .img img {
     transform-origin: top;
     width: 70vw;
     height: 100%;
-  }
+  } */
 
   .day-details-wrapper .section-event {
     overflow-x: hidden;
