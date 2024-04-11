@@ -527,9 +527,9 @@
 		"name": "Publicity",
 		"members": [
 			{
-				"name": "Anuva Ghosh",
+				"name": "Anuvab Ghosh",
 				"position": "Head",
-				"img": "./assets/imgs/team/anuvaghosh.jpg"
+				"img": "./assets/imgs/team/anuvabghosh.jpg"
 			},
 			{
 				"name": "Cheruku Shailendra",
@@ -554,7 +554,7 @@
 			{
 				"name": "Protik Saha Palash",
 				"position": "Associate Head",
-				"img": "./assets/imgs/team/protiksahapalash.HEIC"
+				"img": "./assets/imgs/team/protiksahapalash.jpg"
 			},
 			{
 				"name": "Karan Kabiraj",
@@ -592,9 +592,9 @@
 				"img": "./assets/imgs/team/niloymondal.jpg"
 			},
 			{
-				"name": "Aniket Nimjhe",
+				"name": "Aniket Nimje",
 				"position": "Associate",
-				"img": "./assets/imgs/team/aniketnimjhe.jpg"
+				"img": "./assets/imgs/team/aniketchandramohannimje.jpg"
 			},
 			{
 				"name": "Archit Ranjan",

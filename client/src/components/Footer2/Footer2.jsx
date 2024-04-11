@@ -154,17 +154,17 @@ const Footer2 = () => {
                     <div className="contact">
                         <div className="name">Ujjwal Chaudhari</div>
 
-                        <div className="ph-num">Ph: +91 95552 09179</div>
+                        <div className="ph-num"><span className="material-icons">person</span>+91 95552 09179</div>
                     </div>
                     <div className="contact">
                         <div className="name">Bipro Bhadra</div>
 
-                        <div className="ph-num">Ph: +91 7890938525</div>
+                        <div className="ph-num"><span className="material-icons">person</span>+91 7890938525</div>
                     </div>
                     <div className="contact">
                         <div className="name">Ankur Roy Chowdhury</div>
 
-                        <div className="ph-num">Ph: +91 84204 74705</div>
+                        <div className="ph-num"><span className="material-icons">person</span>+91 84204 74705</div>
                     </div>
                 </div>
             </div>

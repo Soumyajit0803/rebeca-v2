@@ -134,19 +134,15 @@
     height: 10em;
 }
 
-.event-popup .judges .judge .circle {
-    position: absolute;
-    z-index: -1;
-    top: -5px;
-    left: -5px;
-    aspect-ratio: 1/1;
-    width: 100%;
-    border-radius: 50%;
-    background-color: var(--accent1);
+.event-popup .judges .coordinator .phone {
+    color: #ffffff82;
+    font-size: 1rem;
 }
 
-.event-popup .judges .coordinator .phone {
-    color: #ffffff82
+.event-popup .judges .coordinator .phone .material-icons {
+    position: relative;
+    top: 3px;
+    /* margin-right: 3px; */
 }
 .event-popup .judges .coordinator .c-name {
     display: flex;
@@ -156,6 +152,7 @@
 .event-popup .judges .judge .judge-pic {
     aspect-ratio: 1/1;
     width: 100%;
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: 2px -2px 0 3px var(--accent1);
 }

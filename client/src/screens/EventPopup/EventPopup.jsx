@@ -82,7 +82,6 @@ const EventPopup = () => {
                         eventInfo.judges.map((judge, i) => {
                             return (
                                 <div className="judge" key={i}>
-                                    <div className="circle"></div>
                                     <img
                                         src={`/assets/imgs/ProfileImg/${judge}.webp`}
                                         alt="judge"
@@ -94,21 +93,21 @@ const EventPopup = () => {
                             );
                         })}
                 </div>
-                {eventInfo.coordinators ? <div className="event-head event-customhead">Coordinators</div>:""}
+                {eventInfo.coordinators ? <div className="event-head event-customhead">Coordinators</div> : ""}
                 <div className="judges">
                     {eventInfo.coordinators &&
                         eventInfo.coordinators.map((coord, i) => {
                             return (
                                 <div className="judge coordinator" key={i}>
-                                    <div className="circle"></div>
                                     <img
-                                        src={`/assets/imgs/ProfileImg/${coord.name}.webp`}
+                                        src={`/assets/imgs/team/${coord.name.toLowerCase().replaceAll(' ', '')}.jpg`}
                                         alt=""
                                         srcSet=""
                                         className="judge-pic"
                                     />
                                     <span className="c-name">{coord.name}</span>
-                                    <span className="phone">{coord.num}</span>
+                                    <div className="phone"><span className="material-icons">person</span>{coord.num}</div>
+                                    
                                 </div>
                             );
                         })}

@@ -102,6 +102,12 @@
 	color: rgba(255, 255, 255, 0.466);
 }
 
+.footer2 .right-col .contacts .contact .ph-num .material-icons {
+	position: relative;
+	top: 5px;
+	/* margin-right: 3px; */
+}
+
 .footer2 .social {
 	width: 20%;
 	display: flex;
