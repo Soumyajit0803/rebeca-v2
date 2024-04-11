@@ -105,6 +105,7 @@
 .footer2 .right-col .contacts .contact .ph-num .material-icons {
 	position: relative;
 	top: 5px;
+	left: -2px;
 	/* margin-right: 3px; */
 }
 
