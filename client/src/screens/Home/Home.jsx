@@ -135,7 +135,7 @@ const Home = () => {
 							alt=""
 						/>
 					)} */}
-					<img src="/assets/imgs/home/rebecalove2.webp" />
+					<img src="/assets/imgs/home/rebecalove3.webp" />
 				</div>
 			</section>
 			<section className="section-5">
