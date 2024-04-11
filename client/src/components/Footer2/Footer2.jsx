@@ -137,7 +137,7 @@ const Footer2 = () => {
                         <div className="ph-num">Chairperson</div>
                     </div>
                     <div className="contact">
-                        <div className="name">Dr. Ananya Buri</div>
+                        <div className="name">Dr. Ananya Barui</div>
 
                         <div className="ph-num">Joint Convenor</div>
                     </div>
