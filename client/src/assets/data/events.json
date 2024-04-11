@@ -133,7 +133,7 @@
                 ],
                 "registrationFee": "Nil",
                 "Awards": "Trophies for the Champions.",
-                "coordinators": ["Samriddhi Mukhopadhyay", "Nafis Adnan Mondal"],
+                "coordinators": [{"name":"Samriddhi Mukhopadhyay","num":"8017849961"}, {"name":"Nafis Adnan Mondal","num":"9143611854"}],
                 "register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
                 "artists": ["tbd", "tbd", "tbd", "tbd"],
                 "judges": ["tbd", "tbd", "tbd", "tbd"]
@@ -257,7 +257,7 @@
                 ],
                 "registrationFee": "Nil",
                 "Awards": "Trophies for the Champions.",
-                "coordinators": ["Samriddhi Mukhopadhyay", "Nafis Adnan Mondal"],
+                "coordinators": [{"name":"Samriddhi Mukhopadhyay","num":"8017849961"}, {"name":"Nafis Adnan Mondal","num":"9143611854"}],
                 "register": " https://forms.gle/Cow7ZXj4nMwtyqiB8"
             },
             {
@@ -420,7 +420,7 @@
                 "judges": ["Ms. Chaiti Nath"],
                 "registrationFee": "Rs. 50",
                 "Awards": "Prizes Worth Rs. 5k",
-                "coordinators": ["Sanghamitra De", "Madhushree Shaw"],
+                "coordinators": [{"name":"Sanghamitra De","num":"8961774885"}, {"name":"Madhushree Shaw","num":"9330062005"}],
                 "register": "https://forms.gle/q8L61eApSUA4gcAt6"
             },
             {
@@ -460,7 +460,7 @@
                 "rulesLink": "https://drive.google.com/drive/folders/134jNYBILDvUwnaKZeUUb71lPVs3TdHqK",
                 "artists": ["tbd", "tbd", "tbd", "tbd"],
                 "judges": ["tbd", "tbd", "tbd", "tbd"],
-                "coordinators": { "name": "Rajneesh Pathak", "num": "6388835788" },
+                "coordinators": [{ "name": "Rajneesh Pathak", "num": "6388835788" }],
                 "registrationFee": "Rs. 150",
                 "Awards": "Winners and runners-up will receive gift hampers with certificate"
             },
