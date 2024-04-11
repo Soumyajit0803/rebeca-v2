@@ -29,6 +29,7 @@
 	width: 55%;
 	text-align: center;
 	z-index: 1;
+	text-shadow: 1px 1px 40px rgb(0, 0, 0);
 }
 .heading .sub-title {
 	width: 70%;

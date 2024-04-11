@@ -7,7 +7,7 @@
     position: relative;
     z-index: 2;
     color: #fff;
-    width: max-content;
+    width: min-content;
     transition: all 0.3s;
 }
 

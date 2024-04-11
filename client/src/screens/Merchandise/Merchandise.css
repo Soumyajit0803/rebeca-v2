@@ -1,6 +1,7 @@
 .merch {
 	padding: 3rem 4rem;
 	font-size: 25px;
+	animation: fadeIn 0.5s linear forwards;
 }
 .merch .section-2 {
 	display: flex;
