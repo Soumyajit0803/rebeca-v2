@@ -6,10 +6,10 @@ import teams from "../../assets/data/team.json";
 
 function ProfessorsList() {
     const profs = [
-        { name: "Dr. Nityananda Nandi", position: "Chairperson", img: "./assets/imgs/team/nityanandanandi.png" },
-        { name: "Dr. Ananya Barui", position: "Joint Convenor", img: "./assets/imgs/team/ananyabarui.png" },
-        { name: "Dr. Subhabrata Koley", position: "Chairperson", img: "./assets/imgs/team/subhabratakoley.png" },
-        { name: "Dr. Santanu Maity", position: "Treasurer", img: "./assets/imgs/team/santanumaity.png" },
+        { name: "Dr. Nityananda Nandi", position: "Chairperson", img: "./assets/imgs/team/nityanandanandi.jpg" },
+        { name: "Dr. Ananya Barui", position: "Joint Convenor", img: "./assets/imgs/team/ananyabarui.jpg" },
+        { name: "Dr. Subhabrata Koley", position: "Chairperson", img: "./assets/imgs/team/subhabratakoley.jpg" },
+        { name: "Dr. Santanu Maity", position: "Treasurer", img: "./assets/imgs/team/santanumaity.jpg" },
     ];
 
     return (
