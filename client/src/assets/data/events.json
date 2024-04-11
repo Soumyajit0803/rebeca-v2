@@ -30,7 +30,7 @@
                 "artists": ["tbd", "tbd", "tbd", "tbd"],
                 "time": "5:30 PM - 7:30 PM",
                 "eventName": "Inauguration Ceremony",
-                "club": "-",
+                
                 "venue": "Lord's"
             },
             {
@@ -50,7 +50,7 @@
                 "artists": ["tbd", "tbd", "tbd", "tbd"],
                 "time": "8:30 PM - 1:30 AM",
                 "eventName": "The Classical Night",
-                "club": "-",
+                
                 "venue": "Lord's"
             },
 
@@ -152,17 +152,7 @@
                     { "name": "Debanjali Chakravarthi", "num": "8918740236" }
                 ]
             },
-            {
-                "time": "4:00 PM - 5:00 PM",
-                "eventName": "Workshop (Photography)",
-                "club": "Catharsis",
-                "venue": "Alumni Seminar Hall",
-                "desc": "Join us for an exclusive photography workshop with Behaya , a renowned photographer known for his captivating work. Whether you're a beginner, aspiring photographer, a hobbyist, or simply someone who appreciates the art of visual storytelling, this workshop is perfect for you. This workshop promises to be an immersive experience for photographers of all levels. He shares insights, tips, and techniques to help you take your skills to the next level.Learn the art of photography, from mastering your camera settings to capturing moments creatively. Don't miss this opportunity to learn from the best.",
-                "rules": [],
-                "artists": ["tbd", "tbd", "tbd", "tbd"],
-                "judges": ["tbd", "tbd", "tbd", "tbd"],
-                "coordinators": ["Aditya Didolkar", "Utsab Dhara", "Randhir Kumar Ray"]
-            },
+            
             {
                 "time": "4:00 PM - 6:00 PM",
                 "eventName": "Face Canvas",

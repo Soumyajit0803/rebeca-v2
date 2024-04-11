@@ -13,10 +13,17 @@
   padding: 1.2rem;
   transition: all ease 0.2s;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   padding-top: 0;
   padding-bottom: 0;
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
 }
+.event-card .event-data.expand{
+  width: 400px;
+}
+
 
 .event-card .event-data .data-header {
   font-size: 1.2rem;
@@ -34,6 +41,7 @@
   gap: 2rem;
   height: 50%;
   /* flex-direction: column; */
+  border: 0px solid red;
 }
 
 .event-card .event-data .data-header p {
@@ -41,30 +49,45 @@
   text-align: right;
 }
 
+.event-card .event-data .data-body {
+  
+  transition: all ease 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  border: 0px solid green;
+  gap: 20px;
+  /* width: 300px; */
+  width: 100%;
+  /* margin-top: 2rem; */
+}
+
 .event-card .event-data .data-body .img{
   width: 100%;
   height: 100%;
   transition: all ease 0.2s;
   /* height: 100%; */
+  border: 0px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .event-card .event-data .data-body .img img {
-  height: 15rem;
+  /* height: 15rem; */
+  height: 100%;
   width: 100%;
   object-fit: cover;
   transition: all ease 0.2s;
   transform-origin: left;
-}
-
-.event-card .event-data .data-body {
+  border: 0px solid yellow;
   position: relative;
-  transition: all ease 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.event-card .event-data .data-body .img::before {
+
+.event-card .event-data .data-body  .img img::before {
   content: "learn more";
   font-size: 1rem;
   width: 100%;
@@ -82,11 +105,26 @@
   transform-origin: left;
   transition: all ease 0.2s;
   top: 0;
+  border: 1px solid red;
 }
 
-.event-card .event-data .data-body .img:hover::before {
+.event-card .event-data .data-body .img:hover img::before {
   transform: scaleX(1);
   opacity: 1;
+}
+.event-card .event-data .data-body .desc{
+  /* height: 10ch; */
+  border: 0px solid yellow;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+  overflow: hidden;
+  width: 100%;
+  text-wrap: wrap;
+  text-align: right;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  padding: 0 0 0 20px;
 }
 
 .event-card .event-data .data-header:hover {
@@ -102,11 +140,17 @@
 
   .event-card .event-data {
     width: 100%;
+    height: fit-content;
+  }
+  .event-card .event-data.expand{
+    height: 300px;
   }
 
   .event-card .event-data .data-header{
     writing-mode: horizontal-tb;
     transform: rotate(0deg);
+    /* border: 1px solid red; */
+    height: fit-content;
   }
 
   .event-card .event-data .data-body .img::before{

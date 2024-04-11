@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 const EventPopup = () => {
     const { eventName } = useParams();
-    var [eventInfo, setEventInfo] = useState(null);
+    const [eventInfo, setEventInfo] = useState(null);
     function findTheDay() {
         for (let d in events) {
             let i = 0;
@@ -35,10 +35,10 @@ const EventPopup = () => {
                             srcSet=""
                         />
                     </div>
-                    {eventInfo.desc ? <div className="event-desc">{eventInfo.desc}</div> : ""}
+                    {eventInfo.desc && <div className="event-desc">{eventInfo.desc}</div>}
                 </div>
                 <div className="event-details">
-                    {eventInfo.club != "-" ? <div className="event-club">{eventInfo.club}</div> : ""}
+                    {eventInfo.club && <div className="event-club">{eventInfo.club}</div>}
                     <div className="event-time">{eventInfo.time}</div>
                     <div className="event-venue">{eventInfo.venue}</div>
                 </div>
