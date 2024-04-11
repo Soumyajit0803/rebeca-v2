@@ -238,14 +238,14 @@
 		"name": "Resource Information",
 		"members": [
 			{
-				"name": "Avi Ambbast",
+				"name": "Avi Ambast",
 				"position": "Head",
-				"img": "./assets/imgs/team/aviambbast.jpg"
+				"img": "./assets/imgs/team/aviambast.jpg"
 			},
 			{
-				"name": "Palash Mondal",
+				"name": "Palash Mandal",
 				"position": "Head",
-				"img": "./assets/imgs/team/palashmondal.jpg"
+				"img": "./assets/imgs/team/palashmandal.jpg"
 			},
 			{
 				"name": "Briti Sundar Mondal",
@@ -304,9 +304,9 @@
 				"img": "./assets/imgs/team/sujajmondal.jpg"
 			},
 			{
-				"name": "Rithik Rai",
+				"name": "Rithik Raj",
 				"position": "Head",
-				"img": "./assets/imgs/team/rithikrai.jpg"
+				"img": "./assets/imgs/team/rithikraj.jpg"
 			},
 			{
 				"name": "Aditya Nilesh Dhamne",
@@ -314,9 +314,9 @@
 				"img": "./assets/imgs/team/adityanileshdhamne.jpg"
 			},
 			{
-				"name": "Pulkit",
+				"name": "Pulkit Bhardwaj",
 				"position": "Associate Head",
-				"img": "./assets/imgs/team/pulkit.jpg"
+				"img": "./assets/imgs/team/pulkitbhardwaj.jpg"
 			},
 			{
 				"name": "Ratandeep Kumar",
@@ -420,9 +420,9 @@
 				"img": "./assets/imgs/team/sourishpal.jpg"
 			},
 			{
-				"name": "Sujan Sharma",
+				"name": "Sujaan Sharma",
 				"position": "Associate",
-				"img": "./assets/imgs/team/sujansharma.jpg"
+				"img": "./assets/imgs/team/sujaansharma.jpg"
 			},
 			{
 				"name": "Sadhan Das",
@@ -430,9 +430,9 @@
 				"img": "./assets/imgs/team/sadhandas.jpg"
 			},
 			{
-				"name": "Vedant Bagde",
+				"name": "Vedant Dhanraj Bagade",
 				"position": "Associate",
-				"img": "./assets/imgs/team/vedantbagde.jpg"
+				"img": "./assets/imgs/team/vedantdhanrajbagade.jpg"
 			}
 		]
 	},
@@ -554,7 +554,7 @@
 			{
 				"name": "Protik Saha Palash",
 				"position": "Associate Head",
-				"img": "./assets/imgs/team/protiksahapalash.jpg"
+				"img": "./assets/imgs/team/protiksahapalash.HEIC"
 			},
 			{
 				"name": "Karan Kabiraj",
@@ -867,9 +867,9 @@
 		"name": "Refreshments",
 		"members": [
 			{
-				"name": "Argha Swarnakar",
+				"name": "Arghya Swarnakar",
 				"position": "Head",
-				"img": "./assets/imgs/team/arghaswarnakar.jpg"
+				"img": "./assets/imgs/team/arghyaswarnakar.jpeg"
 			},
 			{
 				"name": "Ravi Kumar Kesari",
@@ -882,9 +882,9 @@
 				"img": "./assets/imgs/team/narendrakumar.jpg"
 			},
 			{
-				"name": "Goutham Rathod",
+				"name": "K Goutham Rathod",
 				"position": "Head",
-				"img": "./assets/imgs/team/gouthamrathod.jpg"
+				"img": "./assets/imgs/team/kgouthamrathod.jpg"
 			},
 			{
 				"name": "Kishore Palacharla",
@@ -912,14 +912,14 @@
 				"img": "./assets/imgs/team/satyamkumar.jpg"
 			},
 			{
-				"name": "Sayak Bal",
+				"name": "Sayak Baal",
 				"position": "Associate",
 				"img": "./assets/imgs/team/sayakbal.jpg"
 			},
 			{
-				"name": "Shibam Rai",
+				"name": "Shivam Rai",
 				"position": "Associate",
-				"img": "./assets/imgs/team/shibamrai.jpg"
+				"img": "./assets/imgs/team/shivamrai.jpg"
 			},
 			{
 				"name": "Amit Kumar",
@@ -933,9 +933,9 @@
 		"name": "Volunteers",
 		"members": [
 			{
-				"name": "Viay Prakash",
+				"name": "Vijay Prakash",
 				"position": "Head",
-				"img": "./assets/imgs/team/viayprakash.jpg"
+				"img": "./assets/imgs/team/vijayprakash.jpg"
 			},
 			{
 				"name": "Abhijeet Anand",
@@ -958,9 +958,9 @@
 				"img": "./assets/imgs/team/shivammadhesiya.jpg"
 			},
 			{
-				"name": "Priya Rajkumar",
+				"name": "Priya Bhardwaj",
 				"position": "Associate Head",
-				"img": "./assets/imgs/team/priyarajkumar.jpg"
+				"img": "./assets/imgs/team/priyabhardwaj.jpg"
 			},
 			{
 				"name": "Sree Sanjana Neettam",
@@ -973,19 +973,15 @@
 				"img": "./assets/imgs/team/rahulkumar.jpg"
 			},
 			{
-				"name": "Sanatan Santosh",
+				"name": "Sanatan Santosh Samantara",
 				"position": "Associate",
-				"img": "./assets/imgs/team/sanatansantosh.jpg"
+				"img": "./assets/imgs/team/sanatansantoshsamantara.jpg"
 			},
-			{
-				"name": "Samantara",
-				"position": "Associate",
-				"img": "./assets/imgs/team/samantara.jpg"
-			},
+			
 			{
 				"name": "Aryan D. Rozario",
 				"position": "Associate",
-				"img": "./assets/imgs/team/aryand.rozario.jpg"
+				"img": "./assets/imgs/team/aryandrozario.jpg"
 			},
 			{
 				"name": "Rishabh Jha",
