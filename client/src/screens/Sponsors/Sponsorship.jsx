@@ -53,14 +53,14 @@ function Sponsorship() {
 
 	const updateImageSource = () => {
 		const newFileName =
-			window.innerWidth > 800 ? "flowChart3" : "flowChart2";
+			window.innerWidth > 800 ? "flowChart4" : "flowChart5";
 		setFileName(newFileName);
 
 		const newWidth = window.innerWidth > 1260 ? "75%" : "90%";
 		setWidthSize(newWidth);
 
 		const newSponsorCategories =
-			newFileName === "flowChart3"
+			window.innerWidth > 800
 				? "sponsorCategories1"
 				: "sponsorCategories2";
 		setSponsorCategories(newSponsorCategories);
@@ -171,14 +171,14 @@ function Sponsorship() {
 						/>
 					</div>
 				</section>
-				<section className="section-2">
+				{/* <section className="section-2">
 					<div className="cover-pic">
 						<img
 							src="/assets/imgs/sponsorship/coverPic1.webp"
 							alt=""
 						/>
 					</div>
-				</section>
+				</section> */}
 
 				<section className="section-3">
 					<Heading1 title={"Sponsor Categories"} w={"60%"}></Heading1>
