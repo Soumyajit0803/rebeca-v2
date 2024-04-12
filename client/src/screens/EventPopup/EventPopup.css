@@ -81,16 +81,6 @@
     top: -1.1em;
 }
 
-.event-popup .event-details .event-time {
-    /* background-color: green; */
-    /* width: 10ch; */
-}
-
-.event-popup .event-details .event-venue {
-    /* background-color: red; */
-    /* width: 10ch; */
-}
-
 .event-popup .event-details .event-venue::before {
     content: "Venue";
     font-size: 1.5rem;
