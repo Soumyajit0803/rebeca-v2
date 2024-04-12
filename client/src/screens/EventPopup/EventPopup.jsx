@@ -4,6 +4,10 @@ import "./EventPopup.css";
 import events from "../../../src/assets/data/events.json";
 import { useParams } from "react-router-dom";
 
+function register(url) {
+    window.open(url ? url : "#", '_blank')
+}
+
 const EventPopup = () => {
     const { eventName } = useParams();
     const [eventInfo, setEventInfo] = useState(null);
@@ -43,11 +47,11 @@ const EventPopup = () => {
                     <div className="event-venue">{eventInfo.venue}</div>
                 </div>
                 <Button
-                    innerText={"RSVP NOW"}
+                    innerText={"REGISTER"}
                     id={""}
                     className={""}
                     variant={""}
-                    onClick={() => {}}
+                    onClick={() => register(eventInfo.register)}
                     disabled={""}
                     color={""}
                     size={""}
