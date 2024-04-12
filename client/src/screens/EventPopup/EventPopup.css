@@ -14,7 +14,7 @@
 
 .event-popup .event-head {
     font-family: "Sedgwick Ave Display", cursive;
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 0.5em;
 }
 
@@ -30,18 +30,29 @@
 }
 
 .event-popup .event-desc-img .event-poster {
-    max-width: 400px;
+    
+    border-radius: 20px;
+    width: 30%;
 }
 
 .event-popup .event-desc-img .event-poster img {
     width: 100%;
+    border-radius: 20px;
 }
 
 
 .event-popup .event-desc-img .event-desc {
     color: #ffffffbe;
-    width: 100%;
+    width: 60%;
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+
+}
+.event-popup .event-desc-img .fee{
+    font-size: 20px;
 }
 
 .event-popup .event-details {
@@ -52,7 +63,7 @@
     align-items: start;
     width: 100%;
     height: 100%;
-    gap: 5rem 1rem;
+    gap: 5rem 2rem;
     color: #ffffffbe;
     flex-wrap: wrap;
 }
@@ -63,8 +74,8 @@
 }
 
 .event-popup .event-details .event-time::before {
-    content: "TIME";
-    font-size: 2rem;
+    content: "Time";
+    font-size: 1.5rem;
     font-family: "Sedgwick Ave Display", cursive;
     position: absolute;
     top: -1.1em;
@@ -72,29 +83,29 @@
 
 .event-popup .event-details .event-time {
     /* background-color: green; */
-    width: 10ch;
+    /* width: 10ch; */
 }
 
 .event-popup .event-details .event-venue {
     /* background-color: red; */
-    width: 10ch;
+    /* width: 10ch; */
 }
 
 .event-popup .event-details .event-venue::before {
-    content: "VENUE";
-    font-size: 2rem;
+    content: "Venue";
+    font-size: 1.5rem;
     font-family: "Sedgwick Ave Display", cursive;
     position: absolute;
     top: -1.1em;
 }
 
 .event-popup .event-details .event-club {
-    min-width: 12ch;
+    min-width: 8ch;
 }
 
 .event-popup .event-details .event-club::before {
     content: "Club/Society";
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: "Sedgwick Ave Display", cursive;
     position: absolute;
     top: -1.1em;

@@ -11,8 +11,8 @@ import EventList from "../../components/EventList/EventList";
 var introtext = `Experience the timeless tradition of REBECA! Join us for an unforgettable celebration filled with music, dance, competitions, and workshops. Embrace the vibrant spirit of our community as we come together to create lasting memories and forge new friendships. From electrifying performances to engaging activities, there's something for everyone to enjoy. Don't miss out on this exciting event that honors our college's rich heritage and brings us closer together.`;
 
 function EventSection({ date, datetxt, eventlist, topic, about }) {
-  var bgsetter = datetxt.toLowerCase();
-  return (
+	var bgsetter = datetxt.toLowerCase();
+	return (
 		<div className={"event " + bgsetter + "-back"}>
 			<Link to={`/events/${bgsetter}`}>
 				<PujaHeading
@@ -22,7 +22,7 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
 				/>
 			</Link>
 			<div className={"event-content"}>
-				<EventList eventlist={eventlist}/>
+				<EventList eventlist={eventlist} />
 				<div className="description">
 					<div className="topic display-font">{topic}</div>
 					<div className="about">{about}</div>
@@ -36,40 +36,81 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
 				</div>
 			</div>
 		</div>
-  );
+	);
 }
 
 function Schedule() {
-    function eventListSummarizer(eventlist) {
-        var res = [];
-        for (let key in eventlist) {
-            res.push([eventlist[key].time, eventlist[key].eventName]);
-        }
-        return res;
-    }
+	function eventListSummarizer(eventlist) {
+		var res = [];
+		for (let key in eventlist) {
+			res.push([eventlist[key].time, eventlist[key].eventName]);
+		}
+		return res;
+	}
 
-    var nights = ["saptami", "ashtami", "navami", "dashami"];
-    return (
-        contents &&
-        events && (
-            <div className="schedule">
-                <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
-                {nights.map((night, i) => {
-                    return (
-                        <EventSection
-                            date={contents[night].date}
-                            datetxt={night.toUpperCase()}
-                            eventlist={eventListSummarizer(events[night].eventList)}
-                            topic={contents[night].nightType}
-                            about={contents[night].intro}
-                            key={i}
-                        />
-                    );
-                })}
-            </div>
-        )
-        // <EventPopup />
-    );
+	var nights = ["saptami", "ashtami", "navami", "dashami"];
+	return (
+		contents &&
+		events && (
+			<div className="schedule">
+				<Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
+				{
+					<div className={"event pre-event"}>
+						{/* <Link to={`/events/${bgsetter}`}>
+							{/* <PujaHeading
+								date={date}
+								datetxt={datetxt}
+								customcss={"left-padding"}
+							/> */}
+						{/* </Link> */}
+						<div className="eheading">
+							<div className="small">
+								<span></span>
+								<div className="big1">Pre-Events</div>
+							</div>
+						</div>
+						<div className={"event-content"}>
+							<EventList
+								eventlist={events["Pre Events"].eventList}
+							/>
+							<div className="description">
+								<div className="topic display-font">
+									Pre Events
+								</div>
+								<div className="about">
+									Get ready to dive into the festivities early
+									with our pre-events, featuring workshops,
+									performances, and interactive activities to
+									ignite your passion for culture and
+									creativity.
+								</div>
+
+								{/* <Link to={`/events/${bgsetter}`}>
+									<Button
+										variant={"filled"}
+										innerText={"Learn more"}
+									></Button>
+								</Link> */}
+							</div>
+						</div>
+					</div>
+				}
+				{nights.map((night, i) => {
+					return (
+						<EventSection
+							date={contents[night].date}
+							datetxt={night.toUpperCase()}
+							eventlist={events[night].eventList}
+							topic={contents[night].nightType}
+							about={contents[night].intro}
+							key={i}
+						/>
+					);
+				})}
+			</div>
+		)
+		// <EventPopup />
+	);
 }
 
 export default Schedule;

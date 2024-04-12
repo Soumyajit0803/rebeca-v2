@@ -39,6 +39,8 @@
 .eheading .small .big1 {
     padding-left: 0.5ch;
     font-size: 3.5rem;
+    line-break: strict;
+    width: 400px;
 }
 
 .saptami {

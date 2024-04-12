@@ -9,6 +9,13 @@
   margin-top: 5rem;
   /* border: 1px solid red; */
 }
+.schedule .event.pre-event .event-content{
+  min-height: 60vh;
+  border: 0px solid red;
+}
+.schedule .event.pre-event .eheading{
+  margin-left: 2rem;
+}
 
 .schedule .event .event-content {
   position: relative;
@@ -36,7 +43,9 @@
   background-color: transparent;
   background-repeat: no-repeat;
 }
-
+.schedule .pre-event .event-content::before {
+  background-image: url("/assets/imgs/Schedule/pre-event.webp");
+}
 .schedule .saptami-back .event-content::before {
   background-image: url("/assets/imgs/Schedule/saptami.webp");
 }

@@ -27,98 +27,142 @@ const EventPopup = () => {
     if (events && !eventInfo) findTheDay();
 
     return (
-        events &&
-        eventInfo && (
-            <div className={"event-popup"}>
-                <div className="event-head">{eventName}</div>
-                <div className="event-desc-img">
-                    <div className="event-poster">
-                        <img
-                            src={`/assets/imgs/events/posters/${eventName.toLowerCase().replaceAll(" ", "_")}.png`}
-                            alt={eventName}
-                            srcSet=""
-                        />
-                    </div>
-                    {eventInfo.desc && <div className="event-desc">{eventInfo.desc}</div>}
-                </div>
-                <div className="event-details">
-                    {eventInfo.club && <div className="event-club">{eventInfo.club}</div>}
-                    <div className="event-time">{eventInfo.time}</div>
-                    <div className="event-venue">{eventInfo.venue}</div>
-                </div>
-                <Button
-                    innerText={"REGISTER"}
-                    id={""}
-                    className={""}
-                    variant={""}
-                    onClick={() => register(eventInfo.register)}
-                    disabled={""}
-                    color={""}
-                    size={""}
-                    startIcon={""}
-                    endIcon={""}
-                    loading={""}
-                    type={""}
-                />
-                <div className="event-head event-customhead">Rules</div>
-                {eventInfo.rules.length ? (
-                    <div className="rules-list-contain">
-                        <ul className="rules-list">
-                            {eventInfo.rules.map((rule, i) => {
-                                return (
-                                    <li key={i} className="rule-item">
-                                        {rule}
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                ) : (
-                    <div className="rules-link">
-                        <a href={eventInfo.rulesLink}>
-                            Open list of rules<div className="material-icons">open_in_new</div>
-                        </a>
-                    </div>
-                )}
-                <div className="event-head event-customhead">Judges</div>
-                <div className="judges">
-                    {eventInfo.judges &&
-                        eventInfo.judges.map((judge, i) => {
-                            return (
-                                <div className="judge" key={i}>
-                                    <img
-                                        src={`/assets/imgs/ProfileImg/${judge}.webp`}
-                                        alt="judge"
-                                        srcSet=""
-                                        className="judge-pic"
-                                    />
-                                    <span>{judge}</span>
-                                </div>
-                            );
-                        })}
-                </div>
-                {eventInfo.coordinators ? <div className="event-head event-customhead">Coordinators</div> : ""}
-                <div className="judges">
-                    {eventInfo.coordinators &&
-                        eventInfo.coordinators.map((coord, i) => {
-                            return (
-                                <div className="judge coordinator" key={i}>
-                                    <img
-                                        src={`/assets/imgs/team/${coord.name.toLowerCase().replaceAll(' ', '')}.jpg`}
-                                        alt=""
-                                        srcSet=""
-                                        className="judge-pic"
-                                    />
-                                    <span className="c-name">{coord.name}</span>
-                                    <div className="phone"><span className="material-icons">person</span>{coord.num}</div>
-                                    
-                                </div>
-                            );
-                        })}
-                </div>
-            </div>
-        )
-    );
+		events &&
+		eventInfo && (
+			<div className={"event-popup"}>
+				<div className="event-head">{eventName}</div>
+				<div className="event-desc-img">
+					<div className="event-poster">
+						<img
+							src={`/assets/imgs/events/posters/${eventName
+								.toLowerCase()
+								.replaceAll(" ", "_")}.jpg`}
+							alt={eventName}
+							srcSet=""
+						/>
+					</div>
+					<div className="event-desc">
+						{eventInfo.desc && (
+							<div
+								dangerouslySetInnerHTML={{
+									__html: eventInfo.desc,
+								}}
+							></div>
+						)}
+						{eventInfo.register && (
+							<>
+								<Button
+									innerText={"REGISTER"}
+									onClick={() => register(eventInfo.register)}
+								/>
+								<>
+									{eventInfo.registrationFee && (
+										<p className="fee">
+											(Registration Fee -{" "}
+											{eventInfo.registrationFee})
+										</p>
+									)}
+								</>
+							</>
+						)}
+					</div>
+				</div>
+				<div className="event-details">
+					{eventInfo.club && (
+						<div className="event-club">{eventInfo.club}</div>
+					)}
+					{eventInfo.time && (
+						<div className="event-time">{eventInfo.time}</div>
+					)}
+					{eventInfo.venue && (
+						<div className="event-venue">{eventInfo.venue}</div>
+					)}
+				</div>
+
+				{(eventInfo.rules || eventInfo.rulesLink) && (
+					<>
+						<div className="event-head event-customhead">Rules</div>
+						{eventInfo.rules.length ? (
+							<div className="rules-list-contain">
+								<ul className="rules-list">
+									{eventInfo.rules.map((rule, i) => {
+										return (
+											<li key={i} className="rule-item">
+												{rule}
+											</li>
+										);
+									})}
+								</ul>
+							</div>
+						) : (
+							<div className="rules-link">
+								<a href={eventInfo.rulesLink}>
+									Open list of rules
+									<div className="material-icons">
+										open_in_new
+									</div>
+								</a>
+							</div>
+						)}
+					</>
+				)}
+				{eventInfo.judges && (
+					<>
+						<div className="event-head event-customhead">
+							Judges
+						</div>
+						<div className="judges">
+							{eventInfo.judges.map((judge, i) => {
+								return (
+									<div className="judge" key={i}>
+										<img
+											src={`/assets/imgs/ProfileImg/${judge}.webp`}
+											alt="judge"
+											srcSet=""
+											className="judge-pic"
+										/>
+										<span>{judge}</span>
+									</div>
+								);
+							})}
+						</div>
+					</>
+				)}
+
+				{eventInfo.coordinators ? (
+					<div className="event-head event-customhead">
+						Coordinators
+					</div>
+				) : (
+					""
+				)}
+				<div className="judges">
+					{eventInfo.coordinators &&
+						eventInfo.coordinators.map((coord, i) => {
+							return (
+								<div className="judge coordinator" key={i}>
+									<img
+										src={`/assets/imgs/team/${coord.name
+											.toLowerCase()
+											.replaceAll(" ", "")}.jpg`}
+										alt=""
+										srcSet=""
+										className="judge-pic"
+									/>
+									<span className="c-name">{coord.name}</span>
+									<div className="phone">
+										<span className="material-icons">
+											person
+										</span>
+										{coord.num}
+									</div>
+								</div>
+							);
+						})}
+				</div>
+			</div>
+		)
+	);
 };
 
 export default EventPopup;

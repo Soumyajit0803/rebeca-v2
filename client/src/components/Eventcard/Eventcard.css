@@ -19,6 +19,7 @@
   position: relative;
   overflow: hidden;
   width: fit-content;
+  transition: 0.25s all;
 }
 .event-card .event-data.expand{
   width: 400px;

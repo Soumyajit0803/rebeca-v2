@@ -1,4 +1,9 @@
 {
+  "Pre Events": {
+    
+    "nightType": "Pre-Events",
+    "intro": ""
+  },
   "saptami": {
     "date": "18",
     "nightType": "The Classical\nNight",
