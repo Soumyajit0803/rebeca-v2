@@ -74,9 +74,9 @@ function Schedule() {
 								eventlist={events["Pre Events"].eventList}
 							/>
 							<div className="description">
-								<div className="topic display-font">
+								{/* <div className="topic display-font">
 									Pre Events
-								</div>
+								</div> */}
 								<div className="about">
 									Get ready to dive into the festivities early
 									with our pre-events, featuring workshops,

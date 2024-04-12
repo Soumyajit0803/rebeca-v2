@@ -217,3 +217,7 @@
         padding-bottom: 4rem !important;
     }
 }
+
+.card:hover {
+    transform: scale(1.1);
+}
