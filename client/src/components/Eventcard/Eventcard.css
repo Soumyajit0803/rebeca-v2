@@ -74,6 +74,7 @@
   top: 0;
   left: 0;
   z-index: -1;
+  background-color: black;
 }
 
 .event-card .event-data .data-body .img img {
@@ -85,6 +86,7 @@
   transform-origin: left;
   border: 0px solid yellow;
   position: relative;
+  opacity: 50%;
 }
 
 

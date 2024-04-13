@@ -20,6 +20,7 @@
 					{ "name": "Krishnendu Mondal", "num": "6296883037" },
 					{ "name": "Akash Das", "num": "7044279689" }
 				]
+				
 			},
 			{
 				"eventName": "BECA Magazine",
@@ -38,7 +39,7 @@
 			},
 
 			{
-				"time": "5 PM, 15th",
+				"time": "15th, 5 PM",
 				"eventName": "Photography Workshop",
 
 				"venue": "Alumni Seminar Hall",
@@ -48,69 +49,9 @@
 					{ "name": "Ritik Pratap Singh", "num": "8949491506" },
 					{ "name": "Sadhan Das", "num": "7827304221" }
 				]
-			}
-		]
-    },
-    
-    "saptami": {
-		"majorEvents": [0, 3, 6],
-		"eventList": [
-			{
-				"desc": "Participants need to make an advertisement within 50 hours based on the product and theme provided to them ar the start of the event.",
-				"rules": [],
-				"rulesLink": "https://drive.google.com/file/d/1UHdRA7bzmQPhPY_081HXtWugVSha5ftz/view?usp=drive_link",
-				
-				"time": "5 PM onwards",
-				"eventName": "CINEAURA",
-				"club": "Camerabuff",
-				"venue": "Lord's",
-				"coordinators": [
-					{ "name": "Chandaswi", "num": "7013056572" },
-					{ "name": "Tanis Ahamed", "num": "8972570521" },
-					{ "name": "Manohar", "num": "7842441308" }
-				]
-				
 			},
 			{
-				"desc": "",
-				
-				"time": "5:30 PM - 7:30 PM",
-				"eventName": "Inauguration Ceremony",
-                
-				"venue": "Lord's"
-			},
-			{
-				"desc": "The classical dance performance on the classical night of Rebeca, 18th of april. Showcasing the rich cultural heritage of Indian classical dances through the labyrinth of rhythm that the dancers create with ghoongru tied to their feet. (15-20 mins)",
-				"time": "7:30 PM - 8:30 PM",
-				"eventName": "Ghoongru",
-				"club": "Reflexobeta",
-				"venue": "Lord's"
-			},
-			{
-				"desc": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
-				"rules": [],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"time": "8:30 PM - 1:30 AM",
-				"eventName": "The Classical Night",
-				"venue": "Lord's",
-				"url": "/events/saptami"
-			},
-
-			{
-				"desc": "",
-				"time": "1:30 AM - 3:30 AM",
-				"eventName": "Cinessence",
-				"club": "Camerabuff",
-				"venue": "Lord's"
-			}
-			
-		]
-	},
-	"ashtami": {
-		"majorEvents": [0, 3, 6],
-		"eventList": [
-			{
-				"time": "12 PM Onwards",
+				"time": "Everyday 12 PM Onwards",
 				"eventName": "Pixel Poetry",
 				"club": "Catharsis",
 				"venue": "Whole Campus",
@@ -123,7 +64,7 @@
 					"Last Date for Online Submission: 15-04-2024",
 					"Registration: Free for all."
 				],
-				
+
 				"coordinators": [
 					{ "name": "Devadeep Dutta", "num": "8399851925" },
 					{ "name": "Abhinav Gupta", "num": "8637349649" },
@@ -131,7 +72,72 @@
 					{ "name": "Akshat Gupta", "num": "7548071485" }
 				],
 				"Awards": "INR 5000"
+			}
+		]
+    },
+    
+    "saptami": {
+		"majorEvents": [0, 3, 6],
+		"eventList": [
+			{
+				"desc": "Participants need to make an advertisement within 50 hours based on the product and theme provided to them ar the start of the event.",
+				"rules": [],
+				"rulesLink": "https://drive.google.com/file/d/1UHdRA7bzmQPhPY_081HXtWugVSha5ftz/view?usp=drive_link",
+
+				"time": "5 PM onwards",
+				"eventName": "CINEAURA",
+				"club": "Camerabuff",
+				"venue": "Lord's",
+				"coordinators": [
+					{ "name": "Chandaswi", "num": "7013056572" },
+					{ "name": "Tanis Ahamed", "num": "8972570521" },
+					{ "name": "Manohar", "num": "7842441308" }
+				],
+				"img": "/assets/imgs/events/images/cineaura.jpg"
 			},
+			{
+				"desc": "",
+
+				"time": "5:30 PM - 7:30 PM",
+				"eventName": "Inauguration Ceremony",
+				"img": "/assets/imgs/events/images/inauguration.jpg",
+				"venue": "Lord's"
+			},
+			{
+				"desc": "The classical dance performance on the classical night of Rebeca, 18th of april. Showcasing the rich cultural heritage of Indian classical dances through the labyrinth of rhythm that the dancers create with ghoongru tied to their feet. (15-20 mins)",
+				"time": "7:30 PM - 8:30 PM",
+				"eventName": "Ghoongru",
+				"club": "Reflexobeta",
+				"venue": "Lord's",
+				"img": "/assets/imgs/events/images/ghoongru.jpg"
+			},
+			{
+				"desc": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
+				"rules": [],
+				"artists": ["tbd", "tbd", "tbd", "tbd"],
+				"time": "8:30 PM - 1:30 AM",
+				"eventName": "The Classical Night",
+				"venue": "Lord's",
+				"url": "/events/saptami",
+				"img": "/assets/imgs/events/images/classicalnight.jpg"
+			},
+
+			{
+				"desc": "Join Us for FILM FIESTA - An Unforgettable Cinematic Experience! <br/><br/>🎬 Lights, Camera, Action! 🎬 <br/><br/> Calling all movie enthusiasts! CAMERABUFF, the film society of IIESTS Shibpur, is thrilled to present 'Film Fiesta' as part of our college fest extravaganza. Get ready to immerse yourself in a world of captivating stories, breathtaking cinematography, and unforgettable characters. Experience the magic of cinema under the starry night sky as we showcase a curated selection of must-watch films that promise to entertain, inspire, and leave you spellbound.",
+				"time": "1:30 AM - 3:30 AM",
+				"eventName": "Film Fiesta",
+				"club": "Camerabuff",
+				"venue": "Lord's",
+				"img": "/assets/imgs/events/images/filmfiesta.jpg"
+			}
+			
+			
+		]
+	},
+	"ashtami": {
+		"majorEvents": [0, 3, 6],
+		"eventList": [
+			
 			{
 				"time": "11:00 AM - 2:00 PM",
 				"eventName": "Dumb Charades League",
@@ -160,7 +166,8 @@
 					{ "name": "Samriddhi Mukhopadhyay", "num": "8017849961" },
 					{ "name": "Nafis Adnan Mondal", "num": "9143611854" }
 				],
-				"register": " https://forms.gle/Cow7ZXj4nMwtyqiB8"
+				"register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
+				"img": "/assets/imgs/events/images/dumb.jpg"
 			},
 			{
 				"time": "2:00 PM - 6:00 PM",
@@ -172,7 +179,8 @@
 				"coordinators": [
 					{ "name": "Aditya Singh", "num": "9471611071" },
 					{ "name": "Debanjali Chakravarthi", "num": "8918740236" }
-				]
+				],
+				"img": "/assets/imgs/events/images/rangmanch.jpg"
 			},
 
 			{
@@ -208,18 +216,20 @@
 				"eventName": "Stream of Western Performance",
 				"club": "Reflexobeta",
 				"venue": "Lord's",
-				"desc": "Reflexobeta presents their stream of western dances on BEings night of Rebeca, 19th of April. <br/><br/> 1. Reflexobeta has given a chance and choreographed the performances of everyone who wants to dance and showcase their talents on the main stage of Rebeca who has not been a part of the club on the occasion of the annual cultural fest. (10-12 mins) <br/><br/> 2. The club members are ready to bang the stage with their series of sizzling and high energy performances. (15 mins approx)"
+				"desc": "Reflexobeta presents their stream of western dances on BEings night of Rebeca, 19th of April. <br/><br/> 1. Reflexobeta has given a chance and choreographed the performances of everyone who wants to dance and showcase their talents on the main stage of Rebeca who has not been a part of the club on the occasion of the annual cultural fest. (10-12 mins) <br/><br/> 2. The club members are ready to bang the stage with their series of sizzling and high energy performances. (15 mins approx)",
+				"img": "/assets/imgs/events/images/westerndance.jpg"
 			},
 			{
 				"time": "8:30 PM - onwards",
 				"eventName": "The BEings Night",
 				"club": [],
 				"venue": "Lord's",
-				"desc": "",
-				"rules": [],
+				"desc": "The evening will come alive as the BEings take the center stage by storm with their electrifying performances and ignite the atmosphere with their talent and creativity. Don't forget to cheer your hearts out for your best friends as they spew fire across the stage and make the night a celebration of the incredible talent amongst us",
+				
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
 				"judges": ["tbd", "tbd", "tbd", "tbd"],
-				"url": "/events/ashtami"
+				"url": "/events/ashtami",
+				"img": "/assets/imgs/events/images/beingsnight.jpg"
 			}
 		]
 	},
@@ -238,7 +248,8 @@
 				"coordinators": [
 					{ "name": "Ritik Pratap Singh", "num": "8949491506" },
 					{ "name": "Sadhan Das", "num": "7827304221" }
-				]
+				],
+				"img": "/assets/imgs/events/images/gmun.jpg"
 			},
 			{
 				"time": "11:00 AM - 2:00 PM",
@@ -268,7 +279,8 @@
 					{ "name": "Samriddhi Mukhopadhyay", "num": "8017849961" },
 					{ "name": "Nafis Adnan Mondal", "num": "9143611854" }
 				],
-				"register": " https://forms.gle/Cow7ZXj4nMwtyqiB8"
+				"register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
+				"img": "/assets/imgs/events/images/dumb.jpg"
 			},
 			{
 				"time": "12:00 PM - 2:00 PM",
@@ -284,7 +296,8 @@
 				],
 				"Awards": "Winners and runners-up of classical and western will receive prize with certificate. Prize worth Rs. 5000/- for classical and western each",
 				"register": "https://forms.gle/QURMTkDpCXJfXATN8",
-				"registrationFee": "Rs. 50"
+				"registrationFee": "Rs. 50",
+				"img": "/assets/imgs/events/images/solosynergy.jpg"
 			},
 			{
 				"time": "3:00 PM - 4:30 PM",
@@ -300,7 +313,8 @@
 				],
 				"Awards": "Winners and runners-up of classical and western will receive prize with certificate. Prize worth Rs. 5000/- for classical and western each",
 				"register": "https://forms.gle/Zy6FKfNYq8pdesXB6",
-				"registrationFee": "Rs. 50"
+				"registrationFee": "Rs. 50",
+				"img": "/assets/imgs/events/images/syncshowcase.jpg"
 			},
 
 			{
@@ -330,8 +344,8 @@
 						"num": "8584872568"
 					}
 				],
-				"register": "https://forms.gle/womjARWtRH2bi5QL7"
-				
+				"register": "https://forms.gle/womjARWtRH2bi5QL7",
+				"img": "/assets/imgs/events/images/rebequiz.jpg"
 			},
 			{
 				"time": "3:30 PM - 6:00 PM",
@@ -373,7 +387,8 @@
 				"coordinators": [
 					{ "name": "Aman Tiwari", "num": "73638 01645" }
 				],
-				"register": "https://forms.gle/5rhDhzSBn8PUyiNWA"
+				"register": "https://forms.gle/5rhDhzSBn8PUyiNWA",
+				"img": "/assets/imgs/events/images/nukkad.jpg"
 			},
 			{
 				"time": "5:30 PM - 8:30 PM",
@@ -408,17 +423,19 @@
 				"coordinators": [
 					{ "name": "Soubhagya Saha", "num": "8420003678" },
 					{ "name": "Aniket Chanda", "num": "9926091967" }
-				]
+				],
+				"img": "/assets/imgs/events/images/rockbuzz.jpg"
 			},
 			{
 				"time": "8:30 PM onwards",
 				"eventName": "The Kolkata Night",
 				"club": [],
 				"venue": "Lord's",
-				"desc": "",
+				"desc": "Underneath the starlit sky, lose yourself in the symphony of Kolkata's soul. Come out and cheer as the legends of our beloved city rock the stage and give us an evening of musical euphoria that transcends all the boundaries of language and region making all our hearts beat as one, to the sweet rhythm of Navami.",
 				"rules": [],
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"url": "/events/navami"
+				"url": "/events/navami",
+				"img": "/assets/imgs/events/images/kolkatanight.jpg"
 			}
 		]
 	},
@@ -437,7 +454,8 @@
 				"coordinators": [
 					{ "name": "Ritik Pratap Singh", "num": "8949491506" },
 					{ "name": "Sadhan Das", "num": "7827304221" }
-				]
+				],
+				"img": "/assets/imgs/events/images/gmun.jpg"
 			},
 			{
 				"time": "11:00 AM - 1:30 PM",
@@ -464,7 +482,8 @@
 					{ "name": "Sanghamitra De", "num": "8961774885" },
 					{ "name": "Madhushree Shaw", "num": "9330062005" }
 				],
-				"register": "https://forms.gle/q8L61eApSUA4gcAt6"
+				"register": "https://forms.gle/q8L61eApSUA4gcAt6",
+				"img": "/assets/imgs/events/images/versewars.jpg"
 			},
 			{
 				"time": "2:00 PM - 6:00 PM",
@@ -479,7 +498,8 @@
 				"coordinators": [
 					{ "name": "Tenzin Sherab Moktan", "num": "9832467274" },
 					{ "name": "Triparna Saha", "num": "9969643725" }
-				]
+				],
+				"img": "/assets/imgs/events/images/flyingsolo.jpg"
 			},
 			{
 				"time": "2:00 PM - 5:00 PM",
@@ -504,7 +524,8 @@
 					{ "name": "Rajneesh Pathak", "num": "6388835788" }
 				],
 				"registrationFee": "Rs. 150",
-				"Awards": "Winners and runners-up will receive gift hampers with certificate"
+				"Awards": "Winners and runners-up will receive gift hampers with certificate",
+				"img": "/assets/imgs/events/images/footloose.jpg"
 			},
 			{
 				"time": "6:00 PM - 7:30 PM",
@@ -513,17 +534,17 @@
 				"venue": "Lord's",
 				"desc": "",
 				"rules": [],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"judges": ["tbd", "tbd", "tbd", "tbd"]
+				"img": "/assets/imgs/events/images/fiducia.jpg"
 			},
 			{
 				"time": "8:00 PM Onwards",
 				"eventName": "The Mumbai Night",
 				"club": [],
 				"venue": "Lord's",
-				"desc": "",
+				"desc": "Take your dancing shoes out as you'll be screaming and dancing like nobody's watching to the electrifying beats of Bollywood! Join in on the infectious energy as you dance all night long in the grand finale of our festival and create a lifetime of memories that stay with you long after the night has faded into dawn.",
 				"rules": [],
-				"url": "/events/dashami"
+				"url": "/events/dashami",
+				"img": "/assets/imgs/events/images/mumbainight.jpg"
 			}
 		]
 	}
