@@ -24,13 +24,22 @@ const Eventpanel = ({ value, index, day, FocusEvent }) => {
 			<div className="data-body">
 				<div className="img">
 					<img
-						src={`/assets/imgs/home/${day}.webp`}
+						src={
+							value.img
+								? value.img
+								: `/assets/imgs/home/${day}.webp`
+						}
 						alt="event-icon"
 					/>
 				</div>
 				{show && (
 					<>
-						<div className="desc">{value.desc}</div>
+						<div
+							className="desc"
+							dangerouslySetInnerHTML={{
+								__html: value.desc,
+							}}
+						></div>
 						<Link to={`/event/${value.eventName}`}>
 							<Button
 								variant={"filled"}
