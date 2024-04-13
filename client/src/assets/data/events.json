@@ -58,8 +58,7 @@
 			{
 				"desc": "Participants need to make an advertisement within 50 hours based on the product and theme provided to them ar the start of the event.",
 				"rules": [],
-				"rulesLink": "https://drive.google.com/drive/folders/1oRjJbHJcc8ZBVWq2G_vccO8FGjuWGxEJ",
-				"judges": ["tbd", "tbd", "tbd", "tbd"],
+				"rulesLink": "https://drive.google.com/file/d/1UHdRA7bzmQPhPY_081HXtWugVSha5ftz/view?usp=drive_link",
 				
 				"time": "5 PM onwards",
 				"eventName": "CINEAURA",
@@ -74,9 +73,7 @@
 			},
 			{
 				"desc": "",
-				"rules": [],
-				"judges": ["tbd", "tbd", "tbd", "tbd"],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
+				
 				"time": "5:30 PM - 7:30 PM",
 				"eventName": "Inauguration Ceremony",
                 
@@ -126,8 +123,7 @@
 					"Last Date for Online Submission: 15-04-2024",
 					"Registration: Free for all."
 				],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"judges": ["tbd", "tbd", "tbd", "tbd"],
+				
 				"coordinators": [
 					{ "name": "Devadeep Dutta", "num": "8399851925" },
 					{ "name": "Abhinav Gupta", "num": "8637349649" },
@@ -186,8 +182,7 @@
 				"club": "SCAGE",
 				"venue": "Lord's",
 				"desc": "Dive into a world of creativity and expression as SCAGE proudly presents Face Canvas! At Face Canvas, let your imagination run wild as you experiment with vibrant paints on the canvas of faces! If you're feeling unsure about where to begin, fret not! We'll have experienced artists on hand to guide you through the process and offer inspiration. No experience necessary  - just bring your imagination and enthusiasm! It's a fantastic opportunity to showcase your artistic flair, connect with fellow art lovers, and simply have a blast!",
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"judges": ["tbd", "tbd", "tbd", "tbd"],
+		
 				"rules": [
 					"Only on-spot registrations will be accepted.",
 					"Participants can let our volunteers paint their faces keeping the participant's special request in mind or they can also paint their faces themselves under our volunteers' supervision with the paint provided by us."
