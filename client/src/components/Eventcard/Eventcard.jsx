@@ -3,20 +3,11 @@ import "./Eventcard.css";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 
-const Eventpanel = ({ value, index, day, FocusEvent }) => {
-	const [expand, setexpand] = useState(0);
-	const handleExpand = (idx) => {
-		if (expand === idx) setexpand(null);
-		else setexpand(idx);
-	};
-	var show = expand === index ? true : false;
-	if (FocusEvent.includes(index)) {
-		show = true;
-	}
+const Eventpanel = ({ value, index, day, show, handle }) => {
 
 	return (
 		<div key={index} className={`event-data ${show && "expand"}`}>
-			<div onClick={() => handleExpand(index)} className="data-header">
+			<div onClick={() => handle(index)} className="data-header">
 				<div>{value.eventName}</div>
 				<p>{value.time}</p>
 			</div>
@@ -53,7 +44,12 @@ const Eventpanel = ({ value, index, day, FocusEvent }) => {
 	);
 };
 
-const Eventcard = ({ Eventdata, FocusEvent, Eventday }) => {
+const Eventcard = ({ Eventdata, Eventday }) => {
+	const [expand, setexpand] = useState(0);
+	const handleExpand = (idx) => {
+		setexpand(idx);
+	};
+
 	return (
 		<div className="event-card">
 			{Eventdata.map((value, index) => (
@@ -62,7 +58,8 @@ const Eventcard = ({ Eventdata, FocusEvent, Eventday }) => {
 					value={value}
 					day={Eventday}
 					index={index}
-					FocusEvent={FocusEvent}
+					show={expand===index}
+					handle = {handleExpand}
 				/>
 			))}
 		</div>

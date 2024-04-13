@@ -54,7 +54,7 @@ const Daydetails = () => {
       </div>
       <div className="section-event">
         <div className="scroll-section-event">
-          <Eventcard Eventdata={Eventcontent[DayID].eventList} FocusEvent={Eventcontent[DayID].majorEvents} Eventday = {DayID.toLowerCase()} />
+          <Eventcard Eventdata={Eventcontent[DayID].eventList} Eventday = {DayID.toLowerCase()} />
         </div>
       </div>
     </div>
