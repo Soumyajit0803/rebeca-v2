@@ -24,7 +24,7 @@ const BannerLeft = ({ day }) => {
         </div>
         <div className="f2">
           <video muted autoPlay loop>
-            <source src={`/assets/imgs/collage/${day.toLowerCase()}-vd.mp4`} type="video/mp4" />
+            <source src={`/assets/imgs/collage/${day.toLowerCase()}-vd.webm`} type="video/webm" />
           </video>
         </div>
         <div className="f3">
@@ -64,7 +64,7 @@ const BannerRight = ({ day }) => {
         </div>
         <div className="f2">
           <video muted autoPlay loop>
-            <source src={`/assets/imgs/collage/${day.toLowerCase()}-vd.mp4`} type="video/mp4" />
+            <source src={`/assets/imgs/collage/${day.toLowerCase()}-vd.webm`} type="video/webm" />
           </video>
         </div>
         <div className="f3">
