@@ -86,7 +86,7 @@
   transform-origin: left;
   border: 0px solid yellow;
   position: relative;
-  opacity: 50%;
+  opacity: 30%;
 }
 
 
@@ -99,7 +99,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: rgba(0, 0, 0, 0.511);
+  background-color: rgba(0, 0, 0, 0.089);
   color: white;
   position: absolute;
   z-index: 1;
