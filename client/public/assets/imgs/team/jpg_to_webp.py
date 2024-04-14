@@ -15,7 +15,7 @@ output_dir = './public/assets/imgs/team/'
 os.makedirs(output_dir, exist_ok=True)
 
 # Function to resize and convert image to WEBP format
-def resize_and_convert(input_path, output_path, target_size_percent):
+def resize_and_convert(input_path, output_path):
     img = Image.open(input_path)
     img.thumbnail((700, 700))
     quality = 80
@@ -27,7 +27,7 @@ for filename in os.listdir('./public/assets/imgs/team/'):
         count += 1
         input_path = './public/assets/imgs/team/'+filename
         output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + '.webp')
-        resize_and_convert(input_path, output_path, target_size_percent=90)
+        resize_and_convert(input_path, output_path)
 
 print("CONVERSION COMPLETE")
 print("Converted", count, "files.")
