@@ -66,7 +66,7 @@ function Schedule() {
 						<div className="eheading">
 							<div className="small">
 								<span></span>
-								<div className="big1">Pre-Events</div>
+								<div className="big1">Misc. Events</div>
 							</div>
 						</div>
 						<div className={"event-content"}>
