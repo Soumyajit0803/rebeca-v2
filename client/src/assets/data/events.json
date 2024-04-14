@@ -2,27 +2,6 @@
 	"Pre Events": {
         "eventList": [
 			{
-				"desc": "<p> Artival is a celebration of creativity and artistic expression. This exhibition will showcase the works of talented artists from your college and beyond, providing a platform for them to share their unique perspectives with the community. Featuring a diverse range of art forms including paintings, sculptures, installations, and mixed media, Artistic Visions promises to be a visual feast for art enthusiasts. Whether you are an art lover or simply curious about the creative process, Artival is an event not to be missed. Come explore the depths of imagination and creativity that reside in the hearts and minds of our talented artists, and experience the magic of art in all its forms. </p><br> <b>Details of the exhibition:</b> <p> Painting will be done on white board or plywood painted white which will be put up in front of the volleyball court. Design will be provided shortly. Design will be based on the theme of REBECA 2024.</p>",
-				"rules": [
-					"Artworks can be based on any theme.",
-					"Students from any year is eligible to make a submission",
-					"No restriction on artwork medium.",
-					"No restriction on size or weight of the artwork, however it should be suitable for hanging. ",
-					"Interested peeps kindly register by 11.04.2024."
-				],
-				"tagline": "An Exhibition on Creative Expression where art meets imagination",
-
-				"time": "Everyday from Morning",
-				"eventName": "Artival",
-				"club": "SCAGE",
-				"venue": "Volleyball Court",
-				"coordinators": [
-					{ "name": "Krishnendu Mondal", "num": "6296883037" },
-					{ "name": "Akash Das", "num": "7044279689" }
-				]
-				
-			},
-			{
 				"eventName": "BECA Magazine",
 				"time": "12th to 17th",
 				"desc": "SCAGE and BECA Magazine cordially invite all talented artists to an Art Competition to be featured prominently in the illustrious BECA magazine. <br/ ><br/> This competition offers you the chance to showcase your work on the esteemed pages of BECA magazine. Imagine the pride of seeing your masterpiece adorning the glossy pages and receiving recognition for your artistry that will resonate throughout IIEST Shibpur. <br/><br/> Celebrating the vibrant spirit of REBECA 2024, this competition aims to weave your art into the rich tapestry of our institution's cultural heritage. Your creations have the power to leave an indelible mark for generations to come. Seize this opportunity and make your mark in IIEST's heritage.",
@@ -37,7 +16,6 @@
 				],
 				"venue": "Online"
 			},
-
 			{
 				"time": "15th, 5 PM",
 				"eventName": "Photography Workshop",
@@ -51,6 +29,28 @@
 				]
 			},
 			{
+				"desc": "<p> Artival is a celebration of creativity and artistic expression. This exhibition will showcase the works of talented artists from your college and beyond, providing a platform for them to share their unique perspectives with the community. Featuring a diverse range of art forms including paintings, sculptures, installations, and mixed media, Artistic Visions promises to be a visual feast for art enthusiasts. Whether you are an art lover or simply curious about the creative process, Artival is an event not to be missed. Come explore the depths of imagination and creativity that reside in the hearts and minds of our talented artists, and experience the magic of art in all its forms. </p><br> <b>Details of the exhibition:</b> <p> Painting will be done on white board or plywood painted white which will be put up in front of the volleyball court. Design will be provided shortly. Design will be based on the theme of REBECA 2024.</p>",
+				"rules": [
+					"Artworks can be based on any theme.",
+					"Students from any year is eligible to make a submission",
+					"No restriction on artwork medium.",
+					"No restriction on size or weight of the artwork, however it should be suitable for hanging. ",
+					"Interested peeps kindly register by 11.04.2024."
+				],
+				"tagline": "An Exhibition on Creative Expression where art meets imagination",
+
+				"time": "Everyday 12 PM Onwards",
+				"eventName": "Artival",
+				"club": "SCAGE",
+				"venue": "Volleyball Court",
+				"coordinators": [
+					{ "name": "Krishnendu Mondal", "num": "6296883037" },
+					{ "name": "Akash Das", "num": "7044279689" }
+				],
+				"register": "https://docs.google.com/forms/d/1A1--sV-w_Xik3PcRMJI7FCv4QNzmPNVxdqmhVMruL6U/edit"
+			},
+
+			{
 				"time": "Everyday 12 PM Onwards",
 				"eventName": "Pixel Poetry",
 				"club": "Catharsis",
@@ -61,7 +61,7 @@
 					"Round 1(Online): Participants will submit their photographs online and on the basis of that they will qualify for round 2.",
 					"Round 2: Qualified participants will click photos for 4 days during REBECA and on that basis the final winners will be announced.",
 					"Participants can upload photographs taken from both DSLR and Mobile phones.",
-					"Last Date for Online Submission: 15-04-2024",
+					"Last Date for Online Submission: 16-04-2024",
 					"Registration: Free for all."
 				],
 
@@ -71,7 +71,29 @@
 					{ "name": "Puru Maharishi", "num": "9471611071" },
 					{ "name": "Akshat Gupta", "num": "7548071485" }
 				],
-				"Awards": "INR 5000"
+				"Awards": "INR 5000",
+				"register": "https://docs.google.com/forms/d/1pNdjjcHAcV2LG_2aCdt7VMEAA-bDokpGKhVKFhxsT20/edit"
+			},
+			{
+				"time": "Everyday 12 PM Onwards",
+				"eventName": "Typist's Tourney",
+				"venue": "Lord's",
+				"desc": "Love the sound of keys clacking? Does racing get your adrenaline pumping? Want to experience the thrill in REBECA? Leave it all to CodeIIEST! <br/><br/> We are back with our lightning-fast typing contest. Show us what you got and grab the title of “The Fastest Fingers”. <br/><br/> Bag all the T’s – “Tap, Type, Triumph”. ",
+				"rules": [
+					"A maximum of 5 participants (at a time) will be competing in a type race of 3 minutes on xyz platform(to be revealed on-spot). The winners of each race will receive a small token of appreciation from REBECA and CODEIIEST.",
+					"By presenting the institute ID card, participants can enjoy one free attempt per day during REBECA. For taking more attempts the participant has to pay an entry fee of Rs 20(for a maximum of 5 attempts). Non-IIEST students will have to pay an entry fee of Rs 20 (for a maximum of 5 attempts).",
+					"Participants who complete the race with a score of more than 45 WPM will receive certificates from CodeIIEST and REBECA recognizing their WPM achievement.",
+					"A leaderboard will be maintained based on participants' WPM (words per minute) score in the race. In case a participant wins more than once, their highest WPM score will be considered for the leaderboard.",
+					"The top 10 participants on the leaderboard, based on their WPM score in the race, will move onto the final round.",
+					"The winners of the final race will receive exciting prizes from REBECA!",
+					"The organisers' decision will be final and binding."
+				],
+				"coordinators": [
+					{ "name": "Ananya Sutradhar", "num": "9531538309" },
+					{ "name": "Rishab Dugar", "num": "8696490950" }
+				],
+				"register": "https://forms.gle/68Z5YRs2qouXwSqK7",
+				"Awards": "PRIZE POOL - Rs 3000(1500+1000+500)"
 			}
 		]
     },
@@ -79,6 +101,7 @@
     "saptami": {
 		"majorEvents": [0, 3, 6],
 		"eventList": [
+			
 			{
 				"desc": "Participants need to make an advertisement within 50 hours based on the product and theme provided to them ar the start of the event.",
 				"rules": [],
@@ -93,7 +116,8 @@
 					{ "name": "Tanis Ahamed", "num": "8972570521" },
 					{ "name": "Manohar", "num": "7842441308" }
 				],
-				"img": "/assets/imgs/events/images/cineaura.jpg"
+				"img": "/assets/imgs/events/images/cineaura.jpg",
+				"register": "https://docs.google.com/forms/d/1aPimVWYLTkZnE9ehurvH1laq96HvSmWCPZwporuknuI/edit?usp=drive_web"
 			},
 			{
 				"desc": "",
@@ -175,14 +199,47 @@
 				"club": "Les Thespians",
 				"venue": "I-Hall",
 				"desc": "Get ready to be entranced by the enchanting world of theater as LES Thespians unveils a mesmerizing double feature at the Rebecca Cultural Night! Our gifted actors will demonstrate their versatility by presenting two captivating dramas—one in Hindi and another in Bengali. Immerse yourself in the vibrant tapestry of Indian culture as these compelling stories come alive on stage. Whether you're a seasoned theater enthusiast or a newcomer to the magic of live performances, this evening guarantees an unforgettable experience.",
-				
+
 				"coordinators": [
 					{ "name": "Aditya Singh", "num": "9471611071" },
 					{ "name": "Debanjali Chakravarthi", "num": "8918740236" }
 				],
 				"img": "/assets/imgs/events/images/rangmanch.jpg"
 			},
+			{
+				"desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
+				"rules": [
+					"The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
+					"The groups/fixture will be decided totally on lottery basis.",
+					"Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
+					"A valid college ID must be carried by every player.",
+					"The field referee's decision prevails. There will be no room for disagreement with the referee.",
+					"If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
+					"Each half will consist of 10 minutes with a 2-minute break between both halves.",
+					"Matches will be played 7-a side with 3 substitutions.",
+					"Rolling substitutions are allowed at any point of the game.",
+					"The winning team will proceed to the next round.",
+					"The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
+					"All penalties must be one step penalties",
+					"A player is allowed to play for one team only.",
+					"All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
+					"Futsal rules will be applicable and will be strictly followed during every match.",
+					"The squad may be disqualified outright if any player engages in unsporting behavior",
+					"Prizes will be awarded to the winners and runners."
+				],
 
+				"time": "3 PM to 6 PM",
+				"eventName": "Rebescal",
+				"club": "Sports Club",
+				"venue": "Oval",
+				"coordinators": [
+					{ "name": "Indravo Ghosh", "num": "+91 8902010310" },
+					{ "name": "Anirban Mazumder", "num": "+91 8436274951" },
+					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
+				],
+				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
+				"img": "/assets/imgs/events/images/rebescal.jpg"
+			},
 			{
 				"time": "4:00 PM - 6:00 PM",
 				"eventName": "Face Canvas",
@@ -190,7 +247,7 @@
 				"club": "SCAGE",
 				"venue": "Lord's",
 				"desc": "Dive into a world of creativity and expression as SCAGE proudly presents Face Canvas! At Face Canvas, let your imagination run wild as you experiment with vibrant paints on the canvas of faces! If you're feeling unsure about where to begin, fret not! We'll have experienced artists on hand to guide you through the process and offer inspiration. No experience necessary  - just bring your imagination and enthusiasm! It's a fantastic opportunity to showcase your artistic flair, connect with fellow art lovers, and simply have a blast!",
-		
+
 				"rules": [
 					"Only on-spot registrations will be accepted.",
 					"Participants can let our volunteers paint their faces keeping the participant's special request in mind or they can also paint their faces themselves under our volunteers' supervision with the paint provided by us."
@@ -209,11 +266,12 @@
 						"name": "Krishnendu Mondal",
 						"num": "6296883037"
 					}
-				]
+				],
+				"img": "/assets/imgs/events/images/face_canvas.jpg"
 			},
 			{
 				"time": "7:30 PM - 8:30 PM",
-				"eventName": "Stream of Western Performance",
+				"eventName": "Stream of Western Dance",
 				"club": "Reflexobeta",
 				"venue": "Lord's",
 				"desc": "Reflexobeta presents their stream of western dances on BEings night of Rebeca, 19th of April. <br/><br/> 1. Reflexobeta has given a chance and choreographed the performances of everyone who wants to dance and showcase their talents on the main stage of Rebeca who has not been a part of the club on the occasion of the annual cultural fest. (10-12 mins) <br/><br/> 2. The club members are ready to bang the stage with their series of sizzling and high energy performances. (15 mins approx)",
@@ -225,7 +283,7 @@
 				"club": [],
 				"venue": "Lord's",
 				"desc": "The evening will come alive as the BEings take the center stage by storm with their electrifying performances and ignite the atmosphere with their talent and creativity. Don't forget to cheer your hearts out for your best friends as they spew fire across the stage and make the night a celebration of the incredible talent amongst us",
-				
+
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
 				"judges": ["tbd", "tbd", "tbd", "tbd"],
 				"url": "/events/ashtami",
@@ -348,6 +406,40 @@
 				"img": "/assets/imgs/events/images/rebequiz.jpg"
 			},
 			{
+				"desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
+				"rules": [
+					"The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
+					"The groups/fixture will be decided totally on lottery basis.",
+					"Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
+					"A valid college ID must be carried by every player.",
+					"The field referee's decision prevails. There will be no room for disagreement with the referee.",
+					"If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
+					"Each half will consist of 10 minutes with a 2-minute break between both halves.",
+					"Matches will be played 7-a side with 3 substitutions.",
+					"Rolling substitutions are allowed at any point of the game.",
+					"The winning team will proceed to the next round.",
+					"The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
+					"All penalties must be one step penalties",
+					"A player is allowed to play for one team only.",
+					"All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
+					"Futsal rules will be applicable and will be strictly followed during every match.",
+					"The squad may be disqualified outright if any player engages in unsporting behavior",
+					"Prizes will be awarded to the winners and runners."
+				],
+
+				"time": "3 PM to 6 PM",
+				"eventName": "Rebescal",
+				"club": "Sports Club",
+				"venue": "Oval",
+				"coordinators": [
+					{ "name": "Indravo Ghosh", "num": "+91 8902010310" },
+					{ "name": "Anirban Mazumder", "num": "+91 8436274951" },
+					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
+				],
+				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
+				"img": "/assets/imgs/events/images/rebescal.jpg"
+			},
+			{
 				"time": "3:30 PM - 6:00 PM",
 				"eventName": "Ink your tee",
 				"tagline": "Spoil your tees to look cool !",
@@ -369,7 +461,8 @@
 					{ "name": "Twameka Sinha", "num": "9674471400" },
 					{ "name": "Krishnendu Mondal", "num": "6296883037" }
 				],
-				"register": "https://docs.google.com/forms/d/e/1FAIpQLSe7pEHMJYDOWxE0FsHX84AhZEL5cOejZSGjKp5_QDJveCRyhg/viewform?usp=pp_url"
+				"register": "https://docs.google.com/forms/d/e/1FAIpQLSe7pEHMJYDOWxE0FsHX84AhZEL5cOejZSGjKp5_QDJveCRyhg/viewform?usp=pp_url",
+				"img": "/assets/imgs/events/images/ink_your_tee.jpg"
 			},
 			{
 				"time": "4:00 PM - 6:00 PM",
@@ -504,11 +597,43 @@
 			{
 				"time": "2:00 PM - 5:00 PM",
 				"eventName": "Business Alumni Meet",
-				
+
 				"venue": "Alumni Seminar Hall",
 				"desc": "Welcome to the Business-Alumni Meet 2024, where we foster engaging dialogue between alumni and ndustry professionals, equipping participants for the ever-evolving business landscape. This REBECA initiative serves as a platform for fostering collaboration between alumni and academia, aimed atpreparing students for the challenges of the future workforce. By bringing together alumni, and students in interactive sessions and expert-led panels, BUSINESS and ALUMINI MEET facilitates knowledge sharing and networking opportunities"
-				
-				
+			},
+			{
+				"desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
+				"rules": [
+					"The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
+					"The groups/fixture will be decided totally on lottery basis.",
+					"Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
+					"A valid college ID must be carried by every player.",
+					"The field referee's decision prevails. There will be no room for disagreement with the referee.",
+					"If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
+					"Each half will consist of 10 minutes with a 2-minute break between both halves.",
+					"Matches will be played 7-a side with 3 substitutions.",
+					"Rolling substitutions are allowed at any point of the game.",
+					"The winning team will proceed to the next round.",
+					"The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
+					"All penalties must be one step penalties",
+					"A player is allowed to play for one team only.",
+					"All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
+					"Futsal rules will be applicable and will be strictly followed during every match.",
+					"The squad may be disqualified outright if any player engages in unsporting behavior",
+					"Prizes will be awarded to the winners and runners."
+				],
+
+				"time": "3 PM to 6 PM",
+				"eventName": "Rebescal",
+				"club": "Sports Club",
+				"venue": "Oval",
+				"coordinators": [
+					{ "name": "Indravo Ghosh", "num": "+91 8902010310" },
+					{ "name": "Anirban Mazumder", "num": "+91 8436274951" },
+					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
+				],
+				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
+				"img": "/assets/imgs/events/images/rebescal.jpg"
 			},
 			{
 				"time": "4:00 PM - 6:00 PM",
