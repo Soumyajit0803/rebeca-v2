@@ -52,11 +52,9 @@ const Daydetails = () => {
       <div className="section-5">
         <div className="section-subhead">Events</div>
       </div>
-      <div className="section-event">
-        <div className="scroll-section-event">
+      {/* <div className="section-event"> */}
           <Eventcard Eventdata={Eventcontent[DayID].eventList} Eventday = {DayID.toLowerCase()} />
-        </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 };

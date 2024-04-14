@@ -148,7 +148,20 @@
   }
 }
 
+/* .event-card{
+  display: none;
+  color: white
+} */
+
 @media screen and (max-width: 580px) {
+  /* .event-card{
+    display: contents;
+    color: white ;
+  } */
+
+  .event-content::before{
+    opacity: 0;
+  }
   .left-padding {
     margin-left: 1rem;
   }

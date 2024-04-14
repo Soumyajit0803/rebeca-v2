@@ -14,20 +14,22 @@
 					{ "name": "Twameka Sinha", "num": "9674471400" },
 					{ "name": "Rohan Das", "num": "62907 59839" }
 				],
-				"venue": "Online"
+				"venue": "Online",
+				"img": "/assets/imgs/events/images/beca_magazine.webp"
 			},
 			{
 				"time": "15th, 5 PM",
 				"eventName": "Photography Workshop",
 
 				"venue": "Alumni Seminar Hall",
-				"desc": "Join us for an exclusive photography workshop with Behaya , a renowned photographer known for his captivating work. Whether you're a beginner, aspiring photographer, a hobbyist, or simply someone who appreciates the art of visual storytelling, this workshop is perfect for you. This workshop promises to be an immersive experience for photographers of all levels. He shares insights, tips, and techniques to help you take your skills to the next level.Learn the art of photography, from mastering your camera settings to capturing moments creatively. Don't miss this opportunity to learn from the best. <br/><br/> See you There!",
+				"desc": "Join us for an exclusive photography workshop with Behaya , a renowned photographer known for his captivating work. Whether you're a beginner, aspiring photographer, a hobbyist, or simply someone who appreciates the art of visual storytelling, this workshop is perfect for you. This workshop promises to be an immersive experience for photographers of all levels. He shares insights, tips, and techniques to help you take your skills to the next level.Learn the art of photography, from mastering your camera settings to capturing moments creatively. Don't miss this opportunity to learn from the best. <br/><br/> See you There!",
 
 				"coordinators": [
 					{ "name": "Aditya Didolkar", "num": "8390359499" },
 					{ "name": "Utsab Dhara", "num": "7384948247" },
 					{ "name": "Randhir Kumar Ray", "num": "7903962308" }
-				]
+				],
+				"img": "/assets/imgs/events/images/photography_workshop.webp"
 			},
 			{
 				"desc": "<p> Artival is a celebration of creativity and artistic expression. This exhibition will showcase the works of talented artists from your college and beyond, providing a platform for them to share their unique perspectives with the community. Featuring a diverse range of art forms including paintings, sculptures, installations, and mixed media, Artistic Visions promises to be a visual feast for art enthusiasts. Whether you are an art lover or simply curious about the creative process, Artival is an event not to be missed. Come explore the depths of imagination and creativity that reside in the hearts and minds of our talented artists, and experience the magic of art in all its forms. </p><br> <b>Details of the exhibition:</b> <p> Painting will be done on white board or plywood painted white which will be put up in front of the volleyball court. Design will be provided shortly. Design will be based on the theme of REBECA 2024.</p>",
@@ -48,7 +50,8 @@
 					{ "name": "Krishnendu Mondal", "num": "6296883037" },
 					{ "name": "Akash Das", "num": "7044279689" }
 				],
-				"register": "https://docs.google.com/forms/d/1A1--sV-w_Xik3PcRMJI7FCv4QNzmPNVxdqmhVMruL6U/edit"
+				"register": "https://docs.google.com/forms/d/1A1--sV-w_Xik3PcRMJI7FCv4QNzmPNVxdqmhVMruL6U/edit",
+				"img": "/assets/imgs/events/images/artival.webp"
 			},
 
 			{
@@ -73,13 +76,14 @@
 					{ "name": "Akshat Gupta", "num": "7548071485" }
 				],
 				"Awards": "INR 5000",
-				"register": "https://docs.google.com/forms/d/1pNdjjcHAcV2LG_2aCdt7VMEAA-bDokpGKhVKFhxsT20/edit"
+				"register": "https://docs.google.com/forms/d/1pNdjjcHAcV2LG_2aCdt7VMEAA-bDokpGKhVKFhxsT20/edit",
+				"img": "/assets/imgs/events/images/pixel_poetry.webp"
 			},
 			{
 				"time": "Everyday 12 PM Onwards",
 				"eventName": "Typist's Tourney",
 				"venue": "Lord's",
-				"desc": "Love the sound of keys clacking? Does racing get your adrenaline pumping? Want to experience the thrill in REBECA? Leave it all to CodeIIEST! <br/><br/> We are back with our lightning-fast typing contest. Show us what you got and grab the title of “The Fastest Fingers”. <br/><br/> Bag all the T’s – “Tap, Type, Triumph”. ",
+				"desc": "Love the sound of keys clacking? Does racing get your adrenaline pumping? Want to experience the thrill in REBECA? Leave it all to CodeIIEST! <br/><br/> We are back with our lightning-fast typing contest. Show us what you got and grab the title of “The Fastest Fingers”. <br/><br/> Bag all the T's - “Tap, Type, Triumph”. ",
 				"rules": [
 					"A maximum of 5 participants (at a time) will be competing in a type race of 3 minutes on xyz platform(to be revealed on-spot). The winners of each race will receive a small token of appreciation from REBECA and CODEIIEST.",
 					"By presenting the institute ID card, participants can enjoy one free attempt per day during REBECA. For taking more attempts the participant has to pay an entry fee of Rs 20(for a maximum of 5 attempts). Non-IIEST students will have to pay an entry fee of Rs 20 (for a maximum of 5 attempts).",
@@ -94,7 +98,8 @@
 					{ "name": "Rishab Dugar", "num": "8696490950" }
 				],
 				"register": "https://forms.gle/68Z5YRs2qouXwSqK7",
-				"Awards": "PRIZE POOL - Rs 3000(1500+1000+500)"
+				"Awards": "PRIZE POOL - Rs 3000(1500+1000+500)",
+				"img": "/assets/imgs/events/images/typist_tourney.webp"
 			},
 			{
 				"time": "Everyday 12 PM Onwards",
@@ -108,7 +113,8 @@
 					{ "name": "Roushan Das", "num": "9830196251" },
 					{ "name": "Aseem Singh", "num": "6266633647" }
 				],
-				"register": "https://forms.gle/UN1Uj1aX8xQmWcfL6"
+				"register": "https://forms.gle/UN1Uj1aX8xQmWcfL6",
+				"img": "/assets/imgs/events/images/saturnalia.webp"
 			}
 		]
     },
@@ -131,7 +137,7 @@
 					{ "name": "Tanis Ahamed", "num": "8972570521" },
 					{ "name": "Manohar", "num": "7842441308" }
 				],
-				"img": "/assets/imgs/events/images/cineaura.jpg",
+				"img": "/assets/imgs/events/images/cineaura.webp",
 				"register": "https://docs.google.com/forms/d/1aPimVWYLTkZnE9ehurvH1laq96HvSmWCPZwporuknuI/edit?usp=drive_web"
 			},
 			{
@@ -139,7 +145,7 @@
 
 				"time": "5:30 PM - 7:30 PM",
 				"eventName": "Inauguration Ceremony",
-				"img": "/assets/imgs/events/images/inauguration.jpg",
+				"img": "/assets/imgs/events/images/inauguration.webp",
 				"venue": "Lord's"
 			},
 			{
@@ -148,7 +154,7 @@
 				"eventName": "Ghoongru",
 				"club": "Reflexobeta",
 				"venue": "Lord's",
-				"img": "/assets/imgs/events/images/ghoongru.jpg"
+				"img": "/assets/imgs/events/images/ghoongru.webp"
 			},
 			{
 				"desc": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
@@ -158,7 +164,7 @@
 				"eventName": "The Classical Night",
 				"venue": "Lord's",
 				"url": "/events/saptami",
-				"img": "/assets/imgs/events/images/classicalnight.jpg"
+				"img": "/assets/imgs/events/images/classicalnight.webp"
 			},
 
 			{
@@ -167,7 +173,7 @@
 				"eventName": "Film Fiesta",
 				"club": "Camerabuff",
 				"venue": "Lord's",
-				"img": "/assets/imgs/events/images/filmfiesta.jpg"
+				"img": "/assets/imgs/events/images/filmfiesta.webp"
 			}
 			
 			
@@ -182,7 +188,7 @@
 				"eventName": "Dumb Charades League",
 				"club": "Litsoc",
 				"venue": "Gallery 3 (AE&AM Dept.)",
-				"poster": "./assets/events/posters/dumbcharades.jpg",
+				"poster": "./assets/events/posters/dumbcharades.webp",
 				"desc": "Tired of events that need you to solve circuits, know DSA and attend seminars? Well, it’s time to give your brain cells a rest because LitSoc-IIESTS presents to you a Dumb Charades League, where all you have to be is, dumb (yes you read that right). Team up with your buddies, pick up chits, bring out your acting chops and let the guessing game begin. And if you are too good at it, we have cool trophies waiting for you too! So put away your thinking caps and let’s come together for a nutty witty afternoon and find out who really are your best friends.",
 				"rules": [
 					"Each team should consist of 4 members.",
@@ -206,7 +212,7 @@
 					{ "name": "Nafis Adnan Mondal", "num": "9143611854" }
 				],
 				"register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
-				"img": "/assets/imgs/events/images/dumb.jpg"
+				"img": "/assets/imgs/events/images/dumb.webp"
 			},
 			{
 				"time": "2:00 PM - 6:00 PM",
@@ -219,7 +225,7 @@
 					{ "name": "Aditya Singh", "num": "9471611071" },
 					{ "name": "Debanjali Chakravarthi", "num": "8918740236" }
 				],
-				"img": "/assets/imgs/events/images/rangmanch.jpg"
+				"img": "/assets/imgs/events/images/rangmanch.webp"
 			},
 			{
 				"desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
@@ -253,7 +259,7 @@
 					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
 				],
 				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
-				"img": "/assets/imgs/events/images/rebescal.jpg"
+				"img": "/assets/imgs/events/images/rebescal.webp"
 			},
 			{
 				"time": "4:00 PM - 6:00 PM",
@@ -282,15 +288,15 @@
 						"num": "6296883037"
 					}
 				],
-				"img": "/assets/imgs/events/images/face_canvas.jpg"
+				"img": "/assets/imgs/events/images/face_canvas.webp"
 			},
 			{
 				"time": "7:30 PM - 8:30 PM",
 				"eventName": "Stream of Western Dance",
 				"club": "Reflexobeta",
 				"venue": "Lord's",
-				"desc": "Reflexobeta presents their stream of western dances on BEings night of Rebeca, 19th of April. <br/><br/> 1. Reflexobeta has given a chance and choreographed the performances of everyone who wants to dance and showcase their talents on the main stage of Rebeca who has not been a part of the club on the occasion of the annual cultural fest. (10-12 mins) <br/><br/> 2. The club members are ready to bang the stage with their series of sizzling and high energy performances. (15 mins approx)",
-				"img": "/assets/imgs/events/images/westerndance.jpg"
+				"desc": "Reflexobeta presents their stream of western dances on BEings night of Rebeca, 19th of April. <br/><br/> 1. Reflexobeta has given a chance and choreographed the performances of everyone who wants to dance and showcase their talents on the main stage of Rebeca who has not been a part of the club on the occasion of the annual cultural fest. (10-12 mins) <br/><br/> 2. The club members are ready to bang the stage with their series of sizzling and high energy performances. (15 mins approx)",
+				"img": "/assets/imgs/events/images/westerndance.webp"
 			},
 			{
 				"time": "8:30 PM - onwards",
@@ -302,7 +308,7 @@
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
 				"judges": ["tbd", "tbd", "tbd", "tbd"],
 				"url": "/events/ashtami",
-				"img": "/assets/imgs/events/images/beingsnight.jpg"
+				"img": "/assets/imgs/events/images/beingsnight.webp"
 			}
 		]
 	},
@@ -322,14 +328,14 @@
 					{ "name": "Ritik Pratap Singh", "num": "8949491506" },
 					{ "name": "Sadhan Das", "num": "7827304221" }
 				],
-				"img": "/assets/imgs/events/images/gmun.jpg"
+				"img": "/assets/imgs/events/images/gmun.webp"
 			},
 			{
 				"time": "11:00 AM - 2:00 PM",
 				"eventName": "Dumb Charades League",
 				"club": "Litsoc",
 				"venue": "Gallery 3 (AE&AM Dept.)",
-				"poster": "./assets/events/posters/dumbcharades.jpg",
+				"poster": "./assets/events/posters/dumbcharades.webp",
 				"desc": "Tired of events that need you to solve circuits, know DSA and attend seminars? Well, it’s time to give your brain cells a rest because LitSoc-IIESTS presents to you a Dumb Charades League, where all you have to be is, dumb (yes you read that right). Team up with your buddies, pick up chits, bring out your acting chops and let the guessing game begin. And if you are too good at it, we have cool trophies waiting for you too! So put away your thinking caps and let’s come together for a nutty witty afternoon and find out who really are your best friends.",
 				"rules": [
 					"Each team should consist of 4 members.",
@@ -353,7 +359,7 @@
 					{ "name": "Nafis Adnan Mondal", "num": "9143611854" }
 				],
 				"register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
-				"img": "/assets/imgs/events/images/dumb.jpg"
+				"img": "/assets/imgs/events/images/dumb.webp"
 			},
 			{
 				"time": "12:00 PM - 2:00 PM",
@@ -370,7 +376,7 @@
 				"Awards": "Winners and runners-up of classical and western will receive prize with certificate. Prize worth Rs. 5000/- for classical and western each",
 				"register": "https://forms.gle/QURMTkDpCXJfXATN8",
 				"registrationFee": "Rs. 50",
-				"img": "/assets/imgs/events/images/solosynergy.jpg"
+				"img": "/assets/imgs/events/images/solosynergy.webp"
 			},
 			{
 				"time": "3:00 PM - 4:30 PM",
@@ -387,7 +393,7 @@
 				"Awards": "Winners and runners-up of classical and western will receive prize with certificate. Prize worth Rs. 5000/- for classical and western each",
 				"register": "https://forms.gle/Zy6FKfNYq8pdesXB6",
 				"registrationFee": "Rs. 50",
-				"img": "/assets/imgs/events/images/syncshowcase.jpg"
+				"img": "/assets/imgs/events/images/syncshowcase.webp"
 			},
 
 			{
@@ -418,7 +424,7 @@
 					}
 				],
 				"register": "https://forms.gle/womjARWtRH2bi5QL7",
-				"img": "/assets/imgs/events/images/rebequiz.jpg"
+				"img": "/assets/imgs/events/images/rebequiz.webp"
 			},
 			{
 				"desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
@@ -452,7 +458,7 @@
 					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
 				],
 				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
-				"img": "/assets/imgs/events/images/rebescal.jpg"
+				"img": "/assets/imgs/events/images/rebescal.webp"
 			},
 			{
 				"time": "3:30 PM - 6:00 PM",
@@ -477,7 +483,7 @@
 					{ "name": "Krishnendu Mondal", "num": "6296883037" }
 				],
 				"register": "https://docs.google.com/forms/d/e/1FAIpQLSe7pEHMJYDOWxE0FsHX84AhZEL5cOejZSGjKp5_QDJveCRyhg/viewform?usp=pp_url",
-				"img": "/assets/imgs/events/images/ink_your_tee.jpg"
+				"img": "/assets/imgs/events/images/ink_your_tee.webp"
 			},
 			{
 				"time": "4:00 PM - 6:00 PM",
@@ -496,7 +502,7 @@
 					{ "name": "Aman Tiwari", "num": "73638 01645" }
 				],
 				"register": "https://forms.gle/5rhDhzSBn8PUyiNWA",
-				"img": "/assets/imgs/events/images/nukkad.jpg"
+				"img": "/assets/imgs/events/images/nukkad.webp"
 			},
 			{
 				"time": "5:30 PM - 8:30 PM",
@@ -532,7 +538,7 @@
 					{ "name": "Soubhagya Saha", "num": "8420003678" },
 					{ "name": "Aniket Chanda", "num": "9926091967" }
 				],
-				"img": "/assets/imgs/events/images/rockbuzz.jpg"
+				"img": "/assets/imgs/events/images/rockbuzz.webp"
 			},
 			{
 				"time": "8:30 PM onwards",
@@ -543,7 +549,7 @@
 				"rules": [],
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
 				"url": "/events/navami",
-				"img": "/assets/imgs/events/images/kolkatanight.jpg"
+				"img": "/assets/imgs/events/images/kolkatanight.webp"
 			}
 		]
 	},
@@ -570,14 +576,14 @@
 					{ "name": "Ritik Pratap Singh", "num": "8949491506" },
 					{ "name": "Sadhan Das", "num": "7827304221" }
 				],
-				"img": "/assets/imgs/events/images/gmun.jpg"
+				"img": "/assets/imgs/events/images/gmun.webp"
 			},
 			{
 				"time": "11:00 AM - 1:30 PM",
 				"eventName": "Verse Wars",
 				"club": "Litsoc",
 				"venue": "Institute Hall",
-				"poster": "./assets/events/posters/versewars.jpg",
+				"poster": "./assets/events/posters/versewars.webp",
 				"desc": "Attention all wordsmiths and poetry enthusiasts! Get ready to unleash your creativity and witness the electrifying showdown at VERSE WARS (Slam Poetry Competition) on 21st April. Whether you're a seasoned poet or just dipping your toes in verse, this is your moment to shine. Bring your A-game, share your soulful verses, and compete for thrilling prizes totalling Rs. 3000. Spread the word, rally your friends, and let's make this event one for the books!",
 				"rules": [
 					"Poems must be original.",
@@ -598,7 +604,7 @@
 					{ "name": "Madhushree Shaw", "num": "9330062005" }
 				],
 				"register": "https://forms.gle/q8L61eApSUA4gcAt6",
-				"img": "/assets/imgs/events/images/versewars.jpg"
+				"img": "/assets/imgs/events/images/versewars.webp"
 			},
 			{
 				"time": "2:00 PM - 6:00 PM",
@@ -614,7 +620,7 @@
 					{ "name": "Tenzin Sherab Moktan", "num": "9832467274" },
 					{ "name": "Triparna Saha", "num": "9969643725" }
 				],
-				"img": "/assets/imgs/events/images/flyingsolo.jpg"
+				"img": "/assets/imgs/events/images/flyingsolo.webp"
 			},
 
 			{
@@ -649,7 +655,7 @@
 					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
 				],
 				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
-				"img": "/assets/imgs/events/images/rebescal.jpg"
+				"img": "/assets/imgs/events/images/rebescal.webp"
 			},
 			{
 				"time": "4:00 PM - 6:00 PM",
@@ -666,7 +672,7 @@
 				],
 				"registrationFee": "Rs. 150",
 				"Awards": "Winners and runners-up will receive gift hampers with certificate",
-				"img": "/assets/imgs/events/images/footloose.jpg"
+				"img": "/assets/imgs/events/images/footloose.webp"
 			},
 			{
 				"time": "6:00 PM - 7:30 PM",
@@ -675,7 +681,7 @@
 				"venue": "Lord's",
 				"desc": "FIDUCIA 2024 has been adorned with the theme of Indo-Western. The costumes for the event have been meticulously crafted to align with the overarching theme ensuring a visually stunning presentation. A dedicated segment of the fashion show will highlight the contemporary flair and innovative designs conceived by our talented students",
 				
-				"img": "/assets/imgs/events/images/fiducia.jpg"
+				"img": "/assets/imgs/events/images/fiducia.webp"
 			},
 			{
 				"time": "8:00 PM Onwards",
@@ -685,7 +691,7 @@
 				"desc": "Take your dancing shoes out as you'll be screaming and dancing like nobody's watching to the electrifying beats of Bollywood! Join in on the infectious energy as you dance all night long in the grand finale of our festival and create a lifetime of memories that stay with you long after the night has faded into dawn.",
 				"rules": [],
 				"url": "/events/dashami",
-				"img": "/assets/imgs/events/images/mumbainight.jpg"
+				"img": "/assets/imgs/events/images/mumbainight.webp"
 			}
 		]
 	}

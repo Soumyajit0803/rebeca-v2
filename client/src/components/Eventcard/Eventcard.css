@@ -6,6 +6,7 @@
   gap: 0.5rem;
   transition: all ease 0.3s;
   height: max-content;
+  color: white;
 }
 
 .event-card .event-data {
@@ -20,11 +21,12 @@
   overflow: hidden;
   width: fit-content;
   transition: 0.25s all;
+  text-shadow: 0 0 10px black;
 }
+
 .event-card .event-data.expand{
   width: 400px;
 }
-
 
 .event-card .event-data .data-header {
   font-size: 1.2rem;
@@ -86,7 +88,7 @@
   transform-origin: left;
   border: 0px solid yellow;
   position: relative;
-  opacity: 30%;
+  opacity: 40%;
 }
 
 
@@ -135,7 +137,7 @@
   color: var(--accent1);
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 580px){
   .event-card, .event-data{
     flex-direction: column;
     width: 100%;
@@ -177,4 +179,32 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+}
+
+.event-card .section-event {
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.event-card .section-event::-webkit-scrollbar {
+  height: 7px !important;
+  border-radius: 10px !important;
+}
+
+.event-card .section-event::-webkit-scrollbar-track {
+  height: 5px !important;
+}
+
+.event-card .section-event::-webkit-scrollbar-thumb {
+  height: 5px !important;
+  border-radius: 10px;
+  background: var(--accent1);
+}
+.event-card .section-event::-webkit-scrollbar-button,
+.event-card .section-event::-webkit-scrollbar-corner {
+  display: none;
 }
