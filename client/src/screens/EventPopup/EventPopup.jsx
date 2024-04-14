@@ -36,7 +36,7 @@ const EventPopup = () => {
 						<img
 							src={`/assets/imgs/events/posters/${eventName
 								.toLowerCase()
-								.replaceAll(" ", "_")}.jpg`}
+								.replaceAll(" ", "_")}.webp`}
 							alt={eventName}
 							srcSet=""
 						/>
@@ -116,7 +116,7 @@ const EventPopup = () => {
 								return (
 									<div className="judge" key={i}>
 										<img
-											src={`/assets/imgs/ProfileImg/${judge}.webp`}
+											src={`/assets/imgs/team/${judge}.webp`}
 											alt="judge"
 											srcSet=""
 											className="judge-pic"
@@ -144,7 +144,7 @@ const EventPopup = () => {
 									<img
 										src={`/assets/imgs/team/${coord.name
 											.toLowerCase()
-											.replaceAll(" ", "")}.jpg`}
+											.replaceAll(" ", "")}.webp`}
 										alt=""
 										srcSet=""
 										className="judge-pic"
