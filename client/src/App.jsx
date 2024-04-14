@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./App.css";
 import AllRoutes from "./Routes.jsx";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
@@ -35,6 +36,7 @@ function App() {
 			{/* <div className="preloader">
 				<div className="preloader-icon"></div>
 			</div> */}
+			<SpeedInsights />
 			<Router>
 				<Navbar></Navbar>
 				<AllRoutes
