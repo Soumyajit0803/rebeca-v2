@@ -24,8 +24,9 @@
 				"desc": "Join us for an exclusive photography workshop with Behaya , a renowned photographer known for his captivating work. Whether you're a beginner, aspiring photographer, a hobbyist, or simply someone who appreciates the art of visual storytelling, this workshop is perfect for you. This workshop promises to be an immersive experience for photographers of all levels. He shares insights, tips, and techniques to help you take your skills to the next level.Learn the art of photography, from mastering your camera settings to capturing moments creatively. Don't miss this opportunity to learn from the best. <br/><br/> See you There!",
 
 				"coordinators": [
-					{ "name": "Ritik Pratap Singh", "num": "8949491506" },
-					{ "name": "Sadhan Das", "num": "7827304221" }
+					{ "name": "Aditya Didolkar", "num": "8390359499" },
+					{ "name": "Utsab Dhara", "num": "7384948247" },
+					{ "name": "Randhir Kumar Ray", "num": "7903962308" }
 				]
 			},
 			{
@@ -94,6 +95,20 @@
 				],
 				"register": "https://forms.gle/68Z5YRs2qouXwSqK7",
 				"Awards": "PRIZE POOL - Rs 3000(1500+1000+500)"
+			},
+			{
+				"time": "Everyday 12 PM Onwards",
+				"eventName": "Saturnalia",
+
+				"venue": "Student Amenities Center",
+				"desc": "Embark your journey through the lens of the extraordinary 'Saturnalia', an ethereal photography exhibition where the wonders of the cosmos come alive., where each photograph captures the enchanting beauty and narrates the epic tale. Immerse yourself in the cosmic dance of colors, textures, and stories that makes you travel to the actual scene . Let your imagination soar as you explore the vastness of the photography through the eyes of talented photographers. Don't miss this opportunity to witness the awe-inspiring allure of Saturnalia. See you there!",
+
+				"coordinators": [
+					{ "name": "Shivanshu Gupta", "num": "7275112895" },
+					{ "name": "Roushan Das", "num": "9830196251" },
+					{ "name": "Aseem Singh", "num": "6266633647" }
+				],
+				"register": "https://forms.gle/UN1Uj1aX8xQmWcfL6"
 			}
 		]
     },
