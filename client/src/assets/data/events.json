@@ -679,9 +679,10 @@
 				"eventName": "FIDUCIA",
 				
 				"venue": "Lord's",
-				"desc": "FIDUCIA 2024 has been adorned with the theme of Indo-Western. The costumes for the event have been meticulously crafted to align with the overarching theme ensuring a visually stunning presentation. A dedicated segment of the fashion show will highlight the contemporary flair and innovative designs conceived by our talented students",
+				"desc": "Step into elegance with Rebeca's mesmerizing fashion walk, where every stride exudes confidence and grace. From chic ensembles to timeless classics, let the runway be your guide to effortless style. Trust in the allure of FIDUCIA , where fashion meets sophistication. <br/><br/> <b> Make up & Hairstyling Partner:</b><br/>Lakme Academy",
 				
-				"img": "/assets/imgs/events/images/fiducia.webp"
+				"img": "/assets/imgs/events/images/fiducia.webp",
+				"coordinators": [{"name": "Arushi Das", "num": "8917684258"}, {"name": "Gurusha Rahul", "num": "9452367512"}]
 			},
 			{
 				"time": "8:00 PM Onwards",
