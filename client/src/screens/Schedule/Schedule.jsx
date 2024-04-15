@@ -69,7 +69,7 @@ function Schedule() {
 					<Button
 						className="download_btn"
 						variant={"filled"}
-						innerText={"Download the brochure"}
+						innerText={"Download the Rulebook"}
 						endIcon={
 							<span className="material-icons">
 								file_download
