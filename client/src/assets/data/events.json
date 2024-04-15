@@ -557,11 +557,15 @@
 		"majorEvents": [0, 3, 6],
 		"eventList": [
 			{
-				"time": "10:00 AM - 2:00 PM",
+				"time": "10:00 AM - 3:00 PM",
 				"eventName": "Business Alumni Meet",
-
-				"venue": "Alumni Seminar Hall",
-				"desc": "Welcome to the Business-Alumni Meet 2024, where we foster engaging dialogue between alumni and ndustry professionals, equipping participants for the ever-evolving business landscape. This REBECA initiative serves as a platform for fostering collaboration between alumni and academia, aimed atpreparing students for the challenges of the future workforce. By bringing together alumni, and students in interactive sessions and expert-led panels, BUSINESS and ALUMINI MEET facilitates knowledge sharing and networking opportunities"
+				"venue": "Main stage, Lords ground",
+				"desc": "Welcome to the distinguished Business-Alumni Meet 2024 at REBECA, where our esteemed alumni and industry leaders converge. The prestigious event serves as a nexus of knowledge exchange, professional development, and alumni camaraderie. Engage in thought-provoking discussions led by seasoned industry experts, cultivate lasting connections with fellow alumni and business luminaries as we provide participants with a platform for insightful dialogue, strategic networking, and personal growth. Amidst the backdrop of our revered alma mater, attendees will have opportunity to reconnect with cherished memories while stewarding the institute's legacy. Join us as we honour our shared heritage, celebrate achievements, and chart a course for continued success. The Business-Alumni Meet 2024 awaits your esteemed presence.",
+				"img": "/assets/imgs/events/images/businessalumnimeet.webp",
+				"coordinators": [
+					{ "name": "Nishan Murarka", "num": "8967758765" },
+					{ "name": "Jay Ram Abhimmanyu", "num": "7660827600" }
+				]
 			},
 			{
 				"time": "11:00 AM - 6:00 PM",

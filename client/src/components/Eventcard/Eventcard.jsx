@@ -13,7 +13,7 @@ const Eventpanel = ({ value, index, day, show, handle }) => {
 
       <div className="data-body">
         <div className="img">
-          <img src={value.img ? value.img : `/assets/imgs/home/${day}.webp`} alt="event-icon" />
+          <img src={value.img ? value.img : `/assets/imgs/home/${day.toLowerCase()}.webp`} alt="event-icon" />
         </div>
         {show && (
           <>
