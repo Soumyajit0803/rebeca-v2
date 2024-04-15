@@ -221,3 +221,11 @@
 .card:hover {
     transform: scale(1.1);
 }
+
+@media (max-width: 450px) {
+    .card {
+        padding: 10px !important;
+        width: 50% !important;
+        height: min-content !important;
+    }
+}
