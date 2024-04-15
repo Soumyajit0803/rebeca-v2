@@ -39,6 +39,16 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
 	);
 }
 
+const onButtonClick = () => {
+	const pdfUrl = "/assets/rebecaRuleBook.pdf";
+	const link = document.createElement("a");
+	link.href = pdfUrl;
+	link.download = "rebecaRuleBook.pdf"; // specify the filename
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+};
+
 function Schedule() {
 	function eventListSummarizer(eventlist) {
 		var res = [];
@@ -54,6 +64,19 @@ function Schedule() {
 		events && (
 			<div className="schedule">
 				<Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
+				<Link to={"#"}>
+					<Button
+						className="download_btn"
+						variant={"filled"}
+						innerText={"Download the brochure"}
+						endIcon={
+							<span className="material-icons">
+								file_download
+							</span>
+						}
+						onClick={onButtonClick}
+					></Button>
+				</Link>
 				{
 					<div className={"event pre-event"}>
 						{/* <Link to={`/events/${bgsetter}`}>
