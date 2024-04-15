@@ -141,14 +141,28 @@ const EventPopup = () => {
 						eventInfo.coordinators.map((coord, i) => {
 							return (
 								<div className="judge coordinator" key={i}>
-									<img
-										src={`/assets/imgs/team/${coord.name
-											.toLowerCase()
-											.replaceAll(" ", "")}.webp`}
-										alt=""
-										srcSet=""
-										className="judge-pic"
-									/>
+									<div className="img">
+										<img
+											src="/assets/imgs/circle.png"
+											alt=""
+											className="circle"
+										/>
+										<div className="dp2">
+											<img
+												src="/assets/imgs/team/dp2.webp"
+												alt=""
+											/>
+										</div>
+										<div className="dp">
+											<img
+												src={`/assets/imgs/team/${coord.name
+													.toLowerCase()
+													.replaceAll(" ", "")}.webp`}
+												alt=""
+											></img>
+										</div>
+										
+									</div>
 									<span className="c-name">{coord.name}</span>
 									<div className="phone">
 										<span className="material-icons">

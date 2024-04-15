@@ -152,14 +152,63 @@
     /* height: 2.5em; */
 }
 
-.event-popup .judges .judge .judge-pic {
-    aspect-ratio: 1/1;
+.event-popup .judges .judge .img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* background: var(--primary); */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.event-popup .judges .judge .img .circle{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 1;
+    /* transform: translateX(-10px); */
+    /* border: 1px solid red; */
+}
+.event-popup .judges .judge .img .dp2{
+    width: 180px;
+    height: 180px;
+    z-index: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    /* border: 1px solid red; */
+}
+.event-popup .judges .judge .img .dp2 img{
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.event-popup .judges .judge .img .dp {
+    width: 180px;
+    height: 180px;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: translateX(+5px) translateY(+5px);
+    /* display: none; */
+}
+.event-popup .judges .judge .img .dp img {
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-position: center;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 2px -2px 0 3px var(--accent1);
 }
-
 .event-popup .judges .judge span {
     font-size: 1.1rem;
     text-align: center;
