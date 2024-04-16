@@ -5,7 +5,13 @@
 				"eventName": "T Shirt Design Contest",
 				"desc": "Hola Design Enthusiasts. <br/><br/> The iconic 4 days are back as REBECA returns with it's 83rd season. Thus, unleash your wild imaginations as you compete for a T-shirt design that proudly celebrates the illustrious history of IIEST Shibpur and reconnects our alumni with the gratifying legacy of our college. <br/><br/> May the BEings wear the best T-shirt that captures the essence of IIEST Shibpur's rich legacy, weaving together threads of tradition, innovation and emotions. Let the trail for the best design begin! <br/><br/> Submission Deadline: 7th April, 2024",
 				"register": "https://forms.gle/F583Cxp8Aq33mfZ86",
-				"time": "7th April"
+				"time": "7th April",
+				"coordinators": [
+					{ "name": "Sumit", "num": "9001575600" },
+					{ "name": "Hamsa Tejaswini", "num": "9347459992" },
+					{ "name": "Krishnendu Mondal", "num": "6296883037" }
+				]
+
 			},
 			{
 				"eventName": "BECA Magazine",
@@ -180,7 +186,11 @@
 				"eventName": "Film Fiesta",
 				"club": "Camerabuff",
 				"venue": "Lord's",
-				"img": "/assets/imgs/events/images/filmfiesta.webp"
+				"img": "/assets/imgs/events/images/filmfiesta.webp",
+				"coordinators": [
+					{ "name": "Sai Venkat Rao", "num": "8367663100" },
+					{ "name": "Abhinay Kumar", "num": "7569274277" }
+				]
 			}
 			
 			
@@ -499,7 +509,8 @@
 					"Content Watchdogs: Social Issues Only: Focus on social concerns, no obscenity."
 				],
 				"coordinators": [
-					{ "name": "Aman Tiwari", "num": "73638 01645" }
+					{ "name": "Aman Tiwari", "num": "73638 01645" },
+					{ "name": "Divyanshu Shekhar", "num": "99057 92868" }
 				],
 				"register": "https://forms.gle/5rhDhzSBn8PUyiNWA",
 				"img": "/assets/imgs/events/images/nukkad.webp"
