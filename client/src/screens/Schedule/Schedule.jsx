@@ -39,7 +39,7 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
 }
 
 const onButtonClick = () => {
-	const pdfUrl = "/assets/rebecaRuleBook.pdf";
+	const pdfUrl = "/assets/Rebeca83Rulebook.pdf";
 	const link = document.createElement("a");
 	link.href = pdfUrl;
 	link.download = "rebecaRuleBook.pdf"; // specify the filename
