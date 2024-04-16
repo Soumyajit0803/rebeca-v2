@@ -13,7 +13,7 @@ directory to start: "./public/assets/..../"
 """
 
 
-output_dir = './public/assets/imgs/events/images/'
+output_dir = './public/assets/imgs/team/'
 os.makedirs(output_dir, exist_ok=True)
 
 # Function to resize and convert image to WEBP format
@@ -24,13 +24,13 @@ def resize_and_convert(input_path, output_path):
     img.save(output_path, 'WEBP', quality=quality, save_all=True, append_images=[img])
 
 count = 0
-allFiles = os.listdir('./public/assets/imgs/events/images/')
+allFiles = os.listdir('./public/assets/imgs/team/')
 
 newchanges = []
 
 for filename in allFiles:
     if filename.lower().endswith('.jpg'):
-        input_path = './public/assets/imgs/events/images/'+filename
+        input_path = './public/assets/imgs/team/'+filename
         if filename.split('.')[0] + '.webp' in allFiles:
             print("File already in webp for ", filename)
             continue
