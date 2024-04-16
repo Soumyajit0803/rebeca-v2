@@ -114,10 +114,11 @@
     width: max-content;
     height: max-content;
     display: flex;
+    flex-direction: row wrap;
     width: 100%;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px 20px;
     padding-top: 2rem;
 }
 
@@ -126,15 +127,20 @@
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    width: 10rem;
+    /* width: 10rem; */
     min-width: 12ch;
     position: relative;
     /* background-color: green; */
 }
 
 .event-popup .judges .coordinator {
-    height: 10em;
+    /* height: 10em; */
     min-width: 12ch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
 }
 
 .event-popup .judges .coordinator .phone {
@@ -208,6 +214,7 @@
     object-position: center;
     object-fit: cover;
     border-radius: 50%;
+    aspect-ratio: 1/1;
 }
 .event-popup .judges .judge span {
     font-size: 1.1rem;
@@ -271,9 +278,11 @@
 
     .event-popup .judges {
         justify-content: center;
+        flex-direction: column;
     }
     .event-popup .judges .judge {
-        width: 40%;
+        /* width: 40%; */
+        border: 1px solid red;
     }
 
     .event-popup {
