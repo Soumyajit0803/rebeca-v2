@@ -10,36 +10,36 @@ import Nightbanner from "../../components/Nightbanner/Nightbanner";
 const Home = () => {
   const artists = [
 		{
-			name: "Ash King",
-			img: "ashking.webp",
+			name: "Avoid Rafa",
+			img: "avoidrafa.webp",
 		},
 		{
-			name: "Anupam Roy Band",
-			img: "anupamroyband.webp",
+			name: "Ehsaas India",
+			img: "ehsaasIndia.webp",
 		},
 		{
-			name: "Anurag Haldar",
-			img: "anuraghalder.webp",
+			name: "Md. Irfan",
+			img: "mdirfan.webp",
 		},
 		{
-			name: "Distorted Chromosomes",
-			img: "destortedchromosomes.webp",
+			name: "Pritam Roy",
+			img: "pritamroy.webp",
 		},
 		{
-			name: "Pata R Moruddyan",
-			img: "pata.webp",
+			name: "Prithibi",
+			img: "prithbi.webp",
 		},
 		{
-			name: "DJ Neelashree",
-			img: "djneelashree.webp",
+			name: "Shironamhin",
+			img: "shironamhini.webp",
 		},
 		{
-			name: "DJ Raxo",
-			img: "djraxo.webp",
+			name: "TRAP",
+			img: "trap.webp",
 		},
 		{
-			name: "DJ Roop",
-			img: "djroop.webp",
+			name: "DJ Sunburn Coming Soon",
+			img: "comingsoon.png",
 		},
   ];
 
@@ -79,10 +79,10 @@ const Home = () => {
 			</section>
 			<section className="section-3">
 				<Heading
-					title={"82nd Rebeca! Line up"}
+					title={"Rebeca! Line up"}
 					subTitle={
-						// "Brace yourself for an unforgettable showcase, as we proudly unveil our stellar lineup"
-						"Showcasing all the wonderful artists to ever grace Rebeca"
+						"Brace yourself for an unforgettable showcase, as we proudly unveil our stellar lineup"
+						// "Showcasing all the wonderful artists to ever grace Rebeca"
 					}
 				></Heading>
 
