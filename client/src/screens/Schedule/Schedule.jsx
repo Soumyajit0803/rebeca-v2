@@ -26,14 +26,27 @@ function EventSection({ date, datetxt, eventlist, topic, about }) {
           <div className="topic display-font">{topic}</div>
           <div className="about">{about}</div>
 
-          <Link to={`/events/${bgsetter}`}>
-            <Button variant={"filled"} innerText={"Learn more"}></Button>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
+					<Link to={`/events/${bgsetter}`}>
+						<Button
+							variant={"filled"}
+							innerText={"Learn more"}
+						></Button>
+					</Link>
+				</div>
+			</div>
+		</div>
+	);
 }
+
+const onButtonClick = () => {
+	const pdfUrl = "/assets/Rebeca83Rulebook.pdf";
+	const link = document.createElement("a");
+	link.href = pdfUrl;
+	link.download = "rebecaRuleBook.pdf"; // specify the filename
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+};
 
 function Schedule() {
   // function eventListSummarizer(eventlist) {
@@ -46,15 +59,28 @@ function Schedule() {
   const { innerWidth: width, innerHeight: height } = window;
 
 
-  var nights = ["saptami", "ashtami", "navami", "dashami"];
-  return (
-    contents &&
-    events && (
-      <div className="schedule">
-        <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
-        {
-          <div className={"event pre-event"}>
-            {/* <Link to={`/events/${bgsetter}`}>
+	var nights = ["saptami", "ashtami", "navami", "dashami"];
+	return (
+		contents &&
+		events && (
+			<div className="schedule">
+				<Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
+				<Link to={"#"}>
+					<Button
+						className="download_btn"
+						variant={"filled"}
+						innerText={"Download the Rulebook"}
+						endIcon={
+							<span className="material-icons">
+								file_download
+							</span>
+						}
+						onClick={onButtonClick}
+					></Button>
+				</Link>
+				{
+					<div className={"event pre-event"}>
+						{/* <Link to={`/events/${bgsetter}`}>
 							{/* <PujaHeading
 								date={date}
 								datetxt={datetxt}

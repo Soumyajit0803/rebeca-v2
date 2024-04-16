@@ -14,7 +14,7 @@ const Merchandise = () => {
 			</section>
 			<section className="section-2">
 				<div className="img">
-					<img src="./assets/imgs/merch/tshirt3.png" alt="" />
+					<img src="./assets/imgs/merch/tshirt4.webp" alt="" />
 				</div>
 				<div className="content">
 					Step into the world of REBECA in style! Get ready to immerse
@@ -28,7 +28,7 @@ const Merchandise = () => {
 					everyone!
 					<br />
 					<br />
-					Last Date - 14th April, 2024
+					Last Date - 17th April, 2024
 					<br />
 					<br />
 					<a href="https://forms.gle/UZ6PtbZHB8HRm9oR6">

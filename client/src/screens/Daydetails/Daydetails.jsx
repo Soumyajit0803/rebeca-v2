@@ -41,8 +41,8 @@ const Daydetails = () => {
 					return (
 						<ArtistCard
 							key={index}
-							name={value}
-							img={`${value}.png`}
+							name={value.name}
+							img={ value.img}
 						></ArtistCard>
 					);
 				})}

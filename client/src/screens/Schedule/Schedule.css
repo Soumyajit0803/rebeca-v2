@@ -2,11 +2,26 @@
   padding: 5rem;
   font-size: 28px;
   animation: fadeIn 0.5s linear forwards;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
 
 }
-
+.schedule .download_btn{
+    margin: auto;
+    margin-bottom: 4rem;
+    z-index: 1;
+}
+.schedule .download_btn:hover{
+    padding: 12px 25px;
+}
+.schedule .download_btn:hover .before{
+    display: none;
+}
 .schedule .event {
   margin-top: 5rem;
+  width: 100%;
   /* border: 1px solid red; */
 }
 .schedule .event.pre-event .event-content{

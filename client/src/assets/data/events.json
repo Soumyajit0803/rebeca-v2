@@ -2,6 +2,18 @@
 	"Pre Events": {
         "eventList": [
 			{
+				"eventName": "T Shirt Design Contest",
+				"desc": "Hola Design Enthusiasts. <br/><br/> The iconic 4 days are back as REBECA returns with it's 83rd season. Thus, unleash your wild imaginations as you compete for a T-shirt design that proudly celebrates the illustrious history of IIEST Shibpur and reconnects our alumni with the gratifying legacy of our college. <br/><br/> May the BEings wear the best T-shirt that captures the essence of IIEST Shibpur's rich legacy, weaving together threads of tradition, innovation and emotions. Let the trail for the best design begin! <br/><br/> Submission Deadline: 7th April, 2024",
+				"register": "https://forms.gle/F583Cxp8Aq33mfZ86",
+				"time": "7th April",
+				"coordinators": [
+					{ "name": "Sumit", "num": "9001575600" },
+					{ "name": "Hamsa Tejaswini", "num": "9347459992" },
+					{ "name": "Krishnendu Mondal", "num": "6296883037" }
+				]
+
+			},
+			{
 				"eventName": "BECA Magazine",
 				"time": "12th to 17th",
 				"desc": "SCAGE and BECA Magazine cordially invite all talented artists to an Art Competition to be featured prominently in the illustrious BECA magazine. <br/ ><br/> This competition offers you the chance to showcase your work on the esteemed pages of BECA magazine. Imagine the pride of seeing your masterpiece adorning the glossy pages and receiving recognition for your artistry that will resonate throughout IIEST Shibpur. <br/><br/> Celebrating the vibrant spirit of REBECA 2024, this competition aims to weave your art into the rich tapestry of our institution's cultural heritage. Your creations have the power to leave an indelible mark for generations to come. Seize this opportunity and make your mark in IIEST's heritage.",
@@ -42,7 +54,7 @@
 				],
 				"tagline": "An Exhibition on Creative Expression where art meets imagination",
 
-				"time": "Everyday 12 PM Onwards",
+				"time": "Everyday 11 AM Onwards",
 				"eventName": "Artival",
 				"club": "SCAGE",
 				"venue": "Volleyball Court",
@@ -55,7 +67,7 @@
 			},
 
 			{
-				"time": "Everyday 12 PM Onwards",
+				"time": "Everyday 11 AM Onwards",
 				"eventName": "Pixel Poetry",
 				"club": "Catharsis",
 				"venue": "Whole Campus",
@@ -80,7 +92,22 @@
 				"img": "/assets/imgs/events/images/pixel_poetry.webp"
 			},
 			{
-				"time": "Everyday 12 PM Onwards",
+				"time": "Everyday 11 AM Onwards",
+				"eventName": "Saturnalia",
+
+				"venue": "Student Amenities Center",
+				"desc": "Embark your journey through the lens of the extraordinary 'Saturnalia', an ethereal photography exhibition where the wonders of the cosmos come alive., where each photograph captures the enchanting beauty and narrates the epic tale. Immerse yourself in the cosmic dance of colors, textures, and stories that makes you travel to the actual scene . Let your imagination soar as you explore the vastness of the photography through the eyes of talented photographers. Don't miss this opportunity to witness the awe-inspiring allure of Saturnalia. See you there!",
+
+				"coordinators": [
+					{ "name": "Shivanshu Gupta", "num": "7275112895" },
+					{ "name": "Roushan Das", "num": "9830196251" },
+					{ "name": "Aseem Singh", "num": "6266633647" }
+				],
+				"register": "https://forms.gle/UN1Uj1aX8xQmWcfL6",
+				"img": "/assets/imgs/events/images/saturnalia.webp"
+			},
+			{
+				"time": "Everyday 6 PM Onwards",
 				"eventName": "Typist's Tourney",
 				"venue": "Lord's",
 				"desc": "Love the sound of keys clacking? Does racing get your adrenaline pumping? Want to experience the thrill in REBECA? Leave it all to CodeIIEST! <br/><br/> We are back with our lightning-fast typing contest. Show us what you got and grab the title of “The Fastest Fingers”. <br/><br/> Bag all the T's - “Tap, Type, Triumph”. ",
@@ -100,22 +127,8 @@
 				"register": "https://forms.gle/68Z5YRs2qouXwSqK7",
 				"Awards": "PRIZE POOL - Rs 3000(1500+1000+500)",
 				"img": "/assets/imgs/events/images/typist_tourney.webp"
-			},
-			{
-				"time": "Everyday 12 PM Onwards",
-				"eventName": "Saturnalia",
-
-				"venue": "Student Amenities Center",
-				"desc": "Embark your journey through the lens of the extraordinary 'Saturnalia', an ethereal photography exhibition where the wonders of the cosmos come alive., where each photograph captures the enchanting beauty and narrates the epic tale. Immerse yourself in the cosmic dance of colors, textures, and stories that makes you travel to the actual scene . Let your imagination soar as you explore the vastness of the photography through the eyes of talented photographers. Don't miss this opportunity to witness the awe-inspiring allure of Saturnalia. See you there!",
-
-				"coordinators": [
-					{ "name": "Shivanshu Gupta", "num": "7275112895" },
-					{ "name": "Roushan Das", "num": "9830196251" },
-					{ "name": "Aseem Singh", "num": "6266633647" }
-				],
-				"register": "https://forms.gle/UN1Uj1aX8xQmWcfL6",
-				"img": "/assets/imgs/events/images/saturnalia.webp"
 			}
+			
 		]
     },
     
@@ -143,7 +156,7 @@
 			{
 				"desc": "",
 
-				"time": "5:30 PM - 7:30 PM",
+				"time": "6:00 PM - 7:30 PM",
 				"eventName": "Inauguration Ceremony",
 				"img": "/assets/imgs/events/images/inauguration.webp",
 				"venue": "Lord's"
@@ -160,7 +173,7 @@
 				"desc": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
 				"rules": [],
 				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"time": "8:30 PM - 1:30 AM",
+				"time": "8:30 PM onwards",
 				"eventName": "The Classical Night",
 				"venue": "Lord's",
 				"url": "/events/saptami",
@@ -169,11 +182,15 @@
 
 			{
 				"desc": "Join Us for FILM FIESTA - An Unforgettable Cinematic Experience! <br/><br/>🎬 Lights, Camera, Action! 🎬 <br/><br/> Calling all movie enthusiasts! CAMERABUFF, the film society of IIESTS Shibpur, is thrilled to present 'Film Fiesta' as part of our college fest extravaganza. Get ready to immerse yourself in a world of captivating stories, breathtaking cinematography, and unforgettable characters. Experience the magic of cinema under the starry night sky as we showcase a curated selection of must-watch films that promise to entertain, inspire, and leave you spellbound.",
-				"time": "1:30 AM - 3:30 AM",
+				"time": "12:00 AM",
 				"eventName": "Film Fiesta",
 				"club": "Camerabuff",
 				"venue": "Lord's",
-				"img": "/assets/imgs/events/images/filmfiesta.webp"
+				"img": "/assets/imgs/events/images/filmfiesta.webp",
+				"coordinators": [
+					{ "name": "Sai Venkat Rao", "num": "8367663100" },
+					{ "name": "Abhinay Kumar", "num": "7569274277" }
+				]
 			}
 			
 			
@@ -184,7 +201,7 @@
 		"eventList": [
 			
 			{
-				"time": "11:00 AM - 2:00 PM",
+				"time": "12:00 PM - 2:00 PM",
 				"eventName": "Dumb Charades League",
 				"club": "Litsoc",
 				"venue": "Gallery 3 (AE&AM Dept.)",
@@ -262,7 +279,7 @@
 				"img": "/assets/imgs/events/images/rebescal.webp"
 			},
 			{
-				"time": "4:00 PM - 6:00 PM",
+				"time": "5:00 PM - 6:00 PM",
 				"eventName": "Face Canvas",
 				"tagline": "Bring your imagination to your face for the world to know !",
 				"club": "SCAGE",
@@ -290,16 +307,9 @@
 				],
 				"img": "/assets/imgs/events/images/face_canvas.webp"
 			},
+			
 			{
-				"time": "7:30 PM - 8:30 PM",
-				"eventName": "Stream of Western Dance",
-				"club": "Reflexobeta",
-				"venue": "Lord's",
-				"desc": "Reflexobeta presents their stream of western dances on BEings night of Rebeca, 19th of April. <br/><br/> 1. Reflexobeta has given a chance and choreographed the performances of everyone who wants to dance and showcase their talents on the main stage of Rebeca who has not been a part of the club on the occasion of the annual cultural fest. (10-12 mins) <br/><br/> 2. The club members are ready to bang the stage with their series of sizzling and high energy performances. (15 mins approx)",
-				"img": "/assets/imgs/events/images/westerndance.webp"
-			},
-			{
-				"time": "8:30 PM - onwards",
+				"time": "7:30 PM - onwards",
 				"eventName": "The BEings Night",
 				"club": [],
 				"venue": "Lord's",
@@ -331,7 +341,7 @@
 				"img": "/assets/imgs/events/images/gmun.webp"
 			},
 			{
-				"time": "11:00 AM - 2:00 PM",
+				"time": "12:00 PM - 2:00 PM",
 				"eventName": "Dumb Charades League",
 				"club": "Litsoc",
 				"venue": "Gallery 3 (AE&AM Dept.)",
@@ -362,8 +372,8 @@
 				"img": "/assets/imgs/events/images/dumb.webp"
 			},
 			{
-				"time": "12:00 PM - 2:00 PM",
-				"eventName": "Solo Synergy:",
+				"time": "12:00 PM - 3:00 PM",
+				"eventName": "Solo Synergy",
 				"club": "Reflexobeta",
 				"venue": "I-Hall",
 				"desc": "Step into the spotlight and let your passion shine! 💃✨ <br/><br/> Excited to announce 'Solo Synergy', the solo dance competition presented by ReflexoBeta at IIEST Shibpur’s REBECA! 🎉 <br/><br/> Calling all solo dancers to showcase their talent, creativity, and style on stage. Get ready to dazzle and leave your mark! 🔥 <br/><br/> #SoloSynergy #DanceCompetition #IIESTShibpur #Rebeca #ReflexoBeta",
@@ -379,7 +389,7 @@
 				"img": "/assets/imgs/events/images/solosynergy.webp"
 			},
 			{
-				"time": "3:00 PM - 4:30 PM",
+				"time": "3:00 PM - 6:00 PM",
 				"eventName": "Sync Showcase",
 				"club": "Reflexobeta",
 				"venue": "I-Hall",
@@ -448,7 +458,7 @@
 					"Prizes will be awarded to the winners and runners."
 				],
 
-				"time": "3 PM to 6 PM",
+				"time": "3:00 PM - 6:00 PM",
 				"eventName": "Rebecsal",
 				"club": "Sports Club",
 				"venue": "Oval",
@@ -499,7 +509,8 @@
 					"Content Watchdogs: Social Issues Only: Focus on social concerns, no obscenity."
 				],
 				"coordinators": [
-					{ "name": "Aman Tiwari", "num": "73638 01645" }
+					{ "name": "Aman Tiwari", "num": "73638 01645" },
+					{ "name": "Divyanshu Shekhar", "num": "99057 92868" }
 				],
 				"register": "https://forms.gle/5rhDhzSBn8PUyiNWA",
 				"img": "/assets/imgs/events/images/nukkad.webp"
@@ -557,7 +568,7 @@
 		"majorEvents": [0, 3, 6],
 		"eventList": [
 			{
-				"time": "10:00 AM - 3:00 PM",
+				"time": "10:00 AM - 2:00 PM",
 				"eventName": "Business Alumni Meet",
 				"venue": "Main stage, Lords ground",
 				"desc": "Welcome to the distinguished Business-Alumni Meet 2024 at REBECA, where our esteemed alumni and industry leaders converge. The prestigious event serves as a nexus of knowledge exchange, professional development, and alumni camaraderie. Engage in thought-provoking discussions led by seasoned industry experts, cultivate lasting connections with fellow alumni and business luminaries as we provide participants with a platform for insightful dialogue, strategic networking, and personal growth. Amidst the backdrop of our revered alma mater, attendees will have opportunity to reconnect with cherished memories while stewarding the institute's legacy. Join us as we honour our shared heritage, celebrate achievements, and chart a course for continued success. The Business-Alumni Meet 2024 awaits your esteemed presence.",
@@ -568,7 +579,7 @@
 				]
 			},
 			{
-				"time": "11:00 AM - 6:00 PM",
+				"time": "11:00 AM - 5:30 PM",
 				"eventName": "GMUN",
 				"club": "Debsoc",
 				"venue": "ASH(opening till 2pm) + 4 Rooms(SnT)",
@@ -649,7 +660,7 @@
 					"Prizes will be awarded to the winners and runners."
 				],
 
-				"time": "3 PM to 6 PM",
+				"time": "3:00 PM - 6:00 PM",
 				"eventName": "Rebecsal",
 				"club": "Sports Club",
 				"venue": "Oval",
