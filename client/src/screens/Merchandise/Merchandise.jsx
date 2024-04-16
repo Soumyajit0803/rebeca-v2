@@ -28,7 +28,7 @@ const Merchandise = () => {
 					everyone!
 					<br />
 					<br />
-					Last Date - 14th April, 2024
+					Last Date - 17th April, 2024
 					<br />
 					<br />
 					<a href="https://forms.gle/UZ6PtbZHB8HRm9oR6">
