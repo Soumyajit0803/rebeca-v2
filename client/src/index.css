@@ -16,7 +16,7 @@
 	--accent1-50: rgba(80, 116, 246, 0.5);
 	--accent1dark: #3955ba;
 	--accent2: #705dea;
-	--accent3: #cd40ff;
+	--accent3: #000001;
 
 	--primary: var(--accent1);
 	--primary50: var(--accent1-50);
