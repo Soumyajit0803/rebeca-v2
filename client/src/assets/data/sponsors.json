@@ -1,0 +1,116 @@
+[
+	{
+		"id": 1,
+		"title": "Title Sponsor",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/CocaCola"
+			}			
+		]
+	},
+	{
+		"id": 2,
+		"title": "BECA Sponsors",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/GAINWELL"
+			},
+			{
+				"imgname": "sponsorsImages/RAINBOW"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"title": "Exclusive Fashion Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/TRENDS"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"title": "Makeup and Hairstyling Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/LAKME"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"title": "T-shirt Sponsor",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/NIRNAYAN HEALTHCARE"
+			}
+		]
+	},
+	{
+		"id": 6,
+		"title": "Merchandise Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/ANIME EXPRESS"
+			}
+		]
+	},
+	{
+		"id": 7,
+		"title": "Food Partners",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/PVR INOX"
+			},
+			{
+				"imgname": "sponsorsImages/BURGER KING"
+			}
+		]
+	},
+	{
+		"id": 8,
+		"title": "Drinks Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/RED BULL"
+			}
+		]
+	},
+	{
+		"id": 9,
+		"title": "Travel Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/D4M"
+			}
+		]
+	},
+	{
+		"id": 10,
+		"title": "Publicity Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/WOMANS ERA"
+			}
+		]
+	},
+	{
+		"id": 11,
+		"title": "Exhibition Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/AMPERE"
+			}
+		]
+	},
+	{
+		"id": 12,
+		"title": "Ice-cream Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/KWALITY WALLS"
+			}
+		]
+	}
+]
