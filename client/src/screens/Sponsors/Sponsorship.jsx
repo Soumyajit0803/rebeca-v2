@@ -197,3 +197,14 @@ function Sponsorship() {
 	);
 }
 export default Sponsorship;
+
+// in case needed, removed from sponsors.json
+// {
+// 	"id": 8,
+// 	"title": "Drinks Partner",
+// 	"logos": [
+// 		{
+// 			"imgname": "sponsorsImages/RED BULL"
+// 		}
+// 	]
+// }
