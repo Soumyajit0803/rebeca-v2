@@ -5,6 +5,8 @@ import SponsorCard from "./SponsorsCard";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
+import pastSponsorJsonData from "../../assets/data/pastSponsors.json";
+import sponsorJsonData from "../../assets/data/sponsors.json";
 
 const Heading1 = ({ title, subTitle, w }) => {
 	return (
@@ -75,35 +77,7 @@ function Sponsorship() {
 		return () => {
 			window.removeEventListener("resize", updateImageSource);
 		};
-	}, []);
-
-	const sponsorData = {
-		sponsor1: { imgname: "CocaCola" },
-		sponsor2: { imgname: "COKESTUDIO" },
-		sponsor3: { imgname: "RollsRoyce" },
-		sponsor4: { imgname: "IOCL" },
-		sponsor5: { imgname: "SAIL" },
-		sponsor6: { imgname: "RedFM" },
-		sponsor7: { imgname: "FRIENDSFM" },
-		sponsor8: { imgname: "ADOBE" },
-		sponsor9: { imgname: "simoco" },
-		sponsor10: { imgname: "LAKME" },
-		sponsor11: { imgname: "duckback" },
-		sponsor12: { imgname: "L&T" },
-		sponsor13: { imgname: "Microsoft" },
-		sponsor14: { imgname: "cryAmerica" },
-		sponsor15: { imgname: "Zomato" },
-		sponsor16: { imgname: "Trends" },
-		sponsor17: { imgname: "cesc" },
-		sponsor18: { imgname: "Linc" },
-		sponsor19: { imgname: "COAL" },
-		sponsor20: { imgname: "DOMINOS" },
-		sponsor21: { imgname: "wowMomo" },
-		sponsor22: { imgname: "pantaloons" },
-		sponsor23: { imgname: "OLA" },
-		sponsor24: { imgname: "Shapoorji" },
-		sponsor25: { imgname: "KTM" },
-	};
+	}, []);	
 
 	 const onButtonClick = () => {
 			const pdfUrl = "/assets/rebeca83brochure.pdf";
@@ -141,7 +115,7 @@ function Sponsorship() {
 					<div className="side-img">
 						<img
 							src="/assets/imgs/sponsorship/clockTower1.webp"
-							alt=""
+							alt="clockTowerImg"
 						/>
 					</div>
 
@@ -192,18 +166,29 @@ function Sponsorship() {
 
 				<section className="section-4">
 					<div style={{ padding: "0 1rem" }}>
+						<Heading1 title={"Sponsors"} w={"60%"}></Heading1>
+					</div>
+					{sponsorJsonData.map((item, index) => (						
+						<div className="center1" key={index}>
+							<p style={{paddingTop:"40px"}}>{item.title}</p>
+								<div className="cards">
+									{item.logos.map((logo, index) => (
+										<SponsorCard key={index} sponsor={logo} />
+									))}
+								</div>
+						</div>						
+					))}
+        		</section>
+										
+				<section className="section-4">
+					<div style={{ padding: "0 1rem" }}>
 						<Heading1 title={"Past-sponsors"} w={"60%"}></Heading1>
 					</div>
 					<div className="center1">
 						<div className="cards">
-							{Object.values(sponsorData).map(
-								(sponsor, index) => (
-									<SponsorCard
-										key={index}
-										sponsor={sponsor}
-									/>
-								)
-							)}
+							{pastSponsorJsonData.map((sponsor, index) => (
+								<SponsorCard key={index} sponsor={sponsor} />
+							))}
 						</div>
 					</div>
 				</section>

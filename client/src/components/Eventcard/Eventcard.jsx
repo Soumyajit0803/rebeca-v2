@@ -23,7 +23,7 @@ const Eventpanel = ({ value, index, day, show, handle }) => {
                 __html: value.desc,
               }}
             ></div>
-            <Link to={`/event/${value.eventName}`}>
+            <Link to={value.url ? value.url : `/event/` + value.eventName}>
               <Button variant={"filled"} innerText={"Learn more"}></Button>
             </Link>
           </>
