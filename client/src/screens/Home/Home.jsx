@@ -31,7 +31,7 @@ const Home = () => {
 		},
 		{
 			name: "Shironamhin",
-			img: "shironamhini.webp",
+			img: "shironamhin.webp",
 		},
 		{
 			name: "TRAP",
