@@ -5,7 +5,7 @@
 	align-items: center;
 
 	border: 0px solid red;
-	padding: 10px 4rem;
+	padding: 10px 1rem;
 	/* background: var(--teal); */
 	background-color: #171717;
 	/* background: black; */
@@ -15,7 +15,7 @@
 	/* box-shadow: 0px 4px 83px 0px rgba(59, 59, 59, 0.14); */
 	/* positio%n: fixed; */
 	width: 100%;
-	height: 70px;
+	height: 60px;
 	position: fixed;
 	z-index: 100;
 	/* overflow-x: hidden; */
@@ -57,12 +57,12 @@
 	cursor: pointer;
 	font-weight: 400;
 	
-	font-size: 20px;
+	font-size: 1.1rem;
 	color: var(--purple);
 	color: rgba(255, 255, 255, 0.527);
 	position: relative;
-	border: 0px solid green;
-	height: 100%;
+	/* border: 0px solid green; */
+	/* height: 100%; */
 	transition: 0.25s all;
 	display: flex;
 	flex-direction: row;
@@ -74,7 +74,20 @@
 	color: var(--primary);
 	content: "";
 	transition: 0.25s all;
-	font-weight: 600;
+}
+.navbar .nav-items .item::before{
+	content: "";
+	position:absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 1.5px;
+	background: var(--primary);
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: all ease 0.2s;
+}
+.navbar .nav-items .item.active::before{
+	transform: scaleX(1);
 }
 .MuiDrawer-root .MuiPaper-root{
 	width: 100% !important;
@@ -123,7 +136,7 @@
 	align-items: flex-start;
 	justify-content: flex-start;
 	gap: 40px;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	margin-top: 4rem;
 }
 .drawer .nav-items .item{
@@ -153,7 +166,7 @@
 }
 .drawer .nav-items .sub-items .item{
 	font-weight: 500;
-	font-size: 25px;
+	font-size: 1.2rem;
 }
 .drawer .nav-items .item:hover, .drawer .nav-items .item:focus{
 	color: var(--primary);
@@ -184,7 +197,7 @@
 .navbar .menu ul .nav-item {
 	color: rgb(99, 99, 99);
 	padding: 10px;
-	font-size: 30px;
+	font-size: 1.5rem;
 	transition: 0.25s all;
 	display: flex;
 	justify-content: center;
@@ -226,7 +239,7 @@
 			
 		}
 		.navbar .nav-items .item{
-			font-size: 15px;
+			font-size: 1rem;
 		}
 	}
 @media only screen and (max-width: 480px),

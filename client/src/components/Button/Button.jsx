@@ -1,7 +1,7 @@
 import { iconButtonClasses } from "@mui/material";
 import "./Button.css";
 
-const Button = ({ id, innerText, className, variant, onClick, disabled, color, size, startIcon, endIcon, loading, type }) => {
+const Button = ({ id, innerText, className, variant, onClick, disabled, color, size, startIcon, endIcon, loading, type, arrowHover=true }) => {
 	return (
 		<button
 			id={id}
@@ -17,9 +17,9 @@ const Button = ({ id, innerText, className, variant, onClick, disabled, color, s
 			)}
 			{!loading && innerText}
 			{!loading && endIcon && <div className="start-icon">{endIcon}</div>}
-			<div className="before">
+			{arrowHover && <div className="before">
 				<span className="material-icons">chevron_right</span>
-			</div>
+			</div>}
 		</button>
 	);
 };
