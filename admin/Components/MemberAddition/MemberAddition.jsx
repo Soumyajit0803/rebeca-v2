@@ -12,7 +12,7 @@ const MemberAddition = () => {
     };
 
     return (
-        <div style={{ maxWidth: 1200, padding: "1rem 2rem 2rem 0rem", minHeight: "100vh" }}>
+        <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
             <h1>Add Team Member</h1>
             <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large">
                 {/* Member Name */}

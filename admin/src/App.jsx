@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tabs, ConfigProvider, theme, Typography } from "antd";
 import EventRegistration from "../Components/EventAddition/EventAddition";
 import MemberAddition from "../Components/MemberAddition/MemberAddition";
 import MemberEditing from "../Components/MemberEditing/MemberEditing";
-const onChange = (key) => {
-    console.log(key);
-};
+import RegistrationStats from "../Components/RegistrationStats/RegistrationStats";
+
 const items = [
     {
         key: "1",
@@ -27,8 +26,15 @@ const items = [
         label: "Edit Team member",
         children: <MemberEditing />,
     },
+    {
+        key: "5",
+        label: "Registration Stats",
+        children: <RegistrationStats />,
+    },
 ];
 const App = () => {
+    const [tabPosition, setTabPosition] = useState('left')
+    const width = window.innerWidth
     return (
         <ConfigProvider
             theme={{
@@ -37,7 +43,7 @@ const App = () => {
         >
             <div className="app-wrapper">
                 <div style={{fontSize: '2.5rem', fontWeight: '600', padding: '2rem'}} >Admin Dashboard</div>
-                <Tabs defaultActiveKey="1" items={items} onChange={onChange} size="large" tabPosition="left" />
+                <Tabs defaultActiveKey="1" items={items} onChange={(e) => setTabPosition(e == 5 ? 'top':'left')} size="large" tabPosition={tabPosition} style={{padding: '1rem'}}/>
             </div>
         </ConfigProvider>
     );

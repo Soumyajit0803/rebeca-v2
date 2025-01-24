@@ -17,7 +17,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
     };
     
     return (
-        <div style={{ maxWidth: 1200, padding: "1rem 2rem 2rem 0rem", minHeight: "100vh" }}>
+        <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
             Find the Team member
             <br />
             <Select

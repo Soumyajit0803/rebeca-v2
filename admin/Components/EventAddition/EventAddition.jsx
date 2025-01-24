@@ -118,7 +118,7 @@ const EventRegistration = () => {
     };
 
     return (
-        <div style={{ maxWidth: 1200, padding: "1rem 2rem 2rem 0rem" }}>
+        <div style={{ maxWidth: 1200}}>
             <div className="register-container">
                 <h1>Event Addition</h1>
                 <Form form={form} layout="vertical" onFinish={onFinish} size="large">
