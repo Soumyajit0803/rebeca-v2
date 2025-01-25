@@ -4,6 +4,7 @@ import LoginGoogle from "../LoginGoogle/LoginGoogle";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useAuth } from "../../AuthContext";
+import { authWithGoogle } from "../../services/api";
 
 const LoginForm = ({ open, setOpen }) => {
     const { user, handleLogin, handleLogout } = useAuth();
@@ -36,13 +37,18 @@ const LoginForm = ({ open, setOpen }) => {
                     backgroundColor: "white",
                     background: "transparent",
                     p: 5,
-                    // border: "1px solid rgb(190, 190, 190)"
                 }}
             >
                 <GoogleLogin
-                    onSuccess={(credentialResponse) => {
+                    onSuccess={async (credentialResponse) => {
                         const decoded = jwtDecode(credentialResponse?.credential);
                         console.log(decoded);
+                        console.log(credentialResponse);
+                        
+                        const result = await authWithGoogle(credentialResponse?.credential)
+                        console.log(`auth with google result: ${result}`);
+                        
+
                         handleLogin({
                             name: decoded?.name,
                             email: decoded?.email,
