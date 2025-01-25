@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
+:root, * {
 	font-family: "Exo 2", sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
@@ -10,7 +11,7 @@
 
 	color-scheme: light dark;
 	color: rgba(255, 255, 255, 0.5);
-	background-color: #171717;
+	/* background-color: #171717; */
 
 	--accent1: #5075f6;
 	--accent1-50: rgba(80, 116, 246, 0.5);
@@ -131,7 +132,7 @@ button:focus-visible {
 @media only screen and (max-width: 1100px),
 	only screen and (max-device-width: 1100px) {
 	.display-font {
-		font-size: 40px;
+		font-size: 30px;
 	}
 }
 
