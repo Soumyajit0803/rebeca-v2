@@ -55,7 +55,7 @@ function AvatarMenu({ user, handleLogout }) {
                     horizontal: "center",
                 }}
             >
-                <Typography sx={{p:1}} variant="body2">Hi, {user.name.split(' ')[0]}</Typography>
+                <Typography sx={{p:1}} variant="body2">Hi, {user.name.split(' ')[0]}!</Typography>
                 <MenuItem onClick = {()=>{
                     handleClose();
                     handleLogout()
