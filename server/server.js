@@ -1,6 +1,30 @@
 require("dotenv").config();
-// const mongoose = require("mongoose")
+const mongoose = require("mongoose")
 const app = require("./app");
+
+// Below snippet is used to connect to DB. This is disablled becouse we will not be needing Database for this project
+
+// Connecting to DATABASE ->>
+const DB = process.env.MONGO_CLIENT_URI.replace(
+	'<db_password>',
+	process.env.MONGO_CLIENT_PASSWORD
+);
+
+mongoose
+	.connect(DB, {
+		// <- Using Mongoose Connection
+		// useNewUrlParser: true,
+		// useCreateIndex: true,
+		// useFindAndModify: false,
+		// useUnifiedTopology: true,
+	})
+	.then(() => {
+		console.log('DB connection established');
+	})
+	.catch((err) => {
+		console.log('DB CONNECTION FAILED');
+		console.log('ERR: ', err);
+	});
 
 // Catching uncaught exception ->>
 process.on("unCaughtException", (err) => {
@@ -23,5 +47,5 @@ process.on("unhandledRejection", (err) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
