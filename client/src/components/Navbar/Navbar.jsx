@@ -11,6 +11,8 @@ import {
     AccordionDetails,
     Stack,
     Typography,
+    Snackbar,
+    Alert
 } from "@mui/material";
 
 // import {Button} from "@mui/material";
@@ -22,6 +24,7 @@ import Progressbar from "../Progressbar/Progressbar";
 import LoginForm from "../Login/LoginForm";
 import React from "react";
 import { useAuth } from "../../AuthContext";
+import { checkStatus } from "../../services/api";
 
 function AvatarMenu({ user, handleLogout }) {
     const [anchorEl, setAnchorEl] = useState(null); // Menu anchor state
@@ -39,7 +42,7 @@ function AvatarMenu({ user, handleLogout }) {
     return (
         <div>
             <IconButton onClick={handleClick}>
-                <Avatar alt={user.name} src={user.pic}>
+                <Avatar alt={user.name} src={user.image}>
                 </Avatar>
             </IconButton>
             <Menu
@@ -51,7 +54,7 @@ function AvatarMenu({ user, handleLogout }) {
                     horizontal: "center",
                 }}
                 transformOrigin={{
-                    vertical: "top",
+                    vertical: "bottom",
                     horizontal: "center",
                 }}
             >
@@ -71,7 +74,21 @@ const Navbar = () => {
     const [loginOpen, setLoginOpen] = useState(false);
 
     const { user, handleLogin, handleLogout } = useAuth();
-    console.log(user);
+    const isLoggedIn = async()=>{
+        try{
+        const res = await checkStatus();
+        if(!res.data.user)return
+        console.log(res?.data?.message)
+        handleLogin(res?.data?.user)
+        }catch(err){
+            console.log("status check fail");
+            console.log(err.message);
+        }
+    }
+
+    useEffect(()=>{
+        isLoggedIn()
+    }, [])
 
     const handleDrawerOpen = () => {
         setDrawerOpen(true);
@@ -88,6 +105,7 @@ const Navbar = () => {
         <>
             <div className="navbar">
                 <Progressbar />
+                {/* {user && <Notification message={`Welcome, ${user.name.split(' ')[0]}`} />} */}
                 <LoginForm open={loginOpen} setOpen={setLoginOpen} />
                 <div className="left-col">
                     <Link to="/" className="logo">

@@ -2,16 +2,20 @@
 import React from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import { authWithGoogle } from "../../services/api";
+import { useAuth } from "../../AuthContext";
                               
 
 export default (props) => {
+	const { user, handleLogin, handleLogout } = useAuth();
+	
 	const responseGoogle = async (authResult) => {
 		try {
 			if (authResult["code"]) {
 				console.log(authResult.code);
 				const result = await authWithGoogle(authResult.code);
-				props.setUser(result.data.user);
-				alert("successfuly logged in");
+				handleLogin(result.data.data.user);
+				console.log(result);
+				
 			} else {
 				console.log(authResult);
 				throw new Error(authResult);

@@ -15,9 +15,7 @@ const LoginForm = ({ open, setOpen }) => {
 
     useEffect(() => {
         if (user) {
-            setTimeout(() => {
-                handleClose();
-            }, 1500);
+            handleClose()
         }
     }, [user]);
 
@@ -37,28 +35,28 @@ const LoginForm = ({ open, setOpen }) => {
                     backgroundColor: "white",
                     background: "transparent",
                     p: 5,
+                    // border: "1px solid rgb(190, 190, 190)"
                 }}
             >
-                <GoogleLogin
-                    onSuccess={async (credentialResponse) => {
+                {/* <GoogleLogin
+                    onSuccess={async(credentialResponse) => {
                         const decoded = jwtDecode(credentialResponse?.credential);
                         console.log(decoded);
-                        console.log(credentialResponse);
-                        
-                        const result = await authWithGoogle(credentialResponse?.credential)
-                        console.log(`auth with google result: ${result}`);
-                        
-
                         handleLogin({
                             name: decoded?.name,
                             email: decoded?.email,
                             pic: decoded?.picture,
                         });
+
+                        const result = await authWithGoogle(credentialResponse?.credential);
+                        console.log("Response from backend: "+result);
+                         
                     }}
                     onError={() => {
                         console.log("Login Failed");
                     }}
-                />
+                /> */}
+                <LoginGoogle />
                 {user && <Typography variant="body2" color={"greenyellow"} >Successfully logged in as {user.name}</Typography>}
             </Box>
         </Dialog>
