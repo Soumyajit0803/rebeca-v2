@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Input, Select, Upload, Button } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
+import { UploadOutlined, DeleteOutlined, DeleteFilled } from "@ant-design/icons";
 
 const { Option } = Select;
 
@@ -15,10 +15,10 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
     const onChange = (value) => {
         console.log(`selected ${value}`);
     };
-    
+
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
-            Find the Team member
+            <span style={{fontSize: '1.3rem', fontWeight: '500'}}>Find the Team member</span>
             <br />
             <Select
                 size="large"
@@ -42,15 +42,10 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                     },
                 ]}
             ></Select>
-            <h1>Edit Team Member</h1>
-            <Form
-                form={form}
-                layout="vertical"
-                onFinish={onFinish}
-                style={{ color: "#e6e6e6" }}
-                size="large"
-                
-            >
+            <Button danger type="primary" size="large" style={{marginTop: '1rem'}} icon={<DeleteFilled />} iconPosition="end">Delete Team Member</Button>
+
+            <h1 style={{ marginTop: "2rem" }}>Edit Team Member</h1>
+            <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large">
                 {/* Member Name */}
                 <Form.Item
                     label="Member Name"

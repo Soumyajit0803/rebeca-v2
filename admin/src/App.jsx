@@ -33,8 +33,10 @@ const items = [
     },
 ];
 const App = () => {
-    const [tabPosition, setTabPosition] = useState('left')
+    const [OpSelect, setOpSelect] = useState(1)
     const width = window.innerWidth
+    console.log(width);
+    
     return (
         <ConfigProvider
             theme={{
@@ -43,7 +45,7 @@ const App = () => {
         >
             <div className="app-wrapper">
                 <div style={{fontSize: '2.5rem', fontWeight: '600', padding: '2rem'}} >Admin Dashboard</div>
-                <Tabs defaultActiveKey="1" items={items} onChange={(e) => setTabPosition(e == 5 ? 'top':'left')} size="large" tabPosition={tabPosition} style={{padding: '1rem'}}/>
+                <Tabs defaultActiveKey="1" items={items} onChange={(e) => setOpSelect(e)} size="large" tabPosition={'top'} style={{padding: '1rem'}}/>
             </div>
         </ConfigProvider>
     );
