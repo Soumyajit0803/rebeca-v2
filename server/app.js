@@ -7,13 +7,11 @@ const cookieParser = require('cookie-parser');
 // const path = require('path');
 const cors = require('cors');
 // const compression = require('compression');
-// const rateLimit = require('express-rate-limit');
+const rateLimit = require('express-rate-limit');
 const dotenv = require('dotenv');
 
 const router = require('./routes/mainroutes');
-const AppError = require('./utils/appError');
-// const errorController = require('./controllers/errorController');
-
+const errorHandler = require('./middlewares/errorHandler')
 const app = express();
 
 dotenv.config({ path: './.env' }); // <- connecting the enviroment variables
@@ -29,14 +27,14 @@ app.options(process.env.REMOTE, cors());
 console.log(`ENV = ${process.env.NODE_ENV}`);
 // app.use(morgan('dev')); // <- Logs res status code and time taken
 
-// const limiter = rateLimit({	// <- Limits the number of api calls that can be made per IP address
-// 	max: 1000, // max number of times per windowMS
-// 	windowMs: 60 * 60 * 1000,
-// 	message:
-//         'Too many requests, Please try again in 1 hour !!!',
-// });
+const limiter = rateLimit({	// <- Limits #apicalls that can be made per IP address
+	max: 1000, // max number of times per windowMS
+	windowMs: 60 * 60 * 1000, //1hr
+	message:
+        'Too many requests, Please try again in 1 hour !!!',
+});
 
-// app.use('/api/v1', limiter);
+app.use('/api/v1', limiter);
 
 app.use((req, res, next) => {	// <- Serves req time and cookies
 	
@@ -69,6 +67,6 @@ app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Route
 	next(new AppError(`Can't find ${req.originalUrl} on the server`, 404));
 });
 
-// app.use(errorController); // <- Error Handling Middleware
+app.use(errorHandler); // <- Error Handling Middleware
 
 module.exports = app;

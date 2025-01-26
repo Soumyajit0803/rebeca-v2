@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 // const { promisify } = require('util');
 const oauth2Client = require("../utils/oauth2client");
 const catchAsync = require("./../utils/catchAsync");
-const AppError = require("./../utils/appError");
 const User = require("../models/userModel");
 require("dotenv").config();
 
@@ -22,20 +21,23 @@ const createSendToken = (user, statusCode, res) => {
         httpOnly: true,
         path: "/",
         sameSite: "none",
-        secure: false,
+        secure: true,
     };
-    if (process.env.NODE_ENV === "production") {
-        cookieOptions.secure = true;
-        cookieOptions.sameSite = "none";
-    }
+    // if (process.env.NODE_ENV === "production") {
+    //     cookieOptions.secure = true;
+    //     cookieOptions.sameSite = "none";
+    // }
 
-    user.password = undefined;
+    // user.password = undefined;
 
     res.cookie("jwt", token, cookieOptions);
 
     console.log(user);
     console.log("Cookie stored");
 
+    const value = 1/0;
+    console.log("TEST ERROR:" + value);
+    
     res.status(statusCode).json({
         message: "success",
         token,
@@ -46,34 +48,38 @@ const createSendToken = (user, statusCode, res) => {
 };
 /* GET Google Authentication API. */
 exports.googleAuth = catchAsync(async (req, res, next) => {
-    const code = req.query.code;
-    console.log("USER CREDENTIAL -> ", code);
+    try {
+        const code = req.query.code;
+        console.log("USER CREDENTIAL -> ", code);
 
-    const googleRes = await oauth2Client.oauth2Client.getToken(code);
+        const googleRes = await oauth2Client.oauth2Client.getToken(code);
 
-    oauth2Client.oauth2Client.setCredentials(googleRes.tokens);
+        oauth2Client.oauth2Client.setCredentials(googleRes.tokens);
 
-    const userRes = await axios.get(
-        `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${googleRes.tokens.access_token}`
-    );
+        const userRes = await axios.get(
+            `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${googleRes.tokens.access_token}`
+        );
 
-    let user = await User.findOne({ email: userRes.data.email });
+        let user = await User.findOne({ email: userRes.data.email });
 
-    if (!user) {
-        console.log("New User found");
-        user = await User.create({
-            name: userRes.data.name,
-            email: userRes.data.email,
-            image: userRes.data.picture,
-        });
+        if (!user) {
+            console.log("New User found");
+            user = await User.create({
+                name: userRes.data.name,
+                email: userRes.data.email,
+                image: userRes.data.picture,
+            });
+        }
+
+        createSendToken(user, 201, res);
+    } catch (err) {
+        next(err);
     }
-
-    createSendToken(user, 201, res);
 });
 
 exports.checkStatus = catchAsync(async (req, res, next) => {
     try {
-        if(!req.user) return res.json({message: "No user to logout"})
+        if (!req.user) return res.json({ message: "No user to logout" });
         let user = await User.findOne({ _id: req.user.id });
         if (user) {
             return res.json({ message: "User is authenticated", user: user });
@@ -81,25 +87,25 @@ exports.checkStatus = catchAsync(async (req, res, next) => {
         return res.json({ message: "User not found! You have been deleted! Login again" });
     } catch (err) {
         console.log(err.message);
-        return res.json({ message: err.message });
-        
+        next(err);
     }
 });
 
 exports.logout = catchAsync(async (req, res) => {
     try {
         // Clear the JWT cookie by setting it to an expired date
-        
+
         res.cookie("jwt", "", {
-            expires: new Date(0), // Expiry date set to epoch time (immediate expiration)
+            expires: new Date(0), // immediate expiration
             httpOnly: true, // Prevent client-side access to the cookie
-            secure: process.env.NODE_ENV === "production", // Secure in production
+            secure: true,
             sameSite: "none", // Ensures the cookie is sent in a same-site context
             path: "/", // Make sure it's cleared for the entire site
         });
 
         return res.json({ message: "Logged out successfully" });
     } catch (err) {
-        res.json({ message: err.message });
+        console.log("ERROR IN LOGOUT: " + err.message);
+        next(err);
     }
 });
