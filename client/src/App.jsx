@@ -12,6 +12,8 @@ import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { AuthProvider } from "./AuthContext.jsx";
 
+const client_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID
+
 const darkTheme = createTheme({
     palette: {
         mode: "dark",
@@ -33,9 +35,10 @@ const darkTheme = createTheme({
 });
 
 function App() {
-
+    console.log(client_ID);
+    
     return (
-        <GoogleOAuthProvider clientId="43400313430-llj3qp9nojmnqmmv578q0goo7fbemoe3.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId={client_ID}>
             <div className="App">
                 <ThemeProvider theme={darkTheme}>
                     <CssBaseline />

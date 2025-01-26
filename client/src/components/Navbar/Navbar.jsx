@@ -12,8 +12,9 @@ import LoginForm from "../Login/LoginForm";
 import React from "react";
 import { useAuth } from "../../AuthContext";
 import { checkStatus } from "../../services/api";
+import AccountMenu from "../AccountMenu/AccountMenu";
 
-function AvatarMenu({ user, handleLogout }) {
+function AvatarMenu({ user, handleLogout, setOpen }) {
     const [anchorEl, setAnchorEl] = useState(null); // Menu anchor state
 
     // Open the menu when avatar is clicked
@@ -25,6 +26,12 @@ function AvatarMenu({ user, handleLogout }) {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    if (!user) {
+        return (
+            <AccountMenu />
+        )
+    }
 
     return (
         <div>
@@ -147,14 +154,20 @@ const Navbar = () => {
                             <NavLink id="nav-merchandise" to="/merchandise" className={"item"}>
                                 Merchandise
                             </NavLink>
+
+                            {/* {user ? (
+                                <AvatarMenu user={user} handleLogout={handleLogout} />
+                            ) : (
+                                <div className="">
+                                    <Button
+                                        variant="filled"
+                                        innerText={"Log in"}
+                                        onClick={() => setLoginOpen((t) => t ^ 1)}
+                                    />
+                                </div>
+                            )} */}
+                            <AccountMenu />
                         </>
-                    )}
-                    {user ? (
-                        <AvatarMenu user={user} handleLogout={handleLogout} />
-                    ) : (
-                        <div className="">
-                            <CustomButton variant="filled" innerText={"Login"} onClick={() => setLoginOpen((t) => t ^ 1)} />
-                        </div>
                     )}
                 </div>
             </div>

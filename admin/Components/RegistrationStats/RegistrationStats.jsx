@@ -1,32 +1,36 @@
 import React, { useRef, useState } from "react";
-import { SearchOutlined, TeamOutlined } from "@ant-design/icons";
-import { Button, Input, Space, Table, Select, Tag } from "antd";
-const { Option } = Select;
+import { SearchOutlined, TeamOutlined, DownloadOutlined } from "@ant-design/icons";
+import { Button, Input, Space, Table, Select, Tag, message } from "antd";
+import * as XLSX from "xlsx";
 
+const { Option } = Select;
+const SINGLE_TABLE_WIDTH = 1000;
+const TEAM_TABLE_WIDTH = 2000;
 const singleReg = [
     {
         title: "#",
         dataIndex: "time",
         key: "time",
-        width: 30
+        width: 30,
     },
     {
         title: "Name",
         dataIndex: "name",
         key: "name",
         sorter: true,
+        width: 250,
     },
     {
         title: "Email",
         dataIndex: "email",
         key: "email",
-        width: 200
+        width: 200,
     },
     {
         title: "Phone",
         dataIndex: "phone",
         key: "phone",
-        width: 300
+        width: 150,
     },
     {
         title: "College",
@@ -49,7 +53,7 @@ const singleReg = [
                     Link
                 </a>
             ),
-        width: 100
+        width: 100,
     },
 ];
 const teamReg = [
@@ -57,26 +61,26 @@ const teamReg = [
         title: "#",
         dataIndex: "time",
         key: "time",
-        width: 30
+        width: 30,
     },
     {
         title: "Name",
         dataIndex: "name",
         key: "name",
         sorter: true,
-        width: 300
+        width: 300,
     },
     {
         title: "Email",
         dataIndex: "email",
         key: "email",
-        width: 200
+        width: 200,
     },
     {
         title: "Phone",
         dataIndex: "phone",
         key: "phone",
-        width: 300
+        width: 300,
     },
     {
         title: "College",
@@ -88,7 +92,7 @@ const teamReg = [
         ],
         onFilter: (value, record) =>
             value === "IIEST Shibpur" ? record.college === value : record.college !== "IIEST Shibpur",
-        width: 500
+        width: 500,
     },
     {
         title: "Payment",
@@ -105,7 +109,7 @@ const teamReg = [
         title: "Team Name",
         dataIndex: "team",
         key: "team",
-        width: 300
+        width: 300,
     },
     {
         title: "Members",
@@ -114,10 +118,9 @@ const teamReg = [
         render: (members) => (
             <>
                 {members.map((member, i) => {
-                    
                     return (
-                        <Tag color={'blue'} key={i} icon={<TeamOutlined/>}>
-                            {member.name} 
+                        <Tag color={"blue"} key={i} icon={<TeamOutlined />}>
+                            {member.name}
                         </Tag>
                     );
                 })}
@@ -141,7 +144,7 @@ const singleRegData = [
         time: "2",
         name: "Bob Smith",
         email: "bob.smith@example.com",
-        college: "IIEST Shibpur",
+        college: "Indian Institute of Engineering Science and Technology, Shibpur",
         phone: "+1-345-678-9012",
     },
     {
@@ -345,12 +348,47 @@ const teamRegData = [
 
 const EventMap = { Jack: singleRegData, Jill: teamRegData };
 
-const StatsTable = ({ data, columns, tableWidth }) => {
-    console.log(`received: ${JSON.stringify(data ? data[0] : "no receive ")}`);
+const getCellItem = (cellitem) => {
+    if (typeof cellitem !== "object") return cellitem;
+    return JSON.stringify(cellitem);
+};
 
+const ExportExcelButton = ({ dataSource, columns, fileName, messageError, messageInfo, messageSuccess }) => {
+    const exportToExcel = () => {
+        if (fileName === 1000) {
+            messageError("No event Selected");
+            return;
+        } else if (!dataSource) {
+            messageInfo("No one has registered in this event yet");
+            return;
+        }
+        const data = dataSource.map((item) => columns.map((col) => getCellItem(item[col.dataIndex])));
+        const ws = XLSX.utils.aoa_to_sheet([columns.map((col) => col.title), ...data]);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+        XLSX.writeFile(wb, `${fileName}.xlsx`);
+        messageSuccess("Data exported successfully")
+    };
+
+    return (
+        <Button
+            onClick={exportToExcel}
+            type="primary"
+            icon={<DownloadOutlined />}
+            iconPosition="end"
+            size="large"
+            style={{ marginBottom: "1rem" }}
+        >
+            Export as Excel
+        </Button>
+    );
+};
+
+const StatsTable = ({ data, columns, tableWidth, eventName, messageError, messageInfo, messageSuccess }) => {
     const [searchText, setSearchText] = useState("");
     const [searchedColumn, setSearchedColumn] = useState("");
     const searchInput = useRef(null);
+
     const handleSearch = (selectedKeys, confirm, dataIndex) => {
         confirm();
         setSearchText(selectedKeys[0]);
@@ -369,6 +407,7 @@ const StatsTable = ({ data, columns, tableWidth }) => {
                 onKeyDown={(e) => e.stopPropagation()}
             >
                 <Input
+                    size="large"
                     ref={searchInput}
                     placeholder={`Search ${dataIndex}`}
                     value={selectedKeys[0]}
@@ -384,7 +423,7 @@ const StatsTable = ({ data, columns, tableWidth }) => {
                         type="primary"
                         onClick={() => handleSearch(selectedKeys, confirm, dataIndex)}
                         icon={<SearchOutlined />}
-                        size="small"
+                        size="large"
                         style={{
                             width: 90,
                         }}
@@ -393,7 +432,7 @@ const StatsTable = ({ data, columns, tableWidth }) => {
                     </Button>
                     <Button
                         onClick={() => clearFilters && handleReset(clearFilters)}
-                        size="small"
+                        size="large"
                         style={{
                             width: 90,
                         }}
@@ -402,7 +441,7 @@ const StatsTable = ({ data, columns, tableWidth }) => {
                     </Button>
                     <Button
                         type="link"
-                        size="small"
+                        size="large"
                         onClick={() => {
                             confirm({
                                 closeDropdown: false,
@@ -463,23 +502,40 @@ const StatsTable = ({ data, columns, tableWidth }) => {
         ...getColumnSearchProps("email"),
     };
 
-    return data && <Table columns={columns} dataSource={data} size="middle" scroll={{x: tableWidth}} />;
+    return (
+        data && (
+            <div>
+                <ExportExcelButton
+                    dataSource={data}
+                    columns={columns}
+                    fileName={eventName}
+                    messageError={messageError}
+                    messageInfo={messageInfo}
+                    messageSuccess={messageSuccess}
+                />
+                <Table columns={columns} dataSource={data} size="middle" scroll={{ x: tableWidth }} />
+            </div>
+        )
+    );
 };
 
-const RegistrationStats = () => {
-    const [dataSrc, SetdataSrc] = useState([]);
+const RegistrationStats = ({messageInfo, messageError, messageSuccess}) => {
+    const [dataSrc, setdataSrc] = useState([]);
     const [columns, setColumns] = useState(singleReg);
-    const [tableWidth, setTableWidth] = useState(1200);
+    const [tableWidth, setTableWidth] = useState(SINGLE_TABLE_WIDTH);
+    const [eventName, setEventName] = useState(SINGLE_TABLE_WIDTH);
+
     const onChange = (value) => {
+        setEventName(value);
         console.log(`selected ${value}`);
         const k = EventMap[value];
-        SetdataSrc(k);
+        setdataSrc(k);
         if (k && k[0] && k[0].team) {
             setColumns(teamReg);
-            setTableWidth(2000)
+            setTableWidth(TEAM_TABLE_WIDTH);
         } else {
             setColumns(singleReg);
-            setTableWidth(1200)
+            setTableWidth(SINGLE_TABLE_WIDTH);
         }
         console.log(`columns: ${JSON.stringify(columns)}`);
         console.log(k[0]);
@@ -490,7 +546,7 @@ const RegistrationStats = () => {
             <div style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Select an Event</div>
             <Select
                 size="large"
-                style={{ width: "100%", marginBottom: '2rem' }}
+                style={{ width: "100%", marginBottom: "2rem" }}
                 showSearch
                 placeholder="Select an Event"
                 optionFilterProp="value"
@@ -515,7 +571,15 @@ const RegistrationStats = () => {
                 ]}
             ></Select>
             <br />
-            <StatsTable data={dataSrc} columns={columns} tableWidth={tableWidth}/>
+            <StatsTable
+                data={dataSrc}
+                columns={columns}
+                tableWidth={tableWidth}
+                eventName={eventName}
+                messageError={messageError}
+                messageInfo={messageInfo}
+                messageSuccess={messageSuccess}
+            />
         </div>
     );
 };

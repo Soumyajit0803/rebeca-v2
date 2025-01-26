@@ -1,0 +1,16 @@
+.user-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    gap: 1rem;
+    padding: 5px;
+    margin: 0.5rem 0;
+    width: 300px;
+    word-wrap: break-word;
+    line-height: 1.2em
+}
+
+.MuiPaper-root {
+    background-color: #37474f !important;
+}
