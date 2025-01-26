@@ -76,11 +76,13 @@ exports.checkStatus = catchAsync(async (req, res, next) => {
         if(!req.user) return res.json({message: "No user to logout"})
         let user = await User.findOne({ _id: req.user.id });
         if (user) {
-            res.json({ message: "User is authenticated", user: user });
+            return res.json({ message: "User is authenticated", user: user });
         }
-        res.json({ message: "User not found! You have been deleted! Login again" });
+        return res.json({ message: "User not found! You have been deleted! Login again" });
     } catch (err) {
-        res.json({ message: err.message });
+        console.log(err.message);
+        return res.json({ message: err.message });
+        
     }
 });
 

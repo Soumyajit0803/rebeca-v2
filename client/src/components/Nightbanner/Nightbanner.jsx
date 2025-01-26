@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Nightbanner.css";
 
-import Button from "../Button/Button";
+import CustomButton from "../Button/Button";
 
 const Description = {
   saptami:
@@ -40,7 +40,7 @@ const BannerLeft = ({ day }) => {
         </Link>
         <p>{Description[day.toLowerCase()]}</p>
         <Link to={`/events/${day.toLowerCase()}`}>
-          <Button variant={"filled"} innerText={"Learn More"}></Button>
+          <CustomButton variant={"filled"} innerText={"Learn More"}></CustomButton>
         </Link>
       </div>
     </div>
@@ -55,7 +55,7 @@ const BannerRight = ({ day }) => {
         </Link>
         <p>{Description[day.toLowerCase()]}</p>
         <Link to={`/events/${day.toLowerCase()}`}>
-          <Button variant={"filled"} innerText={"Learn More"}></Button>
+          <CustomButton variant={"filled"} innerText={"Learn More"}></CustomButton>
         </Link>
       </div>
       <div className="img-section">

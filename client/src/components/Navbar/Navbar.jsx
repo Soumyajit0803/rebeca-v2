@@ -1,25 +1,12 @@
 import { useState, useEffect } from "react";
-import {
-    Drawer,
-    Divider,
-    Avatar,
-    Menu,
-    MenuItem,
-    IconButton,
-    Accordion,
-    AccordionSummary,
-    AccordionDetails,
-    Stack,
-    Typography,
-    Snackbar,
-    Alert
-} from "@mui/material";
+import { Drawer, Avatar, Menu, MenuItem, IconButton, Typography, Button } from "@mui/material";
 
 // import {Button} from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
-import Button from "../Button/Button";
+import CustomButton from "../Button/Button";
 import "./Navbar.css";
 import Progressbar from "../Progressbar/Progressbar";
+import { LogoutOutlined, ExportOutlined } from "@ant-design/icons";
 
 import LoginForm from "../Login/LoginForm";
 import React from "react";
@@ -42,8 +29,7 @@ function AvatarMenu({ user, handleLogout }) {
     return (
         <div>
             <IconButton onClick={handleClick}>
-                <Avatar alt={user.name} src={user.image}>
-                </Avatar>
+                <Avatar alt={user.name} src={user.image}></Avatar>
             </IconButton>
             <Menu
                 anchorEl={anchorEl}
@@ -57,12 +43,20 @@ function AvatarMenu({ user, handleLogout }) {
                     vertical: "bottom",
                     horizontal: "center",
                 }}
+                sx={{ top: "60px" }}
             >
-                <Typography sx={{p:1}} variant="body2">Hi, {user.name.split(' ')[0]}!</Typography>
-                <MenuItem onClick = {()=>{
-                    handleClose();
-                    handleLogout()
-                }}>Logout</MenuItem>
+                <Typography sx={{ p: 1 }} variant="body2">
+                    Hi, {user.name.split(" ")[0]}!
+                </Typography>
+                <MenuItem
+                    onClick={() => {
+                        handleClose();
+                        handleLogout();
+                    }}
+                    sx={{gap: "10px"}}
+                >
+                    Logout <LogoutOutlined />
+                </MenuItem>
             </Menu>
         </div>
     );
@@ -74,21 +68,21 @@ const Navbar = () => {
     const [loginOpen, setLoginOpen] = useState(false);
 
     const { user, handleLogin, handleLogout } = useAuth();
-    const isLoggedIn = async()=>{
-        try{
-        const res = await checkStatus();
-        if(!res.data.user)return
-        console.log(res?.data?.message)
-        handleLogin(res?.data?.user)
-        }catch(err){
+    const isLoggedIn = async () => {
+        try {
+            const res = await checkStatus();
+            if (!res.data.user) return;
+            console.log(res?.data?.message);
+            handleLogin(res?.data?.user);
+        } catch (err) {
             console.log("status check fail");
             console.log(err.message);
         }
-    }
+    };
 
-    useEffect(()=>{
-        isLoggedIn()
-    }, [])
+    useEffect(() => {
+        isLoggedIn();
+    }, []);
 
     const handleDrawerOpen = () => {
         setDrawerOpen(true);
@@ -105,6 +99,7 @@ const Navbar = () => {
         <>
             <div className="navbar">
                 <Progressbar />
+
                 {/* {user && <Notification message={`Welcome, ${user.name.split(' ')[0]}`} />} */}
                 <LoginForm open={loginOpen} setOpen={setLoginOpen} />
                 <div className="left-col">
@@ -117,7 +112,7 @@ const Navbar = () => {
 
                     {width <= 720 && (
                         <>
-                            <Button
+                            <CustomButton
                                 id="drawer-open-btn"
                                 onClick={handleDrawerOpen}
                                 variant="filled"
@@ -128,7 +123,7 @@ const Navbar = () => {
                                         menu
                                     </span>
                                 }
-                            ></Button>
+                            ></CustomButton>
                         </>
                     )}
                 </div>
@@ -152,19 +147,14 @@ const Navbar = () => {
                             <NavLink id="nav-merchandise" to="/merchandise" className={"item"}>
                                 Merchandise
                             </NavLink>
-
-                            {user ? (
-                                <AvatarMenu user={user} handleLogout={handleLogout} />
-                            ) : (
-                                <div className="">
-                                    <Button
-                                        variant="filled"
-                                        innerText={"Log in"}
-                                        onClick={() => setLoginOpen((t) => t ^ 1)}
-                                    />
-                                </div>
-                            )}
                         </>
+                    )}
+                    {user ? (
+                        <AvatarMenu user={user} handleLogout={handleLogout} />
+                    ) : (
+                        <div className="">
+                            <CustomButton variant="filled" innerText={"Login"} onClick={() => setLoginOpen((t) => t ^ 1)} />
+                        </div>
                     )}
                 </div>
             </div>
@@ -178,7 +168,7 @@ const Navbar = () => {
                         {/* REBECA */}
                     </div>
                 </Link>
-                <Button
+                <CustomButton
                     id="drawer-close-btn"
                     onClick={handleDrawerClose}
                     variant="text"
@@ -187,7 +177,7 @@ const Navbar = () => {
                     className={"drawer-close-btn"}
                     innerText={<span className="material-icons">close</span>}
                     arrowHover={false}
-                ></Button>
+                ></CustomButton>
                 <div className="nav-items">
                     <NavLink className={"item"} to="/" onClick={handleLinkClick}>
                         Home
