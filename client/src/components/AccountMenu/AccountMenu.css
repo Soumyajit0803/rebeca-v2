@@ -1,0 +1,14 @@
+.user-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    gap: 1rem;
+    padding: 0;
+    margin: 0.5rem 0;
+    width: 300px
+}
+
+.MuiPaper-root {
+    background-color: #37474f !important;
+}
