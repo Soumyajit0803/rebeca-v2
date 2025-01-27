@@ -64,9 +64,9 @@ app.use('/api/v1/auth/', authRouter);
 app.use('/api/v1/admin/', adminRouter);
 
 
-app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
-	next(new AppError(`Can't find ${req.originalUrl} on the server`, 404));
-});
+// app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
+// 	next(new AppError(`Can't find ${req.originalUrl} on the server`, 404));
+// });
 
 app.use(errorHandler); // <- Error Handling Middleware
 

@@ -1,6 +1,9 @@
 import React from "react";
 import { Form, Input, Select, Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import { postImage } from "../../api";
+import { useState } from "react";
+import { message } from "antd";
 
 const { Option } = Select;
 const teamNames = [
@@ -32,9 +35,45 @@ const teamRoles = [
 const MemberAddition = () => {
     const [form] = Form.useForm();
 
-    const onFinish = (values) => {
+    const [imagePreview, setImagePreview] = useState(""); // <- To 
+	const [imageFile, setImageFile] = useState({});
+	const [imageUrl, setImageUrl] = useState(null);
+
+    const onFinish = async(values) => {
+        await handleSubmitImage();
+
+        const formData = new FormData();
+        
         console.log("Form Values:", values);
     };
+
+    const handleImagePreview = (e) => {	// <- This will let you preview the uploaded image
+		const file = e.target.files[0];
+		setImageFile(file);
+
+		if (file) {
+			const reader = new FileReader();
+
+			reader.addEventListener("load", e => {
+				setImagePreview(e.target.result);
+			});
+
+			reader.readAsDataURL(file);
+		}
+	};
+	const handleSubmitImage = async () => {	// <- This will send the selected image to our api
+		try {
+			const res = await postImage({ image: imageFile });
+			console.log(res.data.data.imageUrl);
+			setImageUrl(res.data.data.imageUrl);
+		}
+		catch (err) {
+			console.log(err)
+            const errormsg = err.response?err.response.data.message:err.message
+            message.error(`ERROR: ${errormsg}`)
+		}
+	}
+
 
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
@@ -55,11 +94,14 @@ const MemberAddition = () => {
                     name="profilePic"
                     valuePropName="file"
                     rules={[{ required: true, message: "Please upload a profile picture" }]}
+                    onChange={(e)=>handleImagePreview(e)}
+
                 >
                     <Upload
                         name="profilePic"
                         listType="picture"
                         beforeUpload={() => false} // Prevent auto-upload
+                        maxCount={1}
                     >
                         <Button icon={<UploadOutlined />}>Upload Profile Picture</Button>
                     </Upload>
