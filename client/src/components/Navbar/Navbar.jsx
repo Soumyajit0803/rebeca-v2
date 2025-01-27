@@ -1,31 +1,20 @@
 import { useState, useEffect } from "react";
-import {
-    Drawer,
-    Divider,
-    Avatar,
-    Menu,
-    MenuItem,
-    IconButton,
-    Accordion,
-    AccordionSummary,
-    AccordionDetails,
-    Stack,
-    Typography,
-    Snackbar,
-    Alert
-} from "@mui/material";
+import { Drawer, Avatar, Menu, MenuItem, IconButton, Typography, Button, Box } from "@mui/material";
 
 // import {Button} from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
-import Button from "../Button/Button";
+import CustomButton from "../Button/Button";
 import "./Navbar.css";
 import Progressbar from "../Progressbar/Progressbar";
+import { LogoutOutlined, ExportOutlined } from "@ant-design/icons";
 
 import LoginForm from "../Login/LoginForm";
 import React from "react";
 import { useAuth } from "../../AuthContext";
 import { checkStatus } from "../../services/api";
 import AccountMenu from "../AccountMenu/AccountMenu";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Close } from "@mui/icons-material";
 
 function AvatarMenu({ user, handleLogout, setOpen }) {
     const [anchorEl, setAnchorEl] = useState(null); // Menu anchor state
@@ -41,16 +30,13 @@ function AvatarMenu({ user, handleLogout, setOpen }) {
     };
 
     if (!user) {
-        return (
-            <AccountMenu />
-        )
+        return <AccountMenu />;
     }
 
     return (
         <div>
             <IconButton onClick={handleClick}>
-                <Avatar alt={user.name} src={user.image}>
-                </Avatar>
+                <Avatar alt={user.name} src={user.image}></Avatar>
             </IconButton>
             <Menu
                 anchorEl={anchorEl}
@@ -64,12 +50,20 @@ function AvatarMenu({ user, handleLogout, setOpen }) {
                     vertical: "bottom",
                     horizontal: "center",
                 }}
+                sx={{ top: "60px" }}
             >
-                <Typography sx={{p:1}} variant="body2">Hi, {user.name.split(' ')[0]}!</Typography>
-                <MenuItem onClick = {()=>{
-                    handleClose();
-                    handleLogout()
-                }}>Logout</MenuItem>
+                <Typography sx={{ p: 1 }} variant="body2">
+                    Hi, {user.name.split(" ")[0]}!
+                </Typography>
+                <MenuItem
+                    onClick={() => {
+                        handleClose();
+                        handleLogout();
+                    }}
+                    sx={{ gap: "10px" }}
+                >
+                    Logout <LogoutOutlined />
+                </MenuItem>
             </Menu>
         </div>
     );
@@ -81,21 +75,21 @@ const Navbar = () => {
     const [loginOpen, setLoginOpen] = useState(false);
 
     const { user, handleLogin, handleLogout } = useAuth();
-    const isLoggedIn = async()=>{
-        try{
-        const res = await checkStatus();
-        if(!res.data.user)return
-        console.log(res?.data?.message)
-        handleLogin(res?.data?.user)
-        }catch(err){
+    const isLoggedIn = async () => {
+        try {
+            const res = await checkStatus();
+            if (!res.data.user) return;
+            console.log(res?.data?.message);
+            handleLogin(res?.data?.user);
+        } catch (err) {
             console.log("status check fail");
             console.log(err.message);
         }
-    }
+    };
 
-    useEffect(()=>{
-        isLoggedIn()
-    }, [])
+    useEffect(() => {
+        isLoggedIn();
+    }, []);
 
     const handleDrawerOpen = () => {
         setDrawerOpen(true);
@@ -112,32 +106,20 @@ const Navbar = () => {
         <>
             <div className="navbar">
                 <Progressbar />
+
                 {/* {user && <Notification message={`Welcome, ${user.name.split(' ')[0]}`} />} */}
                 <LoginForm open={loginOpen} setOpen={setLoginOpen} />
                 <div className="left-col">
-                    <Link to="/" className="logo">
-                        <div>
-                            <img src="/assets/logo/logo_white.webp" alt="rebeca_logo" />
-                            {/* REBECA */}
-                        </div>
+                    <IconButton id="drawer-open-btn" onClick={handleDrawerOpen} variant="filled" color="white">
+                        <MenuIcon />
+                    </IconButton>
+                    <Link to="/">
+                        <img
+                            src="/assets/logo/logo_white.webp"
+                            alt="rebeca_logo"
+                            style={{ padding: "1rem 0px", width: "100px", marginLeft: "10px" }}
+                        />
                     </Link>
-
-                    {width <= 720 && (
-                        <>
-                            <Button
-                                id="drawer-open-btn"
-                                onClick={handleDrawerOpen}
-                                variant="filled"
-                                color="black"
-                                arrowHover={false}
-                                innerText={
-                                    <span className="material-icons" style={{ color: "var(--red)" }}>
-                                        menu
-                                    </span>
-                                }
-                            ></Button>
-                        </>
-                    )}
                 </div>
 
                 <div className="nav-items">
@@ -174,28 +156,35 @@ const Navbar = () => {
                             <AccountMenu />
                         </>
                     )}
+                    {width < 720 && (
+                        <Box
+                            sx={{
+                                display: "flex",
+                            }}
+                        >
+                            <AccountMenu />
+                        </Box>
+                    )}
                 </div>
             </div>
             <Drawer variant="persistent" anchor="left" open={drawerOpen} className="drawer">
-                <div className="bg">
-                    <img src="/assets/imgs/menu.webp" alt="" />
-                </div>
-                <Link to="/" className="logo">
-                    <div>
-                        <img src="/assets/logo/logo_white.webp" alt="" />
-                        {/* REBECA */}
-                    </div>
-                </Link>
-                <Button
-                    id="drawer-close-btn"
-                    onClick={handleDrawerClose}
-                    variant="text"
-                    color="purple"
-                    size="large"
-                    className={"drawer-close-btn"}
-                    innerText={<span className="material-icons">close</span>}
-                    arrowHover={false}
-                ></Button>
+                <div className="bg"></div>
+                <Box
+                    sx={{
+                        display: "flex",
+                        width: "100%",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        padding: "1rem",
+                    }}
+                >
+                    <Link to="/" className="logo">
+                        <img style={{ padding: "5px", width: "150px" }} src="/assets/logo/logo_white.webp" alt="" />
+                    </Link>
+                    <IconButton id="drawer-close-btn" onClick={handleDrawerClose} color="white">
+                        <Close />
+                    </IconButton>
+                </Box>
                 <div className="nav-items">
                     <NavLink className={"item"} to="/" onClick={handleLinkClick}>
                         Home

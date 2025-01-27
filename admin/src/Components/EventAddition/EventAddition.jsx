@@ -13,7 +13,6 @@ import {
     Modal,
 } from "antd";
 import Icon, { UploadOutlined, MoneyCollectOutlined } from "@ant-design/icons";
-import "./EventAddition.css";
 // import axios from "axios";
 
 const { TextArea } = Input;

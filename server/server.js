@@ -2,7 +2,6 @@ require("dotenv").config();
 const mongoose = require("mongoose")
 const app = require("./app");
 
-// Below snippet is used to connect to DB. This is disablled becouse we will not be needing Database for this project
 
 // Connecting to DATABASE ->>
 const DB = process.env.MONGO_CLIENT_URI.replace(
@@ -22,8 +21,8 @@ mongoose
 		console.log('DB connection established');
 	})
 	.catch((err) => {
-		console.log('DB CONNECTION FAILED');
-		console.log('ERR: ', err);
+		console.log("DB cCONNECTION ERROR: " + err.message);
+		
 	});
 
 // Catching uncaught exception ->>

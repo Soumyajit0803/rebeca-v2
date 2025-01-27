@@ -4,9 +4,11 @@
     align-items: center;
     /* background-color: red; */
     gap: 1rem;
-    padding: 0;
+    padding: 5px;
     margin: 0.5rem 0;
-    width: 300px
+    width: 300px;
+    word-wrap: break-word;
+    line-height: 1.2em
 }
 
 .MuiPaper-root {

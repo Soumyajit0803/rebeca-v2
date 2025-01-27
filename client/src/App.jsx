@@ -12,6 +12,8 @@ import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { AuthProvider } from "./AuthContext.jsx";
 
+const client_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID
+
 const darkTheme = createTheme({
     palette: {
         mode: "dark",
@@ -33,32 +35,10 @@ const darkTheme = createTheme({
 });
 
 function App() {
-    // const [user, setUser] = useState(
-    // 	JSON.parse(localStorage.getItem("user")) || null
-    // );
-    // const [authOpen, setAuthOpen] = useState(false);
-    // const [emailVerificationOpen, setEmailVerificationOpen] = useState(false);
-
-    // const login = (userData, jwt) => {
-    // 	setUser(userData);
-    // 	localStorage.setItem("user", JSON.stringify(userData));
-    // 	localStorage.setItem("jwt", JSON.stringify(jwt));
-    // };
-    // const logout = () => {
-    // 	setUser(null);
-    // 	localStorage.setItem("user", JSON.stringify(null));
-    // 	localStorage.removeItem("jwt");
-    // };
-
-    // const handleAuthOpen = () => {
-    // 	setAuthOpen(true);
-    // };
-    // const handleAuthClose = () => {
-    // 	setAuthOpen(false);
-    // };
-
+    console.log(client_ID);
+    
     return (
-        <GoogleOAuthProvider clientId="43400313430-llj3qp9nojmnqmmv578q0goo7fbemoe3.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId={client_ID}>
             <div className="App">
                 <ThemeProvider theme={darkTheme}>
                     <CssBaseline />

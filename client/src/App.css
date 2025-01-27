@@ -21,6 +21,10 @@
   width: 100%;
   overflow: hidden;
 }
+
+.css-1pxa9xg-MuiAlert-message {
+  color: #fff !important
+}
 /* .preloader{
   background-color: #121212;
   height: 100%;

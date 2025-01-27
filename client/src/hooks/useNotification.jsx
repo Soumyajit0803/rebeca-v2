@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Snackbar, Alert } from '@mui/material';
 
+
 const useNotification = () => {
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState('');
@@ -19,20 +20,12 @@ const useNotification = () => {
     const Notification = () => (
         <Snackbar
             open={open}
-            autoHideDuration={6000}
+            // autoHideDuration={100000}
             onClose={handleClose}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-            sx={{
-                '& .MuiSnackbarContent-root': {
-                    borderRadius: '8px',
-                    padding: '12px 20px',
-                    backgroundColor: '#1976d2', // Example background
-                    color: 'white', // Text color
-                    boxShadow: '0px 4px 6px rgba(0,0,0,0.2)', // Shadow
-                },
-            }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+            style={{ top: '70px' }}
         >
-            <Alert onClose={handleClose} severity={severity} sx={{ width: '100%' }}>
+            <Alert variant='filled' onClose={handleClose} severity={severity} sx={{ width: '100%' }}>
                 {message}
             </Alert>
         </Snackbar>
