@@ -34,9 +34,6 @@ const createSendToken = (user, statusCode, res) => {
 
     console.log(user);
     console.log("Cookie stored");
-
-    const value = 1/0;
-    console.log("TEST ERROR:" + value);
     
     res.status(statusCode).json({
         message: "success",

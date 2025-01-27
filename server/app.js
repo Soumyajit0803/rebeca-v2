@@ -10,7 +10,6 @@ const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const dotenv = require('dotenv');
 
-const router = require('./routes/mainroutes');
 const errorHandler = require('./middlewares/errorHandler')
 const app = express();
 
@@ -56,11 +55,13 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' })); // <- Parses UR
 // app.use(xss()); // <- Data Sanitization against xss
 
 // app.use(compression());
-
-const authRouter = require('./routes/authRoutes'); // <- NEW LINE
+const router = require('./routes/mainroutes');
+const authRouter = require('./routes/authRoutes');
+const adminRouter = require('./routes/adminRoutes')
 
 app.use('/api/v1/', router); // <- Calling the router
-app.use('/api/v1/auth/', authRouter); // <- NEW LINE
+app.use('/api/v1/auth/', authRouter);
+app.use('/api/v1/admin/', adminRouter);
 
 
 app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
