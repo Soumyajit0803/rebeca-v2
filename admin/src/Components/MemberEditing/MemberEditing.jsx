@@ -3,6 +3,31 @@ import { Form, Input, Select, Upload, Button } from "antd";
 import { UploadOutlined, DeleteOutlined, DeleteFilled } from "@ant-design/icons";
 
 const { Option } = Select;
+const teamNames = [
+    "Secretary General",
+    "Finance",
+    "Cultural",
+    "Resource Information",
+    "Travel & Logistics",
+    "Sponsorship",
+    "Publication",
+    "Publicity",
+    "Stage Decoration",
+    "Business & Alumni Meet",
+    "Competitions and Seminars",
+    "Web Development",
+    "Refreshments",
+    "Volunteers",
+    "Photography",
+    "Joint Secretary",
+    "Fixed Signatory",
+    "BECA Magazine",
+];
+const teamRoles = [
+    "Head",
+    "Associate Head",
+    "Associate",
+]
 
 const MemberEditing = ({ memberDetails, onUpdate }) => {
     const [form] = Form.useForm();
@@ -18,7 +43,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
 
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
-            <span style={{fontSize: '1.3rem', fontWeight: '500'}}>Find the Team member</span>
+            <span style={{ fontSize: "1.3rem", fontWeight: "500" }}>Find the Team member</span>
             <br />
             <Select
                 size="large"
@@ -42,7 +67,16 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                     },
                 ]}
             ></Select>
-            <Button danger type="primary" size="large" style={{marginTop: '1rem'}} icon={<DeleteFilled />} iconPosition="end">Delete Team Member</Button>
+            <Button
+                danger
+                type="primary"
+                size="large"
+                style={{ marginTop: "1rem" }}
+                icon={<DeleteFilled />}
+                iconPosition="end"
+            >
+                Delete Team Member
+            </Button>
 
             <h1 style={{ marginTop: "2rem" }}>Edit Team Member</h1>
             <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large">
@@ -74,17 +108,20 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 <div
                     style={{
                         display: "flex",
-
+                        flexWrap: 'wrap',
                         gap: "1rem",
                     }}
                 >
                     {/* Role */}
-                    <Form.Item label="Role" name="role" rules={[{ required: true, message: "Please select a role" }]}>
+                    <Form.Item label="Role" name="role" rules={[{ required: true, message: "Please select a role" }]} style={{width: 200}}>
                         <Select placeholder="Select a role">
-                            <Option value="developer">Developer</Option>
-                            <Option value="designer">Designer</Option>
-                            <Option value="tester">Tester</Option>
-                            <Option value="manager">Manager</Option>
+                            {teamRoles.map((role, i) => {
+                                return (
+                                    <Option value={role} key={i}>
+                                        {role}
+                                    </Option>
+                                );
+                            })}
                         </Select>
                     </Form.Item>
                     {/* Team Name */}
@@ -92,12 +129,18 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                         label="Team Name"
                         name="teamName"
                         rules={[{ required: true, message: "Please enter the team name" }]}
+                        style={{width: 300}}
                     >
                         <Select placeholder="Select Team Name">
-                            <Option value="developer">Web Developer</Option>
-                            <Option value="designer">Content</Option>
-                            <Option value="tester">Design</Option>
-                            <Option value="manager">Sponsorship</Option>
+                            <Select placeholder="Select Team Name">
+                                {teamNames.map((team, i) => {
+                                    return (
+                                        <Option value={team} key={i}>
+                                            {team}
+                                        </Option>
+                                    );
+                                })}
+                            </Select>
                         </Select>
                     </Form.Item>
                 </div>
