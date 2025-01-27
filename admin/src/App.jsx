@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Tabs, ConfigProvider, theme, message } from "antd";
-import EventRegistration from "../Components/EventAddition/EventAddition";
-import MemberAddition from "../Components/MemberAddition/MemberAddition";
-import MemberEditing from "../Components/MemberEditing/MemberEditing";
-import RegistrationStats from "../Components/RegistrationStats/RegistrationStats";
+import EventRegistration from "./Components/EventAddition/EventAddition";
+import MemberAddition from "./Components/MemberAddition/MemberAddition";
+import MemberEditing from "./Components/MemberEditing/MemberEditing";
+import RegistrationStats from "./Components/RegistrationStats/RegistrationStats";
+import EventEditing from "./Components/EventEditing/EventEditing";
 
 const App = () => {
     const [OpSelect, setOpSelect] = useState(1);
@@ -37,7 +38,7 @@ const App = () => {
         {
             key: "2",
             label: "Edit Event",
-            children: "Content of Tab Pane 2",
+            children: <EventEditing />,
         },
         {
             key: "3",
