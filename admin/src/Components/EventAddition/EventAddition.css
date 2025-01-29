@@ -1,0 +1,8 @@
+.images-section {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}

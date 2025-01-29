@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import { Form, Input, Select, Upload, Button } from "antd";
+import { Form, Input, Select, Upload, Button, ConfigProvider, theme } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { createMember, postImage } from "../../api";
 import { useState } from "react";
 import { message } from "antd";
 import axios from "axios";
 import ImgCrop from "antd-img-crop";
+import "./MemberAddition.css";
+// import CustomUpload from "./CustomUpload";
 
 const { Option } = Select;
 const teamNames = [
@@ -37,6 +39,25 @@ const MemberAddition = () => {
     const [imagePreview, setImagePreview] = useState(""); // <- To
     const [imageFile, setImageFile] = useState({});
     const formData = new FormData();
+
+    const [fileList, setFileList] = useState([]);
+    const onChange = ({ fileList: newFileList }) => {
+        setFileList(newFileList);
+    };
+    const onPreview = async (file) => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow?.document.write(image.outerHTML);
+    };
 
     const onFinish = async (values) => {
         try {
@@ -77,7 +98,7 @@ const MemberAddition = () => {
     const handleSubmitImage = async () => {
         // <- This will send the selected image to our api
         try {
-            const res = await postImage({ image: imageFile });
+            const res = await postImage({ image: fileList[0].originFileObj });
             console.log(res.data.data.imageUrl);
             return res.data.data.imageUrl;
         } catch (err) {
@@ -85,21 +106,6 @@ const MemberAddition = () => {
             const errormsg = err.response ? err.response.data.message : err.message;
             message.error(`ERROR: ${errormsg}`);
         }
-    };
-
-    const onPreview = async (file) => {
-        let src = file.url;
-        if (!src) {
-            src = await new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file.originFileObj);
-                reader.onload = () => resolve(reader.result);
-            });
-        }
-        const image = new Image();
-        image.src = src;
-        const imgWindow = window.open(src);
-        imgWindow?.document.write(image.outerHTML);
     };
 
     return (
@@ -116,25 +122,44 @@ const MemberAddition = () => {
                 </Form.Item>
 
                 {/* Profile Pic */}
-                <Form.Item
+                {/* <Form.Item
                     label="Profile Pic"
                     name="profilePic"
                     valuePropName="file"
                     rules={[{ required: true, message: "Please upload a profile picture" }]}
-                    onChange={(e) => handleImagePreview(e)}
+                    // onChange={(e) => handleImagePreview(e)}
+
+                > */}
+                <div className="mandatory-star">*</div>
+                <span style={{ fontFamily: "Poppins" }}>Profile Image</span>
+                <ConfigProvider
+                    theme={{
+                        algorithm: theme.darkAlgorithm,
+                    }}
                 >
-                    {/* <ImgCrop rotationSlider zoomSlider showGrid> */}
+                    <ImgCrop rotationSlider>
                         <Upload
-                            name="profilePic"
-                            listType="picture-card"
-                            beforeUpload={() => false} // Prevent auto-upload
                             maxCount={1}
-                            // onPreview={onPreview}
+                            listType="picture-card"
+                            fileList={fileList}
+                            onChange={onChange}
+                            onPreview={onPreview}
+                            progress={{
+                                strokeColor: {
+                                    "0%": "#5075f6",
+                                    "100%": "#705dea",
+                                },
+                                strokeWidth: 3,
+                                format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+                            }}
+                            // customRequest={() => true}
                         >
-                            <UploadOutlined />
+                            {fileList.length < 1 && "+ Upload"}
                         </Upload>
-                    {/* </ImgCrop> */}
-                </Form.Item>
+                    </ImgCrop>
+                </ConfigProvider>
+                {/* <CustomUpload onChange={onChange} onPreview={onPreview} fileList={fileList} /> */}
+                {/* </Form.Item> */}
 
                 <div
                     style={{
@@ -143,6 +168,7 @@ const MemberAddition = () => {
                         alignItems: "left",
                         gap: "1rem",
                         flexWrap: "wrap",
+                        marginTop: "1rem",
                     }}
                 >
                     {/* Role */}

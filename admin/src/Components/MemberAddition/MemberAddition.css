@@ -1,0 +1,21 @@
+.ant-upload-list-item-error {
+    border-color: #424242 !important;
+}
+
+.ant-upload-list-item-container > .ant-tooltip {
+    display: none !important;
+}
+
+.mandatory-star {
+    display: inline-block;
+    margin-inline-end: 4px;
+    color: #dc4446;
+    font-size: 14px;
+    font-family: SimSun,sans-serif;
+    line-height: 1;
+    content: "*";
+}
+
+.ant-modal-body {
+    color: #fff !important
+}

@@ -11,9 +11,12 @@ import {
     Select,
     message,
     Modal,
+    Tag
 } from "antd";
 import Icon, { UploadOutlined, MoneyCollectOutlined } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
+// import axios from "axios";
+import "./EventAddition.css";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
@@ -44,11 +47,14 @@ const EventRegistration = () => {
     const [eventType, setEventType] = useState(null);
     const [loading, setLoading] = useState(false);
     const [modalInstance, setModalInstance] = useState(null);
+<<<<<<< HEAD
 
     const {user} = useAuth();
 
     console.log(user);
     
+=======
+>>>>>>> 189080bf926055ed67dfecf9f09a04a5897c6d75
 
     const onFinish = async (values) => {
         setLoading(true);
@@ -71,54 +77,10 @@ const EventRegistration = () => {
         values.galleryImages?.fileList.forEach((file) => {
             formData.append("gallery", file.originFileObj);
         });
-        // axios
-        //     .post(POST_URL, formData, {
-        //         headers: { "Content-Type": "multipart/form-data" },
-        //     })
-        //     .then((response) => {
-        //         console.log("Event created successfully!");
-        //         const { _id } = response.data; // Assuming MongoDB ID is returned as `_id`
-        //         console.log("API Response:", response.data);
-        //         setLoading(false);
-
-        //         // start modal to redirect
-        //         let countdownTime = 3;
-        //         let secondsToGo = countdownTime;
-        //         const instance = Modal.success({
-        //             title: "Event Added Successfully",
-        //             content: `Redirecting to events page in ${secondsToGo} seconds...`,
-        //             okButtonProps: { style: { display: "none" } }, // Hide the OK button
-        //             keyboard: false, // Prevent closing on Esc key press
-        //             maskClosable: false,
-        //         });
-
-        //         const timer = setInterval(() => {
-        //             secondsToGo -= 1;
-        //             instance.update({
-        //                 content: `Redirecting to events page in ${secondsToGo} seconds...`,
-        //             });
-        //         }, 1000);
-
-        //         setModalInstance(instance);
-        //         setTimeout(() => {
-        //             clearInterval(timer);
-        //             instance.destroy();
-        //             openEventPage();
-        //         }, countdownTime * 1000);
-        //         // end
-        //     })
-        //     .catch((err) => {
-        //         setLoading(false);
-        //         console.log("Error while adding the event");
-        //         message.error(`${err.code}: ${err.message}`);
-        //         console.log(err);
-        //     });
-
-        // console.log(values);
     };
 
     return (
-        <div style={{ maxWidth: 1200}}>
+        <div style={{ maxWidth: 1200 }}>
             <div className="register-container">
                 <h1>Event Addition</h1>
                 <Form form={form} layout="vertical" onFinish={onFinish} size="large">
@@ -211,38 +173,49 @@ const EventRegistration = () => {
                     </Form.Item>
 
                     {/* Poster Image */}
-                    <Form.Item
-                        label="Poster Image"
-                        name="posterImage"
-                        rules={[
-                            {
-                                required: true,
-                            },
-                        ]}
-                    >
-                        <Upload
-                            beforeUpload={() => false}
-                            maxCount={1}
-                            listType="picture"
-                            accept="image/png, image/jpeg, image/jpg"
-                            action={"/#"}
+                    <div className="images-section">
+                        <Form.Item
+                            label="Poster Image"
+                            name="posterImage"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: "Please provide Poster Image",
+                                },
+                            ]}
                         >
-                            <Button icon={<UploadOutlined />}>Upload Poster</Button>
-                        </Upload>
-                    </Form.Item>
+                            <Upload
+                                beforeUpload={() => false}
+                                maxCount={1}
+                                listType="picture"
+                                accept="image/png, image/jpeg, image/jpg"
+                                action={"/#"}
+                            >
+                                <Button icon={<UploadOutlined />}>Upload Poster</Button>
+                            </Upload>
+                        </Form.Item>
 
-                    {/* Gallery Images */}
-                    <Form.Item label="Gallery Images" name="galleryImages">
-                        <Upload
-                            multiple
-                            listType="picture"
-                            accept="image/png, image/jpeg, image/jpg"
-                            beforeUpload={() => false}
+                        {/* Gallery Images */}
+                        <Form.Item
+                            label="Thumbnail"
+                            name="thumbnail"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: "Please Provide Thumbnail for your event",
+                                },
+                            ]}
                         >
-                            <Button icon={<UploadOutlined />}>Upload Gallery Images</Button>
-                        </Upload>
-                    </Form.Item>
-
+                            <Upload
+                                listType="picture"
+                                accept="image/png, image/jpeg, image/jpg"
+                                beforeUpload={() => false}
+                                maxCount={1}
+                            >
+                                <Button icon={<UploadOutlined />}>Upload Thumbnail</Button>
+                            </Upload>
+                        </Form.Item>
+                    </div>
                     <Form.Item
                         name="type"
                         label="Event type"
@@ -351,18 +324,35 @@ const EventRegistration = () => {
                             min={0}
                         />
                     </Form.Item>
-                    <Form.Item
-                        label="Registration URL"
-                        name="registrationUrl"
-                        rules={[
-                            {
-                                required: true,
-                                type: "url",
-                                message: "Please enter a valid URL for the Registration Google Form",
-                            },
-                        ]}
-                    >
-                        <Input placeholder="Enter URL" />
+
+                    <Form.Item name="coordinators" label="Coordinators for the Event">
+                        <Select
+                            size="large"
+                            style={{ width: "100%", marginBottom: "2rem" }}
+                            showSearch
+                            placeholder="Select a Member"
+                            optionFilterProp="value"
+                            onChange={(e) => {console.log(e);
+                            }}
+                            options={[
+                                {
+                                    value: "Jack",
+                                    label: (
+                                        <>
+                                            Single <Tag color="blue">#102018</Tag>
+                                        </>
+                                    ),
+                                },
+                                {
+                                    value: "Jill",
+                                    label: (
+                                        <>
+                                            Team <Tag color="blue">#102019</Tag>
+                                        </>
+                                    ),
+                                },
+                            ]}
+                        ></Select>
                     </Form.Item>
 
                     <div style={{ display: "flex", gap: "1rem" }}>
