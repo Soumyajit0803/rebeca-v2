@@ -16,3 +16,14 @@ exports.createMember = catchAsync(async (req, res, next) => {
         next(err)
     }
 });
+
+exports.getAllMembers = catchAsync(async (req, res, next) => {
+    try {
+        const allMembers = await Member.find()
+        return res.json({message: "success", data: allMembers})
+
+    } catch(err) {
+        console.log(err.message);
+        next(err)
+    }
+})
