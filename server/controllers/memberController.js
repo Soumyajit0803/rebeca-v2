@@ -27,3 +27,25 @@ exports.getAllMembers = catchAsync(async (req, res, next) => {
         next(err)
     }
 })
+
+exports.updateMember = catchAsync(async (req, res, next) => {
+    
+    try {
+        console.log(req.body);
+        
+        const updatedMember = await Member.findByIdAndUpdate(
+            req.body._id,
+            {$set: req.body},
+            {new: true, runValidators: true}
+        )
+
+        if (!updatedMember) {
+            return res.json({ message: "failed to find the selected member"});
+        }
+
+        return res.json({message: 'success', data: updatedMember})
+    } catch(err) {
+        console.log(err.message);
+        next(err)
+    }
+})
