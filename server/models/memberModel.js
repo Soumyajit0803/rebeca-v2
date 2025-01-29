@@ -6,27 +6,27 @@ const memberSchema = new mongoose.Schema(
             type: String,
             required: [true, "Mandatory Field: name"],
             trim: true,
-            minlength: [5, "Name must be at least 3 characters long"], // Minimum name length
-            maxlength: [50, "Name cannot exceed 50 characters"], // Maximum name length
         },
-        profilePic: {
+        image: {
             type: String,
-            required: [true, "Mandatory Field: profilePic"],
+            required: [true, "Mandatory Field: image"],
             validate: {
                 validator: function (value) {
-                    // Validate that the profilePic is a valid URL
+                    // Validate that the image is a valid URL
                     return /^https?:\/\/.+\.(jpg|jpeg|png|webp|svg)$/i.test(value);
                 },
-                message: "Invalid URL for profilePic",
+                message: "Invalid URL for image",
             },
+            trim: true
         },
         role: {
             type: String,
             required: [true, "Mandatory Field: role"],
+            trim: true
         },
-        teamName: {
+        team: {
             type: String,
-            required: [true, "Mandatory Field: teamName"],
+            required: [true, "Mandatory Field: team"],
             trim: true,
         },
     },
