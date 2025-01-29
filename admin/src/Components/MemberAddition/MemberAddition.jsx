@@ -4,6 +4,8 @@ import { UploadOutlined } from "@ant-design/icons";
 import { createMember, postImage } from "../../api";
 import { useState } from "react";
 import { message } from "antd";
+import axios from "axios";
+import ImgCrop from "antd-img-crop";
 
 const { Option } = Select;
 const teamNames = [
@@ -34,24 +36,26 @@ const MemberAddition = () => {
 
     const [imagePreview, setImagePreview] = useState(""); // <- To
     const [imageFile, setImageFile] = useState({});
-    const [imageUrl, setImageUrl] = useState(null);
+    const formData = new FormData();
 
     const onFinish = async (values) => {
         try {
             setLoading(true);
-            await handleSubmitImage();
-            const formData = new FormData();
-            formData.append("name", values.memberName)
-            formData.append("image", imageUrl)
-            formData.append("role", values.role)
-            formData.append("team", values.teamName)
-            console.log("Form Values:", values);
+            const imageURL = await handleSubmitImage();
+            console.log("IMAGE Received: " + imageURL);
+
+            formData.append("name", values.memberName);
+            formData.append("image", imageURL);
+            formData.append("role", values.role);
+            formData.append("team", values.teamName);
             await createMember(formData);
-            setLoading(false);
-            message.success('Member added successfully.')
+            message.success("Member added successfully.");
         } catch (err) {
-            console.log(err);
-            message.error(err.message);
+            console.log(err.response.data);
+            const detailed = err.response.data.message;
+            message.error(detailed || err.message);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -75,12 +79,27 @@ const MemberAddition = () => {
         try {
             const res = await postImage({ image: imageFile });
             console.log(res.data.data.imageUrl);
-            setImageUrl(res.data.data.imageUrl);
+            return res.data.data.imageUrl;
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
             message.error(`ERROR: ${errormsg}`);
         }
+    };
+
+    const onPreview = async (file) => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow?.document.write(image.outerHTML);
     };
 
     return (
@@ -104,14 +123,17 @@ const MemberAddition = () => {
                     rules={[{ required: true, message: "Please upload a profile picture" }]}
                     onChange={(e) => handleImagePreview(e)}
                 >
-                    <Upload
-                        name="profilePic"
-                        listType="picture"
-                        beforeUpload={() => false} // Prevent auto-upload
-                        maxCount={1}
-                    >
-                        <Button icon={<UploadOutlined />}>Upload Profile Picture</Button>
-                    </Upload>
+                    {/* <ImgCrop rotationSlider zoomSlider showGrid> */}
+                        <Upload
+                            name="profilePic"
+                            listType="picture-card"
+                            beforeUpload={() => false} // Prevent auto-upload
+                            maxCount={1}
+                            // onPreview={onPreview}
+                        >
+                            <UploadOutlined />
+                        </Upload>
+                    {/* </ImgCrop> */}
                 </Form.Item>
 
                 <div

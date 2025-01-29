@@ -4,6 +4,8 @@ const Member = require("../models/memberModel");
 
 exports.createMember = catchAsync(async (req, res, next) => {
     try {
+        console.log(req.body);
+        
         const memberData = new Member({
             ...req.body,
         });

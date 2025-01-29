@@ -13,12 +13,14 @@ const dotenv = require('dotenv');
 const errorHandler = require('./middlewares/errorHandler')
 const app = express();
 
+app.use(express.json({ limit: '500mb' })); // <- Parses Json data
+app.use(express.urlencoded({ extended: true, limit: '500mb' })); // <- Parses URLencoded data
+
 dotenv.config({ path: './.env' }); // <- connecting the enviroment variables
 // MIDLEWARES ->>
 // app.enable('trust proxy');
 
 // console.log('REMOTE: ', process.env.REMOTE);
-app.use(cookieParser());
 
 // app.use(cors({ credentials: true, origin: process.env.REMOTE })); // <- CORS configuration, in case if you wanted to implemented authorization
 // app.options(process.env.REMOTE, cors());
@@ -37,6 +39,7 @@ const corsOptions = {
     credentials: true,
 };
 app.use(cors(corsOptions));
+app.use(cookieParser());
 
 
 console.log(`ENV = ${process.env.NODE_ENV}`);
@@ -64,30 +67,27 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(express.json({ limit: '100mb' })); // <- Parses Json data
-app.use(express.urlencoded({ extended: true, limit: '100mb' })); // <- Parses URLencoded data
-
 app.use(mongoSanitize()); // Data Sanitization aganist NoSQL query Injection.
 app.use(xss()); // Data Sanitization against xss
 app.use(compression());// compressing the size of HTTP response data before sending
 const router = require('./routes/mainroutes');
 const authRouter = require('./routes/authRoutes');
-const adminRouter = require('./routes/adminRoutes')
+// const adminRouter = require('./routes/adminRoutes')
 const memberRouter = require('./routes/memberRoutes')
 
 app.use('/api/v1/', router); // <- Calling the router
 app.use('/api/v1/auth/', authRouter);
-app.use('/api/v1/admin/', adminRouter);
+// app.use('/api/v1/admin/', adminRouter);
 app.use('/api/v1/member/', memberRouter)
 
 
-app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
-	return res.statusCode(404).json({
-        success: 'false',
-        status: 404,
-        message: 'Route not found in server',
-    })
-});
+// app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
+// 	return res.statusCode(404).json({
+//         success: 'false',
+//         status: 404,
+//         message: 'Route not found in server',
+//     })
+// });
 
 app.use(errorHandler); // <- Error Handling Middleware
 
