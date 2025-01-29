@@ -47,14 +47,11 @@ const EventRegistration = () => {
     const [eventType, setEventType] = useState(null);
     const [loading, setLoading] = useState(false);
     const [modalInstance, setModalInstance] = useState(null);
-<<<<<<< HEAD
 
     const {user} = useAuth();
 
     console.log(user);
     
-=======
->>>>>>> 189080bf926055ed67dfecf9f09a04a5897c6d75
 
     const onFinish = async (values) => {
         setLoading(true);

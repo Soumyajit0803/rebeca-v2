@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Input, Select, Upload, Button } from "antd";
 import { UploadOutlined, DeleteOutlined, DeleteFilled } from "@ant-design/icons";
+import { getAllMembers } from "../../api";
 
 const { Option } = Select;
 const teamNames = [
@@ -31,6 +32,7 @@ const teamRoles = [
 
 const MemberEditing = ({ memberDetails, onUpdate }) => {
     const [form] = Form.useForm();
+    const [values, setValues] = useState([])
 
     const onFinish = (values) => {
         console.log("Updated Member Details:", values);
@@ -40,6 +42,19 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
     const onChange = (value) => {
         console.log(`selected ${value}`);
     };
+
+    const getValues = async()=>{
+        try{
+            const res = await getAllMembers();
+            console.log(res);
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+    useEffect(()=>{
+        getValues();
+    }, [])
 
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
@@ -52,20 +67,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 placeholder="Select a person"
                 optionFilterProp="label"
                 onChange={onChange}
-                options={[
-                    {
-                        value: "jack",
-                        label: "Jack",
-                    },
-                    {
-                        value: "lucy",
-                        label: "Lucy",
-                    },
-                    {
-                        value: "tom",
-                        label: "Tom",
-                    },
-                ]}
+                options={values}
             ></Select>
             <Button
                 danger

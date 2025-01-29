@@ -20,3 +20,4 @@ export const createMember = (data) =>
             'Content-Type': 'application/json',
         },
     });
+export const getAllMembers = () => API.get("/member/all");
