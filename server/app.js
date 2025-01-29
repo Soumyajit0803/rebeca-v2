@@ -58,10 +58,12 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' })); // <- Parses UR
 const router = require('./routes/mainroutes');
 const authRouter = require('./routes/authRoutes');
 const adminRouter = require('./routes/adminRoutes')
+const memberRouter = require('./routes/memberRoutes')
 
 app.use('/api/v1/', router); // <- Calling the router
 app.use('/api/v1/auth/', authRouter);
 app.use('/api/v1/admin/', adminRouter);
+app.use('/api/v1/member/', memberRouter)
 
 
 // app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
