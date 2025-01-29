@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Form, Input, Select, Upload, Button } from "antd";
+import { Form, Input, Select, Upload, Button, Avatar, Typography, Space } from "antd";
 import { UploadOutlined, DeleteOutlined, DeleteFilled } from "@ant-design/icons";
 import { getAllMembers } from "../../api";
+import ImgCrop from "antd-img-crop";
 
 const { Option } = Select;
 const teamNames = [
@@ -24,37 +25,82 @@ const teamNames = [
     "Fixed Signatory",
     "BECA Magazine",
 ];
-const teamRoles = [
-    "Head",
-    "Associate Head",
-    "Associate",
-]
+const teamRoles = ["Head", "Associate Head", "Associate"];
+
+const HybridLabel = ({ name, imageURL }) => {
+    return (
+        <Space>
+            <Avatar src={imageURL} alt={name} />
+            <div>{name}</div>
+        </Space>
+    );
+};
 
 const MemberEditing = ({ memberDetails, onUpdate }) => {
     const [form] = Form.useForm();
-    const [values, setValues] = useState([])
+    const [values, setValues] = useState([]);
+
+    const [fileList, setFileList] = useState([]);
+    const onChange = ({ fileList: newFileList }) => {
+        setFileList(newFileList);
+    };
+    const onPreview = async (file) => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow?.document.write(image.outerHTML);
+    };
 
     const onFinish = (values) => {
-        console.log("Updated Member Details:", values);
+        // console.log("Updated Member Details:", values);
         onUpdate(values); // Callback function to handle member updates
     };
 
-    const onChange = (value) => {
-        console.log(`selected ${value}`);
+    const onMemberSelect = (idx) => {
+        console.log(`selected ${idx}`);
+        console.log(values[idx]);
+
+        form.setFieldsValue(values[idx].original);
+        setFileList([{
+            uid: "-1",
+            url: values[idx].original.image,
+            status: "done",
+            name: values[idx].original.image.split('/')[-1]
+        }])
+        
     };
 
-    const getValues = async()=>{
-        try{
+    const getValues = async () => {
+        try {
             const res = await getAllMembers();
-            console.log(res);
-        }catch(err){
+            // console.log(res);
+            const tmp = [];
+            res.data.data.map((member, index) => {
+                tmp.push({
+                    value: index,
+                    label: <HybridLabel name={member.name} imageURL={member.image} />,
+                    searchField: member.name,
+                    original: member,
+                });
+            });
+            setValues(tmp);
+            // console.log(tmp);
+        } catch (err) {
             console.log(err);
         }
-    }
+    };
 
-    useEffect(()=>{
+    useEffect(() => {
         getValues();
-    }, [])
+    }, []);
 
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
@@ -65,8 +111,8 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 style={{ width: "100%" }}
                 showSearch
                 placeholder="Select a person"
-                optionFilterProp="label"
-                onChange={onChange}
+                optionFilterProp="searchField"
+                onChange={onMemberSelect}
                 options={values}
             ></Select>
             <Button
@@ -85,37 +131,50 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 {/* Member Name */}
                 <Form.Item
                     label="Member Name"
-                    name="memberName"
+                    name="name"
                     rules={[{ required: true, message: "Please enter the member's name" }]}
                 >
                     <Input placeholder="Enter member name" />
                 </Form.Item>
 
                 {/* Profile Pic */}
-                <Form.Item
-                    label="Profile Pic"
-                    name="profilePic"
-                    valuePropName="file"
-                    rules={[{ required: true, message: "Please upload a profile picture" }]}
-                >
+                <div className="mandatory-star">*</div>
+                <span style={{ fontFamily: "Poppins" }}>Profile Image</span>
+                <ImgCrop rotationSlider>
                     <Upload
-                        name="profilePic"
-                        listType="picture"
-                        beforeUpload={() => false} // Prevent auto-upload
+                        maxCount={1}
+                        listType="picture-card"
+                        fileList={fileList}
+                        onChange={onChange}
+                        onPreview={onPreview}
+                        progress={{
+                            strokeColor: {
+                                "0%": "#5075f6",
+                                "100%": "#705dea",
+                            },
+                            strokeWidth: 3,
+                            format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+                        }}
+                        // customRequest={() => true}
                     >
-                        <Button icon={<UploadOutlined />}>Upload Profile Picture</Button>
+                        {fileList.length < 1 && "+ Upload"}
                     </Upload>
-                </Form.Item>
+                </ImgCrop>
 
                 <div
                     style={{
                         display: "flex",
-                        flexWrap: 'wrap',
+                        flexWrap: "wrap",
                         gap: "1rem",
                     }}
                 >
                     {/* Role */}
-                    <Form.Item label="Role" name="role" rules={[{ required: true, message: "Please select a role" }]} style={{width: 200}}>
+                    <Form.Item
+                        label="Role"
+                        name="role"
+                        rules={[{ required: true, message: "Please select a role" }]}
+                        style={{ width: 200 }}
+                    >
                         <Select placeholder="Select a role">
                             {teamRoles.map((role, i) => {
                                 return (
@@ -129,9 +188,9 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                     {/* Team Name */}
                     <Form.Item
                         label="Team Name"
-                        name="teamName"
+                        name="team"
                         rules={[{ required: true, message: "Please enter the team name" }]}
-                        style={{width: 300}}
+                        style={{ width: 300 }}
                     >
                         <Select placeholder="Select Team Name">
                             <Select placeholder="Select Team Name">
