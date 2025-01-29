@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, Input, Select, Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
-import { postImage } from "../../api";
+import { createMember, postImage } from "../../api";
 import { useState } from "react";
 import { message } from "antd";
 
@@ -26,54 +26,62 @@ const teamNames = [
     "Fixed Signatory",
     "BECA Magazine",
 ];
-const teamRoles = [
-    "Head",
-    "Associate Head",
-    "Associate",
-]
+const teamRoles = ["Head", "Associate Head", "Associate"];
 
 const MemberAddition = () => {
     const [form] = Form.useForm();
+    const [loading, setLoading] = useState(false);
 
-    const [imagePreview, setImagePreview] = useState(""); // <- To 
-	const [imageFile, setImageFile] = useState({});
-	const [imageUrl, setImageUrl] = useState(null);
+    const [imagePreview, setImagePreview] = useState(""); // <- To
+    const [imageFile, setImageFile] = useState({});
+    const [imageUrl, setImageUrl] = useState(null);
 
-    const onFinish = async(values) => {
-        await handleSubmitImage();
-
-        const formData = new FormData();
-        
-        console.log("Form Values:", values);
+    const onFinish = async (values) => {
+        try {
+            setLoading(true);
+            await handleSubmitImage();
+            const formData = new FormData();
+            formData.append("name", values.memberName)
+            formData.append("image", imageUrl)
+            formData.append("role", values.role)
+            formData.append("team", values.teamName)
+            console.log("Form Values:", values);
+            await createMember(formData);
+            setLoading(false);
+            message.success('Member added successfully.')
+        } catch (err) {
+            console.log(err);
+            message.error(err.message);
+        }
     };
 
-    const handleImagePreview = (e) => {	// <- This will let you preview the uploaded image
-		const file = e.target.files[0];
-		setImageFile(file);
+    const handleImagePreview = (e) => {
+        // <- This will let you preview the uploaded image
+        const file = e.target.files[0];
+        setImageFile(file);
 
-		if (file) {
-			const reader = new FileReader();
+        if (file) {
+            const reader = new FileReader();
 
-			reader.addEventListener("load", e => {
-				setImagePreview(e.target.result);
-			});
+            reader.addEventListener("load", (e) => {
+                setImagePreview(e.target.result);
+            });
 
-			reader.readAsDataURL(file);
-		}
-	};
-	const handleSubmitImage = async () => {	// <- This will send the selected image to our api
-		try {
-			const res = await postImage({ image: imageFile });
-			console.log(res.data.data.imageUrl);
-			setImageUrl(res.data.data.imageUrl);
-		}
-		catch (err) {
-			console.log(err)
-            const errormsg = err.response?err.response.data.message:err.message
-            message.error(`ERROR: ${errormsg}`)
-		}
-	}
-
+            reader.readAsDataURL(file);
+        }
+    };
+    const handleSubmitImage = async () => {
+        // <- This will send the selected image to our api
+        try {
+            const res = await postImage({ image: imageFile });
+            console.log(res.data.data.imageUrl);
+            setImageUrl(res.data.data.imageUrl);
+        } catch (err) {
+            console.log(err);
+            const errormsg = err.response ? err.response.data.message : err.message;
+            message.error(`ERROR: ${errormsg}`);
+        }
+    };
 
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
@@ -94,8 +102,7 @@ const MemberAddition = () => {
                     name="profilePic"
                     valuePropName="file"
                     rules={[{ required: true, message: "Please upload a profile picture" }]}
-                    onChange={(e)=>handleImagePreview(e)}
-
+                    onChange={(e) => handleImagePreview(e)}
                 >
                     <Upload
                         name="profilePic"
@@ -113,11 +120,16 @@ const MemberAddition = () => {
                         JustifyContent: "center",
                         alignItems: "left",
                         gap: "1rem",
-                        flexWrap: 'wrap'
+                        flexWrap: "wrap",
                     }}
                 >
                     {/* Role */}
-                    <Form.Item label="Role" name="role" rules={[{ required: true, message: "Please select a role" }]} style={{width: 200}}>
+                    <Form.Item
+                        label="Role"
+                        name="role"
+                        rules={[{ required: true, message: "Please select a role" }]}
+                        style={{ width: 200 }}
+                    >
                         <Select placeholder="Select a role">
                             {teamRoles.map((role, i) => {
                                 return (
@@ -133,7 +145,7 @@ const MemberAddition = () => {
                         label="Team Name"
                         name="teamName"
                         rules={[{ required: true, message: "Please enter the team name" }]}
-                        style={{width: 300}}
+                        style={{ width: 300 }}
                     >
                         <Select placeholder="Select Team Name">
                             {teamNames.map((team, i) => {
@@ -149,7 +161,7 @@ const MemberAddition = () => {
                 {/* Submit Button */}
                 <div style={{ display: "flex", gap: "1rem" }}>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit">
+                        <Button type="primary" htmlType="submit" loading={loading}>
                             Add Team Member
                         </Button>
                     </Form.Item>

@@ -10,3 +10,5 @@ export const postImage = (data) =>
             "Content-Type": "multipart/form-data",
         },
     });
+
+export const createMember = (data) => API.post("/member/create", data)
