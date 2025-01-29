@@ -13,16 +13,14 @@ import {
     Modal,
 } from "antd";
 import Icon, { UploadOutlined, MoneyCollectOutlined } from "@ant-design/icons";
-// import axios from "axios";
+import { useAuth } from "../../AuthContext";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
 const POST_URL = `https://instruo-backend.onrender.com/api/event/create`;
-// http://localhost:5000/api/event/create
-// https://instruo-backend.onrender.com/api/event/create
 const RupeeFilled = ({ color }) => {
     return (
-        <Icon style={{ scale: "1.3" }}>
+        <Icon style={{ scale: "1.5" }}>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                 <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
@@ -46,8 +44,11 @@ const EventRegistration = () => {
     const [eventType, setEventType] = useState(null);
     const [loading, setLoading] = useState(false);
     const [modalInstance, setModalInstance] = useState(null);
-    // Template for body
-    // const { name, email, phone, members, teamName, eventId } = req.body;
+
+    const {user} = useAuth();
+
+    console.log(user);
+    
 
     const onFinish = async (values) => {
         setLoading(true);
