@@ -5,5 +5,6 @@ const Router = express.Router()
 Router.post("/create", memberController.createMember)
 Router.get("/all", memberController.getAllMembers)
 Router.post("/update", memberController.updateMember)
+Router.delete("/delete", memberController.deleteMember)
 
 module.exports = Router

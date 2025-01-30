@@ -28,3 +28,6 @@ export const updateMember = (data) =>
             "Content-Type": "application/json",
         },
     });
+
+export const deleteMember = (id) =>
+    API.delete(`/member/delete?_id=${id}`);

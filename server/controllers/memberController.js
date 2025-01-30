@@ -40,12 +40,29 @@ exports.updateMember = catchAsync(async (req, res, next) => {
         )
 
         if (!updatedMember) {
-            return res.json({ message: "failed to find the selected member"});
+            return res.json({ message: "Member to be updated not found"});
         }
 
         return res.json({message: 'success', data: updatedMember})
     } catch(err) {
         console.log(err.message);
+        next(err)
+    }
+})
+
+exports.deleteMember = catchAsync(async (req, res, next) => {
+    try {
+        const id = req.query._id
+        console.log(req.query);
+        
+        const deletedMember = await Member.findByIdAndDelete(id)
+        if (!deletedMember) {
+            return res.json({message: "Member to be deleted not found"})
+        } else{
+            return res.json({message: "success", data: deletedMember})
+        }
+
+    } catch(err) {
         next(err)
     }
 })

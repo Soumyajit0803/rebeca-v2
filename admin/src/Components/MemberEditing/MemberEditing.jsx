@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Form, Input, Select, Upload, Button, Avatar, Typography, Space, message, Modal } from "antd";
 import { UploadOutlined, DeleteOutlined, DeleteFilled } from "@ant-design/icons";
-import { getAllMembers, updateMember, postImage } from "../../api";
+import { getAllMembers, updateMember, postImage, deleteMember } from "../../api";
 import ImgCrop from "antd-img-crop";
 
 const { Option } = Select;
@@ -43,7 +43,40 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
     const [loading, setLoading] = useState(false);
     const [fileList, setFileList] = useState([]);
     const [origFile, setOrigFile] = useState([]);
-    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [selectedMember, setSelectedMember] = useState(null);
+
+    const handleMemberDeletion = async () => {
+        try {
+            setLoading(true);
+            if (index === -1) {
+                message.error("No Member selected");
+                return;
+            }
+            const oldData = values[index].original;
+            console.log(oldData);
+
+            const res = await deleteMember(oldData._id);
+            console.log(res);
+
+            if (res.data.message === "success") {
+                message.success("Member deleted successfully");
+                await handleGetAllMembers();
+                form.resetFields();
+                setFileList([]);
+                setOrigFile([]);
+                setSelectedMember(null);
+            } else {
+                message.error(res.data.message);
+            }
+        } catch (err) {
+            message.error(err.message);
+        } finally {
+            setLoading(false);
+            setIsDeleteModalOpen(false);
+        }
+    };
 
     const onChange = ({ fileList: newFileList }) => {
         setFileList(newFileList);
@@ -119,7 +152,11 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 console.log(res);
                 if (res.data.message === "success") {
                     message.success("Data updated successfully");
-                    await getValues();
+                    await handleGetAllMembers();
+                    form.resetFields();
+                    setFileList([]);
+                    setOrigFile([]);
+                    setSelectedMember(null);
                 } else message.error(res.data.message);
             } else {
                 message.info("No changes found");
@@ -129,7 +166,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
             message.error(err.message);
         } finally {
             setLoading(false);
-            setIsModalOpen(false)
+            setIsSubmitModalOpen(false);
         }
     };
 
@@ -137,6 +174,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
         console.log(`selected ${idx}`);
         console.log(values[idx]);
         setIndex(idx);
+        setSelectedMember(values[idx])
 
         form.setFieldsValue(values[idx].original);
         setFileList([
@@ -157,7 +195,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
         ]);
     };
 
-    const getValues = async () => {
+    const handleGetAllMembers = async () => {
         try {
             const res = await getAllMembers();
             // console.log(res);
@@ -178,7 +216,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
     };
 
     useEffect(() => {
-        getValues();
+        handleGetAllMembers();
     }, []);
 
     return (
@@ -193,6 +231,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 optionFilterProp="searchField"
                 onChange={onMemberSelect}
                 options={values}
+                value={selectedMember}
             ></Select>
             <Button
                 danger
@@ -201,9 +240,25 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 style={{ marginTop: "1rem" }}
                 icon={<DeleteFilled />}
                 iconPosition="end"
+                onClick={() => setIsDeleteModalOpen(true)}
             >
                 Delete Team Member
             </Button>
+            <Modal
+                title="Delete Data"
+                onOk={handleMemberDeletion}
+                onCancel={() => setIsDeleteModalOpen(false)}
+                confirmLoading={loading}
+                open={isDeleteModalOpen}
+                okText="Delete"
+                okType="danger"
+                cancelText="Cancel"
+                okButtonProps={{ type: "primary" }}
+            >
+                Are you sure you want to delete this member's details?
+                <br />
+                Note that this Operation cannot be reverted.
+            </Modal>
 
             <h1 style={{ marginTop: "2rem" }}>Edit Team Member</h1>
             <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large">
@@ -285,15 +340,15 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 {/* Submit Button */}
                 <div style={{ display: "flex", gap: "1rem" }}>
                     <Form.Item>
-                        <Button type="primary" onClick={() => setIsModalOpen(true)}>
+                        <Button type="primary" onClick={() => setIsSubmitModalOpen(true)}>
                             Save Changes
                         </Button>
                         <Modal
                             title="Update Data"
                             onOk={() => form.submit()}
-                            onCancel={() => setIsModalOpen(false)}
+                            onCancel={() => setIsSubmitModalOpen(false)}
                             confirmLoading={loading}
-                            open={isModalOpen}
+                            open={isSubmitModalOpen}
                             okText="Yes"
                             cancelText="Cancel"
                         >
