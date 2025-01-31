@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import { Form, Input, Select, Upload, Button, ConfigProvider, theme } from "antd";
-import { UploadOutlined } from "@ant-design/icons";
 import { createMember, postImage } from "../../api";
 import { useState } from "react";
-import { message } from "antd";
-import axios from "axios";
 import ImgCrop from "antd-img-crop";
 import "./MemberAddition.css";
 // import CustomUpload from "./CustomUpload";
@@ -32,7 +29,7 @@ const teamNames = [
 ];
 const teamRoles = ["Head", "Associate Head", "Associate"];
 
-const MemberAddition = () => {
+const MemberAddition = ({messageError, messageSuccess, messageInfo}) => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
 
@@ -70,11 +67,11 @@ const MemberAddition = () => {
             formData.append("role", values.role);
             formData.append("team", values.teamName);
             await createMember(formData);
-            message.success("Member added successfully.");
+            messageSuccess("Member added successfully.");
         } catch (err) {
             console.log(err.response.data);
             const detailed = err.response.data.message;
-            message.error(detailed || err.message);
+            messageError(detailed || err.message);
         } finally {
             setLoading(false);
         }
@@ -104,7 +101,7 @@ const MemberAddition = () => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            message.error(`ERROR: ${errormsg}`);
+            messageError(`ERROR: ${errormsg}`);
         }
     };
 

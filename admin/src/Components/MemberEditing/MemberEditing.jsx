@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Form, Input, Select, Upload, Button, Avatar, Typography, Space, message, Modal } from "antd";
-import { UploadOutlined, DeleteOutlined, DeleteFilled } from "@ant-design/icons";
+import { Form, Input, Select, Upload, Button, Avatar, Typography, Space, message, Modal, Alert } from "antd";
+import { UploadOutlined, DeleteFilled } from "@ant-design/icons";
 import { getAllMembers, updateMember, postImage, deleteMember } from "../../api";
 import ImgCrop from "antd-img-crop";
+import 'antd/es/modal/style';
+import 'antd/es/slider/style';
 
 const { Option } = Select;
 const teamNames = [
@@ -36,7 +38,7 @@ const HybridLabel = ({ name, imageURL }) => {
     );
 };
 
-const MemberEditing = ({ memberDetails, onUpdate }) => {
+const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
     const [form] = Form.useForm();
     const [values, setValues] = useState([]);
     const [index, setIndex] = useState(-1);
@@ -50,8 +52,8 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
     const handleMemberDeletion = async () => {
         try {
             setLoading(true);
-            if (index === -1) {
-                message.error("No Member selected");
+            if (index === -1 || !values[index]) {
+                messageError("No Member selected");
                 return;
             }
             const oldData = values[index].original;
@@ -61,17 +63,17 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
             console.log(res);
 
             if (res.data.message === "success") {
-                message.success("Member deleted successfully");
+                messageSuccess("Member deleted successfully");
                 await handleGetAllMembers();
                 form.resetFields();
                 setFileList([]);
                 setOrigFile([]);
                 setSelectedMember(null);
             } else {
-                message.error(res.data.message);
+                messageError(res.data.message);
             }
         } catch (err) {
-            message.error(err.message);
+            messageError(err.message);
         } finally {
             setLoading(false);
             setIsDeleteModalOpen(false);
@@ -105,7 +107,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            message.error(`ERROR: ${errormsg}`);
+            messageError(`ERROR: ${errormsg}`);
         }
     };
 
@@ -115,7 +117,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
             const formData = new FormData();
             var changed = 0;
             if (index === -1) {
-                message.error("No User Selected");
+                messageError("No User Selected");
                 return;
             }
 
@@ -151,19 +153,19 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 const res = await updateMember(formData);
                 console.log(res);
                 if (res.data.message === "success") {
-                    message.success("Data updated successfully");
+                    messageSuccess("Data updated successfully");
                     await handleGetAllMembers();
                     form.resetFields();
                     setFileList([]);
                     setOrigFile([]);
                     setSelectedMember(null);
-                } else message.error(res.data.message);
+                } else messageError(res.data.message);
             } else {
-                message.info("No changes found");
+                messageInfo("No changes found");
             }
         } catch (err) {
             console.log(err);
-            message.error(err.message);
+            messageError(err.message);
         } finally {
             setLoading(false);
             setIsSubmitModalOpen(false);
@@ -174,7 +176,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
         console.log(`selected ${idx}`);
         console.log(values[idx]);
         setIndex(idx);
-        setSelectedMember(values[idx])
+        setSelectedMember(values[idx]);
 
         form.setFieldsValue(values[idx].original);
         setFileList([
@@ -233,6 +235,15 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 options={values}
                 value={selectedMember}
             ></Select>
+            <br />
+
+            <Alert
+                // message="Note"
+                message="If you cannot find a member you have just added in the dropdown, consider refreshing the page."
+                type="info"
+                showIcon
+                style={{ marginTop: "1rem" }}
+            />
             <Button
                 danger
                 type="primary"
@@ -240,7 +251,13 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 style={{ marginTop: "1rem" }}
                 icon={<DeleteFilled />}
                 iconPosition="end"
-                onClick={() => setIsDeleteModalOpen(true)}
+                onClick={() => {
+                    if (index === -1 || !values[index]) {
+                        messageError("Please select a member first");
+                    } else {
+                        setIsDeleteModalOpen(true);
+                    }
+                }}
             >
                 Delete Team Member
             </Button>
@@ -259,7 +276,6 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 <br />
                 Note that this Operation cannot be reverted.
             </Modal>
-
             <h1 style={{ marginTop: "2rem" }}>Edit Team Member</h1>
             <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large">
                 {/* Member Name */}
@@ -272,9 +288,11 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                 </Form.Item>
 
                 {/* Profile Pic */}
-                <div className="mandatory-star">*</div>
-                <span style={{ fontFamily: "Poppins" }}>Profile Image</span>
-                <ImgCrop rotationSlider>
+
+                <div style={{ fontFamily: "Poppins", marginBottom: "0.5rem" }}>
+                    <div className="mandatory-star">*</div>Profile Image
+                </div>
+                <ImgCrop rotationSlider showGrid >
                     <Upload
                         maxCount={1}
                         listType="picture-card"
@@ -291,7 +309,12 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                         }}
                         // customRequest={() => true}
                     >
-                        {fileList.length < 1 && "+ Upload"}
+                        {fileList.length < 1 && (
+                            <Space>
+                                <UploadOutlined />
+                                Upload
+                            </Space>
+                        )}
                     </Upload>
                 </ImgCrop>
 
@@ -300,6 +323,7 @@ const MemberEditing = ({ memberDetails, onUpdate }) => {
                         display: "flex",
                         flexWrap: "wrap",
                         gap: "1rem",
+                        marginTop: "1rem"
                     }}
                 >
                     {/* Role */}

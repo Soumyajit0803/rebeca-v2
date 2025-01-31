@@ -33,22 +33,34 @@ const Dashboard = () => {
         {
             key: "1",
             label: "Add Event",
-            children: <EventRegistration />,
+            children: (
+                <EventRegistration
+                    messageError={messageError}
+                    messageSuccess={messageSuccess}
+                    messageInfo={messageInfo}
+                />
+            ),
         },
         {
             key: "2",
             label: "Edit Event",
-            children: <EventEditing />,
+            children: (
+                <EventEditing messageError={messageError} messageSuccess={messageSuccess} messageInfo={messageInfo} />
+            ),
         },
         {
             key: "3",
             label: "Add Team member",
-            children: <MemberAddition />,
+            children: (
+                <MemberAddition messageError={messageError} messageSuccess={messageSuccess} messageInfo={messageInfo} />
+            ),
         },
         {
             key: "4",
             label: "Edit Team member",
-            children: <MemberEditing />,
+            children: (
+                <MemberEditing messageError={messageError} messageSuccess={messageSuccess} messageInfo={messageInfo} />
+            ),
         },
         {
             key: "5",
