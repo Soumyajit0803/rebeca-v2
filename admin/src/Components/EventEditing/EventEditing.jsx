@@ -100,9 +100,6 @@ const EventEditing = () => {
     };
 
     const { user } = useAuth();
-
-    console.log(user);
-
     const onFinish = async (values) => {
         try {
             setLoading(true);

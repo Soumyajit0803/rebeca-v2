@@ -15,16 +15,16 @@ import {
     Card,
     Alert,
 } from "antd";
-import Icon, { UploadOutlined, CloseOutlined } from "@ant-design/icons";
+import Icon, { UploadOutlined, CloseOutlined, MailOutlined, MailFilled, PhoneFilled } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 import "./EventAddition.css";
-import { getAllMembers } from "../../api";
+import { getAllMembers, createEvent, postImage } from "../../api";
 import ImgCrop from "antd-img-crop";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
-const POST_URL = `https://instruo-backend.onrender.com/api/event/create`;
+
 const RupeeFilled = ({ color }) => {
     return (
         <Icon style={{ scale: "1.5" }}>
@@ -55,7 +55,7 @@ const HybridLabel = ({ name, imageURL }) => {
     );
 };
 
-const EventRegistration = () => {
+const EventRegistration = ({ messageError, messageSuccess, messageInfo }) => {
     const [form] = Form.useForm();
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [eventType, setEventType] = useState(null);
@@ -105,9 +105,18 @@ const EventRegistration = () => {
     const onFinish = async (values) => {
         try {
             setLoading(true);
+            if (posterList.length===0) {
+                messageInfo("Please add poster image");
+                return;
+            }
+            if (thumbnailList.length===0) {
+                messageInfo("Please add thumbnail image");
+                return;
+            }
             const posterURL = await handleSubmitImage(posterList[0].originFileObj);
             const thumbnailURL = await handleSubmitImage(thumbnailList[0].originFileObj);
             const formData = new FormData();
+
             formData.append("eventName", values.name);
             formData.append("description", values.description);
             formData.append("startTime", values.time[0].$d);
@@ -115,20 +124,29 @@ const EventRegistration = () => {
             formData.append("venue", values.venue);
             formData.append("rulesDocURL", values.rulesDocUrl);
             formData.append("type", values.type);
-            if (values.type !== "Single") {
+            if (values.type !== "single") {
                 formData.append("maxTeamSize", values.maxTeamSize);
                 formData.append("minTeamSize", values.minTeamSize);
             }
             formData.append("poster", posterURL);
             formData.append("thumbnail", thumbnailURL);
             formData.append("registrationFee", values.registrationAmount);
+            coordsList.forEach((e) => {
+                formData.append("mainCoordinators[]", allMembers[e].original._id);
+            });
+
+            console.log(formData);
+
+            const res = await createEvent(formData);
+            console.log(res);
+            messageSuccess("Event Added successfully.");
         } catch (err) {
-            console.log(err.response.data);
-            const detailed = err.response.data.message;
+            console.log(err.response?.data);
+            const detailed = err.response?.data?.message;
             messageError(detailed || err.message);
         } finally {
-            setLoading(false)
-            setIsSubmitModalOpen(false)
+            setLoading(false);
+            setIsSubmitModalOpen(false);
         }
     };
 
@@ -168,6 +186,8 @@ const EventRegistration = () => {
             messageError(`ERROR: ${errormsg}`);
         }
     };
+
+    // console.log(coordsList.map((e) => allMembers[e]));
 
     return (
         <div style={{ maxWidth: 1200 }}>
@@ -230,24 +250,6 @@ const EventRegistration = () => {
                         <Input placeholder="Enter event venue" />
                     </Form.Item>
 
-                    {/* Rules */}
-                    {/* <Form.Item
-							label="Rules"
-							name="rules"
-							rules={[
-								{
-									required: true,
-									message: "Please specify the rules",
-								},
-							]}
-						>
-							<TextArea
-								rows={3}
-								placeholder="Enter event rules"
-							/>
-						</Form.Item> */}
-
-                    {/* Rules Document URL */}
                     <Form.Item
                         label="Rules Document URL"
                         name="rulesDocUrl"
@@ -263,7 +265,7 @@ const EventRegistration = () => {
                     </Form.Item>
 
                     {/* Poster Image */}
-                    <span>Upload Poster and Thumbnail for the Event</span>
+                    <span><div className="mandatory-star">*</div>Poster and Thumbnail image for the Event</span>
                     <Alert
                         message="Thumbnail is any image which represents the event. It can be a gallery image also."
                         type="info"
@@ -325,12 +327,11 @@ const EventRegistration = () => {
                         ]}
                     >
                         <Select placeholder="Select an option" onChange={(e) => setEventType(e)}>
-                            <Option value="Single">Single</Option>
-                            <Option value="Team">Team</Option>
-                            <Option value="Combined">Combined</Option>
+                            <Option value="single">Single</Option>
+                            <Option value="team">Team</Option>
                         </Select>
                     </Form.Item>
-                    {eventType !== "Single" && (
+                    {eventType !== "single" && (
                         <div
                             style={{
                                 display: "flex",
@@ -467,13 +468,19 @@ const EventRegistration = () => {
                                         }
                                     >
                                         <Space>
-                                            <Avatar src={coord.image} style={{ width: 56, height: 56 }}></Avatar>
+                                            <Avatar src={coord.image} style={{ width: 64, height: 64 }}></Avatar>
                                             <div style={{ minWidth: 100 }}>
-                                                <h3>
+                                                <span style={{ fontWeight: 500, fontSize: "1rem" }}>
                                                     {coord.name}
                                                     <br />
-                                                </h3>
-                                                <span style={{ opacity: 0.6 }}>{coord.name}</span>
+                                                </span>
+                                                <span style={{ opacity: 0.6 }}>
+                                                    <MailFilled /> {coord.email}
+                                                </span>
+                                                <br />
+                                                <span style={{ opacity: 0.6 }}>
+                                                    <PhoneFilled /> {coord.phone}
+                                                </span>
                                             </div>
                                         </Space>
                                     </Card>

@@ -33,9 +33,11 @@ const eventSchema = new mongoose.Schema(
         rulesDocURL: {
             type: String,
             required: [true, 'Rules document URL is required'],
+            trim: true,
             validate: {
                 validator: function (value) {
-                    return /^https?:\/\/.+\.(pdf|doc|docx)$/i.test(value);
+                    return /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?$/
+.test(value)
                 },
                 message: 'Invalid URL for rules document. Only .pdf, .doc, or .docx are allowed.',
             },
@@ -102,7 +104,7 @@ const eventSchema = new mongoose.Schema(
             required: [true, "Registration fee is required"],
         },
         mainCoordinators: {
-            type: mongoose.Schema.Types.ObjectId,
+            type: [mongoose.Schema.Types.ObjectId],
             ref: "Member",
             validate: {
                 validator: function (coordinators) {

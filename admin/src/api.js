@@ -31,3 +31,9 @@ export const updateMember = (data) =>
 
 export const deleteMember = (id) =>
     API.delete(`/member/delete?_id=${id}`);
+
+export const createEvent = (data)=> API.post("/event/create", data, {
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
