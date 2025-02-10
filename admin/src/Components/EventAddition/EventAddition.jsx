@@ -1,22 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     Form,
     Input,
     DatePicker,
     Upload,
     Button,
-    ConfigProvider,
-    theme,
+    Space,
+    Avatar,
     InputNumber,
     Select,
     message,
     Modal,
-    Tag
+    Tag,
+    Card,
+    Alert,
 } from "antd";
-import Icon, { UploadOutlined, MoneyCollectOutlined } from "@ant-design/icons";
+import Icon, { UploadOutlined, CloseOutlined } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 import "./EventAddition.css";
+import { getAllMembers } from "../../api";
+import ImgCrop from "antd-img-crop";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
@@ -42,38 +46,127 @@ const RupeeFilled = ({ color }) => {
     );
 };
 
+const HybridLabel = ({ name, imageURL }) => {
+    return (
+        <Space>
+            <Avatar src={imageURL} alt={name} style={{ width: 32, height: 32 }} />
+            <div>{name}</div>
+        </Space>
+    );
+};
+
 const EventRegistration = () => {
     const [form] = Form.useForm();
+    const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [eventType, setEventType] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [modalInstance, setModalInstance] = useState(null);
+    const [allMembers, setAllMembers] = useState([]);
+    const [selectedMember, setSelectedMember] = useState(null);
+    const [coordsList, setCoordsList] = useState([]);
+    const [posterList, setPosterList] = useState([]);
+    const [thumbnailList, setThumbnailList] = useState([]);
+    const onPosterChange = ({ fileList: newFileList }) => {
+        setPosterList(newFileList);
+    };
+    const onThumbnailChange = ({ fileList: newFileList }) => {
+        setThumbnailList(newFileList);
+    };
+    const onPosterPreview = async (file) => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow?.document.write(image.outerHTML);
+    };
+    const onThumbnailPreview = async (file) => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow?.document.write(image.outerHTML);
+    };
 
-    const {user} = useAuth();
-
-    console.log(user);
-    
+    const { user } = useAuth();
 
     const onFinish = async (values) => {
-        setLoading(true);
-        const formData = new FormData();
-        formData.append("name", values.name);
-        formData.append("description", values.description);
-        formData.append("startTime", values.time[0].$d);
-        formData.append("endTime", values.time[1].$d);
-        formData.append("venue", values.venue);
-        formData.append("rules", values.rules);
-        formData.append("rulesDoc", values.rulesDocUrl);
-        formData.append("type", values.type);
-        if (values.type !== "Single") {
-            formData.append("maxSize", values.maxTeamSize);
-            formData.append("minSize", values.minTeamSize);
+        try {
+            setLoading(true);
+            const posterURL = await handleSubmitImage(posterList[0].originFileObj);
+            const thumbnailURL = await handleSubmitImage(thumbnailList[0].originFileObj);
+            const formData = new FormData();
+            formData.append("eventName", values.name);
+            formData.append("description", values.description);
+            formData.append("startTime", values.time[0].$d);
+            formData.append("endTime", values.time[1].$d);
+            formData.append("venue", values.venue);
+            formData.append("rulesDocURL", values.rulesDocUrl);
+            formData.append("type", values.type);
+            if (values.type !== "Single") {
+                formData.append("maxTeamSize", values.maxTeamSize);
+                formData.append("minTeamSize", values.minTeamSize);
+            }
+            formData.append("poster", posterURL);
+            formData.append("thumbnail", thumbnailURL);
+            formData.append("registrationFee", values.registrationAmount);
+        } catch (err) {
+            console.log(err.response.data);
+            const detailed = err.response.data.message;
+            messageError(detailed || err.message);
+        } finally {
+            setLoading(false)
+            setIsSubmitModalOpen(false)
         }
-        formData.append("poster", values.posterImage.fileList[0].originFileObj);
-        formData.append("registrationAmount", values.registrationAmount);
-        formData.append("registrationUrl", values.registrationUrl);
-        values.galleryImages?.fileList.forEach((file) => {
-            formData.append("gallery", file.originFileObj);
-        });
+    };
+
+    const handleGetAllMembers = async () => {
+        try {
+            const res = await getAllMembers();
+            // console.log(res);
+            const tmp = [];
+            res.data.data.map((member, index) => {
+                tmp.push({
+                    value: index,
+                    label: <HybridLabel name={member.name} imageURL={member.image} />,
+                    searchField: member.name,
+                    original: member,
+                });
+            });
+            setAllMembers(tmp);
+            // console.log(tmp);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    useEffect(() => {
+        handleGetAllMembers();
+    }, []);
+
+    const handleSubmitImage = async (imageFile) => {
+        // <- This will send the selected image to our api
+        try {
+            const res = await postImage({ image: imageFile });
+            console.log(res.data.data.imageUrl);
+            return res.data.data.imageUrl;
+        } catch (err) {
+            console.log(err);
+            const errormsg = err.response ? err.response.data.message : err.message;
+            messageError(`ERROR: ${errormsg}`);
+        }
     };
 
     return (
@@ -170,48 +263,56 @@ const EventRegistration = () => {
                     </Form.Item>
 
                     {/* Poster Image */}
+                    <span>Upload Poster and Thumbnail for the Event</span>
+                    <Alert
+                        message="Thumbnail is any image which represents the event. It can be a gallery image also."
+                        type="info"
+                        showIcon
+                        style={{ marginTop: "0.5rem" }}
+                    />
                     <div className="images-section">
-                        <Form.Item
-                            label="Poster Image"
-                            name="posterImage"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "Please provide Poster Image",
-                                },
-                            ]}
-                        >
+                        <ImgCrop rotationSlider>
                             <Upload
-                                beforeUpload={() => false}
                                 maxCount={1}
-                                listType="picture"
-                                accept="image/png, image/jpeg, image/jpg"
-                                action={"/#"}
+                                listType="picture-card"
+                                fileList={posterList}
+                                onChange={onPosterChange}
+                                onPreview={onPosterPreview}
+                                progress={{
+                                    strokeColor: {
+                                        "0%": "#5075f6",
+                                        "100%": "#705dea",
+                                    },
+                                    strokeWidth: 3,
+                                    format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+                                }}
+                                // customRequest={() => true}
                             >
-                                <Button icon={<UploadOutlined />}>Upload Poster</Button>
+                                {posterList.length < 1 && "+ Poster"}
                             </Upload>
-                        </Form.Item>
+                        </ImgCrop>
 
                         {/* Gallery Images */}
-                        <Form.Item
-                            label="Thumbnail"
-                            name="thumbnail"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: "Please Provide Thumbnail for your event",
-                                },
-                            ]}
-                        >
+                        <ImgCrop rotationSlider>
                             <Upload
-                                listType="picture"
-                                accept="image/png, image/jpeg, image/jpg"
-                                beforeUpload={() => false}
                                 maxCount={1}
+                                listType="picture-card"
+                                fileList={thumbnailList}
+                                onChange={onThumbnailChange}
+                                onPreview={onThumbnailPreview}
+                                progress={{
+                                    strokeColor: {
+                                        "0%": "#5075f6",
+                                        "100%": "#705dea",
+                                    },
+                                    strokeWidth: 3,
+                                    format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+                                }}
+                                // customRequest={() => true}
                             >
-                                <Button icon={<UploadOutlined />}>Upload Thumbnail</Button>
+                                {thumbnailList.length < 1 && "+ Thumbnail"}
                             </Upload>
-                        </Form.Item>
+                        </ImgCrop>
                     </div>
                     <Form.Item
                         name="type"
@@ -322,44 +423,90 @@ const EventRegistration = () => {
                         />
                     </Form.Item>
 
-                    <Form.Item name="coordinators" label="Coordinators for the Event">
-                        <Select
-                            size="large"
-                            style={{ width: "100%", marginBottom: "2rem" }}
-                            showSearch
-                            placeholder="Select a Member"
-                            optionFilterProp="value"
-                            onChange={(e) => {console.log(e);
-                            }}
-                            options={[
-                                {
-                                    value: "Jack",
-                                    label: (
-                                        <>
-                                            Single <Tag color="blue">#102018</Tag>
-                                        </>
-                                    ),
-                                },
-                                {
-                                    value: "Jill",
-                                    label: (
-                                        <>
-                                            Team <Tag color="blue">#102019</Tag>
-                                        </>
-                                    ),
-                                },
-                            ]}
-                        ></Select>
-                    </Form.Item>
+                    <div>
+                        <Form.Item name="coordinators" label="Coordinators for the Event">
+                            <Alert
+                                // message="Note"
+                                message="If you cannot find a member you have just added in the dropdown, consider refreshing the page."
+                                type="info"
+                                showIcon
+                                style={{ margin: "0 0 0.5rem 0" }}
+                            />
+                            <Select
+                                size="large"
+                                style={{ width: "100%" }}
+                                showSearch
+                                placeholder="Select a Coordinator"
+                                optionFilterProp="searchField"
+                                onChange={(idx) => {
+                                    !coordsList.includes(idx) && setCoordsList([...coordsList, idx]);
+                                    setSelectedMember(" ");
+                                }}
+                                options={allMembers}
+                                value={selectedMember}
+                            ></Select>
+                        </Form.Item>
+
+                        <Space wrap style={{ marginBottom: "1rem" }}>
+                            {coordsList.map((coord, i) => {
+                                const idx = coord;
+                                coord = allMembers[coord].original;
+                                return (
+                                    <Card
+                                        size="small"
+                                        title={`Coordinator ${i + 1}`}
+                                        key={i}
+                                        extra={
+                                            <Button
+                                                type="primary"
+                                                size="small"
+                                                icon={<CloseOutlined />}
+                                                danger
+                                                onClick={() => setCoordsList(coordsList.filter((m) => m !== idx))}
+                                            />
+                                        }
+                                    >
+                                        <Space>
+                                            <Avatar src={coord.image} style={{ width: 56, height: 56 }}></Avatar>
+                                            <div style={{ minWidth: 100 }}>
+                                                <h3>
+                                                    {coord.name}
+                                                    <br />
+                                                </h3>
+                                                <span style={{ opacity: 0.6 }}>{coord.name}</span>
+                                            </div>
+                                        </Space>
+                                    </Card>
+                                );
+                            })}
+                        </Space>
+                    </div>
 
                     <div style={{ display: "flex", gap: "1rem" }}>
                         <Form.Item>
-                            <Button size="large" type="primary" htmlType="submit" loading={loading}>
+                            <Button size="large" type="primary" onClick={() => setIsSubmitModalOpen(true)}>
                                 Register Event
                             </Button>
+                            <Modal
+                                title="Add Event Data"
+                                onOk={() => form.submit()}
+                                onCancel={() => setIsSubmitModalOpen(false)}
+                                confirmLoading={loading}
+                                open={isSubmitModalOpen}
+                                okText="Yes"
+                                cancelText="Cancel"
+                            >
+                                Add this event to the database?
+                            </Modal>
                         </Form.Item>
                         <Form.Item>
-                            <Button htmlType="button" onClick={() => form.resetFields()}>
+                            <Button
+                                htmlType="button"
+                                onClick={() => {
+                                    form.resetFields();
+                                    setCoordsList([]);
+                                }}
+                            >
                                 Clear All
                             </Button>
                         </Form.Item>

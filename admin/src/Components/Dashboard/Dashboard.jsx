@@ -50,14 +50,14 @@ const Dashboard = () => {
         },
         {
             key: "3",
-            label: "Add Team member",
+            label: "Add member",
             children: (
                 <MemberAddition messageError={messageError} messageSuccess={messageSuccess} messageInfo={messageInfo} />
             ),
         },
         {
             key: "4",
-            label: "Edit Team member",
+            label: "Edit member",
             children: (
                 <MemberEditing messageError={messageError} messageSuccess={messageSuccess} messageInfo={messageInfo} />
             ),

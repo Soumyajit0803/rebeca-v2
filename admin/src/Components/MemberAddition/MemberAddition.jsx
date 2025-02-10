@@ -4,6 +4,7 @@ import { createMember, postImage } from "../../api";
 import { useState } from "react";
 import ImgCrop from "antd-img-crop";
 import "./MemberAddition.css";
+import { MailOutlined } from "@ant-design/icons";
 // import CustomUpload from "./CustomUpload";
 
 const { Option } = Select;
@@ -29,12 +30,9 @@ const teamNames = [
 ];
 const teamRoles = ["Head", "Associate Head", "Associate"];
 
-const MemberAddition = ({messageError, messageSuccess, messageInfo}) => {
+const MemberAddition = ({ messageError, messageSuccess, messageInfo }) => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
-
-    const [imagePreview, setImagePreview] = useState(""); // <- To
-    const [imageFile, setImageFile] = useState({});
     const formData = new FormData();
 
     const [fileList, setFileList] = useState([]);
@@ -66,6 +64,8 @@ const MemberAddition = ({messageError, messageSuccess, messageInfo}) => {
             formData.append("image", imageURL);
             formData.append("role", values.role);
             formData.append("team", values.teamName);
+            formData.append("email", values.email);
+            formData.append("phone", "+91"+values.phone);
             await createMember(formData);
             messageSuccess("Member added successfully.");
         } catch (err) {
@@ -77,21 +77,6 @@ const MemberAddition = ({messageError, messageSuccess, messageInfo}) => {
         }
     };
 
-    const handleImagePreview = (e) => {
-        // <- This will let you preview the uploaded image
-        const file = e.target.files[0];
-        setImageFile(file);
-
-        if (file) {
-            const reader = new FileReader();
-
-            reader.addEventListener("load", (e) => {
-                setImagePreview(e.target.result);
-            });
-
-            reader.readAsDataURL(file);
-        }
-    };
     const handleSubmitImage = async () => {
         // <- This will send the selected image to our api
         try {
@@ -118,15 +103,39 @@ const MemberAddition = ({messageError, messageSuccess, messageInfo}) => {
                     <Input placeholder="Enter member name" />
                 </Form.Item>
 
-                {/* Profile Pic */}
-                {/* <Form.Item
-                    label="Profile Pic"
-                    name="profilePic"
-                    valuePropName="file"
-                    rules={[{ required: true, message: "Please upload a profile picture" }]}
-                    // onChange={(e) => handleImagePreview(e)}
+                <div
+                    style={{
+                        display: "flex",
+                        JustifyContent: "center",
+                        alignItems: "left",
+                        gap: "1rem",
+                        flexWrap: "wrap",
+                        marginTop: "1rem",
+                    }}
+                >
+                    <Form.Item
+                        label="Email"
+                        name="email"
+                        rules={[
+                            { required: true, message: "Please enter the member's email" },
+                            { type: "email", message: "Please enter a valid email address" },
+                        ]}
+                    >
+                        <Input placeholder="Enter member's email" addonBefore={<MailOutlined />} />
+                    </Form.Item>
 
-                > */}
+                    <Form.Item
+                        label="Contact No"
+                        name="phone"
+                        rules={[
+                            { required: true, message: "Please enter the member's Contact Number" },
+                            { pattern: /^\d{10}$/, message: "Please enter a valid 10-digit phone number" }, // Example regex for 10-digit number
+                        ]}
+                    >
+                        <Input placeholder="Enter contact details" addonBefore={<span>+91</span>}/>
+                    </Form.Item>
+                </div>
+
                 <div className="mandatory-star">*</div>
                 <span style={{ fontFamily: "Poppins" }}>Profile Image</span>
                 <ConfigProvider

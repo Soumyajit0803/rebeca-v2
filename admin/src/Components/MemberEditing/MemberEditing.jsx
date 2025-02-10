@@ -3,8 +3,9 @@ import { Form, Input, Select, Upload, Button, Avatar, Typography, Space, message
 import { UploadOutlined, DeleteFilled } from "@ant-design/icons";
 import { getAllMembers, updateMember, postImage, deleteMember } from "../../api";
 import ImgCrop from "antd-img-crop";
-import 'antd/es/modal/style';
-import 'antd/es/slider/style';
+import "antd/es/modal/style";
+import "antd/es/slider/style";
+import { MailOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 const teamNames = [
@@ -147,6 +148,14 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
                 formData.append("team", formValues.team);
                 changed = 1;
             }
+            if (oldData.phone !== "+91"+formValues.phone) {
+                formData.append("phone", "+91"+formValues.phone);
+                changed = 1;
+            }
+            if (oldData.email !== formValues.email) {
+                formData.append("email", formValues.email);
+                changed = 1;
+            }
 
             // post this in mongodb
             if (changed) {
@@ -177,8 +186,9 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
         console.log(values[idx]);
         setIndex(idx);
         setSelectedMember(values[idx]);
-
-        form.setFieldsValue(values[idx].original);
+        const origValue = values[idx].original
+        origValue.phone = origValue.phone.slice(origValue.phone.length - 10);
+        form.setFieldsValue(origValue);
         setFileList([
             {
                 uid: "-1",
@@ -287,12 +297,43 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
                     <Input placeholder="Enter member name" />
                 </Form.Item>
 
-                {/* Profile Pic */}
+                <div
+                    style={{
+                        display: "flex",
+                        JustifyContent: "center",
+                        alignItems: "left",
+                        gap: "1rem",
+                        flexWrap: "wrap",
+                        marginTop: "1rem",
+                    }}
+                >
+                    <Form.Item
+                        label="Email"
+                        name="email"
+                        rules={[
+                            { required: true, message: "Please enter the member's email" },
+                            { type: "email", message: "Please enter a valid email address" },
+                        ]}
+                    >
+                        <Input placeholder="Enter member's email" addonBefore={<MailOutlined />} />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Contact No"
+                        name="phone"
+                        rules={[
+                            { required: true, message: "Please enter the member's Contact Number" },
+                            { pattern: /^\d{10}$/, message: "Please enter a valid 10-digit phone number" }, // Example regex for 10-digit number
+                        ]}
+                    >
+                        <Input placeholder="Enter contact details" addonBefore={<span>+91</span>}/>
+                    </Form.Item>
+                </div>
 
                 <div style={{ fontFamily: "Poppins", marginBottom: "0.5rem" }}>
                     <div className="mandatory-star">*</div>Profile Image
                 </div>
-                <ImgCrop rotationSlider showGrid >
+                <ImgCrop rotationSlider showGrid>
                     <Upload
                         maxCount={1}
                         listType="picture-card"
@@ -323,7 +364,7 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
                         display: "flex",
                         flexWrap: "wrap",
                         gap: "1rem",
-                        marginTop: "1rem"
+                        marginTop: "1rem",
                     }}
                 >
                     {/* Role */}

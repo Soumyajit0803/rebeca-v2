@@ -60,7 +60,7 @@ const eventSchema = new mongoose.Schema(
             required: [true, "Venue is required"],
             trim: true,
         },
-        rulesDoc: {
+        rulesDocURL: {
             type: String,
             required: [true, 'Rules document URL is required'],
             validate: {
@@ -117,18 +117,19 @@ const eventSchema = new mongoose.Schema(
                 message: "Invalid URL for poster",
             },
         },
+        thumbnail: {
+            type: String,
+            required: [true, "ThumbNail URL is required"],
+            validate: {
+                validator: function (value) {
+                    return /^https?:\/\/.+\.(jpg|jpeg|png|webp|svg)$/i.test(value);
+                },
+                message: "Invalid URL for thumbnail",
+            },
+        },
         registrationFee: {
             type: Number,
             required: [true, "Registration fee is required"],
-        },
-        galleryImages: {
-            type: [String], // Array of image URLs
-            validate: {
-                validator: function (images) {
-                    return images.every((image) => /^https?:\/\/.+\.(jpg|jpeg|png|webp|svg)$/i.test(image));
-                },
-                message: "Invalid URL(s) in gallery images",
-            },
         },
         mainCoordinators: {
             type: [memberSchema],

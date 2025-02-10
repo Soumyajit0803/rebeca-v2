@@ -4,12 +4,12 @@ const memberSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, "Mandatory Field: name"],
+            required: [true, "Missing Field: name"],
             trim: true,
         },
         image: {
             type: String,
-            required: [true, "Mandatory Field: image"],
+            required: [true, "Missing Field: image"],
             validate: {
                 validator: function (value) {
                     // Validate that the image is a valid URL
@@ -17,17 +17,28 @@ const memberSchema = new mongoose.Schema(
                 },
                 message: "Invalid URL for image",
             },
-            trim: true
+            trim: true,
         },
         role: {
             type: String,
-            required: [true, "Mandatory Field: role"],
-            trim: true
+            required: [true, "Missing Field: role"],
+            trim: true,
         },
         team: {
             type: String,
-            required: [true, "Mandatory Field: team"],
+            required: [true, "Missing Field: team"],
             trim: true,
+        },
+        email: {
+            type: String,
+            required: [true, "Missing Field: Email"],
+            trim: true,
+        },
+        phone: {
+            type: String,
+            required: true,
+            unique: true,
+            match: [/^\+91[6789]\d{9}$/, "Invalid phone number format"],
         },
     },
     { timestamps: true }
