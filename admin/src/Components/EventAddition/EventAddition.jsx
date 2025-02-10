@@ -15,7 +15,7 @@ import {
     Card,
     Alert,
 } from "antd";
-import Icon, { UploadOutlined, CloseOutlined } from "@ant-design/icons";
+import Icon, { UploadOutlined, CloseOutlined, MailOutlined, MailFilled, PhoneFilled } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 import "./EventAddition.css";
@@ -108,6 +108,7 @@ const EventRegistration = () => {
             const posterURL = await handleSubmitImage(posterList[0].originFileObj);
             const thumbnailURL = await handleSubmitImage(thumbnailList[0].originFileObj);
             const formData = new FormData();
+            
             formData.append("eventName", values.name);
             formData.append("description", values.description);
             formData.append("startTime", values.time[0].$d);
@@ -122,6 +123,8 @@ const EventRegistration = () => {
             formData.append("poster", posterURL);
             formData.append("thumbnail", thumbnailURL);
             formData.append("registrationFee", values.registrationAmount);
+            formData.append("mainCoordinators", coordsList.map((e) => allMembers[e].original._id))
+
         } catch (err) {
             console.log(err.response.data);
             const detailed = err.response.data.message;
@@ -168,6 +171,9 @@ const EventRegistration = () => {
             messageError(`ERROR: ${errormsg}`);
         }
     };
+
+    // console.log(coordsList.map((e) => allMembers[e]));
+    
 
     return (
         <div style={{ maxWidth: 1200 }}>
@@ -230,24 +236,6 @@ const EventRegistration = () => {
                         <Input placeholder="Enter event venue" />
                     </Form.Item>
 
-                    {/* Rules */}
-                    {/* <Form.Item
-							label="Rules"
-							name="rules"
-							rules={[
-								{
-									required: true,
-									message: "Please specify the rules",
-								},
-							]}
-						>
-							<TextArea
-								rows={3}
-								placeholder="Enter event rules"
-							/>
-						</Form.Item> */}
-
-                    {/* Rules Document URL */}
                     <Form.Item
                         label="Rules Document URL"
                         name="rulesDocUrl"
@@ -467,13 +455,15 @@ const EventRegistration = () => {
                                         }
                                     >
                                         <Space>
-                                            <Avatar src={coord.image} style={{ width: 56, height: 56 }}></Avatar>
+                                            <Avatar src={coord.image} style={{ width: 64, height: 64 }}></Avatar>
                                             <div style={{ minWidth: 100 }}>
-                                                <h3>
+                                                <span style={{fontWeight: 500, fontSize: '1rem'}}>
                                                     {coord.name}
                                                     <br />
-                                                </h3>
-                                                <span style={{ opacity: 0.6 }}>{coord.name}</span>
+                                                </span>
+                                                <span style={{ opacity: 0.6 }}><MailFilled/> {coord.email}</span>
+                                                <br/>
+                                                <span style={{ opacity: 0.6 }}><PhoneFilled/> {coord.phone}</span>
                                             </div>
                                         </Space>
                                     </Card>
