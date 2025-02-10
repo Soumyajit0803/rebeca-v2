@@ -45,7 +45,8 @@ app.use(cookieParser());
 console.log(`ENV = ${process.env.NODE_ENV}`);
 app.use(morgan('dev')); // <- Logs res status code and time taken
 
-const limiter = rateLimit({	// <- Limits #apicalls that can be made per IP address
+// Limits #apicalls that can be made per IP address
+const limiter = rateLimit({
 	max: 1000, // max number of times per windowMS
 	windowMs: 60 * 60 * 1000, //1hr
 	message:
@@ -67,18 +68,28 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(mongoSanitize()); // Data Sanitization aganist NoSQL query Injection.
-app.use(xss()); // Data Sanitization against xss
-app.use(compression());// compressing the size of HTTP response data before sending
+// Data Sanitization aganist NoSQL query Injection.
+app.use(mongoSanitize()); 
+
+// Data Sanitization against xss
+app.use(xss());
+
+// compressing the size of HTTP response data before sending
+app.use(compression());
+
+// Routers for app
 const router = require('./routes/mainroutes');
 const authRouter = require('./routes/authRoutes');
 // const adminRouter = require('./routes/adminRoutes')
 const memberRouter = require('./routes/memberRoutes')
+const eventRouter = require('./routes/eventRoutes')
 
-app.use('/api/v1/', router); // <- Calling the router
+// setting Routes
+app.use('/api/v1/', router);
 app.use('/api/v1/auth/', authRouter);
 // app.use('/api/v1/admin/', adminRouter);
-app.use('/api/v1/member/', memberRouter)
+app.use('/api/v1/member/', memberRouter);
+app.use('/api/v1/event/', eventRouter);
 
 
 // app.all('*', (req, res, next) => {	// <- Middleware to handle Non-existing Routes
