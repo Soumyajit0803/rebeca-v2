@@ -353,13 +353,13 @@ const getCellItem = (cellitem) => {
     return JSON.stringify(cellitem);
 };
 
-const ExportExcelButton = ({ dataSource, columns, fileName, messageError, messageInfo, messageSuccess }) => {
+const ExportExcelButton = ({ dataSource, columns, fileName, errorPop, infoPop, successPop }) => {
     const exportToExcel = () => {
         if (fileName === 1000) {
-            messageError("No event Selected");
+            errorPop("No event Selected");
             return;
         } else if (!dataSource) {
-            messageInfo("No one has registered in this event yet");
+            infoPop("No one has registered in this event yet");
             return;
         }
         const data = dataSource.map((item) => columns.map((col) => getCellItem(item[col.dataIndex])));
@@ -367,7 +367,7 @@ const ExportExcelButton = ({ dataSource, columns, fileName, messageError, messag
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
         XLSX.writeFile(wb, `${fileName}.xlsx`);
-        messageSuccess("Data exported successfully")
+        successPop("Data exported successfully");
     };
 
     return (
@@ -384,7 +384,7 @@ const ExportExcelButton = ({ dataSource, columns, fileName, messageError, messag
     );
 };
 
-const StatsTable = ({ data, columns, tableWidth, eventName, messageError, messageInfo, messageSuccess }) => {
+const StatsTable = ({ data, columns, tableWidth, eventName, errorPop, infoPop, successPop }) => {
     const [searchText, setSearchText] = useState("");
     const [searchedColumn, setSearchedColumn] = useState("");
     const searchInput = useRef(null);
@@ -509,9 +509,9 @@ const StatsTable = ({ data, columns, tableWidth, eventName, messageError, messag
                     dataSource={data}
                     columns={columns}
                     fileName={eventName}
-                    messageError={messageError}
-                    messageInfo={messageInfo}
-                    messageSuccess={messageSuccess}
+                    errorPop={errorPop}
+                    infoPop={infoPop}
+                    successPop={successPop}
                 />
                 <Table columns={columns} dataSource={data} size="middle" scroll={{ x: tableWidth }} />
             </div>
@@ -519,7 +519,7 @@ const StatsTable = ({ data, columns, tableWidth, eventName, messageError, messag
     );
 };
 
-const RegistrationStats = ({messageInfo, messageError, messageSuccess}) => {
+const RegistrationStats = ({ infoPop, errorPop, successPop }) => {
     const [dataSrc, setdataSrc] = useState([]);
     const [columns, setColumns] = useState(singleReg);
     const [tableWidth, setTableWidth] = useState(SINGLE_TABLE_WIDTH);
@@ -576,9 +576,9 @@ const RegistrationStats = ({messageInfo, messageError, messageSuccess}) => {
                 columns={columns}
                 tableWidth={tableWidth}
                 eventName={eventName}
-                messageError={messageError}
-                messageInfo={messageInfo}
-                messageSuccess={messageSuccess}
+                errorPop={errorPop}
+                infoPop={infoPop}
+                successPop={successPop}
             />
         </div>
     );

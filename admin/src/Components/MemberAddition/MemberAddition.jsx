@@ -30,7 +30,7 @@ const teamNames = [
 ];
 const teamRoles = ["Head", "Associate Head", "Associate"];
 
-const MemberAddition = ({ messageError, messageSuccess, messageInfo }) => {
+const MemberAddition = ({ errorPop, successPop, infoPop }) => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
     const formData = new FormData();
@@ -65,13 +65,13 @@ const MemberAddition = ({ messageError, messageSuccess, messageInfo }) => {
             formData.append("role", values.role);
             formData.append("team", values.teamName);
             formData.append("email", values.email);
-            formData.append("phone", "+91"+values.phone);
+            formData.append("phone", "+91" + values.phone);
             await createMember(formData);
-            messageSuccess("Member added successfully.");
+            successPop("Member added successfully.");
         } catch (err) {
             console.log(err.response.data);
             const detailed = err.response.data.message;
-            messageError(detailed || err.message);
+            errorPop(detailed || err.message);
         } finally {
             setLoading(false);
         }
@@ -86,7 +86,7 @@ const MemberAddition = ({ messageError, messageSuccess, messageInfo }) => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            messageError(`ERROR: ${errormsg}`);
+            errorPop(`ERROR: ${errormsg}`);
         }
     };
 
@@ -132,7 +132,7 @@ const MemberAddition = ({ messageError, messageSuccess, messageInfo }) => {
                             { pattern: /^\d{10}$/, message: "Please enter a valid 10-digit phone number" }, // Example regex for 10-digit number
                         ]}
                     >
-                        <Input placeholder="Enter contact details" addonBefore={<span>+91</span>}/>
+                        <Input placeholder="Enter contact details" addonBefore={<span>+91</span>} />
                     </Form.Item>
                 </div>
 

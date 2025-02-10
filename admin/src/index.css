@@ -28,3 +28,18 @@ body {
     margin: 1rem;
     border-radius: 10px;
 }
+
+.img-crop-control button {
+    color: #fff !important;
+    background-color: #ffffff17;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.img-crop-control button:hover {
+    background-color: #ffffff29;
+}
+
+.ant-slider-track, .ant-slider-handle::after {
+    background-color: #1668dc !important;
+}
