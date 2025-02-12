@@ -55,7 +55,7 @@ const HybridLabel = ({ name, imageURL }) => {
     );
 };
 
-const EventRegistration = ({ messageError, messageSuccess, messageInfo }) => {
+const EventRegistration = ({ errorPop, successPop, infoPop }) => {
     const [form] = Form.useForm();
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [eventType, setEventType] = useState(null);
@@ -105,12 +105,12 @@ const EventRegistration = ({ messageError, messageSuccess, messageInfo }) => {
     const onFinish = async (values) => {
         try {
             setLoading(true);
-            if (posterList.length===0) {
-                messageInfo("Please add poster image");
+            if (posterList.length === 0) {
+                infoPop("Please add poster image");
                 return;
             }
-            if (thumbnailList.length===0) {
-                messageInfo("Please add thumbnail image");
+            if (thumbnailList.length === 0) {
+                infoPop("Please add thumbnail image");
                 return;
             }
             const posterURL = await handleSubmitImage(posterList[0].originFileObj);
@@ -139,11 +139,11 @@ const EventRegistration = ({ messageError, messageSuccess, messageInfo }) => {
 
             const res = await createEvent(formData);
             console.log(res);
-            messageSuccess("Event Added successfully.");
+            successPop("Event Added successfully.");
         } catch (err) {
             console.log(err.response?.data);
             const detailed = err.response?.data?.message;
-            messageError(detailed || err.message);
+            errorPop(detailed || err.message);
         } finally {
             setLoading(false);
             setIsSubmitModalOpen(false);
@@ -183,7 +183,7 @@ const EventRegistration = ({ messageError, messageSuccess, messageInfo }) => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            messageError(`ERROR: ${errormsg}`);
+            errorPop(`ERROR: ${errormsg}`);
         }
     };
 
@@ -265,7 +265,9 @@ const EventRegistration = ({ messageError, messageSuccess, messageInfo }) => {
                     </Form.Item>
 
                     {/* Poster Image */}
-                    <span><div className="mandatory-star">*</div>Poster and Thumbnail image for the Event</span>
+                    <span>
+                        <div className="mandatory-star">*</div>Poster and Thumbnail image for the Event
+                    </span>
                     <Alert
                         message="Thumbnail is any image which represents the event. It can be a gallery image also."
                         type="info"

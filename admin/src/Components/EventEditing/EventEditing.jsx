@@ -160,7 +160,7 @@ const EventEditing = () => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            messageError(`ERROR: ${errormsg}`);
+            errorPop(`ERROR: ${errormsg}`);
         }
     };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Avatar, Tabs, message, Menu, Typography, Dropdown } from "antd";
+import { Avatar, Tabs, message, Menu, Typography, Dropdown, notification } from "antd";
 import EventRegistration from "../EventAddition/EventAddition";
 import MemberAddition from "../MemberAddition/MemberAddition";
 import MemberEditing from "../MemberEditing/MemberEditing";
@@ -38,23 +38,29 @@ const Dashboard = () => {
     const [OpSelect, setOpSelect] = useState(1);
     const width = window.innerWidth;
     // console.log(width);
-    const [messageApi, contextHolder] = message.useMessage();
-    const messageInfo = (e) => {
-        messageApi.open({
+    const [notificationApi, contextHolder] = notification.useNotification();
+    const infoPop = (e, message = '') => {
+        notificationApi.open({
+            message: message || "Information",
             type: "info",
-            content: e,
+            description: e,
+            placement: "topRight"
         });
     };
-    const messageError = (e) => {
-        messageApi.open({
+    const errorPop = (e, message = '') => {
+        notificationApi.open({
+            message: message || "Some Error Occured",
             type: "error",
-            content: e,
+            description: e,
+            placement: "topRight"
         });
     };
-    const messageSuccess = (e) => {
-        messageApi.open({
+    const successPop = (e, message = '') => {
+        notificationApi.open({
+            message: message || "Congratulations",
             type: "success",
-            content: e,
+            description: e,
+            placement: "topRight"
         });
     };
     const items = [
@@ -63,9 +69,9 @@ const Dashboard = () => {
             label: "Add Event",
             children: (
                 <EventRegistration
-                    messageError={messageError}
-                    messageSuccess={messageSuccess}
-                    messageInfo={messageInfo}
+                    errorPop={errorPop}
+                    successPop={successPop}
+                    infoPop={infoPop}
                 />
             ),
         },
@@ -73,21 +79,21 @@ const Dashboard = () => {
             key: "2",
             label: "Edit Event",
             children: (
-                <EventEditing messageError={messageError} messageSuccess={messageSuccess} messageInfo={messageInfo} />
+                <EventEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />
             ),
         },
         {
             key: "3",
             label: "Add member",
             children: (
-                <MemberAddition messageError={messageError} messageSuccess={messageSuccess} messageInfo={messageInfo} />
+                <MemberAddition errorPop={errorPop} successPop={successPop} infoPop={infoPop} />
             ),
         },
         {
             key: "4",
             label: "Edit member",
             children: (
-                <MemberEditing messageError={messageError} messageSuccess={messageSuccess} messageInfo={messageInfo} />
+                <MemberEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />
             ),
         },
         {
@@ -95,9 +101,9 @@ const Dashboard = () => {
             label: "Registration Stats",
             children: (
                 <RegistrationStats
-                    messageError={messageError}
-                    messageSuccess={messageSuccess}
-                    messageInfo={messageInfo}
+                    errorPop={errorPop}
+                    successPop={successPop}
+                    infoPop={infoPop}
                 />
             ),
         },

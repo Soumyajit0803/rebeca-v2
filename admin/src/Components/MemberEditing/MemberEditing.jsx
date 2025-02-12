@@ -5,7 +5,7 @@ import { getAllMembers, updateMember, postImage, deleteMember } from "../../api"
 import ImgCrop from "antd-img-crop";
 import "antd/es/modal/style";
 import "antd/es/slider/style";
-import { MailOutlined } from '@ant-design/icons';
+import { MailOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 const teamNames = [
@@ -39,7 +39,7 @@ const HybridLabel = ({ name, imageURL }) => {
     );
 };
 
-const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
+const MemberEditing = ({ errorPop, successPop, infoPop }) => {
     const [form] = Form.useForm();
     const [values, setValues] = useState([]);
     const [index, setIndex] = useState(-1);
@@ -54,7 +54,7 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
         try {
             setLoading(true);
             if (index === -1 || !values[index]) {
-                messageError("No Member selected");
+                errorPop("No Member selected");
                 return;
             }
             const oldData = values[index].original;
@@ -64,17 +64,17 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
             console.log(res);
 
             if (res.data.message === "success") {
-                messageSuccess("Member deleted successfully");
+                successPop("Member deleted successfully");
                 await handleGetAllMembers();
                 form.resetFields();
                 setFileList([]);
                 setOrigFile([]);
                 setSelectedMember(null);
             } else {
-                messageError(res.data.message);
+                errorPop(res.data.message);
             }
         } catch (err) {
-            messageError(err.message);
+            errorPop(err.message);
         } finally {
             setLoading(false);
             setIsDeleteModalOpen(false);
@@ -108,7 +108,7 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            messageError(`ERROR: ${errormsg}`);
+            errorPop(`ERROR: ${errormsg}`);
         }
     };
 
@@ -118,7 +118,7 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
             const formData = new FormData();
             var changed = 0;
             if (index === -1) {
-                messageError("No User Selected");
+                errorPop("No User Selected");
                 return;
             }
 
@@ -148,8 +148,8 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
                 formData.append("team", formValues.team);
                 changed = 1;
             }
-            if (oldData.phone !== "+91"+formValues.phone) {
-                formData.append("phone", "+91"+formValues.phone);
+            if (oldData.phone !== "+91" + formValues.phone) {
+                formData.append("phone", "+91" + formValues.phone);
                 changed = 1;
             }
             if (oldData.email !== formValues.email) {
@@ -162,19 +162,19 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
                 const res = await updateMember(formData);
                 console.log(res);
                 if (res.data.message === "success") {
-                    messageSuccess("Data updated successfully");
+                    successPop("Data updated successfully");
                     await handleGetAllMembers();
                     form.resetFields();
                     setFileList([]);
                     setOrigFile([]);
                     setSelectedMember(null);
-                } else messageError(res.data.message);
+                } else errorPop(res.data.message);
             } else {
-                messageInfo("No changes found");
+                infoPop("No changes found");
             }
         } catch (err) {
             console.log(err);
-            messageError(err.message);
+            errorPop(err.message);
         } finally {
             setLoading(false);
             setIsSubmitModalOpen(false);
@@ -186,7 +186,7 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
         console.log(values[idx]);
         setIndex(idx);
         setSelectedMember(values[idx]);
-        const origValue = values[idx].original
+        const origValue = values[idx].original;
         origValue.phone = origValue.phone.slice(origValue.phone.length - 10);
         form.setFieldsValue(origValue);
         setFileList([
@@ -263,7 +263,7 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
                 iconPosition="end"
                 onClick={() => {
                     if (index === -1 || !values[index]) {
-                        messageError("Please select a member first");
+                        errorPop("Please select a member first");
                     } else {
                         setIsDeleteModalOpen(true);
                     }
@@ -326,7 +326,7 @@ const MemberEditing = ({ messageError, messageSuccess, messageInfo }) => {
                             { pattern: /^\d{10}$/, message: "Please enter a valid 10-digit phone number" }, // Example regex for 10-digit number
                         ]}
                     >
-                        <Input placeholder="Enter contact details" addonBefore={<span>+91</span>}/>
+                        <Input placeholder="Enter contact details" addonBefore={<span>+91</span>} />
                     </Form.Item>
                 </div>
 

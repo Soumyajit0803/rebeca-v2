@@ -16,19 +16,19 @@ const App = () => {
     // const width = window.innerWidth;
     // // console.log(width);
     // const [messageApi, contextHolder] = message.useMessage();
-    // const messageInfo = (e) => {
+    // const infoPop = (e) => {
     //     messageApi.open({
     //         type: "info",
     //         content: e,
     //     });
     // };
-    // const messageError = (e) => {
+    // const errorPop = (e) => {
     //     messageApi.open({
     //         type: "error",
     //         content: e,
     //     });
     // };
-    // const messageSuccess = (e) => {
+    // const successPop = (e) => {
     //     messageApi.open({
     //         type: "success",
     //         content: e,
@@ -60,9 +60,9 @@ const App = () => {
     //         label: "Registration Stats",
     //         children: (
     //             <RegistrationStats
-    //                 messageError={messageError}
-    //                 messageSuccess={messageSuccess}
-    //                 messageInfo={messageInfo}
+    //                 errorPop={errorPop}
+    //                 successPop={successPop}
+    //                 infoPop={infoPop}
     //             />
     //         ),
     //     },
