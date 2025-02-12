@@ -53,8 +53,6 @@ exports.updateMember = catchAsync(async (req, res, next) => {
 exports.deleteMember = catchAsync(async (req, res, next) => {
     try {
         const id = req.query._id
-        console.log(req.query);
-        
         const deletedMember = await Member.findByIdAndDelete(id)
         if (!deletedMember) {
             return res.json({message: "Member to be deleted not found"})

@@ -23,17 +23,25 @@ export const createMember = (data) =>
 export const getAllMembers = () => API.get("/member/all");
 
 export const updateMember = (data) =>
-    API.post("/member/update", data, {
+    API.patch("/member/update", data, {
         headers: {
             "Content-Type": "application/json",
         },
     });
 
-export const deleteMember = (id) =>
-    API.delete(`/member/delete?_id=${id}`);
+export const deleteMember = (id) => API.delete(`/member/delete?_id=${id}`);
 
 export const createEvent = (data)=> API.post("/event/create", data, {
     headers: {
         "Content-Type": "application/json"
     }
 })
+
+export const deleteEvent = (id)=> API.delete(`/event/delete?_id=${id}`)
+
+export const updateEvent = (data) =>
+    API.patch("/event/update", data, {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
