@@ -37,3 +37,5 @@ export const createEvent = (data)=> API.post("/event/create", data, {
         "Content-Type": "application/json"
     }
 })
+
+export const getAllEvents = () => API.get("/event/all");

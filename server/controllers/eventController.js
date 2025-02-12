@@ -14,3 +14,14 @@ exports.createEvent = catchAsync(async(req, res, next)=>{
         next(err)
     }
 })
+
+exports.getAllEvents = catchAsync(async (req, res, next) => {
+    try {
+        const allEvents = await Event.find().populate("mainCoordinators")
+        return res.json({message: "success", data: allEvents})
+
+    } catch(err) {
+        console.log(err.message);
+        next(err)
+    }
+})
