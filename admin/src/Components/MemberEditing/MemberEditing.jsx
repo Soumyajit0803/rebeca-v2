@@ -222,6 +222,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
             // console.log(tmp);
         } catch (err) {
             console.log(err);
+            errorPop("Some error occured while fetching all members", "Error fetching members")
         } finally {
             setFetching(false)
         }
@@ -288,7 +289,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 Note that this Operation cannot be reverted.
             </Modal>
             <h1 style={{ marginTop: "2rem" }}>Edit Team Member</h1>
-            <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large">
+            <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large" disabled = {!selectedMember}>
                 {/* Member Name */}
                 <Form.Item
                     label="Member Name"
