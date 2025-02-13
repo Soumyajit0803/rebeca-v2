@@ -18,7 +18,7 @@ import Icon, { DeleteFilled, CloseOutlined } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 // import "./EventAddition.css";
-import { getAllMembers, getAllEvents, updateEvent, postImage } from "../../api";
+import { getAllMembers, getAllEvents, updateEvent, postImage, deleteEvent } from "../../api";
 import ImgCrop from "antd-img-crop";
 import dayjs from "dayjs";
 import Coordinator from "../Coordinator/Coordinator";
@@ -71,6 +71,37 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
 
+    const handleEventDeletion = async () => {
+        try {
+            setLoading(true);
+            if (selectedEvent === null) {
+                errorPop("No Event selected", "Please Select an event first");
+                return;
+            }
+
+            const res = await deleteEvent(selectedEvent.original._id);
+            console.log(res);
+
+            if (res.data.message === "success") {
+                successPop("Event deleted Successfully", "Event Deleted");
+                await handleGetAllEvents();
+                form.resetFields();
+                setPosterList([])
+                setOrigPosterList([])
+                setThumbnailList([])
+                setOrigThumbnailList([])
+                setSelectedEvent(null);
+            } else {
+                errorPop(res.data.message, "Error While Deleting Event");
+            }
+        } catch (err) {
+            errorPop(err.message, "Error While Deleting Event");
+        } finally {
+            setLoading(false);
+            setIsDeleteModalOpen(false);
+        }
+    };
+
     const onPosterChange = ({ fileList: newFileList }) => {
         setPosterList(newFileList);
     };
@@ -113,11 +144,11 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         try {
             setLoading(true);
             if (posterList.length === 0) {
-                infoPop("Please add poster image");
+                infoPop("Please add poster image", "No Poster Image");
                 return;
             }
             if (thumbnailList.length === 0) {
-                infoPop("Please add thumbnail image");
+                infoPop("Please add thumbnail image", "No Thumbnail Image");
                 return;
             }
             // const posterURL = await handleEditImage(posterList[0].originFileObj);
@@ -166,11 +197,11 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
             const res = await updateEvent(formData);
             console.log(res);
-            successPop("Event Added successfully.");
+            successPop("Event Edited successfully", "Success");
         } catch (err) {
             console.log(err.response?.data);
             const detailed = err.response?.data?.message;
-            errorPop(detailed || err.message);
+            errorPop(detailed || err.message, "Error");
         } finally {
             setLoading(false);
             setIsSubmitModalOpen(false);
@@ -195,7 +226,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            errorPop(`ERROR: ${errormsg}`);
+            errorPop(`ERROR: ${errormsg}`, "Error while fetching all members");
         }
     };
 
@@ -214,7 +245,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            errorPop(`ERROR: ${errormsg}`);
+            errorPop(`ERROR: ${errormsg}`, "Image Handling error");
         }
     };
 
@@ -236,7 +267,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         } catch (err) {
             console.log(err.response?.data);
             const detailed = err.response?.data?.message;
-            errorPop(detailed || err.message);
+            errorPop(detailed || err.message, "Error While fetching allEvents");
         }
     };
 
@@ -325,17 +356,17 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     iconPosition="end"
                     onClick={() => {
                         if (!selectedEvent) {
-                            errorPop("Please select a member first");
+                            errorPop("Please select a member first", "No Event Selected");
                         } else {
                             setIsDeleteModalOpen(true);
                         }
                     }}
                 >
-                    Delete Team Member
+                    Delete Event
                 </Button>
                 <Modal
                     title="Delete Data"
-                    // onOk={handleMemberDeletion}
+                    onOk={handleEventDeletion}
                     onCancel={() => setIsDeleteModalOpen(false)}
                     confirmLoading={loading}
                     open={isDeleteModalOpen}
@@ -344,7 +375,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     cancelText="Cancel"
                     okButtonProps={{ type: "primary" }}
                 >
-                    Are you sure you want to delete this member's details?
+                    Are you sure you want to delete this Event from Database?
                     <br />
                     Note that this Operation cannot be reverted.
                 </Modal>
