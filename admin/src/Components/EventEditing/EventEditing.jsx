@@ -22,6 +22,7 @@ import { getAllMembers, getAllEvents, updateEvent, postImage, deleteEvent } from
 import ImgCrop from "antd-img-crop";
 import dayjs from "dayjs";
 import Coordinator from "../Coordinator/Coordinator";
+import { Spin } from "antd";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
@@ -70,6 +71,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
+    const [fetchingAllEvents, setFetchingAllEvents] = useState(false)
+    const [fetchingAllMembers, setFetchingAllMembers] = useState(false)
 
     const handleEventDeletion = async () => {
         try {
@@ -210,6 +213,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
     const handleGetAllMembers = async () => {
         try {
+            setFetchingAllMembers(true)
             const res = await getAllMembers();
             // console.log(res);
             const tmp = [];
@@ -227,6 +231,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
             errorPop(`ERROR: ${errormsg}`, "Error while fetching all members");
+        } finally {
+            setFetchingAllMembers(false)
         }
     };
 
@@ -251,6 +257,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
     const handleGetAllEvents = async () => {
         try {
+            setFetchingAllEvents(true)
             const res = await getAllEvents();
             console.log(res);
             const finalopts = [];
@@ -268,6 +275,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
             console.log(err.response?.data);
             const detailed = err.response?.data?.message;
             errorPop(detailed || err.message, "Error While fetching allEvents");
+        } finally {
+            setFetchingAllEvents(false)
         }
     };
 
@@ -337,6 +346,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     onChange={onEventSelect}
                     options={AllEventsData}
                     value={selectedEvent}
+                    notFoundContent={fetchingAllEvents ? <Spin tip="fetching events..." size="large" /> : null}
                 ></Select>
                 <br />
 
@@ -640,6 +650,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                                 }}
                                 options={allMembers}
                                 value={selectedMember}
+                                notFoundContent={fetchingAllMembers ? <Spin tip="fetching members..." size="large" /> : null}
                             ></Select>
                         </Form.Item>
 
