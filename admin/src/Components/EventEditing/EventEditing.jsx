@@ -70,7 +70,6 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
-    
 
     const onPosterChange = ({ fileList: newFileList }) => {
         setPosterList(newFileList);
@@ -138,13 +137,12 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
             }
             console.log(posterList);
             console.log(values.time);
-            
-            const start = new Date(values.time[0].$d)
-            const end = new Date(values.time[1].$d)
+
+            const start = new Date(values.time[0].$d);
+            const end = new Date(values.time[1].$d);
             console.log(start);
-            formData.append("_id", selectedEvent.original._id)
+            formData.append("_id", selectedEvent.original._id);
             // console.log(selectedEvent);
-            
 
             formData.append("eventName", values.eventName);
             formData.append("description", values.description);
@@ -209,7 +207,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         // <- This will send the selected image to our api
         try {
             console.log(imageFile);
-            
+
             const res = await postImage({ image: imageFile });
             console.log(res.data.data.imageUrl);
             return res.data.data.imageUrl;
@@ -632,9 +630,20 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
                     <div style={{ display: "flex", gap: "1rem" }}>
                         <Form.Item>
-                            <Button size="large" type="primary" htmlType="submit" loading={loading}>
-                                Register Event
+                            <Button type="primary" onClick={() => setIsSubmitModalOpen(true)}>
+                                Save Changes
                             </Button>
+                            <Modal
+                                title="Update Data"
+                                onOk={() => form.submit()}
+                                onCancel={() => setIsSubmitModalOpen(false)}
+                                confirmLoading={loading}
+                                open={isSubmitModalOpen}
+                                okText="Yes"
+                                cancelText="Cancel"
+                            >
+                                Are you sure you want to edit this Event's details?
+                            </Modal>
                         </Form.Item>
                         <Form.Item>
                             <Button
