@@ -390,7 +390,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     Note that this Operation cannot be reverted.
                 </Modal>
                 <h1 style={{ marginTop: "1.2rem" }}>Edit an Event</h1>
-                <Form form={form} layout="vertical" onFinish={onFinish} size="large">
+                <Form form={form} layout="vertical" onFinish={onFinish} size="large" disabled = {!selectedEvent}>
                     {/* Name */}
                     <Form.Item
                         label="Event Name"
