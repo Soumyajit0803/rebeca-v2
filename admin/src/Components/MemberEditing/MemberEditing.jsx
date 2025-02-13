@@ -6,6 +6,7 @@ import ImgCrop from "antd-img-crop";
 import "antd/es/modal/style";
 import "antd/es/slider/style";
 import { MailOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
 
 const { Option } = Select;
 const teamNames = [
@@ -49,6 +50,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [selectedMember, setSelectedMember] = useState(null);
+    const [fetching, setFetching] = useState(false)
 
     const handleMemberDeletion = async () => {
         try {
@@ -204,6 +206,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
 
     const handleGetAllMembers = async () => {
         try {
+            setFetching(true)
             const res = await getAllMembers();
             // console.log(res);
             const tmp = [];
@@ -219,6 +222,8 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
             // console.log(tmp);
         } catch (err) {
             console.log(err);
+        } finally {
+            setFetching(false)
         }
     };
 
@@ -239,6 +244,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 onChange={onMemberSelect}
                 options={values}
                 value={selectedMember}
+                notFoundContent={fetching ? <Spin size="large" tip="fetching members..."/> : null}
             ></Select>
             <br />
 

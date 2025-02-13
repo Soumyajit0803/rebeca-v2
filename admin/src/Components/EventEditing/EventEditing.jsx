@@ -18,10 +18,11 @@ import Icon, { DeleteFilled, CloseOutlined } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 // import "./EventAddition.css";
-import { getAllMembers, getAllEvents, updateEvent, postImage } from "../../api";
+import { getAllMembers, getAllEvents, updateEvent, postImage, deleteEvent } from "../../api";
 import ImgCrop from "antd-img-crop";
 import dayjs from "dayjs";
 import Coordinator from "../Coordinator/Coordinator";
+import { Spin } from "antd";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
@@ -70,6 +71,39 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
+    const [fetchingAllEvents, setFetchingAllEvents] = useState(false)
+    const [fetchingAllMembers, setFetchingAllMembers] = useState(false)
+
+    const handleEventDeletion = async () => {
+        try {
+            setLoading(true);
+            if (selectedEvent === null) {
+                errorPop("No Event selected", "Please Select an event first");
+                return;
+            }
+
+            const res = await deleteEvent(selectedEvent.original._id);
+            console.log(res);
+
+            if (res.data.message === "success") {
+                successPop("Event deleted Successfully", "Event Deleted");
+                await handleGetAllEvents();
+                form.resetFields();
+                setPosterList([])
+                setOrigPosterList([])
+                setThumbnailList([])
+                setOrigThumbnailList([])
+                setSelectedEvent(null);
+            } else {
+                errorPop(res.data.message, "Error While Deleting Event");
+            }
+        } catch (err) {
+            errorPop(err.message, "Error While Deleting Event");
+        } finally {
+            setLoading(false);
+            setIsDeleteModalOpen(false);
+        }
+    };
 
     const onPosterChange = ({ fileList: newFileList }) => {
         setPosterList(newFileList);
@@ -113,11 +147,11 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         try {
             setLoading(true);
             if (posterList.length === 0) {
-                infoPop("Please add poster image");
+                infoPop("Please add poster image", "No Poster Image");
                 return;
             }
             if (thumbnailList.length === 0) {
-                infoPop("Please add thumbnail image");
+                infoPop("Please add thumbnail image", "No Thumbnail Image");
                 return;
             }
 
@@ -226,7 +260,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         } catch (err) {
             console.log(err.response?.data);
             const detailed = err.response?.data?.message;
-            errorPop(detailed || err.message);
+            errorPop(detailed || err.message, "Error");
         } finally {
             setLoading(false);
             setIsSubmitModalOpen(false);
@@ -235,6 +269,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
     const handleGetAllMembers = async () => {
         try {
+            setFetchingAllMembers(true)
             const res = await getAllMembers();
             // console.log(res);
             const tmp = [];
@@ -251,7 +286,9 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            errorPop(`ERROR: ${errormsg}`);
+            errorPop(`ERROR: ${errormsg}`, "Error while fetching all members");
+        } finally {
+            setFetchingAllMembers(false)
         }
     };
 
@@ -270,12 +307,13 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         } catch (err) {
             console.log(err);
             const errormsg = err.response ? err.response.data.message : err.message;
-            errorPop(`ERROR: ${errormsg}`);
+            errorPop(`ERROR: ${errormsg}`, "Image Handling error");
         }
     };
 
     const handleGetAllEvents = async () => {
         try {
+            setFetchingAllEvents(true)
             const res = await getAllEvents();
             console.log(res);
             const finalopts = [];
@@ -292,7 +330,9 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         } catch (err) {
             console.log(err.response?.data);
             const detailed = err.response?.data?.message;
-            errorPop(detailed || err.message);
+            errorPop(detailed || err.message, "Error While fetching allEvents");
+        } finally {
+            setFetchingAllEvents(false)
         }
     };
 
@@ -362,6 +402,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     onChange={onEventSelect}
                     options={AllEventsData}
                     value={selectedEvent}
+                    notFoundContent={fetchingAllEvents ? <Spin tip="fetching events..." size="large" /> : null}
                 ></Select>
                 <br />
 
@@ -381,17 +422,17 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     iconPosition="end"
                     onClick={() => {
                         if (!selectedEvent) {
-                            errorPop("Please select a member first");
+                            errorPop("Please select a member first", "No Event Selected");
                         } else {
                             setIsDeleteModalOpen(true);
                         }
                     }}
                 >
-                    Delete Team Member
+                    Delete Event
                 </Button>
                 <Modal
                     title="Delete Data"
-                    // onOk={handleMemberDeletion}
+                    onOk={handleEventDeletion}
                     onCancel={() => setIsDeleteModalOpen(false)}
                     confirmLoading={loading}
                     open={isDeleteModalOpen}
@@ -400,7 +441,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     cancelText="Cancel"
                     okButtonProps={{ type: "primary" }}
                 >
-                    Are you sure you want to delete this member's details?
+                    Are you sure you want to delete this Event from Database?
                     <br />
                     Note that this Operation cannot be reverted.
                 </Modal>
@@ -665,6 +706,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                                 }}
                                 options={allMembers}
                                 value={selectedMember}
+                                notFoundContent={fetchingAllMembers ? <Spin tip="fetching members..." size="large" /> : null}
                             ></Select>
                         </Form.Item>
 
