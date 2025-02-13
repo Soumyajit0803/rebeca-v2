@@ -128,7 +128,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 name: formValues.name,
                 role: formValues.role,
                 team: formValues.team,
-                phone: `+91${formValues.phone}`,
+                phone: `${formValues.phone}`,
                 email: formValues.email,
             };
             
@@ -137,6 +137,8 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 if (oldData[key] !== newValue) {
                     formData.append(key, newValue);
                     changed = 1;
+                    console.log("new value: ");
+                    console.log(newValue);
                 }
             });
 
@@ -145,6 +147,8 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 const imageURL = await handleEditImage();
                 formData.append("image", imageURL);
                 changed = 1;
+                // console.log("new value: ");
+                console.log("new Image");
             }
 
             // post this in mongodb
@@ -160,7 +164,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                     setSelectedMember(null);
                 } else errorPop(res.data.message);
             } else {
-                infoPop("No changes found");
+                infoPop("You have not done any changes compared to original data", "No changes Found");
             }
         } catch (err) {
             console.log(err);

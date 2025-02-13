@@ -33,12 +33,13 @@ const memberSchema = new mongoose.Schema(
             type: String,
             required: [true, "Missing Field: Email"],
             trim: true,
+            unique: true
         },
         phone: {
             type: String,
             required: true,
             unique: true,
-            match: [/^\+91[6789]\d{9}$/, "Invalid phone number format"],
+            // match: [/^\[6789]\d{9}$/, "Invalid phone number format"],
         },
     },
     { timestamps: true }
