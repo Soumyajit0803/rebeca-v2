@@ -9,22 +9,22 @@ import {
     Avatar,
     InputNumber,
     Select,
-    message,
     Modal,
     Tag,
     Card,
     Alert,
 } from "antd";
-import Icon, { UploadOutlined, CloseOutlined } from "@ant-design/icons";
+import Icon, { DeleteFilled, CloseOutlined } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 // import "./EventAddition.css";
-import { getAllMembers } from "../../api";
+import { getAllMembers, getAllEvents, updateEvent, postImage } from "../../api";
 import ImgCrop from "antd-img-crop";
+import dayjs from "dayjs";
+import Coordinator from "../Coordinator/Coordinator";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
-const POST_URL = `https://instruo-backend.onrender.com/api/event/create`;
 const RupeeFilled = ({ color }) => {
     return (
         <Icon style={{ scale: "1.5" }}>
@@ -55,7 +55,8 @@ const HybridLabel = ({ name, imageURL }) => {
     );
 };
 
-const EventEditing = () => {
+const EventEditing = ({ errorPop, successPop, infoPop }) => {
+    const [AllEventsData, setAllEventsData] = useState([]);
     const [form] = Form.useForm();
     const [eventType, setEventType] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -63,13 +64,22 @@ const EventEditing = () => {
     const [selectedMember, setSelectedMember] = useState(null);
     const [coordsList, setCoordsList] = useState([]);
     const [posterList, setPosterList] = useState([]);
+    const [origposterList, setOrigPosterList] = useState([]);
     const [thumbnailList, setThumbnailList] = useState([]);
+    const [origThumbnailList, setOrigThumbnailList] = useState([]);
+    const [selectedEvent, setSelectedEvent] = useState(null);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
+    
+
     const onPosterChange = ({ fileList: newFileList }) => {
         setPosterList(newFileList);
     };
+
     const onThumbnailChange = ({ fileList: newFileList }) => {
         setThumbnailList(newFileList);
     };
+
     const onPosterPreview = async (file) => {
         let src = file.url;
         if (!src) {
@@ -99,31 +109,73 @@ const EventEditing = () => {
         imgWindow?.document.write(image.outerHTML);
     };
 
-    const { user } = useAuth();
+    // const { user } = useAuth();
     const onFinish = async (values) => {
         try {
             setLoading(true);
-            const formData = new FormData();
-            formData.append("name", values.name);
-            formData.append("description", values.description);
-            formData.append("startTime", values.time[0].$d);
-            formData.append("endTime", values.time[1].$d);
-            formData.append("venue", values.venue);
-            formData.append("rules", values.rules);
-            formData.append("rulesDoc", values.rulesDocUrl);
-            formData.append("type", values.type);
-            if (values.type !== "Single") {
-                formData.append("maxSize", values.maxTeamSize);
-                formData.append("minSize", values.minTeamSize);
+            if (posterList.length === 0) {
+                infoPop("Please add poster image");
+                return;
             }
-            formData.append("poster", values.posterImage.fileList[0].originFileObj);
-            formData.append("registrationAmount", values.registrationAmount);
-            formData.append("registrationUrl", values.registrationUrl);
-            values.galleryImages?.fileList.forEach((file) => {
-                formData.append("gallery", file.originFileObj);
+            if (thumbnailList.length === 0) {
+                infoPop("Please add thumbnail image");
+                return;
+            }
+            // const posterURL = await handleEditImage(posterList[0].originFileObj);
+            // const thumbnailURL = await handleEditImage(thumbnailList[0].originFileObj);
+            const formData = new FormData();
+            if (JSON.stringify(posterList) !== JSON.stringify(origposterList)) {
+                console.log("Files data");
+                const imageURL = await handleEditImage(posterList[0].originFileObj);
+                formData.append("poster", imageURL);
+                changed = 1;
+            }
+            if (JSON.stringify(thumbnailList) !== JSON.stringify(origThumbnailList)) {
+                console.log("Files data");
+                const imageURL = await handleEditImage(thumbnailList[0].originFileObj);
+                formData.append("thumbnail", imageURL);
+                changed = 1;
+            }
+            console.log(posterList);
+            console.log(values.time);
+            
+            const start = new Date(values.time[0].$d)
+            const end = new Date(values.time[1].$d)
+            console.log(start);
+            formData.append("_id", selectedEvent.original._id)
+            // console.log(selectedEvent);
+            
+
+            formData.append("eventName", values.eventName);
+            formData.append("description", values.description);
+            formData.append("startTime", start);
+            formData.append("endTime", end);
+            formData.append("venue", values.venue);
+            formData.append("rulesDocURL", values.rulesDocURL);
+            formData.append("type", values.type);
+            if (values.type !== "single") {
+                formData.append("maxTeamSize", values.maxTeamSize);
+                formData.append("minTeamSize", values.minTeamSize);
+            }
+            // formData.append("poster", posterURL);
+            // formData.append("thumbnail", thumbnailURL);
+            formData.append("registrationFee", values.registrationFee);
+            coordsList.forEach((e) => {
+                formData.append("mainCoordinators[]", e._id);
             });
+
+            console.log(formData);
+
+            const res = await updateEvent(formData);
+            console.log(res);
+            successPop("Event Added successfully.");
         } catch (err) {
+            console.log(err.response?.data);
+            const detailed = err.response?.data?.message;
+            errorPop(detailed || err.message);
         } finally {
+            setLoading(false);
+            setIsSubmitModalOpen(false);
         }
     };
 
@@ -144,6 +196,8 @@ const EventEditing = () => {
             // console.log(tmp);
         } catch (err) {
             console.log(err);
+            const errormsg = err.response ? err.response.data.message : err.message;
+            errorPop(`ERROR: ${errormsg}`);
         }
     };
 
@@ -151,10 +205,12 @@ const EventEditing = () => {
         handleGetAllMembers();
     }, []);
 
-    const handleSubmitImage = async () => {
+    const handleEditImage = async (imageFile) => {
         // <- This will send the selected image to our api
         try {
-            const res = await postImage({ image: fileList[0].originFileObj });
+            console.log(imageFile);
+            
+            const res = await postImage({ image: imageFile });
             console.log(res.data.data.imageUrl);
             return res.data.data.imageUrl;
         } catch (err) {
@@ -164,15 +220,142 @@ const EventEditing = () => {
         }
     };
 
+    const handleGetAllEvents = async () => {
+        try {
+            const res = await getAllEvents();
+            console.log(res);
+            const finalopts = [];
+
+            res.data.data.map((event, i) => {
+                finalopts.push({
+                    value: i,
+                    searchField: event.eventName,
+                    label: <HybridLabel imageURL={event.thumbnail} name={event.eventName} />,
+                    original: event,
+                });
+            });
+            setAllEventsData(finalopts);
+        } catch (err) {
+            console.log(err.response?.data);
+            const detailed = err.response?.data?.message;
+            errorPop(detailed || err.message);
+        }
+    };
+
+    const onEventSelect = (idx) => {
+        const original = AllEventsData[idx].original;
+
+        setSelectedEvent(AllEventsData[idx]);
+        original.time = [dayjs(original.startTime), dayjs(original.endTime)];
+
+        form.setFieldsValue(original);
+        setEventType(original.type);
+        setCoordsList(original.mainCoordinators);
+        console.log(original);
+
+        // set poster
+        setPosterList([
+            {
+                uid: "-1",
+                url: original.poster,
+                status: "done",
+                name: original.poster.split("/")[-1],
+            },
+        ]);
+        setOrigPosterList([
+            {
+                uid: "-1",
+                url: original.poster,
+                status: "done",
+                name: original.poster.split("/")[-1],
+            },
+        ]);
+        // set thumbnail
+        setThumbnailList([
+            {
+                uid: "-1",
+                url: original.thumbnail,
+                status: "done",
+                name: original.thumbnail.split("/")[-1],
+            },
+        ]);
+        setOrigThumbnailList([
+            {
+                uid: "-1",
+                url: original.thumbnail,
+                status: "done",
+                name: original.thumbnail.split("/")[-1],
+            },
+        ]);
+    };
+
+    useEffect(() => {
+        handleGetAllEvents();
+        handleGetAllMembers();
+    }, []);
+
     return (
         <div style={{ maxWidth: 1200 }}>
             <div className="register-container">
-                <h1>Edit an Event</h1>
+                <span style={{ fontSize: "1.3rem", fontWeight: "500" }}>Find the Event to Edit</span>
+                <br />
+                <Select
+                    size="large"
+                    style={{ width: "100%" }}
+                    showSearch
+                    placeholder="Select a person"
+                    optionFilterProp="searchField"
+                    onChange={onEventSelect}
+                    options={AllEventsData}
+                    value={selectedEvent}
+                ></Select>
+                <br />
+
+                <Alert
+                    // message="Note"
+                    message="If you cannot find an event you have just added in the dropdown, consider refreshing the page."
+                    type="info"
+                    showIcon
+                    style={{ marginTop: "1rem" }}
+                />
+                <Button
+                    danger
+                    type="primary"
+                    size="large"
+                    style={{ marginTop: "1rem" }}
+                    icon={<DeleteFilled />}
+                    iconPosition="end"
+                    onClick={() => {
+                        if (!selectedEvent) {
+                            errorPop("Please select a member first");
+                        } else {
+                            setIsDeleteModalOpen(true);
+                        }
+                    }}
+                >
+                    Delete Team Member
+                </Button>
+                <Modal
+                    title="Delete Data"
+                    // onOk={handleMemberDeletion}
+                    onCancel={() => setIsDeleteModalOpen(false)}
+                    confirmLoading={loading}
+                    open={isDeleteModalOpen}
+                    okText="Delete"
+                    okType="danger"
+                    cancelText="Cancel"
+                    okButtonProps={{ type: "primary" }}
+                >
+                    Are you sure you want to delete this member's details?
+                    <br />
+                    Note that this Operation cannot be reverted.
+                </Modal>
+                <h1 style={{ marginTop: "1.2rem" }}>Edit an Event</h1>
                 <Form form={form} layout="vertical" onFinish={onFinish} size="large">
                     {/* Name */}
                     <Form.Item
                         label="Event Name"
-                        name="name"
+                        name="eventName"
                         rules={[
                             {
                                 required: true,
@@ -225,27 +408,9 @@ const EventEditing = () => {
                         <Input placeholder="Enter event venue" />
                     </Form.Item>
 
-                    {/* Rules */}
-                    {/* <Form.Item
-							label="Rules"
-							name="rules"
-							rules={[
-								{
-									required: true,
-									message: "Please specify the rules",
-								},
-							]}
-						>
-							<TextArea
-								rows={3}
-								placeholder="Enter event rules"
-							/>
-						</Form.Item> */}
-
-                    {/* Rules Document URL */}
                     <Form.Item
                         label="Rules Document URL"
-                        name="rulesDocUrl"
+                        name="rulesDocURL"
                         rules={[
                             {
                                 required: true,
@@ -325,7 +490,7 @@ const EventEditing = () => {
                             <Option value="Combined">Combined</Option>
                         </Select>
                     </Form.Item>
-                    {eventType !== "Single" && (
+                    {eventType !== "single" && (
                         <div
                             style={{
                                 display: "flex",
@@ -397,7 +562,7 @@ const EventEditing = () => {
                         </div>
                     )}
                     <Form.Item
-                        name="registrationAmount"
+                        name="registrationFee"
                         label="Registration Fee for Non-IIESTians (give 0 if not applicable)"
                         rules={[
                             {
@@ -421,7 +586,6 @@ const EventEditing = () => {
                     <div>
                         <Form.Item name="coordinators" label="Coordinators for the Event">
                             <Alert
-                                // message="Note"
                                 message="If you cannot find a member you have just added in the dropdown, consider refreshing the page."
                                 type="info"
                                 showIcon
@@ -434,8 +598,16 @@ const EventEditing = () => {
                                 placeholder="Select a Coordinator"
                                 optionFilterProp="searchField"
                                 onChange={(idx) => {
-                                    !coordsList.includes(idx) && setCoordsList([...coordsList, idx]);
-                                    setSelectedMember(" ");
+                                    for (let c of coordsList) {
+                                        console.log(c);
+                                        console.log(allMembers[idx].original._id);
+
+                                        if (c._id === allMembers[idx].original._id) {
+                                            return;
+                                        }
+                                    }
+
+                                    setCoordsList([...coordsList, allMembers[idx].original]);
                                 }}
                                 options={allMembers}
                                 value={selectedMember}
@@ -444,34 +616,15 @@ const EventEditing = () => {
 
                         <Space wrap style={{ marginBottom: "1rem" }}>
                             {coordsList.map((coord, i) => {
-                                const idx = coord;
-                                coord = allMembers[coord].original;
                                 return (
-                                    <Card
-                                        size="small"
-                                        title={`Coordinator ${i + 1}`}
+                                    <Coordinator
+                                        onClose={() => setCoordsList(coordsList.filter((m) => m._id !== coord._id))}
+                                        name={coord.name}
+                                        image={coord.image}
+                                        email={coord.email}
+                                        id={i}
                                         key={i}
-                                        extra={
-                                            <Button
-                                                type="primary"
-                                                size="small"
-                                                icon={<CloseOutlined />}
-                                                danger
-                                                onClick={() => setCoordsList(coordsList.filter((m) => m !== idx))}
-                                            />
-                                        }
-                                    >
-                                        <Space>
-                                            <Avatar src={coord.image} style={{ width: 56, height: 56 }}></Avatar>
-                                            <div style={{ minWidth: 100 }}>
-                                                <h3>
-                                                    {coord.name}
-                                                    <br />
-                                                </h3>
-                                                <span style={{ opacity: 0.6 }}>{coord.name}</span>
-                                            </div>
-                                        </Space>
-                                    </Card>
+                                    />
                                 );
                             })}
                         </Space>

@@ -20,7 +20,7 @@ const eventSchema = new mongoose.Schema(
             required: [true, "End time is required"],
             validate: {
                 validator: function (value) {
-                    return this.startTime < value;
+                    return this.startTime && this.startTime < value;
                 },
                 message: "End time must be after start time",
             },

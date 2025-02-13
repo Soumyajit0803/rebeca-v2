@@ -116,44 +116,34 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
         try {
             setLoading(true);
             const formData = new FormData();
+            const oldData = values[index].original;
             var changed = 0;
             if (index === -1) {
                 errorPop("No User Selected");
                 return;
             }
 
-            const oldData = values[index].original;
             formData.append("_id", oldData._id);
-            if (oldData.name !== formValues.name) {
-                changed = 1;
-                formData.append("name", formValues.name);
-            }
+            const newData = {
+                name: formValues.name,
+                role: formValues.role,
+                team: formValues.team,
+                phone: `+91${formValues.phone}`,
+                email: formValues.email,
+            };
+            
+            // Check for changes and append only modified fields
+            Object.entries(newData).forEach(([key, newValue]) => {
+                if (oldData[key] !== newValue) {
+                    formData.append(key, newValue);
+                    changed = 1;
+                }
+            });
+
             if (JSON.stringify(fileList) !== JSON.stringify(origFile)) {
                 console.log("Files data");
-
-                console.log(fileList);
-                console.log(origFile);
-
                 const imageURL = await handleEditImage();
-                console.log(imageURL);
-
                 formData.append("image", imageURL);
-                changed = 1;
-            }
-            if (oldData.role !== formValues.role) {
-                formData.append("role", formValues.role);
-                changed = 1;
-            }
-            if (oldData.team !== formValues.team) {
-                formData.append("team", formValues.team);
-                changed = 1;
-            }
-            if (oldData.phone !== "+91" + formValues.phone) {
-                formData.append("phone", "+91" + formValues.phone);
-                changed = 1;
-            }
-            if (oldData.email !== formValues.email) {
-                formData.append("email", formValues.email);
                 changed = 1;
             }
 
@@ -174,7 +164,8 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
             }
         } catch (err) {
             console.log(err);
-            errorPop(err.message);
+            const e = err.data? err.data.message : err.message;
+            errorPop(e);
         } finally {
             setLoading(false);
             setIsSubmitModalOpen(false);

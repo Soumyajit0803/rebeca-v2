@@ -5,5 +5,6 @@ const Router = express.Router()
 Router.post("/create", eventController.createEvent)
 Router.delete("/delete", eventController.deleteEvent)
 Router.patch("/update", eventController.updateEvent)
+Router.get("/all", eventController.getAllEvents)
 
 module.exports = Router

@@ -1,77 +1,22 @@
-import React, { useState } from "react";
-import { Tabs, ConfigProvider, theme, message } from "antd";
-// import EventRegistration from "./Components/EventAddition/EventAddition";
-// import MemberAddition from "./Components/MemberAddition/MemberAddition";
-// import MemberEditing from "./Components/MemberEditing/MemberEditing";
-// import RegistrationStats from "./Components/RegistrationStats/RegistrationStats";
-// import EventEditing from "./Components/EventEditing/EventEditing";
-
+import React from "react";
+import { ConfigProvider, theme } from "antd";
 import { AuthProvider } from "./AuthContext";
-import AllRoutes from "./Routes";
-import { BrowserRouter } from "react-router-dom";
 import Dashboard from "./Components/Dashboard/Dashboard";
 
-const App = () => {
-    // const [OpSelect, setOpSelect] = useState(1);
-    // const width = window.innerWidth;
-    // // console.log(width);
-    // const [messageApi, contextHolder] = message.useMessage();
-    // const infoPop = (e) => {
-    //     messageApi.open({
-    //         type: "info",
-    //         content: e,
-    //     });
-    // };
-    // const errorPop = (e) => {
-    //     messageApi.open({
-    //         type: "error",
-    //         content: e,
-    //     });
-    // };
-    // const successPop = (e) => {
-    //     messageApi.open({
-    //         type: "success",
-    //         content: e,
-    //     });
-    // };
-    // const items = [
-    //     {
-    //         key: "1",
-    //         label: "Add Event",
-    //         children: <EventRegistration />,
-    //     },
-    //     {
-    //         key: "2",
-    //         label: "Edit Event",
-    //         children: <EventEditing />,
-    //     },
-    //     {
-    //         key: "3",
-    //         label: "Add Team member",
-    //         children: <MemberAddition />,
-    //     },
-    //     {
-    //         key: "4",
-    //         label: "Edit Team member",
-    //         children: <MemberEditing />,
-    //     },
-    //     {
-    //         key: "5",
-    //         label: "Registration Stats",
-    //         children: (
-    //             <RegistrationStats
-    //                 errorPop={errorPop}
-    //                 successPop={successPop}
-    //                 infoPop={infoPop}
-    //             />
-    //         ),
-    //     },
-    // ];
+const themeColor = {
+    admin: "#ef7f29",
+    coordinator: "#9852f3",
+    member: "#1668dc"
+}
 
+const App = () => {
     return (
         <ConfigProvider
             theme={{
                 algorithm: theme.darkAlgorithm,
+                token: {
+                    colorPrimary: themeColor.coordinator
+                }
             }}
         >
             {/* <AuthProvider>

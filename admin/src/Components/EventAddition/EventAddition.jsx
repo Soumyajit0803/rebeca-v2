@@ -21,6 +21,7 @@ import { useAuth } from "../../AuthContext";
 import "./EventAddition.css";
 import { getAllMembers, createEvent, postImage } from "../../api";
 import ImgCrop from "antd-img-crop";
+import Coordinator from "../Coordinator/Coordinator";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
@@ -455,37 +456,14 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                                 const idx = coord;
                                 coord = allMembers[coord].original;
                                 return (
-                                    <Card
-                                        size="small"
-                                        title={`Coordinator ${i + 1}`}
-                                        key={i}
-                                        extra={
-                                            <Button
-                                                type="primary"
-                                                size="small"
-                                                icon={<CloseOutlined />}
-                                                danger
-                                                onClick={() => setCoordsList(coordsList.filter((m) => m !== idx))}
-                                            />
-                                        }
-                                    >
-                                        <Space>
-                                            <Avatar src={coord.image} style={{ width: 64, height: 64 }}></Avatar>
-                                            <div style={{ minWidth: 100 }}>
-                                                <span style={{ fontWeight: 500, fontSize: "1rem" }}>
-                                                    {coord.name}
-                                                    <br />
-                                                </span>
-                                                <span style={{ opacity: 0.6 }}>
-                                                    <MailFilled /> {coord.email}
-                                                </span>
-                                                <br />
-                                                <span style={{ opacity: 0.6 }}>
-                                                    <PhoneFilled /> {coord.phone}
-                                                </span>
-                                            </div>
-                                        </Space>
-                                    </Card>
+                                    <Coordinator
+                                        onClose={() => setCoordsList(coordsList.filter((m) => m !== idx))}
+                                        name = {coord.name}
+                                        image = {coord.image}
+                                        email = {coord.email}
+                                        id = {i}
+                                        key = {i}
+                                    />
                                 );
                             })}
                         </Space>
