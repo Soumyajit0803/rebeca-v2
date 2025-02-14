@@ -43,3 +43,7 @@ body {
 .ant-slider-track, .ant-slider-handle::after {
     background-color: #1668dc !important;
 }
+
+input, .ant-input-number-input {
+    font-family: "Poppins", serif !important;
+}

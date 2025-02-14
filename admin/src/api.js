@@ -7,6 +7,10 @@ const API = axios.create({
     withCredentials: true,
 });
 
+export const authWithGoogle = (code) => API.get(`/auth/google?code=${code}`);
+export const checkStatus = () => API.get(`/auth/status`);
+export const logoutUser = () => API.get(`/auth/logout`);
+
 export const postImage = (data) =>
     API.post("/profile/upload?upload_preset=rebeca", data, {
         headers: {
