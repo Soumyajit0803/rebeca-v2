@@ -58,8 +58,10 @@ exports.googleAuth = catchAsync(async (req, res, next) => {
         );
 
         let user = await User.findOne({ email: userRes.data.email });
+        var isNewUser = 0
 
         if (!user) {
+            isNewUser = 1;
             console.log("New User found");
             user = await User.create({
                 name: userRes.data.name,
@@ -68,7 +70,7 @@ exports.googleAuth = catchAsync(async (req, res, next) => {
             });
         }
 
-        createSendToken(user, 201, res);
+        createSendToken(user, isNewUser?201:200, res);
     } catch (err) {
         next(err);
     }
@@ -76,12 +78,12 @@ exports.googleAuth = catchAsync(async (req, res, next) => {
 
 exports.checkStatus = catchAsync(async (req, res, next) => {
     try {
-        if (!req.user) return res.json({ message: "No user to logout" });
+        if (!req.user) return res.status(404).json({ message: "No user to logout" });
         let user = await User.findOne({ _id: req.user.id });
         if (user) {
-            return res.json({ message: "User is authenticated", user: user });
+            return res.status(200).json({ message: "User is authenticated", user: user });
         }
-        return res.json({ message: "User not found! You have been deleted! Login again" });
+        return res.status(404).json({ message: "User not found! You have been deleted! Login again" });
     } catch (err) {
         console.log(err.message);
         next(err);
@@ -100,7 +102,7 @@ exports.logout = catchAsync(async (req, res) => {
             path: "/", // Make sure it's cleared for the entire site
         });
 
-        return res.json({ message: "Logged out successfully" });
+        return res.status(200).json({ message: "Logged out successfully" });
     } catch (err) {
         console.log("ERROR IN LOGOUT: " + err.message);
         next(err);

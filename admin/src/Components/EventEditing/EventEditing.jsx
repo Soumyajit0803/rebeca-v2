@@ -154,14 +154,22 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 infoPop("Please add thumbnail image", "No Thumbnail Image");
                 return;
             }
-            // const posterURL = await handleEditImage(posterList[0].originFileObj);
-            // const thumbnailURL = await handleEditImage(thumbnailList[0].originFileObj);
+
+            var skipCoordinators = 0;
+            if (coordsList.length===0){
+                skipCoordinators = 1;
+            }
+
             const formData = new FormData();
+            var changed = 0;
+            const oldData = selectedEvent.original;
+            formData.append("_id", selectedEvent.original._id);
+
             if (JSON.stringify(posterList) !== JSON.stringify(origposterList)) {
+                changed = 1;
                 console.log("Files data");
                 const imageURL = await handleEditImage(posterList[0].originFileObj);
                 formData.append("poster", imageURL);
-                changed = 1;
             }
             if (JSON.stringify(thumbnailList) !== JSON.stringify(origThumbnailList)) {
                 console.log("Files data");
@@ -169,38 +177,94 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 formData.append("thumbnail", imageURL);
                 changed = 1;
             }
-            console.log(posterList);
-            console.log(values.time);
 
-            const start = new Date(values.time[0].$d);
-            const end = new Date(values.time[1].$d);
-            console.log(start);
-            formData.append("_id", selectedEvent.original._id);
+            const start = new Date(values.time[0].$d).toISOString();
+            const end = new Date(values.time[1].$d).toISOString();
+            // console.log(start);
             // console.log(selectedEvent);
 
-            formData.append("eventName", values.eventName);
-            formData.append("description", values.description);
-            formData.append("startTime", start);
-            formData.append("endTime", end);
-            formData.append("venue", values.venue);
-            formData.append("rulesDocURL", values.rulesDocURL);
-            formData.append("type", values.type);
+            const newData = {
+                eventName: values.eventName,
+                description: values.description,
+                startTime: start,
+                endTime: end,
+                venue: values.venue,
+                rulesDocURL: values.rulesDocURL,
+                type: values.type,
+                registrationFee: values.registrationFee,
+                mainCoordinators: [],
+            };
+
             if (values.type !== "single") {
-                formData.append("maxTeamSize", values.maxTeamSize);
-                formData.append("minTeamSize", values.minTeamSize);
+                newData["maxTeamSize"] = values.maxTeamSize;
+                newData["minTeamSize"] = values.minTeamSize;
             }
-            // formData.append("poster", posterURL);
-            // formData.append("thumbnail", thumbnailURL);
-            formData.append("registrationFee", values.registrationFee);
+
             coordsList.forEach((e) => {
-                formData.append("mainCoordinators[]", e._id);
+                newData.mainCoordinators.push(e._id);
             });
 
-            console.log(formData);
+            const oldIDs = oldData["mainCoordinators"].map(v=>v._id);
+            console.log(oldIDs);
+            
 
-            const res = await updateEvent(formData);
-            console.log(res);
-            successPop("Event Edited successfully", "Success");
+            Object.entries(newData).forEach(([key, newValue]) => {
+                if (key === "mainCoordinators") {
+                    
+                    for (let id of oldIDs) {
+                        if (!newValue.includes(id)) {
+                            changed = 1;
+                            break;
+                        }
+                    }
+                    for (let id of newValue) {
+                        if (!oldIDs.includes(id)) {
+                            changed = 1;
+                            break;
+                        }
+                    }
+
+                    if(skipCoordinators)changed = 0
+                    else if (changed) {
+                        console.log(oldData[key]);
+                        console.log(newValue);
+                        newValue.forEach((id) => {
+                            formData.append("mainCoordinators[]", id);
+                        });
+                    }
+                } else if (oldData[key] !== newValue) {
+                    formData.append(key, newValue);
+                    changed = 1;
+                    console.log("new value: ");
+                    console.log(newValue);
+                }
+            });
+
+            // formData.append("eventName", values.eventName);
+            // formData.append("description", values.description);
+            // formData.append("startTime", start);
+            // formData.append("endTime", end);
+            // formData.append("venue", values.venue);
+            // formData.append("rulesDocURL", values.rulesDocURL);
+            // formData.append("type", values.type);
+            // if (values.type !== "single") {
+            //     formData.append("maxTeamSize", values.maxTeamSize);
+            //     formData.append("minTeamSize", values.minTeamSize);
+            // }
+            // formData.append("registrationFee", values.registrationFee);
+            // coordsList.forEach((e) => {
+            //     formData.append("mainCoordinators[]", e._id);
+            // });
+
+            console.log(formData);
+            if (changed) {
+                const res = await updateEvent(formData);
+                console.log(res);
+                successPop("Event Added successfully.");
+                if(skipCoordinators)infoPop("No coordinators selected. The coordinators list will remain unchanged")
+            } else {
+                infoPop("You have not done any changes compared to original data", "No changes Found");
+            }
         } catch (err) {
             console.log(err.response?.data);
             const detailed = err.response?.data?.message;

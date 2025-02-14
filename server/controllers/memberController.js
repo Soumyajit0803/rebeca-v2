@@ -10,7 +10,7 @@ exports.createMember = catchAsync(async (req, res, next) => {
             ...req.body,
         });
         await memberData.save();
-        return res.json({ message: "success", data: memberData });
+        return res.status(201).json({ message: "success", data: memberData });
     } catch (err) {
         console.log("Error while adding member" + ` message: ${err.message}`);
         next(err)
@@ -20,7 +20,7 @@ exports.createMember = catchAsync(async (req, res, next) => {
 exports.getAllMembers = catchAsync(async (req, res, next) => {
     try {
         const allMembers = await Member.find()
-        return res.json({message: "success", data: allMembers})
+        return res.status(200).json({message: "success", data: allMembers})
 
     } catch(err) {
         console.log(err.message);
@@ -40,10 +40,10 @@ exports.updateMember = catchAsync(async (req, res, next) => {
         )
 
         if (!updatedMember) {
-            return res.json({ message: "Member to be updated not found"});
+            return res.status(404).json({ message: "Member ID not found"});
         }
 
-        return res.json({message: 'success', data: updatedMember})
+        return res.status(200).json({message: 'success', data: updatedMember})
     } catch(err) {
         console.log(err.message);
         next(err)
@@ -55,9 +55,9 @@ exports.deleteMember = catchAsync(async (req, res, next) => {
         const id = req.query._id
         const deletedMember = await Member.findByIdAndDelete(id)
         if (!deletedMember) {
-            return res.json({message: "Member to be deleted not found"})
+            return res.status(404).json({message: "Member to be deleted not found"})
         } else{
-            return res.json({message: "success", data: deletedMember})
+            return res.status(204).json({message: "success", data: deletedMember})
         }
 
     } catch(err) {
