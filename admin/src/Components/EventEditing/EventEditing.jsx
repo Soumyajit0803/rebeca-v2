@@ -155,6 +155,11 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 return;
             }
 
+            var skipCoordinators = 0;
+            if (coordsList.length===0){
+                skipCoordinators = 1;
+            }
+
             const formData = new FormData();
             var changed = 0;
             const oldData = selectedEvent.original;
@@ -205,6 +210,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
             Object.entries(newData).forEach(([key, newValue]) => {
                 if (key === "mainCoordinators") {
+                    
                     for (let id of oldIDs) {
                         if (!newValue.includes(id)) {
                             changed = 1;
@@ -217,8 +223,9 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                             break;
                         }
                     }
-                    
-                    if (changed) {
+
+                    if(skipCoordinators)changed = 0
+                    else if (changed) {
                         console.log(oldData[key]);
                         console.log(newValue);
                         newValue.forEach((id) => {
@@ -254,6 +261,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 const res = await updateEvent(formData);
                 console.log(res);
                 successPop("Event Added successfully.");
+                if(skipCoordinators)infoPop("No coordinators selected. The coordinators list will remain unchanged")
             } else {
                 infoPop("You have not done any changes compared to original data", "No changes Found");
             }
