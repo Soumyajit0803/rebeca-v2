@@ -8,7 +8,7 @@ exports.createEvent = catchAsync(async (req, res, next) => {
             ...req.body,
         });
         await eventData.save();
-        return res.json({ message: "success", data: eventData });
+        return res.status(201).json({ message: "success", data: eventData });
     } catch (err) {
         console.log("Error while adding event ||" + ` message: ${err.message}`);
         next(err);
@@ -22,9 +22,9 @@ exports.deleteEvent = catchAsync(async (req, res, next) => {
 
         const deletedEvent = await Event.findByIdAndDelete(id);
         if (!deletedEvent) {
-            return res.json({ message: "Event to be deleted not found" });
+            return res.status(404).json({ message: "Event to be deleted not found" });
         } else {
-            return res.json({ message: "success", data: deletedEvent });
+            return res.status(204).json({ message: "success", data: deletedEvent });
         }
     } catch (err) {
         next(err);
@@ -45,10 +45,10 @@ exports.updateEvent = catchAsync(async (req, res, next) => {
         
 
         if (!updatedEvent) {
-            return res.json({ message: "Event to be updated not found" });
+            return res.status(404).json({ message: "Event to be updated not found" });
         }
 
-        return res.json({ message: "success", data: updatedEvent });
+        return res.status(200).json({ message: "success", data: updatedEvent });
     } catch (err) {
         console.log(err.message);
         next(err);
@@ -58,7 +58,7 @@ exports.updateEvent = catchAsync(async (req, res, next) => {
 exports.getAllEvents = catchAsync(async (req, res, next) => {
     try {
         const allEvents = await Event.find().populate("mainCoordinators")
-        return res.json({message: "success", data: allEvents})
+        return res.status(200).json({message: "success", data: allEvents})
 
     } catch(err) {
         console.log(err.message);
