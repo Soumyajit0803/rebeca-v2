@@ -9,7 +9,7 @@ const API = axios.create({
 
 export const authWithGoogle = (code) => API.get(`/admin/auth/google?code=${code}`);
 export const checkStatus = () => API.get(`/admin/auth/status`);
-export const logoutUser = () => API.get(`/admin/auth/logout`);
+export const logout = () => API.get(`/admin/auth/logout`);
 export const validatePasskey = (passkey) =>
     API.get("/admin/auth/validate-passkey", {
         headers: {

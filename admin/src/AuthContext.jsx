@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useState } from "react";
-import { logoutUser } from "./api";
+import { logout } from "./api";
 import {notification} from "antd"
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [admin, setAdmin] = useState(null);
 
     const [notificationApi, contextHolder] = notification.useNotification();
     const infoPop = (e, message = '') => {
@@ -33,28 +33,28 @@ export const AuthProvider = ({ children }) => {
         });
     };
 
-    const handleLogin = (userData) => {
-        console.log("User login successful");
-        console.log(userData);
-        setUser(userData);
-        successPop(`Welcome, ${userData.name.split(' ')[0]}`, "Login Successful");
+    const handleLogin = (adminData) => {
+        console.log("Admin login successful");
+        console.log(adminData);
+        setAdmin(adminData);
+        successPop(`Welcome, ${adminData.name.split(' ')[0]}`, "Login Successful");
     };
 
     const handleLogout = async () => {
         // Implement logout logic here
-        console.log("Logout the user!");
+        console.log("Logout the Admin!");
         try {
-            const res = await logoutUser();
+            const res = await logout();
             console.log(res);
-            successPop("User has been logged out", "Logout Successfully");
-            setUser(null);
+            successPop("Admin has been logged out", "Logout Successfully");
+            setAdmin(null);
         } catch (err) {
             errorPop(err.message, "Error Logging out")
         }
     };
 
     return (
-        <AuthContext.Provider value={{ user, handleLogin, handleLogout }}>
+        <AuthContext.Provider value={{ admin, handleLogin, handleLogout }}>
             {contextHolder}
             {children}
         </AuthContext.Provider>

@@ -1,15 +1,18 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import { authWithGoogle, validatePasskey } from "../../api";
 import { useAuth } from "../../AuthContext";
-import { Modal, Input, Button } from "antd";
-import GoogleIcon from "../../../public/google-icon.svg";
+import { Modal, Input, Button, Typography } from "antd";
+import { GoogleOutlined } from "@ant-design/icons";
 
 export default (props) => {
-    const { user, handleLogin, handleLogout } = useAuth();
+    const { handleLogin } = useAuth();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [passkey, setPasskey] = useState("");
+	const [comment, setComment] = useState("")
+	const [pwdStatus, setPwdStatus] = useState("");
+	const [tempAdmin, setTempAdmin] = useState(null);
 
     const handlePasskeySubmit = async () => {
         if (!passkey) {
@@ -20,13 +23,17 @@ export default (props) => {
             const passkeyResponse = await validatePasskey(passkey);
 
             if (passkeyResponse.status === 200) {
-                handleLogin(userData);
+                handleLogin(tempAdmin);
                 setIsModalOpen(false);
-            } else {
-                alert("Invalid passkey");
+            } else if(passkeyResponse.status === 401){
+				setComment("Invalid passkey")
             }
         } catch (err) {
-            alert("Some error occured: " + err.message);
+            if(err.status===401){
+				setComment("Invalid passkey")
+				setPwdStatus("error")
+			}
+			else setComment(err.message)
         }
     };
 
@@ -35,18 +42,15 @@ export default (props) => {
             if (authResult["code"]) {
                 console.log(authResult.code);
                 const result = await authWithGoogle(authResult.code);
-                if (result.status === 201) {
-                    // New user
-                    // setUserData(result.data.data.user);
+				// handleLogin(result.data.data.admin);
+				setTempAdmin(result.data.data.admin)
+                if (result.status === 201 || !result.data.data.admin.role) {
                     setIsModalOpen(true); // Open modal for passkey input
-                } else {
-                    handleLogin(result.data.data.user);
                 }
                 console.log(authResult);
-                throw new Error(authResult);
             }
         } catch (e) {
-            console.log(e);
+            console.log(e.message);
         }
     };
 
@@ -58,6 +62,9 @@ export default (props) => {
 
     return (
         <>
+            <Button size="large" type="primary" icon={<GoogleOutlined />} onClick={googleLogin}>
+                Sign in with Google
+            </Button>
             <Modal
                 title="Enter Passkey"
                 open={isModalOpen}
@@ -75,32 +82,10 @@ export default (props) => {
                     placeholder="Enter your passkey"
                     value={passkey}
                     onChange={(e) => setPasskey(e.target.value)}
+					status={pwdStatus}
                 />
+				<Typography>{comment}</Typography>
             </Modal>
-            <button
-                style={{
-                    padding: "10px 20px",
-                    margin: "10px 0px",
-                    background: "transparent",
-                    outline: "none",
-                    border: "1px solid rgb(135, 135, 135)",
-                    borderRadius: "3px",
-                    color: "#fff",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "10px",
-                }}
-                onClick={googleLogin}
-            >
-                <img
-                    src={GoogleIcon}
-                    style={{
-                        aspectRatio: "1/1",
-                        width: "1.5rem",
-                    }}
-                />
-                Sign in with Google
-            </button>
         </>
     );
 };

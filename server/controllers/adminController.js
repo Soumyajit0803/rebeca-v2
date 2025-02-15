@@ -14,8 +14,8 @@ const signToken = (id) => {
     });
 };
 // Create and send Cookie ->
-const createSendToken = (user, statusCode, res) => {
-    const token = signToken(user.id);
+const createSendToken = (admin, statusCode, res) => {
+    const token = signToken(admin.id);
 
     console.log(process.env.JWT_COOKIE_EXPIRES_IN);
     const cookieOptions = {
@@ -30,18 +30,18 @@ const createSendToken = (user, statusCode, res) => {
     //     cookieOptions.sameSite = "none";
     // }
 
-    // user.password = undefined;
+    // admin.password = undefined;
 
     res.cookie("jwt", token, cookieOptions);
 
-    console.log(user);
+    console.log(admin);
     console.log("Cookie stored");
 
     res.status(statusCode).json({
         message: "success",
         token,
         data: {
-            user,
+            admin,
         },
     });
 };
