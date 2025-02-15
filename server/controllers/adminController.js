@@ -71,7 +71,7 @@ exports.adminGoogleAuth = catchAsync(async (req, res, next) => {
             });
         }
 
-        createSendToken(user, isNewAdmin ? 201 : 200, res);
+        createSendToken(admin, isNewAdmin ? 201 : 200, res);
     } catch (err) {
         next(err);
     }
@@ -125,10 +125,10 @@ exports.validatePasskey = catchAsync(async (req, res, next) => {
 
 exports.adminStatus = catchAsync(async (req, res, next) => {
     try {
-        if (!req.user) return res.status(404).json({ message: "No user to logout" });
-        let user = await User.findOne({ _id: req.user.id });
-        if (user) {
-            return res.status(200).json({ message: "User is authenticated", user: user });
+        if (!req.admin) return res.status(404).json({ message: "No user to logout" });
+        let admin = await Admin.findOne({ _id: req.admin.id });
+        if (admin) {
+            return res.status(200).json({ message: "User is authenticated", admin: admin });
         }
         return res.status(404).json({ message: "User not found! You have been deleted! Login again" });
     } catch (err) {
