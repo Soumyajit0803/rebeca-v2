@@ -8,14 +8,16 @@ const catchAsync = require("./../utils/catchAsync");
 const Admin = require("../models/adminModel");
 require("dotenv").config();
 
-const signToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_SECRET, {
+const signToken = (data) => {
+    return jwt.sign({ data }, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_TIMEOUT,
     });
 };
 // Create and send Cookie ->
 const createSendToken = (admin, statusCode, res) => {
-    const token = signToken(admin.id);
+    console.log(admin);
+    
+    const token = signToken(admin.email);
 
     console.log(process.env.JWT_COOKIE_EXPIRES_IN);
     const cookieOptions = {
@@ -65,7 +67,10 @@ exports.adminGoogleAuth = catchAsync(async (req, res, next) => {
         if (!admin) {
             isNewAdmin = 1;
             console.log("New Admin found, ask for a passkey to assign role");
-            
+            admin = {
+                email: adminRes.data.email,
+                name: adminRes.data.name
+            };
         }
 
         createSendToken(admin, isNewAdmin ? 201 : 200, res);
@@ -90,6 +95,10 @@ exports.validatePasskey = catchAsync(async (req, res, next) => {
         // Extract passkey from the Authorization header
         const passkey = req.headers.authorization?.replace("Bearer ", "");
         const newAdmin = req.body
+
+        console.log(req.headers)
+        console.log(req);
+        
 
         if (!passkey) {
             return res.status(404).json({ status: "Not Found", message: "Passkey not found" });
@@ -136,7 +145,9 @@ exports.validatePasskey = catchAsync(async (req, res, next) => {
 exports.adminStatus = catchAsync(async (req, res, next) => {
     try {
         if (!req.admin) return res.status(404).json({ message: "No user to logout" });
-        let admin = await Admin.findOne({ _id: req.admin.id });
+        console.log(req.admin);
+        
+        let admin = await Admin.findOne({ email: req.admin.data });
         if (admin) {
             return res.status(200).json({ message: "User is authenticated", admin: admin });
         }
@@ -155,7 +166,7 @@ exports.adminLogout = catchAsync(async (req, res) => {
             expires: new Date(0), // immediate expiration
             httpOnly: true, // Prevent client-side access to the cookie
             secure: true,
-            sameSite: "none", // Ensures the cookie is sent in a same-site context
+            sameSite: "none",
             path: "/", // Make sure it's cleared for the entire site
         });
 

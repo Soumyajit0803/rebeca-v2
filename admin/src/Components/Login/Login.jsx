@@ -2,17 +2,46 @@ import { Form, Input, Button, Card, Typography } from "antd";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
 import LoginGoogle from "../LoginGoogle/LoginGoogle";
+import { useEffect, useState } from "react";
 // import LoginGoogle from "../LoginGoogle/LoginGoogle";
+import { checkStatus } from "../../api";
+import { Alert, Flex, Spin } from 'antd';
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 const Login = () => {
-    const { setUser } = useAuth();
+    const { admin, handleLogin } = useAuth();
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(false)
 
-    const onFinish = (values) => {
-        console.log("Success:", values);
-        setUser(values.username);
-        if (values.username === "rebeca") navigate("/dashboard");
+    const isLoggedIn = async () => {
+        try {
+            setLoading(()=>true)
+            const res = await checkStatus();
+            if (!res.data.admin) {
+                console.log(res.data);
+                
+                return
+            };
+            console.log(res?.data?.message);
+            handleLogin(res?.data?.admin);
+            navigate("/dashboard");
+        } catch (err) {
+            console.log("status check fail");
+            console.log(err.message);
+        } finally {
+            setLoading(()=>false);
+        }
     };
+
+    useEffect(() => {
+        if (admin) navigate('/dashboard')
+    }, [])
+
+    useEffect(() => {
+        isLoggedIn();
+    }, []);
+
+    if(loading) return <LoadingPage />
 
     return (
         <div

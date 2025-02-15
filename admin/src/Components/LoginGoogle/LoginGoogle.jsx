@@ -5,6 +5,7 @@ import { authWithGoogle, validatePasskey } from "../../api";
 import { useAuth } from "../../AuthContext";
 import { Modal, Input, Button, Typography } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 export default (props) => {
     const { handleLogin } = useAuth();
@@ -13,6 +14,7 @@ export default (props) => {
 	const [comment, setComment] = useState("")
 	const [pwdStatus, setPwdStatus] = useState("");
 	const [tempAdmin, setTempAdmin] = useState(null);
+	const navigate = useNavigate();
 
     const handlePasskeySubmit = async () => {
         if (!passkey) {
@@ -20,11 +22,17 @@ export default (props) => {
             return;
         }
         try {
-            const passkeyResponse = await validatePasskey(passkey);
-
+			console.log("Sending to backend: ")
+			console.log(passkey);
+			console.log(tempAdmin);
+			const passkeyResponse = await validatePasskey(passkey, tempAdmin);
+            console.log("Passkeyresponse");
+            console.log(passkeyResponse);
+            
             if (passkeyResponse.status === 200) {
-                handleLogin(tempAdmin);
+                handleLogin(passkeyResponse.data.data);
                 setIsModalOpen(false);
+				navigate("/dashboard")
             } else if(passkeyResponse.status === 401){
 				setComment("Invalid passkey")
             }
@@ -43,10 +51,13 @@ export default (props) => {
                 console.log(authResult.code);
                 const result = await authWithGoogle(authResult.code);
 				// handleLogin(result.data.data.admin);
-				setTempAdmin(result.data.data.admin)
-                if (result.status === 201 || !result.data.data.admin.role) {
+				setTempAdmin(()=>result.data.data.admin)
+                if (result.status === 201) {
                     setIsModalOpen(true); // Open modal for passkey input
-                }
+                }else{
+					handleLogin(result.data.data.admin);
+					navigate("/dashboard")
+				}
                 console.log(authResult);
             }
         } catch (e) {

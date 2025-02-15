@@ -5,19 +5,20 @@ import MemberAddition from "../MemberAddition/MemberAddition";
 import MemberEditing from "../MemberEditing/MemberEditing";
 import RegistrationStats from "../RegistrationStats/RegistrationStats";
 import EventEditing from "../EventEditing/EventEditing";
+import { useAuth } from "../../AuthContext";
 
-const AvatarMenu = ({ user, handleLogout }) => {
+const AvatarMenu = ({ admin, handleLogout }) => {
     const menuItems = [
         {
             key: "welcome",
             label: (
                 <>
-                    <Typography.Text strong>{user.name.split(" ")[0]}</Typography.Text>
+                    <Typography.Text strong>{admin.name.split(" ")[0]}</Typography.Text>
                     <br />
-                    <Typography.Text>Admin</Typography.Text>
+                    <Typography.Text>{admin.role}</Typography.Text>
                 </>
             ),
-            disabled: true, // Prevents clickability
+            
         },
         { type: "divider" },
         {
@@ -29,12 +30,15 @@ const AvatarMenu = ({ user, handleLogout }) => {
 
     return (
         <Dropdown menu={{ items: menuItems }} trigger={["click"]} placement="bottomRight">
-            <Avatar src={user.image} alt={user.name} size={50} style={{ cursor: "pointer" }} />
+            <Avatar src={admin.image} alt={admin.name} size={50} style={{ cursor: "pointer" }} />
         </Dropdown>
     );
 };
 
 const Dashboard = () => {
+    const {admin, handleLogout} = useAuth()
+    console.log(admin);
+    
     const [OpSelect, setOpSelect] = useState(1);
     const width = window.innerWidth;
     // console.log(width);
@@ -129,7 +133,7 @@ const Dashboard = () => {
                             width: "60",
                         }}
                     >
-                        <AvatarMenu user={{ name: "hello" }} />
+                        <AvatarMenu admin={admin} handleLogout={handleLogout}/>
                     </div>
                 </div>
                 <Tabs

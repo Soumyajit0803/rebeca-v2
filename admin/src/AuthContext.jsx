@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useState } from "react";
-import { logout } from "./api";
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { logout, checkStatus } from "./api";
 import {notification} from "antd"
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
 
@@ -37,7 +38,7 @@ export const AuthProvider = ({ children }) => {
         console.log("Admin login successful");
         console.log(adminData);
         setAdmin(adminData);
-        successPop(`Welcome, ${adminData.name.split(' ')[0]}`, "Login Successful");
+        successPop(`Welcome, ${adminData.role} ${adminData.name.split(' ')[0]}`, "Login Successful");
     };
 
     const handleLogout = async () => {
