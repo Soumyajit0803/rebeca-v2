@@ -65,10 +65,7 @@ exports.adminGoogleAuth = catchAsync(async (req, res, next) => {
         if (!admin) {
             isNewAdmin = 1;
             console.log("New Admin found, ask for a passkey to assign role");
-            admin = await Admin.create({
-                name: adminRes.data.name,
-                email: adminRes.data.email,
-            });
+            
         }
 
         createSendToken(admin, isNewAdmin ? 201 : 200, res);
@@ -92,24 +89,37 @@ exports.validatePasskey = catchAsync(async (req, res, next) => {
     try {
         // Extract passkey from the Authorization header
         const passkey = req.headers.authorization?.replace("Bearer ", "");
+        const newAdmin = req.body
 
         if (!passkey) {
             return res.status(404).json({ status: "Not Found", message: "Passkey not found" });
         }
 
         if (passkey === FACILITATOR_PASSKEY) {
+            const adminData = await Admin.create({
+                name: newAdmin.name,
+                email: newAdmin.email,
+                role: 'Facilitator'
+            });
             return res.status(200).json({
                 status: "success",
-                role: "facilitator",
+                role: "Facilitator",
                 message: "Facilitator access granted for Rebeca admin.",
+                data: adminData
             });
         }
 
         if (passkey === ORGANISER_PASSKEY) {
+            const adminData = await Admin.create({
+                name: newAdmin.name,
+                email: newAdmin.email,
+                role: 'Organiser'
+            });
             return res.status(200).json({
                 status: "success",
-                role: "organiser",
+                role: "Organiser",
                 message: "Organiser access granted for Rebeca admin.",
+                data: adminData
             });
         }
 
