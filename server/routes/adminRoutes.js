@@ -5,7 +5,7 @@ const adminCheck = require("../middlewares/adminMiddleware")
 const Router = express.Router();
 
 
-Router.get("/login", adminController.adminLogin); // login
+Router.get("/login", adminController.adminGoogleAuth); // login
 Router.get('/status', adminCheck, adminController.adminStatus); // check user
 Router.get('/logout', adminController.adminLogout); // logout
 

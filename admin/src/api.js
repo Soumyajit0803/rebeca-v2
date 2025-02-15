@@ -35,13 +35,14 @@ export const updateMember = (data) =>
 
 export const deleteMember = (id) => API.delete(`/member/delete?_id=${id}`);
 
-export const createEvent = (data)=> API.post("/event/create", data, {
-    headers: {
-        "Content-Type": "application/json"
-    }
-})
+export const createEvent = (data) =>
+    API.post("/event/create", data, {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
 
-export const deleteEvent = (id)=> API.delete(`/event/delete?_id=${id}`)
+export const deleteEvent = (id) => API.delete(`/event/delete?_id=${id}`);
 
 export const updateEvent = (data) =>
     API.patch("/event/update", data, {
@@ -50,3 +51,10 @@ export const updateEvent = (data) =>
         },
     });
 export const getAllEvents = () => API.get("/event/all");
+
+export const validatePasskey = (passkey) =>
+    API.get("/validate-passkey", {
+        headers: {
+            Authorization: `Bearer ${passkey}`,
+        },
+    });
