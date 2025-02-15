@@ -4,7 +4,9 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { authWithGoogle } from "../../api";
 import { useAuth } from "../../AuthContext";
 // import {} from "antd"
+import {GoogleOutlined} from "@ant-design/icons";
 import GoogleIcon from "../../../public/google-icon.svg"
+import { Button } from "antd";
 export default (props) => {
     const { user, handleLogin, handleLogout } = useAuth();
 
@@ -31,26 +33,13 @@ export default (props) => {
     });
 
     return (
-        <button
-            style={{
-                padding: "10px 20px",
-                margin: "10px 0px",
-                background: "transparent",
-                outline: "none",
-                border: "1px solid rgb(135, 135, 135)",
-                borderRadius: "3px",
-                color: "#fff",
-				display: "flex",
-				alignItems: "center",
-				gap: "10px"
-            }}
+        <Button
+            size="large"
+            type="primary"
+            icon={<GoogleOutlined />}
             onClick={googleLogin}
         >
-            <img src={GoogleIcon} style = {{
-				aspectRatio: "1/1",
-				width: "1.5rem",
-			}} />
             Sign in with Google
-        </button>
+        </Button>
     );
 };
