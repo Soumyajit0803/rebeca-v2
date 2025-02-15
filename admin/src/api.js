@@ -10,6 +10,12 @@ const API = axios.create({
 export const authWithGoogle = (code) => API.get(`/admin/auth/google?code=${code}`);
 export const checkStatus = () => API.get(`/admin/auth/status`);
 export const logoutUser = () => API.get(`/admin/auth/logout`);
+export const validatePasskey = (passkey) =>
+    API.get("/admin/auth/validate-passkey", {
+        headers: {
+            Authorization: `Bearer ${passkey}`,
+        },
+    });
 
 export const postImage = (data) =>
     API.post("/profile/upload?upload_preset=rebeca", data, {
@@ -51,10 +57,3 @@ export const updateEvent = (data) =>
         },
     });
 export const getAllEvents = () => API.get("/event/all");
-
-export const validatePasskey = (passkey) =>
-    API.get("/validate-passkey", {
-        headers: {
-            Authorization: `Bearer ${passkey}`,
-        },
-    });
