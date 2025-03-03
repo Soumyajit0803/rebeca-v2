@@ -8,12 +8,6 @@ import { BrowserRouter } from "react-router-dom";
 
 const client_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
-const themeColor = {
-    admin: "#ef7f29",
-    coordinator: "#9852f3",
-    member: "#1668dc",
-};
-
 const App = () => {
     return (
         <GoogleOAuthProvider clientId={client_ID}>
@@ -21,7 +15,7 @@ const App = () => {
                 theme={{
                     algorithm: theme.darkAlgorithm,
                     token: {
-                        colorPrimary: themeColor.coordinator,
+                        colorPrimary: '#9852f3',
                     },
                 }}
             >

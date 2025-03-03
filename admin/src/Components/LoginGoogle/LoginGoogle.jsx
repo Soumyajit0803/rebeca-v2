@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
 import { authWithGoogle, validatePasskey } from "../../api";
 import { useAuth } from "../../AuthContext";
-import { Modal, Input, Button, Typography } from "antd";
+import { Modal, Input, Button, Typography, Alert } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,7 @@ export default (props) => {
 	const [comment, setComment] = useState("")
 	const [pwdStatus, setPwdStatus] = useState("");
 	const [tempAdmin, setTempAdmin] = useState(null);
+    const [loading, setLoading] = useState(false)
 	const navigate = useNavigate();
 
     const handlePasskeySubmit = async () => {
@@ -22,12 +23,13 @@ export default (props) => {
             return;
         }
         try {
+            setLoading(true)
 			console.log("Sending to backend: ")
-			console.log(passkey);
-			console.log(tempAdmin);
+			// console.log(passkey);
+			// console.log(tempAdmin);
 			const passkeyResponse = await validatePasskey(passkey, tempAdmin);
-            console.log("Passkeyresponse");
-            console.log(passkeyResponse);
+            // console.log("Passkeyresponse");
+            // console.log(passkeyResponse);
             
             if (passkeyResponse.status === 200) {
                 handleLogin(passkeyResponse.data.data);
@@ -42,6 +44,8 @@ export default (props) => {
 				setPwdStatus("error")
 			}
 			else setComment(err.message)
+        } finally {
+            setLoading(false)
         }
     };
 
@@ -88,6 +92,7 @@ export default (props) => {
                         Submit
                     </Button>,
                 ]}
+                confirmLoading={loading}
             >
                 <Input.Password
                     placeholder="Enter your passkey"
@@ -95,7 +100,7 @@ export default (props) => {
                     onChange={(e) => setPasskey(e.target.value)}
 					status={pwdStatus}
                 />
-				<Typography>{comment}</Typography>
+                {comment && <Alert message={comment} type="error" showIcon style={{margin: "1rem 0"}}/>}
             </Modal>
         </>
     );

@@ -60,6 +60,8 @@ exports.adminGoogleAuth = catchAsync(async (req, res, next) => {
         const adminRes = await axios.get(
             `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${googleRes.tokens.access_token}`
         );
+        console.log(adminRes);
+        
 
         let admin = await Admin.findOne({ email: adminRes.data.email });
         var isNewAdmin = 0;
@@ -69,7 +71,8 @@ exports.adminGoogleAuth = catchAsync(async (req, res, next) => {
             console.log("New Admin found, ask for a passkey to assign role");
             admin = {
                 email: adminRes.data.email,
-                name: adminRes.data.name
+                name: adminRes.data.name,
+                image: adminRes.data.picture
             };
         }
 
@@ -108,6 +111,7 @@ exports.validatePasskey = catchAsync(async (req, res, next) => {
             const adminData = await Admin.create({
                 name: newAdmin.name,
                 email: newAdmin.email,
+                image: newAdmin.image,
                 role: 'Facilitator'
             });
             return res.status(200).json({
@@ -122,6 +126,7 @@ exports.validatePasskey = catchAsync(async (req, res, next) => {
             const adminData = await Admin.create({
                 name: newAdmin.name,
                 email: newAdmin.email,
+                image: newAdmin.image,
                 role: 'Organiser'
             });
             return res.status(200).json({
