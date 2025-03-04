@@ -26,13 +26,12 @@ const Login = () => {
         try {
             setLoading(() => true);
             const res = await checkStatus();
-            if (!res.data.admin) {
+            if (!res.data.user) {
                 console.log(res.data);
-
                 return;
             }
             console.log(res?.data?.message);
-            handleLogin(res?.data?.admin);
+            handleLogin(res?.data?.user);
             navigate("/dashboard");
         } catch (err) {
             console.log("status check fail");

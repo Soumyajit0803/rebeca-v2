@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Form, Input, Select, Upload, Button, ConfigProvider, theme } from "antd";
-import { createMember, postImage } from "../../api";
+import { Form, Input, Select, Upload, Button, ConfigProvider, theme, DatePicker } from "antd";
+import { createMember, postImage, updateMember } from "../../api";
 import { useState } from "react";
 import ImgCrop from "antd-img-crop";
 import "./MemberAddition.css";
-import { MailOutlined } from "@ant-design/icons";
+import { MailOutlined, ReadOutlined } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import CustomUpload from "./CustomUpload";
 
@@ -29,16 +29,22 @@ const teamNames = [
     "Fixed Signatory",
     "BECA Magazine",
 ];
-const teamRoles = ["Head", "Associate Head", "Associate"];
+const teamRoles = ["head", "associate head", "associate"];
 
 const MemberAddition = ({ errorPop, successPop, infoPop }) => {
+    const { admin, setProfileStatus } = useAuth();
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
     const formData = new FormData();
 
-    const {admin} = useAuth();
-
-    const [fileList, setFileList] = useState([]);
+    const [fileList, setFileList] = useState([
+        {
+            uid: "-1",
+            url: admin.image,
+            status: "done",
+            name: "default",
+        },
+    ]);
     const onChange = ({ fileList: newFileList }) => {
         setFileList(newFileList);
     };
@@ -65,12 +71,19 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
 
             formData.append("name", values.memberName);
             formData.append("image", imageURL);
-            formData.append("role", values.role);
+            formData.append("position", values.role);
             formData.append("team", values.teamName);
             formData.append("email", values.email);
             formData.append("phone", "+91" + values.phone);
-            await createMember(formData);
+            formData.append("passout_year",values.batch.format("YYYY"));
+            formData.append("dept",values.department);
+
+            console.log(values);
+            
+
+            await updateMember(formData);
             successPop("Member added successfully.");
+            setProfileStatus(true);
         } catch (err) {
             console.log(err.response.data);
             const detailed = err.response.data.message;
@@ -96,16 +109,17 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
             <h1>Profile Details</h1>
-            <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large">
+            <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large" initialValues={{
+                memberName: admin?.name,
+                email: admin?.email
+            }}>
                 {/* Member Name */}
                 <Form.Item
                     label="Member Name"
                     name="memberName"
                     rules={[{ required: true, message: "Please enter the member's name" }]}
-                
                 >
                     <Input placeholder="Enter member name" defaultValue={admin?.name} />
-                    
                 </Form.Item>
 
                 <div
@@ -126,7 +140,12 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                             { type: "email", message: "Please enter a valid email address" },
                         ]}
                     >
-                        <Input disabled placeholder="Enter member's email" addonBefore={<MailOutlined />} defaultValue={admin?.email} />
+                        <Input
+                            disabled
+                            placeholder="Enter member's email"
+                            addonBefore={<MailOutlined />}
+                            defaultValue={admin?.email}
+                        />
                     </Form.Item>
 
                     <Form.Item
@@ -172,6 +191,25 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                 {/* <CustomUpload onChange={onChange} onPreview={onPreview} fileList={fileList} /> */}
                 {/* </Form.Item> */}
 
+                
+                    {/* Role */}
+                    <Form.Item
+                        label="Department"
+                        name="department"
+                        rules={[{ required: true}]}
+                        style={{ width: 500, marginTop: 20 }}
+                    >
+                        <Input placeholder="Enter Department name" addonBefore={<ReadOutlined /> }/>
+                    </Form.Item>
+                    {/* Team Name */}
+                    <Form.Item
+                        label="Passout Batch"
+                        name="batch"
+                        rules={[{ required: true, message: "Please enter your passout batch, e.g. 2026" }]}
+                        style={{ width: 300, cursor: "pointer" }}
+                    >
+                        <DatePicker picker="year" placeholder="Select Year" />
+                    </Form.Item>
                 <div
                     style={{
                         display: "flex",

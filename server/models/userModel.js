@@ -42,11 +42,9 @@ const userSchema = new mongoose.Schema(
         },
         phone: {
             type: String,
-            required: [true, "Missing Field: Phone Number"]
         },
         dept: {
             type: String,
-            required: [true, "Missing Field: Department"],
             trim: true,
             validate: {
                 validator: (x) => x.length > 5,
@@ -55,7 +53,6 @@ const userSchema = new mongoose.Schema(
         },
         passout_year: {
             type: Number,
-            required: [true, "Missing Field: Passout Year"]
         }
     },
     { timestamps: true }

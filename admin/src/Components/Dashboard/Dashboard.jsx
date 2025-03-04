@@ -93,7 +93,7 @@ const AvatarMenu = ({ admin, handleLogout }) => {
 
 
 const Dashboard = () => {
-    const { admin, handleLogout } = useAuth();
+    const { admin, handleLogout, profileStatus } = useAuth();
     const colorPrimary = themeColor[admin.role] || "#1668dc";
     console.log(admin);
     console.log(colorPrimary);
@@ -126,7 +126,7 @@ const Dashboard = () => {
             placement: "topRight",
         });
     };
-    const items = [
+    var items = [
         {
             key: "1",
             label: "My Profile",
@@ -136,16 +136,19 @@ const Dashboard = () => {
             key: "2",
             label: "Add Event",
             children: <EventRegistration errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
+            disabled: !profileStatus
         },
         {
             key: "3",
             label: "Edit Event",
             children: <EventEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
+            disabled: !profileStatus
         },
         {
             key: "4",
             label: "Registration Stats",
             children: <RegistrationStats errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
+            disabled: !profileStatus
         },
     ];
 
@@ -154,11 +157,12 @@ const Dashboard = () => {
             key: "d1",
             label: "Edit Member",
             children: <MemberEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
+            disabled: !profileStatus
         },
     ];
 
-    if(admin=='developer'){
-        items.concat(devItems)
+    if(admin.role==='developer'){
+        items = items.concat(devItems)
     }
 
 

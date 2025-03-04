@@ -8,7 +8,7 @@ require("dotenv").config();
 
 // Secure passkey stored in .env file
 const DEVELOPER_PASSKEY = process.env.DEVELOPER_PASSKEY || "passkey";
-const FACILITATOR_PASSKEY = process.env.FACILITATOR_PASSKEY || "passkey";
+const ADMIN_PASSKEY = process.env.ADMIN_PASSKEY || "passkey";
 
 const signToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -38,7 +38,7 @@ const createSendToken = (user, statusCode, res) => {
 
     console.log(user);
     console.log("Cookie stored");
-    
+
     res.status(statusCode).json({
         message: "success",
         token,
@@ -62,7 +62,7 @@ exports.googleAuth = catchAsync(async (req, res, next) => {
         );
 
         let user = await User.findOne({ email: userRes.data.email });
-        var isNewUser = 0
+        var isNewUser = 0;
 
         if (!user) {
             isNewUser = 1;
@@ -74,7 +74,7 @@ exports.googleAuth = catchAsync(async (req, res, next) => {
             });
         }
 
-        createSendToken(user, isNewUser?201:200, res);
+        createSendToken(user, isNewUser ? 201 : 200, res);
     } catch (err) {
         next(err);
     }
@@ -117,43 +117,30 @@ exports.validatePasskey = catchAsync(async (req, res, next) => {
     try {
         // Extract passkey from the Authorization header
         const passkey = req.headers.authorization?.replace("Bearer ", "");
-        const newAdmin = req.body
+        const newAdmin = req.body;
 
-        console.log(req.headers)
+        console.log(req.headers);
         console.log(req);
-        
 
         if (!passkey) {
             return res.status(404).json({ status: "Not Found", message: "Passkey not found" });
         }
 
-        if (passkey === FACILITATOR_PASSKEY) {
-            const adminData = await Admin.create({
-                name: newAdmin.name,
-                email: newAdmin.email,
-                image: newAdmin.image,
-                role: 'Facilitator'
-            });
-            return res.status(200).json({
-                status: "success",
-                role: "Facilitator",
-                message: "Facilitator access granted for Rebeca admin.",
-                data: adminData
-            });
-        }
+        if (passkey === ADMIN_PASSKEY || passkey === DEVELOPER_PASSKEY) {
+            const updatedUser = await User.findOneAndUpdate(
+                { email: newAdmin.email },
+                { role: passkey === ADMIN_PASSKEY ? "admin" : "developer" },
+                {
+                    new: true,
+                    runValidators: true,
+                }
+            );
 
-        if (passkey === ORGANISER_PASSKEY) {
-            const adminData = await Admin.create({
-                name: newAdmin.name,
-                email: newAdmin.email,
-                image: newAdmin.image,
-                role: 'Organiser'
-            });
             return res.status(200).json({
                 status: "success",
-                role: "Organiser",
-                message: "Organiser access granted for Rebeca admin.",
-                data: adminData
+                role: passkey === ADMIN_PASSKEY ? "admin" : "developer",
+                message: "access granted.",
+                data: updatedUser,
             });
         }
 
