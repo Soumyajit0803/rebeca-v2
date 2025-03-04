@@ -80,15 +80,14 @@ app.use(compression());
 // Routers for app
 const router = require('./routes/mainroutes');
 const authRouter = require('./routes/authRoutes');
-const adminRouter = require('./routes/adminRoutes')
-const memberRouter = require('./routes/memberRoutes')
+const userRouter = require('./routes/userRoutes')
 const eventRouter = require('./routes/eventRoutes')
 
 // setting Routes
 app.use('/api/v1/', router);
 app.use('/api/v1/auth/', authRouter);
-app.use('/api/v1/admin/auth', adminRouter);
-app.use('/api/v1/member/', memberRouter);
+// app.use('/api/v1/admin/auth', adminRouter);
+app.use('/api/v1/member/', userRouter);
 app.use('/api/v1/event/', eventRouter);
 
 
