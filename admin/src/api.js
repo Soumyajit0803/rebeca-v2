@@ -56,4 +56,4 @@ export const updateEvent = (data) =>
             "Content-Type": "application/json",
         },
     });
-export const getAllEvents = () => API.get("/event/all");
+export const getAllEvents = (coordinatorId) => API.get(`/event/all?coordinatorId=${coordinatorId}`)

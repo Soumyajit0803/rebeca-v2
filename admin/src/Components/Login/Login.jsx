@@ -95,7 +95,7 @@ const Login = () => {
                                 For first time login, a person has to enter a <Tag>Passkey</Tag>
                             </li>
                             <li>
-                                The passkey determines whether the person is a
+                                The <Tag>Passkey</Tag> determines whether the person is a
                                 <ul style={{ position: "relative", left: "20px", top: "10px" }}>
                                     <li style={{ marginBottom: "0.3em" }}>
                                         <TagPadded position={"Developer"} color={"red"} />

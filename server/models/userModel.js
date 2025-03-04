@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema(
             trim: true,
             enum: {
                 values: ["head", "associate head", "associate"],
-                message: 'team must be in {head, associate head, associate}'
+                message: 'position must be in {head, associate head, associate}'
             }
         },
         email: {

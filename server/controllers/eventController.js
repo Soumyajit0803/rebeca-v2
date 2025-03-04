@@ -42,7 +42,6 @@ exports.updateEvent = catchAsync(async (req, res, next) => {
         );
 
         console.log(updatedEvent);
-        
 
         if (!updatedEvent) {
             return res.status(404).json({ message: "Event to be updated not found" });
@@ -57,11 +56,17 @@ exports.updateEvent = catchAsync(async (req, res, next) => {
 
 exports.getAllEvents = catchAsync(async (req, res, next) => {
     try {
-        const allEvents = await Event.find().populate("mainCoordinators")
-        return res.status(200).json({message: "success", data: allEvents})
+        const coordinatorId = req.query.coordinatorId;
 
-    } catch(err) {
+        if (coordinatorId === "null") {
+            const allEvents = await Event.find().populate("mainCoordinators");
+            return res.status(200).json({ message: "success", data: allEvents });
+        } else {
+            const events = await Event.find({ mainCoordinators: coordinatorId }).populate("mainCoordinators");
+            return res.status(200).json({ message: "success", data: events });
+        }
+    } catch (err) {
         console.log(err.message);
-        next(err)
+        next(err);
     }
-})
+});
