@@ -5,6 +5,7 @@ import { useState } from "react";
 import ImgCrop from "antd-img-crop";
 import "./MemberAddition.css";
 import { MailOutlined } from "@ant-design/icons";
+import { useAuth } from "../../AuthContext";
 // import CustomUpload from "./CustomUpload";
 
 const { Option } = Select;
@@ -34,6 +35,8 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
     const [form] = Form.useForm();
     const [loading, setLoading] = useState(false);
     const formData = new FormData();
+
+    const {admin} = useAuth();
 
     const [fileList, setFileList] = useState([]);
     const onChange = ({ fileList: newFileList }) => {
@@ -92,15 +95,17 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
 
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
-            <h1>Add Team Member</h1>
+            <h1>Profile Details</h1>
             <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large">
                 {/* Member Name */}
                 <Form.Item
                     label="Member Name"
                     name="memberName"
                     rules={[{ required: true, message: "Please enter the member's name" }]}
+                
                 >
-                    <Input placeholder="Enter member name" />
+                    <Input placeholder="Enter member name" defaultValue={admin?.name} />
+                    
                 </Form.Item>
 
                 <div
@@ -121,7 +126,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                             { type: "email", message: "Please enter a valid email address" },
                         ]}
                     >
-                        <Input placeholder="Enter member's email" addonBefore={<MailOutlined />} />
+                        <Input disabled placeholder="Enter member's email" addonBefore={<MailOutlined />} defaultValue={admin?.email} />
                     </Form.Item>
 
                     <Form.Item

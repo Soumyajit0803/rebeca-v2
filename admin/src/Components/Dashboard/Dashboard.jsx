@@ -129,30 +129,38 @@ const Dashboard = () => {
     const items = [
         {
             key: "1",
+            label: "My Profile",
+            children: <MemberAddition errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
+        },
+        {
+            key: "2",
             label: "Add Event",
             children: <EventRegistration errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
         },
         {
-            key: "2",
+            key: "3",
             label: "Edit Event",
             children: <EventEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
         },
         {
-            key: "3",
-            label: "Add member",
-            children: <MemberAddition errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
-        },
-        {
             key: "4",
-            label: "Edit member",
-            children: <MemberEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
-        },
-        {
-            key: "5",
             label: "Registration Stats",
             children: <RegistrationStats errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
         },
     ];
+
+    const devItems = [
+        {
+            key: "d1",
+            label: "Edit Member",
+            children: <MemberEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
+        },
+    ];
+
+    if(admin=='developer'){
+        items.concat(devItems)
+    }
+
 
     return (
         <ConfigProvider
