@@ -7,6 +7,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [admin, setAdmin] = useState(null);
+    const [profileStatus, setProfileStatus] = useState(false);
 
     const [notificationApi, contextHolder] = notification.useNotification();
     const infoPop = (e, message = '') => {
@@ -55,7 +56,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ admin, handleLogin, handleLogout }}>
+        <AuthContext.Provider value={{ admin, handleLogin, handleLogout, profileStatus, setProfileStatus }}>
             {contextHolder}
             {children}
         </AuthContext.Provider>
