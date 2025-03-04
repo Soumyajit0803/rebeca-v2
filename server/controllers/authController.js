@@ -6,6 +6,10 @@ const catchAsync = require("./../utils/catchAsync");
 const User = require("../models/userModel");
 require("dotenv").config();
 
+// Secure passkey stored in .env file
+const DEVELOPER_PASSKEY = process.env.DEVELOPER_PASSKEY || "passkey";
+const FACILITATOR_PASSKEY = process.env.FACILITATOR_PASSKEY || "passkey";
+
 const signToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_TIMEOUT,
@@ -105,6 +109,60 @@ exports.logout = catchAsync(async (req, res) => {
         return res.status(200).json({ message: "Logged out successfully" });
     } catch (err) {
         console.log("ERROR IN LOGOUT: " + err.message);
+        next(err);
+    }
+});
+
+exports.validatePasskey = catchAsync(async (req, res, next) => {
+    try {
+        // Extract passkey from the Authorization header
+        const passkey = req.headers.authorization?.replace("Bearer ", "");
+        const newAdmin = req.body
+
+        console.log(req.headers)
+        console.log(req);
+        
+
+        if (!passkey) {
+            return res.status(404).json({ status: "Not Found", message: "Passkey not found" });
+        }
+
+        if (passkey === FACILITATOR_PASSKEY) {
+            const adminData = await Admin.create({
+                name: newAdmin.name,
+                email: newAdmin.email,
+                image: newAdmin.image,
+                role: 'Facilitator'
+            });
+            return res.status(200).json({
+                status: "success",
+                role: "Facilitator",
+                message: "Facilitator access granted for Rebeca admin.",
+                data: adminData
+            });
+        }
+
+        if (passkey === ORGANISER_PASSKEY) {
+            const adminData = await Admin.create({
+                name: newAdmin.name,
+                email: newAdmin.email,
+                image: newAdmin.image,
+                role: 'Organiser'
+            });
+            return res.status(200).json({
+                status: "success",
+                role: "Organiser",
+                message: "Organiser access granted for Rebeca admin.",
+                data: adminData
+            });
+        }
+
+        // If passkey is invalid
+        return res.status(401).json({
+            status: "error",
+            message: "Invalid passkey. Access denied.",
+        });
+    } catch (err) {
         next(err);
     }
 });

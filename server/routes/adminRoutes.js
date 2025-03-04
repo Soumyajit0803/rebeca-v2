@@ -1,3 +1,5 @@
+// deprecated
+
 const express = require('express');
 const adminController = require('../controllers/adminController');
 const adminCheck = require("../middlewares/adminMiddleware")

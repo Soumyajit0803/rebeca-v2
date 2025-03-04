@@ -105,7 +105,7 @@ const eventSchema = new mongoose.Schema(
         },
         mainCoordinators: {
             type: [mongoose.Schema.Types.ObjectId],
-            ref: "Member",
+            ref: "User",
             validate: {
                 validator: function (coordinators) {
                     return coordinators.length > 0;
