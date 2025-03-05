@@ -53,7 +53,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [fetchingAllEvents, setFetchingAllEvents] = useState(false)
-    const [fetchingAllMembers, setFetchingAllMembers] = useState(false)
+    const [fetchingAllMembers, setFetchingAllMembers] = useState(false);
+    const {admin} = useAuth()
 
     const handleEventDeletion = async () => {
         try {
@@ -287,7 +288,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
     const handleGetAllEvents = async () => {
         try {
             setFetchingAllEvents(true)
-            const res = await getAllEvents();
+            const res = await getAllEvents(admin.role === 'admin' ? admin.email : "null");
             console.log(res);
             const finalopts = [];
 

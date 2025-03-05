@@ -1,6 +1,7 @@
 const axios = require("axios");
 const catchAsync = require("../utils/catchAsync");
 const Event = require("../models/eventModel");
+const User = require("../models/userModel")
 
 exports.createEvent = catchAsync(async (req, res, next) => {
     try {
@@ -56,14 +57,16 @@ exports.updateEvent = catchAsync(async (req, res, next) => {
 
 exports.getAllEvents = catchAsync(async (req, res, next) => {
     try {
-        const coordinatorId = req.query.coordinatorId;
+        const email = req.query.email;
+        const allEvents = await Event.find().populate("mainCoordinators");
 
-        if (coordinatorId === "null") {
-            const allEvents = await Event.find().populate("mainCoordinators");
+        if (email === "null") {
             return res.status(200).json({ message: "success", data: allEvents });
         } else {
-            const events = await Event.find({ mainCoordinators: coordinatorId }).populate("mainCoordinators");
-            return res.status(200).json({ message: "success", data: events });
+            const filteredEvents = allEvents.filter(event =>
+                event.mainCoordinators.some(coordinator => coordinator.email === email)
+            );
+            return res.status(200).json({ message: "success", data: filteredEvents });
         }
     } catch (err) {
         console.log(err.message);
