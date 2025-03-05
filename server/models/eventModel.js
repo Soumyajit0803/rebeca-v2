@@ -4,42 +4,58 @@ const eventSchema = new mongoose.Schema(
     {
         eventName: {
             type: String,
-            required: [true, "Event name is required"],
+            required: [true, "Missing Field: Event name"],
             trim: true,
         },
         description: {
             type: String,
-            required: [true, "Description is required"],
+            required: [true, "Missing field: description"],
         },
-        startTime: {
-            type: Date,
-            required: [true, "Start time is required"],
-        },
-        endTime: {
-            type: Date,
-            required: [true, "End time is required"],
-            validate: {
-                validator: function (value) {
-                    return this.startTime && this.startTime < value;
+        rounds: [
+            {
+                roundno: {
+                    type: Number,
+                    required: [true, "Missing Field: Round Number"],
                 },
-                message: "End time must be after start time",
+                startTime: {
+                    type: Date,
+                    required: [true, "Missing Field: start time"],
+                },
+                endTime: {
+                    type: Date,
+                    required: [true, "Missing Field: endtime"],
+                    validate: {
+                        validator: function (value) {
+                            return this.startTime && this.startTime < value;
+                        },
+                        message: "Validation err on endtime: End time must be after start time",
+                    },
+                },
+                venue: {
+                    type: String,
+                    required: [true, "Missing Field: Round: venue"],
+                    trim: true,
+                },
+                description: {
+                    type: String,
+                    trim: true,
+                },
+                roundname: {
+                    type: String,
+                    trim: true,
+                    required: [true, "Missing Field: Round: roundname"]
+                },
             },
-        },
-        venue: {
-            type: String,
-            required: [true, "Venue is required"],
-            trim: true,
-        },
+        ],
         rulesDocURL: {
             type: String,
-            required: [true, 'Rules document URL is required'],
+            required: [true, 'missing field: rules doc url'],
             trim: true,
             validate: {
                 validator: function (value) {
-                    return /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?$/
-.test(value)
+                    return /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?$/.test(value);
                 },
-                message: 'Invalid URL for rules document. Only .pdf, .doc, or .docx are allowed.',
+                message: 'validation err: rulesdoc: Invalid URL for rules document. Only .pdf, .doc, or .docx are allowed.',
             },
         },
         minTeamSize: {
@@ -53,7 +69,7 @@ const eventSchema = new mongoose.Schema(
                         ? value <= this.maxTeamSize
                         : true; // Ensure minTeamSize ≤ maxTeamSize
                 },
-                message: 'Minimum team size cannot exceed maximum team size',
+                message: 'Validation err: minteamsize: Minimum team size cannot exceed maximum team size',
             },
         },
         maxTeamSize: {
@@ -61,7 +77,7 @@ const eventSchema = new mongoose.Schema(
             required: function () {
                 return this.type === 'team';
             },
-            min: [2, 'Maximum team size must be at least 2'],
+            min: [2, 'Validation errMaximum team size must be at least 2'],
             validate: {
                 validator: function (value) {
                     return this.minTeamSize

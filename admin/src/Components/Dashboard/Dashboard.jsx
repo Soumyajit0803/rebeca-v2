@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Avatar, Tabs, Space, Modal, Typography, Dropdown, notification, ConfigProvider, theme } from "antd";
+import { Avatar, Tabs, Space, Modal, Typography, Dropdown, notification, ConfigProvider, theme, Alert } from "antd";
 import EventRegistration from "../EventAddition/EventAddition";
 import MemberAddition from "../MemberAddition/MemberAddition";
 import MemberEditing from "../MemberEditing/MemberEditing";
@@ -8,11 +8,10 @@ import EventEditing from "../EventEditing/EventEditing";
 import { useAuth } from "../../AuthContext";
 import { LogoutOutlined } from "@ant-design/icons";
 
-
 const themeColor = {
-    Organiser: "#ef7f29",
-    Facilitator: "#9852f3",
-    Member: "#1668dc",
+    developer: "#ef7f29",
+    admin: "#9852f3",
+    user: "#1668dc",
 };
 
 const AvatarMenu = ({ admin, handleLogout }) => {
@@ -32,13 +31,9 @@ const AvatarMenu = ({ admin, handleLogout }) => {
                         }}
                     />
                     <div>
-                        <Typography.Text strong>
-                            {admin.name.split(" ")[0]}
-                        </Typography.Text>
+                        <Typography.Text strong>{admin.name.split(" ")[0]}</Typography.Text>
                         <br />
-                        <Typography.Text style={{ color: themeColor[admin.role] }}>
-                            {admin.role}
-                        </Typography.Text>
+                        <Typography.Text style={{ color: themeColor[admin.role] }}>{admin.role}</Typography.Text>
                     </div>
                 </Space>
             ),
@@ -68,12 +63,7 @@ const AvatarMenu = ({ admin, handleLogout }) => {
     return (
         <>
             <Dropdown menu={{ items: menuItems }} trigger={["click"]} placement="bottomRight">
-                <Avatar
-                    src={admin.image}
-                    alt={admin.name}
-                    size={50}
-                    style={{ cursor: "pointer" }}
-                />
+                <Avatar src={admin.image} alt={admin.name} size={50} style={{ cursor: "pointer" }} />
             </Dropdown>
             <Modal
                 title="Confirm Logout"
@@ -83,7 +73,7 @@ const AvatarMenu = ({ admin, handleLogout }) => {
                 okText="Logout"
                 cancelText="Cancel"
                 okType="danger"
-                okButtonProps={{type: "primary"}}
+                okButtonProps={{ type: "primary" }}
             >
                 <p>Are you sure you want to logout?</p>
             </Modal>
@@ -91,12 +81,9 @@ const AvatarMenu = ({ admin, handleLogout }) => {
     );
 };
 
-
 const Dashboard = () => {
     const { admin, handleLogout, profileStatus } = useAuth();
     const colorPrimary = themeColor[admin.role] || "#1668dc";
-    console.log(admin);
-    console.log(colorPrimary);
 
     const [OpSelect, setOpSelect] = useState(1);
     const width = window.innerWidth;
@@ -136,19 +123,19 @@ const Dashboard = () => {
             key: "2",
             label: "Add Event",
             children: <EventRegistration errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
-            disabled: !profileStatus
+            disabled: !profileStatus,
         },
         {
             key: "3",
             label: "Edit Event",
             children: <EventEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
-            disabled: !profileStatus
+            disabled: !profileStatus,
         },
         {
             key: "4",
             label: "Registration Stats",
             children: <RegistrationStats errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
-            disabled: !profileStatus
+            disabled: !profileStatus,
         },
     ];
 
@@ -157,14 +144,13 @@ const Dashboard = () => {
             key: "d1",
             label: "Edit Member",
             children: <MemberEditing errorPop={errorPop} successPop={successPop} infoPop={infoPop} />,
-            disabled: !profileStatus
+            disabled: !profileStatus,
         },
     ];
 
-    if(admin.role==='developer'){
-        items = items.concat(devItems)
+    if (admin.role === "developer") {
+        items = items.concat(devItems);
     }
-
 
     return (
         <ConfigProvider
@@ -183,7 +169,7 @@ const Dashboard = () => {
                         display: "flex",
                         // alignItems: "center",
                         justifyContent: "space-between",
-                        padding: "2rem",
+                        padding: "2rem 2rem 0 2rem",
                     }}
                 >
                     <div style={{ fontSize: "2.5rem", fontWeight: "600", color: "#fff" }}>Admin Dashboard</div>
@@ -196,6 +182,14 @@ const Dashboard = () => {
                         <AvatarMenu admin={admin} handleLogout={handleLogout} />
                     </div>
                 </div>
+                {!profileStatus && <div style={{padding: "0 2rem"}}>
+                    <Alert
+                        message="Please complete your profile before proceeding to perform any further operations."
+                        type="warning"
+                        showIcon
+                        style={{ marginTop: "1rem", width: "max-width" }}
+                    />
+                </div>}
                 <Tabs
                     defaultActiveKey="1"
                     items={items}
