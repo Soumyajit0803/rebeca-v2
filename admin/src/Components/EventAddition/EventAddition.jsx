@@ -223,35 +223,6 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                     >
                         <TextArea rows={4} placeholder="Enter event description" />
                     </Form.Item>
-
-                    {/* Start Time and End Time */}
-                    {/* <Form.Item
-                        label="Start and End Time"
-                        name="time"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please select start and end time",
-                            },
-                        ]}
-                    >
-                        <RangePicker showTime />
-                    </Form.Item> */}
-
-                    {/* Venue */}
-                    {/* <Form.Item
-                        label="Venue"
-                        name="venue"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please enter the venue",
-                            },
-                        ]}
-                    >
-                        <Input placeholder="Enter event venue" />
-                    </Form.Item> */}
-
                     <Form.Item
                         label="Rules Document URL"
                         name="rulesDocUrl"

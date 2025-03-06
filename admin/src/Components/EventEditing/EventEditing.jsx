@@ -14,7 +14,7 @@ import {
     Card,
     Alert,
 } from "antd";
-import Icon, { DeleteFilled, CloseOutlined } from "@ant-design/icons";
+import Icon, { DeleteFilled, CloseOutlined, PlusOutlined } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 // import "./EventAddition.css";
@@ -132,6 +132,10 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 infoPop("Please add poster image", "No Poster Image");
                 return;
             }
+            if (values.rounds.length === 0) {
+                infoPop("Please add Round details", "No Round Information");
+                return;
+            }
             if (thumbnailList.length === 0) {
                 infoPop("Please add thumbnail image", "No Thumbnail Image");
                 return;
@@ -159,18 +163,13 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 formData.append("thumbnail", imageURL);
                 changed = 1;
             }
-
-            const start = new Date(values.time[0].$d).toISOString();
-            const end = new Date(values.time[1].$d).toISOString();
             // console.log(start);
             // console.log(selectedEvent);
 
             const newData = {
                 eventName: values.eventName,
                 description: values.description,
-                startTime: start,
-                endTime: end,
-                venue: values.venue,
+                rounds: JSON.stringify(values.rounds),
                 rulesDocURL: values.rulesDocURL,
                 type: values.type,
                 registrationFee: values.registrationFee,
@@ -186,11 +185,18 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 newData.mainCoordinators.push(e._id);
             });
 
-            const oldIDs = oldData["mainCoordinators"].map(v=>v._id);
-            console.log(oldIDs);
-            
+            const oldIDs = oldData["mainCoordinators"].map(v=>v._id);            
 
             Object.entries(newData).forEach(([key, newValue]) => {
+                if (key === 'rounds') {
+                    newValue = JSON.parse(newValue)
+                    for (let round of newValue) {
+                        delete round.date
+                    }
+                    for (let round of oldData[key]) {
+                        delete round.date
+                    }
+                }
                 if (key === "mainCoordinators") {
                     
                     for (let id of oldIDs) {
@@ -214,11 +220,13 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                             formData.append("mainCoordinators[]", id);
                         });
                     }
-                } else if (oldData[key] !== newValue) {
-                    formData.append(key, newValue);
+                } else if (JSON.stringify(oldData[key]) !== JSON.stringify(newValue)) {
+                    formData.append(key, JSON.stringify(newValue));
                     changed = 1;
                     console.log("new value: ");
-                    console.log(newValue);
+                    console.log(JSON.stringify(newValue));
+                    console.log("Old value" );
+                    console.log(JSON.stringify(oldData[key]));
                 }
             });
 
@@ -232,9 +240,9 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 infoPop("You have not done any changes compared to original data", "No changes Found");
             }
         } catch (err) {
-            console.log(err.response?.data);
+            console.log(err);
             const detailed = err.response?.data?.message;
-            errorPop(detailed || err.message, "Error");
+            errorPop(detailed, "Error");
         } finally {
             setLoading(false);
             setIsSubmitModalOpen(false);
@@ -312,9 +320,14 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
     const onEventSelect = (idx) => {
         const original = AllEventsData[idx].original;
+        console.log(original);
+        
 
         setSelectedEvent(AllEventsData[idx]);
         original.time = [dayjs(original.startTime), dayjs(original.endTime)];
+        for (let round of original.rounds) {
+            round.date = [dayjs(round.startTime), dayjs(round.endTime)]
+        }
 
         form.setFieldsValue(original);
         setEventType(original.type);
@@ -450,7 +463,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     </Form.Item>
 
                     {/* Start Time and End Time */}
-                    <Form.Item
+                    {/* <Form.Item
                         label="Start and End Time"
                         name="time"
                         rules={[
@@ -461,10 +474,10 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                         ]}
                     >
                         <RangePicker showTime />
-                    </Form.Item>
+                    </Form.Item> */}
 
                     {/* Venue */}
-                    <Form.Item
+                    {/* <Form.Item
                         label="Venue"
                         name="venue"
                         rules={[
@@ -475,7 +488,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                         ]}
                     >
                         <Input placeholder="Enter event venue" />
-                    </Form.Item>
+                    </Form.Item> */}
 
                     <Form.Item
                         label="Rules Document URL"
@@ -699,6 +712,67 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                             })}
                         </Space>
                     </div>
+
+                    {/* Rounds Information */}
+                    <div className="mandatory-star">*</div>
+                    <span style={{ fontFamily: "Poppins" }}>Add Event Rounds Information</span>
+                    <Form.List name="rounds">
+                        {(fields, { add, remove }) => (
+                            <>
+                                {fields.map(({ key, name, ...restField }) => (
+                                    <Card
+                                        size="small"
+                                        style={{ marginBottom: "1rem" }}
+                                        title={`Round - ${name + 1}`}
+                                        key={key}
+                                        extra={
+                                            <CloseOutlined
+                                                onClick={() => {
+                                                    remove(name);
+                                                }}
+                                            />
+                                        }
+                                    >
+                                        <Form.Item {...restField} name={[name, "roundname"]}>
+                                            <Input placeholder="Round Name (Optional)" />
+                                        </Form.Item>
+
+                                        <Form.Item {...restField} name={[name, "description"]}>
+                                            <Input.TextArea placeholder="Description (Optional)" />
+                                        </Form.Item>
+
+                                        {/* Start Time and End Time */}
+                                        <Form.Item
+                                            {...restField}
+                                            name={[name, "date"]}
+                                            rules={[
+                                                {
+                                                    required: true,
+                                                    message: "Please select start and end time",
+                                                },
+                                            ]}
+                                        >
+                                            <RangePicker showTime />
+                                        </Form.Item>
+
+                                        <Form.Item
+                                            {...restField}
+                                            name={[name, "venue"]}
+                                            rules={[{ required: true, message: "Venue is required" }]}
+                                        >
+                                            <Input placeholder="Venue" />
+                                        </Form.Item>
+                                    </Card>
+                                ))}
+
+                                <Form.Item>
+                                    <Button type="dashed" onClick={() => add()} icon={<PlusOutlined />}>
+                                        Add Round
+                                    </Button>
+                                </Form.Item>
+                            </>
+                        )}
+                    </Form.List>
 
                     <div style={{ display: "flex", gap: "1rem" }}>
                         <Form.Item>
