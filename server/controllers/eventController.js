@@ -7,6 +7,7 @@ exports.createEvent = catchAsync(async (req, res, next) => {
     try {
         const eventData = new Event({
             ...req.body,
+            rounds: JSON.parse(req.body.rounds)
         });
         await eventData.save();
         return res.status(201).json({ message: "success", data: eventData });

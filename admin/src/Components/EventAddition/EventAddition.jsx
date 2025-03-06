@@ -15,7 +15,14 @@ import {
     Card,
     Alert,
 } from "antd";
-import Icon, { UploadOutlined, CloseOutlined, MailOutlined, MailFilled, PhoneFilled } from "@ant-design/icons";
+import {
+    CloseCircleOutlined,
+    CloseOutlined,
+    CloseSquareFilled,
+    CloseSquareOutlined,
+    MinusCircleOutlined,
+    PlusOutlined,
+} from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 import "./EventAddition.css";
@@ -26,7 +33,6 @@ import RupeeFilled from "../RupeeFilled/RupeeFilled";
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
-
 
 const HybridLabel = ({ name, imageURL }) => {
     return (
@@ -85,8 +91,24 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
     const { user } = useAuth();
 
     const onFinish = async (values) => {
+        // return;
+        
         try {
             setLoading(true);
+            console.log("What is going to be added in eventdata");
+    
+            if (values.rounds.length === 0) {
+                infoPop("Please add Event Rounds details");
+                return;
+            }
+            let i = 1
+            for (let round of values.rounds) {
+                round.startTime = round.date[0].$d
+                round.endTime = round.date[1].$d
+                round.roundno = i++;
+    
+            }
+            console.log(values);
             if (posterList.length === 0) {
                 infoPop("Please add poster image");
                 return;
@@ -101,9 +123,6 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
 
             formData.append("eventName", values.name);
             formData.append("description", values.description);
-            formData.append("startTime", values.time[0].$d);
-            formData.append("endTime", values.time[1].$d);
-            formData.append("venue", values.venue);
             formData.append("rulesDocURL", values.rulesDocUrl);
             formData.append("type", values.type);
             if (values.type !== "single") {
@@ -113,6 +132,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
             formData.append("poster", posterURL);
             formData.append("thumbnail", thumbnailURL);
             formData.append("registrationFee", values.registrationAmount);
+            formData.append("rounds", JSON.stringify(values.rounds));
             coordsList.forEach((e) => {
                 formData.append("mainCoordinators[]", allMembers[e].original._id);
             });
@@ -123,7 +143,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
             console.log(res);
             successPop("Event Added successfully.");
         } catch (err) {
-            console.log(err.response?.data);
+            console.log(err);
             const detailed = err.response?.data?.message;
             errorPop(detailed || err.message);
         } finally {
@@ -205,7 +225,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                     </Form.Item>
 
                     {/* Start Time and End Time */}
-                    <Form.Item
+                    {/* <Form.Item
                         label="Start and End Time"
                         name="time"
                         rules={[
@@ -216,10 +236,10 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                         ]}
                     >
                         <RangePicker showTime />
-                    </Form.Item>
+                    </Form.Item> */}
 
                     {/* Venue */}
-                    <Form.Item
+                    {/* <Form.Item
                         label="Venue"
                         name="venue"
                         rules={[
@@ -230,7 +250,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                         ]}
                     >
                         <Input placeholder="Enter event venue" />
-                    </Form.Item>
+                    </Form.Item> */}
 
                     <Form.Item
                         label="Rules Document URL"
@@ -439,16 +459,77 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                                 return (
                                     <Coordinator
                                         onClose={() => setCoordsList(coordsList.filter((m) => m !== idx))}
-                                        name = {coord.name}
-                                        image = {coord.image}
-                                        email = {coord.email}
-                                        id = {i}
-                                        key = {i}
+                                        name={coord.name}
+                                        image={coord.image}
+                                        email={coord.email}
+                                        id={i}
+                                        key={i}
                                     />
                                 );
                             })}
                         </Space>
                     </div>
+
+                    {/* Rounds Information */}
+                    <div className="mandatory-star">*</div>
+                    <span style={{ fontFamily: "Poppins" }}>Add Event Rounds Information</span>
+                    <Form.List name="rounds">
+                        {(fields, { add, remove }) => (
+                            <>
+                                {fields.map(({ key, name, ...restField }) => (
+                                    <Card
+                                        size="small"
+                                        style={{ marginBottom: "1rem" }}
+                                        title={`Round - ${name + 1}`}
+                                        key={key}
+                                        extra={
+                                            <CloseOutlined
+                                                onClick={() => {
+                                                    remove(name);
+                                                }}
+                                            />
+                                        }
+                                    >
+                                        <Form.Item {...restField} name={[name, "roundname"]}>
+                                            <Input placeholder="Round Name (Optional)" />
+                                        </Form.Item>
+
+                                        <Form.Item {...restField} name={[name, "description"]}>
+                                            <Input.TextArea placeholder="Description (Optional)" />
+                                        </Form.Item>
+
+                                        {/* Start Time and End Time */}
+                                        <Form.Item
+                                            {...restField}
+                                            name={[name, "date"]}
+                                            rules={[
+                                                {
+                                                    required: true,
+                                                    message: "Please select start and end time",
+                                                },
+                                            ]}
+                                        >
+                                            <RangePicker showTime />
+                                        </Form.Item>
+
+                                        <Form.Item
+                                            {...restField}
+                                            name={[name, "venue"]}
+                                            rules={[{ required: true, message: "Venue is required" }]}
+                                        >
+                                            <Input placeholder="Venue" />
+                                        </Form.Item>
+                                    </Card>
+                                ))}
+
+                                <Form.Item>
+                                    <Button type="dashed" onClick={() => add()} icon={<PlusOutlined />}>
+                                        Add Round
+                                    </Button>
+                                </Form.Item>
+                            </>
+                        )}
+                    </Form.List>
 
                     <div style={{ display: "flex", gap: "1rem" }}>
                         <Form.Item>
