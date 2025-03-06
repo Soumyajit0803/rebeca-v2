@@ -19,7 +19,8 @@ exports.createUser = catchAsync(async (req, res, next) => {
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
     try {
-        const allUsers = await User.find();
+        const allUsers = await User.find({ $or: [{ role: 'developer' }, { role: 'admin' }] });
+        
         return res.status(200).json({ message: "success", data: allUsers });
     } catch (err) {
         console.log(err.message);

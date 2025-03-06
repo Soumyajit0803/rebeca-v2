@@ -65,7 +65,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
             const res = await deleteMember(oldData._id);
             console.log(res);
 
-            if (res.data.message === "success") {
+            if (res.status === 204) {
                 successPop("Member deleted successfully");
                 await handleGetAllMembers();
                 form.resetFields();
@@ -76,7 +76,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 errorPop(res.data.message);
             }
         } catch (err) {
-            errorPop(err.message);
+            errorPop(err.message, "Deletion Failed");
         } finally {
             setLoading(false);
             setIsDeleteModalOpen(false);
@@ -128,7 +128,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
             formData.append("_id", oldData._id);
             const newData = {
                 name: formValues.name,
-                role: formValues.role,
+                position: formValues.position,
                 team: formValues.team,
                 phone: `${formValues.phone}`,
                 email: formValues.email,
@@ -317,7 +317,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                             { type: "email", message: "Please enter a valid email address" },
                         ]}
                     >
-                        <Input placeholder="Enter member's email" addonBefore={<MailOutlined />} />
+                        <Input placeholder="Enter member's email" addonBefore={<MailOutlined />} disabled />
                     </Form.Item>
 
                     <Form.Item
@@ -369,14 +369,14 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                         marginTop: "1rem",
                     }}
                 >
-                    {/* Role */}
+                    {/* position */}
                     <Form.Item
-                        label="Role"
-                        name="role"
-                        rules={[{ required: true, message: "Please select a role" }]}
+                        label="Position"
+                        name="position"
+                        rules={[{ required: true, message: "Please select a position" }]}
                         style={{ width: 200 }}
                     >
-                        <Select placeholder="Select a role">
+                        <Select placeholder="Select a position">
                             {teamRoles.map((role, i) => {
                                 return (
                                     <Option value={role} key={i}>
