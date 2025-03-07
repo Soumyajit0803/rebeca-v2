@@ -52,9 +52,13 @@ export default (props) => {
     const responseGoogle = async (authResult) => {
         try {
             if (authResult["code"]) {
+                console.log("Response from a user");
+                
                 console.log(authResult.code);
                 const result = await authWithGoogle(authResult.code);
 				// handleLogin(result.data.data.admin);
+                // console.log(result.data.data.user)
+                if(result.data.data.user.role==='user')return;
 				setTempAdmin(()=>result.data.data.user)
                 if (result.status === 201) {
                     setIsModalOpen(true); // Open modal for passkey input

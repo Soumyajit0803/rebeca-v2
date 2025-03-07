@@ -30,9 +30,11 @@ const Login = () => {
                 console.log(res.data);
                 return;
             }
-            console.log(res?.data?.message);
-            handleLogin(res?.data?.user);
-            navigate("/dashboard");
+            console.log(res?.data?.user);
+            if(res?.data?.user?.role!=='user'){
+                handleLogin(res?.data?.user);
+                navigate("/dashboard");
+            }
         } catch (err) {
             console.log("status check fail");
             console.log(err.message);
