@@ -7,6 +7,7 @@ import "antd/es/modal/style";
 import "antd/es/slider/style";
 import { MailOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
+import { BankOutlined } from '@ant-design/icons';
 
 const { Option } = Select;
 const teamNames = [
@@ -29,7 +30,8 @@ const teamNames = [
     "Fixed Signatory",
     "BECA Magazine",
 ];
-const teamRoles = ["Head", "Associate Head", "Associate"];
+const teamPosition = ["Head", "Associate Head", "Associate"];
+const roles = ["developer", "admin", "user"];
 
 const HybridLabel = ({ name, imageURL }) => {
     return (
@@ -50,7 +52,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [selectedMember, setSelectedMember] = useState(null);
-    const [fetching, setFetching] = useState(false)
+    const [fetching, setFetching] = useState(false);
 
     const handleMemberDeletion = async () => {
         try {
@@ -132,8 +134,9 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 team: formValues.team,
                 phone: `${formValues.phone}`,
                 email: formValues.email,
+                role: formValues.role,
             };
-            
+
             // Check for changes and append only modified fields
             Object.entries(newData).forEach(([key, newValue]) => {
                 if (oldData[key] !== newValue) {
@@ -170,7 +173,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
             }
         } catch (err) {
             console.log(err);
-            const e = err.data? err.data.message : err.message;
+            const e = err.data ? err.data.message : err.message;
             errorPop(e);
         } finally {
             setLoading(false);
@@ -206,7 +209,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
 
     const handleGetAllMembers = async () => {
         try {
-            setFetching(true)
+            setFetching(true);
             const res = await getAllMembers();
             // console.log(res);
             const tmp = [];
@@ -222,9 +225,9 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
             // console.log(tmp);
         } catch (err) {
             console.log(err);
-            errorPop("Some error occured while fetching all members", "Error fetching members")
+            errorPop("Some error occured while fetching all members", "Error fetching members");
         } finally {
-            setFetching(false)
+            setFetching(false);
         }
     };
 
@@ -245,7 +248,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 onChange={onMemberSelect}
                 options={values}
                 value={selectedMember}
-                notFoundContent={fetching ? <Spin size="large" tip="fetching members..."/> : null}
+                notFoundContent={fetching ? <Spin size="large" tip="fetching members..." /> : null}
             ></Select>
             <br />
 
@@ -289,7 +292,14 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 Note that this Operation cannot be reverted.
             </Modal>
             <h1 style={{ marginTop: "2rem" }}>Edit Team Member</h1>
-            <Form form={form} layout="vertical" onFinish={onFinish} style={{ color: "#e6e6e6" }} size="large" disabled = {!selectedMember}>
+            <Form
+                form={form}
+                layout="vertical"
+                onFinish={onFinish}
+                style={{ color: "#e6e6e6" }}
+                size="large"
+                disabled={!selectedMember}
+            >
                 {/* Member Name */}
                 <Form.Item
                     label="Member Name"
@@ -297,6 +307,18 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                     rules={[{ required: true, message: "Please enter the member's name" }]}
                 >
                     <Input placeholder="Enter member name" />
+                </Form.Item>
+
+                <Form.Item label="Role" name="role" rules={[{ required: true, message: "Please select a role" }]}>
+                    <Select placeholder="Select a role">
+                        {roles.map((role, i) => {
+                            return (
+                                <Option value={role} key={i}>
+                                    {role[0].toUpperCase() + role.slice(1)}
+                                </Option>
+                            );
+                        })}
+                    </Select>
                 </Form.Item>
 
                 <div
@@ -361,6 +383,16 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                     </Upload>
                 </ImgCrop>
 
+                <Form.Item
+                    label="College Name"
+                    name="college"
+                    rules={[
+                        { required: true, message: "Please enter your College name" },
+                    ]}
+                >
+                    <Input placeholder="Enter College Name" addonBefore={<BankOutlined />} disabled />
+                </Form.Item>
+
                 <div
                     style={{
                         display: "flex",
@@ -377,7 +409,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                         style={{ width: 200 }}
                     >
                         <Select placeholder="Select a position">
-                            {teamRoles.map((role, i) => {
+                            {teamPosition.map((role, i) => {
                                 return (
                                     <Option value={role} key={i}>
                                         {role}

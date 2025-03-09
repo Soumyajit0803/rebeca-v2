@@ -7,6 +7,7 @@ import "./MemberAddition.css";
 import { MailOutlined, ReadOutlined } from "@ant-design/icons";
 import { useAuth } from "../../AuthContext";
 import dayjs from "dayjs";
+import { BankOutlined } from '@ant-design/icons';
 
 // import CustomUpload from "./CustomUpload";
 
@@ -78,7 +79,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                 name: values.name,
                 position: values.position,
                 team: values.team,
-                phone: "+91" +values.phone,
+                phone: values.phone,
                 email: values.email,
                 image: imageURL,
                 passout_year: parseInt(values.passout_year.format("YYYY")),
@@ -92,7 +93,6 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                     console.log("new value: ");
                     console.log(newValue);
                     console.log(admin[key]);
-
                 }
             });
             if (changed) {
@@ -103,18 +103,9 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                 await updateMember(formData);
                 successPop("Profile updated successfully.");
                 setProfileStatus(true);
-            }else{
+            } else {
                 infoPop("You have not done any changes compared to original data", "No changes Found");
             }
-
-            // formData.append("name", values.name);
-            // formData.append("image", imageURL);
-            // formData.append("position", values.position);
-            // formData.append("team", values.team);
-            // formData.append("email", values.email);
-            // formData.append("phone", "+91" + values.phone);
-            // formData.append("passout_year",values.passout_year.format("YYYY"));
-            // formData.append("dept",values.dept);
         } catch (err) {
             console.log(err);
             const detailed = err.response.data.message;
@@ -143,6 +134,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
         const formdef = { ...admin };
         formdef.phone = formdef.phone?.slice(3);
         if (admin.passout_year) formdef.passout_year = dayjs(`${admin.passout_year}`, "YYYY");
+        if (admin.email.endsWith("iiests.ac.in")) formdef.college = "IIEST Shibpur";
         setDefValues(formdef);
         console.log(formdef);
         form.setFieldsValue(formdef); // Dynamically update form values
@@ -203,6 +195,14 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                             <Input placeholder="Enter contact details" addonBefore={<span>+91</span>} />
                         </Form.Item>
                     </div>
+
+                    <Form.Item
+                        label="College Name"
+                        name="college"
+                        rules={[{ required: true, message: "Please enter your College name" }]}
+                    >
+                        <Input placeholder="Enter College Name" addonBefore={<BankOutlined />} />
+                    </Form.Item>
 
                     <div className="mandatory-star">*</div>
                     <span style={{ fontFamily: "Poppins" }}>Profile Image</span>

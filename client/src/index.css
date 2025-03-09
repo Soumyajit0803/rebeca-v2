@@ -10,7 +10,7 @@
 	/* line-height: 1.5; */
 
 	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.5);
+	/* color: rgba(255, 255, 255, 0.5); */
 	/* background-color: #171717; */
 
 	--accent1: #5075f6;
@@ -63,6 +63,8 @@ body {
 	justify-content: center;
 	min-width: 320px;
 	min-height: 100vh;
+	background-color: #0F1214 !important;
+
 	
 }
 
