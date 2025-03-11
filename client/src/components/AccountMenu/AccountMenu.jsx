@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Typography, Tooltip } from "@mui/material";
-import { PersonAdd, Settings, Logout, Login, Google, Person } from "@mui/icons-material";
+import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Badge, Tooltip, Alert, Chip } from "@mui/material";
+import { PersonAdd, Settings, Logout, Login, Google, Person, Warning } from "@mui/icons-material";
 import { useGoogleLogin } from "@react-oauth/google";
 import { authWithGoogle } from "../../services/api";
 import { useAuth } from "../../AuthContext";
@@ -11,7 +11,7 @@ import "./AccountMenu.css";
 export default function AccountMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const { user, handleLogin, handleLogout } = useAuth();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const responseGoogle = async (authResult) => {
         try {
@@ -46,15 +46,20 @@ export default function AccountMenu() {
         <Box className="accountMent">
             <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
                 <Tooltip title="Account">
-                    <IconButton
-                        onClick={handleClick}
-                        size="small"
-                        aria-controls={open ? "account-menu" : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? "true" : undefined}
-                    >
-                        <Avatar sx={{ width: 32, height: 32, bgcolor: "var(--primary)" }} src={user?.image}></Avatar>
-                    </IconButton>
+                    <Badge badgeContent={user?.college ? 0 : 1} color="primary">
+                        <IconButton
+                            onClick={handleClick}
+                            size="small"
+                            aria-controls={open ? "account-menu" : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? "true" : undefined}
+                        >
+                            <Avatar
+                                sx={{ width: 32, height: 32, bgcolor: "var(--primary)" }}
+                                src={user?.image}
+                            ></Avatar>
+                        </IconButton>
+                    </Badge>
                 </Tooltip>
             </Box>
             <Menu
@@ -105,13 +110,13 @@ export default function AccountMenu() {
                     <MenuItem
                         onClick={() => {
                             handleClose();
-                            navigate("/profile")
+                            navigate("/profile");
                         }}
                     >
                         <ListItemIcon>
                             <Person fontSize="small" />
                         </ListItemIcon>
-                        My Profile
+                        My Profile {!user?.college && <Chip icon={<Warning />} label="Complete your profile" color="primary" size="small" sx = {{ml: 2}}/>}
                     </MenuItem>
                 )}
                 {user && (

@@ -16,6 +16,7 @@ export const updateMember = (data) =>
             "Content-Type": "application/json",
         },
     });
+export const getAllMembers = () => api.get("/member/all");
 export const postImage = (data) =>
     api.post("/profile/upload?upload_preset=rebeca", data, {
         headers: {
