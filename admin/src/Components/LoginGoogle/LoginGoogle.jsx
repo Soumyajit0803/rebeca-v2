@@ -57,12 +57,16 @@ export default (props) => {
                 console.log(authResult.code);
                 const result = await authWithGoogle(authResult.code);
 				// handleLogin(result.data.data.admin);
-                // console.log(result.data.data.user)
-                if(result.data.data.user.role==='user')return;
-				setTempAdmin(()=>result.data.data.user)
+                console.log(result.data.data.user)
                 if (result.status === 201) {
+                    setTempAdmin(()=>result.data.data.user)
                     setIsModalOpen(true); // Open modal for passkey input
-                }else{
+                }else if(result.data.data.user.role!=='user'){
+                    setTempAdmin(()=>result.data.data.user)
+                }else if(result.data.data.user.role==='user'){
+                    return;
+                }
+                else{
 					handleLogin(result.data.data.user);
 					navigate("/dashboard")
 				}

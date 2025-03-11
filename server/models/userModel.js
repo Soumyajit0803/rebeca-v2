@@ -57,8 +57,7 @@ const userSchema = new mongoose.Schema(
         },
         college: {
             type: String,
-            trim: true,
-            required: [true, "Missing Field: College Name"]
+            trim: true
         }
     },
     { timestamps: true }

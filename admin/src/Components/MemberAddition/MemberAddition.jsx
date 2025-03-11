@@ -73,6 +73,11 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
             setLoading(true);
             const imageURL = await handleSubmitImage();
             console.log("IMAGE Received: " + imageURL);
+            if(imageURL==='undefined'){
+                console.log("Image not here");
+                
+                throw new Error("Image not selected");
+            }
 
             var changed = 0;
             const newData = {
@@ -84,6 +89,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                 image: imageURL,
                 passout_year: parseInt(values.passout_year.format("YYYY")),
                 dept: values.dept,
+                college: values.college
             };
 
             Object.entries(newData).forEach(([key, newValue]) => {
@@ -108,7 +114,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
             }
         } catch (err) {
             console.log(err);
-            const detailed = err.response.data.message;
+            const detailed = err?.response?.data?.message;
             errorPop(detailed || err.message);
         } finally {
             setLoading(false);
@@ -119,7 +125,12 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
     const handleSubmitImage = async () => {
         // <- This will send the selected image to our api
         try {
-            if (fileList[0].uid === "-1") return fileList[0].url;
+            if (fileList[0].uid === "-1"){
+                const res = await postImage({image: fileList[0].url});
+                console.log("Google image");
+                console.log(res);
+                return res.data.data.imageUrl;
+            }
             const res = await postImage({ image: fileList[0].originFileObj });
             console.log(res.data.data.imageUrl);
             return res.data.data.imageUrl;
@@ -132,7 +143,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
 
     useEffect(() => {
         const formdef = { ...admin };
-        formdef.phone = formdef.phone?.slice(3);
+        formdef.phone = formdef.phone;
         if (admin.passout_year) formdef.passout_year = dayjs(`${admin.passout_year}`, "YYYY");
         if (admin.email.endsWith("iiests.ac.in")) formdef.college = "IIEST Shibpur";
         setDefValues(formdef);
@@ -246,9 +257,9 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                     </Form.Item>
                     {/* Team Name */}
                     <Form.Item
-                        label="Passout Batch"
+                        label="Passout year"
                         name="passout_year"
-                        rules={[{ required: true, message: "Please enter your passout batch, e.g. 2026" }]}
+                        rules={[{ required: true, message: "Please enter your passout year, e.g. 2026" }]}
                         style={{ width: 300, cursor: "pointer" }}
                     >
                         <DatePicker picker="year" placeholder="Select Year" />

@@ -10,8 +10,7 @@ import { LogoutOutlined } from "@ant-design/icons";
 
 const themeColor = {
     developer: "#ef7f29",
-    admin: "#9852f3",
-    user: "#1668dc",
+    admin: "#1668dc",
 };
 
 const AvatarMenu = ({ admin, handleLogout }) => {

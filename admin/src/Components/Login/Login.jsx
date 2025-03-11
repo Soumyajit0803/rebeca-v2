@@ -31,7 +31,7 @@ const Login = () => {
                 return;
             }
             console.log(res?.data?.user);
-            if(res?.data?.user?.role!=='user'){
+            if (res?.data?.user?.role !== "user") {
                 handleLogin(res?.data?.user);
                 navigate("/dashboard");
             }
@@ -89,31 +89,31 @@ const Login = () => {
                     Admin Dashboard
                 </div>
 
-                <Card style={{margin: '1rem 0'}} title="Rules">
-                        <ul>
-                            <li>Only IIESTian emails allowed beyond this point, so if you hopped in here out of curiosity, please hop out 🙂.</li>
-                            <li>
-                                For first time login, a person has to enter a <Tag>Passkey</Tag>
-                            </li>
-                            <li>
-                                The <Tag>Passkey</Tag> determines whether the person is a
-                                <ul style={{ position: "relative", left: "20px", top: "10px" }}>
-                                    <li style={{ marginBottom: "0.3em" }}>
-                                        <TagPadded position={"Developer"} color={"red"} />
-                                        Developer Access.
-                                    </li>
-                                    <li style={{ marginBottom: "0.3em" }}>
-                                        <TagPadded position={"Organiser"} color="orange" />
-                                        Access to all events data.
-                                    </li>
-                                    <li style={{ marginBottom: "0.3em" }}>
-                                        <TagPadded position={"Facilitator"} color="purple" />
-                                        Access to specific events data.
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </Card>
+                <Card style={{ margin: "1rem 0" }} title="Rules">
+                    <ul>
+                        <li>
+                            Only IIESTian emails allowed beyond this point, so if you hopped in here out of curiosity,
+                            please hop out 🙂.
+                        </li>
+                        <li>
+                            For first time login, a person has to enter a <Tag>Passkey</Tag>
+                        </li>
+                        <li>
+                            The <Tag>Passkey</Tag> determines whether the person is a
+                            <ul style={{ position: "relative", left: "20px", top: "10px" }}>
+                                
+                                <li style={{ marginBottom: "0.3em" }}>
+                                    <TagPadded position={"Developer"} color="orange" />
+                                    Access to everything.
+                                </li>
+                                <li style={{ marginBottom: "0.3em" }}>
+                                    <TagPadded position={"Facilitator"} color="blue" />
+                                    Access to specific events data.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </Card>
                 <LoginGoogle />
             </Card>
         </div>
