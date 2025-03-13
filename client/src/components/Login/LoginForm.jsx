@@ -4,7 +4,7 @@ import LoginGoogle from "../LoginGoogle/LoginGoogle";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useAuth } from "../../AuthContext";
-import { authWithGoogle } from "../../services/api";
+import { authWithGoogle } from "../../services/authApi";
 
 const LoginForm = ({ open, setOpen }) => {
     const { user, handleLogin, handleLogout } = useAuth();

@@ -26,7 +26,6 @@ import {
     MailOutlined
 } from "@ant-design/icons";
 import "./UserRegistration.css";
-// import { registerEvent } from "../../Services/Api";
 // import { useParams } from "react-router-dom";
 
 // Mock searchresults for 'tejas'

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Badge, Tooltip, Alert, Chip } from "@mui/material";
 import { PersonAdd, Settings, Logout, Login, Google, Person, Warning } from "@mui/icons-material";
 import { useGoogleLogin } from "@react-oauth/google";
-import { authWithGoogle } from "../../services/api";
+import { authWithGoogle } from "../../services/authApi";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
 
