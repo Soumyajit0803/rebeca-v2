@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Container, CardContent, Card, Typography, Button, StepLabel, Step, Stepper, Box } from "@mui/material";
 import Payment from "./Payment";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
-import SingleUserInfo from "./SingleUserInfo";
-import TeamInfo from "./TeamInfo";
+import GetData from "./GetData";
 import { ArrowForward, CheckCircle } from "@mui/icons-material";
 import { useAuth } from "../../AuthContext";
 
@@ -17,17 +16,7 @@ const allAreIIESTians = (team) => {
 
 const steps = ["Getting data", "Payment", "Completed"];
 
-const Step1Content = ({ mode, setValid, user, selectedItems, setSelectedItems }) => {
-    return mode === "single" ? (
-        <SingleUserInfo setValid={setValid} user={user} />
-    ) : (
-        <TeamInfo setValid={setValid} user={user} selectedItems={selectedItems} setSelectedItems={setSelectedItems} />
-    );
-};
-const Step2Content = ({ event, free, setValid, setFile, regfee }) => (
-    <Payment eventName={event} regfee={regfee} setValid={setValid} setFile={setFile} free={free} />
-);
-const Step3Content = () => {
+const FinishMessage = () => {
     return (
         <Card>
             <CardContent>
@@ -45,11 +34,11 @@ const CompletedContent = () => {
     return (
         <Card>
             <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
-                <CheckCircle color="primary" sx = {{width: '6rem', height: '6rem'}}/>
-                <Typography variant="h5">
-                    Congratulations!
+                <CheckCircle color="primary" sx={{ width: "6rem", height: "6rem" }} />
+                <Typography variant="h5">Congratulations!</Typography>
+                <Typography variant="body1" color="grey" sx={{ mb: 2 }}>
+                    You are now Registered.
                 </Typography>
-                <Typography variant="body1" color="grey" sx = {{mb: 2}}>You are now Registered.</Typography>
                 <Button onClick={() => navigate("/events")} variant="contained" color="primary">
                     Go to Events
                 </Button>
@@ -67,6 +56,8 @@ const EventReg = () => {
     const [file, setFile] = useState(null);
     const { user } = useAuth();
     const [selectedItems, setSelectedItems] = useState([]);
+    const [teamName, setTeamName] = useState("");
+    const [loading, setLoading] = useState(false)
 
     const handleNext = () => {
         if (activeStep === 2) {
@@ -83,16 +74,19 @@ const EventReg = () => {
         switch (step) {
             case 0:
                 return (
-                    <Step1Content
-                        setValid={() => setValid({ ...valid, step1: true })}
+                    <GetData
+                        setValid={(status) => setValid({ ...valid, step1: status })}
                         user={user}
                         selectedItems={selectedItems}
                         setSelectedItems={setSelectedItems}
+                        mode = {"team"}
+                        teamName = {teamName}
+                        setTeamName = {setTeamName}
                     />
                 );
             case 1:
                 return (
-                    <Step2Content
+                    <Payment
                         setValid={() => setValid({ ...valid, step2: true })}
                         event={"Coolest Event"}
                         free={user.email.endsWith(".iiests.ac.in") && allAreIIESTians(selectedItems)}
@@ -101,16 +95,23 @@ const EventReg = () => {
                     />
                 );
             case 2:
-                return <Step3Content />;
+                return <FinishMessage />;
             default:
                 return "Unknown step";
         }
     };
 
-    const handleRegister = () => {
-        console.log("Registration data to be sent: ");
-        console.log(file);
-        console.log(selectedItems);
+    const handleRegister = async () => {
+        try {
+            setLoading(true)
+            const regData = new FormData();
+            console.log("Data received so far");
+            
+        } catch (err) {
+            console.log(err);
+        } finally {
+            setLoading(false)
+        }
     };
 
     return (

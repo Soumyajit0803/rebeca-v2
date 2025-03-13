@@ -1,10 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-   
     baseURL: "http://localhost:5000/api/v1",
     withCredentials: true,
-
 });
 
 export const authWithGoogle = (code) => api.get(`/auth/google?code=${code}`);
@@ -23,3 +21,12 @@ export const postImage = (data) =>
             "Content-Type": "multipart/form-data",
         },
     });
+export const enrollUser = (data) =>
+    api.post("/eventreg/enroll", data, {
+        headers: {
+            "Content-Type": "multipart/form-data",
+        },
+    });
+export const isUserRegistered = (eventId, userId) => api.get(`/eventreg/isUserRegistered?eventId=${eventId}&userId=${userId}`);
+
+export const getAllMembersNotInEvent = (eventId) => api.get(`/eventreg/getAllNotInEvent?eventId=${eventId}`);
