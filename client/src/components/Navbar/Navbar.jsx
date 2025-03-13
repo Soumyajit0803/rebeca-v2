@@ -11,7 +11,7 @@ import { LogoutOutlined, ExportOutlined } from "@ant-design/icons";
 import LoginForm from "../Login/LoginForm";
 import React from "react";
 import { useAuth } from "../../AuthContext";
-import { checkStatus } from "../../services/api";
+import { checkStatus } from "../../services/authApi";
 import AccountMenu from "../AccountMenu/AccountMenu";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Close } from "@mui/icons-material";

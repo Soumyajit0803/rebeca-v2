@@ -12,7 +12,7 @@ import {
     Avatar,
 } from "@mui/material";
 import { Person, Email, Phone, School, Work, Groups } from "@mui/icons-material";
-import { getAllMembers } from "../../services/api";
+import { getAllMembers } from "../../services/userApi";
 
 const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamName, setTeamName }) => {
     const [dropdown, setDropDown] = useState([]);

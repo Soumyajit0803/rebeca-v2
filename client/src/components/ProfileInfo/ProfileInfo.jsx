@@ -20,7 +20,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useAuth } from "../../AuthContext";
-import { updateMember, postImage } from "../../services/api";
+import { postImage } from "../../services/imgApi";
+import { updateMember } from "../../services/userApi";
 
 const ProfileDashboard = () => {
     const formData = new FormData();

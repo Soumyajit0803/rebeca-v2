@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-import { logoutUser } from "./services/api";
+import { logoutUser } from "./services/authApi";
 import useNotification from "./hooks/useNotification";
 
 const AuthContext = createContext();

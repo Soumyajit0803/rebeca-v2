@@ -27,6 +27,7 @@ import { useAuth } from "../../AuthContext";
 // import axios from "axios";
 import "./EventAddition.css";
 import { getAllMembers, createEvent, postImage } from "../../api";
+
 import ImgCrop from "antd-img-crop";
 import Coordinator from "../Coordinator/Coordinator";
 import RupeeFilled from "../RupeeFilled/RupeeFilled";
