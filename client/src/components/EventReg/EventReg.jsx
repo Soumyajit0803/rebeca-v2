@@ -42,6 +42,7 @@ const Step3Content = () => {
     );
 };
 const CompletedContent = () => {
+    const navigate = useNavigate();
     return (
         <Card>
             <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
