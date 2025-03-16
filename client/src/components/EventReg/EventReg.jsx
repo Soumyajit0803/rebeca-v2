@@ -57,7 +57,10 @@ const EventReg = () => {
     const { user } = useAuth();
     const [selectedItems, setSelectedItems] = useState([]);
     const [teamName, setTeamName] = useState("");
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+
+    console.log("location:\n");
+    console.log(location);
 
     const handleNext = () => {
         if (activeStep === 2) {
@@ -79,9 +82,9 @@ const EventReg = () => {
                         user={user}
                         selectedItems={selectedItems}
                         setSelectedItems={setSelectedItems}
-                        mode = {"team"}
-                        teamName = {teamName}
-                        setTeamName = {setTeamName}
+                        mode={"team"}
+                        teamName={teamName}
+                        setTeamName={setTeamName}
                     />
                 );
             case 1:
@@ -103,14 +106,13 @@ const EventReg = () => {
 
     const handleRegister = async () => {
         try {
-            setLoading(true)
+            setLoading(true);
             const regData = new FormData();
             console.log("Data received so far");
-            
         } catch (err) {
             console.log(err);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     };
 

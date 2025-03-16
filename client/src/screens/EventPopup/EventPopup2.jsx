@@ -10,8 +10,42 @@ import {
     Person as PersonIcon,
     Image as ImageIcon,
 } from "@mui/icons-material";
+import { useParams, useNavigate } from "react-router-dom";
+
+const sampleEvent = {
+    eventName: "Tech Innovators Hackathon",
+    description: "A 24-hour hackathon to build innovative tech solutions for real-world problems.",
+    rounds: [
+        {
+            roundno: 1,
+            startTime: new Date("2023-11-15T09:00:00"),
+            endTime: new Date("2023-11-15T12:00:00"),
+            venue: "Main Auditorium",
+            description: "Ideation and team formation round.",
+            roundname: "Ideation Round",
+        },
+        {
+            roundno: 2,
+            startTime: new Date("2023-11-15T13:00:00"),
+            endTime: new Date("2023-11-16T13:00:00"),
+            venue: "Lab Building",
+            description: "Coding and development round.",
+            roundname: "Coding Round",
+        },
+    ],
+    rulesDocURL: "https://example.com/rules.pdf",
+    minTeamSize: 2,
+    maxTeamSize: 5,
+    type: "team",
+    poster: "https://example.com/poster.jpg",
+    thumbnail: "https://example.com/thumbnail.jpg",
+    registrationFee: 500,
+    mainCoordinators: ["64f8a7b8f1a2b3c4d5e6f789", "64f8a7b8f1a2b3c4d5e6f790"], // Sample ObjectIds
+};
 
 const EventPopup2 = ({ event }) => {
+    const navigate = useNavigate();
+
     const {
         eventName,
         description,
@@ -24,10 +58,10 @@ const EventPopup2 = ({ event }) => {
         thumbnail,
         registrationFee,
         mainCoordinators,
-    } = event;
+    } = sampleEvent;
 
     return (
-        <Container maxWidth="md">
+        <Container maxWidth="md" sx={{ mt: "5rem", bgcolor: "primary" }}>
             <Card sx={{ marginTop: 4, padding: 2 }}>
                 <CardContent>
                     {/* Event Name */}
@@ -162,7 +196,14 @@ const EventPopup2 = ({ event }) => {
 
                     {/* Register Button */}
                     <Grid2 container justifyContent="center" sx={{ mt: 4 }}>
-                        <Button variant="contained" color="primary" size="large">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            size="large"
+                            onClick={() =>
+                                navigate(`/event/${eventName}/register`, { state: { data: event } })
+                            }
+                        >
                             Register
                         </Button>
                     </Grid2>
