@@ -110,9 +110,9 @@ const Navbar = () => {
                 {/* {user && <Notification message={`Welcome, ${user.name.split(' ')[0]}`} />} */}
                 <LoginForm open={loginOpen} setOpen={setLoginOpen} />
                 <div className="left-col">
-                    <IconButton id="drawer-open-btn" onClick={handleDrawerOpen} variant="filled" color="white">
+                    {width<720 && <IconButton id="drawer-open-btn" onClick={handleDrawerOpen} variant="filled" color="white">
                         <MenuIcon />
-                    </IconButton>
+                    </IconButton>}
                     <Link to="/">
                         <img
                             src="/assets/logo/logo_white.webp"
