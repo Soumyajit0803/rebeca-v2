@@ -72,3 +72,14 @@ exports.getAllMembersNotInEvent = catchAsync(async (req, res, next) => {
         next(err);
     }
 });
+
+exports.getAllEnrollments = catchAsync(async (req, res, next) => {
+    try {
+        const { eventId } = req.query;
+        const allEnrolls = await UserEnroll.find({ eventId }).populate("userId").populate("teamMembers");
+        return res.status(200).json(allEnrolls);
+    } catch (err) {
+        console.log("Error fetching enrollment data", err);
+        next(err);
+    }
+});

@@ -20,6 +20,9 @@ const userEnrollSchema = new mongoose.Schema(
             type: [mongoose.Schema.Types.ObjectId],
             ref: "User",
         },
+        paymentScreenshot: {
+            type: String,
+        },
     },
     { timestamps: true }
 );
