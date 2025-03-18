@@ -126,6 +126,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
     // const { user } = useAuth();
     const onFinish = async (values) => {
+        console.log(values);
+        
         try {
             setLoading(true);
             if (posterList.length === 0) {
@@ -221,10 +223,10 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                         });
                     }
                 } else if (JSON.stringify(oldData[key]) !== JSON.stringify(newValue)) {
-                    formData.append(key, JSON.stringify(newValue));
+                    formData.append(key, newValue);
                     changed = 1;
                     console.log("new value: ");
-                    console.log(JSON.stringify(newValue));
+                    console.log(newValue);
                     console.log("Old value" );
                     console.log(JSON.stringify(oldData[key]));
                 }
@@ -384,7 +386,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     size="large"
                     style={{ width: "100%" }}
                     showSearch
-                    placeholder="Select a person"
+                    placeholder="Select an Event"
                     optionFilterProp="searchField"
                     onChange={onEventSelect}
                     options={AllEventsData}
@@ -461,34 +463,6 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     >
                         <TextArea rows={4} placeholder="Enter event description" />
                     </Form.Item>
-
-                    {/* Start Time and End Time */}
-                    {/* <Form.Item
-                        label="Start and End Time"
-                        name="time"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please select start and end time",
-                            },
-                        ]}
-                    >
-                        <RangePicker showTime />
-                    </Form.Item> */}
-
-                    {/* Venue */}
-                    {/* <Form.Item
-                        label="Venue"
-                        name="venue"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please enter the venue",
-                            },
-                        ]}
-                    >
-                        <Input placeholder="Enter event venue" />
-                    </Form.Item> */}
 
                     <Form.Item
                         label="Rules Document URL"
@@ -567,9 +541,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                         ]}
                     >
                         <Select placeholder="Select an option" onChange={(e) => setEventType(e)}>
-                            <Option value="Single">Single</Option>
-                            <Option value="Team">Team</Option>
-                            <Option value="Combined">Combined</Option>
+                            <Option value="single">Single</Option>
+                            <Option value="team">Team</Option>
                         </Select>
                     </Form.Item>
                     {eventType !== "single" && (

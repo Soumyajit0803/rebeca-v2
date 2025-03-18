@@ -147,7 +147,6 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
         if (admin.passout_year) formdef.passout_year = dayjs(`${admin.passout_year}`, "YYYY");
         if (admin.email.endsWith("iiests.ac.in")) formdef.college = "IIEST Shibpur";
         setDefValues(formdef);
-        console.log(formdef);
         form.setFieldsValue(formdef); // Dynamically update form values
     }, [admin]);
 

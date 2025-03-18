@@ -1,30 +1,54 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { SearchOutlined, TeamOutlined, DownloadOutlined } from "@ant-design/icons";
-import { Button, Input, Space, Table, Select, Tag, message } from "antd";
+import { Button, Input, Space, Table, Select, Tag, Spin, Avatar, Card } from "antd";
 import * as XLSX from "xlsx";
+import { getAllEvents, getAllEnrollments } from "../../api";
+import { useAuth } from "../../AuthContext";
 
 const { Option } = Select;
-const SINGLE_TABLE_WIDTH = 1000;
-const TEAM_TABLE_WIDTH = 2000;
+const formatDate = (isoDateString) => {
+    const date = new Date(isoDateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+
+    return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+};
 const singleReg = [
     {
-        title: "#",
-        dataIndex: "time",
-        key: "time",
-        width: 30,
+        title: "TimeStamp",
+        dataIndex: "timeStamp",
+        key: "timeStamp",
+        width: 150,
+        render: (timeStamp, record) => (
+            <Space>
+                <div>{formatDate(timeStamp)}</div>
+            </Space>
+        ),
     },
     {
         title: "Name",
         dataIndex: "name",
         key: "name",
         sorter: true,
-        width: 250,
+        width: 300,
+        render: (name, record) => (
+            <Space>
+                <Avatar src={record.image} style={{ width: 36, height: 36 }}></Avatar>
+                <div style={{ minWidth: 100 }}>
+                    <h3>{name}</h3>
+                </div>
+            </Space>
+        ),
     },
     {
         title: "Email",
         dataIndex: "email",
         key: "email",
-        width: 200,
+        width: 260,
     },
     {
         title: "Phone",
@@ -35,6 +59,7 @@ const singleReg = [
     {
         title: "College",
         dataIndex: "college",
+        width: 400,
         key: "college",
         filters: [
             { text: "IIESTian", value: "IIEST Shibpur" },
@@ -56,297 +81,42 @@ const singleReg = [
         width: 100,
     },
 ];
+
 const teamReg = [
-    {
-        title: "#",
-        dataIndex: "time",
-        key: "time",
-        width: 30,
-    },
-    {
-        title: "Name",
-        dataIndex: "name",
-        key: "name",
-        sorter: true,
-        width: 300,
-    },
-    {
-        title: "Email",
-        dataIndex: "email",
-        key: "email",
-        width: 200,
-    },
-    {
-        title: "Phone",
-        dataIndex: "phone",
-        key: "phone",
-        width: 300,
-    },
-    {
-        title: "College",
-        dataIndex: "college",
-        key: "college",
-        filters: [
-            { text: "IIESTian", value: "IIEST Shibpur" },
-            { text: "Non-IIESTian", value: "NonIIESTian" },
-        ],
-        onFilter: (value, record) =>
-            value === "IIEST Shibpur" ? record.college === value : record.college !== "IIEST Shibpur",
-        width: 500,
-    },
-    {
-        title: "Payment",
-        dataIndex: "payment",
-        key: "payment",
-        render: (link) =>
-            link && (
-                <a href={link} target="_blank">
-                    Link
-                </a>
-            ),
-    },
+    ...singleReg,
     {
         title: "Team Name",
-        dataIndex: "team",
-        key: "team",
-        width: 300,
+        dataIndex: "teamName",
+        key: "teamName",
+        width: 200,
     },
     {
         title: "Members",
         dataIndex: "members",
         key: "members",
+        width: 800,
         render: (members) => (
-            <>
-                {members.map((member, i) => {
-                    return (
-                        <Tag color={"blue"} key={i} icon={<TeamOutlined />}>
-                            {member.name}
-                        </Tag>
-                    );
-                })}
-            </>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                {members.length > 0 &&
+                    members.map((member, i) => (
+                        <Space
+                            key={i}
+                            style={{ backgroundColor: "rgb(56, 56, 56)", padding: "0.3rem", borderRadius: "5px" }}
+                        >
+                            <Avatar src={member.image} style={{ width: 46, height: 46 }}></Avatar>
+                            <div style={{ minWidth: 100 }}>
+                                {member.name}
+                                <br />
+                                <span style={{ opacity: 0.6 }}>{member.email}</span>
+                            </div>
+                        </Space>
+                    ))}
+            </div>
         ),
     },
 ];
-
-const singleRegData = [
-    {
-        key: "1",
-        time: "1",
-        name: "Alice Johnson",
-        email: "alice.johnson@example.com",
-        college: "IIT K",
-        phone: "+1-234-567-8901",
-        payment: "https://www.google.com",
-    },
-    {
-        key: "2",
-        time: "2",
-        name: "Bob Smith",
-        email: "bob.smith@example.com",
-        college: "Indian Institute of Engineering Science and Technology, Shibpur",
-        phone: "+1-345-678-9012",
-    },
-    {
-        key: "3",
-        time: "3",
-        name: "Charlie Brown",
-        email: "charlie.brown@example.com",
-        college: "IIEST Shibpur",
-        phone: "+1-456-789-0123",
-    },
-    {
-        key: "4",
-        time: "4",
-        name: "Diana Prince",
-        email: "diana.prince@example.com",
-        college: "IIEST Shibpur",
-        phone: "+1-567-890-1234",
-    },
-    {
-        key: "5",
-        time: "5",
-        name: "Ethan Hunt",
-        email: "ethan.hunt@example.com",
-        college: "IIEST Shibpur",
-        phone: "+1-678-901-2345",
-    },
-    {
-        key: "6",
-        time: "6",
-        name: "Fiona Gallagher",
-        email: "fiona.gallagher@example.com",
-        college: "IIEST Shibpur",
-        phone: "+1-789-012-3456",
-    },
-    {
-        key: "7",
-        time: "7",
-        name: "George Clooney",
-        email: "george.clooney@example.com",
-        college: "IIEST Shibpur",
-        phone: "+1-890-123-4567",
-    },
-    {
-        key: "8",
-        time: "8",
-        name: "Hannah Montana",
-        email: "hannah.montana@example.com",
-        college: "IIEST Shibpur",
-        phone: "+1-901-234-5678",
-    },
-    {
-        key: "9",
-        time: "9",
-        name: "Isaac Newton",
-        email: "isaac.newton@example.com",
-        college: "IIEST Shibpur",
-        phone: "+1-012-345-6789",
-    },
-    {
-        key: "10",
-        time: "10",
-        name: "Jenny Lopez",
-        email: "jenny.lopez@example.com",
-        college: "IIEST Shibpur",
-        phone: "+1-123-456-7890",
-    },
-];
-
-const teamRegData = [
-    {
-        key: "1",
-        time: "1",
-        name: "Team Johnson",
-        email: "alice.johnson@example.com",
-        phone: "+1-234-567-8901",
-        college: "IIEST Shibpur",
-        team: "Innovators",
-        members: [
-            { name: "Bob Smith", email: "bob.smith@example.com" },
-            { name: "Charlie Brown", email: "charlie.brown@example.com" },
-        ],
-    },
-    {
-        key: "2",
-        time: "2",
-        name: "Diana Prince",
-        email: "diana.prince@example.com",
-        phone: "+1-345-678-9012",
-        college: "IIEST Shibpur",
-        team: "Tech Titans",
-        members: [
-            { name: "Ethan Hunt", email: "ethan.hunt@example.com" },
-            { name: "Fiona Gallagher", email: "fiona.gallagher@example.com" },
-        ],
-    },
-    {
-        key: "3",
-        time: "3",
-        name: "George Clooney",
-        email: "george.clooney@example.com",
-        phone: "+1-456-789-0123",
-        college: "IIEST Shibpur",
-        team: "Code Wizards",
-        members: [
-            { name: "Hannah Montana", email: "hannah.montana@example.com" },
-            { name: "Isaac Newton", email: "isaac.newton@example.com" },
-        ],
-    },
-    {
-        key: "4",
-        time: "4",
-        name: "Jenny Lopez",
-        email: "jenny.lopez@example.com",
-        phone: "+1-567-890-1234",
-        college: "IIEST Shibpur",
-        team: "Debuggers",
-        members: [
-            { name: "Alice Johnson", email: "alice.johnson@example.com" },
-            { name: "Bob Smith", email: "bob.smith@example.com" },
-        ],
-    },
-    {
-        key: "5",
-        time: "5",
-        name: "Katherine Perry",
-        email: "katherine.perry@example.com",
-        phone: "+1-678-901-2345",
-        college: "IIEST Shibpur",
-        team: "Syntax Squad",
-        members: [
-            { name: "Charlie Brown", email: "charlie.brown@example.com" },
-            { name: "Diana Prince", email: "diana.prince@example.com" },
-        ],
-    },
-    {
-        key: "6",
-        time: "6",
-        name: "Leo Messi",
-        email: "leo.messi@example.com",
-        phone: "+1-789-012-3456",
-        college: "IIEST Shibpur",
-        team: "Byte Chasers",
-        members: [
-            { name: "Ethan Hunt", email: "ethan.hunt@example.com" },
-            { name: "Fiona Gallagher", email: "fiona.gallagher@example.com" },
-        ],
-    },
-    {
-        key: "7",
-        time: "7",
-        name: "Michael Jordan",
-        email: "michael.jordan@example.com",
-        phone: "+1-890-123-4567",
-        college: "IIEST Shibpur",
-        team: "Hacktivists",
-        members: [
-            { name: "George Clooney", email: "george.clooney@example.com" },
-            { name: "Hannah Montana", email: "hannah.montana@example.com" },
-        ],
-    },
-    {
-        key: "8",
-        time: "8",
-        name: "Nina Dobrev",
-        email: "nina.dobrev@example.com",
-        phone: "+1-901-234-5678",
-        college: "IIEST Shibpur",
-        team: "Cyber Soldiers",
-        members: [
-            { name: "Isaac Newton", email: "isaac.newton@example.com" },
-            { name: "Jenny Lopez", email: "jenny.lopez@example.com" },
-        ],
-    },
-    {
-        key: "9",
-        time: "9",
-        name: "Oliver Queen",
-        email: "oliver.queen@example.com",
-        phone: "+1-012-345-6789",
-        college: "IIEST Shibpur",
-        team: "Quantum Coders",
-        members: [
-            { name: "Katherine Perry", email: "katherine.perry@example.com" },
-            { name: "Leo Messi", email: "leo.messi@example.com" },
-        ],
-    },
-    {
-        key: "10",
-        time: "10",
-        name: "Patrick Star",
-        email: "patrick.star@example.com",
-        phone: "+1-123-456-7890",
-        college: "IIEST Shibpur",
-        team: "Ocean Hackers",
-        members: [
-            { name: "Michael Jordan", email: "michael.jordan@example.com" },
-            { name: "Nina Dobrev", email: "nina.dobrev@example.com" },
-        ],
-    },
-];
-
-const EventMap = { Jack: singleRegData, Jill: teamRegData };
+const ColumnMap = { single: singleReg, team: teamReg };
+const TableWidth = { single: 1400, team: 2400 };
 
 const getCellItem = (cellitem) => {
     if (typeof cellitem !== "object") return cellitem;
@@ -377,14 +147,14 @@ const ExportExcelButton = ({ dataSource, columns, fileName, errorPop, infoPop, s
             icon={<DownloadOutlined />}
             iconPosition="end"
             size="large"
-            style={{ marginBottom: "1rem" }}
+            style={{ margin: "1rem 0" }}
         >
             Export as Excel
         </Button>
     );
 };
 
-const StatsTable = ({ data, columns, tableWidth, eventName, errorPop, infoPop, successPop }) => {
+const StatsTable = ({ data, columns, tableWidth, eventName, errorPop, infoPop, successPop, loading }) => {
     const [searchText, setSearchText] = useState("");
     const [searchedColumn, setSearchedColumn] = useState("");
     const searchInput = useRef(null);
@@ -471,7 +241,7 @@ const StatsTable = ({ data, columns, tableWidth, eventName, errorPop, infoPop, s
                 }}
             />
         ),
-        onFilter: (value, record) => record[dataIndex].toString().toLowerCase().includes(value.toLowerCase()),
+        onFilter: (value, record) => record[dataIndex]?.toString().toLowerCase().includes(value.toLowerCase()),
         filterDropdownProps: {
             onOpenChange(open) {
                 if (open) {
@@ -513,72 +283,120 @@ const StatsTable = ({ data, columns, tableWidth, eventName, errorPop, infoPop, s
                     infoPop={infoPop}
                     successPop={successPop}
                 />
-                <Table columns={columns} dataSource={data} size="middle" scroll={{ x: tableWidth }} />
+                <Table columns={columns} dataSource={data} size="middle" scroll={{ x: tableWidth }} loading={loading}/>
             </div>
         )
     );
 };
 
-const RegistrationStats = ({ infoPop, errorPop, successPop }) => {
-    const [dataSrc, setdataSrc] = useState([]);
-    const [columns, setColumns] = useState(singleReg);
-    const [tableWidth, setTableWidth] = useState(SINGLE_TABLE_WIDTH);
-    const [eventName, setEventName] = useState(SINGLE_TABLE_WIDTH);
+const HybridLabel = ({ name, imageURL }) => {
+    return (
+        <Space>
+            <Avatar src={imageURL} alt={name} style={{ width: 32, height: 32 }} />
+            <div>{name}</div>
+        </Space>
+    );
+};
 
-    const onChange = (value) => {
-        setEventName(value);
-        console.log(`selected ${value}`);
-        const k = EventMap[value];
-        setdataSrc(k);
-        if (k && k[0] && k[0].team) {
-            setColumns(teamReg);
-            setTableWidth(TEAM_TABLE_WIDTH);
-        } else {
-            setColumns(singleReg);
-            setTableWidth(SINGLE_TABLE_WIDTH);
+const RegistrationStats = ({ infoPop, errorPop, successPop }) => {
+    const [AllEventsData, setAllEventsData] = useState([]);
+    const [allEnrollData, setAllEnrollData] = useState([]);
+    const [selectedEvent, setSelectedEvent] = useState(null);
+    const [fetchingAllEvents, setFetchingAllEvents] = useState(false);
+    const [fetchingAllEnrolls, setFetchingAllEnrolls] = useState(false);
+    const [columns, setColumns] = useState(singleReg);
+    const [tableWidth, setTableWidth] = useState(1400);
+    const { admin } = useAuth();
+
+    const handleGetAllEvents = async () => {
+        try {
+            setFetchingAllEvents(true);
+            const res = await getAllEvents(admin.role === "admin" ? admin.email : "null");
+            const finalopts = [];
+
+            res.data.data.map((event, i) => {
+                finalopts.push({
+                    value: i,
+                    searchField: event.eventName,
+                    label: <HybridLabel imageURL={event.thumbnail} name={event.eventName} />,
+                    original: event,
+                });
+            });
+            setAllEventsData(finalopts);
+        } catch (err) {
+            console.log(err.response?.data);
+            const detailed = err.response?.data?.message;
+            errorPop(detailed || err.message, "Error While fetching allEvents");
+        } finally {
+            setFetchingAllEvents(false);
         }
-        console.log(`columns: ${JSON.stringify(columns)}`);
-        console.log(k[0]);
     };
+
+    const handleGetAllEnrollments = async (eventId) => {
+        try {
+            setFetchingAllEnrolls(true);
+            const res = await getAllEnrollments(eventId);
+            const enrollData = res.data;
+
+            const edata = enrollData.map((e) => ({
+                id: e._id, // Rename _id to id (optional)
+                name: e.userId.name, // Include the entire userId object or specific fields
+                email: e.userId.email,
+                phone: e.userId.phone,
+                college: e.userId.college,
+                payment: e.paymentScreenshot || "",
+                teamName: e.teamName || "",
+                members: e.teamMembers,
+                image: e.userId.image,
+                timeStamp: e.createdAt,
+            }));
+
+            setAllEnrollData(edata);
+        } catch (err) {
+            console.log(err.response?.data);
+            const detailed = err.response?.data?.message;
+            errorPop(detailed || err.message, "Error While fetching allEnrollMents");
+        } finally {
+            setFetchingAllEnrolls(false);
+        }
+    };
+
+    const onEventSelect = (idx) => {
+        const original = AllEventsData[idx].original;
+        setSelectedEvent(AllEventsData[idx].searchField);
+        handleGetAllEnrollments(original._id);
+        setColumns(ColumnMap[original.type]);
+        setTableWidth(TableWidth[original.type]);
+    };
+
+    useEffect(() => {
+        handleGetAllEvents();
+    }, []);
 
     return (
         <div style={{ maxWidth: 1200, minHeight: "100vh" }}>
             <div style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Select an Event</div>
             <Select
                 size="large"
-                style={{ width: "100%", marginBottom: "2rem" }}
+                style={{ width: "100%" }}
                 showSearch
                 placeholder="Select an Event"
-                optionFilterProp="value"
-                onChange={onChange}
-                options={[
-                    {
-                        value: "Jack",
-                        label: (
-                            <>
-                                Single <Tag color="blue">#102018</Tag>
-                            </>
-                        ),
-                    },
-                    {
-                        value: "Jill",
-                        label: (
-                            <>
-                                Team <Tag color="blue">#102019</Tag>
-                            </>
-                        ),
-                    },
-                ]}
+                optionFilterProp="searchField"
+                onChange={onEventSelect}
+                options={AllEventsData}
+                value={selectedEvent}
+                notFoundContent={fetchingAllEvents ? <Spin tip="fetching events..." size="large" /> : null}
             ></Select>
             <br />
             <StatsTable
-                data={dataSrc}
+                data={allEnrollData}
                 columns={columns}
                 tableWidth={tableWidth}
-                eventName={eventName}
+                eventName={selectedEvent}
                 errorPop={errorPop}
                 infoPop={infoPop}
                 successPop={successPop}
+                loading={fetchingAllEnrolls}
             />
         </div>
     );

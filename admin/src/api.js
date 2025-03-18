@@ -57,3 +57,4 @@ export const updateEvent = (data) =>
         },
     });
 export const getAllEvents = (email) => API.get(`/event/all?email=${email}`)
+export const getAllEnrollments = (eventId) => API.get(`/eventreg/getAllEnrollments?eventId=${eventId}`)
