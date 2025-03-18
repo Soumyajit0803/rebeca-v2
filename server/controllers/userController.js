@@ -2,6 +2,7 @@ const axios = require("axios");
 const catchAsync = require("../utils/catchAsync");
 const User = require("../models/userModel");
 const { deleteImage } = require("../utils/cloudinary");
+const Email = require("../utils/nodemailer");
 
 exports.createUser = catchAsync(async (req, res, next) => {
     try {
@@ -20,7 +21,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
     try {
-        const allUsers = await User.find({ college: { $ne: null } });        
+        const allUsers = await User.find({ college: { $ne: null } });
         return res.status(200).json({ message: "success", data: allUsers });
     } catch (err) {
         console.log(err.message);
@@ -39,7 +40,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
 
         if (!oldUser) {
             return res.status(404).json({ message: "User not found" });
-        }else{
+        } else {
             console.log(oldUser);
         }
 
@@ -48,6 +49,9 @@ exports.updateUser = catchAsync(async (req, res, next) => {
             await deleteImage(oldUser.image); // Delete only the OLD image
             console.log("Old image deleted:", oldUser.image);
         }
+
+        const email = new Email({email: oldUser.email, name: req.body.name || oldUser.name }, "https://rebeca.in/", req.body);
+        await email.sendAccountUpdate()
 
         return res.status(200).json({ message: "success" });
     } catch (err) {
