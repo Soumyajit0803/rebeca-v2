@@ -46,10 +46,10 @@ export default function AccountMenu() {
         <Box className="accountMent">
             <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
                 <Tooltip title="Account">
-                    <Badge badgeContent={user?.college ? 0 : 1} color="primary">
+                    <Badge badgeContent={user && !user?.college ? 1 : 0} color="warning">
                         <IconButton
                             onClick={handleClick}
-                            size="small"
+                            sx={{width: 32, height: 32}}
                             aria-controls={open ? "account-menu" : undefined}
                             aria-haspopup="true"
                             aria-expanded={open ? "true" : undefined}
