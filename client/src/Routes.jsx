@@ -25,12 +25,12 @@ const AllRoutes = () => {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/events" element={<Schedule />} />
             <Route exact path="/events/:DayID" element={<Daydetails />} />
-            <Route exact path="/event/:eventName" element={<EventPopup2 />} />
+            <Route exact path="/event/:eventSlug" element={<EventPopup2 />} />
             <Route exact path="/sponsorship" element={<Sponsorship />} />
             <Route exact path="/team" element={<Team />} />
             <Route exact path="/merchandise" element={<Merchandise />} />
             <Route exact path="/profile" element={<ProfileInfo />} />
-            <Route exact path="/event/:eventName/register" element={<EventReg />} />
+            <Route exact path="/event/:eventSlug/register" element={<EventReg />} />
             <Route exact path="/test" element={<EventPopup2 />} />
         </Routes>
     );

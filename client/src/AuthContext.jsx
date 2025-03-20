@@ -14,6 +14,9 @@ export const AuthProvider = ({ children }) => {
             try {
                 const response = await getAllEvents();
                 const allEvs = response.data.data;
+                allEvs.map((ev)=>{
+                    ev["slug"] = ev.eventName.toLowerCase().replace(/\s+/g, "-");
+                })
                 setAllEvents(allEvs);
                 console.log("Event data fetched successfully");
                 console.log(allEvs);

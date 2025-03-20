@@ -23,10 +23,7 @@ const EventList = ({ eventlist }) => {
                             <div className="time">{a && a.rounds && extractTime(a.rounds[0]?.startTime)}</div>
                             <div className="linespace"></div>
                             <Link
-                                to={{
-                                    pathname: a.url ? a.url : `/event/${a.eventName}`,
-                                    state: { data: "JSON.stringify(a)" },
-                                }}
+                                to={`/event/${a.slug}`}
                             >
                                 <div className="eventname">
                                     {a.eventName}
