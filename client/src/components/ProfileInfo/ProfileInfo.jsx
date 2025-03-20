@@ -11,7 +11,7 @@ import {
     Snackbar,
     Alert,
     InputAdornment,
-    AlertTitle
+    AlertTitle,
 } from "@mui/material";
 import { Email, Phone, School, Engineering, CalendarToday, Edit, Person, Save } from "@mui/icons-material";
 import Dialog from "@mui/material/Dialog";
@@ -26,11 +26,11 @@ import { updateMember } from "../../services/userApi";
 const ProfileDashboard = () => {
     const formData = new FormData();
     const [dopen, setDopen] = useState(false);
-    
-    const [popup, setPopUp] = useState(false)
+
+    const [popup, setPopUp] = useState(false);
     const [message, setMessage] = useState("");
-    const [severity, setSeverity] = useState("")
-    const [messageTitle, setMessageTitle] = useState("")
+    const [severity, setSeverity] = useState("");
+    const [messageTitle, setMessageTitle] = useState("");
     const [loading, setLoading] = useState(false);
     const { user } = useAuth();
     const [imageFile, setImageFile] = useState([]);
@@ -93,7 +93,7 @@ const ProfileDashboard = () => {
                     formData.append(key, newValue);
                     changed = 1;
                     console.log(key);
-                    
+
                     console.log("new value: ");
                     console.log(newValue);
                     console.log(user[key]);
@@ -103,21 +103,21 @@ const ProfileDashboard = () => {
                 formData.append("email", userData.email);
                 await updateMember(formData);
                 setMessage("Profile Data updated successfully!!");
-                setSeverity("success")
-                setMessageTitle("Data Updated!")
+                setSeverity("success");
+                setMessageTitle("Data Updated!");
                 setPopUp(true);
             } else {
                 setMessage("No changes found to edit");
-                setSeverity("warning")
-                setMessageTitle("No Changes Found")
+                setSeverity("warning");
+                setMessageTitle("No Changes Found");
                 setPopUp(true);
             }
         } catch (err) {
             console.log(err);
             const detailed = err?.response?.data?.message;
             setMessage(detailed || err.message);
-            setSeverity("error")
-            setMessageTitle("Some Error Occured")
+            setSeverity("error");
+            setMessageTitle("Some Error Occured");
             setPopUp(true);
         } finally {
             setLoading(false);
@@ -127,7 +127,10 @@ const ProfileDashboard = () => {
     const handleSubmitImage = async () => {
         // <- This will send the selected image to our api
         try {
-            if (imageFile.uid === "-1") return imageFile.url;
+            if (imageFile.uid === "-1") {
+                console.log(imageFile);
+                return imageFile.url;
+            }
             const res = await postImage({ image: imageFile });
             console.log("Image needed to be fetched");
             return res.data.data.imageUrl;
@@ -135,8 +138,8 @@ const ProfileDashboard = () => {
             console.log(err);
             const errormsg = err.response ? err.response.data?.message : err.message;
             setMessage(`ERROR: ${errormsg}`);
-            setSeverity("error")
-            setMessageTitle("Error Submitting Image")
+            setSeverity("error");
+            setMessageTitle("Error Submitting Image");
             setPopUp(true);
         }
     };
@@ -206,6 +209,7 @@ const ProfileDashboard = () => {
                             {/* Email */}
                             <Grid2 size={{ xs: 12, md: 6 }}>
                                 <TextField
+                                disabled
                                     fullWidth
                                     label="Email"
                                     name="email"
@@ -342,7 +346,6 @@ const ProfileDashboard = () => {
                                     }}
                                     sx={{ bgcolor: "var(--accent1)", color: "#fff" }}
                                     autoFocus
-                                    
                                 >
                                     Okay
                                 </Button>
