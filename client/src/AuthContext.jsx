@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
                 const allEvs = response.data.data;
                 setAllEvents(allEvs);
                 console.log("Event data fetched successfully");
-                console.log(response);
+                console.log(allEvs);
             } catch (err) {
                 console.log(err);
                 console.log(err);
