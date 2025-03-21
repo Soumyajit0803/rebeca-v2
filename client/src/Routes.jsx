@@ -10,7 +10,7 @@ import EventPopup2 from "./screens/EventPopup/EventPopup2";
 import Merchandise from "./screens/Merchandise/Merchandise";
 import Team from "./screens/Team/Team";
 import LoginForm from "./components/Login/LoginForm";
-import UserRegistration from "./screens/UserRegistration/UserRegistration";
+//import UserRegistration from "./screens/UserRegistration/UserRegistration";
 import EventSingle from "./screens/EventSingle/EventSingle";
 import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import EventReg from "./components/EventReg/EventReg";
@@ -28,11 +28,10 @@ const AllRoutes = () => {
             <Route exact path="/events" element={<Schedule />} />
             <Route exact path="/events/:DayID" element={<Daydetails />} />
             <Route exact path="/event/:eventName" element={<EventPopup />} />
-            <Route exact path="/sponsorship" element={<Sponsorship />} />
-            <Route exact path="/team" element={<Team />} />
-            <Route exact path="/merchandise" element={<Merchandise />} />
-            <Route exact path="/profile" element={<ProfileInfo />} />
-            <Route exact path="/event/:eventName/register" element={<EventReg />} />
+            <Route exact path="/sponsorship" element={<Sponsorship></Sponsorship>}></Route>
+            <Route exact path="/team" element={<Team></Team>}></Route>
+            <Route exact path="/merchandise" element={<Merchandise></Merchandise>}></Route>
+            {/* <Route exact path="/register" element={<UserRegistration />} /> */}
             <Route exact path="/test" element={<EventSingle />} />
         </Routes>
     );
