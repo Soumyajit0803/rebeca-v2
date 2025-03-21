@@ -11,6 +11,6 @@
     line-height: 1.2em
 }
 
-.MuiPaper-root {
+.accountMent > .MuiPaper-root {
     background-color: #37474f !important;
 }

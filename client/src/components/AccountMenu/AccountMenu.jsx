@@ -1,14 +1,17 @@
 import * as React from "react";
-import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Typography, Tooltip } from "@mui/material";
-import { PersonAdd, Settings, Logout, Login, Google } from "@mui/icons-material";
+import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Badge, Tooltip, Alert, Chip } from "@mui/material";
+import { PersonAdd, Settings, Logout, Login, Google, Person, Warning } from "@mui/icons-material";
 import { useGoogleLogin } from "@react-oauth/google";
-import { authWithGoogle } from "../../services/api";
+import { authWithGoogle } from "../../services/authApi";
 import { useAuth } from "../../AuthContext";
+import { useNavigate } from "react-router-dom";
+
 import "./AccountMenu.css";
 
 export default function AccountMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const { user, handleLogin, handleLogout } = useAuth();
+    const navigate = useNavigate();
 
     const responseGoogle = async (authResult) => {
         try {
@@ -43,15 +46,20 @@ export default function AccountMenu() {
         <Box className="accountMent">
             <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
                 <Tooltip title="Account">
-                    <IconButton
-                        onClick={handleClick}
-                        size="small"
-                        aria-controls={open ? "account-menu" : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? "true" : undefined}
-                    >
-                        <Avatar sx={{ width: 32, height: 32, bgcolor: "var(--primary)" }} src={user?.image}></Avatar>
-                    </IconButton>
+                    <Badge badgeContent={user && !user?.college ? 1 : 0} color="warning">
+                        <IconButton
+                            onClick={handleClick}
+                            sx={{width: 32, height: 32}}
+                            aria-controls={open ? "account-menu" : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? "true" : undefined}
+                        >
+                            <Avatar
+                                sx={{ width: 32, height: 32, bgcolor: "var(--primary)" }}
+                                src={user?.image}
+                            ></Avatar>
+                        </IconButton>
+                    </Badge>
                 </Tooltip>
             </Box>
             <Menu
@@ -80,9 +88,8 @@ export default function AccountMenu() {
                                 zIndex: 0,
                             },
                             "*": {
-                                color: "#fff"
+                                color: "#fff",
                             },
-                            
                         },
                     },
                 }}
@@ -99,21 +106,40 @@ export default function AccountMenu() {
                     </div>
                 )}
                 <Divider />
-                {user ? (
-                    <MenuItem onClick={() => {
-                        handleClose()
-                        handleLogout()
-                    }}>
+                {user && (
+                    <MenuItem
+                        onClick={() => {
+                            handleClose();
+                            navigate("/profile");
+                        }}
+                    >
+                        <ListItemIcon>
+                            <Person fontSize="small" />
+                        </ListItemIcon>
+                        My Profile {!user?.college && <Chip icon={<Warning />} label="Complete your profile" color="primary" size="small" sx = {{ml: 2}}/>}
+                    </MenuItem>
+                )}
+                {user && (
+                    <MenuItem
+                        onClick={() => {
+                            handleClose();
+                            handleLogout();
+                        }}
+                    >
                         <ListItemIcon>
                             <Login fontSize="medium" />
                         </ListItemIcon>
                         Logout
                     </MenuItem>
-                ) : (
-                    <MenuItem onClick={() => {
-                        handleClose()
-                        googleLogin()
-                    }}>
+                )}
+
+                {!user && (
+                    <MenuItem
+                        onClick={() => {
+                            handleClose();
+                            googleLogin();
+                        }}
+                    >
                         <ListItemIcon>
                             <Google fontSize="medium" />
                         </ListItemIcon>

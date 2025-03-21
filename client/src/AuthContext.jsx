@@ -1,11 +1,30 @@
-import React, { createContext, useContext, useState } from "react";
-import { logoutUser } from "./services/api";
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { logoutUser } from "./services/authApi";
 import useNotification from "./hooks/useNotification";
+import { getAllEvents } from "./services/eventApi";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [allEvents, setAllEvents] = useState([]);
+
+    useEffect(() => {
+        const handleGetAllEvents = async () => {
+            try {
+                const response = await getAllEvents();
+                const allEvs = response.data.data;
+                setAllEvents(allEvs);
+                console.log("Event data fetched successfully");
+                console.log(response);
+            } catch (err) {
+                console.log(err);
+                console.log(err);
+            }
+        };
+
+        handleGetAllEvents();
+    }, []);
 
     const { Notification, showNotification } = useNotification();
 
@@ -13,7 +32,7 @@ export const AuthProvider = ({ children }) => {
         console.log("User login successful");
         console.log(userData);
         setUser(userData);
-        showNotification(`Welcome, ${userData.name.split(' ')[0]}`);
+        showNotification(`Welcome, ${userData.name.split(" ")[0]}`);
     };
 
     const handleLogout = async () => {
@@ -30,7 +49,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, handleLogin, handleLogout }}>
+        <AuthContext.Provider value={{ user, handleLogin, handleLogout, allEvents, setAllEvents }}>
             <Notification />
             {children}
         </AuthContext.Provider>

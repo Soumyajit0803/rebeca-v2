@@ -1,0 +1,75 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Account details updated
+    style.
+      body {
+          padding: 10px;
+          outline: 0;
+          margin: 10px;
+          box-sizing: border-box;
+          font-size: 1.2rem;
+          border: 1px solid #b8b8b8;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      .salute {
+          font-size: 1.5rem;
+          color: rgb(0, 56, 159);
+      }
+      table {
+          border-spacing: 0px;
+          border: 1px solid grey; 
+          margin: 10px;
+      }
+      td, th {
+          text-align: left;
+          padding: 0.7rem 1rem;
+      }
+      thead {
+          background: rgb(0, 103, 193);
+          color: #fff;
+      }
+      .banner {
+        width: 100%;
+        height: 12rem;
+        background: url("./peek-rebeca.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+  body
+    .banner
+    .highlight
+      p
+        .salute Hello, #{firstName}!
+        br
+        |We wanted to inform you that your account details have been updated successfully. Below are the updated fields:
+      
+      if Object.keys(updatedFields).length > 0
+        table
+          thead
+            tr
+              th Field
+              th Updated Value
+          tbody
+            each value, key in updatedFields
+              if key !== 'email'
+                tr
+                  td(style="text-transform: capitalize;") #{key.replace('_', ' ')}
+                  td #{value}
+      else
+        p No specific details were updated.
+
+      p
+        | You can review these changes by logging into your account at 
+        a(href="https://rebeca.in", target="_blank") https://rebeca.in
+        |  and navigating to "My Profile".
+
+      p If you did not request this change, please contact our support team immediately.
+
+      .regard
+        p Regards,
+        p Event management committee, 
+        | Rebeca

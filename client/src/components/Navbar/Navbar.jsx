@@ -6,15 +6,15 @@ import { Link, NavLink } from "react-router-dom";
 import CustomButton from "../Button/Button";
 import "./Navbar.css";
 import Progressbar from "../Progressbar/Progressbar";
-import { LogoutOutlined, ExportOutlined } from "@ant-design/icons";
+// import { LogoutOutlined, ExportOutlined } from "@ant-design/icons";
 
 import LoginForm from "../Login/LoginForm";
 import React from "react";
 import { useAuth } from "../../AuthContext";
-import { checkStatus } from "../../services/api";
+import { checkStatus } from "../../services/authApi";
 import AccountMenu from "../AccountMenu/AccountMenu";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Close } from "@mui/icons-material";
+import { Close, LogoutOutlined } from "@mui/icons-material";
 
 function AvatarMenu({ user, handleLogout, setOpen }) {
     const [anchorEl, setAnchorEl] = useState(null); // Menu anchor state
@@ -110,9 +110,9 @@ const Navbar = () => {
                 {/* {user && <Notification message={`Welcome, ${user.name.split(' ')[0]}`} />} */}
                 <LoginForm open={loginOpen} setOpen={setLoginOpen} />
                 <div className="left-col">
-                    <IconButton id="drawer-open-btn" onClick={handleDrawerOpen} variant="filled" color="white">
+                    {width<720 && <IconButton id="drawer-open-btn" onClick={handleDrawerOpen} variant="filled" color="white">
                         <MenuIcon />
-                    </IconButton>
+                    </IconButton>}
                     <Link to="/">
                         <img
                             src="/assets/logo/logo_white.webp"

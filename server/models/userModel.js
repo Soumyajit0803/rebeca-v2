@@ -29,10 +29,11 @@ const userSchema = new mongoose.Schema(
         position: {
             type: String,
             trim: true,
-            enum: {
-                values: ["head", "associate head", "associate"],
-                message: 'position must be in {head, associate head, associate}'
-            }
+            // enum: {
+            //     values: ["head", "associate head", "associate", null],
+            //     message: 'position must be in {head, associate head, associate}'
+            // },
+            required: false
         },
         email: {
             type: String,
@@ -53,6 +54,10 @@ const userSchema = new mongoose.Schema(
         },
         passout_year: {
             type: Number,
+        },
+        college: {
+            type: String,
+            trim: true,
         }
     },
     { timestamps: true }

@@ -7,6 +7,7 @@ exports.createEvent = catchAsync(async (req, res, next) => {
     try {
         const eventData = new Event({
             ...req.body,
+            rounds: JSON.parse(req.body.rounds)
         });
         await eventData.save();
         return res.status(201).json({ message: "success", data: eventData });
@@ -19,8 +20,6 @@ exports.createEvent = catchAsync(async (req, res, next) => {
 exports.deleteEvent = catchAsync(async (req, res, next) => {
     try {
         const id = req.query._id;
-        console.log("Event query: " + req.query);
-
         const deletedEvent = await Event.findByIdAndDelete(id);
         if (!deletedEvent) {
             return res.status(404).json({ message: "Event to be deleted not found" });
@@ -35,10 +34,12 @@ exports.deleteEvent = catchAsync(async (req, res, next) => {
 exports.updateEvent = catchAsync(async (req, res, next) => {
     try {
         console.log(req.body);
-
+        const updated = {...req.body}
+        if (updated.rounds) updated.rounds = JSON.parse(updated.rounds)
+        
         const updatedEvent = await Event.findByIdAndUpdate(
             req.body._id,
-            { $set: req.body },
+            { ...updated},
             { new: true, runValidators: true }
         );
 

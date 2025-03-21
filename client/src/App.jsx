@@ -34,9 +34,7 @@ const darkTheme = createTheme({
     },
 });
 
-function App() {
-    console.log(client_ID);
-    
+function App() {    
     return (
         <GoogleOAuthProvider clientId={client_ID}>
             <div className="App">
