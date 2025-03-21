@@ -10,6 +10,7 @@ import Merchandise from "./screens/Merchandise/Merchandise";
 import Team from "./screens/Team/Team";
 import LoginForm from "./components/Login/LoginForm";
 import UserRegistration from "./screens/UserRegistration/UserRegistration";
+import EventSingle from "./screens/EventSingle/EventSingle";
 
 const AllRoutes = () => {
     const location = useLocation();
@@ -35,6 +36,7 @@ const AllRoutes = () => {
             <Route exact path="/team" element={<Team></Team>}></Route>
             <Route exact path="/merchandise" element={<Merchandise></Merchandise>}></Route>
             <Route exact path="/register" element={<UserRegistration />} />
+            <Route exact path="/test" element={<EventSingle />} />
         </Routes>
     );
 };
