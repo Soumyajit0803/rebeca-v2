@@ -4,11 +4,14 @@ import Button from "../../components/Button/Button";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../AuthContext";
 import { extractFullDate, extractTime } from "../../components/EventList/EventList";
+import RoundCard from "./RoundCard";
+import { Alert } from "@mui/material";
+import { Warning } from "@mui/icons-material";
 
 const EventSingle = () => {
     const navigate = useNavigate();
     const { eventSlug } = useParams();
-    const { allEvents } = useAuth();
+    const { allEvents, user } = useAuth();
 
     // Ensure allEvents is available before filtering
     if (!allEvents || allEvents.length === 0) {
@@ -28,7 +31,7 @@ const EventSingle = () => {
                 style={{
                     position: `relative`,
                     width: `100%`,
-                    height: `400px`,
+                    height: `300px`,
                     background: `url("${oneEvent?.thumbnail}") no-repeat`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
@@ -38,36 +41,41 @@ const EventSingle = () => {
                     <div className="event-single-header">
                         <span className="event-single-badge">NEW</span>
                         <h1 className="event-single-title">{oneEvent?.eventName}</h1>
-                        <p className="event-single-subtitle">{extractFullDate(oneEvent?.rounds[0]?.startTime)} - {extractFullDate(oneEvent?.rounds[0]?.endTime)}</p>
+                        <p className="event-single-subtitle">
+                            {extractFullDate(oneEvent?.rounds[0]?.startTime)} -{" "}
+                            {extractFullDate(oneEvent?.rounds[0]?.endTime)}
+                        </p>
                     </div>
-
-                    <p className="event-single-description">{oneEvent?.description}</p>
 
                     <div className="event-single-buttons">
                         <Button innerText="View Rules" href={oneEvent?.rulesDocURL} />
                         <Link to=""></Link>
                         <Button innerText="Register" />
                     </div>
+                    {!user && (
+                        <Alert severity="warning" color="warning" sx={{ mt: 1 }}>
+                            You need to Log in to Register for any event.
+                        </Alert>
+                    )}
                 </div>
             </div>
 
             {/* Content Below */}
             <div className="event-single-content">
+                <p className="event-single-description">{oneEvent?.description}</p>
                 <h2 className="schedule-title">Schedule</h2>
-                {/*<p className="schedule-item">Round 1 - 12:00 to 14:00, 12th April - Amenities</p>
-        <p className="schedule-item">Round 2 - 12:00 to 14:00, 13th April - Lords</p>*/}
 
                 <div className="prelims-container">
                     {oneEvent?.rounds.map((round, i) => {
                         return (
-                            <div className="prelims-card">
-                                <h3>{round.name || "Round 1"}</h3>
-                                <p>{extractFullDate(round.startTime)}</p>
-                                <p>{extractFullDate(round.endTime)}</p>
-                                <br />
-                                <p>📍 {round.venue}</p>
-                                <p>📅 10th April</p>
-                            </div>
+                            <RoundCard
+                                name={round.name || `Round ${i + 1}`}
+                                start={extractFullDate(round.startTime)}
+                                end={extractFullDate(round.endTime)}
+                                venue={round.venue}
+                                key={i}
+                                i={i}
+                            />
                         );
                     })}
                 </div>
