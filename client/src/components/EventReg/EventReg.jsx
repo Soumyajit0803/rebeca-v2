@@ -6,9 +6,14 @@ import GetData from "./GetData";
 import { ArrowForward, CheckCircle } from "@mui/icons-material";
 import { useAuth } from "../../AuthContext";
 
+import { enrollUser } from "../../services/eventApi";
+
 const allAreIIESTians = (team) => {
-    for (let member in team) {
-        if (member.email.endsWith("iiests.ac.in")) continue;
+    console.log("THIS IS CHECKING FOR IIESTians:")
+    console.log(team);
+    
+    for (let member of team) {
+        if (member?.email?.endsWith("iiests.ac.in")) continue;
         else return false;
     }
     return true;
@@ -55,13 +60,15 @@ const EventReg = () => {
     const location = useLocation();
     const [valid, setValid] = useState({ step1: false, step2: false, step3: true });
     const [file, setFile] = useState(null);
-    const { user } = useAuth();
+    const { user, allEvents } = useAuth();
     const [selectedItems, setSelectedItems] = useState([]);
     const [teamName, setTeamName] = useState("");
     const [loading, setLoading] = useState(false);
 
     console.log("location:\n");
     console.log(location);
+
+    const oneEvent = allEvents?.find((ev) => ev.slug === eventSlug);
 
     const handleNext = () => {
         if (activeStep === 2) {
@@ -77,15 +84,18 @@ const EventReg = () => {
     const getStepContent = (step) => {
         switch (step) {
             case 0:
-                return (
+                return oneEvent && (
                     <GetData
                         setValid={(status) => setValid({ ...valid, step1: status })}
                         user={user}
                         selectedItems={selectedItems}
                         setSelectedItems={setSelectedItems}
-                        mode={"team"}
+                        mode={oneEvent?.type}
                         teamName={teamName}
                         setTeamName={setTeamName}
+                        minSize={oneEvent?.minTeamSize-1}
+                        maxSize={oneEvent?.maxTeamSize-1}
+                        eventId = {oneEvent?._id}
                     />
                 );
             case 1:
@@ -95,7 +105,7 @@ const EventReg = () => {
                         event={"Coolest Event"}
                         free={user.email.endsWith(".iiests.ac.in") && allAreIIESTians(selectedItems)}
                         setFile={setFile}
-                        regfee={1200}
+                        regfee={oneEvent?.registrationFee}
                     />
                 );
             case 2:
@@ -109,9 +119,20 @@ const EventReg = () => {
         try {
             setLoading(true);
             const regData = new FormData();
-            console.log("Data received so far");
+            regData.append("eventSlug", eventSlug);
+            regData.append("userEmail", user.email);
+            regData.append("teamName", teamName);
+            regData.append("selectedItems", JSON.stringify(selectedItems));
+            if (file) regData.append("paymentReceipt", file);
+
+            const response = await enrollUser({ eventId: oneEvent?._id, userId: user?._id });
+
+            const result = await response.json();
+
+            console.log("Registration successful:", result.data);
+            setActiveStep((prevStep) => prevStep + 1);
         } catch (err) {
-            console.log(err);
+            console.error("Error:", err);
         } finally {
             setLoading(false);
         }

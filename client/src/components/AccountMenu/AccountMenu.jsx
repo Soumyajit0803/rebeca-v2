@@ -100,8 +100,8 @@ export default function AccountMenu() {
                     <div className="user-details">
                         <Avatar sx={{ width: 56, height: 56, bgcolor: "var(--primary)" }} src={user.image}></Avatar>
                         <div>
-                            <div style={{ fontSize: "1.3rem" }}>{user.name}</div>
-                            <div style={{ fontSize: "0.9rem", color: "#90caf9" }}>{user.email}</div>
+                            <div style={{ fontSize: "1.3rem", wordBreak: "break-all" }}>{user.name}</div>
+                            <div style={{ fontSize: "0.9rem", color: "#90caf9", wordBreak: "break-all" }}>{user.email}</div>
                         </div>
                     </div>
                 )}

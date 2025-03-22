@@ -25,6 +25,7 @@ const Button = ({
                 className={`button ${className} ${size} ${disabled && "disabled"} ${variant} ${color}`}
                 onClick={onClick}
                 type={type}
+                disabled={disabled}
                 {...options}
             >
                 {loading && <span className="loading material-icons">sync</span>}

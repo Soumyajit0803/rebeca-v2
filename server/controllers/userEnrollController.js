@@ -1,17 +1,13 @@
 const axios = require("axios");
 const catchAsync = require("../utils/catchAsync");
 const UserEnroll = require("../models/userEnrollModel");
+const User = require("../models/userModel");
 
 exports.enrollUser = catchAsync(async (req, res, next) => {
     try {
-        console.log(req.body);
-
-        const { eventId, userId } = req.body;
-
         // Check if user is already registered
         const existingEnrollment = await UserEnroll.findOne({
-            eventId,
-            $or: [{ userId }, { teamMembers: userId }],
+            ...req.body,
         });
 
         if (existingEnrollment) {
@@ -53,9 +49,11 @@ exports.getAllMembersNotInEvent = catchAsync(async (req, res, next) => {
     // return set(All) - set(registered)
     try {
         const { eventId } = req.query;
+        console.log("This is eventID to fetch:");
+        console.log(req.query);
 
         // Find all users registered in the event either as a leader or a team member
-        const enrolled = await UserEnroll.find({ eventId }).select("userId teamMembers");
+        const enrolled = await UserEnroll.find({ _id: eventId }).select("userId teamMembers");
 
         const enrolledIDs = new Set();
         enrolled.forEach((e) => {

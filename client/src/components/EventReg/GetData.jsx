@@ -13,16 +13,18 @@ import {
 } from "@mui/material";
 import { Person, Email, Phone, School, Work, Groups } from "@mui/icons-material";
 import { getAllMembers } from "../../services/userApi";
+import { getAllMembersNotInEvent } from "../../services/eventApi";
 
-const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamName, setTeamName }) => {
+const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamName, setTeamName, minSize, maxSize, eventId }) => {
     const [dropdown, setDropDown] = useState([]);
-
+    // console.log("Event ID received: ")
+    // console.log(eventId)
     const handleChange = (event, value) => {
         // Limit the selection to at most 3 items
-        if (value.length <= 3) {
+        if (value.length <= maxSize) {
             setSelectedItems(value);
         }
-        if (value.length !== 0 && teamName.length !== 0) setValid(true);
+        if (value.length>=minSize && value.length<=maxSize && teamName.length !== 0) setValid(true);
         else setValid(false)
     };
 
@@ -31,10 +33,10 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
             setValid(true);
         }
         console.log(mode);
-
+        
         async function handleGetAllMembers() {
             try {
-                const res = await getAllMembers();
+                const res = await getAllMembersNotInEvent(eventId);
                 const options = res.data.data;
                 setDropDown(options.filter((e) => e.email !== user?.email));
             } catch (err) {
@@ -42,7 +44,7 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
             }
         }
         handleGetAllMembers();
-    }, [user]);
+    }, [eventId]);
 
     return (
         user && (
@@ -179,7 +181,7 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
                                 </Grid2>
                             </Grid2>
                             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: "bold" }}>
-                                Select Your Team Members (Max 3):
+                                Select Your Team Members (max {maxSize}, min {minSize}):
                             </Typography>
                             <Alert severity="info" sx={{ mb: 2 }}>
                                 <AlertTitle>How to Find Teammates?</AlertTitle>

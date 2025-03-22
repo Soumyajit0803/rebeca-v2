@@ -8,11 +8,11 @@ import { extractFullDate, extractTime } from "../../components/EventList/EventLi
 const EventSingle = () => {
     const navigate = useNavigate();
     const { eventSlug } = useParams();
-    const { allEvents } = useAuth();
+    const { allEvents, user } = useAuth();
 
     // Ensure allEvents is available before filtering
     if (!allEvents || allEvents.length === 0) {
-        return <div>Loading...</div>;
+        return <div style={{ height: "100vh", width: "100vw" }}>Loading...</div>;
     }
 
     const oneEvent = allEvents.find((ev) => ev.slug === eventSlug);
@@ -38,16 +38,21 @@ const EventSingle = () => {
                     <div className="event-single-header">
                         <span className="event-single-badge">NEW</span>
                         <h1 className="event-single-title">{oneEvent?.eventName}</h1>
-                        <p className="event-single-subtitle">{extractFullDate(oneEvent?.rounds[0]?.startTime)} - {extractFullDate(oneEvent?.rounds[0]?.endTime)}</p>
+                        <p className="event-single-subtitle">
+                            {extractFullDate(oneEvent?.rounds[0]?.startTime)} -{" "}
+                            {extractFullDate(oneEvent?.rounds[0]?.endTime)}
+                        </p>
                     </div>
 
                     <p className="event-single-description">{oneEvent?.description}</p>
 
                     <div className="event-single-buttons">
                         <Button innerText="View Rules" href={oneEvent?.rulesDocURL} />
-                        <Link to=""></Link>
-                        <Button innerText="Register" />
+                        <Link to={`/event/${eventSlug}/register`}>
+                            <Button innerText="Register" disabled={user ? false : true} />
+                        </Link>
                     </div>
+                    <p>{user?`Register as ${user?.email}`:"You need to login before you register"}</p>
                 </div>
             </div>
 
