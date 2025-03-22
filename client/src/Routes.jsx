@@ -9,6 +9,8 @@ import EventPopup2 from "./screens/EventPopup/EventPopup2";
 import Merchandise from "./screens/Merchandise/Merchandise";
 import Team from "./screens/Team/Team";
 import LoginForm from "./components/Login/LoginForm";
+//import UserRegistration from "./screens/UserRegistration/UserRegistration";
+import EventSingle from "./screens/EventSingle/EventSingle";
 import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import EventReg from "./components/EventReg/EventReg";
 
