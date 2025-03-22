@@ -5,7 +5,6 @@ import Schedule from "./screens/Schedule/Schedule";
 import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
-import EventPopup from "./screens/EventPopup/EventPopup2";
 import EventPopup2 from "./screens/EventPopup/EventPopup2";
 import Merchandise from "./screens/Merchandise/Merchandise";
 import Team from "./screens/Team/Team";

@@ -51,6 +51,7 @@ const onButtonClick = () => {
     link.click();
     document.body.removeChild(link);
 };
+const nights = { saptami: 20, ashtami: 21, navami: 22, dashami: 23 };
 
 function Schedule() {
     const { allEvents } = useAuth();
@@ -59,7 +60,6 @@ function Schedule() {
 
     const { innerWidth: width, innerHeight: height } = window;
 
-    const nights = { saptami: 20, ashtami: 21, navami: 22, dashami: 23 };
     return (
         contents &&
         events && (

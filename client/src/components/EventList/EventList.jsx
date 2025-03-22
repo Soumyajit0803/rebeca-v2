@@ -2,7 +2,7 @@ import React from "react";
 import "./EventList.css";
 import { Link } from "react-router-dom";
 
-const extractTime = (isoString) => {
+export const extractTime = (isoString) => {
     const date = new Date(isoString);
     const startTime = date.toLocaleTimeString("en-US", {
         hour: "2-digit",
