@@ -13,6 +13,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import { AuthProvider } from "./AuthContext.jsx";
 
 const client_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID
+export const nights = { saptami: 20, ashtami: 21, navami: 22, dashami: 23 };
 
 const darkTheme = createTheme({
     palette: {

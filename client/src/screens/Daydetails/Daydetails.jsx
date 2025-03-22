@@ -10,8 +10,7 @@ import Daycontent from "../../assets/data/contents.json";
 import Eventcontent from "../../assets/data/events.json";
 import { useAuth } from "../../AuthContext";
 import { extractTime } from "../../components/EventList/EventList";
-
-const nights = { saptami: 20, ashtami: 21, navami: 22, dashami: 23 };
+import {nights} from "../../App"
 
 const Daydetails = () => {
     const { DayID } = useParams();

@@ -11,6 +11,7 @@ import Eventcard from "../../components/Eventcard/Eventcard";
 import { getAllEvents } from "../../services/eventApi";
 import { useEffect } from "react";
 import { useAuth } from "../../AuthContext";
+import {nights} from "../../App"
 
 var introtext = `Experience the timeless tradition of REBECA! Join us for an unforgettable celebration filled with music, dance, competitions, and workshops. Embrace the vibrant spirit of our community as we come together to create lasting memories and forge new friendships. From electrifying performances to engaging activities, there's something for everyone to enjoy. Don't miss out on this exciting event that honors our college's rich heritage and brings us closer together.`;
 
@@ -51,7 +52,6 @@ const onButtonClick = () => {
     link.click();
     document.body.removeChild(link);
 };
-const nights = { saptami: 20, ashtami: 21, navami: 22, dashami: 23 };
 
 function Schedule() {
     const { allEvents } = useAuth();

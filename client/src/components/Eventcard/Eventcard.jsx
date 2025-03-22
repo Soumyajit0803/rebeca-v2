@@ -14,18 +14,19 @@ const Eventpanel = ({ value, index, day, show, handle }) => {
 
             <div className="data-body">
                 <div className="img">
-                    <img src={value.img ? value.img : `/assets/imgs/home/${day.toLowerCase()}.webp`} alt="event-icon" />
+                    {/* <img src={value?.image ? value.image : `/assets/imgs/home/${day.toLowerCase()}.webp`} alt="event-icon" /> */}
+                    <img src={value?.thumbnail} alt="event-icon" />
                 </div>
                 {show && (
                     <>
                         <div
                             className="desc"
                             dangerouslySetInnerHTML={{
-                                __html: value.desc,
+                                __html: value.description,
                             }}
                         ></div>
                         <Link
-                            to={`/event/` + value.slug}
+                            to={`/event/` + value?.slug}
                         >
                             <Button variant={"filled"} innerText={"Learn more"}></Button>
                         </Link>
