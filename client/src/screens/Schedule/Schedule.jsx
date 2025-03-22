@@ -51,16 +51,15 @@ const onButtonClick = () => {
     link.click();
     document.body.removeChild(link);
 };
+const nights = { saptami: 20, ashtami: 21, navami: 22, dashami: 23 };
 
 function Schedule() {
-    const {allEvents, setAllEvents} = useAuth();
+    const { allEvents } = useAuth();
     const [loading, setLoading] = useState(false);
     console.log(allEvents);
-    
 
     const { innerWidth: width, innerHeight: height } = window;
 
-    var nights = ["saptami", "ashtami", "navami", "dashami"];
     return (
         contents &&
         events && (
@@ -92,9 +91,18 @@ function Schedule() {
                         </div>
                         <div className={"event-content"}>
                             {width > 580 ? (
-                                <EventList eventlist={events["Pre Events"].eventList} />
+                                <EventList
+                                    eventlist={allEvents.filter(
+                                        (e) => ![20, 21, 22, 23].includes(new Date(e.rounds[0].startTime).getUTCDate())
+                                    )}
+                                />
                             ) : (
-                                <Eventcard Eventdata={events["Pre Events"].eventList} Eventday={"saptami"} />
+                                <Eventcard
+                                    Eventdata={allEvents.filter(
+                                        (e) => ![20, 21, 22, 23].includes(new Date(e.rounds[0].startTime).getUTCDate())
+                                    )}
+                                    Eventday={"saptami"}
+                                />
                             )}
                             <div className="description">
                                 {/* <div className="topic display-font">
@@ -116,12 +124,14 @@ function Schedule() {
                         </div>
                     </div>
                 }
-                {nights.map((night, i) => {
+                {Object.keys(nights).map((night, i) => {
                     return (
                         <EventSection
-                            date={contents[night].date}
+                            date={nights[night]}
                             datetxt={night.toUpperCase()}
-                            eventlist={allEvents}
+                            eventlist={allEvents.filter(
+                                (e) => new Date(e.rounds[0].startTime).getUTCDate() == nights[night]
+                            )}
                             topic={contents[night].nightType}
                             about={contents[night].intro}
                             key={i}

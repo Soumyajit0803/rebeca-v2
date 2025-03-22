@@ -93,21 +93,20 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
 
     const onFinish = async (values) => {
         // return;
-        
+
         try {
             setLoading(true);
             console.log("What is going to be added in eventdata");
-    
+
             if (values.rounds.length === 0) {
                 infoPop("Please add Event Rounds details");
                 return;
             }
-            let i = 1
+            let i = 1;
             for (let round of values.rounds) {
-                round.startTime = round.date[0].$d
-                round.endTime = round.date[1].$d
+                round.startTime = round.date[0].$d;
+                round.endTime = round.date[1].$d;
                 round.roundno = i++;
-    
             }
             console.log(values);
             if (posterList.length === 0) {
@@ -462,8 +461,12 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                                             />
                                         }
                                     >
-                                        <Form.Item {...restField} name={[name, "roundname"]}>
-                                            <Input placeholder="Round Name (Optional)" />
+                                        <Form.Item
+                                            {...restField}
+                                            name={[name, "roundname"]}
+                                            rules={[{ required: true, message: "Round Name is required" }]}
+                                        >
+                                            <Input placeholder="Round Name" />
                                         </Form.Item>
 
                                         <Form.Item {...restField} name={[name, "description"]}>

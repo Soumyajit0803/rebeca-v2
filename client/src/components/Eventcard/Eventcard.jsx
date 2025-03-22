@@ -2,13 +2,14 @@ import { React, useState, useEffect } from "react";
 import "./Eventcard.css";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
+import { extractTime } from "../../components/EventList/EventList";
 
 const Eventpanel = ({ value, index, day, show, handle }) => {
     return (
         <div key={index} className={`event-data ${show && "expand"}`}>
             <div onClick={() => handle(index)} className="data-header">
-                <div>{value.eventName}</div>
-                <p>{value.time}</p>
+                <div>{value?.eventName}</div>
+                <p>{extractTime(value?.rounds[0].startTime)}</p>
             </div>
 
             <div className="data-body">
@@ -24,10 +25,7 @@ const Eventpanel = ({ value, index, day, show, handle }) => {
                             }}
                         ></div>
                         <Link
-                            to={{
-                                pathname: value.url ? value.url : `/event/` + value.eventName,
-                                state: { data: "value" },
-                            }}
+                            to={`/event/` + value.slug}
                         >
                             <Button variant={"filled"} innerText={"Learn more"}></Button>
                         </Link>

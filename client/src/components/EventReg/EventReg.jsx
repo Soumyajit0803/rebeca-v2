@@ -50,7 +50,7 @@ const CompletedContent = () => {
 
 const EventReg = () => {
     const [activeStep, setActiveStep] = useState(0);
-    const { eventName } = useParams();
+    const { eventSlug } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
     const [valid, setValid] = useState({ step1: false, step2: false, step3: true });
