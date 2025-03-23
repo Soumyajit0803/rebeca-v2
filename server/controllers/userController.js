@@ -21,7 +21,11 @@ exports.createUser = catchAsync(async (req, res, next) => {
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
     try {
-        const allUsers = await User.find({ college: { $ne: null } });
+        const filter = { college: { $ne: null } };
+        if (req.query.admin && req.query.admin === "true") {
+            filter.role = {$ne: 'user'}
+        }
+        const allUsers = await User.find(filter);
         return res.status(200).json({ message: "success", data: allUsers });
     } catch (err) {
         console.log(err.message);
@@ -50,8 +54,12 @@ exports.updateUser = catchAsync(async (req, res, next) => {
             console.log("Old image deleted:", oldUser.image);
         }
 
-        const email = new Email({email: oldUser.email, name: req.body.name || oldUser.name }, "https://rebeca.in/", req.body);
-        await email.sendAccountUpdate()
+        const email = new Email(
+            { email: oldUser.email, name: req.body.name || oldUser.name },
+            "https://rebeca.in/",
+            req.body
+        );
+        await email.sendAccountUpdate();
 
         return res.status(200).json({ message: "success" });
     } catch (err) {

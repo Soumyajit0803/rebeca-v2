@@ -100,7 +100,7 @@ const Loading = () => {
     return (
         <Card sx={{ width: "min(100%, 400px)" }}>
             <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column", width: "100%" }}>
-                <CircularProgress color="primary" sx={{ width: "6rem", height: "6rem" }} />
+                <CircularProgress color="primary" size={80} thickness={5}/>
                 <Typography variant="h5">Fetching Data...</Typography>
                 <Typography variant="body1" color="grey" sx={{ mb: 2, textAlign: "center" }}>
                     While it's loading, shout out 'REBECA'!
