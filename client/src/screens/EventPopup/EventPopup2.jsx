@@ -213,7 +213,7 @@ const EventPopup2 = () => {
                                 variant="contained"
                                 color="primary"
                                 size="large"
-                                onClick={() => navigate(`/event/${eventSlug}/register`)}
+                                onClick={() => navigate(`/events/${eventSlug}/register`)}
                             >
                                 Register
                             </Button>

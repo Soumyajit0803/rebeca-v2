@@ -55,7 +55,7 @@ const EventPopup = () => {
                         <Button
                             disabled = {!user?.college}
                             innerText={"REGISTER"}
-                            onClick={() => navigate(`/event/${eventName}/register`, { state: {mode: "single", fee: 0} })}
+                            onClick={() => navigate(`/events/${eventName}/register`, { state: {mode: "single", fee: 0} })}
                         />
                         {!user?.college && <Alert severity="warning" >Complete your profile before proceeding to register for events.</Alert>}
                         <>
