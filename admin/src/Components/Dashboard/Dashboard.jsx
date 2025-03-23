@@ -22,17 +22,17 @@ const AvatarMenu = ({ admin, handleLogout }) => {
             label: (
                 <Space>
                     <Avatar
-                        src={admin.image}
+                        src={admin?.image}
                         style={{
-                            border: `2px solid ${themeColor[admin.role]}`,
+                            border: `2px solid ${themeColor[admin?.role]}`,
                             width: 45,
                             height: 45,
                         }}
                     />
                     <div>
-                        <Typography.Text strong>{admin.name.split(" ")[0]}</Typography.Text>
+                        <Typography.Text strong>{admin?.name.split(" ")[0]}</Typography.Text>
                         <br />
-                        <Typography.Text style={{ color: themeColor[admin.role] }}>{admin.role}</Typography.Text>
+                        <Typography.Text style={{ color: themeColor[admin?.role] }}>{admin?.role}</Typography.Text>
                     </div>
                 </Space>
             ),
