@@ -3,7 +3,8 @@
   width: 100vw;
   min-height: 100vh;
   position: relative;
-   padding-top:70px;
+  padding-top:70px;
+  padding-bottom: 50px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -44,6 +45,16 @@
   /* border-radius: 5px; */
   font-weight: bold;
   text-transform: uppercase;
+}
+.event-single-price-tag {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: #ccc;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .event-single-title {
@@ -111,6 +122,38 @@
 
 .prelims-card p {
   margin: 5px 0;
+}
+
+.event-single-event-container .event-single-coordinators {
+  margin-top: 30px;
+  padding-left: 40px;
+}
+
+.event-single-event-container .event-single-coordinator-card {
+  display: flex;
+  padding-left: 40px;
+  margin-top: 20px;
+  align-items: center;
+  background: #444;
+  padding: 10px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.event-single-coordinator-img {
+  width: 100px;
+  height: 90px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: white;
+  /*border: 3px solid #5a5df5;*/
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+
+.event-single-coordinator-info {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mobile Responsiveness */

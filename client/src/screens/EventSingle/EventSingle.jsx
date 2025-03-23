@@ -17,6 +17,7 @@ const EventSingle = () => {
             <span className="event-single-badge">NEW</span>
             <h1 className="event-single-title">Rebescal</h1>
             <p className="event-single-subtitle">lorem ipsum doler sith lorem ipsum doler sith</p>
+            <div className="event-single-price-tag">₹299</div>
           </div>
 
           <p className="event-single-description">
@@ -60,6 +61,16 @@ const EventSingle = () => {
             <p>🕒 12:00 IST - 15:00 IST</p>
             <p>📍 Lords Ground</p>
             <p>📅 10th April</p>
+          </div>
+        </div>
+      </div>
+      <div className="event-single-coordinators">
+        <h2>Coordinators</h2>
+        <div className="event-single-coordinator-card">
+          <img src="../../../public/assets/imgs/team/abhijitkarmakar.jpg" alt="Coordinator" className="coordinator-img" />
+          <div className="event-single-coordinator-info">
+            <p className="event-single-coordinator-name">Abhijit karmakar</p>
+            <p className="event-single-coordinator-phone">📞 9898989898</p>
           </div>
         </div>
       </div>
