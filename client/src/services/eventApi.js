@@ -3,7 +3,7 @@ import api from './api'
 export const enrollUser = (data) =>
     api.post("/eventreg/enroll", data, {
         headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "application/json",
         },
     });
 export const isUserRegistered = (eventId, userId) => api.get(`/eventreg/isUserRegistered?eventId=${eventId}&userId=${userId}`);

@@ -1,0 +1,209 @@
+.schedule {
+  padding: 5rem;
+  font-size: 28px;
+  animation: fadeIn 0.5s linear forwards;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+
+}
+.schedule .download_btn{
+    margin: auto;
+    margin-bottom: 4rem;
+    z-index: 1;
+}
+.schedule .download_btn:hover{
+    padding: 12px 25px;
+}
+.schedule .download_btn:hover .before{
+    display: none;
+}
+.schedule .event {
+  margin-top: 5rem;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+.schedule .event.pre-event .event-content{
+  min-height: 60vh;
+  border: 0px solid red;
+}
+.schedule .event.pre-event .eheading{
+  margin-left: 2rem;
+}
+
+.schedule .event .event-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items:start;
+  background-size: cover;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  padding: 3rem;
+  gap: 2rem;
+}
+.schedule .event .event-content::before {
+  content: "";
+  mask-image: linear-gradient(transparent, black 30%, transparent);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+.schedule .pre-event .event-content::before {
+  background-image: url("/assets/imgs/Schedule/pre-event.webp");
+}
+.schedule .saptami-back .event-content::before {
+  background-image: url("/assets/imgs/Schedule/saptami.webp");
+}
+.schedule .ashtami-back .event-content::before {
+  background-image: url("/assets/imgs/Schedule/ashtami.webp");
+}
+.schedule .navami-back .event-content::before {
+  background-image: url("/assets/imgs/Schedule/navami.webp");
+}
+.schedule .dashami-back .event-content::before {
+  background-image: url("/assets/imgs/Schedule/dashami.webp");
+}
+
+.eheading .big {
+  position: relative;
+  z-index: 1;
+  font-size: 5rem;
+}
+.eheading .small {
+  position: relative;
+  z-index: 1;
+  line-height: 0.8em;
+  font-size: 2.5rem;
+  width: 100%;
+}
+
+.schedule .eheading .title {
+  width: min(15ch, 100%);
+  text-align: center;
+}
+
+
+.schedule .event .event-content .description {
+  text-align: right;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+
+.schedule .event .event-content .description .about {
+  /* padding-top: 1.5rem; */
+  width: 30ch;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.703);
+}
+
+.schedule .event .event-content .description .about-link {
+  /* font-size: 1.2rem; */
+  font-weight: 600;
+  /* margin-top: 1.5rem; */
+  color: white;
+  transition: all ease 0.2s;
+  width: max-content;
+  background-color: var(--accent1);
+  border-radius: 5px;
+  /* padding: 0.5rem; */
+  align-self: end
+}
+
+
+.schedule .event .event-content .description .about-link:hover {
+  cursor: pointer;
+}
+
+.left-padding {
+  margin-left: 3rem;
+}
+
+@media screen and (max-width: 1150px) {
+  .left-padding {
+    margin-left: 2rem;
+  }
+  .schedule {
+    padding: 2rem;
+  }
+
+  .about-link{
+    align-self: center;
+  }
+
+  .schedule .event .event-content {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .schedule .event .event-content .description {
+    text-align: left;
+    margin-bottom: 4rem;
+    align-items: flex-start;
+  }
+
+  .schedule .event .event-content .description .about {
+    width: 100%;
+  }
+}
+
+/* .event-card{
+  display: none;
+  color: white
+} */
+
+@media screen and (max-width: 580px) {
+  /* .event-card{
+    display: contents;
+    color: white ;
+  } */
+
+  .event-content::before{
+    opacity: 0;
+  }
+  .left-padding {
+    margin-left: 1rem;
+  }
+  .schedule {
+    padding: 0rem;
+    padding-top: 104px;
+    font-size: 20px;
+  }
+  .schedule .event .event-content {
+    padding: 1rem;
+    padding-top: 3rem;
+  }
+  .schedule .event .event-content .description .about{
+    font-size: 20px;
+  }
+}
+
+.schedule .eheading:hover {
+  color: var(--accent3);
+}
+
+.schedule a {
+  display: flex;
+  width: max-content;
+}
+
+.schedule .heading .sub-title {
+  width: 100%;
+}
+

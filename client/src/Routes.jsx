@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./screens/Home/Home";
 import Schedule from "./screens/Schedule/Schedule";
+import OldSchedule from "./screens/Schedule_old/Schedule"
 import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
@@ -13,6 +14,7 @@ import LoginForm from "./components/Login/LoginForm";
 import EventSingle from "./screens/EventSingle/EventSingle";
 import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import EventReg from "./components/EventReg/EventReg";
+import RoundCard from "./screens/EventSingle/RoundCard";
 
 const AllRoutes = () => {
     const location = useLocation();
@@ -32,7 +34,7 @@ const AllRoutes = () => {
             <Route exact path="/merchandise" element={<Merchandise />} />
             <Route exact path="/profile" element={<ProfileInfo />} />
             <Route exact path="/event/:eventSlug/register" element={<EventReg />} />
-            <Route exact path="/test" element={<EventSingle />} />
+            <Route exact path="/test" element={<OldSchedule />} />
         </Routes>
     );
 };

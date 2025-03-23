@@ -4,10 +4,16 @@ const UserEnroll = require("../models/userEnrollModel");
 const User = require("../models/userModel");
 
 exports.enrollUser = catchAsync(async (req, res, next) => {
+    const {body} = req
+    console.log("EnrollData to be pushed from here");
+    console.log(body);
+    
+    
     try {
         // Check if user is already registered
         const existingEnrollment = await UserEnroll.findOne({
-            ...req.body,
+            eventId: body.eventId,
+            $or: [{userId: body.userId}, {teamMembers: body.userId}]
         });
 
         if (existingEnrollment) {
@@ -15,7 +21,7 @@ exports.enrollUser = catchAsync(async (req, res, next) => {
         }
 
         const userEnrollData = new UserEnroll({
-            ...req.body,
+            ...body,
         });
         await userEnrollData.save();
         return res.status(201).json({ message: "success" });
