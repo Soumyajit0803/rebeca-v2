@@ -88,14 +88,14 @@
 
 .prelims-container {
   display: flex;
-  gap: 0.2rem;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {  
   .event-single-container {
-    padding-left: 20px;
+    /* padding-left: 20px; */
   }
 
   .event-single-title {

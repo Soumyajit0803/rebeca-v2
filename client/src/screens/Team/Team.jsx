@@ -52,9 +52,9 @@ const teamNameToId = {
 const TeamLoading = () => {
     return (
         <div className="teamspage-loading">
-            <Card sx={{ width: "min(100%, 400px)"}}>
+            <Card sx={{ width: "min(100%, 400px)" }}>
                 <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column", width: "100%" }}>
-                    <CircularProgress color="primary" size={80} thickness={5}/>
+                    <CircularProgress color="primary" size={80} thickness={5} />
                     <Typography variant="h5">Fetching Data...</Typography>
                     <Typography variant="body1" color="grey" sx={{ mb: 2, textAlign: "center" }}>
                         While it's loading, shout out 'REBECA'!
@@ -132,7 +132,7 @@ const Team = () => {
 
     const handleDropDownClick = (teamName) => {
         console.log(teamName);
-        setSelectedTeam(teams.find((team) => team.name == teamName));
+        setSelectedTeam(teamsData[teamNameToId[teamName] - 1]);
     };
 
     const { innerWidth: width, innerHeight: height } = window;
@@ -229,7 +229,7 @@ const Team = () => {
                                 </div>
                             </>
                         ) : (
-                            <div className="title">Please select an option</div>
+                            <p>Please select an option</p>
                         )}
                     </div>
                 </div>

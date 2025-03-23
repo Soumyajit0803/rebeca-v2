@@ -61,10 +61,10 @@ const Payment = ({ eventName, regfee, setValid, setFile, free }) => {
                 <Paper elevation={2} sx={{ p: 3, my: 2, borderRadius: 2 }}>
                     <Grid2 container spacing={2}>
                         <Grid2 size={{ xs: 12, sm: 6 }}>
-                            <img src={rebecaQR} style={{ width: "100%", aspectRatio: "1/1" }} />
+                            <img src={rebecaQR} style={{ width: "100%", aspectRatio: "1/1", opacity: free?0.3:1 }} />
                         </Grid2>
                         <Grid2 size={{ xs: 12, sm: 6 }}>
-                            <Typography variant="body1" gutterBottom>
+                            <Typography sx={{opacity: free?0.3:1}} variant="body1" gutterBottom>
                                 As a part of the registration process for the event <bold>{eventName}</bold>, you need
                                 to pay Rs.{regfee}. Please complete the payment to complete your Registration.
                             </Typography>
@@ -89,8 +89,8 @@ const Payment = ({ eventName, regfee, setValid, setFile, free }) => {
 
                     {free && (
                         <Alert color="primary">
-                            <AlertTitle>Wow! an IIESTian Team!</AlertTitle>
-                            IIESTian teams don't require any fee for taking part in any events in Rebeca. Go ahead, you
+                            <AlertTitle>Wow! All IIESTians!</AlertTitle>
+                            IIESTian teams/individuals don't require any fee for taking part in any events in Rebeca. Go ahead, you
                             can skip this step!
                         </Alert>
                     )}

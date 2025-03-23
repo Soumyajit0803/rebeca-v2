@@ -55,7 +55,7 @@ const EventList = ({ eventlist }) => {
                             <div className="time">{a && a.rounds && extractTime(a.rounds[0]?.startTime)}</div>
                             <div className="linespace"></div>
                             <Link
-                                to={`/event/${a.slug}`}
+                                to={`/events/${a.slug}`}
                             >
                                 <div className="eventname">
                                     {a.eventName}

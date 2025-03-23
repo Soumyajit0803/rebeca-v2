@@ -206,11 +206,13 @@ const EventReg = () => {
             regData.append("eventId", oneEvent?._id);
             regData.append("userId", user?._id);
             regData.append("eventSlug", eventSlug);
+            regData.append("eventName", oneEvent?.eventName);
             regData.append("userEmail", user?.email);
             regData.append("teamName", teamName);
-            regData.append("selectedItems", JSON.stringify(selectedItems));
+            if(selectedItems.length>0)regData.append("teamMembers", JSON.stringify(selectedItems.map((member)=>member._id)));
             const paymentURL = await handleSubmitImage(file);
             if (file) regData.append("paymentScreenshot", paymentURL);
+
 
             const result = await enrollUser(regData);
             console.log("Registration successful:", result?.data);
