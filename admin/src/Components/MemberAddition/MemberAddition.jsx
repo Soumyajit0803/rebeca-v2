@@ -46,7 +46,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
     const [fileList, setFileList] = useState([
         {
             uid: "-1",
-            url: admin.image,
+            url: admin?.image,
             status: "done",
             name: "default",
         },
