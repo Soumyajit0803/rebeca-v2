@@ -12,7 +12,6 @@ import {
     Avatar,
 } from "@mui/material";
 import { Person, Email, Phone, School, Work, Groups } from "@mui/icons-material";
-import { getAllMembers } from "../../services/userApi";
 import { getAllMembersNotInEvent } from "../../services/eventApi";
 
 const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamName, setTeamName, minSize, maxSize, eventId }) => {
