@@ -1,0 +1,78 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Registration Request Submitted
+    style.
+      body {
+          padding: 10px;
+          outline: 0;
+          margin: 10px;
+          box-sizing: border-box;
+          font-size: 1.2rem;
+          border: 1px solid #b8b8b8;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      .salute {
+          font-size: 1.5rem;
+          color: rgb(0, 56, 159);
+      }
+      table {
+          border-spacing: 0px;
+          border: 1px solid grey; 
+          margin: 10px;
+          width: 100%;
+      }
+      td, th {
+          text-align: left;
+          padding: 0.7rem 1rem;
+          border-bottom: 1px solid #ddd;
+      }
+      thead {
+          background: rgb(0, 103, 193);
+          color: #fff;
+      }
+      .banner {
+        width: 100%;
+        height: 12rem;
+        background: url("./peek-rebeca.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+  body
+    .banner
+    .highlight
+      p
+        .salute Hello, #{firstName}!
+        br
+        | We wanted to inform you that you have successfully submitted your request for registration to the following event at Rebeca:
+
+      p
+        strong Event Link: 
+        a(href="https://rebeca.in/events/" + eventSlug, target="_blank") #{eventName}
+
+      // Table for Leader and Members
+      table
+        thead
+          tr
+            th Name
+            th Email
+        tbody
+          // Leader's Row
+          tr
+            td #{leader.name} (Leader)
+            td #{leader.email}
+          // Members' Rows
+          each member in members
+            tr
+              td #{member.name}
+              td #{member.email}
+
+      p You are receiving this Email because either you or your team leader has submitted a request for event registration. If you did not anticipate this request, please contact our support team immediately.
+
+      .regard
+        p Regards,
+        p Event management committee, 
+        a(href="https://rebeca.in", target="_blank") Rebeca

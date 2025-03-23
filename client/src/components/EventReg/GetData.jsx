@@ -181,7 +181,7 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
                                 </Grid2>
                             </Grid2>
                             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: "bold" }}>
-                                Select Your Team Members (max {maxSize}, min {minSize}):
+                                Select Your Team Members (max {maxSize+1}, min {minSize+1}):
                             </Typography>
                             <Alert severity="info" sx={{ mb: 2 }}>
                                 <AlertTitle>How to Find Teammates?</AlertTitle>
