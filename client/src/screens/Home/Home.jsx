@@ -6,6 +6,7 @@ import PujaDay from "./PujaDay";
 import ArtistCard from "../../components/ArtistCard/ArtistCard";
 
 import Nightbanner from "../../components/Nightbanner/Nightbanner";
+import CollageHeart from "../../components/CollageHeart/CollageHeart";
 
 const Home = () => {
   const artists = [
@@ -135,7 +136,7 @@ const Home = () => {
 							alt=""
 						/>
 					)} */}
-					<img src="/assets/imgs/home/rebecalove3.webp" />
+					<CollageHeart />
 				</div>
 			</section>
 			<section className="section-5">
