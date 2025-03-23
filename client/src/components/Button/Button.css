@@ -237,3 +237,8 @@
 		transform: rotate(-360deg);
 	}
 }
+
+.button.disabled {
+	color: rgb(216, 216, 216);
+	cursor: not-allowed
+}

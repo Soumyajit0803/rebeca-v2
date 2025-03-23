@@ -55,9 +55,13 @@ exports.updateUser = catchAsync(async (req, res, next) => {
         }
 
         const email = new Email(
-            { email: oldUser.email, name: req.body.name || oldUser.name },
-            "https://rebeca.in/",
-            req.body
+            { email: oldUser.email, name: req.body.name || oldUser.name }, 
+            null, 
+            null, 
+            null,  // members (optional)
+            null,  // leader (optional)
+            null,  // url (optional)
+            req.body // updatedFields
         );
         await email.sendAccountUpdate();
 
