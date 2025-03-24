@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Heading.css";
 
-const Heading = ({ title, subTitle }) => {
+const Heading = ({ title, subTitle, needHatch = true }) => {
 	return (
 		<div className="heading">
-			<div className="bg">
+			{needHatch && <div className="bg">
 				<img src="/assets/imgs/hatch_lines.webp" alt="" />
-			</div>
+			</div>}
 			<div className="title display-font">{title}</div>
 			{subTitle && <div className="sub-title">{subTitle}</div>}
 		</div>

@@ -34,6 +34,7 @@ const corsOptions = {
         } else {
             const error = new Error("Not allowed by CORS");
             console.log(error);
+            console.log(origin)
             callback(error);
         }
     },
