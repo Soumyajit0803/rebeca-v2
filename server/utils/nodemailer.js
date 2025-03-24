@@ -3,12 +3,20 @@ const pug = require('pug');
 const {htmlToText} = require("html-to-text")
 
 module.exports = class Email {
-	constructor(user, url, updatedFields=null) {
+	constructor(user, eventSlug, eventName, members=null, leader=null, url=null, updatedFields=null) {
 		this.to = user.email;
 		this.firstName = user.name.split(' ')[0];
 		this.url = url;
 		this.from = `Soumyajit Karmakar <${process.env.EMAIL_FROM}>`
         this.updatedFields = updatedFields
+		this.eventSlug = eventSlug
+		this.eventName = eventName
+
+		this.members=members
+		this.leader=leader
+
+		console.log(updatedFields);
+		
 	}
 
 	newTransport() {
@@ -30,6 +38,11 @@ module.exports = class Email {
 			firstName: this.firstName,
 			url: this.url,
             updatedFields: this.updatedFields,
+			eventName: this.eventName,
+			eventSlug: this.eventSlug,
+
+			leader: this.leader,
+			members: this.members,
 			subject
 		});
 		const text = htmlToText(html)
@@ -54,5 +67,9 @@ module.exports = class Email {
 	
 	async sendAccountUpdate() {
 		await this.send('accountUpdate', 'Account Details Updated');
+	}
+
+	async sendRegister(){
+		await this.send('register', 'Registration Request submitted');
 	}
 }

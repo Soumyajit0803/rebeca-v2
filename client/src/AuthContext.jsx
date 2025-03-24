@@ -8,10 +8,12 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [allEvents, setAllEvents] = useState([]);
+    const [eventsLoad, setEventsLoad] = useState(false)
 
     useEffect(() => {
         const handleGetAllEvents = async () => {
             try {
+                setEventsLoad(true)
                 const response = await getAllEvents();
                 const allEvs = response.data.data;
                 allEvs.map((ev)=>{
@@ -22,7 +24,8 @@ export const AuthProvider = ({ children }) => {
                 console.log(allEvs);
             } catch (err) {
                 console.log(err);
-                console.log(err);
+            } finally {
+                setEventsLoad(false)
             }
         };
 
@@ -52,7 +55,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, handleLogin, handleLogout, allEvents, setAllEvents }}>
+        <AuthContext.Provider value={{ user, handleLogin, handleLogout, allEvents, setAllEvents, eventsLoad }}>
             <Notification />
             {children}
         </AuthContext.Provider>

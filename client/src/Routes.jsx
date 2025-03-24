@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./screens/Home/Home";
 import Schedule from "./screens/Schedule/Schedule";
+import OldSchedule from "./screens/Schedule_old/Schedule"
 import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
@@ -26,13 +27,14 @@ const AllRoutes = () => {
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/events" element={<Schedule />} />
-            <Route exact path="/events/:DayID" element={<Daydetails />} />
-            <Route exact path="/event/:eventSlug" element={<EventSingle />} />
+            <Route exact path="/events/day/:DayID" element={<Daydetails />} />
+            <Route exact path="/events/:eventSlug" element={<EventSingle />} />
             <Route exact path="/sponsorship" element={<Sponsorship />} />
             <Route exact path="/team" element={<Team />} />
             <Route exact path="/merchandise" element={<Merchandise />} />
             <Route exact path="/profile" element={<ProfileInfo />} />
-            <Route exact path="/event/:eventSlug/register" element={<EventReg />} />
+            <Route exact path="/events/:eventSlug/register" element={<EventReg />} />
+            <Route exact path="/test" element={<OldSchedule />} />
         </Routes>
     );
 };

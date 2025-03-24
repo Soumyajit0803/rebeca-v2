@@ -3,7 +3,7 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Account details updated
+    title Registration Request Submitted
     style.
       body {
           padding: 10px;
@@ -22,10 +22,12 @@ html(lang="en")
           border-spacing: 0px;
           border: 1px solid grey; 
           margin: 10px;
+          width: 100%;
       }
       td, th {
           text-align: left;
           padding: 0.7rem 1rem;
+          border-bottom: 1px solid #ddd;
       }
       thead {
           background: rgb(0, 103, 193);
@@ -45,29 +47,30 @@ html(lang="en")
       p
         .salute Hello, #{firstName}!
         br
-        |We wanted to inform you that your account details have been updated successfully. Below are the updated fields:
-      
-      if Object.keys(updatedFields).length > 0
-        table
-          thead
-            tr
-              th Field
-              th Updated Value
-          tbody
-            each value, key in updatedFields
-              if key !== 'email'
-                tr
-                  td(style="text-transform: capitalize;") #{key.replace('_', ' ')}
-                  td #{value}
-      else
-        p No specific details were updated.
+        | We wanted to inform you that you have successfully submitted your request for registration to the following event at Rebeca:
 
       p
-        | You can review these changes by logging into your account at 
-        a(href="https://rebeca.in", target="_blank") https://rebeca.in
-        |  and navigating to "My Profile".
+        strong Event Link: 
+        a(href="https://rebeca.in/events/" + eventSlug, target="_blank") #{eventName}
 
-      p If you did not request this change, please contact our support team immediately.
+      // Table for Leader and Members
+      table
+        thead
+          tr
+            th Name
+            th Email
+        tbody
+          // Leader's Row
+          tr
+            td #{leader.name} (Leader)
+            td #{leader.email}
+          // Members' Rows
+          each member in members
+            tr
+              td #{member.name}
+              td #{member.email}
+
+      p You are receiving this Email because either you or your team leader has submitted a request for event registration. If you did not anticipate this request, please contact our support team immediately.
 
       .regard
         p Regards,

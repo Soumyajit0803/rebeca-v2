@@ -6,4 +6,4 @@ export const updateMember = (data) =>
             "Content-Type": "application/json",
         },
     });
-export const getAllMembers = () => api.get("/member/all");
+export const getAllAdmins = () => api.get("/member/all?admin=true");

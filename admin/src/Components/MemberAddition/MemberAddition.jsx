@@ -16,6 +16,7 @@ const teamNames = [
     "Secretary General",
     "Finance",
     "Cultural",
+    "Event",
     "Resource Information",
     "Travel & Logistics",
     "Sponsorship",
@@ -23,7 +24,7 @@ const teamNames = [
     "Publicity",
     "Stage Decoration",
     "Business & Alumni Meet",
-    "Competitions and Seminars",
+    "Competition and Seminars",
     "Web Development",
     "Refreshments",
     "Volunteers",
@@ -45,7 +46,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
     const [fileList, setFileList] = useState([
         {
             uid: "-1",
-            url: admin.image,
+            url: admin?.image,
             status: "done",
             name: "default",
         },
@@ -126,10 +127,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
         // <- This will send the selected image to our api
         try {
             if (fileList[0].uid === "-1"){
-                const res = await postImage({image: fileList[0].url});
-                console.log("Google image");
-                console.log(res);
-                return res.data.data.imageUrl;
+                return fileList[0].url;
             }
             const res = await postImage({ image: fileList[0].originFileObj });
             console.log(res.data.data.imageUrl);

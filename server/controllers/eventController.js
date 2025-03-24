@@ -1,13 +1,16 @@
 const axios = require("axios");
 const catchAsync = require("../utils/catchAsync");
 const Event = require("../models/eventModel");
-const User = require("../models/userModel")
+const User = require("../models/userModel");
 
 exports.createEvent = catchAsync(async (req, res, next) => {
     try {
+        const alreadyExists = await Event.findOne({ eventName: req.body.eventName });
+        if (alreadyExists)
+            return res.status(400).json({ message: "An Event With this Name Already Exists", data: alreadyExists });
         const eventData = new Event({
             ...req.body,
-            rounds: JSON.parse(req.body.rounds)
+            rounds: JSON.parse(req.body.rounds),
         });
         await eventData.save();
         return res.status(201).json({ message: "success", data: eventData });
@@ -34,12 +37,12 @@ exports.deleteEvent = catchAsync(async (req, res, next) => {
 exports.updateEvent = catchAsync(async (req, res, next) => {
     try {
         console.log(req.body);
-        const updated = {...req.body}
-        if (updated.rounds) updated.rounds = JSON.parse(updated.rounds)
-        
+        const updated = { ...req.body };
+        if (updated.rounds) updated.rounds = JSON.parse(updated.rounds);
+
         const updatedEvent = await Event.findByIdAndUpdate(
             req.body._id,
-            { ...updated},
+            { ...updated },
             { new: true, runValidators: true }
         );
 
@@ -64,8 +67,8 @@ exports.getAllEvents = catchAsync(async (req, res, next) => {
         if (email === "null") {
             return res.status(200).json({ message: "success", data: allEvents });
         } else {
-            const filteredEvents = allEvents.filter(event =>
-                event.mainCoordinators.some(coordinator => coordinator.email === email)
+            const filteredEvents = allEvents.filter((event) =>
+                event.mainCoordinators.some((coordinator) => coordinator.email === email)
             );
             return res.status(200).json({ message: "success", data: filteredEvents });
         }
