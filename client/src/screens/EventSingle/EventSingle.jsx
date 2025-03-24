@@ -8,6 +8,7 @@ import RoundCard from "./RoundCard";
 import { Alert } from "@mui/material";
 import { Warning } from "@mui/icons-material";
 import { isUserRegistered } from "../../services/eventApi";
+import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
 
 const EventSingle = () => {
     const navigate = useNavigate();
@@ -16,6 +17,8 @@ const EventSingle = () => {
     const [isReg, setIsReg] = useState(false);
     const [loading, setLoading] = useState(false);
     const oneEvent = allEvents.find((ev) => ev.slug === eventSlug);
+    console.log(oneEvent);
+    
 
     useEffect(() => {
         const checkReg = async () => {
@@ -96,7 +99,7 @@ const EventSingle = () => {
                             You Have Successfully been registered for this event
                         </Alert>
                     )}
-                    {!user.college && (
+                    {user && user?.college && (
                         <Alert variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
                             Please complete your profile information to be able to register. For details, go to {" "}
                             <Link to="/profile">My profile</Link>.
@@ -109,9 +112,7 @@ const EventSingle = () => {
             {/* Content Below */}
             <div className="event-single-content">
                 <p className="event-single-description">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores quasi pariatur fugit dignissimos
-                    aspernatur autem? Numquam porro corrupti error voluptatem aut corporis sapiente dolorem, ad commodi
-                    itaque totam veritatis dignissimos laborum! Porro!
+                    {oneEvent.description}
                 </p>
                 <h2 className="schedule-title">Schedule</h2>
 
@@ -127,6 +128,25 @@ const EventSingle = () => {
                                 i={i}
                             />
                         );
+                    })}
+                </div>
+            </div>
+
+            <div className="coordinators event-single-content" style={{paddingTop: 0}}>
+                <h2 className="schedule-title">Coordinators</h2>
+                <div className="coords-list">
+                    {oneEvent.mainCoordinators.map((e, i) => {
+                        console.log("coordinator");
+                        console.log(e)                        
+                        return (
+                            <CustomAvatar 
+                                title={e.name}
+                                subtitle={e.role}
+                                phone={e.phone}
+                                src={e.image}
+                                key={i}
+                            />
+                        )
                     })}
                 </div>
             </div>

@@ -1,0 +1,39 @@
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    width: 200px;
+}
+
+.avatar .back {
+    position: absolute;
+    z-index: -1;
+    width: 180px;
+    height: 180px;
+    background-color: var(--primary);
+    opacity: 0.6;
+    border-radius: 50%;
+    top: 0px;
+    right: 0px;
+}
+
+.avatar .title {
+    font-size: 1.3rem;
+    text-transform: titlecase;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.3rem;
+}
+
+.avatar .subtitle {
+    font-size: 1rem;
+    line-height: 0.8rem;
+    opacity: 0.6;
+    font-family: "Sedgwick Ave Display";
+    font-weight: 100;
+}
+
+.avatar .phone {
+}
