@@ -25,7 +25,7 @@ const CustomAvatar = ({ title, subtitle, src, phone, icon }) => {
                     </div>
                 }
             >
-                <Avatar className="avatar-img" alt={title} src={src} style={{ width: 170, height: 170, border: "3px solid #fff", zIndex: 1 }} />
+                <Avatar className="avatar-img" src={src} style={{ width: 170, height: 170, border: "3px solid #fff", zIndex: 1 }} />
             </Badge>
             <div className="back"></div>
             <div className="title">{title.toLowerCase()}</div>

@@ -132,8 +132,6 @@ const EventReg = () => {
                 setPageLoad(true);
                 if (user && oneEvent) {
                     console.log("Got'em all!!");
-                    console.log(user);
-                    console.log(oneEvent);
                     const status = await isUserRegistered(oneEvent?._id, user?._id);
                     console.log("Status of registration of the user");
                     console.log(status);
@@ -148,7 +146,7 @@ const EventReg = () => {
             }
         };
         checkReg();
-    }, [user]);
+    }, [user, oneEvent]);
 
     const handleNext = () => {
         console.log(activeStep);

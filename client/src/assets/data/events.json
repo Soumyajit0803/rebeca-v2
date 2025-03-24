@@ -1,714 +1,709 @@
 {
-	"Pre Events": {
+    "Pre Events": {
         "eventList": [
-			{
-				"eventName": "T Shirt Design Contest",
-				"desc": "Hola Design Enthusiasts. <br/><br/> The iconic 4 days are back as REBECA returns with it's 83rd season. Thus, unleash your wild imaginations as you compete for a T-shirt design that proudly celebrates the illustrious history of IIEST Shibpur and reconnects our alumni with the gratifying legacy of our college. <br/><br/> May the BEings wear the best T-shirt that captures the essence of IIEST Shibpur's rich legacy, weaving together threads of tradition, innovation and emotions. Let the trail for the best design begin! <br/><br/> Submission Deadline: 7th April, 2024",
-				"register": "https://forms.gle/F583Cxp8Aq33mfZ86",
-				"time": "7th April",
-				"coordinators": [
-					{ "name": "Sumit", "num": "9001575600" },
-					{ "name": "Hamsa Tejaswini", "num": "9347459992" },
-					{ "name": "Krishnendu Mondal", "num": "6296883037" }
-				]
+            {
+                "eventName": "T Shirt Design Contest",
+                "desc": "Hola Design Enthusiasts. <br/><br/> The iconic 4 days are back as REBECA returns with it's 84th season. Thus, unleash your wild imaginations as you compete for a T-shirt design that proudly celebrates the illustrious history of IIEST Shibpur and reconnects our alumni with the gratifying legacy of our college. <br/><br/> May the BEings wear the best T-shirt that captures the essence of IIEST Shibpur's rich legacy, weaving together threads of tradition, innovation and emotions. Let the trail for the best design begin! <br/><br/> Submission Deadline: 7th April, 2024",
+                "register": "https://forms.gle/F583Cxp8Aq33mfZ86",
+                "time": "7th April",
+                "coordinators": [
+                    { "name": "Sumit", "num": "9001575600" },
+                    { "name": "Hamsa Tejaswini", "num": "9347459992" },
+                    { "name": "Krishnendu Mondal", "num": "6296883037" }
+                ]
+            },
+            {
+                "eventName": "BECA Magazine",
+                "time": "12th to 17th",
+                "desc": "SCAGE and BECA Magazine cordially invite all talented artists to an Art Competition to be featured prominently in the illustrious BECA magazine. <br/ ><br/> This competition offers you the chance to showcase your work on the esteemed pages of BECA magazine. Imagine the pride of seeing your masterpiece adorning the glossy pages and receiving recognition for your artistry that will resonate throughout IIEST Shibpur. <br/><br/> Celebrating the vibrant spirit of REBECA 2024, this competition aims to weave your art into the rich tapestry of our institution's cultural heritage. Your creations have the power to leave an indelible mark for generations to come. Seize this opportunity and make your mark in IIEST's heritage.",
+                "rules": [
+                    "Note : The artwork can be either hand-painted or digital art. AI generated pictures will not be accepted. ",
+                    "Imp: The composition can be of from any spot on the campus. Capture the beauty of this campus through your artistic talents."
+                ],
+                "register": "https://docs.google.com/forms/d/1g4fUjekOCMdSo-SWE4_vekvK5bcGMnt7TfRPZNMUVpY/edit?usp=drivesdk",
+                "coordinators": [
+                    { "name": "Twameka Sinha", "num": "9674471400" },
+                    { "name": "Rohan Das", "num": "62907 59839" }
+                ],
+                "venue": "Online",
+                "img": "/assets/imgs/events/images/beca_magazine.webp"
+            },
+            {
+                "time": "15th, 5 PM",
+                "eventName": "Photography Workshop",
 
-			},
-			{
-				"eventName": "BECA Magazine",
-				"time": "12th to 17th",
-				"desc": "SCAGE and BECA Magazine cordially invite all talented artists to an Art Competition to be featured prominently in the illustrious BECA magazine. <br/ ><br/> This competition offers you the chance to showcase your work on the esteemed pages of BECA magazine. Imagine the pride of seeing your masterpiece adorning the glossy pages and receiving recognition for your artistry that will resonate throughout IIEST Shibpur. <br/><br/> Celebrating the vibrant spirit of REBECA 2024, this competition aims to weave your art into the rich tapestry of our institution's cultural heritage. Your creations have the power to leave an indelible mark for generations to come. Seize this opportunity and make your mark in IIEST's heritage.",
-				"rules": [
-					"Note : The artwork can be either hand-painted or digital art. AI generated pictures will not be accepted. ",
-					"Imp: The composition can be of from any spot on the campus. Capture the beauty of this campus through your artistic talents."
-				],
-				"register": "https://docs.google.com/forms/d/1g4fUjekOCMdSo-SWE4_vekvK5bcGMnt7TfRPZNMUVpY/edit?usp=drivesdk",
-				"coordinators": [
-					{ "name": "Twameka Sinha", "num": "9674471400" },
-					{ "name": "Rohan Das", "num": "62907 59839" }
-				],
-				"venue": "Online",
-				"img": "/assets/imgs/events/images/beca_magazine.webp"
-			},
-			{
-				"time": "15th, 5 PM",
-				"eventName": "Photography Workshop",
+                "venue": "Alumni Seminar Hall",
+                "desc": "Join us for an exclusive photography workshop with Behaya , a renowned photographer known for his captivating work. Whether you're a beginner, aspiring photographer, a hobbyist, or simply someone who appreciates the art of visual storytelling, this workshop is perfect for you. This workshop promises to be an immersive experience for photographers of all levels. He shares insights, tips, and techniques to help you take your skills to the next level.Learn the art of photography, from mastering your camera settings to capturing moments creatively. Don't miss this opportunity to learn from the best. <br/><br/> See you There!",
 
-				"venue": "Alumni Seminar Hall",
-				"desc": "Join us for an exclusive photography workshop with Behaya , a renowned photographer known for his captivating work. Whether you're a beginner, aspiring photographer, a hobbyist, or simply someone who appreciates the art of visual storytelling, this workshop is perfect for you. This workshop promises to be an immersive experience for photographers of all levels. He shares insights, tips, and techniques to help you take your skills to the next level.Learn the art of photography, from mastering your camera settings to capturing moments creatively. Don't miss this opportunity to learn from the best. <br/><br/> See you There!",
+                "coordinators": [
+                    { "name": "Aditya Didolkar", "num": "8390359499" },
+                    { "name": "Utsab Dhara", "num": "7384948247" },
+                    { "name": "Randhir Kumar Ray", "num": "7903962308" }
+                ],
+                "img": "/assets/imgs/events/images/photography_workshop.webp"
+            },
+            {
+                "desc": "<p> Artival is a celebration of creativity and artistic expression. This exhibition will showcase the works of talented artists from your college and beyond, providing a platform for them to share their unique perspectives with the community. Featuring a diverse range of art forms including paintings, sculptures, installations, and mixed media, Artistic Visions promises to be a visual feast for art enthusiasts. Whether you are an art lover or simply curious about the creative process, Artival is an event not to be missed. Come explore the depths of imagination and creativity that reside in the hearts and minds of our talented artists, and experience the magic of art in all its forms. </p><br> <b>Details of the exhibition:</b> <p> Painting will be done on white board or plywood painted white which will be put up in front of the volleyball court. Design will be provided shortly. Design will be based on the theme of REBECA 2024.</p>",
+                "rules": [
+                    "Artworks can be based on any theme.",
+                    "Students from any year is eligible to make a submission",
+                    "No restriction on artwork medium.",
+                    "No restriction on size or weight of the artwork, however it should be suitable for hanging. ",
+                    "Interested peeps kindly register by 11.04.2024."
+                ],
+                "tagline": "An Exhibition on Creative Expression where art meets imagination",
 
-				"coordinators": [
-					{ "name": "Aditya Didolkar", "num": "8390359499" },
-					{ "name": "Utsab Dhara", "num": "7384948247" },
-					{ "name": "Randhir Kumar Ray", "num": "7903962308" }
-				],
-				"img": "/assets/imgs/events/images/photography_workshop.webp"
-			},
-			{
-				"desc": "<p> Artival is a celebration of creativity and artistic expression. This exhibition will showcase the works of talented artists from your college and beyond, providing a platform for them to share their unique perspectives with the community. Featuring a diverse range of art forms including paintings, sculptures, installations, and mixed media, Artistic Visions promises to be a visual feast for art enthusiasts. Whether you are an art lover or simply curious about the creative process, Artival is an event not to be missed. Come explore the depths of imagination and creativity that reside in the hearts and minds of our talented artists, and experience the magic of art in all its forms. </p><br> <b>Details of the exhibition:</b> <p> Painting will be done on white board or plywood painted white which will be put up in front of the volleyball court. Design will be provided shortly. Design will be based on the theme of REBECA 2024.</p>",
-				"rules": [
-					"Artworks can be based on any theme.",
-					"Students from any year is eligible to make a submission",
-					"No restriction on artwork medium.",
-					"No restriction on size or weight of the artwork, however it should be suitable for hanging. ",
-					"Interested peeps kindly register by 11.04.2024."
-				],
-				"tagline": "An Exhibition on Creative Expression where art meets imagination",
+                "time": "Everyday 11 AM Onwards",
+                "eventName": "Artival",
+                "club": "SCAGE",
+                "venue": "Volleyball Court",
+                "coordinators": [
+                    { "name": "Krishnendu Mondal", "num": "6296883037" },
+                    { "name": "Akash Das", "num": "7044279689" }
+                ],
+                "register": "https://docs.google.com/forms/d/1A1--sV-w_Xik3PcRMJI7FCv4QNzmPNVxdqmhVMruL6U/edit",
+                "img": "/assets/imgs/events/images/artival.webp"
+            },
 
-				"time": "Everyday 11 AM Onwards",
-				"eventName": "Artival",
-				"club": "SCAGE",
-				"venue": "Volleyball Court",
-				"coordinators": [
-					{ "name": "Krishnendu Mondal", "num": "6296883037" },
-					{ "name": "Akash Das", "num": "7044279689" }
-				],
-				"register": "https://docs.google.com/forms/d/1A1--sV-w_Xik3PcRMJI7FCv4QNzmPNVxdqmhVMruL6U/edit",
-				"img": "/assets/imgs/events/images/artival.webp"
-			},
+            {
+                "time": "Everyday 11 AM Onwards",
+                "eventName": "Pixel Poetry",
+                "club": "Catharsis",
+                "venue": "Whole Campus",
+                "desc": "Step into the realm of Pixel Poetry, where every click captures a world of wonder. Unveil the hidden stories, unleash your creativity, and watch as pixels transform into poetry. Whether you're a seasoned photographer or just starting your journey, this competition is your canvas to express yourself freely. Submit your most captivating shots, and get a chance to win exciting prizes. But the winner gets more than just a prize; they earn the chance to showcase their art to the world. So, pick up your camera, frame your shot, and let your pixels tell the tale.",
+                "rules": [
+                    "There will be two rounds:",
+                    "Round 1(Online): Participants will submit their photographs online and on the basis of that they will qualify for round 2.",
+                    "Round 2: Qualified participants will click photos for 4 days during REBECA and on that basis the final winners will be announced.",
+                    "Participants can upload photographs taken from both DSLR and Mobile phones.",
+                    "Last Date for Online Submission: 16-04-2024",
+                    "Registration: Free for all."
+                ],
 
-			{
-				"time": "Everyday 11 AM Onwards",
-				"eventName": "Pixel Poetry",
-				"club": "Catharsis",
-				"venue": "Whole Campus",
-				"desc": "Step into the realm of Pixel Poetry, where every click captures a world of wonder. Unveil the hidden stories, unleash your creativity, and watch as pixels transform into poetry. Whether you're a seasoned photographer or just starting your journey, this competition is your canvas to express yourself freely. Submit your most captivating shots, and get a chance to win exciting prizes. But the winner gets more than just a prize; they earn the chance to showcase their art to the world. So, pick up your camera, frame your shot, and let your pixels tell the tale.",
-				"rules": [
-					"There will be two rounds:",
-					"Round 1(Online): Participants will submit their photographs online and on the basis of that they will qualify for round 2.",
-					"Round 2: Qualified participants will click photos for 4 days during REBECA and on that basis the final winners will be announced.",
-					"Participants can upload photographs taken from both DSLR and Mobile phones.",
-					"Last Date for Online Submission: 16-04-2024",
-					"Registration: Free for all."
-				],
+                "coordinators": [
+                    { "name": "Devadeep Dutta", "num": "8399851925" },
+                    { "name": "Abhinav Gupta", "num": "8637349649" },
+                    { "name": "Puru Maharishi", "num": "9471611071" },
+                    { "name": "Akshat Gupta", "num": "7548071485" }
+                ],
+                "Awards": "INR 5000",
+                "register": "https://docs.google.com/forms/d/1pNdjjcHAcV2LG_2aCdt7VMEAA-bDokpGKhVKFhxsT20/edit",
+                "img": "/assets/imgs/events/images/pixel_poetry.webp"
+            },
+            {
+                "time": "Everyday 11 AM Onwards",
+                "eventName": "Saturnalia",
 
-				"coordinators": [
-					{ "name": "Devadeep Dutta", "num": "8399851925" },
-					{ "name": "Abhinav Gupta", "num": "8637349649" },
-					{ "name": "Puru Maharishi", "num": "9471611071" },
-					{ "name": "Akshat Gupta", "num": "7548071485" }
-				],
-				"Awards": "INR 5000",
-				"register": "https://docs.google.com/forms/d/1pNdjjcHAcV2LG_2aCdt7VMEAA-bDokpGKhVKFhxsT20/edit",
-				"img": "/assets/imgs/events/images/pixel_poetry.webp"
-			},
-			{
-				"time": "Everyday 11 AM Onwards",
-				"eventName": "Saturnalia",
+                "venue": "Student Amenities Center",
+                "desc": "Embark your journey through the lens of the extraordinary 'Saturnalia', an ethereal photography exhibition where the wonders of the cosmos come alive., where each photograph captures the enchanting beauty and narrates the epic tale. Immerse yourself in the cosmic dance of colors, textures, and stories that makes you travel to the actual scene . Let your imagination soar as you explore the vastness of the photography through the eyes of talented photographers. Don't miss this opportunity to witness the awe-inspiring allure of Saturnalia. See you there!",
 
-				"venue": "Student Amenities Center",
-				"desc": "Embark your journey through the lens of the extraordinary 'Saturnalia', an ethereal photography exhibition where the wonders of the cosmos come alive., where each photograph captures the enchanting beauty and narrates the epic tale. Immerse yourself in the cosmic dance of colors, textures, and stories that makes you travel to the actual scene . Let your imagination soar as you explore the vastness of the photography through the eyes of talented photographers. Don't miss this opportunity to witness the awe-inspiring allure of Saturnalia. See you there!",
-
-				"coordinators": [
-					{ "name": "Shivanshu Gupta", "num": "7275112895" },
-					{ "name": "Roushan Das", "num": "9830196251" },
-					{ "name": "Aseem Singh", "num": "6266633647" }
-				],
-				"register": "https://forms.gle/UN1Uj1aX8xQmWcfL6",
-				"img": "/assets/imgs/events/images/saturnalia.webp"
-			},
-			{
-				"time": "Everyday 6 PM Onwards",
-				"eventName": "Typist's Tourney",
-				"venue": "Lord's",
-				"desc": "Love the sound of keys clacking? Does racing get your adrenaline pumping? Want to experience the thrill in REBECA? Leave it all to CodeIIEST! <br/><br/> We are back with our lightning-fast typing contest. Show us what you got and grab the title of “The Fastest Fingers”. <br/><br/> Bag all the T's - “Tap, Type, Triumph”. ",
-				"rules": [
-					"A maximum of 5 participants (at a time) will be competing in a type race of 3 minutes on xyz platform(to be revealed on-spot). The winners of each race will receive a small token of appreciation from REBECA and CODEIIEST.",
-					"By presenting the institute ID card, participants can enjoy one free attempt per day during REBECA. For taking more attempts the participant has to pay an entry fee of Rs 20(for a maximum of 5 attempts). Non-IIEST students will have to pay an entry fee of Rs 20 (for a maximum of 5 attempts).",
-					"Participants who complete the race with a score of more than 45 WPM will receive certificates from CodeIIEST and REBECA recognizing their WPM achievement.",
-					"A leaderboard will be maintained based on participants' WPM (words per minute) score in the race. In case a participant wins more than once, their highest WPM score will be considered for the leaderboard.",
-					"The top 10 participants on the leaderboard, based on their WPM score in the race, will move onto the final round.",
-					"The winners of the final race will receive exciting prizes from REBECA!",
-					"The organisers' decision will be final and binding."
-				],
-				"coordinators": [
-					{ "name": "Ananya Sutradhar", "num": "9531538309" },
-					{ "name": "Rishab Dugar", "num": "8696490950" }
-				],
-				"register": "https://forms.gle/68Z5YRs2qouXwSqK7",
-				"Awards": "PRIZE POOL - Rs 3000(1500+1000+500)",
-				"img": "/assets/imgs/events/images/typist_tourney.webp"
-			}
-			
-		]
+                "coordinators": [
+                    { "name": "Shivanshu Gupta", "num": "7275112895" },
+                    { "name": "Roushan Das", "num": "9830196251" },
+                    { "name": "Aseem Singh", "num": "6266633647" }
+                ],
+                "register": "https://forms.gle/UN1Uj1aX8xQmWcfL6",
+                "img": "/assets/imgs/events/images/saturnalia.webp"
+            },
+            {
+                "time": "Everyday 6 PM Onwards",
+                "eventName": "Typist's Tourney",
+                "venue": "Lord's",
+                "desc": "Love the sound of keys clacking? Does racing get your adrenaline pumping? Want to experience the thrill in REBECA? Leave it all to CodeIIEST! <br/><br/> We are back with our lightning-fast typing contest. Show us what you got and grab the title of “The Fastest Fingers”. <br/><br/> Bag all the T's - “Tap, Type, Triumph”. ",
+                "rules": [
+                    "A maximum of 5 participants (at a time) will be competing in a type race of 3 minutes on xyz platform(to be revealed on-spot). The winners of each race will receive a small token of appreciation from REBECA and CODEIIEST.",
+                    "By presenting the institute ID card, participants can enjoy one free attempt per day during REBECA. For taking more attempts the participant has to pay an entry fee of Rs 20(for a maximum of 5 attempts). Non-IIEST students will have to pay an entry fee of Rs 20 (for a maximum of 5 attempts).",
+                    "Participants who complete the race with a score of more than 45 WPM will receive certificates from CodeIIEST and REBECA recognizing their WPM achievement.",
+                    "A leaderboard will be maintained based on participants' WPM (words per minute) score in the race. In case a participant wins more than once, their highest WPM score will be considered for the leaderboard.",
+                    "The top 10 participants on the leaderboard, based on their WPM score in the race, will move onto the final round.",
+                    "The winners of the final race will receive exciting prizes from REBECA!",
+                    "The organisers' decision will be final and binding."
+                ],
+                "coordinators": [
+                    { "name": "Ananya Sutradhar", "num": "9531538309" },
+                    { "name": "Rishab Dugar", "num": "8696490950" }
+                ],
+                "register": "https://forms.gle/68Z5YRs2qouXwSqK7",
+                "Awards": "PRIZE POOL - Rs 3000(1500+1000+500)",
+                "img": "/assets/imgs/events/images/typist_tourney.webp"
+            }
+        ]
     },
-    
+
     "saptami": {
-		"majorEvents": [0, 3, 6],
-		"eventList": [
-			
-			{
-				"desc": "Participants need to make an advertisement within 50 hours based on the product and theme provided to them ar the start of the event.",
-				"rules": [],
-				"rulesLink": "https://drive.google.com/file/d/1UHdRA7bzmQPhPY_081HXtWugVSha5ftz/view?usp=drive_link",
+        "majorEvents": [0, 3, 6],
+        "eventList": [
+            {
+                "desc": "Participants need to make an advertisement within 50 hours based on the product and theme provided to them ar the start of the event.",
+                "rules": [],
+                "rulesLink": "https://drive.google.com/file/d/1UHdRA7bzmQPhPY_081HXtWugVSha5ftz/view?usp=drive_link",
 
-				"time": "5 PM onwards",
-				"eventName": "CINEAURA",
-				"club": "Camerabuff",
-				"venue": "Lord's",
-				"coordinators": [
-					{ "name": "Chandaswi", "num": "7013056572" },
-					{ "name": "Tanis Ahamed", "num": "8972570521" },
-					{ "name": "Manohar", "num": "7842441308" }
-				],
-				"img": "/assets/imgs/events/images/cineaura.webp",
-				"register": "https://docs.google.com/forms/d/1aPimVWYLTkZnE9ehurvH1laq96HvSmWCPZwporuknuI/edit?usp=drive_web"
-			},
-			{
-				"desc": "",
+                "time": "5 PM onwards",
+                "eventName": "CINEAURA",
+                "club": "Camerabuff",
+                "venue": "Lord's",
+                "coordinators": [
+                    { "name": "Chandaswi", "num": "7013056572" },
+                    { "name": "Tanis Ahamed", "num": "8972570521" },
+                    { "name": "Manohar", "num": "7842441308" }
+                ],
+                "img": "/assets/imgs/events/images/cineaura.webp",
+                "register": "https://docs.google.com/forms/d/1aPimVWYLTkZnE9ehurvH1laq96HvSmWCPZwporuknuI/edit?usp=drive_web"
+            },
+            {
+                "desc": "",
 
-				"time": "6:00 PM - 7:30 PM",
-				"eventName": "Inauguration Ceremony",
-				"img": "/assets/imgs/events/images/inauguration.webp",
-				"venue": "Lord's"
-			},
-			{
-				"desc": "The classical dance performance on the classical night of Rebeca, 18th of april. Showcasing the rich cultural heritage of Indian classical dances through the labyrinth of rhythm that the dancers create with ghoongru tied to their feet. (15-20 mins)",
-				"time": "7:30 PM - 8:30 PM",
-				"eventName": "Ghoongru",
-				"club": "Reflexobeta",
-				"venue": "Lord's",
-				"img": "/assets/imgs/events/images/ghoongru.webp"
-			},
-			{
-				"desc": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
-				"rules": [],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"time": "8:30 PM onwards",
-				"eventName": "The Classical Night",
-				"venue": "Lord's",
-				"url": "/events/saptami",
-				"img": "/assets/imgs/events/images/classicalnight.webp"
-			},
+                "time": "6:00 PM - 7:30 PM",
+                "eventName": "Inauguration Ceremony",
+                "img": "/assets/imgs/events/images/inauguration.webp",
+                "venue": "Lord's"
+            },
+            {
+                "desc": "The classical dance performance on the classical night of Rebeca, 18th of april. Showcasing the rich cultural heritage of Indian classical dances through the labyrinth of rhythm that the dancers create with ghoongru tied to their feet. (15-20 mins)",
+                "time": "7:30 PM - 8:30 PM",
+                "eventName": "Ghoongru",
+                "club": "Reflexobeta",
+                "venue": "Lord's",
+                "img": "/assets/imgs/events/images/ghoongru.webp"
+            },
+            {
+                "desc": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
+                "rules": [],
+                "artists": ["tbd", "tbd", "tbd", "tbd"],
+                "time": "8:30 PM onwards",
+                "eventName": "The Classical Night",
+                "venue": "Lord's",
+                "url": "/events/saptami",
+                "img": "/assets/imgs/events/images/classicalnight.webp"
+            },
 
-			{
-				"desc": "Join Us for FILM FIESTA - An Unforgettable Cinematic Experience! <br/><br/>🎬 Lights, Camera, Action! 🎬 <br/><br/> Calling all movie enthusiasts! CAMERABUFF, the film society of IIESTS Shibpur, is thrilled to present 'Film Fiesta' as part of our college fest extravaganza. Get ready to immerse yourself in a world of captivating stories, breathtaking cinematography, and unforgettable characters. Experience the magic of cinema under the starry night sky as we showcase a curated selection of must-watch films that promise to entertain, inspire, and leave you spellbound.",
-				"time": "12:00 AM",
-				"eventName": "Film Fiesta",
-				"club": "Camerabuff",
-				"venue": "Lord's",
-				"img": "/assets/imgs/events/images/filmfiesta.webp",
-				"coordinators": [
-					{ "name": "Sai Venkat Rao", "num": "8367663100" },
-					{ "name": "Abhinay Kumar", "num": "7569274277" }
-				]
-			}
-			
-			
-		]
-	},
-	"ashtami": {
-		"majorEvents": [0, 3, 6],
-		"eventList": [
-			
-			{
-				"time": "12:00 PM - 2:00 PM",
-				"eventName": "Dumb Charades League",
-				"club": "Litsoc",
-				"venue": "Gallery 3 (AE&AM Dept.)",
-				"poster": "./assets/events/posters/dumbcharades.webp",
-				"desc": "Tired of events that need you to solve circuits, know DSA and attend seminars? Well, it’s time to give your brain cells a rest because LitSoc-IIESTS presents to you a Dumb Charades League, where all you have to be is, dumb (yes you read that right). Team up with your buddies, pick up chits, bring out your acting chops and let the guessing game begin. And if you are too good at it, we have cool trophies waiting for you too! So put away your thinking caps and let’s come together for a nutty witty afternoon and find out who really are your best friends.",
-				"rules": [
-					"Each team should consist of 4 members.",
-					"There will be a total of 4 games happening simultaneously in 2 separate rooms.",
-					"Each game will have an assigned moderator.",
-					"Teams can choose between Hindi, English, or a combination of both languages (mutually decided upon).",
-					"Chits containing movie/TV series names will be placed in a bowl.",
-					"Teams will pick chits one by one and guess as many names as possible within a given time limit.",
-					"Rounds will proceed in a knockout manner, and the team having more number of correct guesses between the two will move on to the next round.",
-					"The exact time limit will depend on the number of teams participating and will be determined later.",
-					"8 teams will move on to the finals to be held on Day 2.",
-					"Each game in the finals will also have an assigned moderator and will consist of knockout rounds",
-					"Teams can again choose their preferred language (Hindi, English, or both).",
-					"Each game on the second day will consist of multiple rounds with twists.",
-					"Remember, the moderator’s word is final, and let the guessing game begin!"
-				],
-				"registrationFee": "Nil",
-				"Awards": "Trophies for the Champions.",
-				"coordinators": [
-					{ "name": "Samriddhi Mukhopadhyay", "num": "8017849961" },
-					{ "name": "Nafis Adnan Mondal", "num": "9143611854" }
-				],
-				"register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
-				"img": "/assets/imgs/events/images/dumb.webp"
-			},
-			{
-				"time": "2:00 PM - 6:00 PM",
-				"eventName": "Rangmanch",
-				"club": "Les Thespians",
-				"venue": "I-Hall",
-				"desc": "Get ready to be entranced by the enchanting world of theater as LES Thespians unveils a mesmerizing double feature at the Rebecca Cultural Night! Our gifted actors will demonstrate their versatility by presenting two captivating dramas—one in Hindi and another in Bengali. Immerse yourself in the vibrant tapestry of Indian culture as these compelling stories come alive on stage. Whether you're a seasoned theater enthusiast or a newcomer to the magic of live performances, this evening guarantees an unforgettable experience.",
+            {
+                "desc": "Join Us for FILM FIESTA - An Unforgettable Cinematic Experience! <br/><br/>🎬 Lights, Camera, Action! 🎬 <br/><br/> Calling all movie enthusiasts! CAMERABUFF, the film society of IIESTS Shibpur, is thrilled to present 'Film Fiesta' as part of our college fest extravaganza. Get ready to immerse yourself in a world of captivating stories, breathtaking cinematography, and unforgettable characters. Experience the magic of cinema under the starry night sky as we showcase a curated selection of must-watch films that promise to entertain, inspire, and leave you spellbound.",
+                "time": "12:00 AM",
+                "eventName": "Film Fiesta",
+                "club": "Camerabuff",
+                "venue": "Lord's",
+                "img": "/assets/imgs/events/images/filmfiesta.webp",
+                "coordinators": [
+                    { "name": "Sai Venkat Rao", "num": "8367663100" },
+                    { "name": "Abhinay Kumar", "num": "7569274277" }
+                ]
+            }
+        ]
+    },
+    "ashtami": {
+        "majorEvents": [0, 3, 6],
+        "eventList": [
+            {
+                "time": "12:00 PM - 2:00 PM",
+                "eventName": "Dumb Charades League",
+                "club": "Litsoc",
+                "venue": "Gallery 3 (AE&AM Dept.)",
+                "poster": "./assets/events/posters/dumbcharades.webp",
+                "desc": "Tired of events that need you to solve circuits, know DSA and attend seminars? Well, it’s time to give your brain cells a rest because LitSoc-IIESTS presents to you a Dumb Charades League, where all you have to be is, dumb (yes you read that right). Team up with your buddies, pick up chits, bring out your acting chops and let the guessing game begin. And if you are too good at it, we have cool trophies waiting for you too! So put away your thinking caps and let’s come together for a nutty witty afternoon and find out who really are your best friends.",
+                "rules": [
+                    "Each team should consist of 4 members.",
+                    "There will be a total of 4 games happening simultaneously in 2 separate rooms.",
+                    "Each game will have an assigned moderator.",
+                    "Teams can choose between Hindi, English, or a combination of both languages (mutually decided upon).",
+                    "Chits containing movie/TV series names will be placed in a bowl.",
+                    "Teams will pick chits one by one and guess as many names as possible within a given time limit.",
+                    "Rounds will proceed in a knockout manner, and the team having more number of correct guesses between the two will move on to the next round.",
+                    "The exact time limit will depend on the number of teams participating and will be determined later.",
+                    "8 teams will move on to the finals to be held on Day 2.",
+                    "Each game in the finals will also have an assigned moderator and will consist of knockout rounds",
+                    "Teams can again choose their preferred language (Hindi, English, or both).",
+                    "Each game on the second day will consist of multiple rounds with twists.",
+                    "Remember, the moderator’s word is final, and let the guessing game begin!"
+                ],
+                "registrationFee": "Nil",
+                "Awards": "Trophies for the Champions.",
+                "coordinators": [
+                    { "name": "Samriddhi Mukhopadhyay", "num": "8017849961" },
+                    { "name": "Nafis Adnan Mondal", "num": "9143611854" }
+                ],
+                "register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
+                "img": "/assets/imgs/events/images/dumb.webp"
+            },
+            {
+                "time": "2:00 PM - 6:00 PM",
+                "eventName": "Rangmanch",
+                "club": "Les Thespians",
+                "venue": "I-Hall",
+                "desc": "Get ready to be entranced by the enchanting world of theater as LES Thespians unveils a mesmerizing double feature at the Rebecca Cultural Night! Our gifted actors will demonstrate their versatility by presenting two captivating dramas—one in Hindi and another in Bengali. Immerse yourself in the vibrant tapestry of Indian culture as these compelling stories come alive on stage. Whether you're a seasoned theater enthusiast or a newcomer to the magic of live performances, this evening guarantees an unforgettable experience.",
 
-				"coordinators": [
-					{ "name": "Aditya Singh", "num": "9471611071" },
-					{ "name": "Debanjali Chakravarthi", "num": "8918740236" }
-				],
-				"img": "/assets/imgs/events/images/rangmanch.webp"
-			},
-			{
-				"desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
-				"rules": [
-					"The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
-					"The groups/fixture will be decided totally on lottery basis.",
-					"Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
-					"A valid college ID must be carried by every player.",
-					"The field referee's decision prevails. There will be no room for disagreement with the referee.",
-					"If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
-					"Each half will consist of 10 minutes with a 2-minute break between both halves.",
-					"Matches will be played 7-a side with 3 substitutions.",
-					"Rolling substitutions are allowed at any point of the game.",
-					"The winning team will proceed to the next round.",
-					"The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
-					"All penalties must be one step penalties",
-					"A player is allowed to play for one team only.",
-					"All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
-					"Futsal rules will be applicable and will be strictly followed during every match.",
-					"The squad may be disqualified outright if any player engages in unsporting behavior",
-					"Prizes will be awarded to the winners and runners."
-				],
+                "coordinators": [
+                    { "name": "Aditya Singh", "num": "9471611071" },
+                    { "name": "Debanjali Chakravarthi", "num": "8918740236" }
+                ],
+                "img": "/assets/imgs/events/images/rangmanch.webp"
+            },
+            {
+                "desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
+                "rules": [
+                    "The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
+                    "The groups/fixture will be decided totally on lottery basis.",
+                    "Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
+                    "A valid college ID must be carried by every player.",
+                    "The field referee's decision prevails. There will be no room for disagreement with the referee.",
+                    "If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
+                    "Each half will consist of 10 minutes with a 2-minute break between both halves.",
+                    "Matches will be played 7-a side with 3 substitutions.",
+                    "Rolling substitutions are allowed at any point of the game.",
+                    "The winning team will proceed to the next round.",
+                    "The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
+                    "All penalties must be one step penalties",
+                    "A player is allowed to play for one team only.",
+                    "All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
+                    "Futsal rules will be applicable and will be strictly followed during every match.",
+                    "The squad may be disqualified outright if any player engages in unsporting behavior",
+                    "Prizes will be awarded to the winners and runners."
+                ],
 
-				"time": "3 PM to 6 PM",
-				"eventName": "Rebecsal",
-				"club": "Sports Club",
-				"venue": "Oval",
-				"coordinators": [
-					{ "name": "Indravo Ghosh", "num": "+91 8902010310" },
-					{ "name": "Anirban Mazumder", "num": "+91 8436274951" },
-					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
-				],
-				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
-				"img": "/assets/imgs/events/images/rebescal.webp"
-			},
-			{
-				"time": "5:00 PM - 6:00 PM",
-				"eventName": "Face Canvas",
-				"tagline": "Bring your imagination to your face for the world to know !",
-				"club": "SCAGE",
-				"venue": "Lord's",
-				"desc": "Dive into a world of creativity and expression as SCAGE proudly presents Face Canvas! At Face Canvas, let your imagination run wild as you experiment with vibrant paints on the canvas of faces! If you're feeling unsure about where to begin, fret not! We'll have experienced artists on hand to guide you through the process and offer inspiration. No experience necessary  - just bring your imagination and enthusiasm! It's a fantastic opportunity to showcase your artistic flair, connect with fellow art lovers, and simply have a blast!",
+                "time": "3 PM to 6 PM",
+                "eventName": "Rebecsal",
+                "club": "Sports Club",
+                "venue": "Oval",
+                "coordinators": [
+                    { "name": "Indravo Ghosh", "num": "+91 8902010310" },
+                    { "name": "Anirban Mazumder", "num": "+91 8436274951" },
+                    { "name": "Dipak Marndi", "num": "+91 90735 27607" }
+                ],
+                "register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
+                "img": "/assets/imgs/events/images/rebescal.webp"
+            },
+            {
+                "time": "5:00 PM - 6:00 PM",
+                "eventName": "Face Canvas",
+                "tagline": "Bring your imagination to your face for the world to know !",
+                "club": "SCAGE",
+                "venue": "Lord's",
+                "desc": "Dive into a world of creativity and expression as SCAGE proudly presents Face Canvas! At Face Canvas, let your imagination run wild as you experiment with vibrant paints on the canvas of faces! If you're feeling unsure about where to begin, fret not! We'll have experienced artists on hand to guide you through the process and offer inspiration. No experience necessary  - just bring your imagination and enthusiasm! It's a fantastic opportunity to showcase your artistic flair, connect with fellow art lovers, and simply have a blast!",
 
-				"rules": [
-					"Only on-spot registrations will be accepted.",
-					"Participants can let our volunteers paint their faces keeping the participant's special request in mind or they can also paint their faces themselves under our volunteers' supervision with the paint provided by us."
-				],
+                "rules": [
+                    "Only on-spot registrations will be accepted.",
+                    "Participants can let our volunteers paint their faces keeping the participant's special request in mind or they can also paint their faces themselves under our volunteers' supervision with the paint provided by us."
+                ],
 
-				"coordinators": [
-					{
-						"name": "Twameka Sinha",
-						"num": "9674471400"
-					},
-					{
-						"name": "Akash Das",
-						"num": "7044279689"
-					},
-					{
-						"name": "Krishnendu Mondal",
-						"num": "6296883037"
-					}
-				],
-				"img": "/assets/imgs/events/images/face_canvas.webp"
-			},
-			
-			{
-				"time": "7:30 PM - onwards",
-				"eventName": "The BEings Night",
-				"club": [],
-				"venue": "Lord's",
-				"desc": "The evening will come alive as the BEings take the center stage by storm with their electrifying performances and ignite the atmosphere with their talent and creativity. Don't forget to cheer your hearts out for your best friends as they spew fire across the stage and make the night a celebration of the incredible talent amongst us",
+                "coordinators": [
+                    {
+                        "name": "Twameka Sinha",
+                        "num": "9674471400"
+                    },
+                    {
+                        "name": "Akash Das",
+                        "num": "7044279689"
+                    },
+                    {
+                        "name": "Krishnendu Mondal",
+                        "num": "6296883037"
+                    }
+                ],
+                "img": "/assets/imgs/events/images/face_canvas.webp"
+            },
 
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"judges": ["tbd", "tbd", "tbd", "tbd"],
-				"url": "/events/ashtami",
-				"img": "/assets/imgs/events/images/beingsnight.webp"
-			}
-		]
-	},
-	"navami": {
-		"majorEvents": [0, 3, 6],
-		"eventList": [
-			{
-				"time": "11:00 AM - 6:00 PM",
-				"eventName": "GMUN",
-				"club": "Debsoc",
-				"venue": "ASH(opening till 2pm) + 4 Rooms(SnT)",
-				"desc": "Step onto the global stage! Model United Nations comming soon to IIEST Shibpur Fest. Dive into diplomacy, debate, and world affairs. Unleash your leadership potential and shape the future. Stay tuned for dates and details!",
-				"rules": [],
-				"rulesLink": "https://drive.google.com/file/d/133B3t3Fy-AZLMS-KihRgK90XJwZbYqZD/view?usp=drive_link",
-				"register": "https://forms.gle/hx1q8mPqrQPfgavS8",
-				"coordinators": [
-					{ "name": "Ritik Pratap Singh", "num": "8949491506" },
-					{ "name": "Sadhan Das", "num": "7827304221" }
-				],
-				"img": "/assets/imgs/events/images/gmun.webp"
-			},
-			{
-				"time": "12:00 PM - 2:00 PM",
-				"eventName": "Dumb Charades League",
-				"club": "Litsoc",
-				"venue": "Gallery 3 (AE&AM Dept.)",
-				"poster": "./assets/events/posters/dumbcharades.webp",
-				"desc": "Tired of events that need you to solve circuits, know DSA and attend seminars? Well, it’s time to give your brain cells a rest because LitSoc-IIESTS presents to you a Dumb Charades League, where all you have to be is, dumb (yes you read that right). Team up with your buddies, pick up chits, bring out your acting chops and let the guessing game begin. And if you are too good at it, we have cool trophies waiting for you too! So put away your thinking caps and let’s come together for a nutty witty afternoon and find out who really are your best friends.",
-				"rules": [
-					"Each team should consist of 4 members.",
-					"There will be a total of 4 games happening simultaneously in 2 separate rooms.",
-					"Each game will have an assigned moderator.",
-					"Teams can choose between Hindi, English, or a combination of both languages (mutually decided upon).",
-					"Chits containing movie/TV series names will be placed in a bowl.",
-					"Teams will pick chits one by one and guess as many names as possible within a given time limit.",
-					"Rounds will proceed in a knockout manner, and the team having more number of correct guesses between the two will move on to the next round.",
-					"The exact time limit will depend on the number of teams participating and will be determined later.",
-					"8 teams will move on to the finals to be held on Day 2.",
-					"Each game in the finals will also have an assigned moderator and will consist of knockout rounds",
-					"Teams can again choose their preferred language (Hindi, English, or both).",
-					"Each game on the second day will consist of multiple rounds with twists.",
-					"Remember, the moderator’s word is final, and let the guessing game begin!"
-				],
-				"registrationFee": "Nil",
-				"Awards": "Trophies for the Champions.",
-				"coordinators": [
-					{ "name": "Samriddhi Mukhopadhyay", "num": "8017849961" },
-					{ "name": "Nafis Adnan Mondal", "num": "9143611854" }
-				],
-				"register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
-				"img": "/assets/imgs/events/images/dumb.webp"
-			},
-			{
-				"time": "12:00 PM - 3:00 PM",
-				"eventName": "Solo Synergy",
-				"club": "Reflexobeta",
-				"venue": "I-Hall",
-				"desc": "Step into the spotlight and let your passion shine! 💃✨ <br/><br/> Excited to announce 'Solo Synergy', the solo dance competition presented by ReflexoBeta at IIEST Shibpur’s REBECA! 🎉 <br/><br/> Calling all solo dancers to showcase their talent, creativity, and style on stage. Get ready to dazzle and leave your mark! 🔥 <br/><br/> #SoloSynergy #DanceCompetition #IIESTShibpur #Rebeca #ReflexoBeta",
-				"coordinators": [
-					{ "name": "Rajashree Banerjee", "num": "9007816396" },
-					{ "name": "Bhumika Verma", "num": "8104072505" },
-					{ "name": "Nabanita Das", "num": "8370896353" },
-					{ "name": "Patta Jagadeeswari", "num": "8919181698" }
-				],
-				"Awards": "Winners and runners-up of classical and western will receive prize with certificate. Prize worth Rs. 5000/- for classical and western each",
-				"register": "https://forms.gle/QURMTkDpCXJfXATN8",
-				"registrationFee": "Rs. 50",
-				"img": "/assets/imgs/events/images/solosynergy.webp"
-			},
-			{
-				"time": "3:00 PM - 6:00 PM",
-				"eventName": "Sync Showcase",
-				"club": "Reflexobeta",
-				"venue": "I-Hall",
-				"desc": "Get ready to experience the epitome of dance artistry at IIEST Shibpur's REBECA! SYNC SHOWCASE, hosted by ReflexoBeta, promises an electrifying spectacle of rhythm and movement like never before. From mesmerizing choreography to captivating formations, this group dance competition is set to ignite the stage with boundless energy and creativity. <br/><br/> Don't miss this chance to witness the fusion of passion, talent, and sheer dedication to the art of dance. Mark your calendars and be part of the excitement! <br/><br/> #SyncShowcase #ReflexoBeta #IIESTShibpur #Rebeca",
-				"coordinators": [
-					{ "name": "Sahil Nikam", "num": "7498605149" },
-					{ "name": "Uma Shaw", "num": "9831494351" },
-					{ "name": "Rajneesh Pathak", "num": "6388835788" },
-					{ "name": "Rohit Mandal", "num": "7809756811" }
-				],
-				"Awards": "Winners and runners-up of classical and western will receive prize with certificate. Prize worth Rs. 5000/- for classical and western each",
-				"register": "https://forms.gle/Zy6FKfNYq8pdesXB6",
-				"registrationFee": "Rs. 50",
-				"img": "/assets/imgs/events/images/syncshowcase.webp"
-			},
+            {
+                "time": "7:30 PM - onwards",
+                "eventName": "The BEings Night",
+                "club": [],
+                "venue": "Lord's",
+                "desc": "The evening will come alive as the BEings take the center stage by storm with their electrifying performances and ignite the atmosphere with their talent and creativity. Don't forget to cheer your hearts out for your best friends as they spew fire across the stage and make the night a celebration of the incredible talent amongst us",
 
-			{
-				"time": "2:00 PM - 6:00 PM",
-				"eventName": "Rebequiz",
-				"club": "Quizmaniac BEings",
-				"venue": "Alumni Seminar Hall",
-				"desc": "As per the latest reports of the Indian Meteorological Department, the temperature’s about to rise as trivia titans lock horns at Quizmaniac BEings' REBEQUIZ, an U-26 MELAS QUIZ, at India’s oldest cultural fest, IIEST Shibpur’s REBECA. Assemble your buddies and get ready to get on this roller-coaster as we go about testing your quiz whizz at <b> Music, Entertainment, Literature, Arts and Sports </b> . And it’s okay if you miss the gold, you walk back home a thousand stories old. So it’s a win-win anyways. <br/><br/> So, save the date and come join us at REBECA’s trivia fiesta and we guarantee you the quizzing experience of a lifetime! ",
-				"rules": [
-					"The age of the participants in the quiz must not exceed twenty-six.",
-					"Participants are allowed to sit for the quiz in teams of upto three members.",
-					"There is a registration fee of Rs 75 per team for teams comprising participants who are not from IIEST Shibpur. For teams made up of IIEST students, there is no registration fee.",
-					"The theme of the quiz is MELAS - Music, Entertainment, Literature, Arts and Sports. The questions in the quiz will be from these domains.",
-					"The quiz will consist of two rounds - a preliminary round and a final round. Only the top eight teams from the preliminary round will advance to the final round.",
-					"In any other issue/query during the quiz, the decision of the Quiz Master shall be binding and final."
-				],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"Awards": "INR 6000",
-				"judges": ["QM Saswata Acharya"],
-				"coordinators": [
-					{
-						"name": "Anubhab",
-						"num": "8017082887"
-					},
-					{
-						"name": "Pranjal",
-						"num": "8584872568"
-					}
-				],
-				"register": "https://forms.gle/womjARWtRH2bi5QL7",
-				"img": "/assets/imgs/events/images/rebequiz.webp"
-			},
-			{
-				"desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
-				"rules": [
-					"The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
-					"The groups/fixture will be decided totally on lottery basis.",
-					"Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
-					"A valid college ID must be carried by every player.",
-					"The field referee's decision prevails. There will be no room for disagreement with the referee.",
-					"If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
-					"Each half will consist of 10 minutes with a 2-minute break between both halves.",
-					"Matches will be played 7-a side with 3 substitutions.",
-					"Rolling substitutions are allowed at any point of the game.",
-					"The winning team will proceed to the next round.",
-					"The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
-					"All penalties must be one step penalties",
-					"A player is allowed to play for one team only.",
-					"All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
-					"Futsal rules will be applicable and will be strictly followed during every match.",
-					"The squad may be disqualified outright if any player engages in unsporting behavior",
-					"Prizes will be awarded to the winners and runners."
-				],
+                "artists": ["tbd", "tbd", "tbd", "tbd"],
+                "judges": ["tbd", "tbd", "tbd", "tbd"],
+                "url": "/events/ashtami",
+                "img": "/assets/imgs/events/images/beingsnight.webp"
+            }
+        ]
+    },
+    "navami": {
+        "majorEvents": [0, 3, 6],
+        "eventList": [
+            {
+                "time": "11:00 AM - 6:00 PM",
+                "eventName": "GMUN",
+                "club": "Debsoc",
+                "venue": "ASH(opening till 2pm) + 4 Rooms(SnT)",
+                "desc": "Step onto the global stage! Model United Nations comming soon to IIEST Shibpur Fest. Dive into diplomacy, debate, and world affairs. Unleash your leadership potential and shape the future. Stay tuned for dates and details!",
+                "rules": [],
+                "rulesLink": "https://drive.google.com/file/d/133B3t3Fy-AZLMS-KihRgK90XJwZbYqZD/view?usp=drive_link",
+                "register": "https://forms.gle/hx1q8mPqrQPfgavS8",
+                "coordinators": [
+                    { "name": "Ritik Pratap Singh", "num": "8949491506" },
+                    { "name": "Sadhan Das", "num": "7827304221" }
+                ],
+                "img": "/assets/imgs/events/images/gmun.webp"
+            },
+            {
+                "time": "12:00 PM - 2:00 PM",
+                "eventName": "Dumb Charades League",
+                "club": "Litsoc",
+                "venue": "Gallery 3 (AE&AM Dept.)",
+                "poster": "./assets/events/posters/dumbcharades.webp",
+                "desc": "Tired of events that need you to solve circuits, know DSA and attend seminars? Well, it’s time to give your brain cells a rest because LitSoc-IIESTS presents to you a Dumb Charades League, where all you have to be is, dumb (yes you read that right). Team up with your buddies, pick up chits, bring out your acting chops and let the guessing game begin. And if you are too good at it, we have cool trophies waiting for you too! So put away your thinking caps and let’s come together for a nutty witty afternoon and find out who really are your best friends.",
+                "rules": [
+                    "Each team should consist of 4 members.",
+                    "There will be a total of 4 games happening simultaneously in 2 separate rooms.",
+                    "Each game will have an assigned moderator.",
+                    "Teams can choose between Hindi, English, or a combination of both languages (mutually decided upon).",
+                    "Chits containing movie/TV series names will be placed in a bowl.",
+                    "Teams will pick chits one by one and guess as many names as possible within a given time limit.",
+                    "Rounds will proceed in a knockout manner, and the team having more number of correct guesses between the two will move on to the next round.",
+                    "The exact time limit will depend on the number of teams participating and will be determined later.",
+                    "8 teams will move on to the finals to be held on Day 2.",
+                    "Each game in the finals will also have an assigned moderator and will consist of knockout rounds",
+                    "Teams can again choose their preferred language (Hindi, English, or both).",
+                    "Each game on the second day will consist of multiple rounds with twists.",
+                    "Remember, the moderator’s word is final, and let the guessing game begin!"
+                ],
+                "registrationFee": "Nil",
+                "Awards": "Trophies for the Champions.",
+                "coordinators": [
+                    { "name": "Samriddhi Mukhopadhyay", "num": "8017849961" },
+                    { "name": "Nafis Adnan Mondal", "num": "9143611854" }
+                ],
+                "register": " https://forms.gle/Cow7ZXj4nMwtyqiB8",
+                "img": "/assets/imgs/events/images/dumb.webp"
+            },
+            {
+                "time": "12:00 PM - 3:00 PM",
+                "eventName": "Solo Synergy",
+                "club": "Reflexobeta",
+                "venue": "I-Hall",
+                "desc": "Step into the spotlight and let your passion shine! 💃✨ <br/><br/> Excited to announce 'Solo Synergy', the solo dance competition presented by ReflexoBeta at IIEST Shibpur’s REBECA! 🎉 <br/><br/> Calling all solo dancers to showcase their talent, creativity, and style on stage. Get ready to dazzle and leave your mark! 🔥 <br/><br/> #SoloSynergy #DanceCompetition #IIESTShibpur #Rebeca #ReflexoBeta",
+                "coordinators": [
+                    { "name": "Rajashree Banerjee", "num": "9007816396" },
+                    { "name": "Bhumika Verma", "num": "8104072505" },
+                    { "name": "Nabanita Das", "num": "8370896353" },
+                    { "name": "Patta Jagadeeswari", "num": "8919181698" }
+                ],
+                "Awards": "Winners and runners-up of classical and western will receive prize with certificate. Prize worth Rs. 5000/- for classical and western each",
+                "register": "https://forms.gle/QURMTkDpCXJfXATN8",
+                "registrationFee": "Rs. 50",
+                "img": "/assets/imgs/events/images/solosynergy.webp"
+            },
+            {
+                "time": "3:00 PM - 6:00 PM",
+                "eventName": "Sync Showcase",
+                "club": "Reflexobeta",
+                "venue": "I-Hall",
+                "desc": "Get ready to experience the epitome of dance artistry at IIEST Shibpur's REBECA! SYNC SHOWCASE, hosted by ReflexoBeta, promises an electrifying spectacle of rhythm and movement like never before. From mesmerizing choreography to captivating formations, this group dance competition is set to ignite the stage with boundless energy and creativity. <br/><br/> Don't miss this chance to witness the fusion of passion, talent, and sheer dedication to the art of dance. Mark your calendars and be part of the excitement! <br/><br/> #SyncShowcase #ReflexoBeta #IIESTShibpur #Rebeca",
+                "coordinators": [
+                    { "name": "Sahil Nikam", "num": "7498605149" },
+                    { "name": "Uma Shaw", "num": "9831494351" },
+                    { "name": "Rajneesh Pathak", "num": "6388835788" },
+                    { "name": "Rohit Mandal", "num": "7809756811" }
+                ],
+                "Awards": "Winners and runners-up of classical and western will receive prize with certificate. Prize worth Rs. 5000/- for classical and western each",
+                "register": "https://forms.gle/Zy6FKfNYq8pdesXB6",
+                "registrationFee": "Rs. 50",
+                "img": "/assets/imgs/events/images/syncshowcase.webp"
+            },
 
-				"time": "3:00 PM - 6:00 PM",
-				"eventName": "Rebecsal",
-				"club": "Sports Club",
-				"venue": "Oval",
-				"coordinators": [
-					{ "name": "Indravo Ghosh", "num": "+91 8902010310" },
-					{ "name": "Anirban Mazumder", "num": "+91 8436274951" },
-					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
-				],
-				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
-				"img": "/assets/imgs/events/images/rebescal.webp"
-			},
-			{
-				"time": "3:30 PM - 6:00 PM",
-				"eventName": "Ink your tee",
-				"tagline": "Spoil your tees to look cool !",
-				"club": "SCAGE",
-				"venue": "Boxing Ring",
-				"desc": "Society for Creative Arts and Green Environment at 83rd edition of REBECA is thrilled to present Ink Tee, a t-shirt painting event that promises to bring out the artist in you. Join us for a day filled with vibrant colors, artistic expression, and endless fun. Bring your old plain tees and let your imagination run wild as together we transform them into personalized masterpieces! There are endless possibilities ranging from strong brush strokes to delicate designs. Don't worry about supplies - we've got everything you need to bring your design to life! Just bring your enthusiasm and get ready for an unforgettable experience.",
-				"rules": [
-					"One round collar white t-shirt will be provided to each team.",
-					"It will be appreciated if you bring your own stationery like fabric colors, brushes , or whatever else you wish to use.",
-					"No restriction on the theme of painting.",
-					"No extra t-shirt will be provided if it gets spoiled.",
-					"Taking reference from external sources during the competition is not allowed.",
-					"They have to complete the painting within 1.5 hrs.",
-					"Evaluation will be done on spot.",
-					"Pre-registrations are highly appreciated.",
-					"Team size - 2 to 3 people"
-				],
-				"coordinators": [
-					{ "name": "Twameka Sinha", "num": "9674471400" },
-					{ "name": "Krishnendu Mondal", "num": "6296883037" }
-				],
-				"register": "https://docs.google.com/forms/d/e/1FAIpQLSe7pEHMJYDOWxE0FsHX84AhZEL5cOejZSGjKp5_QDJveCRyhg/viewform?usp=pp_url",
-				"img": "/assets/imgs/events/images/ink_your_tee.webp"
-			},
-			{
-				"time": "4:00 PM - 6:00 PM",
-				"eventName": "Nukkad",
-				"club": "Les Thespians",
-				"venue": "Netaji Bhavan",
-				"desc": "Attention all thespians and social justice warriors! Les Thespians is proud to present the Street Play (Nukkad) Competition, happening on the night of Rebeca's grand Cultural Night! We're searching for energetic teams to use their creativity for a worthy cause.",
-				"rules": [
-					"Theme: Social Impact - Nukkad plays should deliver a powerful social message that ignites a spark in the audience.",
-					"Time Crunch: 15 Minutes Max - Keep your performance short, sweet, and impactful.",
-					"Team Spirit: 8 Members Maximum - Collaboration is the key to success!",
-					"Content Watchdogs: Clean & Respectful: Maintain a performance free of vulgarity.",
-					"Content Watchdogs: Social Issues Only: Focus on social concerns, no obscenity."
-				],
-				"coordinators": [
-					{ "name": "Aman Tiwari", "num": "73638 01645" },
-					{ "name": "Divyanshu Shekhar", "num": "99057 92868" }
-				],
-				"register": "https://forms.gle/5rhDhzSBn8PUyiNWA",
-				"img": "/assets/imgs/events/images/nukkad.webp"
-			},
-			{
-				"time": "5:30 PM - 8:30 PM",
-				"eventName": "Rockbuzz",
-				"club": "Euphony",
-				"venue": "Lord's",
-				"desc": "Euphony brings together the most powerful college bands all over the nation in this fierce battle. Let great music reign over the war of bands!",
-				"rules": [
-					"Prelims will be conducted online.",
-					"Participants must submit a video of a song being performed by their band, it can be a cover song or can be an original song.",
-					"Video length should not be more than 7 minutes.",
-					"Maximum number of members in a band can be 8, minimum is 3.",
-					"One submission per band, and it should be one song only.",
-					"Using plugins is allowed, but any kind of backing track is not allowed.",
-					"You don't necessarily need to perform the same song on the live stage of REBECA.",
-					"Last date of submission 12 April, 2023, 11:59 PM. Submission form available on website.",
+            {
+                "time": "2:00 PM - 6:00 PM",
+                "eventName": "Rebequiz",
+                "club": "Quizmaniac BEings",
+                "venue": "Alumni Seminar Hall",
+                "desc": "As per the latest reports of the Indian Meteorological Department, the temperature’s about to rise as trivia titans lock horns at Quizmaniac BEings' REBEQUIZ, an U-26 MELAS QUIZ, at India’s oldest cultural fest, IIEST Shibpur’s REBECA. Assemble your buddies and get ready to get on this roller-coaster as we go about testing your quiz whizz at <b> Music, Entertainment, Literature, Arts and Sports </b> . And it’s okay if you miss the gold, you walk back home a thousand stories old. So it’s a win-win anyways. <br/><br/> So, save the date and come join us at REBECA’s trivia fiesta and we guarantee you the quizzing experience of a lifetime! ",
+                "rules": [
+                    "The age of the participants in the quiz must not exceed twenty-six.",
+                    "Participants are allowed to sit for the quiz in teams of upto three members.",
+                    "There is a registration fee of Rs 75 per team for teams comprising participants who are not from IIEST Shibpur. For teams made up of IIEST students, there is no registration fee.",
+                    "The theme of the quiz is MELAS - Music, Entertainment, Literature, Arts and Sports. The questions in the quiz will be from these domains.",
+                    "The quiz will consist of two rounds - a preliminary round and a final round. Only the top eight teams from the preliminary round will advance to the final round.",
+                    "In any other issue/query during the quiz, the decision of the Quiz Master shall be binding and final."
+                ],
+                "artists": ["tbd", "tbd", "tbd", "tbd"],
+                "Awards": "INR 6000",
+                "judges": ["QM Saswata Acharya"],
+                "coordinators": [
+                    {
+                        "name": "Anubhab",
+                        "num": "8017082887"
+                    },
+                    {
+                        "name": "Pranjal",
+                        "num": "8584872568"
+                    }
+                ],
+                "register": "https://forms.gle/womjARWtRH2bi5QL7",
+                "img": "/assets/imgs/events/images/rebequiz.webp"
+            },
+            {
+                "desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
+                "rules": [
+                    "The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
+                    "The groups/fixture will be decided totally on lottery basis.",
+                    "Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
+                    "A valid college ID must be carried by every player.",
+                    "The field referee's decision prevails. There will be no room for disagreement with the referee.",
+                    "If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
+                    "Each half will consist of 10 minutes with a 2-minute break between both halves.",
+                    "Matches will be played 7-a side with 3 substitutions.",
+                    "Rolling substitutions are allowed at any point of the game.",
+                    "The winning team will proceed to the next round.",
+                    "The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
+                    "All penalties must be one step penalties",
+                    "A player is allowed to play for one team only.",
+                    "All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
+                    "Futsal rules will be applicable and will be strictly followed during every match.",
+                    "The squad may be disqualified outright if any player engages in unsporting behavior",
+                    "Prizes will be awarded to the winners and runners."
+                ],
 
-					"10 teams will qualify for the final round to perform live on stage of REBECA. (Not necessarily the same song has to be performed).",
-					"Choice of Song: Can be a cover or an original song.",
-					"Using plugins is allowed.",
-					"Any kind of backing track is not allowed.",
-					"Only one song per band.",
-					"Maximum number of members allowed per band 8, minimum 3.",
-					"Only a standard 6-piece drum set will be provided. Participants need to bring their own instruments.",
-					"A slot of 15 minutes will be allocated to each band including sound check",
-					"Judging Criteria: Accuracy, Dynamics, Stage Presence, Proficiency, Arrangement",
-					"The decision of organizers in any stage is final and binding.",
-					"Final technical supplies will be informed later."
-				],
-				"register": "https://forms.gle/fhV9DvH2EC8PNk5N9",
-				"registrationFee": "INR 600",
-				"coordinators": [
-					{ "name": "Soubhagya Saha", "num": "8420003678" },
-					{ "name": "Aniket Chanda", "num": "9926091967" }
-				],
-				"img": "/assets/imgs/events/images/rockbuzz.webp"
-			},
-			{
-				"time": "8:30 PM onwards",
-				"eventName": "The Kolkata Night",
-				"club": [],
-				"venue": "Lord's",
-				"desc": "Underneath the starlit sky, lose yourself in the symphony of Kolkata's soul. Come out and cheer as the legends of our beloved city rock the stage and give us an evening of musical euphoria that transcends all the boundaries of language and region making all our hearts beat as one, to the sweet rhythm of Navami.",
-				"rules": [],
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"url": "/events/navami",
-				"img": "/assets/imgs/events/images/kolkatanight.webp"
-			}
-		]
-	},
-	"dashami": {
-		"majorEvents": [0, 3, 6],
-		"eventList": [
-			{
-				"time": "10:00 AM - 2:00 PM",
-				"eventName": "Business Alumni Meet",
-				"venue": "Main stage, Lords ground",
-				"desc": "Welcome to the distinguished Business-Alumni Meet 2024 at REBECA, where our esteemed alumni and industry leaders converge. The prestigious event serves as a nexus of knowledge exchange, professional development, and alumni camaraderie. Engage in thought-provoking discussions led by seasoned industry experts, cultivate lasting connections with fellow alumni and business luminaries as we provide participants with a platform for insightful dialogue, strategic networking, and personal growth. Amidst the backdrop of our revered alma mater, attendees will have opportunity to reconnect with cherished memories while stewarding the institute's legacy. Join us as we honour our shared heritage, celebrate achievements, and chart a course for continued success. The Business-Alumni Meet 2024 awaits your esteemed presence.",
-				"img": "/assets/imgs/events/images/businessalumnimeet.webp",
-				"coordinators": [
-					{ "name": "Nishan Murarka", "num": "8967758765" },
-					{ "name": "Jay Ram Abhimmanyu", "num": "7660827600" }
-				]
-			},
-			{
-				"time": "11:00 AM - 5:30 PM",
-				"eventName": "GMUN",
-				"club": "Debsoc",
-				"venue": "ASH(opening till 2pm) + 4 Rooms(SnT)",
-				"desc": "Step onto the global stage! Model United Nations comming soon to IIEST Shibpur Fest. Dive into diplomacy, debate, and world affairs. Unleash your leadership potential and shape the future. Stay tuned for dates and details!",
-				"rules": [],
-				"rulesLink": "https://drive.google.com/file/d/133B3t3Fy-AZLMS-KihRgK90XJwZbYqZD/view?usp=drive_link",
-				"register": "https://forms.gle/hx1q8mPqrQPfgavS8",
-				"coordinators": [
-					{ "name": "Ritik Pratap Singh", "num": "8949491506" },
-					{ "name": "Sadhan Das", "num": "7827304221" }
-				],
-				"img": "/assets/imgs/events/images/gmun.webp"
-			},
-			{
-				"time": "11:00 AM - 1:30 PM",
-				"eventName": "Verse Wars",
-				"club": "Litsoc",
-				"venue": "Institute Hall",
-				"poster": "./assets/events/posters/versewars.webp",
-				"desc": "Attention all wordsmiths and poetry enthusiasts! Get ready to unleash your creativity and witness the electrifying showdown at VERSE WARS (Slam Poetry Competition) on 21st April. Whether you're a seasoned poet or just dipping your toes in verse, this is your moment to shine. Bring your A-game, share your soulful verses, and compete for thrilling prizes totalling Rs. 3000. Spread the word, rally your friends, and let's make this event one for the books!",
-				"rules": [
-					"Poems must be original.",
-					"Each poem should be a maximum of 3 + 1 minutes. There is no minimum time. Shorter performances will not be penalized.",
-					"Poems should not contain offensive remarks to any religion, political party or any section of people. Refrain from triggering controversy via the poems being performed.",
-					"Recite poems from memory or read from the page.",
-					"Team pieces (more than one performer) are fine. The poem being performed must still be an original and the author (one performer) must still be at the center of the performance.",
-					"Poets are encouraged to perform in any language to their suiting. However, a transcript in English has to be provided.",
-					"All styles are welcomed and encouraged: a capella hip-hop, theatrical monologues, literary poetry, sound poetry, dub poetry, rants, haikus, power raps, etc. ",
-					"The delivery of the piece is just as important as the content of the poem. Use your voice and your whole body to perform!"
-				],
+                "time": "3:00 PM - 6:00 PM",
+                "eventName": "Rebecsal",
+                "club": "Sports Club",
+                "venue": "Oval",
+                "coordinators": [
+                    { "name": "Indravo Ghosh", "num": "+91 8902010310" },
+                    { "name": "Anirban Mazumder", "num": "+91 8436274951" },
+                    { "name": "Dipak Marndi", "num": "+91 90735 27607" }
+                ],
+                "register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
+                "img": "/assets/imgs/events/images/rebescal.webp"
+            },
+            {
+                "time": "3:30 PM - 6:00 PM",
+                "eventName": "Ink your tee",
+                "tagline": "Spoil your tees to look cool !",
+                "club": "SCAGE",
+                "venue": "Boxing Ring",
+                "desc": "Society for Creative Arts and Green Environment at 84th edition of REBECA is thrilled to present Ink Tee, a t-shirt painting event that promises to bring out the artist in you. Join us for a day filled with vibrant colors, artistic expression, and endless fun. Bring your old plain tees and let your imagination run wild as together we transform them into personalized masterpieces! There are endless possibilities ranging from strong brush strokes to delicate designs. Don't worry about supplies - we've got everything you need to bring your design to life! Just bring your enthusiasm and get ready for an unforgettable experience.",
+                "rules": [
+                    "One round collar white t-shirt will be provided to each team.",
+                    "It will be appreciated if you bring your own stationery like fabric colors, brushes , or whatever else you wish to use.",
+                    "No restriction on the theme of painting.",
+                    "No extra t-shirt will be provided if it gets spoiled.",
+                    "Taking reference from external sources during the competition is not allowed.",
+                    "They have to complete the painting within 1.5 hrs.",
+                    "Evaluation will be done on spot.",
+                    "Pre-registrations are highly appreciated.",
+                    "Team size - 2 to 3 people"
+                ],
+                "coordinators": [
+                    { "name": "Twameka Sinha", "num": "9674471400" },
+                    { "name": "Krishnendu Mondal", "num": "6296883037" }
+                ],
+                "register": "https://docs.google.com/forms/d/e/1FAIpQLSe7pEHMJYDOWxE0FsHX84AhZEL5cOejZSGjKp5_QDJveCRyhg/viewform?usp=pp_url",
+                "img": "/assets/imgs/events/images/ink_your_tee.webp"
+            },
+            {
+                "time": "4:00 PM - 6:00 PM",
+                "eventName": "Nukkad",
+                "club": "Les Thespians",
+                "venue": "Netaji Bhavan",
+                "desc": "Attention all thespians and social justice warriors! Les Thespians is proud to present the Street Play (Nukkad) Competition, happening on the night of Rebeca's grand Cultural Night! We're searching for energetic teams to use their creativity for a worthy cause.",
+                "rules": [
+                    "Theme: Social Impact - Nukkad plays should deliver a powerful social message that ignites a spark in the audience.",
+                    "Time Crunch: 15 Minutes Max - Keep your performance short, sweet, and impactful.",
+                    "Team Spirit: 8 Members Maximum - Collaboration is the key to success!",
+                    "Content Watchdogs: Clean & Respectful: Maintain a performance free of vulgarity.",
+                    "Content Watchdogs: Social Issues Only: Focus on social concerns, no obscenity."
+                ],
+                "coordinators": [
+                    { "name": "Aman Tiwari", "num": "73638 01645" },
+                    { "name": "Divyanshu Shekhar", "num": "99057 92868" }
+                ],
+                "register": "https://forms.gle/5rhDhzSBn8PUyiNWA",
+                "img": "/assets/imgs/events/images/nukkad.webp"
+            },
+            {
+                "time": "5:30 PM - 8:30 PM",
+                "eventName": "Rockbuzz",
+                "club": "Euphony",
+                "venue": "Lord's",
+                "desc": "Euphony brings together the most powerful college bands all over the nation in this fierce battle. Let great music reign over the war of bands!",
+                "rules": [
+                    "Prelims will be conducted online.",
+                    "Participants must submit a video of a song being performed by their band, it can be a cover song or can be an original song.",
+                    "Video length should not be more than 7 minutes.",
+                    "Maximum number of members in a band can be 8, minimum is 3.",
+                    "One submission per band, and it should be one song only.",
+                    "Using plugins is allowed, but any kind of backing track is not allowed.",
+                    "You don't necessarily need to perform the same song on the live stage of REBECA.",
+                    "Last date of submission 12 April, 2023, 11:59 PM. Submission form available on website.",
 
-				"judges": ["Ms. Chaiti Nath"],
-				"registrationFee": "Rs. 50",
-				"Awards": "Prizes Worth Rs. 5k",
-				"coordinators": [
-					{ "name": "Sanghamitra De", "num": "8961774885" },
-					{ "name": "Madhushree Shaw", "num": "9330062005" }
-				],
-				"register": "https://forms.gle/q8L61eApSUA4gcAt6",
-				"img": "/assets/imgs/events/images/versewars.webp"
-			},
-			{
-				"time": "2:00 PM - 6:00 PM",
-				"eventName": "Flying Solo",
-				"club": "Euphony",
-				"venue": "I-Hall",
-				"desc": "If your voice is your biggest tool to express yourself through the magic of music, your place is at Flying Solo, Euphony's music competition for solo artists! <br/><br/> Categories: Vocal, Instrumental, Rap.",
-				"rules": [],
-				"rulesLink": "link: https://drive.google.com/drive/folders/1SsgAvNX8Gqy7tPeNmhQyPQryDoWGvuME",
-				"register": "https://forms.gle/64A6RKKLFDyQZFZv9",
-				"registrationFee": "INR 100 (for Non-IIEST students only)",
-				"coordinators": [
-					{ "name": "Tenzin Sherab Moktan", "num": "9832467274" },
-					{ "name": "Triparna Saha", "num": "9969643725" }
-				],
-				"img": "/assets/imgs/events/images/flyingsolo.webp"
-			},
+                    "10 teams will qualify for the final round to perform live on stage of REBECA. (Not necessarily the same song has to be performed).",
+                    "Choice of Song: Can be a cover or an original song.",
+                    "Using plugins is allowed.",
+                    "Any kind of backing track is not allowed.",
+                    "Only one song per band.",
+                    "Maximum number of members allowed per band 8, minimum 3.",
+                    "Only a standard 6-piece drum set will be provided. Participants need to bring their own instruments.",
+                    "A slot of 15 minutes will be allocated to each band including sound check",
+                    "Judging Criteria: Accuracy, Dynamics, Stage Presence, Proficiency, Arrangement",
+                    "The decision of organizers in any stage is final and binding.",
+                    "Final technical supplies will be informed later."
+                ],
+                "register": "https://forms.gle/fhV9DvH2EC8PNk5N9",
+                "registrationFee": "INR 600",
+                "coordinators": [
+                    { "name": "Soubhagya Saha", "num": "8420003678" },
+                    { "name": "Aniket Chanda", "num": "9926091967" }
+                ],
+                "img": "/assets/imgs/events/images/rockbuzz.webp"
+            },
+            {
+                "time": "8:30 PM onwards",
+                "eventName": "The Kolkata Night",
+                "club": [],
+                "venue": "Lord's",
+                "desc": "Underneath the starlit sky, lose yourself in the symphony of Kolkata's soul. Come out and cheer as the legends of our beloved city rock the stage and give us an evening of musical euphoria that transcends all the boundaries of language and region making all our hearts beat as one, to the sweet rhythm of Navami.",
+                "rules": [],
+                "artists": ["tbd", "tbd", "tbd", "tbd"],
+                "url": "/events/navami",
+                "img": "/assets/imgs/events/images/kolkatanight.webp"
+            }
+        ]
+    },
+    "dashami": {
+        "majorEvents": [0, 3, 6],
+        "eventList": [
+            {
+                "time": "10:00 AM - 2:00 PM",
+                "eventName": "Business Alumni Meet",
+                "venue": "Main stage, Lords ground",
+                "desc": "Welcome to the distinguished Business-Alumni Meet 2024 at REBECA, where our esteemed alumni and industry leaders converge. The prestigious event serves as a nexus of knowledge exchange, professional development, and alumni camaraderie. Engage in thought-provoking discussions led by seasoned industry experts, cultivate lasting connections with fellow alumni and business luminaries as we provide participants with a platform for insightful dialogue, strategic networking, and personal growth. Amidst the backdrop of our revered alma mater, attendees will have opportunity to reconnect with cherished memories while stewarding the institute's legacy. Join us as we honour our shared heritage, celebrate achievements, and chart a course for continued success. The Business-Alumni Meet 2024 awaits your esteemed presence.",
+                "img": "/assets/imgs/events/images/businessalumnimeet.webp",
+                "coordinators": [
+                    { "name": "Nishan Murarka", "num": "8967758765" },
+                    { "name": "Jay Ram Abhimmanyu", "num": "7660827600" }
+                ]
+            },
+            {
+                "time": "11:00 AM - 5:30 PM",
+                "eventName": "GMUN",
+                "club": "Debsoc",
+                "venue": "ASH(opening till 2pm) + 4 Rooms(SnT)",
+                "desc": "Step onto the global stage! Model United Nations comming soon to IIEST Shibpur Fest. Dive into diplomacy, debate, and world affairs. Unleash your leadership potential and shape the future. Stay tuned for dates and details!",
+                "rules": [],
+                "rulesLink": "https://drive.google.com/file/d/133B3t3Fy-AZLMS-KihRgK90XJwZbYqZD/view?usp=drive_link",
+                "register": "https://forms.gle/hx1q8mPqrQPfgavS8",
+                "coordinators": [
+                    { "name": "Ritik Pratap Singh", "num": "8949491506" },
+                    { "name": "Sadhan Das", "num": "7827304221" }
+                ],
+                "img": "/assets/imgs/events/images/gmun.webp"
+            },
+            {
+                "time": "11:00 AM - 1:30 PM",
+                "eventName": "Verse Wars",
+                "club": "Litsoc",
+                "venue": "Institute Hall",
+                "poster": "./assets/events/posters/versewars.webp",
+                "desc": "Attention all wordsmiths and poetry enthusiasts! Get ready to unleash your creativity and witness the electrifying showdown at VERSE WARS (Slam Poetry Competition) on 21st April. Whether you're a seasoned poet or just dipping your toes in verse, this is your moment to shine. Bring your A-game, share your soulful verses, and compete for thrilling prizes totalling Rs. 3000. Spread the word, rally your friends, and let's make this event one for the books!",
+                "rules": [
+                    "Poems must be original.",
+                    "Each poem should be a maximum of 3 + 1 minutes. There is no minimum time. Shorter performances will not be penalized.",
+                    "Poems should not contain offensive remarks to any religion, political party or any section of people. Refrain from triggering controversy via the poems being performed.",
+                    "Recite poems from memory or read from the page.",
+                    "Team pieces (more than one performer) are fine. The poem being performed must still be an original and the author (one performer) must still be at the center of the performance.",
+                    "Poets are encouraged to perform in any language to their suiting. However, a transcript in English has to be provided.",
+                    "All styles are welcomed and encouraged: a capella hip-hop, theatrical monologues, literary poetry, sound poetry, dub poetry, rants, haikus, power raps, etc. ",
+                    "The delivery of the piece is just as important as the content of the poem. Use your voice and your whole body to perform!"
+                ],
 
-			{
-				"desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
-				"rules": [
-					"The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
-					"The groups/fixture will be decided totally on lottery basis.",
-					"Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
-					"A valid college ID must be carried by every player.",
-					"The field referee's decision prevails. There will be no room for disagreement with the referee.",
-					"If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
-					"Each half will consist of 10 minutes with a 2-minute break between both halves.",
-					"Matches will be played 7-a side with 3 substitutions.",
-					"Rolling substitutions are allowed at any point of the game.",
-					"The winning team will proceed to the next round.",
-					"The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
-					"All penalties must be one step penalties",
-					"A player is allowed to play for one team only.",
-					"All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
-					"Futsal rules will be applicable and will be strictly followed during every match.",
-					"The squad may be disqualified outright if any player engages in unsporting behavior",
-					"Prizes will be awarded to the winners and runners."
-				],
+                "judges": ["Ms. Chaiti Nath"],
+                "registrationFee": "Rs. 50",
+                "Awards": "Prizes Worth Rs. 5k",
+                "coordinators": [
+                    { "name": "Sanghamitra De", "num": "8961774885" },
+                    { "name": "Madhushree Shaw", "num": "9330062005" }
+                ],
+                "register": "https://forms.gle/q8L61eApSUA4gcAt6",
+                "img": "/assets/imgs/events/images/versewars.webp"
+            },
+            {
+                "time": "2:00 PM - 6:00 PM",
+                "eventName": "Flying Solo",
+                "club": "Euphony",
+                "venue": "I-Hall",
+                "desc": "If your voice is your biggest tool to express yourself through the magic of music, your place is at Flying Solo, Euphony's music competition for solo artists! <br/><br/> Categories: Vocal, Instrumental, Rap.",
+                "rules": [],
+                "rulesLink": "link: https://drive.google.com/drive/folders/1SsgAvNX8Gqy7tPeNmhQyPQryDoWGvuME",
+                "register": "https://forms.gle/64A6RKKLFDyQZFZv9",
+                "registrationFee": "INR 100 (for Non-IIEST students only)",
+                "coordinators": [
+                    { "name": "Tenzin Sherab Moktan", "num": "9832467274" },
+                    { "name": "Triparna Saha", "num": "9969643725" }
+                ],
+                "img": "/assets/imgs/events/images/flyingsolo.webp"
+            },
 
-				"time": "3:00 PM - 6:00 PM",
-				"eventName": "Rebecsal",
-				"club": "Sports Club",
-				"venue": "Oval",
-				"coordinators": [
-					{ "name": "Indravo Ghosh", "num": "+91 8902010310" },
-					{ "name": "Anirban Mazumder", "num": "+91 8436274951" },
-					{ "name": "Dipak Marndi", "num": "+91 90735 27607" }
-				],
-				"register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
-				"img": "/assets/imgs/events/images/rebescal.webp"
-			},
-			{
-				"time": "4:00 PM - 6:00 PM",
-				"eventName": "Footloose",
-				"club": "Reflexobeta",
-				"venue": "Netaji Bhavan",
-				"desc": "Are you ready to unleash your inner dancer? <br/><br/> 🔥Introducing FOOTLOOSE - the ultimate cypher dance competition brought to you by ReflexoBeta at IIEST Shibpur's Rebeca! <br/><br/> 💃🎉 Prepare to set the stage on fire with your killer moves, flawless footwork, and unbeatable energy! 💥 Whether you're a solo sensation or part of a dynamic duo, this is your chance to shine in the spotlight and leave the audience awestruck! <br/><br/> 🌟 #FootlooseSypher #ReflexoBeta #IIESTShibpur #RebecaAnnualCulturalFest #DanceCompetition",
-				"rules": [],
-				"rulesLink": "https://drive.google.com/drive/folders/134jNYBILDvUwnaKZeUUb71lPVs3TdHqK",
-				"artists": ["tbd", "tbd", "tbd", "tbd"],
-				"register": "https://forms.gle/xJ7CLNKAjajAzC3C9",
-				"coordinators": [
-					{ "name": "Rajneesh Pathak", "num": "6388835788" }
-				],
-				"registrationFee": "Rs. 150",
-				"Awards": "Winners and runners-up will receive gift hampers with certificate",
-				"img": "/assets/imgs/events/images/footloose.webp"
-			},
-			{
-				"time": "6:00 PM - 7:30 PM",
-				"eventName": "FIDUCIA",
-				
-				"venue": "Lord's",
-				"desc": "Step into elegance with Rebeca's mesmerizing fashion walk, where every stride exudes confidence and grace. From chic ensembles to timeless classics, let the runway be your guide to effortless style. Trust in the allure of FIDUCIA , where fashion meets sophistication. <br/><br/> <b> Make up & Hairstyling Partner:</b><br/>Lakme Academy",
-				
-				"img": "/assets/imgs/events/images/fiducia.webp",
-				"coordinators": [{"name": "Arushi Das", "num": "8917684258"}, {"name": "Gurusha Rahul", "num": "9452367512"}]
-			},
-			{
-				"time": "8:00 PM Onwards",
-				"eventName": "The Mumbai Night",
-				"club": [],
-				"venue": "Lord's",
-				"desc": "Take your dancing shoes out as you'll be screaming and dancing like nobody's watching to the electrifying beats of Bollywood! Join in on the infectious energy as you dance all night long in the grand finale of our festival and create a lifetime of memories that stay with you long after the night has faded into dawn.",
-				"rules": [],
-				"url": "/events/dashami",
-				"img": "/assets/imgs/events/images/mumbainight.webp"
-			}
-		]
-	}
+            {
+                "desc": "Get ready BEings to experience the adrenaline rush at REBECSAL, the futsal tournament of REBECA! Join us for an electrifying display of futsal prowess amidst the rich tapestry of cultural celebrations. Whether you're a seasoned player or a newcomer, REBECSAL promises an unforgettable experience filled with fierce competition and vibrant camaraderie. Embrace the spirit of REBECA as we come together to celebrate our passion for sports and culture. See you on the field!",
+                "rules": [
+                    "The Tournament is of League+Knockout (if number of teams registering are less than 8) format or totally knockout format (for 8+ teams registering) based on the number of teams registering within the given deadline.",
+                    "The groups/fixture will be decided totally on lottery basis.",
+                    "Each player must have a pair of joggers or football studs. Running shoes or keds are not permitted on the pitch.",
+                    "A valid college ID must be carried by every player.",
+                    "The field referee's decision prevails. There will be no room for disagreement with the referee.",
+                    "If a player receives two yellow cards in two straight games (or a straight red card in one game), he will be suspended from the next match.",
+                    "Each half will consist of 10 minutes with a 2-minute break between both halves.",
+                    "Matches will be played 7-a side with 3 substitutions.",
+                    "Rolling substitutions are allowed at any point of the game.",
+                    "The winning team will proceed to the next round.",
+                    "The match will directly go into the penalty shootout if it ends in a tie, where each team will get 3 shots, and further it will forward to sudden death.",
+                    "All penalties must be one step penalties",
+                    "A player is allowed to play for one team only.",
+                    "All teams are advised to reach the ground on time, 10 minutes of waiting time will be given, failing to do so will result in a walkover of the absent team with a 1-0 deficit.",
+                    "Futsal rules will be applicable and will be strictly followed during every match.",
+                    "The squad may be disqualified outright if any player engages in unsporting behavior",
+                    "Prizes will be awarded to the winners and runners."
+                ],
+
+                "time": "3:00 PM - 6:00 PM",
+                "eventName": "Rebecsal",
+                "club": "Sports Club",
+                "venue": "Oval",
+                "coordinators": [
+                    { "name": "Indravo Ghosh", "num": "+91 8902010310" },
+                    { "name": "Anirban Mazumder", "num": "+91 8436274951" },
+                    { "name": "Dipak Marndi", "num": "+91 90735 27607" }
+                ],
+                "register": "https://docs.google.com/forms/d/1naVAs-w2ZVyiI5zY-8JYY8MXC1DTvHhDvGP35oh-VEg/edit?usp=drive_web",
+                "img": "/assets/imgs/events/images/rebescal.webp"
+            },
+            {
+                "time": "4:00 PM - 6:00 PM",
+                "eventName": "Footloose",
+                "club": "Reflexobeta",
+                "venue": "Netaji Bhavan",
+                "desc": "Are you ready to unleash your inner dancer? <br/><br/> 🔥Introducing FOOTLOOSE - the ultimate cypher dance competition brought to you by ReflexoBeta at IIEST Shibpur's Rebeca! <br/><br/> 💃🎉 Prepare to set the stage on fire with your killer moves, flawless footwork, and unbeatable energy! 💥 Whether you're a solo sensation or part of a dynamic duo, this is your chance to shine in the spotlight and leave the audience awestruck! <br/><br/> 🌟 #FootlooseSypher #ReflexoBeta #IIESTShibpur #RebecaAnnualCulturalFest #DanceCompetition",
+                "rules": [],
+                "rulesLink": "https://drive.google.com/drive/folders/134jNYBILDvUwnaKZeUUb71lPVs3TdHqK",
+                "artists": ["tbd", "tbd", "tbd", "tbd"],
+                "register": "https://forms.gle/xJ7CLNKAjajAzC3C9",
+                "coordinators": [{ "name": "Rajneesh Pathak", "num": "6388835788" }],
+                "registrationFee": "Rs. 150",
+                "Awards": "Winners and runners-up will receive gift hampers with certificate",
+                "img": "/assets/imgs/events/images/footloose.webp"
+            },
+            {
+                "time": "6:00 PM - 7:30 PM",
+                "eventName": "FIDUCIA",
+
+                "venue": "Lord's",
+                "desc": "Step into elegance with Rebeca's mesmerizing fashion walk, where every stride exudes confidence and grace. From chic ensembles to timeless classics, let the runway be your guide to effortless style. Trust in the allure of FIDUCIA , where fashion meets sophistication. <br/><br/> <b> Make up & Hairstyling Partner:</b><br/>Lakme Academy",
+
+                "img": "/assets/imgs/events/images/fiducia.webp",
+                "coordinators": [
+                    { "name": "Arushi Das", "num": "8917684258" },
+                    { "name": "Gurusha Rahul", "num": "9452367512" }
+                ]
+            },
+            {
+                "time": "8:00 PM Onwards",
+                "eventName": "The Mumbai Night",
+                "club": [],
+                "venue": "Lord's",
+                "desc": "Take your dancing shoes out as you'll be screaming and dancing like nobody's watching to the electrifying beats of Bollywood! Join in on the infectious energy as you dance all night long in the grand finale of our festival and create a lifetime of memories that stay with you long after the night has faded into dawn.",
+                "rules": [],
+                "url": "/events/dashami",
+                "img": "/assets/imgs/events/images/mumbainight.webp"
+            }
+        ]
+    }
 }

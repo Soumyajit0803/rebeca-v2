@@ -8,32 +8,32 @@ import Button from "../../components/Button/Button";
 import { nights } from "../../App";
 import { extractTime } from "../../components/EventList/EventList";
 
-var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back with a bang!`;
+var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 84th edition of REBECA is back with a bang!`;
 
 const content = {
+    miscellaneous: {
+        name: "Pre-Events",
+        image: "/assets/imgs/Schedule/schedule-2.webp",
+        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
+    },
     saptami: {
         name: "Saptami Symphony",
-        image: "/assets/imgs/events/images/saptami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-3.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
     ashtami: {
         name: "Ashtami Aura",
-        image: "/assets/imgs/events/images/asthami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-2.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
     navami: {
         name: "Navami Nirvana",
-        image: "/assets/imgs/events/images/saptami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-3.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
     dashami: {
         name: "Dashami Dazzle",
-        image: "/assets/imgs/events/images/asthami_bg.svg",
-        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
-    },
-    miscellaneous: {
-        name: "Pre-Events",
-        image: "/assets/imgs/events/images/asthami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-2.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
 };
@@ -65,7 +65,7 @@ function EventSection({ data, dayEvents, rank }) {
                 <div
                     style={{
                         position: "relative",
-                        marginBottom: mobileView ? "2rem" : "5rem",
+                        marginBottom: "2rem",
                         textAlign: "center",
                         lineHeight: "4em",
                     }}
@@ -97,13 +97,15 @@ function EventSection({ data, dayEvents, rank }) {
                                 fontWeight: "300",
                                 lineHeight: "1.2em",
                                 textAlign: mobileView ? "center" : "left",
-                                fontSize: '1.2rem'
+                                fontSize: "1.2rem",
                             }}
                         >
                             {data.intro}
-                            <Link to={`/events/${data.name.split(" ")[0].toLowerCase()}`}>
-                                <Button innerText={"Know more"} />
-                            </Link>
+                            {rank !== 0 && (
+                                <Link to={`/events/day/${data.name.split(" ")[0].toLowerCase()}`}>
+                                    <Button innerText={"Know more"} />
+                                </Link>
+                            )}
                         </div>
                     )}
 
@@ -119,10 +121,13 @@ function EventSection({ data, dayEvents, rank }) {
                             dayEvents.map((ev, idx) => {
                                 const time = extractTime(ev?.rounds[0].startTime);
                                 return (
-                                    <Link to={`/events/${ev?.slug}`} style = {{
-                                        textDecoration: "none",
-                                        color: "inherit",
-                                    }}>
+                                    <Link
+                                        to={`/events/${ev?.slug}`}
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "inherit",
+                                        }}
+                                    >
                                         <div
                                             key={idx}
                                             className="one"
@@ -135,6 +140,8 @@ function EventSection({ data, dayEvents, rank }) {
                                                 width: "min(35rem, 90vw)",
                                                 height: "100%",
                                                 justifyContent: "space-between",
+                                                background: " rgba(255, 255, 255, 0.06) ",
+                                                backdropFilter: "blur(10px)",
                                             }}
                                         >
                                             <div
@@ -189,9 +196,11 @@ function EventSection({ data, dayEvents, rank }) {
                             }}
                         >
                             {data.intro}
-                            <Link to={`/events/day/${data.name.split(" ")[0].toLowerCase()}`}>
-                                <Button innerText={"Know more"} />
-                            </Link>
+                            {rank !== 0 && (
+                                <Link to={`/events/day/${data.name.split(" ")[0].toLowerCase()}`}>
+                                    <Button innerText={"Know more"} />
+                                </Link>
+                            )}
                         </div>
                     )}
                 </div>
@@ -248,9 +257,9 @@ function Schedule() {
         <div className="schedule">
             <div className="heading">
                 <div className="event_bg">
-                    <img src="/assets/imgs/events/images/header_back.webp" alt="" />
+                    <img src="/assets/imgs/Schedule/schedule-1.webp" alt="" />
                 </div>
-                <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
+                <Heading title={"REBECA SCHEDULE"} subTitle={introtext} needHatch={false} />
                 <Link to={"#"}>
                     <Button
                         className="download_btn"

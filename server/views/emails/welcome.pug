@@ -1,13 +1,65 @@
 doctype html
-html
+html(lang="en")
   head
-    style
-      include ./email.css
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Registration Request Submitted
+    style.
+      body {
+          padding: 10px;
+          outline: 0;
+          margin: 10px;
+          box-sizing: border-box;
+          font-size: 1.2rem;
+          border: 1px solid #b8b8b8;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      .salute {
+          font-size: 1.5rem;
+          color: rgb(0, 56, 159);
+      }
+      .banner {
+        width: 100%;
+        height: 12rem;
+        background: url("https://res.cloudinary.com/dmzwremb8/image/upload/v1742842637/email-banner_b87ynr.webp");
+        background-size: cover;
+        background-position: center;
+      }
+      .content {
+          margin-top: 15px;
+          line-height: 1.5;
+      }
+      .content a {
+          color: rgb(0, 56, 159);
+          text-decoration: none;
+          font-weight: bold;
+      }
+      .regard {
+          margin-top: 20px;
+      }
+
   body
-    .container
-      h1 Welcome to Rebeca, #{firstName}!
-      p We're excited to have you on board. Start exploring our events on the website
-      a(href="https://rebeca.in/", target="_blank") Get Started
-      p If you have any questions, feel free to reach out to our support team.
-      p Cheers,
-      p Rebeca development committee
+    .banner
+    .highlight
+      p
+        .salute Hello, #{firstName}!
+        br
+        | Welcome to Rebeca—the ultimate ride of fun, tech, and memories! Whether you're here to compete, explore, or just vibe, we promise an experience packed with thrills, challenges, and loads of fun in this annual cultural fest of IIEST, Shibpur. To kick off the fun, here's what you need to do right now:
+
+      .content
+        ol
+          li 
+            | Update your details at 
+            a(href="https://rebeca84.vercel.app/profile", target="_blank") https://rebeca84.vercel.app/profile 
+            | to get started.
+          li 
+            | Go to 
+            a(href="https://rebeca84.vercel.app/events", target="_blank") https://rebeca84.vercel.app/events 
+            | and explore our exciting events and cultural programmes lined up throughout the four days. Make sure to take part and live the full energy at Rebeca!
+
+        p Thats it! We wish you a happy and memorable Rebeca 2K25 ahead!
+
+      .regard
+        p Regards,
+        p Event Management Committee, 
+        a(href="https://rebeca.in", target="_blank") Rebeca

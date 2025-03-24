@@ -22,6 +22,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { useAuth } from "../../AuthContext";
 import { postImage } from "../../services/imgApi";
 import { updateMember } from "../../services/userApi";
+import { useNavigate } from "react-router-dom";
 
 const ProfileDashboard = () => {
     const formData = new FormData();
@@ -35,6 +36,8 @@ const ProfileDashboard = () => {
     const { user } = useAuth();
     const [imageFile, setImageFile] = useState([]);
     const [userData, setUserData] = useState({});
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         setUserData({
@@ -102,12 +105,13 @@ const ProfileDashboard = () => {
             if (changed) {
                 formData.append("email", userData.email);
                 await updateMember(formData);
-                setMessage("Profile Data updated successfully!!");
+                setMessage("Profile Data updated successfully. Please reload to view changes.");
                 setSeverity("success");
                 setMessageTitle("Data Updated!");
                 setPopUp(true);
+                
             } else {
-                setMessage("No changes found to edit");
+                setMessage("No changes found to edit.");
                 setSeverity("warning");
                 setMessageTitle("No Changes Found");
                 setPopUp(true);
