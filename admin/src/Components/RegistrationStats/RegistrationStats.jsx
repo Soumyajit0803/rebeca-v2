@@ -118,9 +118,13 @@ const teamReg = [
 const ColumnMap = { single: singleReg, team: teamReg };
 const TableWidth = { single: 1400, team: 2400 };
 
-const getCellItem = (cellitem) => {
-    if (typeof cellitem !== "object") return cellitem;
-    return JSON.stringify(cellitem);
+const formatObjects = (objects) => {
+    return objects.map(obj => `${obj.name}, ${obj.email}`).join('\n');
+  };
+  
+const getCellItem = (cellItem) => {
+    if (typeof cellItem !== "object") return cellItem;
+    return formatObjects(cellItem);
 };
 
 const ExportExcelButton = ({ dataSource, columns, fileName, errorPop, infoPop, successPop }) => {
