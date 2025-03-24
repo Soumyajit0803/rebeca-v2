@@ -37,7 +37,7 @@ const EventSingle = () => {
         };
 
         checkReg();
-    }, [user]);
+    }, [user, oneEvent]);
 
     // Ensure allEvents is available before filtering
     if (!allEvents || allEvents.length === 0) {

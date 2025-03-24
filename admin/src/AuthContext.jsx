@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
         console.log("Admin login successful");
         setAdmin(adminData);
         successPop(`Welcome, ${adminData.role} ${adminData.name.split(' ')[0]}`, "Login Successful");
-        setProfileStatus(adminData.passout_year ? true : false)
+        setProfileStatus(adminData.team ? true : false)
     };
 
     const handleLogout = async () => {
