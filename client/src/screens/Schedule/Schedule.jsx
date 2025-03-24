@@ -13,27 +13,27 @@ var introtext = `Prepare to be swept away as you put your best foot forward in t
 const content = {
     miscellaneous: {
         name: "Pre-Events",
-        image: "/assets/imgs/events/images/asthami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-2.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
     saptami: {
         name: "Saptami Symphony",
-        image: "/assets/imgs/events/images/saptami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-3.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
     ashtami: {
         name: "Ashtami Aura",
-        image: "/assets/imgs/events/images/asthami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-2.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
     navami: {
         name: "Navami Nirvana",
-        image: "/assets/imgs/events/images/saptami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-3.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
     dashami: {
         name: "Dashami Dazzle",
-        image: "/assets/imgs/events/images/asthami_bg.svg",
+        image: "/assets/imgs/Schedule/schedule-2.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     }
 };
@@ -65,7 +65,7 @@ function EventSection({ data, dayEvents, rank }) {
                 <div
                     style={{
                         position: "relative",
-                        marginBottom: mobileView ? "2rem" : "5rem",
+                        marginBottom: "2rem",
                         textAlign: "center",
                         lineHeight: "4em",
                     }}
@@ -134,6 +134,8 @@ function EventSection({ data, dayEvents, rank }) {
                                                 width: "min(35rem, 90vw)",
                                                 height: "100%",
                                                 justifyContent: "space-between",
+                                                background: " rgba(255, 255, 255, 0.06) ",
+                                                backdropFilter: "blur(10px)"
                                             }}
                                         >
                                             <div
@@ -247,9 +249,9 @@ function Schedule() {
         <div className="schedule">
             <div className="heading">
                 <div className="event_bg">
-                    <img src="/assets/imgs/events/images/header_back.webp" alt="" />
+                    <img src="/assets/imgs/Schedule/schedule-1.webp" alt="" />
                 </div>
-                <Heading title={"REBECA SCHEDULE"} subTitle={introtext} />
+                <Heading title={"REBECA SCHEDULE"} subTitle={introtext} needHatch={false} />
                 <Link to={"#"}>
                     <Button
                         className="download_btn"
