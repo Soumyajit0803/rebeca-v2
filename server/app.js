@@ -18,12 +18,8 @@ app.use(express.urlencoded({ extended: true, limit: "500mb" })); // <- Parses UR
 
 dotenv.config({ path: "./.env" }); // <- connecting the enviroment variables
 // MIDLEWARES ->>
-// app.enable('trust proxy');
+app.enable('trust proxy');
 
-// console.log('REMOTE: ', process.env.REMOTE);
-
-// app.use(cors({ credentials: true, origin: process.env.REMOTE })); // <- CORS configuration, in case if you wanted to implemented authorization
-// app.options(process.env.REMOTE, cors());
 const CLIENT_URL = process.env.CLIENT_URL;
 const ADMIN_URL = process.env.ADMIN_URL;
 const allowedOrigins = [CLIENT_URL, ADMIN_URL];

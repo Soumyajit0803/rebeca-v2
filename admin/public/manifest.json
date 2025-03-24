@@ -1,0 +1,54 @@
+{
+  "short_name": "Rebeca",
+  "description": "Get ready as the 83rd edition of REBECA is right around the corner. BEings, Pujo asche!",
+  "name": "Rebeca: 84th edition",
+  "icons": [
+    {
+      "src": "favicon-64x64.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon-96x96.ico",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "1000x1000",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+
+	"screenshots": [
+    {
+      "src": "/assets/mobile.png",
+      "type": "image/png",
+      "sizes": "372x805",
+      "form_factor": "wide",
+			"icons": [{ "src": "favicon-96x96.ico", "sizes": "96x96" }]
+    },
+    {
+      "src": "/assets/desktop.png",
+      "type": "image/png",
+      "sizes": "1920x878",
+      "form_factor": "narrow",
+			"icons": [{ "src": "favicon-96x96.ico", "sizes": "96x96" }]
+    }
+  ],
+	"id": ".",
+  "start_url": ".",
+  "scope": "/",
+  "orientation": "any",
+  "lang": "en",
+  "display": "standalone",
+  "theme_color": "#9852f3",
+  "background_color": "rgb(33, 33, 33)",
+  "categories": ["entertainment", "lifestyle", "admin"]
+}
