@@ -58,11 +58,19 @@
     transform: translate(15px, 15px); /* horizontal, vertical offset */
     opacity: 0.6; /* partial transparency */
 }
+.Outer-div .one {
+    transition: all ease 0.2s;
+}
+.Outer-div .one:hover {
+    color: var(--primary)
+}
 
 @media only screen and (max-width: 970px) {
     .event_div .day-section {
         flex-direction: column;
     }
 
-    
+    .day-title, .day-title::after {
+        font-size: 3.5rem
+    }    
 }
