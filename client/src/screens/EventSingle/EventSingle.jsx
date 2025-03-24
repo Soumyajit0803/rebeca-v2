@@ -23,11 +23,11 @@ const EventSingle = () => {
                 setLoading(true);
                 if (user && oneEvent) {
                     const status = await isUserRegistered(oneEvent?._id, user?._id);
-                    console.log("Status of registration of the user")
+                    console.log("Status of registration of the user");
                     console.log(status);
-                    setIsReg(status.data.isRegistered)
+                    setIsReg(status.data.isRegistered);
                 } else {
-                    console.log("Pehele login toh kar bhai")
+                    console.log("Pehele login toh kar bhai");
                 }
             } catch (err) {
                 console.log(err);
@@ -47,7 +47,7 @@ const EventSingle = () => {
     if (!oneEvent) {
         return <div>Event not found</div>;
     }
-    
+
     return (
         <div className="event-single-container">
             {/* Background Image with Overlay */}
@@ -56,13 +56,17 @@ const EventSingle = () => {
                 style={{
                     position: `relative`,
                     width: `100%`,
-                    height: `300px`,
+                    minHeight: `300px`,
                     background: `url("${oneEvent?.thumbnail}") no-repeat`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
             >
                 <div className="event-single-overlay">
+                    <div className="eposter">
+                        <div className="regfee">Fee ₹ {oneEvent.registrationFee}</div>
+                        <img src={oneEvent.poster} alt={"Poster"} />
+                    </div>
                     <div className="event-single-header">
                         <span className="event-single-badge">NEW</span>
                         <h1 className="event-single-title">{oneEvent?.eventName}</h1>
@@ -70,12 +74,16 @@ const EventSingle = () => {
                             {extractFullDate(oneEvent?.rounds[0]?.startTime)} -{" "}
                             {extractFullDate(oneEvent?.rounds[0]?.endTime)}
                         </p>
+                        <div className="eposter-mobile">
+                            <div className="regfee">Fee ₹ {oneEvent.registrationFee}</div>
+                            <img src={oneEvent.poster} alt={"Poster"} />
+                        </div>
                     </div>
 
                     <div className="event-single-buttons">
                         <Button innerText="View Rules" href={oneEvent?.rulesDocURL} />
                         <Link to={`/events/${eventSlug}/register`}>
-                            <Button innerText="Register" disabled={(user && isReg)} />
+                            <Button innerText="Register" disabled={user && isReg} />
                         </Link>
                     </div>
                     {!user && (
@@ -93,7 +101,11 @@ const EventSingle = () => {
 
             {/* Content Below */}
             <div className="event-single-content">
-                <p className="event-single-description">{oneEvent?.description}</p>
+                <p className="event-single-description">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores quasi pariatur fugit dignissimos
+                    aspernatur autem? Numquam porro corrupti error voluptatem aut corporis sapiente dolorem, ad commodi
+                    itaque totam veritatis dignissimos laborum! Porro!
+                </p>
                 <h2 className="schedule-title">Schedule</h2>
 
                 <div className="prelims-container">
