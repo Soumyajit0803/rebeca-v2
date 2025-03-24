@@ -127,10 +127,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
         // <- This will send the selected image to our api
         try {
             if (fileList[0].uid === "-1"){
-                const res = await postImage({image: fileList[0].url});
-                console.log("Google image");
-                console.log(res);
-                return res.data.data.imageUrl;
+                return fileList[0].url;
             }
             const res = await postImage({ image: fileList[0].originFileObj });
             console.log(res.data.data.imageUrl);

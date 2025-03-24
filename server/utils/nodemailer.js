@@ -14,6 +14,9 @@ module.exports = class Email {
 
 		this.members=members
 		this.leader=leader
+
+		console.log(updatedFields);
+		
 	}
 
 	newTransport() {

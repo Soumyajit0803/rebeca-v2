@@ -83,17 +83,24 @@ const EventSingle = () => {
                     <div className="event-single-buttons">
                         <Button innerText="View Rules" href={oneEvent?.rulesDocURL} />
                         <Link to={`/events/${eventSlug}/register`}>
-                            <Button innerText="Register" disabled={user && isReg} />
+                            <Button innerText="Register" disabled={(!user || !user.college || isReg)} />
                         </Link>
                     </div>
                     {!user && (
-                        <Alert severity="warning" color="warning" sx={{ mt: 1 }}>
+                        <Alert variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
                             You need to Log in to Register for any event.
                         </Alert>
                     )}
                     {isReg && (
-                        <Alert severity="success" color="success" sx={{ mt: 1 }}>
+                        <Alert variant="outlined" severity="success" color="success" sx={{ mt: 1 }}>
                             You Have Successfully been registered for this event
+                        </Alert>
+                    )}
+                    {!user.college && (
+                        <Alert variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
+                            Please complete your profile information to be able to register. For details, go to {" "}
+                            <Link to="/profile">My profile</Link>.
+                            
                         </Alert>
                     )}
                 </div>
