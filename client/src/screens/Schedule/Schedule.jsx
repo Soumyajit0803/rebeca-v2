@@ -11,6 +11,11 @@ import { extractTime } from "../../components/EventList/EventList";
 var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 83rd edition of REBECA is back with a bang!`;
 
 const content = {
+    miscellaneous: {
+        name: "Pre-Events",
+        image: "/assets/imgs/events/images/asthami_bg.svg",
+        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
+    },
     saptami: {
         name: "Saptami Symphony",
         image: "/assets/imgs/events/images/saptami_bg.svg",
@@ -30,12 +35,7 @@ const content = {
         name: "Dashami Dazzle",
         image: "/assets/imgs/events/images/asthami_bg.svg",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
-    },
-    miscellaneous: {
-        name: "Pre-Events",
-        image: "/assets/imgs/events/images/asthami_bg.svg",
-        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
-    },
+    }
 };
 
 function EventSection({ data, dayEvents, rank }) {
@@ -100,9 +100,9 @@ function EventSection({ data, dayEvents, rank }) {
                             }}
                         >
                             {data.intro}
-                            <Link to={`/events/${data.name.split(" ")[0].toLowerCase()}`}>
+                            {rank!==0 && <Link to={`/events/day/${data.name.split(" ")[0].toLowerCase()}`}>
                                 <Button innerText={"Know more"} />
-                            </Link>
+                            </Link>}
                         </div>
                     )}
 
@@ -188,9 +188,9 @@ function EventSection({ data, dayEvents, rank }) {
                             }}
                         >
                             {data.intro}
-                            <Link to={`/events/day/${data.name.split(" ")[0].toLowerCase()}`}>
+                            {rank!==0 && <Link to={`/events/day/${data.name.split(" ")[0].toLowerCase()}`}>
                                 <Button innerText={"Know more"} />
-                            </Link>
+                            </Link>}
                         </div>
                     )}
                 </div>
