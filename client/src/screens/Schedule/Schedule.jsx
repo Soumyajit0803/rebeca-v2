@@ -94,9 +94,10 @@ function EventSection({ data, dayEvents, rank }) {
                                 flexDirection: "column",
                                 alignItems: mobileView ? "center" : "flex-start",
                                 gap: "1.5rem",
-                                fontWeight: "200",
+                                fontWeight: "300",
                                 lineHeight: "1.2em",
                                 textAlign: mobileView ? "center" : "left",
+                                fontSize: '1.2rem'
                             }}
                         >
                             {data.intro}
@@ -183,7 +184,7 @@ function EventSection({ data, dayEvents, rank }) {
                                 alignItems: "flex-end",
                                 textAlign: "right",
                                 gap: "1.5rem",
-                                fontWeight: "200",
+                                fontWeight: "300",
                                 lineHeight: "1.2em",
                             }}
                         >

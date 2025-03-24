@@ -34,6 +34,7 @@
     flex-direction: column; /* Stack items */
     align-items: flex-start;
     gap: 5px;
+    width: calc(100% - 400px);
 }
 
 .event-single-badge {
@@ -90,6 +91,7 @@
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
 .eposter {
@@ -149,9 +151,21 @@
     .eposter {
         display: none;
     }
+    .event-single-overlay {
+        align-items: center;
+    }
+    .event-single-header {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .event-single-description {
         width: 100%;
     }
+
 }
 
 @media only screen and (min-width: 870px) {

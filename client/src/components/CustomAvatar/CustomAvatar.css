@@ -1,39 +1,50 @@
 .avatar {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     position: relative;
     flex-direction: column;
     width: 200px;
 }
 
-.avatar .back {
+.avatar-img {
+    position: relative;
+    z-index: 1;
+}
+
+.back {
     position: absolute;
-    z-index: -1;
-    width: 180px;
-    height: 180px;
+    z-index: 0;
+    width: 170px;
+    height: 170px;
     background-color: var(--primary);
     opacity: 0.6;
     border-radius: 50%;
-    top: 0px;
+    top: -2px;
     right: 0px;
 }
 
 .avatar .title {
-    font-size: 1.3rem;
-    text-transform: titlecase;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+    text-transform: capitalize;
     font-weight: 600;
     text-align: center;
-    margin-top: 0.3rem;
+    margin: 0.3rem 0;
 }
 
 .avatar .subtitle {
     font-size: 1rem;
-    line-height: 0.8rem;
     opacity: 0.6;
-    font-family: "Sedgwick Ave Display";
-    font-weight: 100;
+    font-weight: 300;
+    text-transform: capitalize;
+    font-style: italic;
 }
 
 .avatar .phone {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
 }
