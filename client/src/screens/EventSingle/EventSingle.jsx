@@ -90,17 +90,17 @@ const EventSingle = () => {
                         </Link>
                     </div>
                     {!user && (
-                        <Alert variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
+                        <Alert className="event-alert" variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
                             You need to Log in to Register for any event.
                         </Alert>
                     )}
                     {isReg && (
-                        <Alert variant="outlined" severity="success" color="success" sx={{ mt: 1 }}>
+                        <Alert className="event-alert" variant="outlined" severity="success" color="success" sx={{ mt: 1 }}>
                             You Have Successfully been registered for this event
                         </Alert>
                     )}
-                    {user && user?.college && (
-                        <Alert variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
+                    {user && !user?.college && (
+                        <Alert className="event-alert" variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
                             Please complete your profile information to be able to register. For details, go to {" "}
                             <Link to="/profile">My profile</Link>.
                             

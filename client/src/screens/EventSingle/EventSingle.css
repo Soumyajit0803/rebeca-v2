@@ -147,6 +147,11 @@
     clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 
+.event-alert {
+    width: min(100%, calc(100% - 410px)) !important;
+    max-width: max-content;
+}
+
 @media only screen and (max-width: 870px) {
     .eposter {
         display: none;
@@ -162,7 +167,7 @@
         align-items: center;
     }
 
-    .event-single-description {
+    .event-single-description, .event-alert {
         width: 100%;
     }
 

@@ -167,7 +167,6 @@ const ProfileDashboard = () => {
                             <Grid2 size={{ xs: 12 }} align="center">
                                 <div style={{ position: "relative", display: "inline-block" }}>
                                     <Avatar
-                                        alt={userData.name}
                                         src={userData.image}
                                         sx={{ width: 200, height: 200, border: "3px solid var(--accent1)" }}
                                     />
