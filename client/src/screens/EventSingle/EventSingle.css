@@ -11,7 +11,7 @@
 }
 
 .event-single-description {
-    width: calc(100% - 400px);
+    width: calc(100% - 410px);
 }
 
 /* Banner Image Section */
@@ -34,7 +34,7 @@
     flex-direction: column; /* Stack items */
     align-items: flex-start;
     gap: 5px;
-    width: calc(100% - 400px);
+    width: calc(100% - 410px);
 }
 
 .event-single-badge {
