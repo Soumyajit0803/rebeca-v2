@@ -38,8 +38,7 @@
 }
 
 .event-single-badge {
-    background: var(--primary);
-    font-weight: bold;
+    background: var(--accent2);
     text-transform: uppercase;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;

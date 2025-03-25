@@ -6,10 +6,11 @@ import { useAuth } from "../../AuthContext";
                               
 
 export default (props) => {
-	const { user, handleLogin, handleLogout } = useAuth();
+	const { user, handleLogin, handleLogout, userLoad, setUserLoad } = useAuth();
 	
 	const responseGoogle = async (authResult) => {
 		try {
+			setUserLoad(true);
 			if (authResult["code"]) {
 				console.log(authResult.code);
 				const result = await authWithGoogle(authResult.code);
@@ -22,6 +23,8 @@ export default (props) => {
 			}
 		} catch (e) {
 			console.log(e);
+		} finally {
+			setUserLoad(false);
 		}
 	};
 

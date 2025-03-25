@@ -100,7 +100,7 @@ const Home = () => {
             </section>
             <section className="section-4">
                 <div className="row">
-                    <Heading title={"MOMENTS"} subTitle={"That Last a Life time"}></Heading>
+                    <Heading needHatch={false} title={"MOMENTS"} subTitle={"That Last a Life time"}></Heading>
                     <div className="contents">
                         <p>
                             From the pulsating beats of the music to the kaleidoscope of colors lighting up the night

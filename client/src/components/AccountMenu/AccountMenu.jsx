@@ -13,8 +13,19 @@ import {
     Chip,
     Typography,
     Button,
+    CircularProgress 
 } from "@mui/material";
-import { PersonAdd, Settings, Logout, Login, Google, Person, Warning, LoginRounded, ArrowRight } from "@mui/icons-material";
+import {
+    PersonAdd,
+    Settings,
+    Logout,
+    Login,
+    Google,
+    Person,
+    Warning,
+    LoginRounded,
+    ArrowRight,
+} from "@mui/icons-material";
 import { useGoogleLogin } from "@react-oauth/google";
 import { authWithGoogle } from "../../services/authApi";
 import { useAuth } from "../../AuthContext";
@@ -24,11 +35,12 @@ import "./AccountMenu.css";
 
 export default function AccountMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const { user, handleLogin, handleLogout } = useAuth();
+    const { user, handleLogin, handleLogout, userLoad, setUserLoad } = useAuth();
     const navigate = useNavigate();
 
     const responseGoogle = async (authResult) => {
         try {
+            setUserLoad(true);
             if (authResult["code"]) {
                 console.log(authResult.code);
                 const result = await authWithGoogle(authResult.code);
@@ -40,6 +52,8 @@ export default function AccountMenu() {
             }
         } catch (e) {
             console.log(e);
+        } finally {
+            setUserLoad(false);
         }
     };
 
@@ -75,7 +89,14 @@ export default function AccountMenu() {
                                 ></Avatar>
                             </IconButton>
                         ) : (
-                            <Button color="#fff" onClick={handleClick} sx={{bgcolor: 'var(--primary)'}}>Login</Button>
+                            <Button
+                                color="#fff"
+                                onClick={handleClick}
+                                sx={{ bgcolor: "var(--primary)" }}
+                                startIcon={userLoad ? <CircularProgress size={20} color="inherit" /> : null}
+                            >
+                                Login
+                            </Button>
                         )}
                     </Badge>
                 </Tooltip>

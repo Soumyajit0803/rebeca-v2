@@ -71,7 +71,7 @@ const EventSingle = () => {
                         <img src={oneEvent.poster} alt={"Poster"} />
                     </div>
                     <div className="event-single-header">
-                        <span className="event-single-badge">NEW</span>
+                        <span className="event-single-badge">{oneEvent?.type}</span>
                         <h1 className="event-single-title">{oneEvent?.eventName}</h1>
                         <p className="event-single-subtitle">
                             {extractFullDate(oneEvent?.rounds[0]?.startTime)} -{" "}
