@@ -133,9 +133,10 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
             formData.append("thumbnail", thumbnailURL);
             formData.append("registrationFee", values.registrationAmount);
             formData.append("rounds", JSON.stringify(values.rounds));
-            coordsList.forEach((e) => {
-                formData.append("mainCoordinators[]", allMembers[e].original._id);
-            });
+            formData.append("mainCoordinators", JSON.stringify(coordsList.map((e)=>allMembers[e].original._id)));
+            // coordsList.forEach((e) => {
+            //     formData.append("mainCoordinators[]", allMembers[e].original._id);
+            // });
 
             console.log(formData);
 

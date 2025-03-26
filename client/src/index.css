@@ -118,10 +118,10 @@ button:focus-visible {
 ::-webkit-scrollbar-thumb:hover{
 	background: var(--primary);
 }
-::-webkit-scrollbar-button,
+/* ::-webkit-scrollbar-button,
 ::-webkit-scrollbar-corner {
-  /* display: none; */
-}
+  /* display: none; 
+} */
 
 @media (prefers-color-scheme: light) {
 	/* :root {

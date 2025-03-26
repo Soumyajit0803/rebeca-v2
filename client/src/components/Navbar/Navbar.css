@@ -95,6 +95,11 @@
     background-color: #171717;
     color: white;
 }
+
+.MuiPaper-root::before {
+    background-color: #1D1D1D !important;
+}
+
 .drawer {
     position: relative;
 	background-color: #171717

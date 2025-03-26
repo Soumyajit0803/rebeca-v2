@@ -248,7 +248,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                         label="Department"
                         name="dept"
                         rules={[{ required: true }]}
-                        style={{ width: 500, marginTop: 20 }}
+                        style={{ maxWidth: 300, marginTop: 20 }}
                     >
                         <Input placeholder="Enter Department name" addonBefore={<ReadOutlined />} />
                     </Form.Item>
@@ -257,7 +257,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                         label="Passout year"
                         name="passout_year"
                         rules={[{ required: true, message: "Please enter your passout year, e.g. 2026" }]}
-                        style={{ width: 300, cursor: "pointer" }}
+                        style={{ maxWidth: 300, cursor: "pointer" }}
                     >
                         <DatePicker picker="year" placeholder="Select Year" />
                     </Form.Item>
@@ -276,7 +276,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                             label="Role"
                             name="position"
                             rules={[{ required: true, message: "Please select a role" }]}
-                            style={{ width: 200 }}
+                            style={{ maxWidth: 200 }}
                         >
                             <Select placeholder="Select a role">
                                 {teamRoles.map((role, i) => {
@@ -293,7 +293,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                             label="Team Name"
                             name="team"
                             rules={[{ required: true, message: "Please enter the team name" }]}
-                            style={{ width: 300 }}
+                            style={{ maxWidth: 300 }}
                         >
                             <Select placeholder="Select Team Name">
                                 {teamNames.map((team, i) => {

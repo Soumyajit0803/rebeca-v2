@@ -1,0 +1,11 @@
+.admin-dsb-heading {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 380px) {
+    .admin-dsb-heading {
+        font-size: 1.2rem;
+    }
+}

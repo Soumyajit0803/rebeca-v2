@@ -12,6 +12,7 @@ exports.createEvent = catchAsync(async (req, res, next) => {
         const eventData = new Event({
             ...req.body,
             rounds: JSON.parse(req.body.rounds),
+            mainCoordinators: JSON.parse(req.body.mainCoordinators)
         });
         await eventData.save();
         return res.status(201).json({ message: "success", data: eventData });
@@ -40,6 +41,7 @@ exports.updateEvent = catchAsync(async (req, res, next) => {
         console.log(req.body);
         const updated = { ...req.body };
         if (updated.rounds) updated.rounds = JSON.parse(updated.rounds);
+        if (updated.mainCoordinators) updated.mainCoordinators = JSON.parse(updated.mainCoordinators);
 
         const oldEvent = await Event.findByIdAndUpdate(
             req.body._id,

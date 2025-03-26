@@ -147,7 +147,7 @@
 }
 
 .event-alert {
-    width: min(100%, calc(100% - 410px)) !important;
+    width: min(100%, calc(100% - 410px));
     max-width: max-content;
 }
 
