@@ -27,9 +27,9 @@ exports.deleteEvent = catchAsync(async (req, res, next) => {
         const id = req.query._id;
         const deletedEvent = await Event.findByIdAndDelete(id);
         if (!deletedEvent) {
-            return res.status(404).json({ message: "Event to be deleted not found" });
+            return res.status(404).json({ message: "Event to be deleted not found, maybe it's already deleted" });
         } else {
-            return res.status(204).json({ message: "success", data: deletedEvent });
+            return res.status(200).json({ message: "success", data: deletedEvent });
         }
     } catch (err) {
         next(err);

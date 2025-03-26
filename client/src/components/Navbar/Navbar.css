@@ -102,7 +102,10 @@
 	background-color: #171717
 }
 .MuiDrawer-paper {
-    background: linear-gradient(#171717, #171717d2), url("/assets/imgs/grid_images/q1.webp")!important;
+    background: linear-gradient(#171717, #1717179d), url("/assets/imgs/grid_images/q3.webp")!important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 .drawer .button.drawer-close-btn {
     /* position: absolute;

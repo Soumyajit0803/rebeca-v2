@@ -87,7 +87,9 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 errorPop(res.data.message, "Error While Deleting Event");
             }
         } catch (err) {
-            errorPop(err.message, "Error While Deleting Event");
+            console.log(err);
+            
+            errorPop(err?.response?.data?.message, "Error While Deleting Event");
         } finally {
             setLoading(false);
             setIsDeleteModalOpen(false);
