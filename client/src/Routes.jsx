@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./screens/Home/Home";
 import Schedule from "./screens/Schedule/Schedule";
-import Sponsorship from "./screens/Sponsors/Sponsorship";
+import Sponsorship from "./screens/Sponsors/Sponsorship_new";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
 import Merchandise from "./screens/Merchandise/Merchandise";
