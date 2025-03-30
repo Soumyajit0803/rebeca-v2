@@ -147,7 +147,7 @@ function Sponsorship() {
                     </div>
                 </section>
 
-                <section className="section-4">
+                {/* <section className="section-4">
                     <div style={{ padding: "0 1rem" }}>
                         <Heading1 title={"Sponsors"} w={"60%"}></Heading1>
                     </div>
@@ -161,7 +161,7 @@ function Sponsorship() {
                             </div>
                         </div>
                     ))}
-                </section>
+                </section> */}
 
                 <section className="section-4">
                     <div style={{ padding: "0 1rem" }}>
