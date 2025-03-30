@@ -19,26 +19,24 @@ const Button = ({
     ...options
 }) => {
     return (
-        <a target="_blank" rel="noopener noreferrer" href={href} style={{ textDecoration: "none", color: "inherit" }}>
-            <button
-                id={id}
-                className={`button ${className} ${size} ${disabled && "disabled"} ${variant} ${color}`}
-                onClick={onClick}
-                type={type}
-                disabled={disabled}
-                {...options}
-            >
-                {loading && <span className="loading material-icons">sync</span>}
-                {!loading && startIcon && <div className="start-icon">{startIcon}</div>}
-                {!loading && innerText}
-                {!loading && endIcon && <div className="start-icon">{endIcon}</div>}
-                {arrowHover && (
-                    <div className="before">
-                        <span className="material-icons">chevron_right</span>
-                    </div>
-                )}
-            </button>
-        </a>
+        <button
+            id={id}
+            className={`button ${className} ${size} ${disabled && "disabled"} ${variant} ${color}`}
+            onClick={onClick}
+            type={type}
+            disabled={disabled}
+            {...options}
+        >
+            {loading && <span className="loading material-icons">sync</span>}
+            {!loading && startIcon && <div className="start-icon">{startIcon}</div>}
+            {!loading && innerText}
+            {!loading && endIcon && <div className="start-icon">{endIcon}</div>}
+            {arrowHover && (
+                <div className="before">
+                    <span className="material-icons">chevron_right</span>
+                </div>
+            )}
+        </button>
     );
 };
 
