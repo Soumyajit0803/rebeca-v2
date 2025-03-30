@@ -18,6 +18,7 @@ import {
     AttachMoney as SponsorshipIcon,
     Groups as TeamIcon,
     ShoppingBag as MerchandiseIcon,
+    Close,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -40,7 +41,7 @@ const menuItems = [
 const RespDrawer = ({ open, onClose }) => {
     const theme = useTheme();
     const navigate = useNavigate();
-    const drawerWidth = window.innerWidth >= 500 ? 300 : window.innerWidth;
+    const drawerWidth = window.innerWidth;
 
     return (
         <Drawer
@@ -55,30 +56,27 @@ const RespDrawer = ({ open, onClose }) => {
             anchor="left"
             open={open}
         >
-            <DrawerHeader sx={{ display: "flex", height: 65 }}>
-                <IconButton
-                    onClick={() => onClose()}
-                    color="primary"
-                >
-                    {theme.direction === "ltr" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                </IconButton>
+            <DrawerHeader sx={{ display: "flex", height: 65, justifyContent: 'space-between' }}>
                 <img
                     src="/assets/logo/logo_white.webp"
                     alt="rebeca_logo"
                     style={{ padding: "1rem 0px", width: "100px", marginLeft: "10px" }}
                 />
+                <IconButton onClick={() => onClose()} color="primary">
+                    <Close />
+                </IconButton>
             </DrawerHeader>
             <Divider />
-            <List >
+            <img src={"/assets/imgs/beings.png"} />
+            <List>
                 {menuItems.map((item, index) => (
-                    <ListItem key={item.text} disablePadding >
+                    <ListItem key={item.text} disablePadding>
                         <ListItemButton
                             onClick={() => {
                                 onClose();
                                 navigate(item.link);
                             }}
                         >
-                            <ListItemIcon >{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} />
                         </ListItemButton>
                     </ListItem>
