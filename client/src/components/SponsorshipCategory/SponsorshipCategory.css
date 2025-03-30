@@ -1,0 +1,158 @@
+
+.mainContainer {
+    overflow: hidden;
+}
+
+.mainContainer,
+.mainContainer * {
+    box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+    outline: 0;
+}
+
+.mainContainer {
+    position: relative;
+    display: flex;
+    width: 70vw;
+    height: 160vw;
+    margin: 0 auto;
+}
+
+
+.mainContainer .flexColumnAda {
+    position: absolute;
+    width: 50vw;
+    height: 100%;
+    left: 15vw;
+    font-size: 0px;
+    z-index: 16;
+}
+
+.mainContainer .flexColumnAda .sponsor-container{
+    height: 40vw;
+}
+
+.titleSponsor {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: 380px;
+    height: 5vw;
+    color: #ffffff;
+    font-family: Exo 2, var(--default-font-family);
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: 7vh;
+    white-space: nowrap;
+    text-align: left;
+    z-index: 5;
+}
+
+.lakhPlus {
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: center; */
+    position: relative;
+    width: 132px;
+    height: 34px;
+    margin-top: 1.5vw;
+    color: #ffffff;
+    font-family: Exo 2, var(--default-font-family);
+    font-size: 2.5vw;
+    font-weight: 400;
+    line-height: 33.6px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 13;
+}
+
+.loremIpsum {
+    display: block;
+    width: auto;
+    max-width: 90vw;
+    /* padding: 10px; */
+    margin-top: 1vw;
+    /* height: 40vw; */
+    /* margin-top: 0.5vw; */
+    color: #ffffff;
+    font-family: Exo 2, var(--default-font-family);
+    font-size: 2vw;
+    font-weight: 500;
+    /* line-height: 36px; */
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-align: left;
+    opacity: 0.5;
+}
+
+.flexColumnCc {
+    /* position: absolute; */
+    width: 10vw;
+    height: 100%;
+    /* top: 2px;
+    left: 0; */
+    display: flex;
+    justify-content: center;
+    z-index: 12;
+}
+
+.line {
+    position: absolute;
+    width: 1px;
+    height: 128vw;
+    background: url(https://static.codia.ai/image/2025-03-27/a9687e5c-851d-42d2-bcff-f30e30ec937d.svg) no-repeat center;
+    background-size: cover;
+    z-index: 4;
+}
+
+.ellipse {
+    position: absolute;
+    width: 7vw;
+    height: 7vw;
+    top: 0;
+    background: url(https://static.codia.ai/image/2025-03-27/afc69b04-241e-43f7-a63e-a17626237c7f.svg) no-repeat center;
+    background-size: cover;
+    z-index: 9;
+    border-radius: 50%;
+}
+
+
+.ellipse5 {
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    top: 41vw;
+    align-content: center;
+    background: url(https://static.codia.ai/image/2025-03-27/09371c92-b512-48fd-921e-0242bd1fff25.svg) no-repeat center;
+    background-size: cover;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.ellipse6 {
+    position: absolute;
+    width: 4vw;
+    height: 4vw;
+    top: 82vw;
+    background: url(https://static.codia.ai/image/2025-03-27/689a0803-caa5-455a-9aad-ad7e61db60ff.svg) no-repeat center;
+    background-size: cover;
+    z-index: 11;
+    border-radius: 50%;
+}
+
+.ellipse7 {
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    top: 126vw;
+    background: url(https://static.codia.ai/image/2025-03-27/995570e6-2dbe-41ec-9569-d11803733f7a.svg) no-repeat center;
+    background-size: cover;
+    z-index: 12;
+    border-radius: 50%;
+}

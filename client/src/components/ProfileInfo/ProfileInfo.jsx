@@ -91,21 +91,22 @@ const ProfileDashboard = () => {
                 college: userData.college,
             };
 
+            const toUpdate = []
             Object.entries(newData).forEach(([key, newValue]) => {
                 if (user[key] !== newValue) {
                     formData.append(key, newValue);
                     changed = 1;
                     console.log(key);
-
                     console.log("new value: ");
                     console.log(newValue);
                     console.log(user[key]);
+                    toUpdate.push(key)
                 }
             });
             if (changed) {
                 formData.append("email", userData.email);
                 await updateMember(formData);
-                setMessage("Profile Data updated successfully. Please reload to view changes.");
+                setMessage(`Fields ${toUpdate} updated successfully. Please reload to view changes.`);
                 setSeverity("success");
                 setMessageTitle("Data Updated!");
                 setPopUp(true);

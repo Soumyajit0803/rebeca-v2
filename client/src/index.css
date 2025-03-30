@@ -22,7 +22,7 @@
 	--primary: var(--accent1);
 	--primary50: var(--accent1-50);
 	--primaryDark: var(--accent1dark);
-	--background: #0F1214;
+	--app-background: #0F1214;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
