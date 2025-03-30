@@ -54,6 +54,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
     const [coordsList, setCoordsList] = useState([]);
     const [posterList, setPosterList] = useState([]);
     const [thumbnailList, setThumbnailList] = useState([]);
+    const {admin} = useAuth()
     const onPosterChange = ({ fileList: newFileList }) => {
         setPosterList(newFileList);
     };
@@ -165,6 +166,9 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                     searchField: member.name,
                     original: member,
                 });
+                if (member._id === admin._id) {
+                    setCoordsList([index])
+                }
             });
             setAllMembers(tmp);
             // console.log(tmp);
@@ -173,10 +177,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
         }
     };
 
-    useEffect(() => {
-        handleGetAllMembers();
-    }, []);
-
+    
     const handleSubmitImage = async (imageFile) => {
         // <- This will send the selected image to our api
         try {
@@ -191,6 +192,9 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
     };
 
     // console.log(coordsList.map((e) => allMembers[e]));
+    useEffect(() => {
+        handleGetAllMembers();
+    }, []);
 
     return (
         <div style={{ maxWidth: 1200 }}>
@@ -406,6 +410,13 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                                 // message="Note"
                                 message="If you cannot find a member you have just added in the dropdown, consider refreshing the page."
                                 type="info"
+                                showIcon
+                                style={{ margin: "0 0 0.5rem 0" }}
+                            />
+                            <Alert
+                                // message="Note"
+                                message="Ensure you are in the coordinators list to make this event visible to you after you save it."
+                                type="warning"
                                 showIcon
                                 style={{ margin: "0 0 0.5rem 0" }}
                             />

@@ -654,7 +654,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                                 style={{ margin: "0 0 0.5rem 0", maxWidth: 'max-content'}}
                             />
                             <Alert
-                                message="Don't forget to keep yourself in this list!"
+                                message="Don't forget to keep yourself in this list! Else You won't be able to see this event later."
                                 type="warning"
                                 showIcon
                                 style={{ margin: "0 0 0.5rem 0", maxWidth: 'max-content'}}
