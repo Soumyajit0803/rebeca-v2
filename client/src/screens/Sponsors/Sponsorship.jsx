@@ -86,7 +86,7 @@ function Sponsorship() {
     };
 
     return (
-        <>
+        <div className="sponsor-wrap">
             <div className="sponsor">
                 <Heading
                     title={"Want to sponsor us?"}
@@ -176,7 +176,7 @@ function Sponsorship() {
                     </div>
                 </section>
             </div>
-        </>
+        </div>
     );
 }
 export default Sponsorship;
