@@ -84,9 +84,9 @@ export default (props) => {
     return (
         <>
             
-            {/* <Button size="large" type="primary" icon={<GoogleOutlined />} onClick={googleLogin} loading={loading}>
+            <Button size="large" type="primary" icon={<GoogleOutlined />} onClick={googleLogin} loading={loading}>
                 Sign in with Google
-            </Button> */}
+            </Button>
             <Modal
                 title="Enter Passkey"
                 open={isModalOpen}

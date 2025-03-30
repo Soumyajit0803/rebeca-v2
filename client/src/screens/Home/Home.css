@@ -122,11 +122,16 @@
 }
 
 .home .section-4 {
-  padding-top: 2rem;
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .home .section-4 .row {
   width: 100%;
   padding: 0 5%;
+  max-width: 1200px
 }
 .home .section-4 .row .heading {
   align-items: flex-end;
@@ -141,7 +146,7 @@
 }
 .home .section-4 .row .heading .sub-title {
   font-family: "Sedgwick Ave Display", cursive;
-  text-align: left;
+  text-align: right;
   color: white;
   font-size: 40px;
 }
@@ -151,8 +156,8 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 20px;
-  font-size: 30px;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  /* line-height: 1.6; */
   width: 100%;
 }
 .home .section-4 .collage {
