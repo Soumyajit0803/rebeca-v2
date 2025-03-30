@@ -56,7 +56,7 @@ function EventSection({ data, dayEvents, rank }) {
                 className="event_div"
                 style={{
                     backgroundImage: `url(${data.image})`,
-                    backgroundSize: "70%",
+                    backgroundSize: "contain",
                     justifyContent: "space-between",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
