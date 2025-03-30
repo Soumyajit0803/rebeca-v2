@@ -63,25 +63,25 @@ const Footer2 = () => {
 
                             <div className="ph-num">Treasurer</div>
                         </div>
-                        <div className="contact">
+                        {/* <div className="contact">
                             <div className="name">Ujjwal Chaudhari</div>
 
                             <div className="ph-num">
                                 <span className="material-icons">person</span>+91 95552 09179
                             </div>
-                        </div>
+                        </div> */}
                         <div className="contact">
-                            <div className="name">Bipro Bhadra</div>
+                            <div className="name">Sudhanshu Mishra</div>
 
                             <div className="ph-num">
-                                <span className="material-icons">person</span>+91 7890938525
+                                <span className="material-icons">person</span>+91 95993 68639
                             </div>
                         </div>
                         <div className="contact">
-                            <div className="name">Ankur Roy Chowdhury</div>
+                            <div className="name">Ivan jacob Thomas</div>
 
                             <div className="ph-num">
-                                <span className="material-icons">person</span>+91 84204 74705
+                                <span className="material-icons">person</span>+91 74638 84470
                             </div>
                         </div>
                     </div>

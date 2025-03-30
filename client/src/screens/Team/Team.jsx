@@ -35,28 +35,8 @@ import {
     AccountBalance,
     MenuBook,
 } from "@mui/icons-material";
-
-const skeleton = [
-    { id: 1, team: "Secretary General", members: [], icon: <AdminPanelSettings /> },
-    { id: 2, team: "Finance", members: [], icon: <AttachMoney /> },
-    { id: 3, team: "Cultural", members: [], icon: <Palette /> },
-    { id: 4, team: "Event", members: [], icon: <Event /> },
-    { id: 5, team: "Resource Information", members: [], icon: <Info /> },
-    { id: 6, team: "Travel and Logistics", members: [], icon: <DirectionsBus /> },
-    { id: 7, team: "Sponsorship", members: [], icon: <Handshake /> },
-    { id: 8, team: "Publication", members: [], icon: <Article /> },
-    { id: 9, team: "Publicity", members: [], icon: <Campaign /> },
-    { id: 10, team: "Stage Decoration", members: [], icon: <Brush /> },
-    { id: 11, team: "Business and Alumni Meet", members: [], icon: <Groups /> },
-    { id: 12, team: "Competitions and Seminars", members: [], icon: <Code /> },
-    { id: 13, team: "Web Development", members: [], icon: <Code /> },
-    { id: 14, team: "Refreshments", members: [], icon: <Restaurant /> },
-    { id: 15, team: "Volunteers", members: [], icon: <VolunteerActivism /> },
-    { id: 16, team: "Photography", members: [], icon: <CameraAlt /> },
-    { id: 17, team: "Joint Secretary", members: [], icon: <AssignmentInd /> },
-    { id: 18, team: "Fixed Signatory", members: [], icon: <AccountBalance /> },
-    { id: 19, team: "BECA Magazine", members: [], icon: <MenuBook /> },
-];
+import { useAuth } from "../../AuthContext";
+import { skeleton } from "../../AuthContext";
 
 const profs = [
     { name: "Dr. Nityananda Nandi", position: "Chairperson", img: "./assets/imgs/team/nityanandanandi.webp" },
@@ -64,28 +44,6 @@ const profs = [
     { name: "Dr. Subhabrata Koley", position: "Joint Convenor", img: "./assets/imgs/team/subhabratakoley.webp" },
     { name: "Dr. Santanu Maity", position: "Treasurer", img: "./assets/imgs/team/santanumaity.webp" },
 ];
-
-const teamNameToId = {
-    "Secretary General": 1,
-    Finance: 2,
-    Cultural: 3,
-    Event: 4,
-    "Resource Information": 5,
-    "Travel and Logistics": 6,
-    Sponsorship: 7,
-    Publication: 8,
-    Publicity: 9,
-    "Stage Decoration": 10,
-    "Business and Alumni Meet": 11,
-    "Competitions and Seminars": 12,
-    "Web Development": 13,
-    Refreshments: 14,
-    Volunteers: 15,
-    Photography: 16,
-    "Joint Secretary": 17,
-    "Fixed Signatory": 18,
-    "BECA Magazine": 19,
-};
 
 const TeamLoading = () => {
     return (
@@ -134,39 +92,40 @@ function ProfessorsList() {
 }
 
 const Team = () => {
-    const [teamsData, setTeamData] = useState(skeleton);
-    const [loading, setLoading] = useState(false);
+    // const [teamsData, setTeamData] = useState(skeleton);
+    // const [loading, setLoading] = useState(false);
+    const {teamsData, teamsLoad} = useAuth()
 
-    useEffect(() => {
-        const handleFetchAdmins = async () => {
-            try {
-                setLoading(true);
-                const res = await getAllAdmins();
-                const admins = res.data?.data;
-                console.log(admins);
-                const nteamsData = JSON.parse(JSON.stringify(skeleton));
-                admins.map((admin) => {
-                    var index = teamNameToId[admin.team];
-                    nteamsData[index - 1]?.members.push(admin);
-                });
-                setTeamData(nteamsData);
-            } catch (err) {
-                console.log(err);
-            } finally {
-                setLoading(false);
-            }
-        };
+    // useEffect(() => {
+    //     const handleFetchAdmins = async () => {
+    //         try {
+    //             setLoading(true);
+    //             const res = await getAllAdmins();
+    //             const admins = res.data?.data;
+    //             console.log(admins);
+    //             const nteamsData = JSON.parse(JSON.stringify(skeleton));
+    //             admins.map((admin) => {
+    //                 var index = teamNameToId[admin.team];
+    //                 nteamsData[index - 1]?.members.push(admin);
+    //             });
+    //             setTeamData(nteamsData);
+    //         } catch (err) {
+    //             console.log(err);
+    //         } finally {
+    //             setLoading(false);
+    //         }
+    //     };
 
-        handleFetchAdmins();
-    }, []);
+    //     handleFetchAdmins();
+    // }, [user]);
 
-    if (loading) {
+    if (teamsLoad) {
         return <TeamLoading />;
     }
 
     return (
         teamsData &&
-        !loading && (
+        !teamsLoad && (
             <div className="team">
                 <h1>Meet Our Team</h1>
                 <ProfessorsList />
