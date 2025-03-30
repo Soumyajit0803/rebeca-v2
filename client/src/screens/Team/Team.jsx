@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Heading from "../../components/Heading/Heading";
+import React from "react";
 import "./Team.css";
 import {
     Accordion,
     AccordionDetails,
-    Button,
     AccordionSummary,
     Card,
     CardContent,
@@ -13,28 +11,7 @@ import {
     Container,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { getAllAdmins } from "../../services/userApi";
 import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
-import {
-    AdminPanelSettings,
-    AttachMoney,
-    Palette,
-    Event,
-    Info,
-    DirectionsBus,
-    Handshake,
-    Article,
-    Campaign,
-    Brush,
-    Groups,
-    Code,
-    Restaurant,
-    VolunteerActivism,
-    CameraAlt,
-    AssignmentInd,
-    AccountBalance,
-    MenuBook,
-} from "@mui/icons-material";
 import { useAuth } from "../../AuthContext";
 import { skeleton } from "../../AuthContext";
 
@@ -47,7 +24,7 @@ const profs = [
 
 const TeamLoading = () => {
     return (
-        <div className="teamspage-loading">
+        <div className="teamspage-loading" style={{height: '50vh'}}>
             <Card sx={{ width: "min(100%, 400px)" }}>
                 <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column", width: "100%" }}>
                     <CircularProgress color="primary" size={80} thickness={5} />
@@ -92,8 +69,6 @@ function ProfessorsList() {
 }
 
 const Team = () => {
-    // const [teamsData, setTeamData] = useState(skeleton);
-    // const [loading, setLoading] = useState(false);
     const {teamsData, teamsLoad} = useAuth()
 
     // useEffect(() => {

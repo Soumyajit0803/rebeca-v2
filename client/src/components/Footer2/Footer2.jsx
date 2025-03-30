@@ -7,8 +7,10 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer2 = () => {
     return (
-        <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 0 }}>
-            <div className="topimg"></div>
+        <div style={{ position: "relative" }}>
+            <div className="topimg">
+                <img src="/assets/imgs/Footer/concert-blue.webp" />
+            </div>
             <div className="footer2">
                 <div className="left-col">
                     <Link to="/">
