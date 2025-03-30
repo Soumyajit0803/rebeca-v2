@@ -23,7 +23,7 @@ const Footer2 = () => {
                             Bengal
                         </a>
                     </div>
-                    <div className="address">© rebeca.in 2024. All right reserved</div>
+                    <div className="address">© rebeca.in 2025. All right reserved</div>
                     {/* <div className="address">
 					Made with 💙 by{" "}
 					<a href="https://dugarrishab.github.io/RishabDugar/">
@@ -44,17 +44,18 @@ const Footer2 = () => {
                     <div className="title">Contacts</div>
                     <div className="contacts">
                         <div className="contact">
-                            <div className="name">Dr. Nityananda Nandi</div>
+                            <div className="name">Dr. Debdulal Das
+                            </div>
 
                             <div className="ph-num">Chairperson</div>
                         </div>
                         <div className="contact">
-                            <div className="name">Dr. Ananya Barui</div>
+                            <div className="name">Dr. Rajib Chakraborty</div>
 
                             <div className="ph-num">Joint Convenor</div>
                         </div>
                         <div className="contact">
-                            <div className="name">Dr. Subhabrata Koley</div>
+                            <div className="name">Dr. Gautam Anand</div>
 
                             <div className="ph-num">Joint Convenor</div>
                         </div>
@@ -73,15 +74,15 @@ const Footer2 = () => {
                         <div className="contact">
                             <div className="name">Sudhanshu Mishra</div>
 
-                            <div className="ph-num">
-                                <span className="material-icons">person</span>+91 95993 68639
+                            <div className="ph-num" style={{whiteSpace: "nowrap"}}>
+                                <span className="material-icons">phone</span>+91-95993-68639
                             </div>
                         </div>
                         <div className="contact">
                             <div className="name">Ivan jacob Thomas</div>
 
-                            <div className="ph-num">
-                                <span className="material-icons">person</span>+91 74638 84470
+                            <div className="ph-num" style={{whiteSpace: "nowrap"}}>
+                                <span className="material-icons">phone</span>+91-74638-84470
                             </div>
                         </div>
                     </div>
