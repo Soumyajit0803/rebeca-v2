@@ -74,8 +74,8 @@ const EventSingle = () => {
                         <span className="event-single-badge">{oneEvent?.type}</span>
                         <h1 className="event-single-title">{oneEvent?.eventName}</h1>
                         <p className="event-single-subtitle">
-                            {extractFullDate(oneEvent?.rounds[0]?.startTime)} -{" "}
-                            {extractFullDate(oneEvent?.rounds[0]?.endTime)}
+                            {extractFullDate(oneEvent?.rounds[0]?.startTime, true)} to{" "}
+                            {extractFullDate(oneEvent?.rounds[0]?.endTime, true)}
                         </p>
                         <div className="eposter-mobile">
                             <div className="regfee">Fee ₹ {oneEvent.registrationFee}</div>
