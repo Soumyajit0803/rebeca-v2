@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Home.css";
 import Heading from "../../components/Heading/Heading";
 import Button from "../../components/Button/Button";
@@ -54,6 +54,22 @@ const Home = () => {
     // };
 
     const { innerWidth: width, innerHeight: height } = window;
+
+    const pujoAscheRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+    useEffect(() => {
+        const observer = new IntersectionObserver( (entries) => {
+            if (entries[0].isIntersecting){
+                setIsVisible(true);
+                observer.disconnect();
+            }
+
+        }, {threshold: 0.3});
+        if (pujoAscheRef.current){
+            observer.observe(pujoAscheRef.current);
+        }
+        return () => observer.disconnect();
+    }, [])
 
     return (
         <div className="home">
@@ -125,12 +141,13 @@ const Home = () => {
                 </div>
             </section>
             <section className="section-5">
-                <Heading
+                <div ref={pujoAscheRef} className={`pujoAsche ${isVisible? "visible" : ""}`}>
+                <Heading 
                     title="Pujo Asche"
                     subTitle={
                         "Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 84th edition of REBECA is back with a bang!"
                     }
-                ></Heading>
+                ></Heading></div>
                 {/* <div className="events">
 					<PujaDay
 						title="Saptami"

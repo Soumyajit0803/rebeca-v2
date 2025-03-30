@@ -1,4 +1,5 @@
-.banner-wrapper, .banner-wrapper-2 {
+.banner-wrapper,
+.banner-wrapper-2 {
   margin: 5rem;
   display: flex;
   align-items: center;
@@ -8,16 +9,24 @@
   /* line-height: 220%; */
 }
 
-.typography-section{
+.typography-section {
   flex-grow: 1;
   display: flex;
   align-items: end;
   flex-direction: column;
   text-align: right;
+
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
-.banner-wrapper-2 .typography-section{
+.banner-wrapper .typography-section {
+  transform: translateX(150px);
+}
+
+.banner-wrapper-2 .typography-section {
   align-items: start;
+  transform: translate(-150px);
 }
 
 .banner-wrapper-2 .typography-section {
@@ -25,22 +34,22 @@
   /* flex-grow: 0; */
 }
 
-.typography-section div{
+.typography-section div {
   font-size: 4rem;
-	font-family: "Sedgwick Ave Display", cursive;
+  font-family: "Sedgwick Ave Display", cursive;
   color: white;
   transition: all ease 0.2s;
 }
 
-.typography-section div:hover{
+.typography-section div:hover {
   color: var(--accent1);
 }
 
-.typography-section p{
+.typography-section p {
   padding-bottom: 2rem;
 }
 
-.img-section{
+.img-section {
   display: grid;
   grid-template-rows: repeat(10, 3rem);
   grid-template-columns: repeat(5, 6rem);
@@ -50,153 +59,172 @@
 .img-section {
   /* border: 1px solid white; */
   border-radius: 15px;
+  opacity: 0;
+  transition: all 1s ease-in-out;
 }
 
-.f1, .f2, .f3, .f4{
+.banner-wrapper .img-section {
+  transform: translate(-150px);
+}
+.banner-wrapper-2 .img-section {
+  transform: translate(150px);
+}
+
+.f1,
+.f2,
+.f3,
+.f4 {
   overflow: hidden;
   border-radius: 5px;
 }
 
-.f1 img, .f2 img, .f3 img, .f4 img, .img-section video{
+.f1 img,
+.f2 img,
+.f3 img,
+.f4 img,
+.img-section video {
   transition: all ease 0.6s;
   border-radius: 15px;
 }
 
-@keyframes beats{
-  0%{
+@keyframes beats {
+  0% {
     transform: scale(1);
   }
-  50%{
+  50% {
     transform: scale(1.2);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }
-.f1 img:hover, .f2 img:hover, .f3 img:hover, .f4 img:hover, .img-section video:hover{
+.f1 img:hover,
+.f2 img:hover,
+.f3 img:hover,
+.f4 img:hover,
+.img-section video:hover {
   transform: scale(1.2);
   cursor: pointer;
   border-radius: 5px;
 }
 
-.img-section .f1{
+.img-section .f1 {
   grid-row-start: 1;
   grid-column-start: 1;
   grid-row-end: 4;
   grid-column-end: 4;
 }
-.banner-wrapper-2 .img-section .f1{
+.banner-wrapper-2 .img-section .f1 {
   grid-column-start: 3;
   grid-column-end: 6;
 }
 
-.img-section .f2{
+.img-section .f2 {
   grid-row-start: 4;
   grid-column-start: 1;
   grid-row-end: 8;
   grid-column-end: 6;
 }
 
-.img-section .f3{
+.img-section .f3 {
   grid-row-start: 8;
   grid-column-start: 1;
   grid-row-end: 10;
   grid-column-end: 3;
 }
-.banner-wrapper-2 .img-section .f3{
+.banner-wrapper-2 .img-section .f3 {
   grid-column-start: 2;
   grid-column-end: 4;
 }
 
-.img-section .f4{
+.img-section .f4 {
   grid-row-start: 8;
   grid-column-start: 3;
   grid-row-end: 11;
   grid-column-end: 5;
 }
-.banner-wrapper-2 .img-section .f4{
+.banner-wrapper-2 .img-section .f4 {
   grid-column-start: 4;
   grid-column-end: 6;
 }
 
-.banner-wrapper img, 
+.banner-wrapper img,
 .banner-wrapper-2 img,
 .banner-wrapper video,
-.banner-wrapper-2 video{
+.banner-wrapper-2 video {
   object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 5px;
-
 }
 
-.banner-ashtami .img-section .f3{
+.banner-ashtami .img-section .f3 {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 4;
 }
-.banner-ashtami .img-section .f4{
+.banner-ashtami .img-section .f4 {
   grid-column-start: 2;
   grid-column-end: 6;
 }
 
-.banner-navami .f3{
+.banner-navami .f3 {
   grid-column-end: 4;
   grid-row-end: 11;
 }
 
-.banner-navami .f4{
+.banner-navami .f4 {
   grid-column-start: 4;
   grid-column-end: 6;
   grid-row-end: 10;
 }
 
-@media only screen and (max-width: 1000px){
-  .img-section{
+@media only screen and (max-width: 1000px) {
+  .img-section {
     grid-template-columns: repeat(5, 4rem);
   }
-  .banner-wrapper, .banner-wrapper-2{
+  .banner-wrapper,
+  .banner-wrapper-2 {
     padding-left: 0rem;
     padding-right: 0rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
 
-  .typography-section{
+  .typography-section {
     width: 50%;
   }
 }
 
-@media only screen and (max-width: 750px){
-  .banner-wrapper-2{
+@media only screen and (max-width: 750px) {
+  .banner-wrapper-2 {
     flex-direction: column;
   }
 
-  .banner-wrapper{
+  .banner-wrapper {
     flex-direction: column-reverse;
   }
 
-  .typography-section{
+  .typography-section {
     width: 95%;
   }
 
-  .typography-section div{
+  .typography-section div {
     font-size: 3rem;
   }
 
-  .banner-wrapper .img-section{
-    align-self: start
+  .banner-wrapper .img-section {
+    align-self: start;
   }
 
-  .banner-wrapper-2 .img-section{
+  .banner-wrapper-2 .img-section {
     align-self: end;
   }
 
-  .img-section{
+  .img-section {
     grid-template-columns: repeat(5, 5.5rem);
   }
-
 
   /* .banner-wrapper-2 .img-section .f1,
   .banner-wrapper .img-section .f1{
@@ -217,13 +245,13 @@
   } */
 }
 
-@media only screen and (max-width: 500px){
-  .img-section{
+@media only screen and (max-width: 500px) {
+  .img-section {
     grid-template-columns: repeat(5, 4rem);
   }
 }
 
-.check{
+.check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,4 +259,11 @@
   width: 100%;
 }
 
-
+.typography-section.visible {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.img-section.visible {
+  opacity: 1;
+  transform: translate(0px);
+}
