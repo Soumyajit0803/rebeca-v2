@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Form, Input, Select, Upload, Button, Avatar, Typography, Space, message, Modal, Alert } from "antd";
-import { UploadOutlined, DeleteFilled } from "@ant-design/icons";
+import { UploadOutlined, DeleteFilled, DownloadOutlined } from "@ant-design/icons";
 import { getAllMembers, updateMember, postImage, deleteMember } from "../../api";
 import ImgCrop from "antd-img-crop";
 import "antd/es/modal/style";
@@ -8,6 +8,16 @@ import "antd/es/slider/style";
 import { MailOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 import { BankOutlined } from "@ant-design/icons";
+
+import * as XLSX from "xlsx";
+
+async function exportToExcel(data, fileName) {
+    const worksheet = XLSX.utils.json_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+    await XLSX.writeFile(workbook, `${fileName}.xlsx`);
+    console.log(`${fileName}.xlsx has been saved!`);
+}
 
 const { Option } = Select;
 const teamNames = [
@@ -48,12 +58,42 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
     const [values, setValues] = useState([]);
     const [index, setIndex] = useState(-1);
     const [loading, setLoading] = useState(false);
+    const [downloadLoading, setDownloadLoading] = useState(false);
     const [fileList, setFileList] = useState([]);
     const [origFile, setOrigFile] = useState([]);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [selectedMember, setSelectedMember] = useState(null);
     const [fetching, setFetching] = useState(false);
+
+    const [allAdmins, setAllAdmins] = useState(null);
+
+    const handleDownloadData = () => {
+        try {
+            setDownloadLoading(true);
+            exportToExcel(
+                allAdmins.map((v) => ({
+                    name: v.name,
+                    email: v.email,
+                    image: v.image,
+                    role: v.role,
+                    position: v.position,
+                    team: v.team,
+                    tagLine: v.tagLine,
+                    dept: v.dept,
+                    phone: v.phone,
+                    passout: v.passout_year,
+                })),
+                "admin"
+            );
+            successPop("Download Successful");
+        } catch (e) {
+            console.log(e.message);
+            errorPop("Download error");
+        } finally {
+            setDownloadLoading(false);
+        }
+    };
 
     const handleMemberDeletion = async () => {
         try {
@@ -216,6 +256,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
         try {
             setFetching(true);
             const res = await getAllMembers();
+            setAllAdmins(res.data.data);
             // console.log(res);
             const tmp = [];
             res.data.data.map((member, index) => {
@@ -264,23 +305,39 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 showIcon
                 style={{ marginTop: "1rem" }}
             />
-            <Button
-                danger
-                type="primary"
-                size="large"
-                style={{ marginTop: "1rem" }}
-                icon={<DeleteFilled />}
-                iconPosition="end"
-                onClick={() => {
-                    if (index === -1 || !values[index]) {
-                        errorPop("Please select a member first");
-                    } else {
-                        setIsDeleteModalOpen(true);
-                    }
-                }}
-            >
-                Delete Team Member
-            </Button>
+            <div style={{
+                display: "flex",
+                gap: "1rem",
+                flexWrap: "wrap",
+                marginTop: "1rem"
+            }}>
+                <Button
+                    danger
+                    type="primary"
+                    size="large"
+                    icon={<DeleteFilled />}
+                    iconPosition="end"
+                    onClick={() => {
+                        if (index === -1 || !values[index]) {
+                            errorPop("Please select a member first");
+                        } else {
+                            setIsDeleteModalOpen(true);
+                        }
+                    }}
+                >
+                    Delete Team Member
+                </Button>
+                <Button
+                    type="primary"
+                    size="large"
+                    icon={<DownloadOutlined />}
+                    iconPosition="end"
+                    onClick={handleDownloadData}
+                    confirmLoading={downloadLoading}
+                >
+                    Download member data
+                </Button>
+            </div>
             <Modal
                 title="Delete Data"
                 onOk={handleMemberDeletion}

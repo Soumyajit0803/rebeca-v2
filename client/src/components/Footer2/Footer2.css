@@ -179,7 +179,7 @@
 }
 
 .topimg {
-	width: 100vw;
+	min-width: 800px;
 	aspect-ratio: 1920/484;
 	background-image: url("/assets/imgs/Footer/concert.png");
 	background-position: bottom;

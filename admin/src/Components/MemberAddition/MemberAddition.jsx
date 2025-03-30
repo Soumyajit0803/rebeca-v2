@@ -252,7 +252,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                         label="Department"
                         name="dept"
                         rules={[{ required: true }]}
-                        style={{ maxWidth: 300, marginTop: 20 }}
+                        style={{ width: "min(500px, 100%)", marginTop: 20 }}
                     >
                         <Input placeholder="Enter Department name" addonBefore={<ReadOutlined />} />
                     </Form.Item>
