@@ -147,7 +147,7 @@ const Team = () => {
                 const nteamsData = JSON.parse(JSON.stringify(skeleton));
                 admins.map((admin) => {
                     var index = teamNameToId[admin.team];
-                    nteamsData[index - 1].members.push(admin);
+                    nteamsData[index - 1]?.members.push(admin);
                 });
                 setTeamData(nteamsData);
             } catch (err) {

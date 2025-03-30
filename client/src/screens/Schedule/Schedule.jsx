@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Schedule.css";
-import events from "../../assets/data/events.json";
 import { useAuth } from "../../AuthContext";
 import Heading from "../../components/Heading/Heading";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { nights } from "../../App";
 import { extractTime } from "../../components/EventList/EventList";
+import { Tooltip, Paper } from "@mui/material";
 
 var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 84th edition of REBECA is back with a bang!`;
 
@@ -36,6 +36,14 @@ const content = {
         image: "/assets/imgs/Schedule/schedule-2.webp",
         intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
     },
+};
+
+const PosterImage = ({ src }) => {
+    return (
+        <Paper elevation={3} sx={{ width: 200, height: 200 }}>
+            <img src={src} alt={src} style={{ width: "100%", height: "100%" }} />
+        </Paper>
+    );
 };
 
 function EventSection({ data, dayEvents, rank }) {
@@ -128,35 +136,36 @@ function EventSection({ data, dayEvents, rank }) {
                                             color: "inherit",
                                         }}
                                     >
-                                        <div
-                                            key={idx}
-                                            className="one"
-                                            style={{
-                                                border: "1px solid rgb(201, 201, 201)",
-                                                borderRadius: "5px",
-                                                display: "flex",
-                                                alignItems: "center",
-                                                padding: "0.5rem 1.5rem",
-                                                width: "min(35rem, 90vw)",
-                                                height: "100%",
-                                                justifyContent: "space-between",
-                                                background: " rgba(255, 255, 255, 0.06) ",
-                                                backdropFilter: "blur(10px)",
-                                            }}
-                                        >
+                                        <Tooltip title={<PosterImage src={ev?.poster} />} placement="bottom-end" arrow>
                                             <div
-                                                className="small1"
+                                                key={idx}
+                                                className="one"
                                                 style={{
-                                                    fontWeight: 400,
-                                                    fontSize: "1.2rem",
+                                                    border: "1px solid rgb(201, 201, 201)",
+                                                    borderRadius: "5px",
+                                                    display: "flex",
                                                     alignItems: "center",
-                                                    width: "15ch",
-                                                    wordWrap: "break-word",
+                                                    padding: "0.5rem 1.5rem",
+                                                    width: "min(35rem, 90vw)",
+                                                    height: "100%",
+                                                    justifyContent: "space-between",
+                                                    background: " rgba(255, 255, 255, 0.06) ",
+                                                    backdropFilter: "blur(10px)",
                                                 }}
                                             >
-                                                {ev.eventName}
-                                            </div>
-                                            {/* <div
+                                                <div
+                                                    className="small1"
+                                                    style={{
+                                                        fontWeight: 400,
+                                                        fontSize: "1.2rem",
+                                                        alignItems: "center",
+                                                        width: "15ch",
+                                                        wordWrap: "break-word",
+                                                    }}
+                                                >
+                                                    {ev.eventName}
+                                                </div>
+                                                {/* <div
                                     className="small1"
                                     style={{
                                         fontWeight: 200,
@@ -166,16 +175,17 @@ function EventSection({ data, dayEvents, rank }) {
                                 >
                                     {event.round}
                                 </div> */}
-                                            <div
-                                                className="small1"
-                                                style={{
-                                                    fontSize: mobileView ? "1rem" : "1.2rem",
-                                                    fontWeight: 400,
-                                                }}
-                                            >
-                                                {time}
+                                                <div
+                                                    className="small1"
+                                                    style={{
+                                                        fontSize: mobileView ? "1rem" : "1.2rem",
+                                                        fontWeight: 400,
+                                                    }}
+                                                >
+                                                    {time}
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Tooltip>
                                     </Link>
                                 );
                             })}

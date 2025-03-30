@@ -7,6 +7,7 @@ import RegistrationStats from "../RegistrationStats/RegistrationStats";
 import EventEditing from "../EventEditing/EventEditing";
 import { useAuth } from "../../AuthContext";
 import { LogoutOutlined } from "@ant-design/icons";
+import './Dashboard.css'
 
 const themeColor = {
     developer: "#ef7f29",
@@ -171,7 +172,7 @@ const Dashboard = () => {
                         padding: "2rem 2rem 0 2rem",
                     }}
                 >
-                    <div style={{ fontSize: "2.5rem", fontWeight: "600", color: "#fff" }}>Admin Dashboard</div>
+                    <div className="admin-dsb-heading">Admin Dashboard</div>
                     <div
                         className="avatar"
                         style={{
