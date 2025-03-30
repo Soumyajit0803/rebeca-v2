@@ -115,6 +115,15 @@ const eventSchema = new mongoose.Schema(
                 message: "Invalid URL for thumbnail",
             },
         },
+        paymentQR: {
+            type: String,
+            validate: {
+                validator: function (value) {
+                    return /^https?:\/\/.+\.(jpg|jpeg|png|webp|svg)$/i.test(value);
+                },
+                message: "Invalid URL for QR Code",
+            },
+        },
         registrationFee: {
             type: Number,
             required: [true, "Registration fee is required"],

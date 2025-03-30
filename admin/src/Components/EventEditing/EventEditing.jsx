@@ -41,7 +41,7 @@ const areArraysEqual = (arr1, arr2) => {
     if (arr1.length !== arr2.length) return false;
     const set1 = new Set(arr1);
     const set2 = new Set(arr2);
-    return arr1.every(id => set2.has(id)) && arr2.every(id => set1.has(id));
+    return arr1.every((id) => set2.has(id)) && arr2.every((id) => set1.has(id));
 };
 
 const EventEditing = ({ errorPop, successPop, infoPop }) => {
@@ -56,12 +56,14 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
     const [origposterList, setOrigPosterList] = useState([]);
     const [thumbnailList, setThumbnailList] = useState([]);
     const [origThumbnailList, setOrigThumbnailList] = useState([]);
+    const [QRList, setQRList] = useState([]);
+    const [origQRList, setOrigQRList] = useState([]);
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
-    const [fetchingAllEvents, setFetchingAllEvents] = useState(false)
+    const [fetchingAllEvents, setFetchingAllEvents] = useState(false);
     const [fetchingAllMembers, setFetchingAllMembers] = useState(false);
-    const {admin} = useAuth()
+    const { admin } = useAuth();
 
     const handleEventDeletion = async () => {
         try {
@@ -78,17 +80,17 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 successPop("Event deleted Successfully", "Event Deleted");
                 await handleGetAllEvents();
                 form.resetFields();
-                setPosterList([])
-                setOrigPosterList([])
-                setThumbnailList([])
-                setOrigThumbnailList([])
+                setPosterList([]);
+                setOrigPosterList([]);
+                setThumbnailList([]);
+                setOrigThumbnailList([]);
                 setSelectedEvent(null);
             } else {
                 errorPop(res.data.message, "Error While Deleting Event");
             }
         } catch (err) {
             console.log(err);
-            
+
             errorPop(err?.response?.data?.message, "Error While Deleting Event");
         } finally {
             setLoading(false);
@@ -102,6 +104,10 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
     const onThumbnailChange = ({ fileList: newFileList }) => {
         setThumbnailList(newFileList);
+    };
+
+    const onQRChange = ({ fileList: newFileList }) => {
+        setQRList(newFileList);
     };
 
     const onPosterPreview = async (file) => {
@@ -132,11 +138,25 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         const imgWindow = window.open(src);
         imgWindow?.document.write(image.outerHTML);
     };
+    const onQRPreview = async (file) => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow?.document.write(image.outerHTML);
+    };
 
     // const { user } = useAuth();
     const onFinish = async (values) => {
         console.log(values);
-        
+
         try {
             setLoading(true);
             const updatedFields = [];
@@ -154,9 +174,14 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 return;
             }
 
+            if (QRList.length === 0 && values.registrationFee !== 0) {
+                infoPop("Please add QR image, your event is not set to be free", "No Payment QR Image");
+                return;
+            }
+
             if (coordsList.length === 0) {
-                infoPop("Please select Coordinators", "No Coordinators Selected")
-                return
+                infoPop("Please select Coordinators", "No Coordinators Selected");
+                return;
             }
 
             for (let round of values.rounds) {
@@ -164,31 +189,42 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 round.endTime = round.date[1].$d;
             }
 
-            console.log("Modified rounds data: "); console.log(values.rounds);
+            console.log("Modified rounds data: ");
+            console.log(values.rounds);
 
             const formData = new FormData();
             var changed = 0;
             const oldData = selectedEvent.original;
             formData.append("_id", selectedEvent.original._id);
-            console.log("THE OLD DATA ")
+            console.log("THE OLD DATA ");
             console.log(oldData);
-            
 
             if (JSON.stringify(posterList) !== JSON.stringify(origposterList)) {
                 changed = 1;
                 console.log("Files data");
                 const imageURL = await handleEditImage(posterList[0].originFileObj);
                 formData.append("poster", imageURL);
-                updatedFields.push("Poster")
+                updatedFields.push("Poster");
             }
             if (JSON.stringify(thumbnailList) !== JSON.stringify(origThumbnailList)) {
                 console.log("Files data");
                 const imageURL = await handleEditImage(thumbnailList[0].originFileObj);
                 formData.append("thumbnail", imageURL);
                 changed = 1;
-                updatedFields.push("Thumbnail")
+                updatedFields.push("Thumbnail");
             }
-            
+
+            if (JSON.stringify(QRList) !== JSON.stringify(origThumbnailList)) {
+                console.log("Files data");
+                var imageURL = ""
+                if (QRList[0]) {
+                    imageURL = await handleEditImage(QRList[0].originFileObj);
+                    formData.append("paymentQR", imageURL);
+                }
+                changed = 1;
+                updatedFields.push("Payment QR");
+            }
+
             const newData = {
                 eventName: values.eventName,
                 description: values.description,
@@ -199,35 +235,34 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 mainCoordinators: coordsList.map((e) => e._id),
             };
 
-            if (values.type === 'team') {
-                newData.maxTeamSize = values.maxTeamSize
-                newData.minTeamSize = values.minTeamSize 
+            if (values.type === "team") {
+                newData.maxTeamSize = values.maxTeamSize;
+                newData.minTeamSize = values.minTeamSize;
             }
 
             Object.entries(newData).forEach(([key, newValue]) => {
-                console.log("Property: ", key)
+                console.log("Property: ", key);
                 console.log(oldData[key]);
-                console.log(newValue)
-                
-                if (key === 'rounds') {
+                console.log(newValue);
+
+                if (key === "rounds") {
                     if (JSON.stringify(oldData[key]) === newValue) {
-                        return
+                        return;
                     }
                 }
                 if (key === "mainCoordinators") {
-                    const oldIDs = oldData["mainCoordinators"].map(v=>v._id); 
+                    const oldIDs = oldData["mainCoordinators"].map((v) => v._id);
 
-                    if(areArraysEqual(oldIDs, newValue)) {
-                        return
+                    if (areArraysEqual(oldIDs, newValue)) {
+                        return;
                     } else {
-                        console.log("Haa coords updates")
+                        console.log("Haa coords updates");
                         console.log(oldIDs);
-                        console.log(newValue)
-                        
+                        console.log(newValue);
                     }
-                    newValue = JSON.stringify(newValue)
-                } 
-                
+                    newValue = JSON.stringify(newValue);
+                }
+
                 // for all
                 if (oldData[key] !== newValue) {
                     formData.append(key, newValue);
@@ -236,7 +271,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     // console.log(newValue);
                     // console.log("Old value" );
                     // console.log(oldData[key]);
-                    updatedFields.push(key)
+                    updatedFields.push(key);
                 }
             });
 
@@ -260,7 +295,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
     const handleGetAllMembers = async () => {
         try {
-            setFetchingAllMembers(true)
+            setFetchingAllMembers(true);
             const res = await getAllMembers();
             // console.log(res);
             const tmp = [];
@@ -279,7 +314,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
             const errormsg = err.response ? err.response.data.message : err.message;
             errorPop(`ERROR: ${errormsg}`, "Error while fetching all members");
         } finally {
-            setFetchingAllMembers(false)
+            setFetchingAllMembers(false);
         }
     };
 
@@ -304,8 +339,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
 
     const handleGetAllEvents = async () => {
         try {
-            setFetchingAllEvents(true)
-            const res = await getAllEvents(admin.role === 'admin' ? admin.email : "null");
+            setFetchingAllEvents(true);
+            const res = await getAllEvents(admin.role === "admin" ? admin.email : "null");
             console.log(res);
             const finalopts = [];
 
@@ -323,19 +358,18 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
             const detailed = err.response?.data?.message;
             errorPop(detailed || err.message, "Error While fetching allEvents");
         } finally {
-            setFetchingAllEvents(false)
+            setFetchingAllEvents(false);
         }
     };
 
     const onEventSelect = (idx) => {
         const original = AllEventsData[idx].original;
         console.log(original);
-        
 
         setSelectedEvent(AllEventsData[idx]);
         original.time = [dayjs(original.startTime), dayjs(original.endTime)];
         for (let round of original.rounds) {
-            round.date = [dayjs(round.startTime), dayjs(round.endTime)]
+            round.date = [dayjs(round.startTime), dayjs(round.endTime)];
         }
 
         form.setFieldsValue(original);
@@ -375,6 +409,23 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 url: original.thumbnail,
                 status: "done",
                 name: original.thumbnail.split("/")[-1],
+            },
+        ]);
+        // set Payment QR
+        setQRList([
+            {
+                uid: "-1",
+                url: original.paymentQR,
+                status: "done",
+                name: original.paymentQR.split("/")[-1],
+            },
+        ]);
+        setOrigQRList([
+            {
+                uid: "-1",
+                url: original.paymentQR,
+                status: "done",
+                name: original.paymentQR.split("/")[-1],
             },
         ]);
     };
@@ -442,7 +493,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     Note that this Operation cannot be reverted.
                 </Modal>
                 <h1 style={{ marginTop: "1.2rem" }}>Edit an Event</h1>
-                <Form form={form} layout="vertical" onFinish={onFinish} size="large" disabled = {!selectedEvent}>
+                <Form form={form} layout="vertical" onFinish={onFinish} size="large" disabled={!selectedEvent}>
                     {/* Name */}
                     <Form.Item
                         label="Event Name"
@@ -534,6 +585,29 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                                 // customRequest={() => true}
                             >
                                 {thumbnailList.length < 1 && "+ Thumbnail"}
+                            </Upload>
+                        </ImgCrop>
+                    </div>
+                    <div style={{ margin: "1rem 0" }}>
+                        <span>Payment QR Code for the event (if it has a registration fees)</span>
+                        <ImgCrop rotationSlider>
+                            <Upload
+                                maxCount={1}
+                                listType="picture-card"
+                                fileList={QRList}
+                                onChange={onQRChange}
+                                onPreview={onQRPreview}
+                                progress={{
+                                    strokeColor: {
+                                        "0%": "#5075f6",
+                                        "100%": "#705dea",
+                                    },
+                                    strokeWidth: 3,
+                                    format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+                                }}
+                                // customRequest={() => true}
+                            >
+                                {QRList.length < 1 && "+ Payment QR"}
                             </Upload>
                         </ImgCrop>
                     </div>
@@ -651,13 +725,13 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                                 message="If you cannot find an admin, consider refreshing the page."
                                 type="info"
                                 showIcon
-                                style={{ margin: "0 0 0.5rem 0", maxWidth: 'max-content'}}
+                                style={{ margin: "0 0 0.5rem 0", maxWidth: "max-content" }}
                             />
                             <Alert
                                 message="Don't forget to keep yourself in this list! Else You won't be able to see this event later."
                                 type="warning"
                                 showIcon
-                                style={{ margin: "0 0 0.5rem 0", maxWidth: 'max-content'}}
+                                style={{ margin: "0 0 0.5rem 0", maxWidth: "max-content" }}
                             />
                             <Select
                                 size="large"
@@ -679,7 +753,9 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                                 }}
                                 options={allMembers}
                                 value={selectedMember}
-                                notFoundContent={fetchingAllMembers ? <Spin tip="fetching members..." size="large" /> : null}
+                                notFoundContent={
+                                    fetchingAllMembers ? <Spin tip="fetching members..." size="large" /> : null
+                                }
                             ></Select>
                         </Form.Item>
 

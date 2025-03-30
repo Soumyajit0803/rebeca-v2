@@ -4,7 +4,7 @@ import rebecaQR from "/assets/paymentqr/rebeca.png";
 import { Upload } from "@mui/icons-material";
 import { useAuth } from "../../AuthContext";
 
-const Payment = ({ eventName, regfee, setValid, setFile, free }) => {
+const Payment = ({ eventName, regfee, setValid, setFile, free, paymentQR }) => {
     const [preview, setPreview] = useState(null);
     const [error, setError] = useState("");
 
@@ -61,7 +61,7 @@ const Payment = ({ eventName, regfee, setValid, setFile, free }) => {
                 <Paper elevation={2} sx={{ p: 3, my: 2, borderRadius: 2 }}>
                     <Grid2 container spacing={2}>
                         <Grid2 size={{ xs: 12, sm: 6 }}>
-                            <img src={rebecaQR} style={{ width: "100%", aspectRatio: "1/1", opacity: free?0.3:1 }} />
+                            <img src={paymentQR} style={{ width: "100%", aspectRatio: "1/1", opacity: free?0.3:1 }} />
                         </Grid2>
                         <Grid2 size={{ xs: 12, sm: 6 }}>
                             <Typography sx={{opacity: free?0.3:1}} variant="body1" gutterBottom>

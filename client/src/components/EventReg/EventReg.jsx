@@ -188,6 +188,7 @@ const EventReg = () => {
                         free={user.email.endsWith(".iiests.ac.in") && allAreIIESTians(selectedItems)}
                         setFile={setFile}
                         regfee={oneEvent?.registrationFee}
+                        paymentQR={oneEvent?.paymentQR}
                     />
                 );
             case 2:

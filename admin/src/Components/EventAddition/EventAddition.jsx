@@ -54,12 +54,16 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
     const [coordsList, setCoordsList] = useState([]);
     const [posterList, setPosterList] = useState([]);
     const [thumbnailList, setThumbnailList] = useState([]);
-    const {admin} = useAuth()
+    const [QRList, setQRList] = useState([]);
+    const { admin } = useAuth();
     const onPosterChange = ({ fileList: newFileList }) => {
         setPosterList(newFileList);
     };
     const onThumbnailChange = ({ fileList: newFileList }) => {
         setThumbnailList(newFileList);
+    };
+    const onQRChange = ({ fileList: newFileList }) => {
+        setQRList(newFileList);
     };
     const onPosterPreview = async (file) => {
         let src = file.url;
@@ -76,6 +80,20 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
         imgWindow?.document.write(image.outerHTML);
     };
     const onThumbnailPreview = async (file) => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow?.document.write(image.outerHTML);
+    };
+    const onQRPreview = async (file) => {
         let src = file.url;
         if (!src) {
             src = await new Promise((resolve) => {
@@ -118,8 +136,13 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                 infoPop("Please add thumbnail image");
                 return;
             }
+            if (QRList.length === 0 && values.registrationAmount !== 0) {
+                infoPop("Please add Payment QR Code");
+                return;
+            }
             const posterURL = await handleSubmitImage(posterList[0].originFileObj);
             const thumbnailURL = await handleSubmitImage(thumbnailList[0].originFileObj);
+            const QRURL = await handleSubmitImage(QRList[0].originFileObj);
             const formData = new FormData();
 
             formData.append("eventName", values.name);
@@ -132,9 +155,10 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
             }
             formData.append("poster", posterURL);
             formData.append("thumbnail", thumbnailURL);
+            formData.append("paymentQR", QRURL);
             formData.append("registrationFee", values.registrationAmount);
             formData.append("rounds", JSON.stringify(values.rounds));
-            formData.append("mainCoordinators", JSON.stringify(coordsList.map((e)=>allMembers[e].original._id)));
+            formData.append("mainCoordinators", JSON.stringify(coordsList.map((e) => allMembers[e].original._id)));
             // coordsList.forEach((e) => {
             //     formData.append("mainCoordinators[]", allMembers[e].original._id);
             // });
@@ -167,7 +191,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                     original: member,
                 });
                 if (member._id === admin._id) {
-                    setCoordsList([index])
+                    setCoordsList([index]);
                 }
             });
             setAllMembers(tmp);
@@ -177,7 +201,6 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
         }
     };
 
-    
     const handleSubmitImage = async (imageFile) => {
         // <- This will send the selected image to our api
         try {
@@ -293,6 +316,29 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                                 // customRequest={() => true}
                             >
                                 {thumbnailList.length < 1 && "+ Thumbnail"}
+                            </Upload>
+                        </ImgCrop>
+                    </div>
+                    <div style={{margin: '1rem 0'}}>
+                        <span>Payment QR Code for the event (if it has a registration fees)</span>
+                        <ImgCrop rotationSlider>
+                            <Upload
+                                maxCount={1}
+                                listType="picture-card"
+                                fileList={QRList}
+                                onChange={onQRChange}
+                                onPreview={onQRPreview}
+                                progress={{
+                                    strokeColor: {
+                                        "0%": "#5075f6",
+                                        "100%": "#705dea",
+                                    },
+                                    strokeWidth: 3,
+                                    format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+                                }}
+                                // customRequest={() => true}
+                            >
+                                {QRList.length < 1 && "+ Payment QR"}
                             </Upload>
                         </ImgCrop>
                     </div>
