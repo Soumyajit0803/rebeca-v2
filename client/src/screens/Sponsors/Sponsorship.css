@@ -230,3 +230,151 @@
         height: min-content !important;
     }
 }
+.past-sponsors-carousel-container {
+    width: 100% ;
+    margin-top: 2rem;
+    position: relative;
+    
+}
+
+
+.past-sponsors-carousel.row-1 {
+    display: flex;
+    width: 100%; 
+    gap: 20px; 
+    animation: slideLeft 10s linear infinite;
+    will-change: transform;
+}
+
+
+.past-sponsors-carousel.row-2 {
+    display: flex;
+    width: calc(100% * 2); /* Make it twice the width to accommodate duplicate items */
+    gap: 20px;
+    animation: endlessSlideRight 15s linear infinite;
+    will-change: transform;
+    margin-top: 20px;
+}
+
+.past-sponsors-carousel:hover {
+    animation-play-state: paused;
+}
+
+.sponsor-card {
+    flex: 0 0 auto; /* Ensures each card stays the same size */
+    padding: 10px;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Default shadow */
+}
+
+/* Hover effect: Stronger shadow and slight scale */
+.past-sponsors-carousel.row-1 .sponsor-card:hover,
+.past-sponsors-carousel.row-2 .sponsor-card:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Add shadows when the cards are sliding in or out of view */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        
+    }
+    100% {
+        transform: translateX(-100%);
+        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.05); /* Lighter shadow on exit */
+    }
+}
+
+@keyframes endlessSlideRight {
+    0% {
+        transform: translateX(-50%);
+        box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.05); /* Lighter shadow on enter */
+    }
+    100% {
+        transform: translateX(0);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+.past-sponsors-carousel img {
+    width: 200px;
+    height: auto;
+}
+
+
+.rect1, .rect2{
+    position: absolute;
+    top: 0;
+    left: -20px;
+    height: 350px;
+    width: 120%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 1) 90%); /* Black at top and bottom, transparent in the middle */
+    backdrop-filter: blur(0px); /* Apply the blur */
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 10;
+}
+
+@media (max-width: 1024px) {
+    .past-sponsors-carousel img {
+        width: 150px;
+    }
+
+    .past-sponsors-carousel.row-1, 
+    .past-sponsors-carousel.row-2 {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .past-sponsors-carousel {
+        flex-direction: row;
+        animation: none;
+    }
+
+    .past-sponsors-carousel.row-1,
+    .past-sponsors-carousel.row-2 {
+        margin: 0;
+    }
+
+    .past-sponsors-carousel img {
+        width: 120px;
+    }
+
+    .sponsor-card {
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05); 
+    }
+
+    .sponsor-card:hover {
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    .rect1, .rect2 {
+        height: 330px;
+    }
+}
+
+@media (max-width: 600px) {
+    .past-sponsors-carousel img {
+        width: 100px;
+    }
+    .rect1, .rect2 {
+        height: 320px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .past-sponsors-carousel img {
+        width: 80px !important;
+    }
+    
+    .past-sponsors-carousel.row-1,
+    .past-sponsors-carousel.row-2 {
+        margin-top: 10px;
+    }
+    .rect1, .rect2 {
+        height: 200px !important;
+    }
+}
+
