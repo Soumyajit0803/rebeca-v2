@@ -163,18 +163,31 @@ function Sponsorship() {
                     ))}
                 </section>
 
-                <section className="section-4">
-                    <div style={{ padding: "0 1rem" }}>
-                        <Heading1 title={"Past-sponsors"} w={"60%"}></Heading1>
-                    </div>
-                    <div className="center1">
-                        <div className="cards">
-                            {pastSponsorJsonData.map((sponsor, index) => (
-                                <SponsorCard key={index} sponsor={sponsor} />
+                <div className="section-4">
+                    <Heading1 title={"Past Sponsors"} w={"60%"} />
+                    <div className="past-sponsors-carousel-container">
+                        <div className="rect1"></div>
+                        <div className="rect2"></div>
+                    
+                        <div className="past-sponsors-carousel row-1">
+                            {pastSponsorJsonData.slice(0, Math.ceil(pastSponsorJsonData.length / 2)).map((sponsor, index) => (
+                                <div className="sponsor-card" key={index}>
+                                    <SponsorCard sponsor={sponsor} />
+                                </div>
                             ))}
                         </div>
+
+                       
+                        <div className="past-sponsors-carousel row-2">
+                            {pastSponsorJsonData.slice(Math.ceil(pastSponsorJsonData.length / 2)).map((sponsor, index) => (
+                                <div className="sponsor-card" key={index}>
+                                    <SponsorCard sponsor={sponsor} />
+                                </div>
+                            ))}
+                            
+                        </div>
                     </div>
-                </section>
+                </div>
             </div>
         </>
     );
@@ -191,3 +204,4 @@ export default Sponsorship;
 // 		}
 // 	]
 // }
+
