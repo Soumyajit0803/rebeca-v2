@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root, * {
+:root {
 	font-family: "Exo 2", sans-serif;
 	font-optical-sizing: auto;
 	font-weight: 400;

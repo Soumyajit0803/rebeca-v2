@@ -62,7 +62,6 @@ function EventSection({ data, dayEvents, rank }) {
                     backgroundRepeat: "no-repeat",
                     padding: "1.5rem",
                     position: "relative",
-
                     display: "flex",
                     alignItems: mobileView ? "center" : rank & 1 ? "flex-end" : "flex-start",
                     justifyContent: "center",

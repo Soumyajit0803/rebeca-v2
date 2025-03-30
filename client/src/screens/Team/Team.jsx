@@ -108,9 +108,9 @@ function ProfessorsList() {
         <Container
             sx={{
                 maxWidth: "1200px",
-                padding: 2,
+                padding: 3,
                 margin: "0 2rem",
-                gap: 2,
+                gap: 4,
                 borderRadius: "5px",
                 bgcolor: "hsla(237, 100%, 70%, 0.2)",
                 display: "flex",
