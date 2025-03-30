@@ -65,7 +65,7 @@ body {
 	justify-content: center;
 	min-width: 320px;
 	min-height: 100vh;
-	background-color: var(--background) !important;
+	background-color: var(--app-background) !important;
 }
 
 h1 {

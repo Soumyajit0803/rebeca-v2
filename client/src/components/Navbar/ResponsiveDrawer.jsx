@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -42,6 +42,7 @@ const RespDrawer = ({ open, onClose }) => {
     const theme = useTheme();
     const navigate = useNavigate();
     const drawerWidth = window.innerWidth;
+    const [nav, setNav] = useState("Home");
 
     return (
         <Drawer
@@ -56,7 +57,7 @@ const RespDrawer = ({ open, onClose }) => {
             anchor="left"
             open={open}
         >
-            <DrawerHeader sx={{ display: "flex", height: 65, justifyContent: 'space-between' }}>
+            <DrawerHeader sx={{ display: "flex", height: 65, justifyContent: "space-between" }}>
                 <img
                     src="/assets/logo/logo_white.webp"
                     alt="rebeca_logo"
@@ -67,7 +68,6 @@ const RespDrawer = ({ open, onClose }) => {
                 </IconButton>
             </DrawerHeader>
             <Divider />
-            <img src={"/assets/imgs/beings.png"} />
             <List>
                 {menuItems.map((item, index) => (
                     <ListItem key={item.text} disablePadding>
@@ -75,9 +75,14 @@ const RespDrawer = ({ open, onClose }) => {
                             onClick={() => {
                                 onClose();
                                 navigate(item.link);
+                                setNav(item.text);
                             }}
+                            disableRipple
                         >
-                            <ListItemText primary={item.text} />
+                            <ListItemText
+                                primary={item.text}
+                                sx={{ color: item.text === nav ? "var(--primary)" : "" }}
+                            />
                         </ListItemButton>
                     </ListItem>
                 ))}
