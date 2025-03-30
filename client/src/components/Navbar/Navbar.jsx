@@ -57,9 +57,17 @@ const Navbar = () => {
                 {/* {user && <Notification message={`Welcome, ${user.name.split(' ')[0]}`} />} */}
                 <LoginForm open={loginOpen} setOpen={setLoginOpen} />
                 <div className="left-col">
-                    {width<720 && <IconButton id="drawer-open-btn" onClick={handleDrawerOpen} variant="filled" color="white">
-                        <MenuIcon />
-                    </IconButton>}
+                    {width < 720 && (
+                        <IconButton
+                            id="drawer-open-btn"
+                            onClick={handleDrawerOpen}
+                            variant="filled"
+                            color="primary"
+                            
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    )}
                     <Link to="/">
                         <img
                             src="/assets/logo/logo_white.webp"
@@ -114,8 +122,8 @@ const Navbar = () => {
                     )}
                 </div>
             </div>
-            
-            <ResponsiveDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)}/>
+
+            <ResponsiveDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
         </>
     );
 };
