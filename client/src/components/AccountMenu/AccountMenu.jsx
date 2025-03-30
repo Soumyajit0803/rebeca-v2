@@ -12,8 +12,7 @@ import {
     Alert,
     Chip,
     Typography,
-    Button,
-    CircularProgress 
+    CircularProgress,
 } from "@mui/material";
 import {
     PersonAdd,
@@ -30,6 +29,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { authWithGoogle } from "../../services/authApi";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
+import Button from "../Button/Button";
 
 import "./AccountMenu.css";
 
@@ -90,13 +90,10 @@ export default function AccountMenu() {
                             </IconButton>
                         ) : (
                             <Button
-                                color="#fff"
                                 onClick={handleClick}
-                                sx={{ bgcolor: "var(--primary)" }}
-                                startIcon={userLoad ? <CircularProgress size={20} color="inherit" /> : null}
-                            >
-                                Login
-                            </Button>
+                                innerText={"Login"}
+                                loading={userLoad}
+                            />
                         )}
                     </Badge>
                 </Tooltip>

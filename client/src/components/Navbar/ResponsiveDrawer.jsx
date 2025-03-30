@@ -1,34 +1,26 @@
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import CssBaseline from "@mui/material/CssBaseline";
 import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
+import { Button } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+
 import {
     Home as HomeIcon,
     Event as EventIcon,
     AttachMoney as SponsorshipIcon,
     Groups as TeamIcon,
     ShoppingBag as MerchandiseIcon,
+    Close,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-
-const drawerWidth = 240;
-
 const DrawerHeader = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
@@ -49,6 +41,7 @@ const menuItems = [
 const RespDrawer = ({ open, onClose }) => {
     const theme = useTheme();
     const navigate = useNavigate();
+    const drawerWidth = window.innerWidth;
 
     return (
         <Drawer
@@ -63,17 +56,18 @@ const RespDrawer = ({ open, onClose }) => {
             anchor="left"
             open={open}
         >
-            <DrawerHeader sx={{display: 'flex',height: 65}}>
-                <IconButton onClick={() => onClose()}>
-                    {theme.direction === "ltr" ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                </IconButton>
+            <DrawerHeader sx={{ display: "flex", height: 65, justifyContent: 'space-between' }}>
                 <img
                     src="/assets/logo/logo_white.webp"
                     alt="rebeca_logo"
                     style={{ padding: "1rem 0px", width: "100px", marginLeft: "10px" }}
                 />
+                <IconButton onClick={() => onClose()} color="primary">
+                    <Close />
+                </IconButton>
             </DrawerHeader>
             <Divider />
+            <img src={"/assets/imgs/beings.png"} />
             <List>
                 {menuItems.map((item, index) => (
                     <ListItem key={item.text} disablePadding>
@@ -83,7 +77,6 @@ const RespDrawer = ({ open, onClose }) => {
                                 navigate(item.link);
                             }}
                         >
-                            <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} />
                         </ListItemButton>
                     </ListItem>

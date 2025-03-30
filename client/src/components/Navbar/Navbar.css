@@ -233,6 +233,20 @@
         font-size: 1rem;
     }
 }
+
+.MuiListItemButton-root * {
+    font-size: 1.2rem !important;
+    font-family: 'Sedgwick Ave Display' !important;
+    width: 100%;
+    text-align: center !important;
+}
+
+.MuiListItemButton-root {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+    margin: 0.4rem 1rem !important;
+    clip-path: polygon(0 11%, 9% 17%, 5% 0, 92% 0, 89% 22%, 100% 13%, 100% 85%, 89% 79%, 94% 100%, 6% 100%, 10% 82%, 0% 85%);;
+}
+
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
     .navbar {
         /* background-color: transparent; */
@@ -250,5 +264,9 @@
 		align-items: center;
         width: 100%;
 		gap: 0px
+    }
+
+    .MuiListItemButton-root * {
+        font-size: 1.4rem !important;
     }
 }

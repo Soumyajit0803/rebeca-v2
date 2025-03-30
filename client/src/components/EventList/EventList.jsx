@@ -13,7 +13,7 @@ export const extractTime = (isoString) => {
     return startTime;
 };
 
-export const extractFullDate = (isoString) => {
+export const extractFullDate = (isoString, removeYear=false) => {
     const date = new Date(isoString);
     
     // Format date
@@ -39,7 +39,7 @@ export const extractFullDate = (isoString) => {
     }
 
     // Construct formatted string
-    const formattedTime = `${day}${ordinalSuffix} ${month} ${year}, ${startTime}`;
+    const formattedTime = `${day}${ordinalSuffix} ${month}${removeYear?"":" "+year}, ${startTime}`;
 
     return formattedTime;
 };

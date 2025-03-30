@@ -32,8 +32,9 @@
 .schedule .heading .event_bg img {
     width: 100vw;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
+    opacity: 0.5;
 }
 
 .day-title {
@@ -62,15 +63,27 @@
     transition: all ease 0.2s;
 }
 .Outer-div .one:hover {
-    color: var(--primary)
+    color: var(--primary);
 }
-
+.event_div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 18, 20, 0.5);
+}
+.event_div * {
+    z-index: 0;
+}
 @media only screen and (max-width: 970px) {
     .event_div .day-section {
         flex-direction: column;
     }
 
-    .day-title, .day-title::after {
-        font-size: 3.5rem
-    }    
+    .day-title,
+    .day-title::after {
+        font-size: 3.5rem;
+    }
 }
