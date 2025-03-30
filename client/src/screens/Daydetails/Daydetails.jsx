@@ -27,6 +27,8 @@ const Daydetails = () => {
                 className="behind-banner"
                 style={{
                     background: `url("/assets/imgs/Schedule/${DayID.toLowerCase()}.webp"`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
                 }}
             ></div>
             <div className="tonight-special">{Day.nightType}</div>
