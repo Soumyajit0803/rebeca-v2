@@ -7,7 +7,7 @@ import "antd/es/modal/style";
 import "antd/es/slider/style";
 import { MailOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
-import { BankOutlined } from '@ant-design/icons';
+import { BankOutlined } from "@ant-design/icons";
 
 const { Option } = Select;
 const teamNames = [
@@ -118,13 +118,15 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
     };
 
     const onFinish = async (formValues) => {
+        const toUpdate = []
+
         try {
             setLoading(true);
             const formData = new FormData();
             const oldData = values[index].original;
             var changed = 0;
             if (index === -1) {
-                errorPop("No User Selected");
+                errorPop("Please select a user to perform updation", "No User Selected");
                 return;
             }
 
@@ -136,6 +138,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 phone: `${formValues.phone}`,
                 email: formValues.email,
                 role: formValues.role,
+                tagLine: formValues.tagLine
             };
 
             // Check for changes and append only modified fields
@@ -145,6 +148,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                     changed = 1;
                     console.log("new value: ");
                     console.log(newValue);
+                    toUpdate.push(key)
                 }
             });
 
@@ -387,9 +391,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 <Form.Item
                     label="College Name"
                     name="college"
-                    rules={[
-                        { required: true, message: "Please enter your College name" },
-                    ]}
+                    rules={[{ required: true, message: "Please enter your College name" }]}
                 >
                     <Input placeholder="Enter College Name" addonBefore={<BankOutlined />} disabled />
                 </Form.Item>
@@ -437,6 +439,9 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                         </Select>
                     </Form.Item>
                 </div>
+                <Form.Item label="Your Tagline (optional)" name="tagLine" rules={[{ required: false }]}>
+                    <Input placeholder="Enter Your tagline to be printed in ID Cards" />
+                </Form.Item>
                 {/* Submit Button */}
                 <div style={{ display: "flex", gap: "1rem" }}>
                     <Form.Item>

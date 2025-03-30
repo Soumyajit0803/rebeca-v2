@@ -70,6 +70,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
     };
 
     const onFinish = async (values) => {
+        const toUpdate = []
         try {
             setLoading(true);
             const imageURL = await handleSubmitImage();
@@ -90,8 +91,10 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                 image: imageURL,
                 passout_year: parseInt(values.passout_year.format("YYYY")),
                 dept: values.dept,
-                college: values.college
+                college: values.college,
+                tagLine: values.tagLine
             };
+
 
             Object.entries(newData).forEach(([key, newValue]) => {
                 if (admin[key] !== newValue) {
@@ -100,6 +103,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                     console.log("new value: ");
                     console.log(newValue);
                     console.log(admin[key]);
+                    toUpdate.push(key)
                 }
             });
             if (changed) {
@@ -108,7 +112,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                 console.log(values);
 
                 await updateMember(formData);
-                successPop("Profile updated successfully.");
+                successPop(`Fields ${toUpdate} updated successfully`, "Profile Updation Success");
                 setProfileStatus(true);
             } else {
                 infoPop("You have not done any changes compared to original data", "No changes Found");
@@ -116,7 +120,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
         } catch (err) {
             console.log(err);
             const detailed = err?.response?.data?.message;
-            errorPop(detailed || err.message);
+            errorPop(detailed || err.message, "Error While Updating User Info");
         } finally {
             setLoading(false);
             setIsSubmitModalOpen(false);
@@ -306,6 +310,13 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                             </Select>
                         </Form.Item>
                     </div>
+                    <Form.Item
+                        label="Your Tagline (optional)"
+                        name="tagLine"
+                        rules={[{ required: false }]}
+                    >
+                        <Input placeholder="Enter Your tagline to be printed in ID Cards" />
+                    </Form.Item>
                     {/* Submit Button */}
                     <div style={{ display: "flex", gap: "1rem" }}>
                         <Form.Item>
