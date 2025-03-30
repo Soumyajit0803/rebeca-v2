@@ -14,27 +14,27 @@ const content = {
     miscellaneous: {
         name: "Pre-Events",
         image: "/assets/imgs/Schedule/schedule-2.webp",
-        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
+        intro: "Kickstart the celebrations with our electrifying pre-events! Experience thrilling workshops, captivating performances, and hands-on activities designed to spark your passion for culture and creativity. Don't just wait for the main event—immerse yourself in the excitement from the very start!",
     },
     saptami: {
         name: "Saptami Symphony",
         image: "/assets/imgs/Schedule/schedule-3.webp",
-        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
+        intro: "Immerse yourself in the vibrant essence of Indian culture as gifted artists from across the nation come together to create a mesmerizing tapestry of grace and tradition. Let the melodies of celebration fill the air, marking the grand beginning of our beloved Pujo!",
     },
     ashtami: {
         name: "Ashtami Aura",
         image: "/assets/imgs/Schedule/schedule-2.webp",
-        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
+        intro: "As the evening unfolds, the BEings will set the stage ablaze with electrifying performances, lighting up the night with their unmatched talent and creativity. Get ready to cheer your hearts out for your best friends as they command the spotlight, turning the stage into a spectacle of passion and brilliance. Let's make this night a celebration of the incredible talent that unites us all!",
     },
     navami: {
         name: "Navami Nirvana",
         image: "/assets/imgs/Schedule/schedule-3.webp",
-        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
+        intro: "Beneath the starlit sky, let Kolkata's soul-stirring symphony sweep you away. Come, cheer, and revel as the legends of our beloved city set the stage on fire, crafting an evening of musical euphoria that knows no boundaries—uniting us all in the heartbeat of Navami's enchanting rhythm!",
     },
     dashami: {
         name: "Dashami Dazzle",
         image: "/assets/imgs/Schedule/schedule-2.webp",
-        intro: "Some lorem text to highlight the main attraction of this day. Nothing much to talk about here",
+        intro: "Put on your dancing shoes and get ready to lose yourself in the electrifying beats of Bollywood! Feel the infectious energy take over as you dance like nobody's watching, screaming with joy and celebrating the grand finale of our festival. Let this unforgettable night fill your heart with memories that will stay with you long after the stars fade into dawn!",
     },
 };
 
