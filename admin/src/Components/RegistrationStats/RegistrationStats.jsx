@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { SearchOutlined, TeamOutlined, DownloadOutlined } from "@ant-design/icons";
-import { Button, Input, Space, Table, Select, Tag, Spin, Avatar, Card } from "antd";
+import { Button, Input, Space, Table, Select, Tag, Spin, Avatar, Alert, Card } from "antd";
 import * as XLSX from "xlsx";
 import { getAllEvents, getAllEnrollments } from "../../api";
 import { useAuth } from "../../AuthContext";
@@ -119,9 +119,9 @@ const ColumnMap = { single: singleReg, team: teamReg };
 const TableWidth = { single: 1400, team: 2400 };
 
 const formatObjects = (objects) => {
-    return objects.map(obj => `${obj.name}, ${obj.email}`).join('\n');
-  };
-  
+    return objects.map((obj) => `${obj.name}, ${obj.email}`).join("\n");
+};
+
 const getCellItem = (cellItem) => {
     if (typeof cellItem !== "object") return cellItem;
     return formatObjects(cellItem);
@@ -279,6 +279,7 @@ const StatsTable = ({ data, columns, tableWidth, eventName, errorPop, infoPop, s
     return (
         data && (
             <div>
+                <Table columns={columns} dataSource={data} size="middle" scroll={{ x: tableWidth }} loading={loading} style={{marginTop: '1rem'}}/>
                 <ExportExcelButton
                     dataSource={data}
                     columns={columns}
@@ -287,7 +288,6 @@ const StatsTable = ({ data, columns, tableWidth, eventName, errorPop, infoPop, s
                     infoPop={infoPop}
                     successPop={successPop}
                 />
-                <Table columns={columns} dataSource={data} size="middle" scroll={{ x: tableWidth }} loading={loading}/>
             </div>
         )
     );
@@ -344,14 +344,14 @@ const RegistrationStats = ({ infoPop, errorPop, successPop }) => {
 
             const edata = enrollData.map((e) => ({
                 id: e._id, // Rename _id to id (optional)
-                name: e.userId.name, // Include the entire userId object or specific fields
-                email: e.userId.email,
-                phone: e.userId.phone,
-                college: e.userId.college,
+                name: e.userId?.name, // Include the entire userId object or specific fields
+                email: e.userId?.email,
+                phone: e.userId?.phone,
+                college: e.userId?.college,
                 payment: e.paymentScreenshot || "",
                 teamName: e.teamName || "",
                 members: e.teamMembers,
-                image: e.userId.image,
+                image: e.userId?.image,
                 timeStamp: e.createdAt,
             }));
 
@@ -392,6 +392,33 @@ const RegistrationStats = ({ infoPop, errorPop, successPop }) => {
                 notFoundContent={fetchingAllEvents ? <Spin tip="fetching events..." size="large" /> : null}
             ></Select>
             <br />
+            <div
+                style={{
+                    marginTop: "1rem",
+                    display: "flex",
+                    gap: "0.1rem",
+                    flexDirection: "column",
+                    padding: "0.5rem",
+                    borderRadius: "6px",
+                    backgroundColor: "hsl(0, 0.00%, 22.90%)",
+                    width: "max-content",
+                }}
+            >
+                <span>User Enrolls</span>
+                <span
+                    style={{
+                        fontSize: "2.5rem",
+                        lineHeight: "2rem",
+                        padding: "0.8rem 0.2rem",
+                        backgroundColor: "hsl(0, 0.00%, 10.90%)",
+                        textAlign: "center",
+                        borderRadius: "5px",
+                    }}
+                >
+                    {allEnrollData.length}
+                </span>
+            </div>
+
             <StatsTable
                 data={allEnrollData}
                 columns={columns}

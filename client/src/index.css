@@ -22,6 +22,7 @@
 	--primary: var(--accent1);
 	--primary50: var(--accent1-50);
 	--primaryDark: var(--accent1dark);
+	--app-background: #0F1214;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -118,10 +119,10 @@ button:focus-visible {
 ::-webkit-scrollbar-thumb:hover{
 	background: var(--primary);
 }
-::-webkit-scrollbar-button,
+/* ::-webkit-scrollbar-button,
 ::-webkit-scrollbar-corner {
-  /* display: none; */
-}
+  /* display: none; 
+} */
 
 @media (prefers-color-scheme: light) {
 	/* :root {

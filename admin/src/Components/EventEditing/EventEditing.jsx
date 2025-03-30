@@ -37,6 +37,13 @@ const HybridLabel = ({ name, imageURL }) => {
     );
 };
 
+const areArraysEqual = (arr1, arr2) => {
+    if (arr1.length !== arr2.length) return false;
+    const set1 = new Set(arr1);
+    const set2 = new Set(arr2);
+    return arr1.every(id => set2.has(id)) && arr2.every(id => set1.has(id));
+};
+
 const EventEditing = ({ errorPop, successPop, infoPop }) => {
     const [AllEventsData, setAllEventsData] = useState([]);
     const [form] = Form.useForm();
@@ -80,7 +87,9 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 errorPop(res.data.message, "Error While Deleting Event");
             }
         } catch (err) {
-            errorPop(err.message, "Error While Deleting Event");
+            console.log(err);
+            
+            errorPop(err?.response?.data?.message, "Error While Deleting Event");
         } finally {
             setLoading(false);
             setIsDeleteModalOpen(false);
@@ -130,6 +139,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
         
         try {
             setLoading(true);
+            const updatedFields = [];
+
             if (posterList.length === 0) {
                 infoPop("Please add poster image", "No Poster Image");
                 return;
@@ -143,37 +154,41 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 return;
             }
 
-            var skipCoordinators = 0;
-            if (coordsList.length===0){
-                skipCoordinators = 1;
+            if (coordsList.length === 0) {
+                infoPop("Please select Coordinators", "No Coordinators Selected")
+                return
             }
 
             for (let round of values.rounds) {
                 round.startTime = round.date[0].$d;
                 round.endTime = round.date[1].$d;
-                delete round.date
             }
+
+            console.log("Modified rounds data: "); console.log(values.rounds);
 
             const formData = new FormData();
             var changed = 0;
             const oldData = selectedEvent.original;
             formData.append("_id", selectedEvent.original._id);
+            console.log("THE OLD DATA ")
+            console.log(oldData);
+            
 
             if (JSON.stringify(posterList) !== JSON.stringify(origposterList)) {
                 changed = 1;
                 console.log("Files data");
                 const imageURL = await handleEditImage(posterList[0].originFileObj);
                 formData.append("poster", imageURL);
+                updatedFields.push("Poster")
             }
             if (JSON.stringify(thumbnailList) !== JSON.stringify(origThumbnailList)) {
                 console.log("Files data");
                 const imageURL = await handleEditImage(thumbnailList[0].originFileObj);
                 formData.append("thumbnail", imageURL);
                 changed = 1;
+                updatedFields.push("Thumbnail")
             }
-            // console.log(start);
-            // console.log(selectedEvent);
-
+            
             const newData = {
                 eventName: values.eventName,
                 description: values.description,
@@ -181,60 +196,47 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 rulesDocURL: values.rulesDocURL,
                 type: values.type,
                 registrationFee: values.registrationFee,
-                mainCoordinators: [],
+                mainCoordinators: coordsList.map((e) => e._id),
             };
 
-            if (values.type !== "single") {
-                newData["maxTeamSize"] = values.maxTeamSize;
-                newData["minTeamSize"] = values.minTeamSize;
+            if (values.type === 'team') {
+                newData.maxTeamSize = values.maxTeamSize
+                newData.minTeamSize = values.minTeamSize 
             }
 
-            coordsList.forEach((e) => {
-                newData.mainCoordinators.push(e._id);
-            });
-
-            const oldIDs = oldData["mainCoordinators"].map(v=>v._id);            
-
             Object.entries(newData).forEach(([key, newValue]) => {
+                console.log("Property: ", key)
+                console.log(oldData[key]);
+                console.log(newValue)
+                
                 if (key === 'rounds') {
-                    newValue = JSON.parse(newValue)
-                    for (let round of newValue) {
-                        delete round.date
-                    }
-                    for (let round of oldData[key]) {
-                        delete round.date
+                    if (JSON.stringify(oldData[key]) === newValue) {
+                        return
                     }
                 }
                 if (key === "mainCoordinators") {
-                    
-                    for (let id of oldIDs) {
-                        if (!newValue.includes(id)) {
-                            changed = 1;
-                            break;
-                        }
-                    }
-                    for (let id of newValue) {
-                        if (!oldIDs.includes(id)) {
-                            changed = 1;
-                            break;
-                        }
-                    }
+                    const oldIDs = oldData["mainCoordinators"].map(v=>v._id); 
 
-                    if(skipCoordinators)changed = 0
-                    else if (changed) {
-                        console.log(oldData[key]);
-                        console.log(newValue);
-                        newValue.forEach((id) => {
-                            formData.append("mainCoordinators[]", id);
-                        });
+                    if(areArraysEqual(oldIDs, newValue)) {
+                        return
+                    } else {
+                        console.log("Haa coords updates")
+                        console.log(oldIDs);
+                        console.log(newValue)
+                        
                     }
-                } else if (JSON.stringify(oldData[key]) !== JSON.stringify(newValue)) {
-                    formData.append(key, JSON.stringify(newValue));
+                    newValue = JSON.stringify(newValue)
+                } 
+                
+                // for all
+                if (oldData[key] !== newValue) {
+                    formData.append(key, newValue);
                     changed = 1;
-                    console.log("new value: ");
-                    console.log(newValue);
-                    console.log("Old value" );
-                    console.log(JSON.stringify(oldData[key]));
+                    // console.log("new value: ");
+                    // console.log(newValue);
+                    // console.log("Old value" );
+                    // console.log(oldData[key]);
+                    updatedFields.push(key)
                 }
             });
 
@@ -242,8 +244,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
             if (changed) {
                 const res = await updateEvent(formData);
                 console.log(res);
-                successPop("Event Added successfully.");
-                if(skipCoordinators)infoPop("No coordinators selected. The coordinators list will remain unchanged")
+                successPop(`Fields ${updatedFields} updated successfully`);
             } else {
                 infoPop("You have not done any changes compared to original data", "No changes Found");
             }
@@ -647,10 +648,16 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                     <div>
                         <Form.Item name="coordinators" label="Coordinators for the Event">
                             <Alert
-                                message="If you cannot find a member you have just added in the dropdown, consider refreshing the page."
+                                message="If you cannot find an admin, consider refreshing the page."
                                 type="info"
                                 showIcon
-                                style={{ margin: "0 0 0.5rem 0" }}
+                                style={{ margin: "0 0 0.5rem 0", maxWidth: 'max-content'}}
+                            />
+                            <Alert
+                                message="Don't forget to keep yourself in this list! Else You won't be able to see this event later."
+                                type="warning"
+                                showIcon
+                                style={{ margin: "0 0 0.5rem 0", maxWidth: 'max-content'}}
                             />
                             <Select
                                 size="large"
