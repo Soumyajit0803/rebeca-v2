@@ -20,6 +20,10 @@
 .App{
   width: 100%;
   overflow: hidden;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; */
 }
 
 .css-1pxa9xg-MuiAlert-message {

@@ -180,24 +180,26 @@
 }
 
 .topimg {
-    width: 2000px;
+    width: 150vw;
     aspect-ratio: 8004/1449;
     background-image: url("/assets/imgs/Footer/concert-blue.webp");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
-    bottom: -60px;
+    bottom: -5vw;
     left: -4rem;
     border: none;
     box-shadow: none;
     outline: none;
     user-select: none;
+    z-index: 10
 }
 
-@media only screen and (max-width: 520px){
+@media only screen and (max-width: 720px){
 	.topimg {
 		width: 2500px;
 		transform: translateX(-300px);
+        bottom: -10vw;
 	}
 }
