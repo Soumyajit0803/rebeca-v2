@@ -22,6 +22,7 @@
 	--primary: var(--accent1);
 	--primary50: var(--accent1-50);
 	--primaryDark: var(--accent1dark);
+	--background: #0F1214;
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -64,7 +65,7 @@ body {
 	justify-content: center;
 	min-width: 320px;
 	min-height: 100vh;
-	background-color: #0F1214 !important;
+	background-color: var(--background) !important;
 }
 
 h1 {
