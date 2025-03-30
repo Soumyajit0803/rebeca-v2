@@ -34,29 +34,29 @@ import {
     AssignmentInd,
     AccountBalance,
     MenuBook,
-  } from '@mui/icons-material';
-  
-  const skeleton = [
-      { id: 1, team: "Secretary General", members: [], icon: <AdminPanelSettings /> },
-      { id: 2, team: "Finance", members: [], icon: <AttachMoney /> },
-      { id: 3, team: "Cultural", members: [], icon: <Palette /> },
-      { id: 4, team: "Event", members: [], icon: <Event /> },
-      { id: 5, team: "Resource Information", members: [], icon: <Info /> },
-      { id: 6, team: "Travel and Logistics", members: [], icon: <DirectionsBus /> },
-      { id: 7, team: "Sponsorship", members: [], icon: <Handshake /> },
-      { id: 8, team: "Publication", members: [], icon: <Article /> },
-      { id: 9, team: "Publicity", members: [], icon: <Campaign /> },
-      { id: 10, team: "Stage Decoration", members: [], icon: <Brush /> },
-      { id: 11, team: "Business and Alumni Meet", members: [], icon: <Groups /> },
-      { id: 12, team: "Competitions and Seminars", members: [], icon: <Code /> },
-      { id: 13, team: "Web Development", members: [], icon: <Code /> },
-      { id: 14, team: "Refreshments", members: [], icon: <Restaurant /> },
-      { id: 15, team: "Volunteers", members: [], icon: <VolunteerActivism /> },
-      { id: 16, team: "Photography", members: [], icon: <CameraAlt /> },
-      { id: 17, team: "Joint Secretary", members: [], icon: <AssignmentInd /> },
-      { id: 18, team: "Fixed Signatory", members: [], icon: <AccountBalance /> },
-      { id: 19, team: "BECA Magazine", members: [], icon: <MenuBook /> },
-  ];
+} from "@mui/icons-material";
+
+const skeleton = [
+    { id: 1, team: "Secretary General", members: [], icon: <AdminPanelSettings /> },
+    { id: 2, team: "Finance", members: [], icon: <AttachMoney /> },
+    { id: 3, team: "Cultural", members: [], icon: <Palette /> },
+    { id: 4, team: "Event", members: [], icon: <Event /> },
+    { id: 5, team: "Resource Information", members: [], icon: <Info /> },
+    { id: 6, team: "Travel and Logistics", members: [], icon: <DirectionsBus /> },
+    { id: 7, team: "Sponsorship", members: [], icon: <Handshake /> },
+    { id: 8, team: "Publication", members: [], icon: <Article /> },
+    { id: 9, team: "Publicity", members: [], icon: <Campaign /> },
+    { id: 10, team: "Stage Decoration", members: [], icon: <Brush /> },
+    { id: 11, team: "Business and Alumni Meet", members: [], icon: <Groups /> },
+    { id: 12, team: "Competitions and Seminars", members: [], icon: <Code /> },
+    { id: 13, team: "Web Development", members: [], icon: <Code /> },
+    { id: 14, team: "Refreshments", members: [], icon: <Restaurant /> },
+    { id: 15, team: "Volunteers", members: [], icon: <VolunteerActivism /> },
+    { id: 16, team: "Photography", members: [], icon: <CameraAlt /> },
+    { id: 17, team: "Joint Secretary", members: [], icon: <AssignmentInd /> },
+    { id: 18, team: "Fixed Signatory", members: [], icon: <AccountBalance /> },
+    { id: 19, team: "BECA Magazine", members: [], icon: <MenuBook /> },
+];
 
 const profs = [
     { name: "Dr. Nityananda Nandi", position: "Chairperson", img: "./assets/imgs/team/nityanandanandi.webp" },
@@ -93,9 +93,9 @@ const TeamLoading = () => {
             <Card sx={{ width: "min(100%, 400px)" }}>
                 <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column", width: "100%" }}>
                     <CircularProgress color="primary" size={80} thickness={5} />
-                    <Typography variant="h5">Fetching Data...</Typography>
+                    <Typography variant="h5">Hang tight, Fetching Teams Data...</Typography>
                     <Typography variant="body1" color="grey" sx={{ mb: 2, textAlign: "center" }}>
-                        While it's loading, shout out 'REBECA'!
+                        The best part of any party? When it becomes a story you swear you'll never tell.
                     </Typography>
                 </CardContent>
             </Card>
@@ -174,14 +174,14 @@ const Team = () => {
                     {teamsData.map((teamData, i) => {
                         if (teamData.members.length === 0) return;
                         console.log(teamData);
-                        
+
                         return (
                             <Accordion
                                 sx={{ m: 0, p: 0 }}
                                 slotProps={{ heading: { component: "h2" } }}
                                 disableGutters
                                 elevation={3}
-                                key = {i}
+                                key={i}
                             >
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
@@ -212,7 +212,7 @@ const Team = () => {
                                                     subtitle={member.position}
                                                     phone={member.phone}
                                                     icon={skeleton[i].icon}
-                                                    key = {ki}
+                                                    key={ki}
                                                 />
                                             );
                                         })}
