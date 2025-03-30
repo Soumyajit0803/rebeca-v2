@@ -90,22 +90,30 @@ const Footer2 = () => {
                     <div className="social-h">Visit us Virtually</div>
                     <div className="social-icons">
                         <a href="mailto: 83rebeca2k24@gmail.com">
-                            <IconButton sx={{bgcolor: 'var(--primary)'}} size="medium">
+                            <IconButton sx={{bgcolor: 'var(--primary)', '&:hover':{
+                                bgcolor: 'rgb(93, 93, 93)'
+                            }}} size="medium">
                                 <EmailRounded />
                             </IconButton>
                         </a>
                         <a href="https://www.facebook.com/rebeca.iiests">
-                            <IconButton sx={{bgcolor: 'var(--primary)'}} size="medium">
+                            <IconButton sx={{bgcolor: 'var(--primary)', '&:hover':{
+                                bgcolor: 'rgb(93, 93, 93)'
+                            }}} size="medium">
                                 <FacebookRounded />
                             </IconButton>
                         </a>
                         <a href="https://www.instagram.com/rebeca_iiests">
-                            <IconButton sx={{bgcolor: 'var(--primary)'}} size="medium">
+                            <IconButton sx={{bgcolor: 'var(--primary)', '&:hover':{
+                                bgcolor: 'rgb(93, 93, 93)'
+                            }}} size="medium">
                                 <Instagram />
                             </IconButton>
                         </a>
                         <a href="https://www.youtube.com/@rebecaiiests7685">
-                            <IconButton sx={{bgcolor: 'var(--primary)'}} size="medium">
+                            <IconButton sx={{bgcolor: 'var(--primary)', '&:hover':{
+                                bgcolor: 'rgb(93, 93, 93)'
+                            }}} size="medium">
                                 <YouTubeIcon />
                             </IconButton>
                         </a>
