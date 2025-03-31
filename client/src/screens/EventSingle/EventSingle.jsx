@@ -10,6 +10,13 @@ import { Warning } from "@mui/icons-material";
 import { isUserRegistered } from "../../services/eventApi";
 import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
 
+function isGoogleForm(url) {
+    const googleFormPattern = /^https:\/\/docs\.google\.com\/forms\/d\/e\/[^\/]+\/viewform/;
+    const googleShortFormPattern = /^https:\/\/forms\.gle\/[a-zA-Z0-9]+/;
+
+    return googleFormPattern.test(url) || googleShortFormPattern.test(url);
+}
+
 const EventSingle = () => {
     const navigate = useNavigate();
     const { eventSlug } = useParams();
@@ -18,7 +25,6 @@ const EventSingle = () => {
     const [loading, setLoading] = useState(false);
     const oneEvent = allEvents.find((ev) => ev.slug === eventSlug);
     console.log(oneEvent);
-    
 
     useEffect(() => {
         const checkReg = async () => {
@@ -84,26 +90,60 @@ const EventSingle = () => {
                     </div>
 
                     <div className="event-single-buttons">
-                        <Button innerText="View Rules" onClick={()=>window.open(oneEvent?.rulesDocURL, "_blank")} />
-                        <Link to={`/events/${eventSlug}/register`}>
-                            <Button innerText="Register" disabled={(!user || !user.college)} />
-                        </Link>
+                        <Button
+                            innerText={isGoogleForm(oneEvent?.rulesDocURL) ? "Google Form" : "View Rules"}
+                            onClick={() => window.open(oneEvent?.rulesDocURL, "_blank")}
+                        />
+                        {!isGoogleForm(oneEvent?.rulesDocURL) && (
+                            <Link to={`/events/${eventSlug}/register`}>
+                                <Button innerText="Register" disabled={!user || !user.college} />
+                            </Link>
+                        )}
                     </div>
                     {!user && (
-                        <Alert className="event-alert" variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
+                        <Alert
+                            className="event-alert"
+                            variant="outlined"
+                            severity="warning"
+                            color="warning"
+                            sx={{ mt: 1 }}
+                        >
                             You need to Log in to Register for any event.
                         </Alert>
                     )}
                     {isReg && (
-                        <Alert className="event-alert" variant="outlined" severity="success" color="success" sx={{ mt: 1 }}>
+                        <Alert
+                            className="event-alert"
+                            variant="outlined"
+                            severity="success"
+                            color="success"
+                            sx={{ mt: 1 }}
+                        >
                             You Have Successfully been registered for this event
                         </Alert>
                     )}
                     {user && !user?.college && (
-                        <Alert className="event-alert" variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
-                            Please complete your profile information to be able to register. For details, go to {" "}
+                        <Alert
+                            className="event-alert"
+                            variant="outlined"
+                            severity="warning"
+                            color="warning"
+                            sx={{ mt: 1 }}
+                        >
+                            Please complete your profile information to be able to register. For details, go to{" "}
                             <Link to="/profile">My profile</Link>.
-                            
+                        </Alert>
+                    )}
+
+                    {isGoogleForm(oneEvent?.rulesDocURL) && (
+                        <Alert
+                            className="event-alert"
+                            variant="outlined"
+                            severity="info"
+                            color="info"
+                            sx={{ mt: 1 }}
+                        >
+                            This event accepts registration only through <b>google forms</b>.
                         </Alert>
                     )}
                 </div>
@@ -111,9 +151,7 @@ const EventSingle = () => {
 
             {/* Content Below */}
             <div className="event-single-content">
-                <p className="event-single-description">
-                    {oneEvent.description}
-                </p>
+                <p className="event-single-description">{oneEvent.description}</p>
                 <h2 className="schedule-title">Schedule</h2>
 
                 <div className="prelims-container">
@@ -132,21 +170,13 @@ const EventSingle = () => {
                 </div>
             </div>
 
-            <div className="coordinators event-single-content" style={{paddingTop: 0}}>
+            <div className="coordinators event-single-content" style={{ paddingTop: 0 }}>
                 <h2 className="schedule-title">Coordinators</h2>
                 <div className="coords-list">
                     {oneEvent.mainCoordinators.map((e, i) => {
                         console.log("coordinator");
-                        console.log(e)                        
-                        return (
-                            <CustomAvatar 
-                                title={e.name}
-                                subtitle={e.role}
-                                phone={e.phone}
-                                src={e.image}
-                                key={i}
-                            />
-                        )
+                        console.log(e);
+                        return <CustomAvatar title={e.name} subtitle={e.role} phone={e.phone} src={e.image} key={i} />;
                     })}
                 </div>
             </div>
