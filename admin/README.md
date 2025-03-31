@@ -1,4 +1,4 @@
-![Rebeca](https://res.cloudinary.com/dmzwremb8/image/upload/v1742842637/email-banner_b87ynr.webp)
+![Rebeca](https://res.cloudinary.com/dmzwremb8/image/upload/v1743391085/rebeca-email-banner_gwf8tv.webp)
 
 ## Admin Dashboard Guidelines
 

@@ -7,6 +7,8 @@ import { useAuth } from "../../AuthContext";
 const Payment = ({ eventName, regfee, setValid, setFile, free, paymentQR }) => {
     const [preview, setPreview] = useState(null);
     const [error, setError] = useState("");
+    console.log("Do I need to pay: ")
+    console.log(free)
 
     // Handle file input change
     const handleFileChange = (event) => {
@@ -89,9 +91,8 @@ const Payment = ({ eventName, regfee, setValid, setFile, free, paymentQR }) => {
 
                     {free && (
                         <Alert color="primary">
-                            <AlertTitle>Wow! All IIESTians!</AlertTitle>
-                            IIESTian teams/individuals don't require any fee for taking part in any events in Rebeca. Go ahead, you
-                            can skip this step!
+                            <AlertTitle>Free Registration!</AlertTitle>
+                            {regfee===0?"This event does not require any payment for registration. Go ahead and skip this step!":"IIESTian teams/individuals don't require any fee for taking part in any events in Rebeca. Go ahead, you can skip this step!"}
                         </Alert>
                     )}
 
