@@ -181,11 +181,11 @@ const EventReg = () => {
                     )
                 );
             case 1:
-                return (
+                return oneEvent && (
                     <Payment
                         setValid={() => setValid({ ...valid, step2: true })}
                         event={"Coolest Event"}
-                        free={user.email.endsWith(".iiests.ac.in") && allAreIIESTians(selectedItems)}
+                        free={(user.email.endsWith(".iiests.ac.in") && allAreIIESTians(selectedItems)) || (oneEvent?.registrationFee===0)}
                         setFile={setFile}
                         regfee={oneEvent?.registrationFee}
                         paymentQR={oneEvent?.paymentQR}
