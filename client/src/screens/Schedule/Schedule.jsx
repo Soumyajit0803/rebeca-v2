@@ -269,7 +269,7 @@ function Schedule() {
                     <img src="/assets/imgs/Schedule/eventBanner.webp" alt="" />
                 </div>
                 <Heading title={"REBECA SCHEDULE"} subTitle={introtext} needHatch={false} />
-                <Link to={"#"}>
+                {/* <Link to={"#"}>
                     <Button
                         className="download_btn"
                         variant={"filled"}
@@ -277,7 +277,7 @@ function Schedule() {
                         endIcon={<span className="material-icons">file_download</span>}
                         onClick={onButtonClick}
                     ></Button>
-                </Link>
+                </Link> */}
             </div>
 
             {!eventsLoad &&
