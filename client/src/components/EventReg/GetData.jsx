@@ -12,8 +12,9 @@ import {
     Avatar,
 } from "@mui/material";
 import { Person, Email, Phone, School, Work, Groups } from "@mui/icons-material";
-import ImageIcon from "@mui/icons-material/Image";
+import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import { getAllMembersNotInEvent } from "../../services/eventApi";
+const urlRegex = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
 
 const GetData = ({
     setValid,
@@ -177,24 +178,32 @@ const GetData = ({
 
                     {isAssetReq && (
                         <Grid2 container spacing={2} alignItems="center" sx={{ marginBottom: 2 }}>
-                            <Typography variant="body1" color="text.secondary" sx={{mt: 2, p: 1}}>
+                            <Typography variant="body1" color="text.secondary" sx={{ mt: 2, p: 1 }}>
                                 {isAssetReq}
                             </Typography>
                             <Grid2 size={{ xs: 12 }}>
                                 <TextField
                                     fullWidth
-                                    label={"Assets URL"}
+                                    label="Assets URL"
                                     variant="outlined"
+                                    error={assets !== "" && !urlRegex.test(assets)}
+                                    helperText={
+                                        assets !== "" && !urlRegex.test(assets)
+                                            ? "Enter a valid URL"
+                                            : ""
+                                    }
                                     slotProps={{
                                         input: {
-                                            startAdornment: <ImageIcon color="primary" sx={{ mr: 1 }} />,
+                                            startAdornment: <InsertLinkIcon color="primary" sx={{ mr: 1 }} />,
                                         },
                                     }}
                                     value={assets}
                                     onChange={(e) => {
-                                        setAssets(e.target.value);
-                                        if (e.target.value !== "") setValid(true);
-                                        else setValid(false);
+                                        const newValue = e.target.value;
+                                        setAssets(newValue);
+                                        setValid(
+                                            newValue !== "" && urlRegex.test(newValue)
+                                        );
                                     }}
                                 />
                             </Grid2>

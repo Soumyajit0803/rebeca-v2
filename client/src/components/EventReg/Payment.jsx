@@ -58,12 +58,13 @@ const Payment = ({ eventName, regfee, setValid, setFile, free, paymentQR }) => {
         <Card>
             <Paper elevation={0} sx={{ p: 4, borderRadius: 2 }}>
                 <Typography variant="h5" align="center" gutterBottom>
-                    Upload Screenshot
+                    Upload Payment Screenshot
                 </Typography>
                 <Paper elevation={2} sx={{ p: 3, my: 2, borderRadius: 2 }}>
                     <Grid2 container spacing={2}>
                         <Grid2 size={{ xs: 12, sm: 6 }}>
-                            <img src={paymentQR} style={{ width: "100%", aspectRatio: "1/1", opacity: free?0.3:1 }} />
+                            {paymentQR &&<img src={paymentQR} style={{ width: "100%", aspectRatio: "1/1", opacity: free?0.3:1 }} />}
+                            {!paymentQR && <Paper elevation={0} sx={{width: '100%', aspectRatio: '1/1'}}></Paper>}
                         </Grid2>
                         <Grid2 size={{ xs: 12, sm: 6 }}>
                             <Typography sx={{opacity: free?0.3:1}} variant="body1" gutterBottom>
