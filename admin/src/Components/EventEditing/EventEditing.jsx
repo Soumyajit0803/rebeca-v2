@@ -192,9 +192,11 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 return;
             }
 
+            var rno = 1;
             for (let round of values.rounds) {
                 round.startTime = round.date[0].$d;
                 round.endTime = round.date[1].$d;
+                round.roundno = rno++;
             }
 
             console.log("Modified rounds data: ");
