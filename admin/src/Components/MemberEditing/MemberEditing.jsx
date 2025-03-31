@@ -40,6 +40,7 @@ const teamNames = [
     "Joint Secretary",
     "Fixed Signatory",
     "BECA Magazine",
+    "Event Coordinator"
 ];
 const teamPosition = ["Head", "Associate Head", "Associate"];
 const roles = ["developer", "admin", "user"];
