@@ -206,3 +206,102 @@ justify-content: flex-start;
 .schedule .heading .sub-title {
   width: 100%;
 }
+
+.schedule .heading {
+	width: 100%;
+	position: relative;
+	/* border: 1px solid red; */
+	padding: 4rem 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+.schedule .heading .event_bg {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	/* height: 100%; */
+	border: 0px solid yellow;
+  /* overflow: hidden; */
+	z-index: 0;
+	opacity: 100%;
+}
+.schedule .heading .event_bg img {
+	width: 100%;
+  height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+
+.event {
+  position: "relative"; /* Needed for the pseudo-element to position correctly */
+  background-repeat: "no-repeat";
+  background-size: 30px 10px;
+  /* min-height: 400px; Adjust height as needed */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #0a0a0a; /* Fallback/background color */
+  overflow: hidden; /* Ensures pseudo-element doesn’t bleed outside the border radius */
+
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Radial gradient that goes from transparent in the center to the background color at the edges */
+  /* background: radial-gradient(
+    ellipse at center,
+    rgba(22, 0, 0, 0) 100%,
+    #0a0a0a 100%
+  ); */
+  pointer-events: none; /* Allows clicks to pass through */
+  z-index: 1;
+}
+
+/* Pseudo-element to fade the image borders to the background color */
+.event::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Radial gradient that goes from transparent in the center to the background color at the edges */
+  /* background: radial-gradient(
+    ellipse at center,
+    rgba(10, 10, 10, 0) 70%,
+    #0a0a0a 100%
+  ); */
+  pointer-events: none; /* Allows clicks to pass through */
+  z-index: 1;
+}
+
+
+/* Main text style */
+.day-title {
+  font-family: "Emilys Candy", cursive; /* or any decorative font you like */
+  font-size: 4rem; /* adjust as needed */
+  color: #fff;
+  margin: 0;
+  position: relative;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8); /* subtle glow/shadow */
+}
+
+.day-title::after {
+  content: attr(data-text); /* same text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* behind the main text */
+
+  font-family: inherit;
+  font-size: 4.5rem; /* a bit larger than the main text */
+  color: #3a3a8a; /* a darker or tinted color to simulate reflection */
+  transform: translate(10px, 10px); /* horizontal, vertical offset */
+  opacity: 0.4; /* partial transparency */
+}

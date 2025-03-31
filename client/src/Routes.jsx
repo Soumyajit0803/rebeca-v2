@@ -5,7 +5,6 @@ import Schedule from "./screens/Schedule/Schedule";
 import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
-import EventPopup from "./screens/EventPopup/EventPopup2";
 import EventPopup2 from "./screens/EventPopup/EventPopup2";
 import Merchandise from "./screens/Merchandise/Merchandise";
 import Team from "./screens/Team/Team";
@@ -14,6 +13,7 @@ import LoginForm from "./components/Login/LoginForm";
 import EventSingle from "./screens/EventSingle/EventSingle";
 import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import EventReg from "./components/EventReg/EventReg";
+import RoundCard from "./screens/EventSingle/RoundCard";
 
 const AllRoutes = () => {
     const location = useLocation();
@@ -27,12 +27,12 @@ const AllRoutes = () => {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/events" element={<Schedule />} />
             <Route exact path="/events/:DayID" element={<Daydetails />} />
-            <Route exact path="/event/:eventName" element={<EventPopup />} />
-            <Route exact path="/sponsorship" element={<Sponsorship></Sponsorship>}></Route>
-            <Route exact path="/team" element={<Team></Team>}></Route>
-            <Route exact path="/merchandise" element={<Merchandise></Merchandise>}></Route>
-            {/* <Route exact path="/register" element={<UserRegistration />} /> */}
-            <Route exact path="/test" element={<EventSingle />} />
+            <Route exact path="/event/:eventSlug" element={<EventSingle />} />
+            <Route exact path="/sponsorship" element={<Sponsorship />} />
+            <Route exact path="/team" element={<Team />} />
+            <Route exact path="/merchandise" element={<Merchandise />} />
+            <Route exact path="/profile" element={<ProfileInfo />} />
+            <Route exact path="/event/:eventSlug/register" element={<EventReg />} />
         </Routes>
     );
 };

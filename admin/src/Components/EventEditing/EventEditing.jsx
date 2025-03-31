@@ -148,6 +148,12 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 skipCoordinators = 1;
             }
 
+            for (let round of values.rounds) {
+                round.startTime = round.date[0].$d;
+                round.endTime = round.date[1].$d;
+                delete round.date
+            }
+
             const formData = new FormData();
             var changed = 0;
             const oldData = selectedEvent.original;
@@ -223,7 +229,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                         });
                     }
                 } else if (JSON.stringify(oldData[key]) !== JSON.stringify(newValue)) {
-                    formData.append(key, newValue);
+                    formData.append(key, JSON.stringify(newValue));
                     changed = 1;
                     console.log("new value: ");
                     console.log(newValue);
