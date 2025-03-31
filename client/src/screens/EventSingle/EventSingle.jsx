@@ -86,7 +86,7 @@ const EventSingle = () => {
                     <div className="event-single-buttons">
                         <Button innerText="View Rules" onClick={()=>window.open(oneEvent?.rulesDocURL, "_blank")} />
                         <Link to={`/events/${eventSlug}/register`}>
-                            <Button innerText="Register" disabled={(!user || !user.college || isReg)} />
+                            <Button innerText="Register" disabled={(!user || !user.college)} />
                         </Link>
                     </div>
                     {!user && (

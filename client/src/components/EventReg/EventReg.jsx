@@ -57,8 +57,7 @@ const CompletedContent = () => {
                 <Typography variant="body1" color="grey" sx={{ mb: 2 }}>
                     You are now Registered.
                 </Typography>
-                <Button onClick={() => navigate("/events")} innerText={"Go to Events"}>
-                </Button>
+                <Button onClick={() => navigate("/events")} innerText={"Go to Events"}></Button>
             </CardContent>
         </Card>
     );
@@ -99,7 +98,7 @@ const Loading = () => {
     return (
         <Card sx={{ width: "min(100%, 400px)" }}>
             <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column", width: "100%" }}>
-                <CircularProgress color="primary" size={80} thickness={5}/>
+                <CircularProgress color="primary" size={80} thickness={5} />
                 <Typography variant="h5">Fetching Data...</Typography>
                 <Typography variant="body1" color="grey" sx={{ mb: 2, textAlign: "center" }}>
                     While it's loading, shout out 'REBECA'!
@@ -115,7 +114,7 @@ const EventReg = () => {
     const navigate = useNavigate();
     const [valid, setValid] = useState({ step1: false, step2: false, step3: true });
     const [file, setFile] = useState(null);
-    const [assets, setAssets] = useState('');
+    const [assets, setAssets] = useState("");
     const { user, allEvents, eventsLoad } = useAuth();
     const [selectedItems, setSelectedItems] = useState([]);
     const [teamName, setTeamName] = useState("");
@@ -136,8 +135,8 @@ const EventReg = () => {
                     console.log("Status of registration of the user");
                     console.log(status);
                     setIsReg(status.data.isRegistered);
-                    if (status.data.isRegistered) setActiveStep(3);
-                    else setActiveStep(0);
+                    // if (status.data.isRegistered) setActiveStep(3);
+                    setActiveStep(0);
                 }
             } catch (err) {
                 console.log(err);
@@ -184,15 +183,20 @@ const EventReg = () => {
                     )
                 );
             case 1:
-                return oneEvent && (
-                    <Payment
-                        setValid={() => setValid({ ...valid, step2: true })}
-                        event={"Coolest Event"}
-                        free={(user.email.endsWith(".iiests.ac.in") && allAreIIESTians(selectedItems)) || (oneEvent?.registrationFee===0)}
-                        setFile={setFile}
-                        regfee={oneEvent?.registrationFee}
-                        paymentQR={oneEvent?.paymentQR}
-                    />
+                return (
+                    oneEvent && (
+                        <Payment
+                            setValid={() => setValid({ ...valid, step2: true })}
+                            event={"Coolest Event"}
+                            free={
+                                (user.email.endsWith(".iiests.ac.in") && allAreIIESTians(selectedItems)) ||
+                                oneEvent?.registrationFee === 0
+                            }
+                            setFile={setFile}
+                            regfee={oneEvent?.registrationFee}
+                            paymentQR={oneEvent?.paymentQR}
+                        />
+                    )
                 );
             case 2:
                 return <FinishMessage />;
@@ -212,10 +216,10 @@ const EventReg = () => {
             regData.append("userEmail", user?.email);
             regData.append("teamName", teamName);
             if (oneEvent?.assets) regData.append("assets", assets);
-            if(selectedItems.length>0)regData.append("teamMembers", JSON.stringify(selectedItems.map((member)=>member._id)));
+            if (selectedItems.length > 0)
+                regData.append("teamMembers", JSON.stringify(selectedItems.map((member) => member._id)));
             const paymentURL = await handleSubmitImage(file);
             if (file) regData.append("paymentScreenshot", paymentURL);
-
 
             const result = await enrollUser(regData);
             console.log("Registration successful:", result?.data);
@@ -260,6 +264,10 @@ const EventReg = () => {
     if (user && oneEvent)
         return (
             <Container maxWidth="sm" sx={{ mt: "5rem", mb: 5 }}>
+                {isReg && <Alert severity="warning" sx={{ mb: 2 }} color="warning">
+                    <AlertTitle>Repeat Registration</AlertTitle>
+                    You have already registered once for this event. Please make sure this event allows multiple registrations before registering again.
+                </Alert>}
                 <Stepper activeStep={activeStep} alternativeLabel>
                     {steps.map((label) => (
                         <Step key={label}>
