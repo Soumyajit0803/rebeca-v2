@@ -87,6 +87,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 setQRList([]);
                 setOrigQRList([]);
                 setSelectedEvent(null);
+                setCoordsList([])
             } else {
                 errorPop(res.data.message, "Error While Deleting Event");
             }
