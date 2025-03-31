@@ -542,7 +542,6 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                         name="rulesDocURL"
                         rules={[
                             {
-                                required: true,
                                 type: "url",
                                 message: "Please enter a valid URL for the rules document",
                             },
