@@ -11,6 +11,7 @@ import { isUserRegistered } from "../../services/eventApi";
 import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
 
 function isGoogleForm(url) {
+    if(!url)return false;
     const googleFormPattern = /^https:\/\/docs\.google\.com\/forms\/d\/e\/[^\/]+\/viewform/;
     const googleShortFormPattern = /^https:\/\/forms\.gle\/[a-zA-Z0-9]+/;
 
@@ -89,7 +90,7 @@ const EventSingle = () => {
                         </div>
                     </div>
 
-                    <div className="event-single-buttons">
+                    {oneEvent?.rulesDocURL && <div className="event-single-buttons">
                         <Button
                             innerText={isGoogleForm(oneEvent?.rulesDocURL) ? "Google Form" : "View Rules"}
                             onClick={() => window.open(oneEvent?.rulesDocURL, "_blank")}
@@ -99,7 +100,7 @@ const EventSingle = () => {
                                 <Button innerText="Register" disabled={!user || !user.college} />
                             </Link>
                         )}
-                    </div>
+                    </div>}
                     {!user && (
                         <Alert
                             className="event-alert"
@@ -164,6 +165,7 @@ const EventSingle = () => {
                                 venue={round.venue}
                                 key={i}
                                 i={i}
+                                hideHeading={!oneEvent?.rulesDocURL}
                             />
                         );
                     })}

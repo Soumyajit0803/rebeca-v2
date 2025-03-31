@@ -147,7 +147,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
 
             formData.append("eventName", values.name);
             formData.append("description", values.description);
-            formData.append("rulesDocURL", values.rulesDocUrl);
+            if(values.rulesDocUrl)formData.append("rulesDocURL", values.rulesDocUrl);
             formData.append("type", values.type);
             if (values.type !== "single") {
                 formData.append("maxTeamSize", values.maxTeamSize);
@@ -253,7 +253,6 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                         name="rulesDocUrl"
                         rules={[
                             {
-                                required: true,
                                 type: "url",
                                 message: "Please enter a valid URL for the rules document",
                             },

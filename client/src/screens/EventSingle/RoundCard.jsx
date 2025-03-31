@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Typography, Box, Paper } from "@mui/material";
 
-export default function RoundCard({ name, start, end, venue, i }) {
+export default function RoundCard({ name, start, end, venue, i, hideHeading }) {
     return (
         <div className="round-card">
             <Box variant="outlined" sx={{ position: "relative", zIndex: 1 }}>
-                <Paper
+                {!hideHeading && <Paper
                     sx={{
                         p: 1,
                         position: "absolute",
@@ -19,7 +19,7 @@ export default function RoundCard({ name, start, end, venue, i }) {
                     <Typography fontSize={24} fontWeight={800} lineHeight={1}>
                         {name}
                     </Typography>
-                </Paper>
+                </Paper>}
                 <Box sx={{ mt: 2 }}>
                     <Typography gutterBottom sx={{ color: "#4dabf5", fontSize: 14, my: 0 }}>
                         Starting from
