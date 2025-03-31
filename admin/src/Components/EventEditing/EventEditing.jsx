@@ -177,15 +177,15 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 return;
             }
 
-            if (QRList.length === 0 && values.registrationFee !== 0) {
-                infoPop("Please add QR image, your event is not set to be free", "No Payment QR Image");
-                return;
-            }
+            // if (QRList.length === 0 && values.registrationFee !== 0) {
+            //     infoPop("Please add QR image, your event is not set to be free", "No Payment QR Image");
+            //     return;
+            // }
 
-            if (QRList.length !== 0 && values.registrationFee === 0) {
-                infoPop("Your event is set to be free, you cannot have a payment QR for it", "Wrong Information");
-                return;
-            }
+            // if (QRList.length !== 0 && values.registrationFee === 0) {
+            //     infoPop("Your event is set to be free, you cannot have a payment QR for it", "Wrong Information");
+            //     return;
+            // }
 
             if (coordsList.length === 0) {
                 infoPop("Please select Coordinators", "No Coordinators Selected");
@@ -222,18 +222,18 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 updatedFields.push("Thumbnail");
             }
 
-            if (JSON.stringify(QRList) !== JSON.stringify(origQRList)) {
-                console.log("Files data");
-                var imageURL = "";
-                if (QRList[0]) {
-                    imageURL = await handleEditImage(QRList[0].originFileObj);
-                    formData.append("paymentQR", imageURL);
-                } else {
-                    formData.append("paymentQR", "");
-                }
-                changed = 1;
-                updatedFields.push("Payment QR");
-            }
+            // if (JSON.stringify(QRList) !== JSON.stringify(origQRList)) {
+            //     console.log("Files data");
+            //     var imageURL = "";
+            //     if (QRList[0]) {
+            //         imageURL = await handleEditImage(QRList[0].originFileObj);
+            //         formData.append("paymentQR", imageURL);
+            //     } else {
+            //         formData.append("paymentQR", "");
+            //     }
+            //     changed = 1;
+            //     updatedFields.push("Payment QR");
+            // }
 
             const newData = {
                 eventName: values.eventName,
@@ -423,24 +423,24 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
             },
         ]);
         // set Payment QR
-        if (original.paymentQR) {
-            setQRList([
-                {
-                    uid: "-1",
-                    url: original.paymentQR,
-                    status: "done",
-                    name: original.paymentQR.split("/")[-1],
-                },
-            ]);
-            setOrigQRList([
-                {
-                    uid: "-1",
-                    url: original.paymentQR,
-                    status: "done",
-                    name: original.paymentQR.split("/")[-1],
-                },
-            ]);
-        }
+        // if (original.paymentQR) {
+        //     setQRList([
+        //         {
+        //             uid: "-1",
+        //             url: original.paymentQR,
+        //             status: "done",
+        //             name: original.paymentQR.split("/")[-1],
+        //         },
+        //     ]);
+        //     setOrigQRList([
+        //         {
+        //             uid: "-1",
+        //             url: original.paymentQR,
+        //             status: "done",
+        //             name: original.paymentQR.split("/")[-1],
+        //         },
+        //     ]);
+        // }
     };
 
     useEffect(() => {
@@ -601,7 +601,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                             </Upload>
                         </ImgCrop>
                     </div>
-                    <div style={{ margin: "1rem 0" }}>
+                    {/* <div style={{ margin: "1rem 0" }}>
                         <span>Payment QR Code for the event (if it has a registration fees)</span>
                         <ImgCrop rotationSlider>
                             <Upload
@@ -623,7 +623,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                                 {QRList.length < 1 && "+ Payment QR"}
                             </Upload>
                         </ImgCrop>
-                    </div>
+                    </div> */}
                     <Form.Item
                         name="type"
                         label="Event type"
@@ -729,6 +729,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                             placeholder="Enter Registration Fee"
                             type="number"
                             min={0}
+                            onWheel={(e) => e.target.blur()} 
                         />
                     </Form.Item>
 

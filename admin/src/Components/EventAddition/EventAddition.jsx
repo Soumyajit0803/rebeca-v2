@@ -136,13 +136,13 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                 infoPop("Please add thumbnail image");
                 return;
             }
-            if (QRList.length === 0 && values.registrationFee !== 0) {
-                infoPop("Please add Payment QR Code");
-                return;
-            }
+            // if (QRList.length === 0 && values.registrationFee !== 0) {
+            //     infoPop("Please add Payment QR Code");
+            //     return;
+            // }
             const posterURL = await handleSubmitImage(posterList[0].originFileObj);
             const thumbnailURL = await handleSubmitImage(thumbnailList[0].originFileObj);
-            const QRURL = values.registrationFee !== 0 ? await handleSubmitImage(QRList[0].originFileObj) : "";
+            // const QRURL = values.registrationFee !== 0 ? await handleSubmitImage(QRList[0].originFileObj) : "";
             const formData = new FormData();
 
             formData.append("eventName", values.name);
@@ -155,7 +155,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
             }
             formData.append("poster", posterURL);
             formData.append("thumbnail", thumbnailURL);
-            formData.append("paymentQR", QRURL);
+            // formData.append("paymentQR", QRURL);
             formData.append("assets", values.assets);
             formData.append("registrationFee", values.registrationFee);
             formData.append("rounds", JSON.stringify(values.rounds));
@@ -316,7 +316,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                             </Upload>
                         </ImgCrop>
                     </div>
-                    <div style={{margin: '1rem 0'}}>
+                    {/* <div style={{margin: '1rem 0'}}>
                         <span>Payment QR Code for the event (if it has a registration fees)</span>
                         <ImgCrop rotationSlider>
                             <Upload
@@ -338,7 +338,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                                 {QRList.length < 1 && "+ Payment QR"}
                             </Upload>
                         </ImgCrop>
-                    </div>
+                    </div> */}
                     <Form.Item
                         name="type"
                         label="Event type"
@@ -444,6 +444,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                             placeholder="Enter Registration Fee"
                             type="number"
                             min={0}
+                            onWheel={(e) => e.target.blur()} 
                         />
                     </Form.Item>
 
