@@ -13,27 +13,27 @@ var introtext = `Prepare to be swept away as you put your best foot forward in t
 const content = {
     miscellaneous: {
         name: "Pre-Events",
-        image: "/assets/imgs/Schedule/schedule-2.webp",
+        image: "/assets/imgs/Schedule/preevents.webp",
         intro: "Kickstart the celebrations with our electrifying pre-events! Experience thrilling workshops, captivating performances, and hands-on activities designed to spark your passion for culture and creativity. Don't just wait for the main event—immerse yourself in the excitement from the very start!",
     },
     saptami: {
         name: "Saptami Symphony",
-        image: "/assets/imgs/Schedule/schedule-3.webp",
+        image: "/assets/imgs/Schedule/saptami.webp",
         intro: "Immerse yourself in the vibrant essence of Indian culture as gifted artists from across the nation come together to create a mesmerizing tapestry of grace and tradition. Let the melodies of celebration fill the air, marking the grand beginning of our beloved Pujo!",
     },
     ashtami: {
         name: "Ashtami Aura",
-        image: "/assets/imgs/Schedule/schedule-2.webp",
+        image: "/assets/imgs/Schedule/ashtami.webp",
         intro: "As the evening unfolds, the BEings will set the stage ablaze with electrifying performances, lighting up the night with their unmatched talent and creativity. Get ready to cheer your hearts out for your best friends as they command the spotlight, turning the stage into a spectacle of passion and brilliance. Let's make this night a celebration of the incredible talent that unites us all!",
     },
     navami: {
         name: "Navami Nirvana",
-        image: "/assets/imgs/Schedule/schedule-3.webp",
+        image: "/assets/imgs/Schedule/navami.webp",
         intro: "Beneath the starlit sky, let Kolkata's soul-stirring symphony sweep you away. Come, cheer, and revel as the legends of our beloved city set the stage on fire, crafting an evening of musical euphoria that knows no boundaries—uniting us all in the heartbeat of Navami's enchanting rhythm!",
     },
     dashami: {
         name: "Dashami Dazzle",
-        image: "/assets/imgs/Schedule/schedule-2.webp",
+        image: "/assets/imgs/Schedule/dashami.webp",
         intro: "Put on your dancing shoes and get ready to lose yourself in the electrifying beats of Bollywood! Feel the infectious energy take over as you dance like nobody's watching, screaming with joy and celebrating the grand finale of our festival. Let this unforgettable night fill your heart with memories that will stay with you long after the stars fade into dawn!",
     },
 };
@@ -266,7 +266,7 @@ function Schedule() {
         <div className="schedule">
             <div className="heading">
                 <div className="event_bg">
-                    <img src="/assets/imgs/Schedule/schedule-1.webp" alt="" />
+                    <img src="/assets/imgs/Schedule/eventBanner.webp" alt="" />
                 </div>
                 <Heading title={"REBECA SCHEDULE"} subTitle={introtext} needHatch={false} />
                 <Link to={"#"}>
