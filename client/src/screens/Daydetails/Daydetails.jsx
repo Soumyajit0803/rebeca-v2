@@ -57,7 +57,7 @@ const Daydetails = () => {
                         justifyContent: "center"
                     }}
                 >
-                    <img src="/assets/imgs/artists/comingsoon.webp" />
+                    <img src="/assets/imgs/artists/comingsoon.webp" style={{width: "10rem"}} />
                     <Typography variant="h5" fontFamily={"Sedgwick Ave Display"}>Coming soon!</Typography>
                 </Box>
             </div>
