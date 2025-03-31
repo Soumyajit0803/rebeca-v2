@@ -10,15 +10,17 @@ import Daycontent from "../../assets/data/contents.json";
 import Eventcontent from "../../assets/data/events.json";
 import { useAuth } from "../../AuthContext";
 import { extractTime } from "../../components/EventList/EventList";
-import {nights} from "../../App"
+import { nights } from "../../App";
+import { Box, Paper, Typography } from "@mui/material";
 
 const Daydetails = () => {
     const { DayID } = useParams();
     const Day = Daycontent[DayID];
 
     const { allEvents } = useAuth();
-    const filteredEvents = allEvents && allEvents.filter((e) => new Date(e.rounds[0].startTime).getUTCDate() == nights[DayID]);
-    
+    const filteredEvents =
+        allEvents && allEvents.filter((e) => new Date(e.rounds[0].startTime).getUTCDate() == nights[DayID]);
+
     console.log(allEvents);
 
     return (
@@ -27,8 +29,8 @@ const Daydetails = () => {
                 className="behind-banner"
                 style={{
                     background: `url("/assets/imgs/Schedule/${DayID.toLowerCase()}.webp"`,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
                 }}
             ></div>
             <div className="tonight-special">{Day.nightType}</div>
@@ -44,9 +46,20 @@ const Daydetails = () => {
                 {/* Brace Yourself for an Unforgettable Showcase, As We Proudly */}
             </div>
             <div className="section-4">
-                {Day.lineUps.map((value, index) => {
+                {/* {Day.lineUps.map((value, index) => {
                     return <ArtistCard key={index} name={value.name} img={value.img}></ArtistCard>;
-                })}
+                })} */}
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}
+                >
+                    <img src="/assets/imgs/artists/comingsoon.webp" style={{width: "10rem"}} />
+                    <Typography variant="h5" fontFamily={"Sedgwick Ave Display"}>Coming soon!</Typography>
+                </Box>
             </div>
 
             <div className="section-5">
