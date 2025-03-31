@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const oauth2Client = require("../utils/oauth2client");
 const catchAsync = require("./../utils/catchAsync");
 const User = require("../models/userModel");
+const Email = require("../utils/nodemailer");
 require("dotenv").config();
 
 // Secure passkey stored in .env file
@@ -72,6 +73,17 @@ exports.googleAuth = catchAsync(async (req, res, next) => {
                 email: userRes.data.email,
                 image: userRes.data.picture,
             });
+
+            const email = new Email(
+                { email: userRes.data.email, name: userRes.data.name }, 
+                null, 
+                null, 
+                null,  // members (optional)
+                null,  // leader (optional)
+                null,  // url (optional)
+                null
+            );
+            await email.sendWelcome();
         }
 
         createSendToken(user, isNewUser ? 201 : 200, res);

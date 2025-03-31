@@ -22,6 +22,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { useAuth } from "../../AuthContext";
 import { postImage } from "../../services/imgApi";
 import { updateMember } from "../../services/userApi";
+import { useNavigate } from "react-router-dom";
 
 const ProfileDashboard = () => {
     const formData = new FormData();
@@ -35,6 +36,8 @@ const ProfileDashboard = () => {
     const { user } = useAuth();
     const [imageFile, setImageFile] = useState([]);
     const [userData, setUserData] = useState({});
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         setUserData({
@@ -88,26 +91,28 @@ const ProfileDashboard = () => {
                 college: userData.college,
             };
 
+            const toUpdate = []
             Object.entries(newData).forEach(([key, newValue]) => {
                 if (user[key] !== newValue) {
                     formData.append(key, newValue);
                     changed = 1;
                     console.log(key);
-
                     console.log("new value: ");
                     console.log(newValue);
                     console.log(user[key]);
+                    toUpdate.push(key)
                 }
             });
             if (changed) {
                 formData.append("email", userData.email);
                 await updateMember(formData);
-                setMessage("Profile Data updated successfully!!");
+                setMessage(`Fields ${toUpdate} updated successfully. Please reload to view changes.`);
                 setSeverity("success");
                 setMessageTitle("Data Updated!");
                 setPopUp(true);
+                
             } else {
-                setMessage("No changes found to edit");
+                setMessage("No changes found to edit.");
                 setSeverity("warning");
                 setMessageTitle("No Changes Found");
                 setPopUp(true);
@@ -163,7 +168,6 @@ const ProfileDashboard = () => {
                             <Grid2 size={{ xs: 12 }} align="center">
                                 <div style={{ position: "relative", display: "inline-block" }}>
                                     <Avatar
-                                        alt={userData.name}
                                         src={userData.image}
                                         sx={{ width: 200, height: 200, border: "3px solid var(--accent1)" }}
                                     />

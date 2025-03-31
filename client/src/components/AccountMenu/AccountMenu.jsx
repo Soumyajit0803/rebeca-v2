@@ -1,20 +1,46 @@
 import * as React from "react";
-import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Badge, Tooltip, Alert, Chip } from "@mui/material";
-import { PersonAdd, Settings, Logout, Login, Google, Person, Warning } from "@mui/icons-material";
+import {
+    Box,
+    Avatar,
+    Menu,
+    MenuItem,
+    ListItemIcon,
+    Divider,
+    IconButton,
+    Badge,
+    Tooltip,
+    Alert,
+    Chip,
+    Typography,
+    CircularProgress,
+} from "@mui/material";
+import {
+    PersonAdd,
+    Settings,
+    Logout,
+    Login,
+    Google,
+    Person,
+    Warning,
+    LoginRounded,
+    ArrowRight,
+} from "@mui/icons-material";
 import { useGoogleLogin } from "@react-oauth/google";
 import { authWithGoogle } from "../../services/authApi";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
+import Button from "../Button/Button";
 
 import "./AccountMenu.css";
 
 export default function AccountMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const { user, handleLogin, handleLogout } = useAuth();
+    const { user, handleLogin, handleLogout, userLoad, setUserLoad } = useAuth();
     const navigate = useNavigate();
 
     const responseGoogle = async (authResult) => {
         try {
+            setUserLoad(true);
             if (authResult["code"]) {
                 console.log(authResult.code);
                 const result = await authWithGoogle(authResult.code);
@@ -26,6 +52,8 @@ export default function AccountMenu() {
             }
         } catch (e) {
             console.log(e);
+        } finally {
+            setUserLoad(false);
         }
     };
 
@@ -47,18 +75,26 @@ export default function AccountMenu() {
             <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
                 <Tooltip title="Account">
                     <Badge badgeContent={user && !user?.college ? 1 : 0} color="warning">
-                        <IconButton
-                            onClick={handleClick}
-                            sx={{width: 32, height: 32}}
-                            aria-controls={open ? "account-menu" : undefined}
-                            aria-haspopup="true"
-                            aria-expanded={open ? "true" : undefined}
-                        >
-                            <Avatar
-                                sx={{ width: 32, height: 32, bgcolor: "var(--primary)" }}
-                                src={user?.image}
-                            ></Avatar>
-                        </IconButton>
+                        {user ? (
+                            <IconButton
+                                onClick={handleClick}
+                                sx={{ width: 32, height: 32 }}
+                                aria-controls={open ? "account-menu" : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open ? "true" : undefined}
+                            >
+                                <Avatar
+                                    sx={{ width: 32, height: 32, bgcolor: "var(--primary)" }}
+                                    src={user?.image}
+                                ></Avatar>
+                            </IconButton>
+                        ) : (
+                            <Button
+                                onClick={handleClick}
+                                innerText={"Login"}
+                                loading={userLoad}
+                            />
+                        )}
                     </Badge>
                 </Tooltip>
             </Box>
@@ -100,8 +136,10 @@ export default function AccountMenu() {
                     <div className="user-details">
                         <Avatar sx={{ width: 56, height: 56, bgcolor: "var(--primary)" }} src={user.image}></Avatar>
                         <div>
-                            <div style={{ fontSize: "1.3rem" }}>{user.name}</div>
-                            <div style={{ fontSize: "0.9rem", color: "#90caf9" }}>{user.email}</div>
+                            <div style={{ fontSize: "1.3rem", wordBreak: "break-all" }}>{user.name}</div>
+                            <div style={{ fontSize: "0.9rem", color: "#90caf9", wordBreak: "break-all" }}>
+                                {user.email}
+                            </div>
                         </div>
                     </div>
                 )}
@@ -116,7 +154,16 @@ export default function AccountMenu() {
                         <ListItemIcon>
                             <Person fontSize="small" />
                         </ListItemIcon>
-                        My Profile {!user?.college && <Chip icon={<Warning />} label="Complete your profile" color="primary" size="small" sx = {{ml: 2}}/>}
+                        My Profile{" "}
+                        {!user?.college && (
+                            <Chip
+                                icon={<Warning />}
+                                label="Complete your profile"
+                                color="primary"
+                                size="small"
+                                sx={{ ml: 2 }}
+                            />
+                        )}
                     </MenuItem>
                 )}
                 {user && (

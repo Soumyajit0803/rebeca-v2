@@ -49,7 +49,7 @@ const userSchema = new mongoose.Schema(
             trim: true,
             validate: {
                 validator: (x) => x.length > 5,
-                message: "ERR: dept: Please mention full department name"
+                message: "ERR: dept: Department Name too short."
             }
         },
         passout_year: {
@@ -58,6 +58,9 @@ const userSchema = new mongoose.Schema(
         college: {
             type: String,
             trim: true,
+        },
+        tagLine: {
+            type: String
         }
     },
     { timestamps: true }

@@ -38,14 +38,19 @@
   transform: translateX(-50%);
   z-index: 0;
   margin-bottom: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .home .section-1 .cover-img img {
   width: 100%;
   height: 100%;
   /* min-height: 100%; */
   margin-bottom: 0px;
-  object-fit: cover;
+  object-fit: contain;
   border: 0px solid red;
+  max-width: 1600px;
+
 }
 .home .section-2 .banner {
   background-color: var(--primary);
@@ -117,11 +122,16 @@
 }
 
 .home .section-4 {
-  padding-top: 2rem;
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .home .section-4 .row {
   width: 100%;
   padding: 0 5%;
+  max-width: 1200px
 }
 .home .section-4 .row .heading {
   align-items: flex-end;
@@ -136,7 +146,7 @@
 }
 .home .section-4 .row .heading .sub-title {
   font-family: "Sedgwick Ave Display", cursive;
-  text-align: left;
+  text-align: right;
   color: white;
   font-size: 40px;
 }
@@ -146,8 +156,8 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 20px;
-  font-size: 30px;
-  line-height: 1.6;
+  font-size: 1.4rem;
+  /* line-height: 1.6; */
   width: 100%;
 }
 .home .section-4 .collage {

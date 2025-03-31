@@ -30,11 +30,13 @@
 	text-align: center;
 	z-index: 1;
 	text-shadow: 1px 1px 40px rgb(0, 0, 0);
+	font-size: 2.5rem;
 }
 .heading .sub-title {
 	width: 70%;
 	text-align: center;
 	z-index: 1;
+	font-size: 1.2rem
 }
 @media only screen and (max-width: 1100px),
 	only screen and (max-device-width: 1100px) {

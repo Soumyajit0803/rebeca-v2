@@ -1,159 +1,189 @@
 import React, { useState, useEffect } from "react";
 import Heading from "../../components/Heading/Heading";
 import "./Team.css";
-import { Autocomplete, TextField } from "@mui/material";
-import teams from "../../assets/data/team.json";
+import {
+    Accordion,
+    AccordionDetails,
+    Button,
+    AccordionSummary,
+    Card,
+    CardContent,
+    Typography,
+    CircularProgress,
+    Container,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { getAllAdmins } from "../../services/userApi";
+import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
+import {
+    AdminPanelSettings,
+    AttachMoney,
+    Palette,
+    Event,
+    Info,
+    DirectionsBus,
+    Handshake,
+    Article,
+    Campaign,
+    Brush,
+    Groups,
+    Code,
+    Restaurant,
+    VolunteerActivism,
+    CameraAlt,
+    AssignmentInd,
+    AccountBalance,
+    MenuBook,
+} from "@mui/icons-material";
+import { useAuth } from "../../AuthContext";
+import { skeleton } from "../../AuthContext";
+
+const profs = [
+    { name: "Dr. Nityananda Nandi", position: "Chairperson", img: "./assets/imgs/team/nityanandanandi.webp" },
+    { name: "Dr. Ananya Barui", position: "Joint Convenor", img: "./assets/imgs/team/ananyabarui.webp" },
+    { name: "Dr. Subhabrata Koley", position: "Joint Convenor", img: "./assets/imgs/team/subhabratakoley.webp" },
+    { name: "Dr. Santanu Maity", position: "Treasurer", img: "./assets/imgs/team/santanumaity.webp" },
+];
+
+const TeamLoading = () => {
+    return (
+        <div className="teamspage-loading">
+            <Card sx={{ width: "min(100%, 400px)" }}>
+                <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column", width: "100%" }}>
+                    <CircularProgress color="primary" size={80} thickness={5} />
+                    <Typography variant="h5">Hang tight, Fetching Teams Data...</Typography>
+                    <Typography variant="body1" color="grey" sx={{ mb: 2, textAlign: "center" }}>
+                        The best part of any party? When it becomes a story you swear you'll never tell.
+                    </Typography>
+                </CardContent>
+            </Card>
+        </div>
+    );
+};
 
 function ProfessorsList() {
-    const profs = [
-        { name: "Dr. Nityananda Nandi", position: "Chairperson", img: "./assets/imgs/team/nityanandanandi.webp" },
-        { name: "Dr. Ananya Barui", position: "Joint Convenor", img: "./assets/imgs/team/ananyabarui.webp" },
-        { name: "Dr. Subhabrata Koley", position: "Joint Convenor", img: "./assets/imgs/team/subhabratakoley.webp" },
-        { name: "Dr. Santanu Maity", position: "Treasurer", img: "./assets/imgs/team/santanumaity.webp" },
-    ];
-
     return (
-        <div className="professor-wrapper">
-            <div className="professors">
-                {profs.map((prof, i) => {
-                    return (
-                        <div className="member" key={i}>
-                            <div className="img">
-                                <img src="/assets/imgs/circle.png" alt="" className="circle" />
-                                <div className="dp">
-                                    <img src={prof.img} alt=""></img>
-                                </div>
-                            </div>
-                            <div className="details">
-                                <div className="name">{prof.name}</div>
-                                <div className="position">{prof.position}</div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </div>
-        </div>
+        <Container
+            sx={{
+                maxWidth: "1200px",
+                padding: 3,
+                margin: "0 2rem",
+                gap: 4,
+                borderRadius: "5px",
+                bgcolor: "hsla(237, 100%, 70%, 0.2)",
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                alignItems: "start",
+            }}
+        >
+            {profs.map((professor, i) => {
+                return (
+                    <CustomAvatar
+                        title={professor.name}
+                        src={professor.img}
+                        subtitle={professor.position}
+                        icon={skeleton[0].icon}
+                    />
+                );
+            })}
+        </Container>
     );
 }
 
 const Team = () => {
-    const [selectedTeam, setSelectedTeam] = useState(teams[0]);
-    const handleMenuClick = (team) => {
-        setSelectedTeam(team);
-    };
+    // const [teamsData, setTeamData] = useState(skeleton);
+    // const [loading, setLoading] = useState(false);
+    const {teamsData, teamsLoad} = useAuth()
 
-    const handleDropDownClick = (teamName) => {
-        console.log(teamName);
-        setSelectedTeam(teams.find((team) => team.name == teamName));
-    };
+    // useEffect(() => {
+    //     const handleFetchAdmins = async () => {
+    //         try {
+    //             setLoading(true);
+    //             const res = await getAllAdmins();
+    //             const admins = res.data?.data;
+    //             console.log(admins);
+    //             const nteamsData = JSON.parse(JSON.stringify(skeleton));
+    //             admins.map((admin) => {
+    //                 var index = teamNameToId[admin.team];
+    //                 nteamsData[index - 1]?.members.push(admin);
+    //             });
+    //             setTeamData(nteamsData);
+    //         } catch (err) {
+    //             console.log(err);
+    //         } finally {
+    //             setLoading(false);
+    //         }
+    //     };
 
-    const { innerWidth: width, innerHeight: height } = window;
+    //     handleFetchAdmins();
+    // }, [user]);
+
+    if (teamsLoad) {
+        return <TeamLoading />;
+    }
 
     return (
-		<div className="team">
-			<Heading title="Meet our Team"></Heading>
-			<ProfessorsList />
-			<div className="lower-body">
-				{width < 720 ? (
-					<Autocomplete
-						disablePortal
-						className="team-dropdown"
-						options={[...teams.map((team) => team.name)]}
-						sx={{
-							mt: "00px",
-							mr: "0px",
-							color: "white !important",
-							width: "300px",
+        teamsData &&
+        !teamsLoad && (
+            <div className="team">
+                <h1>Meet Our Team</h1>
+                <ProfessorsList />
+                <Container className="team-container">
+                    {teamsData.map((teamData, i) => {
+                        if (teamData.members.length === 0) return;
+                        console.log(teamData);
 
-							"& .MuiOutlinedInput-root": {
-								"& fieldset": {
-									borderColor: "rgb(150, 150, 150)",
-									color: "white",
-									height: "60px",
-									borderRadius: "5px",
-								},
-								"&:hover fieldset": {
-									borderColor: "var(--primary)",
-								},
-								"&:focus fieldset": {
-									borderColor: "var(--primary)",
-								},
-							},
-							"& .MuiInputLabel-root": {
-								color: "rgb(150, 150, 150)",
-							},
-							"& .MuiOutlinedInput-input": {
-								color: "white",
-								bgcolor: "var(--bg)",
-								border: "0px solid red",
-								height: "100%",
-							},
-						}}
-						renderInput={(params) => (
-							<TextField {...params} label="Team Name" />
-						)}
-						onChange={(e, value) => handleDropDownClick(value)}
-					/>
-				) : (
-					<div className="menu">
-						{teams.map((team) => (
-							<div
-								key={team.id}
-								className={`item ${
-									selectedTeam &&
-									team.id === selectedTeam.id &&
-									"active"
-								}`}
-								onClick={() => handleMenuClick(team)}
-							>
-								{team.name}
-							</div>
-						))}
-					</div>
-				)}
-
-				<div className="results">
-					{selectedTeam ? (
-						<>
-							<div className="title">{selectedTeam.name}</div>
-							<div className="members">
-								{selectedTeam.members.map((mem, index) => (
-									<div className="member" key={index}>
-										<div className="img">
-											<img
-												src="/assets/imgs/circle.png"
-												alt=""
-												className="circle"
-											/>
-											<div className="dp">
-												<img src={mem.img} alt=""></img>
-											</div>
-											<div className="dp2">
-												<img
-													src="/assets/imgs/team/dp2.webp"
-													alt=""
-												/>
-											</div>
-										</div>
-										<div className="details">
-											<div className="name">
-												{mem.name}
-											</div>
-											<div className="position">
-												{mem.position}
-											</div>
-										</div>
-									</div>
-								))}
-							</div>
-						</>
-					) : (
-						<div className="title">Please select an option</div>
-					)}
-				</div>
-			</div>
-		</div>
-	);
+                        return (
+                            <Accordion
+                                sx={{ m: 0, p: 0 }}
+                                slotProps={{ heading: { component: "h2" } }}
+                                disableGutters
+                                elevation={3}
+                                key={i}
+                            >
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="panel1-content"
+                                    id="panel1-header"
+                                >
+                                    <div className="accordion-h">
+                                        <div>{skeleton[i].icon}</div>
+                                        {teamData.team}
+                                    </div>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <Container
+                                        sx={{
+                                            p: 2,
+                                            display: "flex",
+                                            flexWrap: "wrap",
+                                            gap: 2,
+                                            bgcolor: "#171717",
+                                            borderRadius: "5px",
+                                        }}
+                                    >
+                                        {teamData.members.map((member, ki) => {
+                                            return (
+                                                <CustomAvatar
+                                                    title={member.name}
+                                                    src={member.image}
+                                                    subtitle={member.position}
+                                                    phone={member.phone}
+                                                    icon={skeleton[i].icon}
+                                                    key={ki}
+                                                />
+                                            );
+                                        })}
+                                    </Container>
+                                </AccordionDetails>
+                            </Accordion>
+                        );
+                    })}
+                </Container>
+            </div>
+        )
+    );
 };
 
 export default Team;

@@ -7,6 +7,7 @@ import RegistrationStats from "../RegistrationStats/RegistrationStats";
 import EventEditing from "../EventEditing/EventEditing";
 import { useAuth } from "../../AuthContext";
 import { LogoutOutlined } from "@ant-design/icons";
+import './Dashboard.css'
 
 const themeColor = {
     developer: "#ef7f29",
@@ -22,17 +23,17 @@ const AvatarMenu = ({ admin, handleLogout }) => {
             label: (
                 <Space>
                     <Avatar
-                        src={admin.image}
+                        src={admin?.image}
                         style={{
-                            border: `2px solid ${themeColor[admin.role]}`,
+                            border: `2px solid ${themeColor[admin?.role]}`,
                             width: 45,
                             height: 45,
                         }}
                     />
                     <div>
-                        <Typography.Text strong>{admin.name.split(" ")[0]}</Typography.Text>
+                        <Typography.Text strong>{admin?.name.split(" ")[0]}</Typography.Text>
                         <br />
-                        <Typography.Text style={{ color: themeColor[admin.role] }}>{admin.role}</Typography.Text>
+                        <Typography.Text style={{ color: themeColor[admin?.role] }}>{admin?.role}</Typography.Text>
                     </div>
                 </Space>
             ),
@@ -171,7 +172,7 @@ const Dashboard = () => {
                         padding: "2rem 2rem 0 2rem",
                     }}
                 >
-                    <div style={{ fontSize: "2.5rem", fontWeight: "600", color: "#fff" }}>Admin Dashboard</div>
+                    <div className="admin-dsb-heading">Admin Dashboard</div>
                     <div
                         className="avatar"
                         style={{

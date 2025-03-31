@@ -36,17 +36,22 @@
 }
 
 .day-details-wrapper .tonight-special {
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: 900;
-  position: absolute;
   text-align: right;
-  width: 10ch;
-  transform: rotate(90deg);
+  position: absolute;
   top: 20rem;
-  right: -10vw;
+  right: -3em;
+  width: 15ch;
+  transform: rotate(90deg);
   z-index: 0;
   opacity: 0.4;
+  line-height: 1em;
+  user-select: none;
+  animation: test 2s infinite;
 }
+
+
 
 .day-details-wrapper .section-1,
 .day-details-wrapper .section-2,
@@ -130,5 +135,3 @@
     padding-right: 0.5rem;
   }
 }
-
-

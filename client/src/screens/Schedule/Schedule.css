@@ -1,307 +1,88 @@
 .schedule {
-  padding: 5rem;
-  font-size: 28px;
-  animation: fadeIn 0.5s linear forwards;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-
-}
-.schedule .download_btn{
-    margin: auto;
-    margin-bottom: 4rem;
-    z-index: 1;
-}
-.schedule .download_btn:hover{
-    padding: 12px 25px;
-}
-.schedule .download_btn:hover .before{
-    display: none;
-}
-.schedule .event {
-  margin-top: 5rem;
-  width: 100%;
-  /* border: 1px solid red; */
-}
-.schedule .event.pre-event .event-content{
-  min-height: 60vh;
-  border: 0px solid red;
-}
-.schedule .event.pre-event .eheading{
-  margin-left: 2rem;
-}
-
-.schedule .event .event-content {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items:start;
-  background-size: cover;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  padding: 3rem;
-  gap: 2rem;
-}
-.schedule .event .event-content::before {
-  content: "";
-  mask-image: linear-gradient(transparent, black 30%, transparent);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  background-color: transparent;
-  background-repeat: no-repeat;
-}
-.schedule .pre-event .event-content::before {
-  background-image: url("/assets/imgs/Schedule/pre-event.webp");
-}
-.schedule .saptami-back .event-content::before {
-  background-image: url("/assets/imgs/Schedule/saptami.webp");
-}
-.schedule .ashtami-back .event-content::before {
-  background-image: url("/assets/imgs/Schedule/ashtami.webp");
-}
-.schedule .navami-back .event-content::before {
-  background-image: url("/assets/imgs/Schedule/navami.webp");
-}
-.schedule .dashami-back .event-content::before {
-  background-image: url("/assets/imgs/Schedule/dashami.webp");
-}
-
-.eheading .big {
-  position: relative;
-  z-index: 1;
-  font-size: 5rem;
-}
-.eheading .small {
-  position: relative;
-  z-index: 1;
-  line-height: 0.8em;
-  font-size: 2.5rem;
-  width: 100%;
-}
-
-.schedule .eheading .title {
-  width: min(15ch, 100%);
-  text-align: center;
-}
-
-
-.schedule .event .event-content .description {
-  text-align: right;
-  color: white;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-
-
-.schedule .event .event-content .description .about {
-  /* padding-top: 1.5rem; */
-  width: 30ch;
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.703);
-}
-
-.schedule .event .event-content .description .about-link {
-  /* font-size: 1.2rem; */
-  font-weight: 600;
-  /* margin-top: 1.5rem; */
-  color: white;
-  transition: all ease 0.2s;
-  width: max-content;
-  background-color: var(--accent1);
-  border-radius: 5px;
-  /* padding: 0.5rem; */
-  align-self: end
-}
-
-
-.schedule .event .event-content .description .about-link:hover {
-  cursor: pointer;
-}
-
-.left-padding {
-  margin-left: 3rem;
-}
-
-@media screen and (max-width: 1150px) {
-  .left-padding {
-    margin-left: 2rem;
-  }
-  .schedule {
-    padding: 2rem;
-  }
-
-  .about-link{
-    align-self: center;
-  }
-
-  .schedule .event .event-content {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .schedule .event .event-content .description {
-    text-align: left;
-    margin-bottom: 4rem;
-    align-items: flex-start;
-  }
-
-  .schedule .event .event-content .description .about {
-    width: 100%;
-  }
-}
-
-/* .event-card{
-  display: none;
-  color: white
-} */
-
-@media screen and (max-width: 580px) {
-  /* .event-card{
-    display: contents;
-    color: white ;
-  } */
-
-  .event-content::before{
-    opacity: 0;
-  }
-  .left-padding {
-    margin-left: 1rem;
-  }
-  .schedule {
-    padding: 0rem;
-    padding-top: 104px;
-    font-size: 20px;
-  }
-  .schedule .event .event-content {
-    padding: 1rem;
     padding-top: 3rem;
-  }
-  .schedule .event .event-content .description .about{
-    font-size: 20px;
-  }
-}
-
-.schedule .eheading:hover {
-  color: var(--accent3);
-}
-
-.schedule a {
-  display: flex;
-  width: max-content;
-}
-
-.schedule .heading .sub-title {
-  width: 100%;
+    font-size: 1rem;
+    animation: fadeIn 0.5s linear forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .schedule .heading {
-	width: 100%;
-	position: relative;
-	/* border: 1px solid red; */
-	padding: 4rem 2rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 0.5rem;
+    width: 100%;
+    position: relative;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .schedule .heading .event_bg {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	width: 100%;
-	/* height: 100%; */
-	border: 0px solid yellow;
-  /* overflow: hidden; */
-	z-index: 0;
-	opacity: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100%;
+    border: 0px solid yellow;
+    /* overflow: hidden; */
+    z-index: 0;
+    opacity: 100%;
 }
 .schedule .heading .event_bg img {
-	width: 100%;
-  height: 100%;
-	object-fit: contain;
-	object-position: center;
+    width: 100vw;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.5;
 }
 
-
-.event {
-  position: "relative"; /* Needed for the pseudo-element to position correctly */
-  background-repeat: "no-repeat";
-  background-size: 30px 10px;
-  /* min-height: 400px; Adjust height as needed */
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #0a0a0a; /* Fallback/background color */
-  overflow: hidden; /* Ensures pseudo-element doesn’t bleed outside the border radius */
-
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Radial gradient that goes from transparent in the center to the background color at the edges */
-  /* background: radial-gradient(
-    ellipse at center,
-    rgba(22, 0, 0, 0) 100%,
-    #0a0a0a 100%
-  ); */
-  pointer-events: none; /* Allows clicks to pass through */
-  z-index: 1;
-}
-
-/* Pseudo-element to fade the image borders to the background color */
-.event::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* Radial gradient that goes from transparent in the center to the background color at the edges */
-  /* background: radial-gradient(
-    ellipse at center,
-    rgba(10, 10, 10, 0) 70%,
-    #0a0a0a 100%
-  ); */
-  pointer-events: none; /* Allows clicks to pass through */
-  z-index: 1;
-}
-
-
-/* Main text style */
 .day-title {
-  font-family: "Emilys Candy", cursive; /* or any decorative font you like */
-  font-size: 4rem; /* adjust as needed */
-  color: #fff;
-  margin: 0;
-  position: relative;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8); /* subtle glow/shadow */
+    font-family: "sedgwick ave display";
+    font-size: 4.5rem;
+    color: #fff;
+    margin: 0;
+    position: relative;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
 }
 
 .day-title::after {
-  content: attr(data-text); /* same text */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1; /* behind the main text */
+    content: attr(data-text); /* same text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 
-  font-family: inherit;
-  font-size: 4.5rem; /* a bit larger than the main text */
-  color: #3a3a8a; /* a darker or tinted color to simulate reflection */
-  transform: translate(10px, 10px); /* horizontal, vertical offset */
-  opacity: 0.4; /* partial transparency */
+    font-family: inherit;
+    font-size: 4.5rem; /* a bit larger than the main text */
+    color: var(--primary); /* a darker or tinted color to simulate reflection */
+    transform: translate(15px, 15px); /* horizontal, vertical offset */
+    opacity: 0.6; /* partial transparency */
+}
+.Outer-div .one {
+    transition: all ease 0.2s;
+}
+.Outer-div .one:hover {
+    color: var(--primary);
+}
+.event_div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 18, 20, 0.7);
+}
+.event_div * {
+    z-index: 0;
+}
+@media only screen and (max-width: 970px) {
+    .event_div .day-section {
+        flex-direction: column;
+    }
+
+    .day-title,
+    .day-title::after {
+        font-size: 3.5rem;
+    }
 }

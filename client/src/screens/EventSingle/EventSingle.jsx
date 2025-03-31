@@ -8,6 +8,7 @@ import RoundCard from "./RoundCard";
 import { Alert } from "@mui/material";
 import { Warning } from "@mui/icons-material";
 import { isUserRegistered } from "../../services/eventApi";
+import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
 
 const EventSingle = () => {
     const navigate = useNavigate();
@@ -16,6 +17,8 @@ const EventSingle = () => {
     const [isReg, setIsReg] = useState(false);
     const [loading, setLoading] = useState(false);
     const oneEvent = allEvents.find((ev) => ev.slug === eventSlug);
+    console.log(oneEvent);
+    
 
     useEffect(() => {
         const checkReg = async () => {
@@ -23,11 +26,11 @@ const EventSingle = () => {
                 setLoading(true);
                 if (user && oneEvent) {
                     const status = await isUserRegistered(oneEvent?._id, user?._id);
-                    console.log("Status of registration of the user")
+                    console.log("Status of registration of the user");
                     console.log(status);
-                    setIsReg(status.data.isRegistered)
+                    setIsReg(status.data.isRegistered);
                 } else {
-                    console.log("Pehele login toh kar bhai")
+                    console.log("Pehele login toh kar bhai");
                 }
             } catch (err) {
                 console.log(err);
@@ -37,7 +40,7 @@ const EventSingle = () => {
         };
 
         checkReg();
-    }, [user]);
+    }, [user, oneEvent]);
 
     // Ensure allEvents is available before filtering
     if (!allEvents || allEvents.length === 0) {
@@ -47,7 +50,6 @@ const EventSingle = () => {
     if (!oneEvent) {
         return <div>Event not found</div>;
     }
-    
     return (
         <div className="event-single-container">
             {/* Background Image with Overlay */}
@@ -56,36 +58,51 @@ const EventSingle = () => {
                 style={{
                     position: `relative`,
                     width: `100%`,
-                    height: `300px`,
+                    minHeight: `300px`,
                     background: `url("${oneEvent?.thumbnail}") no-repeat`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
             >
                 <div className="event-single-overlay">
+                    <div className="eposter">
+                        <div className="regfee">Fee ₹ {oneEvent.registrationFee}</div>
+                        <img src={oneEvent.poster} alt={"Poster"} />
+                    </div>
                     <div className="event-single-header">
-                        <span className="event-single-badge">NEW</span>
+                        <span className="event-single-badge">{oneEvent?.type}</span>
                         <h1 className="event-single-title">{oneEvent?.eventName}</h1>
                         <p className="event-single-subtitle">
-                            {extractFullDate(oneEvent?.rounds[0]?.startTime)} -{" "}
-                            {extractFullDate(oneEvent?.rounds[0]?.endTime)}
+                            {extractFullDate(oneEvent?.rounds[0]?.startTime, true)} to{" "}
+                            {extractFullDate(oneEvent?.rounds[0]?.endTime, true)}
                         </p>
+                        <div className="eposter-mobile">
+                            <div className="regfee">Fee ₹ {oneEvent.registrationFee}</div>
+                            <img src={oneEvent.poster} alt={"Poster"} />
+                        </div>
                     </div>
 
                     <div className="event-single-buttons">
-                        <Button innerText="View Rules" href={oneEvent?.rulesDocURL} />
-                        <Link to={`/event/${eventSlug}/register`}>
-                            <Button innerText="Register" disabled={(user && isReg)} />
+                        <Button innerText="View Rules" onClick={()=>window.open(oneEvent?.rulesDocURL, "_blank")} />
+                        <Link to={`/events/${eventSlug}/register`}>
+                            <Button innerText="Register" disabled={(!user || !user.college || isReg)} />
                         </Link>
                     </div>
                     {!user && (
-                        <Alert severity="warning" color="warning" sx={{ mt: 1 }}>
+                        <Alert className="event-alert" variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
                             You need to Log in to Register for any event.
                         </Alert>
                     )}
                     {isReg && (
-                        <Alert severity="success" color="success" sx={{ mt: 1 }}>
+                        <Alert className="event-alert" variant="outlined" severity="success" color="success" sx={{ mt: 1 }}>
                             You Have Successfully been registered for this event
+                        </Alert>
+                    )}
+                    {user && !user?.college && (
+                        <Alert className="event-alert" variant="outlined" severity="warning" color="warning" sx={{ mt: 1 }}>
+                            Please complete your profile information to be able to register. For details, go to {" "}
+                            <Link to="/profile">My profile</Link>.
+                            
                         </Alert>
                     )}
                 </div>
@@ -93,7 +110,9 @@ const EventSingle = () => {
 
             {/* Content Below */}
             <div className="event-single-content">
-                <p className="event-single-description">{oneEvent?.description}</p>
+                <p className="event-single-description">
+                    {oneEvent.description}
+                </p>
                 <h2 className="schedule-title">Schedule</h2>
 
                 <div className="prelims-container">
@@ -108,6 +127,25 @@ const EventSingle = () => {
                                 i={i}
                             />
                         );
+                    })}
+                </div>
+            </div>
+
+            <div className="coordinators event-single-content" style={{paddingTop: 0}}>
+                <h2 className="schedule-title">Coordinators</h2>
+                <div className="coords-list">
+                    {oneEvent.mainCoordinators.map((e, i) => {
+                        console.log("coordinator");
+                        console.log(e)                        
+                        return (
+                            <CustomAvatar 
+                                title={e.name}
+                                subtitle={e.role}
+                                phone={e.phone}
+                                src={e.image}
+                                key={i}
+                            />
+                        )
                     })}
                 </div>
             </div>

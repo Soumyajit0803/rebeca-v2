@@ -35,11 +35,11 @@ const BannerLeft = ({ day }) => {
         </div>
       </div>
       <div className="typography-section">
-        <Link to={`/events/${day.toLowerCase()}`}>
+        <Link to={`/events/day/${day.toLowerCase()}`}>
           <div>{day.toUpperCase()}</div>
         </Link>
         <p>{Description[day.toLowerCase()]}</p>
-        <Link to={`/events/${day.toLowerCase()}`}>
+        <Link to={`/events/day/${day.toLowerCase()}`}>
           <CustomButton variant={"filled"} innerText={"Learn More"}></CustomButton>
         </Link>
       </div>
@@ -50,11 +50,11 @@ const BannerRight = ({ day }) => {
   return (
     <div className={`banner-wrapper-2 banner-${day.toLowerCase()}`}>
       <div className="typography-section">
-        <Link to={`/events/${day.toLowerCase()}`}>
+        <Link to={`/events/day/${day.toLowerCase()}`}>
           <div>{day.toUpperCase()}</div>
         </Link>
         <p>{Description[day.toLowerCase()]}</p>
-        <Link to={`/events/${day.toLowerCase()}`}>
+        <Link to={`/events/day/${day.toLowerCase()}`}>
           <CustomButton variant={"filled"} innerText={"Learn More"}></CustomButton>
         </Link>
       </div>

@@ -11,7 +11,7 @@ import { LogoutOutlined, ExportOutlined, CrownFilled } from "@ant-design/icons";
 
 const TagPadded = ({ position, color }) => {
     return (
-        <Tag style={{ fontSize: "1rem", fontWeight: "600", padding: "0.25em" }} icon={<CrownFilled />} color={color}>
+        <Tag icon={<CrownFilled />} color={color}>
             {position}
         </Tag>
     );
@@ -104,7 +104,7 @@ const Login = () => {
                                 
                                 <li style={{ marginBottom: "0.3em" }}>
                                     <TagPadded position={"Developer"} color="orange" />
-                                    Access to everything.
+                                    Access to Developer Features.
                                 </li>
                                 <li style={{ marginBottom: "0.3em" }}>
                                     <TagPadded position={"Facilitator"} color="blue" />

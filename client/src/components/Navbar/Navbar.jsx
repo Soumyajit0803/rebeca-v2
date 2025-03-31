@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Drawer, Avatar, Menu, MenuItem, IconButton, Typography, Button, Box } from "@mui/material";
+import ResponsiveDrawer from "./ResponsiveDrawer";
 
 // import {Button} from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
@@ -14,60 +15,6 @@ import { useAuth } from "../../AuthContext";
 import { checkStatus } from "../../services/authApi";
 import AccountMenu from "../AccountMenu/AccountMenu";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Close, LogoutOutlined } from "@mui/icons-material";
-
-function AvatarMenu({ user, handleLogout, setOpen }) {
-    const [anchorEl, setAnchorEl] = useState(null); // Menu anchor state
-
-    // Open the menu when avatar is clicked
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    // Close the menu
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    if (!user) {
-        return <AccountMenu />;
-    }
-
-    return (
-        <div>
-            <IconButton onClick={handleClick}>
-                <Avatar alt={user.name} src={user.image}></Avatar>
-            </IconButton>
-            <Menu
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)} // Menu will open if anchorEl is not null
-                onClose={handleClose} // Close the menu when clicking outside
-                anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "center",
-                }}
-                transformOrigin={{
-                    vertical: "bottom",
-                    horizontal: "center",
-                }}
-                sx={{ top: "60px" }}
-            >
-                <Typography sx={{ p: 1 }} variant="body2">
-                    Hi, {user.name.split(" ")[0]}!
-                </Typography>
-                <MenuItem
-                    onClick={() => {
-                        handleClose();
-                        handleLogout();
-                    }}
-                    sx={{ gap: "10px" }}
-                >
-                    Logout <LogoutOutlined />
-                </MenuItem>
-            </Menu>
-        </div>
-    );
-}
 
 const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -110,9 +57,17 @@ const Navbar = () => {
                 {/* {user && <Notification message={`Welcome, ${user.name.split(' ')[0]}`} />} */}
                 <LoginForm open={loginOpen} setOpen={setLoginOpen} />
                 <div className="left-col">
-                    {width<720 && <IconButton id="drawer-open-btn" onClick={handleDrawerOpen} variant="filled" color="white">
-                        <MenuIcon />
-                    </IconButton>}
+                    {width < 720 && (
+                        <IconButton
+                            id="drawer-open-btn"
+                            onClick={handleDrawerOpen}
+                            variant="filled"
+                            color="primary"
+                            
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    )}
                     <Link to="/">
                         <img
                             src="/assets/logo/logo_white.webp"
@@ -167,49 +122,8 @@ const Navbar = () => {
                     )}
                 </div>
             </div>
-            <Drawer variant="persistent" anchor="left" open={drawerOpen} className="drawer">
-                <div className="bg"></div>
-                <Box
-                    sx={{
-                        display: "flex",
-                        width: "100%",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        padding: "1rem",
-                    }}
-                >
-                    <Link to="/" className="logo">
-                        <img style={{ padding: "5px", width: "150px" }} src="/assets/logo/logo_white.webp" alt="" />
-                    </Link>
-                    <IconButton id="drawer-close-btn" onClick={handleDrawerClose} color="white">
-                        <Close />
-                    </IconButton>
-                </Box>
-                <div className="nav-items">
-                    <NavLink className={"item"} to="/" onClick={handleLinkClick}>
-                        Home
-                    </NavLink>
-                    <NavLink className={"item"} to="/events" onClick={handleLinkClick}>
-                        Events
-                    </NavLink>
-                    <NavLink className={"item"} to="/sponsorship" onClick={handleLinkClick}>
-                        Sponsorship
-                    </NavLink>
-                    <NavLink to="/team" onClick={handleLinkClick} className={"item"}>
-                        Our Team
-                    </NavLink>
-                    <NavLink to="/merchandise" onClick={handleLinkClick} className={"item"}>
-                        Merchandise
-                    </NavLink>
-                    {/* <NavLink
-						onClick={handleLinkClick}
-						to="/faq"
-						className={"item"}
-					>
-						FAQs
-					</NavLink> */}
-                </div>
-            </Drawer>
+
+            <ResponsiveDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
         </>
     );
 };

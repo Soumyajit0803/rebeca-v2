@@ -1,190 +1,48 @@
 .team {
-    margin-top: 100px;
+    margin-top: 5rem;
     animation: fadeIn 0.5s linear forwards;
-}
-.team .lower-body {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 2rem;
-    gap: 2rem;
-    /* margin-top: 300px; */
-}
-.team .lower-body .team-dropdown {
-    color: white;
-}
-.team .lower-body .menu {
-    width: 40%;
-    max-width: 400px;
-    max-height: 500px;
-    overflow-y: scroll;
-    /* overflow-x: hidden; */
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
-    padding: 40px 20px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.team .lower-body .menu .item {
-    padding: 10px 10px;
-    margin: 0px 0px;
-    background-color: rgba(255, 255, 255, 0);
-    border-radius: 5px;
-    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0);
-    width: 100%;
-    font-size: 20px;
-    cursor: pointer;
-}
-.team .lower-body .menu .item.active {
-    /* background-color: rgba(255, 255, 255, 0.25); */
-    /* box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.1); */
-    /* border: 1px solid var(--primary); */
-    color: var(--primary);
-    font-weight: bold;
-}
-.team .lower-body .results {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 60px 40px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.team .lower-body .results .title {
-    color: white;
-    padding-bottom: 5px;
-    text-align: left;
-    font-size: 40px;
-}
-.team .lower-body .results .members {
-    display: flex;
-    flex-flow: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 20px;
-}
-.team .lower-body .results .members .member,
-.team .professor-wrapper .professors .member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 20px;
-    text-align: center;
-    color: white;
-    /* border: 1px solid red; */
-}
-.team .lower-body .results .members .member .img,
-.team .professor-wrapper .professors .member .img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    /* background: var(--primary); */
-    position: relative;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
-}
-.team .lower-body .results .members .member .img .circle,
-.team .professor-wrapper .professors .member .img .circle {
-    width: 180px;
-    height: 180px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    z-index: 1;
-    /* transform: translateX(-10px); */
-    /* border: 1px solid red; */
-}
-.team .lower-body .results .members .member .img .dp2{
-    width: 180px;
-    height: 180px;
-    z-index: 1;
-    border-radius: 50%;
-    overflow: hidden;
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    /* border: 1px solid red; */
-}
-.team .lower-body .results .members .member .img .dp2 img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-.team .lower-body .results .members .member .img .dp,
-.team .professor-wrapper .professors .member .img .dp {
-    width: 180px;
-    height: 180px;
-    z-index: 2;
-    border-radius: 50%;
-    overflow: hidden;
-    transform: translateX(+5px) translateY(+5px);
-}
-.team .lower-body .results .members .member .img .dp img,
-.team .professor-wrapper .professors .member .img .dp img {
-    width: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    object-position: center;
-    object-fit: cover;
-    /* border-radius: 50%; */
-}
-.team .lower-body .results .members .member .position,
-.team .professor-wrapper .professors .member .position {
-    color: rgb(208, 208, 208, 0.75);
+    flex-direction: column;
+    padding: 1.5rem
 }
 
-.team .professor-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 2rem
+.team h1 {
+    font-family: "Sedgwick Ave Display";
+    margin-bottom: 1rem;
 }
 
-.team .professor-wrapper .professors {
-	margin-top: 0;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	align-items: center;
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 40px;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+.teamspage-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.team-container {
+    margin: 1rem 1rem !important;
+    padding: 0 !important;
+    max-width: 1200px !important;
+}
+
+.accordion-h {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 1rem 0.3rem 0.3rem;
+    background-color: #1b1b1b;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@media only screen and (max-width: 720px), only screen and (max-device-width: 720px) {
-    .team .lower-body {
-        flex-direction: column;
-        padding: 0 20px;
-    }
-    .team .lower-body .team-dropdown {
-        width: 100%;
-    }
-    .team .lower-body .results {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-	.team .professor-wrapper {
-		padding: 1rem;
-        padding-bottom: 3rem !important;
-	}
-}
-
-.team .professor-wrapper {
-	padding-top: 0;
-	padding-bottom: 0;
+.accordion-h div {
+    padding: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--primary);
+    aspect-ratio: 1/1;
 }

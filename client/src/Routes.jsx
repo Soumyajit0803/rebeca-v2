@@ -5,15 +5,13 @@ import Schedule from "./screens/Schedule/Schedule";
 import Sponsorship from "./screens/Sponsors/Sponsorship";
 
 import Daydetails from "./screens/Daydetails/Daydetails";
-import EventPopup2 from "./screens/EventPopup/EventPopup2";
 import Merchandise from "./screens/Merchandise/Merchandise";
 import Team from "./screens/Team/Team";
-import LoginForm from "./components/Login/LoginForm";
-//import UserRegistration from "./screens/UserRegistration/UserRegistration";
 import EventSingle from "./screens/EventSingle/EventSingle";
 import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import EventReg from "./components/EventReg/EventReg";
-import RoundCard from "./screens/EventSingle/RoundCard";
+import PageNotFound from "./screens/PageNotFound/PageNotFound";
+import ComingSoon from "./screens/ComingSoon/ComingSoon";
 
 const AllRoutes = () => {
     const location = useLocation();
@@ -26,13 +24,14 @@ const AllRoutes = () => {
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/events" element={<Schedule />} />
-            <Route exact path="/events/:DayID" element={<Daydetails />} />
-            <Route exact path="/event/:eventSlug" element={<EventSingle />} />
+            <Route exact path="/events/day/:DayID" element={<Daydetails />} />
+            <Route exact path="/events/:eventSlug" element={<EventSingle />} />
             <Route exact path="/sponsorship" element={<Sponsorship />} />
             <Route exact path="/team" element={<Team />} />
-            <Route exact path="/merchandise" element={<Merchandise />} />
+            <Route exact path="/merchandise" element={<ComingSoon />} />
             <Route exact path="/profile" element={<ProfileInfo />} />
-            <Route exact path="/event/:eventSlug/register" element={<EventReg />} />
+            <Route exact path="/events/:eventSlug/register" element={<EventReg />} />
+            <Route exact path="/*" element={<PageNotFound />} />
         </Routes>
     );
 };

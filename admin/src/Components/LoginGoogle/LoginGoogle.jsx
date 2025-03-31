@@ -6,6 +6,7 @@ import { useAuth } from "../../AuthContext";
 import { Modal, Input, Button, Typography, Alert } from "antd";
 import { GoogleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 export default (props) => {
     const { handleLogin } = useAuth();
@@ -50,6 +51,7 @@ export default (props) => {
 
     const responseGoogle = async (authResult) => {
         try {
+            setLoading(true);
             if (authResult["code"]) {
                 console.log("Response from a user");
 
@@ -68,6 +70,8 @@ export default (props) => {
             }
         } catch (e) {
             console.log(e.message);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -79,7 +83,8 @@ export default (props) => {
 
     return (
         <>
-            <Button size="large" type="primary" icon={<GoogleOutlined />} onClick={googleLogin}>
+            
+            <Button size="large" type="primary" icon={<GoogleOutlined />} onClick={googleLogin} loading={loading}>
                 Sign in with Google
             </Button>
             <Modal
