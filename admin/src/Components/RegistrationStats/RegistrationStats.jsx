@@ -365,6 +365,7 @@ const RegistrationStats = ({ infoPop, errorPop, successPop }) => {
                 members: e.teamMembers,
                 image: e.userId?.image,
                 timeStamp: e.createdAt,
+                assets: e.assets
             }));
 
             setAllEnrollData(edata);
