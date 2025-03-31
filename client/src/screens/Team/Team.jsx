@@ -16,10 +16,10 @@ import { useAuth } from "../../AuthContext";
 import { skeleton } from "../../AuthContext";
 
 const profs = [
-    { name: "Dr. Nityananda Nandi", position: "Chairperson", img: "./assets/imgs/team/nityanandanandi.webp" },
-    { name: "Dr. Ananya Barui", position: "Joint Convenor", img: "./assets/imgs/team/ananyabarui.webp" },
-    { name: "Dr. Subhabrata Koley", position: "Joint Convenor", img: "./assets/imgs/team/subhabratakoley.webp" },
-    { name: "Dr. Santanu Maity", position: "Treasurer", img: "./assets/imgs/team/santanumaity.webp" },
+    { name: "Dr. Debdulal Das", position: "Chairperson", img: "./assets/imgs/Faculty/debdulaldas.webp" },
+    { name: "Dr. Rajib Chakraborty", position: "Joint Convenor", img: "./assets/imgs/Faculty/rajibchakraborty.webp" },
+    { name: "Dr. Gautam Anand", position: "Joint Convenor", img: "./assets/imgs/Faculty/gautamanand.webp" },
+    { name: "Dr. Santanu Maity", position: "Treasurer", img: "./assets/imgs/Faculty/santanumaity.webp" },
 ];
 
 const TeamLoading = () => {
@@ -43,9 +43,9 @@ function ProfessorsList() {
         <Container
             sx={{
                 maxWidth: "1200px",
-                padding: 3,
+                padding: 5,
                 margin: "0 2rem",
-                gap: 4,
+                gap: 5,
                 borderRadius: "5px",
                 bgcolor: "hsla(237, 100%, 70%, 0.2)",
                 display: "flex",
