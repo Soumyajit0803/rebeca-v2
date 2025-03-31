@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true, limit: "500mb" })); // <- Parses UR
 
 dotenv.config({ path: "./.env" }); // <- connecting the enviroment variables
 // MIDLEWARES ->>
-app.enable('trust proxy');
+app.set('trust proxy', 1);
 
 const CLIENT_URL = process.env.CLIENT_URL;
 const ADMIN_URL = process.env.ADMIN_URL;
