@@ -12,9 +12,24 @@ import {
     Avatar,
 } from "@mui/material";
 import { Person, Email, Phone, School, Work, Groups } from "@mui/icons-material";
+import ImageIcon from "@mui/icons-material/Image";
 import { getAllMembersNotInEvent } from "../../services/eventApi";
 
-const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamName, setTeamName, minSize, maxSize, eventId }) => {
+const GetData = ({
+    setValid,
+    user,
+    selectedItems,
+    setSelectedItems,
+    mode,
+    teamName,
+    setTeamName,
+    minSize,
+    maxSize,
+    eventId,
+    assets,
+    setAssets,
+    isAssetReq,
+}) => {
     const [dropdown, setDropDown] = useState([]);
     // console.log("Event ID received: ")
     // console.log(eventId)
@@ -23,16 +38,15 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
         if (value.length <= maxSize) {
             setSelectedItems(value);
         }
-        if (value.length>=minSize && value.length<=maxSize && teamName.length !== 0) setValid(true);
-        else setValid(false)
+        if (value.length >= minSize && value.length <= maxSize && teamName.length !== 0) setValid(true);
+        else setValid(false);
     };
 
     useEffect(() => {
-        if (mode === "single") {
+        if (mode === "single" && !isAssetReq) {
             setValid(true);
         }
-        console.log(mode);
-        
+
         async function handleGetAllMembers() {
             try {
                 const res = await getAllMembersNotInEvent(eventId);
@@ -63,6 +77,13 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
                         Profile Information details cannot be updated here. However, if you think there is a mistake,
                         please navigate to your profile and do the necessary changes, and come back here.
                     </Alert>
+                    {isAssetReq && (
+                        <Alert severity="info" sx={{ mb: 2 }} color="info">
+                            <AlertTitle>Assets uploading mandatory in this event</AlertTitle>
+                            This event requires you to upload some assets as a part of the registration. Upload your
+                            asset to google drive and share the link to it here.
+                        </Alert>
+                    )}
 
                     {/* Name */}
                     <Grid2 container spacing={2} alignItems="center" sx={{ marginBottom: 2 }}>
@@ -154,6 +175,32 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
                         </Grid2>
                     </Grid2>
 
+                    {isAssetReq && (
+                        <Grid2 container spacing={2} alignItems="center" sx={{ marginBottom: 2 }}>
+                            <Typography variant="body1" color="text.secondary" sx={{mt: 2, p: 1}}>
+                                {isAssetReq}
+                            </Typography>
+                            <Grid2 size={{ xs: 12 }}>
+                                <TextField
+                                    fullWidth
+                                    label={"Assets URL"}
+                                    variant="outlined"
+                                    slotProps={{
+                                        input: {
+                                            startAdornment: <ImageIcon color="primary" sx={{ mr: 1 }} />,
+                                        },
+                                    }}
+                                    value={assets}
+                                    onChange={(e) => {
+                                        setAssets(e.target.value);
+                                        if (e.target.value !== "") setValid(true);
+                                        else setValid(false);
+                                    }}
+                                />
+                            </Grid2>
+                        </Grid2>
+                    )}
+
                     {/* Dropdown with Search */}
                     {mode === "team" && (
                         <>
@@ -174,13 +221,13 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
                                         onChange={(e) => {
                                             setTeamName(e.target.value);
                                             if (e.target.value !== "" && selectedItems.length !== 0) setValid(true);
-                                            else setValid(false)
+                                            else setValid(false);
                                         }}
                                     />
                                 </Grid2>
                             </Grid2>
                             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: "bold" }}>
-                                Select Your Team Members (max {maxSize+1}, min {minSize+1}):
+                                Select Your Team Members (max {maxSize + 1}, min {minSize + 1}):
                             </Typography>
                             <Alert severity="info" sx={{ mb: 2 }}>
                                 <AlertTitle>How to Find Teammates?</AlertTitle>

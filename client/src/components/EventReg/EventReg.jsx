@@ -4,9 +4,9 @@ import {
     CardContent,
     Card,
     Typography,
-    Button,
     StepLabel,
     Step,
+    Button,
     Stepper,
     Alert,
     AlertTitle,
@@ -57,8 +57,7 @@ const CompletedContent = () => {
                 <Typography variant="body1" color="grey" sx={{ mb: 2 }}>
                     You are now Registered.
                 </Typography>
-                <Button onClick={() => navigate("/events")} variant="contained" color="primary">
-                    Go to Events
+                <Button onClick={() => navigate("/events")} innerText={"Go to Events"}>
                 </Button>
             </CardContent>
         </Card>
@@ -116,6 +115,7 @@ const EventReg = () => {
     const navigate = useNavigate();
     const [valid, setValid] = useState({ step1: false, step2: false, step3: true });
     const [file, setFile] = useState(null);
+    const [assets, setAssets] = useState('');
     const { user, allEvents, eventsLoad } = useAuth();
     const [selectedItems, setSelectedItems] = useState([]);
     const [teamName, setTeamName] = useState("");
@@ -177,6 +177,9 @@ const EventReg = () => {
                             minSize={oneEvent?.minTeamSize - 1}
                             maxSize={oneEvent?.maxTeamSize - 1}
                             eventId={oneEvent?._id}
+                            assets={assets}
+                            setAssets={setAssets}
+                            isAssetReq={oneEvent?.assets}
                         />
                     )
                 );
@@ -208,6 +211,7 @@ const EventReg = () => {
             regData.append("eventName", oneEvent?.eventName);
             regData.append("userEmail", user?.email);
             regData.append("teamName", teamName);
+            if (oneEvent?.assets) regData.append("assets", assets);
             if(selectedItems.length>0)regData.append("teamMembers", JSON.stringify(selectedItems.map((member)=>member._id)));
             const paymentURL = await handleSubmitImage(file);
             if (file) regData.append("paymentScreenshot", paymentURL);
@@ -255,7 +259,7 @@ const EventReg = () => {
 
     if (user && oneEvent)
         return (
-            <Container maxWidth="sm" sx={{ mt: "5rem" }}>
+            <Container maxWidth="sm" sx={{ mt: "5rem", mb: 5 }}>
                 <Stepper activeStep={activeStep} alternativeLabel>
                     {steps.map((label) => (
                         <Step key={label}>

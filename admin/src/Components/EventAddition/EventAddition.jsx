@@ -136,13 +136,13 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                 infoPop("Please add thumbnail image");
                 return;
             }
-            if (QRList.length === 0 && values.registrationAmount !== 0) {
+            if (QRList.length === 0 && values.registrationFee !== 0) {
                 infoPop("Please add Payment QR Code");
                 return;
             }
             const posterURL = await handleSubmitImage(posterList[0].originFileObj);
             const thumbnailURL = await handleSubmitImage(thumbnailList[0].originFileObj);
-            const QRURL = await handleSubmitImage(QRList[0].originFileObj);
+            const QRURL = values.registrationFee !== 0 ? await handleSubmitImage(QRList[0].originFileObj) : "";
             const formData = new FormData();
 
             formData.append("eventName", values.name);
@@ -156,13 +156,10 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
             formData.append("poster", posterURL);
             formData.append("thumbnail", thumbnailURL);
             formData.append("paymentQR", QRURL);
-            formData.append("registrationFee", values.registrationAmount);
+            formData.append("assets", values.assets);
+            formData.append("registrationFee", values.registrationFee);
             formData.append("rounds", JSON.stringify(values.rounds));
             formData.append("mainCoordinators", JSON.stringify(coordsList.map((e) => allMembers[e].original._id)));
-            // coordsList.forEach((e) => {
-            //     formData.append("mainCoordinators[]", allMembers[e].original._id);
-            // });
-
             console.log(formData);
 
             const res = await createEvent(formData);
@@ -429,7 +426,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                         </div>
                     )}
                     <Form.Item
-                        name="registrationAmount"
+                        name="registrationFee"
                         label="Registration Fee for Non-IIESTians (give 0 if not applicable)"
                         rules={[
                             {
@@ -498,6 +495,12 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                             })}
                         </Space>
                     </div>
+                    <Form.Item
+                        label="Describe the assets requirement(if any) to be uploaded by the participants as a part of the event's registration process. Please keep it BLANK if it is not applicable for your event."
+                        name="assets"
+                    >
+                        <Input placeholder="Describe Asset Requirements for participation" />
+                    </Form.Item>
 
                     {/* Rounds Information */}
                     <div className="mandatory-star">*</div>

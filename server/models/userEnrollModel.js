@@ -23,6 +23,9 @@ const userEnrollSchema = new mongoose.Schema(
         paymentScreenshot: {
             type: String,
         },
+        assets: {
+            type: String,
+        }
     },
     { timestamps: true }
 );

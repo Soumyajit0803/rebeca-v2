@@ -84,6 +84,8 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 setOrigPosterList([]);
                 setThumbnailList([]);
                 setOrigThumbnailList([]);
+                setQRList([]);
+                setOrigQRList([]);
                 setSelectedEvent(null);
             } else {
                 errorPop(res.data.message, "Error While Deleting Event");
@@ -179,6 +181,11 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 return;
             }
 
+            if (QRList.length !== 0 && values.registrationFee === 0) {
+                infoPop("Your event is set to be free, you cannot have a payment QR for it", "Wrong Information");
+                return;
+            }
+
             if (coordsList.length === 0) {
                 infoPop("Please select Coordinators", "No Coordinators Selected");
                 return;
@@ -214,12 +221,14 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 updatedFields.push("Thumbnail");
             }
 
-            if (JSON.stringify(QRList) !== JSON.stringify(origThumbnailList)) {
+            if (JSON.stringify(QRList) !== JSON.stringify(origQRList)) {
                 console.log("Files data");
-                var imageURL = ""
+                var imageURL = "";
                 if (QRList[0]) {
                     imageURL = await handleEditImage(QRList[0].originFileObj);
                     formData.append("paymentQR", imageURL);
+                } else {
+                    formData.append("paymentQR", "");
                 }
                 changed = 1;
                 updatedFields.push("Payment QR");
@@ -231,6 +240,7 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                 rounds: JSON.stringify(values.rounds),
                 rulesDocURL: values.rulesDocURL,
                 type: values.type,
+                assets: values.assets,
                 registrationFee: values.registrationFee,
                 mainCoordinators: coordsList.map((e) => e._id),
             };
@@ -412,22 +422,24 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
             },
         ]);
         // set Payment QR
-        setQRList([
-            {
-                uid: "-1",
-                url: original.paymentQR,
-                status: "done",
-                name: original.paymentQR.split("/")[-1],
-            },
-        ]);
-        setOrigQRList([
-            {
-                uid: "-1",
-                url: original.paymentQR,
-                status: "done",
-                name: original.paymentQR.split("/")[-1],
-            },
-        ]);
+        if (original.paymentQR) {
+            setQRList([
+                {
+                    uid: "-1",
+                    url: original.paymentQR,
+                    status: "done",
+                    name: original.paymentQR.split("/")[-1],
+                },
+            ]);
+            setOrigQRList([
+                {
+                    uid: "-1",
+                    url: original.paymentQR,
+                    status: "done",
+                    name: original.paymentQR.split("/")[-1],
+                },
+            ]);
+        }
     };
 
     useEffect(() => {
@@ -774,6 +786,13 @@ const EventEditing = ({ errorPop, successPop, infoPop }) => {
                             })}
                         </Space>
                     </div>
+
+                    <Form.Item
+                        label="Describe the assets requirement(if any) to be uploaded by the participants as a part of the event's registration process. Please keep it BLANK if it is not applicable for your event."
+                        name="assets"
+                    >
+                        <Input placeholder="Describe Asset Requirements for participation" />
+                    </Form.Item>
 
                     {/* Rounds Information */}
                     <div className="mandatory-star">*</div>

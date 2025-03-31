@@ -116,13 +116,10 @@ const eventSchema = new mongoose.Schema(
             },
         },
         paymentQR: {
-            type: String,
-            validate: {
-                validator: function (value) {
-                    return /^https?:\/\/.+\.(jpg|jpeg|png|webp|svg)$/i.test(value);
-                },
-                message: "Invalid URL for QR Code",
-            },
+            type: String
+        },
+        assets: {
+            type: String
         },
         registrationFee: {
             type: Number,

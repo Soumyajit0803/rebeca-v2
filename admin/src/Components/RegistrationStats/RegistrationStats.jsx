@@ -80,6 +80,18 @@ const singleReg = [
             ),
         width: 100,
     },
+    {
+        title: "Assets Uploaded",
+        dataIndex: "assets",
+        key: "assets",
+        render: (link) =>
+            link && (
+                <a href={link} target="_blank">
+                    Link
+                </a>
+            ),
+        width: 100,
+    }
 ];
 
 const teamReg = [
@@ -116,7 +128,7 @@ const teamReg = [
     },
 ];
 const ColumnMap = { single: singleReg, team: teamReg };
-const TableWidth = { single: 1400, team: 2400 };
+const TableWidth = { single: 1500, team: 2500 };
 
 const formatObjects = (objects) => {
     return objects.map((obj) => `${obj.name}, ${obj.email}`).join("\n");
