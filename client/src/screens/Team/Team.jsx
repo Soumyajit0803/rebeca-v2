@@ -9,6 +9,7 @@ import {
     Typography,
     CircularProgress,
     Container,
+    Divider
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
@@ -138,7 +139,33 @@ const Team = () => {
                                             borderRadius: "5px",
                                         }}
                                     >
-                                        {teamData.members.map((member, ki) => {
+                                        {teamData.members.filter((member) => member.position==='head').map((member, ki) => {
+                                            return (
+                                                <CustomAvatar
+                                                    title={member.name}
+                                                    src={member.image}
+                                                    subtitle={member.position}
+                                                    phone={member.phone}
+                                                    icon={skeleton[i].icon}
+                                                    key={ki}
+                                                />
+                                            );
+                                        })}
+                                        
+                                        {teamData.members.filter((member) => member.position==='associate head').map((member, ki) => {
+                                            return (
+                                                <CustomAvatar
+                                                    title={member.name}
+                                                    src={member.image}
+                                                    subtitle={member.position}
+                                                    phone={member.phone}
+                                                    icon={skeleton[i].icon}
+                                                    key={ki}
+                                                />
+                                            );
+                                        })}
+                                        
+                                        {teamData.members.filter((member) => member.position==='associate').map((member, ki) => {
                                             return (
                                                 <CustomAvatar
                                                     title={member.name}
