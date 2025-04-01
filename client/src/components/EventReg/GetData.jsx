@@ -81,8 +81,7 @@ const GetData = ({
                     {isAssetReq && (
                         <Alert severity="info" sx={{ mb: 2 }} color="info">
                             <AlertTitle>Assets uploading mandatory in this event</AlertTitle>
-                            This event requires you to upload some assets as a part of the registration. Upload your
-                            asset to google drive and share the link to it here.
+                            As part of the registration process for this event, you are required to upload certain assets. Please upload your asset(s) to <b><a href="https://drive.google.com" style={{fontWeight: "bold", textDecoration: "underline"}}>Google Drive</a></b>, ensure that the link is set to <b>allow access for everyone</b>, and share the generated link here.
                         </Alert>
                     )}
 
