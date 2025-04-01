@@ -8,7 +8,8 @@ import { nights } from "../../App";
 import { extractTime } from "../../components/EventList/EventList";
 import { Tooltip, Paper } from "@mui/material";
 
-var introtext = `Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 84th edition of REBECA is back with a bang!`;
+var introtext = `Plan Your Moves, Catch Every Moment!
+Get ready to dive into the heart of REBECA 84! From electrifying performances to unmissable events, here's your roadmap to the ultimate celebration. Mark your calendars, set your reminders, and brace yourself for an unforgettable journey. From sunup to sundown, here's where the magic unfolds—don't blink or you might miss it!`;
 
 const content = {
     miscellaneous: {

@@ -9,6 +9,7 @@ import { Alert } from "@mui/material";
 import { Warning } from "@mui/icons-material";
 import { isUserRegistered } from "../../services/eventApi";
 import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 function isGoogleForm(url) {
     if(!url)return false;
@@ -33,11 +34,11 @@ const EventSingle = () => {
                 setLoading(true);
                 if (user && oneEvent) {
                     const status = await isUserRegistered(oneEvent?._id, user?._id);
-                    console.log("Status of registration of the user");
-                    console.log(status);
+                    // console.log("Status of registration of the user");
+                    // console.log(status);
                     setIsReg(status.data.isRegistered);
                 } else {
-                    console.log("Pehele login toh kar bhai");
+                    console.log("No user");
                 }
             } catch (err) {
                 console.log(err);
@@ -55,7 +56,7 @@ const EventSingle = () => {
     }
 
     if (!oneEvent) {
-        return <div>Event not found</div>;
+        return <PageNotFound />;
     }
 
     return (

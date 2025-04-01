@@ -85,7 +85,7 @@ export const AuthProvider = ({ children }) => {
                     setTeamsLoad(true);
                     const res = await getAllAdmins();
                     const admins = res.data?.data;
-                    console.log(admins);
+                    // console.log(admins);
                     const nteamsData = JSON.parse(JSON.stringify(skeleton));
                     admins.map((admin) => {
                         var index = teamNameToId[admin.team];
@@ -114,7 +114,7 @@ export const AuthProvider = ({ children }) => {
                 })
                 setAllEvents(allEvs);
                 console.log("Event data fetched successfully");
-                console.log(allEvs);
+                // console.log(allEvs);
             } catch (err) {
                 console.log(err);
             } finally {
@@ -129,7 +129,7 @@ export const AuthProvider = ({ children }) => {
 
     const handleLogin = (userData) => {
         console.log("User login successful");
-        console.log(userData);
+        // console.log(userData);
         setUser(userData);
         showNotification(`Welcome, ${userData.name.split(" ")[0]}`);
     };

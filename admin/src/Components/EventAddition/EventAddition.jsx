@@ -156,7 +156,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
             formData.append("poster", posterURL);
             formData.append("thumbnail", thumbnailURL);
             // formData.append("paymentQR", QRURL);
-            formData.append("assets", values.assets);
+            if(values.assets)formData.append("assets", values.assets);
             formData.append("registrationFee", values.registrationFee);
             formData.append("rounds", JSON.stringify(values.rounds));
             formData.append("mainCoordinators", JSON.stringify(coordsList.map((e) => allMembers[e].original._id)));
