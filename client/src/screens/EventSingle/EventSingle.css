@@ -46,6 +46,16 @@
     border: 2px solid var(--primary);
     font-weight: bold;
 }
+.event-single-price-tag {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: #ccc;
+  color: black;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+}
 
 .event-single-title {
     font-size: 3.5rem;
