@@ -17,7 +17,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
 import { useAuth } from "../../AuthContext";
 import { skeleton } from "../../AuthContext";
-import { Favorite } from "@mui/icons-material";
+import { East, Favorite } from "@mui/icons-material";
 
 const profs = [
     { name: "Dr. Debdulal Das", position: "Chairperson", img: "./assets/imgs/Faculty/debdulaldas.webp" },
@@ -113,23 +113,19 @@ const Team = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     flexDirection: "column",
-                    padding: "4rem",
-                    gap: "2rem",
                     width: "100%",
-                    background: "rgba(255, 255, 255, 0.2)",
                     margin: "2rem 0",
                     borderRadius: "5px"
                 }}>
-                    <Typography textAlign={"center"} sx={{fontSize: "1.2rem"}}>
+                    <Typography textAlign={"center"} sx={{fontSize: "1.2rem", maxWidth: '70ch'}} color="text.secondary">
                     We are excited to invite you to be a part of REBECA as a <b>volunteer</b>! This is your chance to contribute, gain hands-on experience, and be a part of an incredible event. Whether you're interested in event management, social media, technical support, or hospitality, there's a place for you on our team!
                     </Typography>
                     <Button
                         variant="contained"
-                        sx={{
-                            padding: "1rem",
-                        }}
                         startIcon={<Favorite />}
+                        endIcon={<East />}
                         onClick={() => window.open("https://forms.gle/qnceaoaaTiBTJ3627", "_blank")}
+                        sx = {{mt: 2}}
                     >
                         Join as Volunteer
                     </Button>
