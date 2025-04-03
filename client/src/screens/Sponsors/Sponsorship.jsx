@@ -100,7 +100,7 @@ function Sponsorship() {
                         variant={"filled"}
                         innerText={"Download the brochure"}
                         endIcon={<span className="material-icons">file_download</span>}
-                        onClick={onButtonClick}
+                        // onClick={onButtonClick}
                     ></Button>
                 </Link>
                 <section className="section-1">
