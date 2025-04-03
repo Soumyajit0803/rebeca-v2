@@ -9,11 +9,14 @@ import {
     Typography,
     CircularProgress,
     Container,
+    Button,
+    Box
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
 import { useAuth } from "../../AuthContext";
 import { skeleton } from "../../AuthContext";
+import { Favorite } from "@mui/icons-material";
 
 const profs = [
     { name: "Dr. Debdulal Das", position: "Chairperson", img: "./assets/imgs/Faculty/debdulaldas.webp" },
@@ -43,7 +46,7 @@ function ProfessorsList() {
         <Container
             sx={{
                 maxWidth: "1200px",
-                padding: 5,
+                padding: "5rem 2rem",
                 margin: "0 2rem",
                 gap: 5,
                 borderRadius: "5px",
@@ -104,6 +107,32 @@ const Team = () => {
             <div className="team">
                 <h1>Meet Our Team</h1>
                 <ProfessorsList />
+                <Box sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    padding: "4rem",
+                    gap: "2rem",
+                    width: "100%",
+                    background: "rgba(255, 255, 255, 0.2)",
+                    margin: "2rem 0",
+                    borderRadius: "5px"
+                }}>
+                    <Typography textAlign={"center"} sx={{fontSize: "1.2rem"}}>
+                    We are excited to invite you to be a part of REBECA as a <b>volunteer</b>! This is your chance to contribute, gain hands-on experience, and be a part of an incredible event. Whether you're interested in event management, social media, technical support, or hospitality, there's a place for you on our team!
+                    </Typography>
+                    <Button
+                        variant="contained"
+                        sx={{
+                            padding: "1rem",
+                        }}
+                        startIcon={<Favorite />}
+                        onClick={() => window.open("https://forms.gle/qnceaoaaTiBTJ3627", "_blank")}
+                    >
+                        Join as Volunteer
+                    </Button>
+                </Box>
                 <Container className="team-container">
                     {teamsData.map((teamData, i) => {
                         if (teamData.members.length === 0) return;
@@ -130,7 +159,7 @@ const Team = () => {
                                 <AccordionDetails>
                                     <Container
                                         sx={{
-                                            p: 2,
+                                            p: 5,
                                             display: "flex",
                                             flexWrap: "wrap",
                                             gap: 2,

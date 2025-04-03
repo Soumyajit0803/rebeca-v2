@@ -105,7 +105,6 @@ function EventSection({ data, dayEvents, rank }) {
                                 fontWeight: "300",
                                 lineHeight: "1.2em",
                                 textAlign: mobileView ? "center" : "left",
-                                fontSize: "1.2rem",
                             }}
                         >
                             {data.intro}

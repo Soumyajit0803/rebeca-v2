@@ -5,6 +5,7 @@
     position: relative;
     flex-direction: column;
     width: 200px;
+    margin: 1rem 0
 }
 
 .avatar-img {

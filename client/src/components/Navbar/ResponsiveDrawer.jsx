@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import { Button } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -19,8 +18,11 @@ import {
     Groups as TeamIcon,
     ShoppingBag as MerchandiseIcon,
     Close,
+    FavoriteBorderOutlined,
+    Favorite,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { Typography, Button, Box } from "@mui/material";
 const DrawerHeader = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
@@ -68,24 +70,60 @@ const RespDrawer = ({ open, onClose }) => {
                 </IconButton>
             </DrawerHeader>
             <Divider />
-            <List>
-                {menuItems.map((item, index) => (
-                    <ListItem key={item.text} disablePadding>
-                        <ListItemButton
-                            onClick={() => {
-                                onClose();
-                                navigate(item.link);
-                                setNav(item.text);
-                            }}
-                            disableRipple
-                        >
-                            <ListItemText
-                                primary={item.text}
-                                sx={{ color: item.text === nav ? "var(--primary)" : "" }}
-                            />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
+            <List
+                sx={{
+                    height: "45vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    paddingTop: "3rem"
+                }}
+            >
+                <Box>
+                    {menuItems.map((item, index) => (
+                        <ListItem key={item.text} disablePadding>
+                            <ListItemButton
+                                onClick={() => {
+                                    onClose();
+                                    navigate(item.link);
+                                    setNav(item.text);
+                                }}
+                                disableRipple
+                            >
+                                <ListItemText
+                                    primary={item.text}
+                                    sx={{ color: item.text === nav ? "var(--primary)" : "" }}
+                                />
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
+                </Box>
+                <ListItem
+                    sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "flex-start",
+                        padding: "2rem",
+                        flexDirection: "column",
+                        marginTop: "3rem"
+                        // background: "rgba(255, 255, 255, 0.1)",
+                        // backdropFilter: "blur(10px)"
+                    }}
+                >
+                    <Button
+                        variant="contained"
+                        sx={{
+                            padding: "1rem",
+                        }}
+                        startIcon={<Favorite />}
+                        onClick={() => window.open("https://forms.gle/qnceaoaaTiBTJ3627", "_blank")}
+                    >
+                        Join as Volunteer
+                    </Button>
+                    {/* <Typography sx={{ textShadow: "0 0 10px #000", paddingTop: "1rem" }}>
+                        Join REBECA as volunteer and help in loading the fun and laughter together!
+                    </Typography> */}
+                </ListItem>
             </List>
         </Drawer>
     );
