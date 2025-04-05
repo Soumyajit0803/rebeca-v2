@@ -75,19 +75,19 @@
   border: 0px solid red;
 }
 .home .section-3 .list .artist {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-	/* border: 1px solid red; */
-	/* width: fit-content; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 1px solid red; */
+  /* width: fit-content; */
 }
 .home .section-3 .list .list-scroller .artist .img {
   position: relative;
   height: 300px;
-	width: 250px; 
-	/*[SOUMYAJIT]
+  width: 250px;
+  /*[SOUMYAJIT]
 	My change to fix width*/
   /* padding: 0 10px; */
 }
@@ -171,7 +171,8 @@
   object-fit: contain;
   padding: 0 20px;
 }
-@media only screen and (max-width: 1100px), only screen and (max-device-width: 1100px) {
+@media only screen and (max-width: 1100px),
+  only screen and (max-device-width: 1100px) {
   .home {
     font-size: 20px;
     line-height: 1.4;
@@ -200,7 +201,8 @@
   }
 }
 
-@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+@media only screen and (max-width: 480px),
+  only screen and (max-device-width: 480px) {
   .home .section-1 {
     height: 80vh;
     margin-top: 10vh;
@@ -276,3 +278,14 @@
 .home .section-3 .list:active .list-scroller{
   animation-play-state: paused;
 } */
+
+.pujoAsche {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all 1s ease-out;
+}
+
+.pujoAsche.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
