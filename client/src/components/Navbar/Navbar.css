@@ -102,7 +102,7 @@
 	background-color: #171717
 }
 .MuiDrawer-paper {
-    background: url("/assets/imgs/menu.webp"), linear-gradient(#020202, #020202)!important;
+    background: url("/assets/imgs/menu.webp"), linear-gradient(#000 80%, #000 20%)!important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;

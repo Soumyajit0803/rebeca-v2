@@ -20,9 +20,12 @@ import {
     Close,
     FavoriteBorderOutlined,
     Favorite,
+    East,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { Typography, Button, Box } from "@mui/material";
+
+
 const DrawerHeader = styled("div")(({ theme }) => ({
     display: "flex",
     alignItems: "center",
@@ -76,7 +79,7 @@ const RespDrawer = ({ open, onClose }) => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
-                    paddingTop: "3rem"
+                    paddingTop: "3rem",
                 }}
             >
                 <Box>
@@ -105,17 +108,24 @@ const RespDrawer = ({ open, onClose }) => {
                         alignItems: "flex-start",
                         padding: "2rem",
                         flexDirection: "column",
-                        marginTop: "3rem"
+                        marginTop: "3rem",
                         // background: "rgba(255, 255, 255, 0.1)",
-                        // backdropFilter: "blur(10px)"
+                        backdropFilter: "blur(5px)",
+                        width: 'max-content'
                     }}
                 >
+                    <Typography variant="h5" fontFamily={"Sedgwick Ave Display"}>
+                        Join Rebeca as a Volunteer!
+                    </Typography>
+
                     <Button
                         variant="contained"
                         sx={{
-                            padding: "1rem",
+                            p: 1,
+                            px: 2,
                         }}
                         startIcon={<Favorite />}
+                        endIcon={<East />}
                         onClick={() => window.open("https://forms.gle/qnceaoaaTiBTJ3627", "_blank")}
                     >
                         Join as Volunteer

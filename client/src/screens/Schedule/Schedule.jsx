@@ -106,6 +106,7 @@ function EventSection({ data, dayEvents, rank }) {
                                 lineHeight: "1.2em",
                                 textAlign: mobileView ? "center" : "left",
                             }}
+                            className="data-intro"
                         >
                             {data.intro}
                             {rank !== 0 && (
@@ -203,6 +204,7 @@ function EventSection({ data, dayEvents, rank }) {
                                 fontWeight: "300",
                                 lineHeight: "1.2em",
                             }}
+                            className="data-intro"
                         >
                             {data.intro}
                             {rank !== 0 && (
