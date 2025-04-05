@@ -19,11 +19,11 @@ exports.enrollUser = catchAsync(async (req, res, next) => {
 
     try {
         // Check if user is already registered
-        const existingEnrollment = await UserEnroll.findOne({
-            eventId: body.eventId,
-            $or: [{ userId: body.userId }, { teamMembers: body.userId }],
-        });
-
+        // const existingEnrollment = await UserEnroll.findOne({
+        //     eventId: body.eventId,
+        //     $or: [{ userId: body.userId }, { teamMembers: body.userId }],
+        // });
+        const existingEnrollment = false;
         if (existingEnrollment) {
             return res.status(400).json({ message: "User is already registered or part of a team for this event." });
         }

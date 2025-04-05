@@ -86,7 +86,7 @@ function Sponsorship() {
     };
 
     return (
-        <>
+        <div className="sponsor-wrap">
             <div className="sponsor">
                 <Heading
                     title={"Want to sponsor us?"}
@@ -100,7 +100,7 @@ function Sponsorship() {
                         variant={"filled"}
                         innerText={"Download the brochure"}
                         endIcon={<span className="material-icons">file_download</span>}
-                        onClick={onButtonClick}
+                        // onClick={onButtonClick}
                     ></Button>
                 </Link>
                 <section className="section-1">
@@ -147,7 +147,7 @@ function Sponsorship() {
                     </div>
                 </section>
 
-                <section className="section-4">
+                {/* <section className="section-4">
                     <div style={{ padding: "0 1rem" }}>
                         <Heading1 title={"Sponsors"} w={"60%"}></Heading1>
                     </div>
@@ -161,7 +161,7 @@ function Sponsorship() {
                             </div>
                         </div>
                     ))}
-                </section>
+                </section> */}
 
                 <section className="section-4">
                     <div style={{ padding: "0 1rem" }}>
@@ -176,7 +176,7 @@ function Sponsorship() {
                     </div>
                 </section>
             </div>
-        </>
+        </div>
     );
 }
 export default Sponsorship;

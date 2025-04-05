@@ -1,22 +1,16 @@
 import React from "react";
-import {Card, Button, Space, Avatar } from 'antd'
-import {CloseOutlined} from '@ant-design/icons'
+import { Card, Button, Space, Avatar } from "antd";
+import { CloseOutlined } from "@ant-design/icons";
+import "./Coordinator.css"
 
-const Coordinator = ({name, image, email, onClose, id}) => {
+const Coordinator = ({ name, image, email, onClose, id }) => {
     return (
         <Card
             size="small"
             title={`Coordinator ${id + 1}`}
             key={id}
-            extra={
-                <Button
-                    type="primary"
-                    size="small"
-                    icon={<CloseOutlined />}
-                    danger
-                    onClick={onClose}
-                />
-            }
+            extra={<Button type="primary" size="small" icon={<CloseOutlined />} danger onClick={onClose} />}
+            style={{ maxWidth: 300 }}
         >
             <Space>
                 <Avatar src={image} style={{ width: 56, height: 56 }}></Avatar>
@@ -25,7 +19,9 @@ const Coordinator = ({name, image, email, onClose, id}) => {
                         {name}
                         <br />
                     </h3>
-                    <span style={{ opacity: 0.6 }}>{email}</span>
+                    <div className="email" style={{ width: 200, overflowX: "scroll" }}>
+                        <div style={{ opacity: 0.6 }}>{email}</div>
+                    </div>
                 </div>
             </Space>
         </Card>

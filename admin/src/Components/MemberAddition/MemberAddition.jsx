@@ -32,6 +32,7 @@ const teamNames = [
     "Joint Secretary",
     "Fixed Signatory",
     "BECA Magazine",
+    "Event Coordinator"
 ];
 const teamRoles = ["head", "associate head", "associate"];
 

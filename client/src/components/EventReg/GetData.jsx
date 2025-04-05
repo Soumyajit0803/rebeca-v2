@@ -12,9 +12,25 @@ import {
     Avatar,
 } from "@mui/material";
 import { Person, Email, Phone, School, Work, Groups } from "@mui/icons-material";
+import InsertLinkIcon from "@mui/icons-material/InsertLink";
 import { getAllMembersNotInEvent } from "../../services/eventApi";
+const urlRegex = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/;
 
-const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamName, setTeamName, minSize, maxSize, eventId }) => {
+const GetData = ({
+    setValid,
+    user,
+    selectedItems,
+    setSelectedItems,
+    mode,
+    teamName,
+    setTeamName,
+    minSize,
+    maxSize,
+    eventId,
+    assets,
+    setAssets,
+    isAssetReq,
+}) => {
     const [dropdown, setDropDown] = useState([]);
     // console.log("Event ID received: ")
     // console.log(eventId)
@@ -23,16 +39,15 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
         if (value.length <= maxSize) {
             setSelectedItems(value);
         }
-        if (value.length>=minSize && value.length<=maxSize && teamName.length !== 0) setValid(true);
-        else setValid(false)
+        if (value.length >= minSize && value.length <= maxSize && teamName.length !== 0) setValid(true);
+        else setValid(false);
     };
 
     useEffect(() => {
-        if (mode === "single") {
+        if (mode === "single" && !isAssetReq) {
             setValid(true);
         }
-        console.log(mode);
-        
+
         async function handleGetAllMembers() {
             try {
                 const res = await getAllMembersNotInEvent(eventId);
@@ -63,6 +78,12 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
                         Profile Information details cannot be updated here. However, if you think there is a mistake,
                         please navigate to your profile and do the necessary changes, and come back here.
                     </Alert>
+                    {isAssetReq && (
+                        <Alert severity="info" sx={{ mb: 2 }} color="info">
+                            <AlertTitle>Assets uploading mandatory in this event</AlertTitle>
+                            As part of the registration process for this event, you are required to upload certain assets. Please upload your asset(s) to <b><a href="https://drive.google.com" style={{fontWeight: "bold", textDecoration: "underline"}}>Google Drive</a></b>, ensure that the link is set to <b>allow access for everyone</b>, and share the generated link here.
+                        </Alert>
+                    )}
 
                     {/* Name */}
                     <Grid2 container spacing={2} alignItems="center" sx={{ marginBottom: 2 }}>
@@ -154,6 +175,40 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
                         </Grid2>
                     </Grid2>
 
+                    {isAssetReq && (
+                        <Grid2 container spacing={2} alignItems="center" sx={{ marginBottom: 2 }}>
+                            <Typography variant="body1" color="text.secondary" sx={{ mt: 2, p: 1 }}>
+                                {isAssetReq}
+                            </Typography>
+                            <Grid2 size={{ xs: 12 }}>
+                                <TextField
+                                    fullWidth
+                                    label="Assets URL"
+                                    variant="outlined"
+                                    error={assets !== "" && !urlRegex.test(assets)}
+                                    helperText={
+                                        assets !== "" && !urlRegex.test(assets)
+                                            ? "Enter a valid URL"
+                                            : ""
+                                    }
+                                    slotProps={{
+                                        input: {
+                                            startAdornment: <InsertLinkIcon color="primary" sx={{ mr: 1 }} />,
+                                        },
+                                    }}
+                                    value={assets}
+                                    onChange={(e) => {
+                                        const newValue = e.target.value;
+                                        setAssets(newValue);
+                                        setValid(
+                                            newValue !== "" && urlRegex.test(newValue)
+                                        );
+                                    }}
+                                />
+                            </Grid2>
+                        </Grid2>
+                    )}
+
                     {/* Dropdown with Search */}
                     {mode === "team" && (
                         <>
@@ -174,13 +229,13 @@ const GetData = ({ setValid, user, selectedItems, setSelectedItems, mode, teamNa
                                         onChange={(e) => {
                                             setTeamName(e.target.value);
                                             if (e.target.value !== "" && selectedItems.length !== 0) setValid(true);
-                                            else setValid(false)
+                                            else setValid(false);
                                         }}
                                     />
                                 </Grid2>
                             </Grid2>
                             <Typography variant="subtitle1" sx={{ marginBottom: 1, fontWeight: "bold" }}>
-                                Select Your Team Members (max {maxSize+1}, min {minSize+1}):
+                                Select Your Team Members (max {maxSize + 1}, min {minSize + 1}):
                             </Typography>
                             <Alert severity="info" sx={{ mb: 2 }}>
                                 <AlertTitle>How to Find Teammates?</AlertTitle>

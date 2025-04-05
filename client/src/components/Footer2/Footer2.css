@@ -1,5 +1,5 @@
 .footer2 {
-    background: #020202;
+    background: #000000;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -7,8 +7,11 @@
     color: white;
     /* background-color: red; */
     flex-wrap: wrap;
-    padding: 4rem 2rem;
-    position: relative;
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+.footer2 * {
+    z-index: 10 !important;
 }
 
 .footer2 .left-col {
@@ -180,24 +183,23 @@
 }
 
 .topimg {
-    width: 2000px;
-    aspect-ratio: 8004/1449;
-    background-image: url("/assets/imgs/Footer/concert.webp");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 100%;
+    align-self: end;
     position: relative;
-    bottom: -5px;
-    left: -4rem;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    user-select: none;
+    bottom: -30px;
+    transform: scale(1.3);
+    transform-origin: bottom;
 }
 
-@media only screen and (max-width: 520px){
+.topimg img {
+    width: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 720px){
 	.topimg {
 		width: 2500px;
 		transform: translateX(-300px);
+        bottom: -10vw;
 	}
 }

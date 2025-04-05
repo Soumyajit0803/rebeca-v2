@@ -7,7 +7,7 @@
     border: 0px solid red;
     padding: 10px 1rem;
     /* background: var(--teal); */
-    background-color: #171717;
+    background-color: var(--app-background);
     /* background: black; */
     margin: 0;
     /* backdrop-filter: blur(20px); */
@@ -102,7 +102,7 @@
 	background-color: #171717
 }
 .MuiDrawer-paper {
-    background: linear-gradient(#171717, #1717179d), url("/assets/imgs/grid_images/q3.webp")!important;
+    background: url("/assets/imgs/menu.webp"), linear-gradient(#000 80%, #000 20%)!important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -234,18 +234,18 @@
     }
 }
 
-.MuiListItemButton-root * {
-    font-size: 1.2rem !important;
-    font-family: 'Sedgwick Ave Display' !important;
-    width: 100%;
-    text-align: center !important;
+.MuiList-Root {
+    margin-top: 1rem !important;
 }
 
-.MuiListItemButton-root {
-    background-color: rgba(255, 255, 255, 0.18) !important;
-    margin: 0.4rem 1rem !important;
-    clip-path: polygon(0 11%, 9% 17%, 5% 0, 92% 0, 89% 22%, 100% 13%, 100% 85%, 89% 79%, 94% 100%, 6% 100%, 10% 82%, 0% 85%);;
+.MuiListItemButton-root * {
+    font-size: 1.5rem !important;
+    font-family: 'Exo 2' !important;
+    width: 100%;
+    font-weight: 600 !important;
+    padding-left: 0.5rem;
 }
+
 
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
     .navbar {
@@ -265,8 +265,12 @@
         width: 100%;
 		gap: 0px
     }
+}
 
-    .MuiListItemButton-root * {
-        font-size: 1.4rem !important;
-    }
+#party-video {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
 }

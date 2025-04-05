@@ -54,12 +54,16 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
     const [coordsList, setCoordsList] = useState([]);
     const [posterList, setPosterList] = useState([]);
     const [thumbnailList, setThumbnailList] = useState([]);
-    const {admin} = useAuth()
+    const [QRList, setQRList] = useState([]);
+    const { admin } = useAuth();
     const onPosterChange = ({ fileList: newFileList }) => {
         setPosterList(newFileList);
     };
     const onThumbnailChange = ({ fileList: newFileList }) => {
         setThumbnailList(newFileList);
+    };
+    const onQRChange = ({ fileList: newFileList }) => {
+        setQRList(newFileList);
     };
     const onPosterPreview = async (file) => {
         let src = file.url;
@@ -76,6 +80,20 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
         imgWindow?.document.write(image.outerHTML);
     };
     const onThumbnailPreview = async (file) => {
+        let src = file.url;
+        if (!src) {
+            src = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file.originFileObj);
+                reader.onload = () => resolve(reader.result);
+            });
+        }
+        const image = new Image();
+        image.src = src;
+        const imgWindow = window.open(src);
+        imgWindow?.document.write(image.outerHTML);
+    };
+    const onQRPreview = async (file) => {
         let src = file.url;
         if (!src) {
             src = await new Promise((resolve) => {
@@ -118,13 +136,18 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                 infoPop("Please add thumbnail image");
                 return;
             }
+            // if (QRList.length === 0 && values.registrationFee !== 0) {
+            //     infoPop("Please add Payment QR Code");
+            //     return;
+            // }
             const posterURL = await handleSubmitImage(posterList[0].originFileObj);
             const thumbnailURL = await handleSubmitImage(thumbnailList[0].originFileObj);
+            // const QRURL = values.registrationFee !== 0 ? await handleSubmitImage(QRList[0].originFileObj) : "";
             const formData = new FormData();
 
             formData.append("eventName", values.name);
             formData.append("description", values.description);
-            formData.append("rulesDocURL", values.rulesDocUrl);
+            if(values.rulesDocUrl)formData.append("rulesDocURL", values.rulesDocUrl);
             formData.append("type", values.type);
             if (values.type !== "single") {
                 formData.append("maxTeamSize", values.maxTeamSize);
@@ -132,13 +155,11 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
             }
             formData.append("poster", posterURL);
             formData.append("thumbnail", thumbnailURL);
-            formData.append("registrationFee", values.registrationAmount);
+            // formData.append("paymentQR", QRURL);
+            if(values.assets)formData.append("assets", values.assets);
+            formData.append("registrationFee", values.registrationFee);
             formData.append("rounds", JSON.stringify(values.rounds));
-            formData.append("mainCoordinators", JSON.stringify(coordsList.map((e)=>allMembers[e].original._id)));
-            // coordsList.forEach((e) => {
-            //     formData.append("mainCoordinators[]", allMembers[e].original._id);
-            // });
-
+            formData.append("mainCoordinators", JSON.stringify(coordsList.map((e) => allMembers[e].original._id)));
             console.log(formData);
 
             const res = await createEvent(formData);
@@ -167,7 +188,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                     original: member,
                 });
                 if (member._id === admin._id) {
-                    setCoordsList([index])
+                    setCoordsList([index]);
                 }
             });
             setAllMembers(tmp);
@@ -177,7 +198,6 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
         }
     };
 
-    
     const handleSubmitImage = async (imageFile) => {
         // <- This will send the selected image to our api
         try {
@@ -233,7 +253,6 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                         name="rulesDocUrl"
                         rules={[
                             {
-                                required: true,
                                 type: "url",
                                 message: "Please enter a valid URL for the rules document",
                             },
@@ -296,6 +315,29 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                             </Upload>
                         </ImgCrop>
                     </div>
+                    {/* <div style={{margin: '1rem 0'}}>
+                        <span>Payment QR Code for the event (if it has a registration fees)</span>
+                        <ImgCrop rotationSlider>
+                            <Upload
+                                maxCount={1}
+                                listType="picture-card"
+                                fileList={QRList}
+                                onChange={onQRChange}
+                                onPreview={onQRPreview}
+                                progress={{
+                                    strokeColor: {
+                                        "0%": "#5075f6",
+                                        "100%": "#705dea",
+                                    },
+                                    strokeWidth: 3,
+                                    format: (percent) => percent && `${parseFloat(percent.toFixed(2))}%`,
+                                }}
+                                // customRequest={() => true}
+                            >
+                                {QRList.length < 1 && "+ Payment QR"}
+                            </Upload>
+                        </ImgCrop>
+                    </div> */}
                     <Form.Item
                         name="type"
                         label="Event type"
@@ -383,7 +425,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                         </div>
                     )}
                     <Form.Item
-                        name="registrationAmount"
+                        name="registrationFee"
                         label="Registration Fee for Non-IIESTians (give 0 if not applicable)"
                         rules={[
                             {
@@ -401,6 +443,7 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                             placeholder="Enter Registration Fee"
                             type="number"
                             min={0}
+                            onWheel={(e) => e.target.blur()} 
                         />
                     </Form.Item>
 
@@ -452,6 +495,12 @@ const EventRegistration = ({ errorPop, successPop, infoPop }) => {
                             })}
                         </Space>
                     </div>
+                    <Form.Item
+                        label="Describe the assets requirement(if any) to be uploaded by the participants as a part of the event's registration process. Please keep it BLANK if it is not applicable for your event."
+                        name="assets"
+                    >
+                        <Input placeholder="Describe Asset Requirements for participation" />
+                    </Form.Item>
 
                     {/* Rounds Information */}
                     <div className="mandatory-star">*</div>

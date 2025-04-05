@@ -49,14 +49,13 @@ const eventSchema = new mongoose.Schema(
         ],
         rulesDocURL: {
             type: String,
-            required: [true, 'missing field: rules doc url'],
             trim: true,
-            validate: {
-                validator: function (value) {
-                    return /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?$/.test(value);
-                },
-                message: 'validation err: rulesdoc: Invalid URL for rules document. Only .pdf, .doc, or .docx are allowed.',
-            },
+            // validate: {
+            //     validator: function (value) {
+            //         return /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?$/.test(value);
+            //     },
+            //     message: 'validation err: rulesdoc: Invalid URL for rules document. Only .pdf, .doc, or .docx are allowed.',
+            // },
         },
         minTeamSize: {
             type: Number,
@@ -114,6 +113,12 @@ const eventSchema = new mongoose.Schema(
                 },
                 message: "Invalid URL for thumbnail",
             },
+        },
+        paymentQR: {
+            type: String
+        },
+        assets: {
+            type: String
         },
         registrationFee: {
             type: Number,

@@ -11,6 +11,7 @@ import EventSingle from "./screens/EventSingle/EventSingle";
 import ProfileInfo from "./components/ProfileInfo/ProfileInfo";
 import EventReg from "./components/EventReg/EventReg";
 import PageNotFound from "./screens/PageNotFound/PageNotFound";
+import ComingSoon from "./screens/ComingSoon/ComingSoon";
 
 const AllRoutes = () => {
     const location = useLocation();
@@ -27,7 +28,7 @@ const AllRoutes = () => {
             <Route exact path="/events/:eventSlug" element={<EventSingle />} />
             <Route exact path="/sponsorship" element={<Sponsorship />} />
             <Route exact path="/team" element={<Team />} />
-            <Route exact path="/merchandise" element={<Merchandise />} />
+            <Route exact path="/merchandise" element={<ComingSoon />} />
             <Route exact path="/profile" element={<ProfileInfo />} />
             <Route exact path="/events/:eventSlug/register" element={<EventReg />} />
             <Route exact path="/*" element={<PageNotFound />} />

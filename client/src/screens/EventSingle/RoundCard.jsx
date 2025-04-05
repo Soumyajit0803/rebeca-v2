@@ -1,25 +1,29 @@
 import * as React from "react";
-import { Typography, Box, Paper } from "@mui/material";
+import { Typography, Box, Paper, Tooltip } from "@mui/material";
 
-export default function RoundCard({ name, start, end, venue, i }) {
+export default function RoundCard({ name, start, end, venue, i, hideHeading }) {
     return (
         <div className="round-card">
             <Box variant="outlined" sx={{ position: "relative", zIndex: 1 }}>
-                <Paper
-                    sx={{
-                        p: 1,
-                        position: "absolute",
-                        top: "-4rem",
-                    }}
-                    elevation={5}
-                >
-                    <Typography gutterBottom sx={{ color: "#4dabf5", fontSize: 14, my: 0 }}>
-                        {`Round ${i + 1}`}
-                    </Typography>{" "}
-                    <Typography fontSize={24} fontWeight={800} lineHeight={1}>
-                        {name}
-                    </Typography>
-                </Paper>
+                {!hideHeading && (
+                    <Paper
+                        sx={{
+                            p: 1,
+                            position: "absolute",
+                            top: "-4rem",
+                        }}
+                        elevation={5}
+                    >
+                        <Typography gutterBottom sx={{ color: "#4dabf5", fontSize: 14, my: 0 }}>
+                            {`Round ${i + 1}`}
+                        </Typography>{" "}
+                        <Tooltip title={name}>
+                            <Typography fontSize={24} fontWeight={800} lineHeight={1}>
+                                {name.slice(0, 12) + (name.length > 12 ? "..." : "")}
+                            </Typography>
+                        </Tooltip>
+                    </Paper>
+                )}
                 <Box sx={{ mt: 2 }}>
                     <Typography gutterBottom sx={{ color: "#4dabf5", fontSize: 14, my: 0 }}>
                         Starting from

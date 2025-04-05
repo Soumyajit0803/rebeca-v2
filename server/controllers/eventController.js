@@ -75,7 +75,7 @@ exports.getAllEvents = catchAsync(async (req, res, next) => {
         const email = req.query.email;
         const allEvents = await Event.find().populate("mainCoordinators");
 
-        if (email === "null") {
+        if (email === "null" || (!email)) {
             return res.status(200).json({ message: "success", data: allEvents });
         } else {
             const filteredEvents = allEvents.filter((event) =>

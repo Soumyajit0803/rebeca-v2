@@ -7,8 +7,10 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer2 = () => {
     return (
-        <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 0 }}>
-            <div className="topimg"></div>
+        <div style={{ position: "relative" }}>
+            <div className="topimg">
+                <img src="/assets/imgs/Footer/concert-blue.webp" />
+            </div>
             <div className="footer2">
                 <div className="left-col">
                     <Link to="/">
@@ -23,7 +25,7 @@ const Footer2 = () => {
                             Bengal
                         </a>
                     </div>
-                    <div className="address">© rebeca.in 2024. All right reserved</div>
+                    <div className="address">© rebeca.in 2025. All right reserved</div>
                     {/* <div className="address">
 					Made with 💙 by{" "}
 					<a href="https://dugarrishab.github.io/RishabDugar/">
@@ -44,17 +46,18 @@ const Footer2 = () => {
                     <div className="title">Contacts</div>
                     <div className="contacts">
                         <div className="contact">
-                            <div className="name">Dr. Nityananda Nandi</div>
+                            <div className="name">Dr. Debdulal Das
+                            </div>
 
                             <div className="ph-num">Chairperson</div>
                         </div>
                         <div className="contact">
-                            <div className="name">Dr. Ananya Barui</div>
+                            <div className="name">Dr. Rajib Chakraborty</div>
 
                             <div className="ph-num">Joint Convenor</div>
                         </div>
                         <div className="contact">
-                            <div className="name">Dr. Subhabrata Koley</div>
+                            <div className="name">Dr. Gautam Anand</div>
 
                             <div className="ph-num">Joint Convenor</div>
                         </div>
@@ -63,25 +66,25 @@ const Footer2 = () => {
 
                             <div className="ph-num">Treasurer</div>
                         </div>
-                        <div className="contact">
+                        {/* <div className="contact">
                             <div className="name">Ujjwal Chaudhari</div>
 
                             <div className="ph-num">
                                 <span className="material-icons">person</span>+91 95552 09179
                             </div>
-                        </div>
+                        </div> */}
                         <div className="contact">
-                            <div className="name">Bipro Bhadra</div>
+                            <div className="name">Sudhanshu Mishra</div>
 
-                            <div className="ph-num">
-                                <span className="material-icons">person</span>+91 7890938525
+                            <div className="ph-num" style={{whiteSpace: "nowrap"}}>
+                                <span className="material-icons">phone</span>+91-95993-68639
                             </div>
                         </div>
                         <div className="contact">
-                            <div className="name">Ankur Roy Chowdhury</div>
+                            <div className="name">Ivan jacob Thomas</div>
 
-                            <div className="ph-num">
-                                <span className="material-icons">person</span>+91 84204 74705
+                            <div className="ph-num" style={{whiteSpace: "nowrap"}}>
+                                <span className="material-icons">phone</span>+91-74638-84470
                             </div>
                         </div>
                     </div>
@@ -90,22 +93,30 @@ const Footer2 = () => {
                     <div className="social-h">Visit us Virtually</div>
                     <div className="social-icons">
                         <a href="mailto: 83rebeca2k24@gmail.com">
-                            <IconButton sx={{bgcolor: 'var(--primary)'}} size="medium">
+                            <IconButton sx={{bgcolor: 'var(--primary)', '&:hover':{
+                                bgcolor: 'rgb(93, 93, 93)'
+                            }}} size="medium">
                                 <EmailRounded />
                             </IconButton>
                         </a>
                         <a href="https://www.facebook.com/rebeca.iiests">
-                            <IconButton sx={{bgcolor: 'var(--primary)'}} size="medium">
+                            <IconButton sx={{bgcolor: 'var(--primary)', '&:hover':{
+                                bgcolor: 'rgb(93, 93, 93)'
+                            }}} size="medium">
                                 <FacebookRounded />
                             </IconButton>
                         </a>
                         <a href="https://www.instagram.com/rebeca_iiests">
-                            <IconButton sx={{bgcolor: 'var(--primary)'}} size="medium">
+                            <IconButton sx={{bgcolor: 'var(--primary)', '&:hover':{
+                                bgcolor: 'rgb(93, 93, 93)'
+                            }}} size="medium">
                                 <Instagram />
                             </IconButton>
                         </a>
                         <a href="https://www.youtube.com/@rebecaiiests7685">
-                            <IconButton sx={{bgcolor: 'var(--primary)'}} size="medium">
+                            <IconButton sx={{bgcolor: 'var(--primary)', '&:hover':{
+                                bgcolor: 'rgb(93, 93, 93)'
+                            }}} size="medium">
                                 <YouTubeIcon />
                             </IconButton>
                         </a>

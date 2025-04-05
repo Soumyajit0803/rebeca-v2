@@ -91,7 +91,7 @@ const ProfileDashboard = () => {
                 college: userData.college,
             };
 
-            const toUpdate = []
+            const toUpdate = [];
             Object.entries(newData).forEach(([key, newValue]) => {
                 if (user[key] !== newValue) {
                     formData.append(key, newValue);
@@ -100,7 +100,7 @@ const ProfileDashboard = () => {
                     console.log("new value: ");
                     console.log(newValue);
                     console.log(user[key]);
-                    toUpdate.push(key)
+                    toUpdate.push(key);
                 }
             });
             if (changed) {
@@ -110,7 +110,6 @@ const ProfileDashboard = () => {
                 setSeverity("success");
                 setMessageTitle("Data Updated!");
                 setPopUp(true);
-                
             } else {
                 setMessage("No changes found to edit.");
                 setSeverity("warning");
@@ -213,7 +212,7 @@ const ProfileDashboard = () => {
                             {/* Email */}
                             <Grid2 size={{ xs: 12, md: 6 }}>
                                 <TextField
-                                disabled
+                                    disabled
                                     fullWidth
                                     label="Email"
                                     name="email"
@@ -238,14 +237,26 @@ const ProfileDashboard = () => {
                                     name="phone"
                                     variant="outlined"
                                     type="tel"
-                                    value={userData.phone}
-                                    onChange={handleInputChange}
+                                    value={userData?.phone}
+                                    onChange={(e) => {
+                                        const value = e.target.value;
+                                        if (/^\d{0,10}$/.test(value)) {
+                                            // Only allows up to 10 digits
+                                            handleInputChange(e);
+                                        }
+                                    }}
                                     required
                                     slotProps={{
                                         input: {
                                             startAdornment: <InputAdornment position="start">+91</InputAdornment>,
                                         },
                                     }}
+                                    error={userData?.phone.length > 0 && userData?.phone.length !== 10}
+                                    helperText={
+                                        userData?.phone.length > 0 && userData?.phone.length !== 10
+                                            ? "Enter a valid 10-digit phone number"
+                                            : ""
+                                    }
                                 />
                             </Grid2>
 
@@ -315,6 +326,7 @@ const ProfileDashboard = () => {
                                 loading={loading}
                                 loadingPosition="start"
                                 endIcon={<Save />}
+                                disabled={userData?.phone.length !== 10}
                             >
                                 Save Changes
                             </Button>

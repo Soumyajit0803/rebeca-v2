@@ -6,6 +6,8 @@
   justify-content: center;
   gap: 2rem;
   position: relative;
+  max-width: 1000px;
+  /* border: 1px solid #fff */
   /* line-height: 220%; */
 }
 
@@ -47,6 +49,7 @@
 
 .typography-section p {
   padding-bottom: 2rem;
+  font-size: 1.2rem
 }
 
 .img-section {
