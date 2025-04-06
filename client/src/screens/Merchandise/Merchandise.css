@@ -29,6 +29,7 @@
 	object-fit: contain;
 }
 .merch .section-2 .content {
+	color: #ffffffcc;
 	width: 50%;
 }
 @media only screen and (max-width: 1000px),

@@ -77,10 +77,10 @@ function Sponsorship() {
     }, []);
 
     const onButtonClick = () => {
-        const pdfUrl = "/assets/rebeca83brochure.pdf";
+        const pdfUrl = "/assets/rebeca84brochure.pdf";
         const link = document.createElement("a");
         link.href = pdfUrl;
-        link.download = "rebeca83brochure.pdf"; // specify the filename
+        link.download = "Rebeca84Brochure.pdf"; // specify the filename
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -95,16 +95,16 @@ function Sponsorship() {
                         "Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 84th edition of REBECA is back with a bang!"
                     }
                 ></Heading>
-                {/* <Link to={"#"}>
+                <Link to={"#"}>
                     <Button
                         className="download_btn"
                         variant={"filled"}
                         innerText={"Download the brochure"}
                         endIcon={<span className="material-icons">file_download</span>}
-                        // onClick={onButtonClick}
+                        onClick={onButtonClick}
                     ></Button>
-                </Link> */}
-                <Divider sx={{my: 5}}/>
+                </Link>
+                {/* <Divider sx={{my: 5}}/> */}
                 <section className="section-1">
                     <div className="side-img">
                         <img src="/assets/imgs/sponsorship/clockTower1.webp" alt="clockTowerImg" />

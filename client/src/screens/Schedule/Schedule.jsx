@@ -224,7 +224,7 @@ const onButtonClick = () => {
     const pdfUrl = "/assets/Rebeca84Rulebook.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "rebecaRuleBook.pdf"; // specify the filename
+    link.download = "Rebeca84RuleBook.pdf"; // specify the filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
