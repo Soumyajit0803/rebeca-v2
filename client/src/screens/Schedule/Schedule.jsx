@@ -221,7 +221,7 @@ function EventSection({ data, dayEvents, rank }) {
 }
 
 const onButtonClick = () => {
-    const pdfUrl = "/assets/Rebeca83Rulebook.pdf";
+    const pdfUrl = "/assets/Rebeca84Rulebook.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
     link.download = "rebecaRuleBook.pdf"; // specify the filename
@@ -271,15 +271,15 @@ function Schedule() {
                     <img src="/assets/imgs/Schedule/eventBanner.webp" alt="" />
                 </div>
                 <Heading title={"REBECA SCHEDULE"} subTitle={introtext} needHatch={false} />
-                {/* <Link to={"#"}>
+                <Link to={"#"}>
                     <Button
                         className="download_btn"
                         variant={"filled"}
-                        innerText={"Download the Rulebook"}
+                        innerText={"Download full Rulebook"}
                         endIcon={<span className="material-icons">file_download</span>}
                         onClick={onButtonClick}
                     ></Button>
-                </Link> */}
+                </Link>
             </div>
 
             {!eventsLoad &&

@@ -7,6 +7,7 @@ import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 import pastSponsorJsonData from "../../assets/data/pastSponsors.json";
 import sponsorJsonData from "../../assets/data/sponsors.json";
+import { Divider } from "@mui/material";
 
 const Heading1 = ({ title, subTitle, w }) => {
     return (
@@ -94,7 +95,7 @@ function Sponsorship() {
                         "Prepare to be swept away as you put your best foot forward in this epic celebration of creativity and culture tha promises you laughter, joy and memories that will last you a lifetime and more. Keep your water bottles handy and get ready to feel the heat cuz the 84th edition of REBECA is back with a bang!"
                     }
                 ></Heading>
-                <Link to={"#"}>
+                {/* <Link to={"#"}>
                     <Button
                         className="download_btn"
                         variant={"filled"}
@@ -102,7 +103,8 @@ function Sponsorship() {
                         endIcon={<span className="material-icons">file_download</span>}
                         // onClick={onButtonClick}
                     ></Button>
-                </Link>
+                </Link> */}
+                <Divider sx={{my: 5}}/>
                 <section className="section-1">
                     <div className="side-img">
                         <img src="/assets/imgs/sponsorship/clockTower1.webp" alt="clockTowerImg" />
