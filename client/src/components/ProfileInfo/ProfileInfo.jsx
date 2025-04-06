@@ -12,8 +12,20 @@ import {
     Alert,
     InputAdornment,
     AlertTitle,
+    Card,
+    CardContent,
 } from "@mui/material";
-import { Email, Phone, School, Engineering, CalendarToday, Edit, Person, Save } from "@mui/icons-material";
+import {
+    Email,
+    Phone,
+    School,
+    Engineering,
+    CalendarToday,
+    Edit,
+    Person,
+    Save,
+    PersonSearch,
+} from "@mui/icons-material";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -23,6 +35,24 @@ import { useAuth } from "../../AuthContext";
 import { postImage } from "../../services/imgApi";
 import { updateMember } from "../../services/userApi";
 import { useNavigate } from "react-router-dom";
+
+const NoUser = () => {
+    const navigate = useNavigate()
+    return (
+        <Card sx={{ width: "min(100%, 400px)" }}>
+            <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column", width: "100%" }}>
+                <PersonSearch color="error" sx={{ width: "6rem", height: "6rem" }} />
+                <Typography variant="h5">No User found</Typography>
+                <Typography variant="body1" color="grey" sx={{ mb: 2, textAlign: "center" }}>
+                    No User Found. Please log in to see your details
+                </Typography>
+                <Button onClick={() => navigate("/")} variant="contained" color="primary">
+                    Go to Home
+                </Button>
+            </CardContent>
+        </Card>
+    );
+};
 
 const ProfileDashboard = () => {
     const formData = new FormData();
@@ -152,6 +182,14 @@ const ProfileDashboard = () => {
         const { name, value } = event.target;
         setUserData({ ...userData, [name]: value });
     };
+
+    if (!user) {
+        return (
+            <Container maxWidth="md" sx={{ mt: "5rem", color: "#fff !important", display: 'flex', justifyContent: 'center' }}>
+                <NoUser />
+            </Container>
+        );
+    }
 
     return (
         user && (
