@@ -251,9 +251,9 @@ const ProfileDashboard = () => {
                                             startAdornment: <InputAdornment position="start">+91</InputAdornment>,
                                         },
                                     }}
-                                    error={userData?.phone.length > 0 && userData?.phone.length !== 10}
+                                    error={userData?.phone?.length > 0 && userData?.phone?.length !== 10}
                                     helperText={
-                                        userData?.phone.length > 0 && userData?.phone.length !== 10
+                                        userData?.phone?.length > 0 && userData?.phone?.length !== 10
                                             ? "Enter a valid 10-digit phone number"
                                             : ""
                                     }
@@ -326,7 +326,7 @@ const ProfileDashboard = () => {
                                 loading={loading}
                                 loadingPosition="start"
                                 endIcon={<Save />}
-                                disabled={userData?.phone.length !== 10}
+                                disabled={userData?.phone?.length !== 10}
                             >
                                 Save Changes
                             </Button>
