@@ -25,7 +25,7 @@ const ADMIN_URL = process.env.ADMIN_URL;
 const allowedOrigins = [CLIENT_URL, ADMIN_URL];
 const corsOptions = {
     origin: (origin, callback) => {
-        if (!origin || allowedOrigins.includes(origin)) {
+        if (allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
             const error = new Error("Not allowed by CORS");
