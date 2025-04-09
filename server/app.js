@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true, limit: "500mb" })); // <- Parses UR
 
 dotenv.config({ path: "./.env" }); // <- connecting the enviroment variables
 // MIDLEWARES ->>
-app.set('trust proxy', 1);
+app.set("trust proxy", 1);
 
 const CLIENT_URL = process.env.CLIENT_URL;
 const ADMIN_URL = process.env.ADMIN_URL;
@@ -30,7 +30,7 @@ const corsOptions = {
         } else {
             const error = new Error("Not allowed by CORS");
             console.log(error);
-            console.log(origin)
+            console.log(origin);
             callback(error);
         }
     },
@@ -38,6 +38,16 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 app.use(cookieParser());
+
+// 🔒 Cron job protection middleware
+// app.use("/api/v1/cron", (req, res, next) => {
+//     const ua = req.headers["user-agent"] || "";
+//     console.log(ua)
+//     if (!ua.includes("cron-job.org")) {
+//         return res.status(403).json({ message: "Forbidden: Not a valid cron job" });
+//     }
+//     next();
+// });
 
 console.log(`ENV = ${process.env.NODE_ENV}`);
 app.use(morgan("dev")); // <- Logs res status code and time taken
