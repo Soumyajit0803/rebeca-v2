@@ -248,7 +248,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                     {/* <CustomUpload onChange={onChange} onPreview={onPreview} fileList={fileList} /> */}
                     {/* </Form.Item> */}
 
-                    {/* Role */}
+                    {/* dept */}
                     <Form.Item
                         label="Department"
                         name="dept"
@@ -257,7 +257,7 @@ const MemberAddition = ({ errorPop, successPop, infoPop }) => {
                     >
                         <Input placeholder="Enter Department name" addonBefore={<ReadOutlined />} />
                     </Form.Item>
-                    {/* Team Name */}
+                    {/* passoutyear */}
                     <Form.Item
                         label="Passout year"
                         name="passout_year"
