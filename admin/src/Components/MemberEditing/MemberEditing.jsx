@@ -222,7 +222,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 const res = await updateMember(formData);
                 console.log(res);
                 if (res.data.message === "success") {
-                    successPop("Data updated successfully");
+                    successPop(`Fields - ${toUpdate} updated successfully`);
                     await handleGetAllMembers();
                     form.resetFields();
                     setFileList([]);
