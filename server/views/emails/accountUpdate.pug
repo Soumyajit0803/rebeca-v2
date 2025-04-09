@@ -55,9 +55,9 @@ html(lang="en")
               th Updated Value
           tbody
             each value, key in updatedFields
-              if key !== 'email'
+              if key !== 'email' && key !== '_id'
                 tr
-                  td(style="text-transform: capitalize;") #{key.replace('_', ' ')}
+                  td(style="text-transform: capitalize;") #{key}
                   td #{value}
       else
         p No specific details were updated.
