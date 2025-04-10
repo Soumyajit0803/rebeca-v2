@@ -1,36 +1,60 @@
 [
 	{
 		"id": 1,
-		"title": "Title Sponsor",
+		"title": "Beverage and Mumbai Night",
 		"logos": [
 			{
 				"imgname": "sponsorsImages/CocaCola"
-			}			
+			}
 		]
 	},
 	{
 		"id": 2,
-		"title": "BECA Sponsors",
+		"title": "T-shirt Sponsor",
 		"logos": [
 			{
-				"imgname": "sponsorsImages/GAINWELL"
-			},
+				"imgname": "sponsorsImages/ITD-cement"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"title": "FIDUCIA Title Sponsor",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/zetwerk"
+			}			
+		]
+	},
+	{
+		"id": 4,
+		"title": "BECA Full page Sponsors",
+		"logos": [
 			{
 				"imgname": "sponsorsImages/RAINBOW"
 			}
 		]
 	},
 	{
-		"id": 3,
-		"title": "Exclusive Fashion Partner",
+		"id": 5,
+		"title": "Media Partner",
 		"logos": [
 			{
-				"imgname": "sponsorsImages/TRENDS"
+				"imgname": "sponsorsImages/edugraph"
 			}
 		]
 	},
 	{
-		"id": 4,
+		"id": 6,
+		"title": "Radio Partner",
+		"logos": [
+			{
+				"imgname": "sponsorsImages/91-9-friends"
+			}
+		]
+	},
+	{
+		"id": 7,
 		"title": "Makeup and Hairstyling Partner",
 		"logos": [
 			{
@@ -39,68 +63,20 @@
 		]
 	},
 	{
-		"id": 5,
-		"title": "T-shirt Sponsor",
+		"id": 8,
+		"title": "Festival Sponsors",
 		"logos": [
 			{
-				"imgname": "sponsorsImages/NIRNAYAN HEALTHCARE"
-			}
-		]
-	},
-	{
-		"id": 6,
-		"title": "Merchandise Partner",
-		"logos": [
-			{
-				"imgname": "sponsorsImages/ANIME EXPRESS"
-			}
-		]
-	},
-	{
-		"id": 7,
-		"title": "Food Partners",
-		"logos": [
-			{
-				"imgname": "sponsorsImages/PVR INOX"
+				"imgname": "sponsorsImages/pvr-inox"
 			},
 			{
-				"imgname": "sponsorsImages/BURGER KING"
-			}
-		]
-	},
-	{
-		"id": 9,
-		"title": "Travel Partner",
-		"logos": [
+				"imgname": "sponsorsImages/yousta"
+			},
 			{
-				"imgname": "sponsorsImages/D4M"
-			}
-		]
-	},
-	{
-		"id": 10,
-		"title": "Publicity Partner",
-		"logos": [
+				"imgname": "sponsorsImages/nestle"
+			},
 			{
-				"imgname": "sponsorsImages/WOMANS ERA"
-			}
-		]
-	},
-	{
-		"id": 11,
-		"title": "Exhibition Partner",
-		"logos": [
-			{
-				"imgname": "sponsorsImages/AMPERE"
-			}
-		]
-	},
-	{
-		"id": 12,
-		"title": "Ice-cream Partner",
-		"logos": [
-			{
-				"imgname": "sponsorsImages/KWALITY WALLS"
+				"imgname": "sponsorsImages/cream-and-fudge"
 			}
 		]
 	}

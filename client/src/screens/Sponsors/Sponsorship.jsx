@@ -7,7 +7,7 @@ import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 import pastSponsorJsonData from "../../assets/data/pastSponsors.json";
 import sponsorJsonData from "../../assets/data/sponsors.json";
-import { Divider } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 
 const Heading1 = ({ title, subTitle, w }) => {
     return (
@@ -107,7 +107,7 @@ function Sponsorship() {
                 {/* <Divider sx={{my: 5}}/> */}
                 <section className="section-1">
                     <div className="side-img">
-                        <img src="/assets/imgs/sponsorship/clockTower1.webp" alt="clockTowerImg" />
+                        <img src="/assets/imgs/sponsorship/clock-tower-iiest.webp" alt="clockTowerImg" />
                     </div>
 
                     <Heading1
@@ -148,10 +148,49 @@ function Sponsorship() {
                         <img src={`/assets/imgs/sponsorship/${sponsorCategories}.webp`} alt="" />
                     </div>
                 </section>
+                <div
+                    style={{
+                        background: `url("/assets/imgs/sponsorship/backdrop.webp")`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        margin: "6rem 0",
+                        width: "100vw",
+                        height: "100vh"
+                    }}
+                >
+                    <Typography
+                        sx={{
+                            fontFamily: "Sedgwick Ave Display",
+                            padding: "2rem",
+                            paddingBottom: "5rem",
+                            fontSize: "2.2rem",
+                            opacity: "0.5",
+                            textAlign:"center"
+                        }}
+                    >
+                        The oldest cultural fest of India
+                    </Typography>
+                    <Typography
+                        variant="body2"
+                        sx={{
+                            width: "min(80%, 70ch)",
+                            textAlign: "center",
+                            paddingTop: "5rem",
+                            opacity: "0.8",
+                        }}
+                    >
+                        Born in 1960, Rebeca is more than a cultural fest—it's a tradition etched in time. With every beat, spotlight, and standing ovation, it celebrates a history that no other college fest can claim.
+                    </Typography>
+                </div>
 
-                {/* <section className="section-4">
+                <section className="section-4">
                     <div style={{ padding: "0 1rem" }}>
-                        <Heading1 title={"Sponsors"} w={"60%"}></Heading1>
+                        <Heading1 title={"Sponsors"}></Heading1>
                     </div>
                     {sponsorJsonData.map((item, index) => (
                         <div className="center1" key={index}>
@@ -163,11 +202,11 @@ function Sponsorship() {
                             </div>
                         </div>
                     ))}
-                </section> */}
+                </section>
 
                 <section className="section-4">
                     <div style={{ padding: "0 1rem" }}>
-                        <Heading1 title={"Past-sponsors"} w={"60%"}></Heading1>
+                        <Heading1 title={"Past-sponsors"}></Heading1>
                     </div>
                     <div className="center1">
                         <div className="cards">
