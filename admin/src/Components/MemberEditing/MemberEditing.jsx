@@ -1,6 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Form, Input, Select, Upload, Button, Avatar, Typography, Space, message, Modal, Alert } from "antd";
-import { UploadOutlined, DeleteFilled, DownloadOutlined } from "@ant-design/icons";
+import {
+    Form,
+    Input,
+    Select,
+    Upload,
+    Button,
+    Avatar,
+    Typography,
+    Space,
+    message,
+    Modal,
+    Alert,
+    InputNumber,
+} from "antd";
+import { UploadOutlined, DeleteFilled, DownloadOutlined, ReadOutlined } from "@ant-design/icons";
 import { getAllMembers, updateMember, postImage, deleteMember } from "../../api";
 import ImgCrop from "antd-img-crop";
 import "antd/es/modal/style";
@@ -40,9 +53,9 @@ const teamNames = [
     "Joint Secretary",
     "Fixed Signatory",
     "BECA Magazine",
-    "Event Coordinator"
+    "Event Coordinator",
 ];
-const teamPosition = ["Head", "Associate Head", "Associate"];
+const teamPosition = ["head", "associate head", "associate"];
 const roles = ["developer", "admin", "user"];
 
 const HybridLabel = ({ name, imageURL }) => {
@@ -159,7 +172,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
     };
 
     const onFinish = async (formValues) => {
-        const toUpdate = []
+        const toUpdate = [];
 
         try {
             setLoading(true);
@@ -179,7 +192,9 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 phone: `${formValues.phone}`,
                 email: formValues.email,
                 role: formValues.role,
-                tagLine: formValues.tagLine
+                tagLine: formValues.tagLine,
+                passout_year: formValues.passout_year,
+                dept: formValues.dept,
             };
 
             // Check for changes and append only modified fields
@@ -189,7 +204,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                     changed = 1;
                     console.log("new value: ");
                     console.log(newValue);
-                    toUpdate.push(key)
+                    toUpdate.push(key);
                 }
             });
 
@@ -207,7 +222,7 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 const res = await updateMember(formData);
                 console.log(res);
                 if (res.data.message === "success") {
-                    successPop("Data updated successfully");
+                    successPop(`Fields - ${toUpdate} updated successfully`);
                     await handleGetAllMembers();
                     form.resetFields();
                     setFileList([]);
@@ -306,12 +321,14 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                 showIcon
                 style={{ marginTop: "1rem" }}
             />
-            <div style={{
-                display: "flex",
-                gap: "1rem",
-                flexWrap: "wrap",
-                marginTop: "1rem"
-            }}>
+            <div
+                style={{
+                    display: "flex",
+                    gap: "1rem",
+                    flexWrap: "wrap",
+                    marginTop: "1rem",
+                }}
+            >
                 <Button
                     danger
                     type="primary"
@@ -496,7 +513,28 @@ const MemberEditing = ({ errorPop, successPop, infoPop }) => {
                             })}
                         </Select>
                     </Form.Item>
+                    
                 </div>
+                <div>
+                        {/* dept */}
+                        <Form.Item
+                            label="Department"
+                            name="dept"
+                            rules={[{ required: true }]}
+                            style={{ width: "min(500px, 100%)", marginTop: 20 }}
+                        >
+                            <Input placeholder="Enter Department name" addonBefore={<ReadOutlined />} />
+                        </Form.Item>
+                        {/* passoutyear */}
+                        <Form.Item
+                            label="Passout year"
+                            name="passout_year"
+                            rules={[{ required: true, message: "Please enter your passout year, e.g. 2026" }]}
+                            style={{ maxWidth: 300, cursor: "pointer" }}
+                        >
+                            <InputNumber placeholder="Select Year" width={'100px'}/>
+                        </Form.Item>
+                    </div>
                 <Form.Item label="Your Tagline (optional)" name="tagLine" rules={[{ required: false }]}>
                     <Input placeholder="Enter Your tagline to be printed in ID Cards" />
                 </Form.Item>
