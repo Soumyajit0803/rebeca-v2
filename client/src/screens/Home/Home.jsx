@@ -11,36 +11,32 @@ import CollageHeart from "../../components/CollageHeart/CollageHeart";
 const Home = () => {
     const artists = [
         {
-            name: "Avoid Rafa",
-            img: "avoidrafa.webp",
+            name: "Arunashish Roy",
+            img: "ArunashishRoy.webp",
         },
         {
-            name: "Ehsaas India",
-            img: "ehsaasIndia.webp",
+            name: "Jannat Sufi Band",
+            img: "JannatSufiBand.webp",
         },
         {
-            name: "Md. Irfan",
-            img: "mdirfan.webp",
+            name: "Senjuti Das",
+            img: "SenjutiDas.webp",
         },
         {
-            name: "Pritam Roy",
-            img: "pritamroy.webp",
+            name: "Fakirs Music",
+            img: "FakirBand.webp",
         },
         {
-            name: "Prithibi",
-            img: "prithbi.webp",
+            name: "The Anupam Roy Band",
+            img: "AnupamRoyBand.webp",
         },
         {
-            name: "Shironamhin",
-            img: "shironamhin.webp",
+            name: "Amit Mishra",
+            img: "AmitMishra.webp",
         },
         {
-            name: "TRAP",
-            img: "trap.webp",
-        },
-        {
-            name: "DJ Sunburn Coming Soon",
-            img: "comingsoon.png",
+            name: "M Sonic",
+            img: "MSonic.webp",
         },
     ];
 

@@ -13,7 +13,8 @@ directory to start: "./public/assets/..../"
 """
 
 
-output_dir = './client/public/assets/imgs/collage/'
+# output_dir = './client/public/assets/imgs/collage/'
+output_dir = './client/public/assets/imgs/artists/'
 os.makedirs(output_dir, exist_ok=True)
 
 
@@ -25,13 +26,13 @@ def resize_and_convert(input_path, output_path):
     img.save(output_path, 'WEBP', quality=quality, save_all=True, append_images=[img])
 
 count = 0
-allFiles = os.listdir('./client/public/assets/imgs/collage/')
+allFiles = os.listdir('./client/public/assets/imgs/artists/')
 
 newchanges = []
 
 for filename in allFiles:
     if filename.lower().endswith('.png'):
-        input_path = './client/public/assets/imgs/collage/'+filename
+        input_path = './client/public/assets/imgs/artists/'+filename
         if filename.split('.')[0] + '.webp' in allFiles:
             print("File already in webp for ", filename)
             continue

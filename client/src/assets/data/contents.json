@@ -1,36 +1,46 @@
 {
-  "Pre Events": {
-    
-    "nightType": "Pre-Events",
-    "intro": ""
-  },
-  "saptami": {
-    "date": "10",
-    "nightType": "The Classical\nNight",
-    "intro": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
-    "significance": "The classical theme of Saptami is a window into history and culture and fosters a sense of deep appreciation for the beauty of our traditions and heritage.",
+    "Pre Events": {
+        "nightType": "Pre-Events",
+        "intro": ""
+    },
+    "saptami": {
+        "date": "10",
+        "nightType": "The Classical\nNight",
+        "intro": "Get ready to soak in the rich heritage of Indian culture as talented artists from all across the nation weave together a tapestry of grace and timeless magic, filling the air with the tunes of celebration and marking the very beginning of our very own Pujo.",
+        "significance": "The classical theme of Saptami is a window into history and culture and fosters a sense of deep appreciation for the beauty of our traditions and heritage.",
 
-    "lineUps": [{"name": "Pritam Roy", "img": "pritamroy.webp"}]
-  },
-  "ashtami": {
-    "date": "11",
-    "nightType": "The BEings Night",
-    "intro": "The evening will come alive as the BEings take the center stage by storm with their electrifying performances and ignite the atmosphere with their talent and creativity. Don't forget to cheer your hearts out for your best friends as they spew fire across the stage and make the night a celebration of the incredible talent amongst us",
-    "significance": "The BEings' night on Ashtami gives a stage to the incredible budding talents of our college, providing them with an opportunity to showcase their creativity. This gives an immense boost to their confidence and helps build mutual support and teamwork, all qualities that will propel them towards success in their bright futures.",
-    "lineUps": [{"name": "Shironamhin", "img": "shironamhin.webp"}, {"name": "Ehsaas India", "img": "ehsaasIndia.webp"}, {"name": "DJ (coming soon)", "img": "comingsoon.png"}]
-  },
-  "navami": {
-    "date": "12",
-    "nightType": "The Kolkata\nNight",
-    "intro": "Underneath the starlit sky, lose yourself in the symphony of Kolkata's soul. Come out and cheer as the legends of our beloved city rock the stage and give us an evening of musical euphoria that transcends all the boundaries of language and region making all our hearts beat as one, to the sweet rhythm of Navami.",
-    "significance": "The Kolkata night on Navami takes a dive into the vibrant musical scene of the city. From the seasoned fans who sway to their favourite artists, to the ones who get a grand glimpse into the soul of Kolkata, this night reminds everyone why it is called the City of Joy.",
-    "lineUps": [{"name": "Prithibi", "img": "prithbi.webp"}, {"name": "Avoid Rafa", "img": "avoidrafa.webp"}, {"name": "DJ (coming soon)", "img": "comingsoon.png"}]
-  },
-  "dashami": {
-    "date": "13",
-    "nightType": "The Mumbai Night",
-    "intro": "Take your dancing shoes out as you'll be screaming and dancing like nobody's watching to the electrifying beats of Bollywood! Join in on the infectious energy as you dance all night long in the grand finale of our festival and create a lifetime of memories that stay with you long after the night has faded into dawn.",
-    "significance": "The Mumbai night on Dashami serves as the ultimate grand finale, a grand showdown of our grand festival. As the final artist of the year takes the center stage by storm, the BEings make sure to dance and cheer like nobody's watching, till the break of dawn!",
-    "lineUps": [{"name": "Md. Irfan", "img": "mdirfan.webp"}, {"name": "TRAP", "img": "trap.webp"}, {"name": "DJ Sunburn (Coming soon)", "img": "comingsoon.png"}, {"name": "DJ (coming soon)", "img": "comingsoon.png"}]
-  }
+        "lineUps": [
+            { "name": "Jannat Sufi Band", "img": "JannatSufiBand.webp" },
+            { "name": "Arunashish Roy", "img": "ArunashishRoy.webp" }
+        ]
+    },
+    "ashtami": {
+        "date": "11",
+        "nightType": "The BEings Night",
+        "intro": "The evening will come alive as the BEings take the center stage by storm with their electrifying performances and ignite the atmosphere with their talent and creativity. Don't forget to cheer your hearts out for your best friends as they spew fire across the stage and make the night a celebration of the incredible talent amongst us",
+        "significance": "The BEings' night on Ashtami gives a stage to the incredible budding talents of our college, providing them with an opportunity to showcase their creativity. This gives an immense boost to their confidence and helps build mutual support and teamwork, all qualities that will propel them towards success in their bright futures.",
+        "lineUps": [{ "name": "Senjuti Das", "img": "SenjutiDas.webp" }]
+    },
+    "navami": {
+        "date": "12",
+        "nightType": "The Kolkata\nNight",
+        "intro": "Underneath the starlit sky, lose yourself in the symphony of Kolkata's soul. Come out and cheer as the legends of our beloved city rock the stage and give us an evening of musical euphoria that transcends all the boundaries of language and region making all our hearts beat as one, to the sweet rhythm of Navami.",
+        "significance": "The Kolkata night on Navami takes a dive into the vibrant musical scene of the city. From the seasoned fans who sway to their favourite artists, to the ones who get a grand glimpse into the soul of Kolkata, this night reminds everyone why it is called the City of Joy.",
+        "lineUps": [
+            { "name": "Fakirs Music", "img": "FakirBand.webp" },
+            { "name": "The Anupam Roy Band", "img": "AnupamRoyBand.webp" },
+            { "name": "DJ (coming soon)", "img": "comingsoon.png" }
+        ]
+    },
+    "dashami": {
+        "date": "13",
+        "nightType": "The Mumbai Night",
+        "intro": "Take your dancing shoes out as you'll be screaming and dancing like nobody's watching to the electrifying beats of Bollywood! Join in on the infectious energy as you dance all night long in the grand finale of our festival and create a lifetime of memories that stay with you long after the night has faded into dawn.",
+        "significance": "The Mumbai night on Dashami serves as the ultimate grand finale, a grand showdown of our grand festival. As the final artist of the year takes the center stage by storm, the BEings make sure to dance and cheer like nobody's watching, till the break of dawn!",
+        "lineUps": [
+            { "name": "Amit Mishra", "img": "AmitMishra.webp" },
+            { "name": "M Sonic", "img": "MSonic.webp" },
+            { "name": "DJ (coming soon)", "img": "comingsoon.png" }
+        ]
+    }
 }

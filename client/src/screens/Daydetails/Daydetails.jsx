@@ -46,10 +46,10 @@ const Daydetails = () => {
                 {/* Brace Yourself for an Unforgettable Showcase, As We Proudly */}
             </div>
             <div className="section-4">
-                {/* {Day.lineUps.map((value, index) => {
+                {Day.lineUps.map((value, index) => {
                     return <ArtistCard key={index} name={value.name} img={value.img}></ArtistCard>;
-                })} */}
-                <Box
+                })}
+                {/* <Box
                     sx={{
                         display: "flex",
                         flexDirection: "column",
@@ -59,7 +59,7 @@ const Daydetails = () => {
                 >
                     <img src="/assets/imgs/artists/comingsoon.webp" style={{width: "10rem"}} />
                     <Typography variant="h5" fontFamily={"Sedgwick Ave Display"}>Coming soon!</Typography>
-                </Box>
+                </Box> */}
             </div>
 
             <div className="section-5">

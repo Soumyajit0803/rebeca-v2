@@ -80,6 +80,14 @@
   margin-top: 2rem;
 }
 
+.day-details-wrapper .section-4 .artist-card .img {
+  height: 200px !important;
+}
+
+.day-details-wrapper .section-4 .artist-card .display-font {
+  font-size: 2rem;
+}
+
 .day-details-wrapper .section-subhead {
   font-size: 3rem;
   color: white;
