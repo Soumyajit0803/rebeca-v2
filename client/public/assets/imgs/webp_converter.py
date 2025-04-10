@@ -11,10 +11,7 @@ Currently size reduction is disabled(line 20 commented out)
 
 directory to start: "./public/assets/..../"
 """
-
-
-# output_dir = './client/public/assets/imgs/collage/'
-output_dir = './client/public/assets/imgs/artists/'
+output_dir = './client/public/assets/imgs/sponsorship/sponsorsImages/'
 os.makedirs(output_dir, exist_ok=True)
 
 
@@ -26,13 +23,13 @@ def resize_and_convert(input_path, output_path):
     img.save(output_path, 'WEBP', quality=quality, save_all=True, append_images=[img])
 
 count = 0
-allFiles = os.listdir('./client/public/assets/imgs/artists/')
+allFiles = os.listdir('./client/public/assets/imgs/sponsorship/sponsorsImages/')
 
 newchanges = []
 
 for filename in allFiles:
     if filename.lower().endswith('.png'):
-        input_path = './client/public/assets/imgs/artists/'+filename
+        input_path = './client/public/assets/imgs/sponsorship/sponsorsImages/'+filename
         if filename.split('.')[0] + '.webp' in allFiles:
             print("File already in webp for ", filename)
             continue
