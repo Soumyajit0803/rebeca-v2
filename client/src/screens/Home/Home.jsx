@@ -28,7 +28,7 @@ const Home = () => {
         },
         {
             name: "The Anupam Roy Band",
-            img: "AnupamRoyBand.webp",
+            img: "anupamroyband.webp",
         },
         {
             name: "Amit Mishra",
