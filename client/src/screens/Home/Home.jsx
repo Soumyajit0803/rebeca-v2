@@ -74,9 +74,9 @@ const Home = () => {
             </section>
             <section className="section-3">
                 <Heading
-                    title={"The stars of 2k24"}
+                    title={" The Stage Is Set!"}
                     subTitle={
-                        "Take a trip down the memory lane as we proudly present the stars of our last edition!"
+                        "Get ready to vibe with the ultimate lineup of artists lighting up the night!"
                         // "Showcasing all the wonderful artists to ever grace Rebeca"
                     }
                 ></Heading>
