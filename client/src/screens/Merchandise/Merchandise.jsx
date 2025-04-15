@@ -24,7 +24,7 @@ const Merchandise = () => {
 					<br />
 					<br />
                     <a href="https://forms.gle/czHdDb8mCFY6g8rt8">
-                        <Button variant={"filled"} innerText={"Order yours now!"}></Button>
+                        <Button disabled={true} variant={"filled"} innerText={"Order yours now!"}></Button>
                     </a>
                 </div>
             </section>

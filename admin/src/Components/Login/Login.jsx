@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { checkStatus } from "../../api";
 import { Alert, Flex, Spin } from "antd";
 import LoadingPage from "../LoadingPage/LoadingPage";
-import { LogoutOutlined, ExportOutlined, CrownFilled } from "@ant-design/icons";
+import { LogoutOutlined, ExportOutlined, CrownFilled, AlertFilled } from "@ant-design/icons";
 
 const TagPadded = ({ position, color }) => {
     return (
@@ -101,7 +101,6 @@ const Login = () => {
                         <li>
                             The <Tag>Passkey</Tag> determines whether the person is a
                             <ul style={{ position: "relative", left: "20px", top: "10px" }}>
-                                
                                 <li style={{ marginBottom: "0.3em" }}>
                                     <TagPadded position={"Developer"} color="orange" />
                                     Access to Developer Features.
@@ -115,6 +114,13 @@ const Login = () => {
                     </ul>
                 </Card>
                 <LoginGoogle />
+                <Alert
+                    // message="Note"
+                    message="Portal is freezed from furthur updates. Contact the developers for more info."
+                    type="warning"
+                    showIcon
+                    style={{ margin: "1rem 0" }}
+                />
             </Card>
         </div>
     );

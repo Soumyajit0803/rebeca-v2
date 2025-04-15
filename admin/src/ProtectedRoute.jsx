@@ -3,7 +3,9 @@ import { useAuth } from "./AuthContext";
 
 const ProtectedRoute = () => {
   const { admin } = useAuth();
-  return (admin)? <Outlet /> : <Navigate to="/" />;
+  console.log(admin);
+  
+  return (admin && admin.role==='developer')? <Outlet /> : <Navigate to="/" />;
 };
 
 export default ProtectedRoute;

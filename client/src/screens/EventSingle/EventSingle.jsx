@@ -12,7 +12,7 @@ import CustomAvatar from "../../components/CustomAvatar/CustomAvatar";
 import PageNotFound from "../PageNotFound/PageNotFound";
 
 function isGoogleForm(url) {
-    if(!url)return false;
+    if (!url) return false;
     const googleFormPattern = /^https:\/\/docs\.google\.com\/forms\/d\/e\/[^\/]+\/viewform/;
     const googleShortFormPattern = /^https:\/\/forms\.gle\/[a-zA-Z0-9]+/;
 
@@ -91,7 +91,7 @@ const EventSingle = () => {
                         </div>
                     </div>
 
-                    {oneEvent?.rulesDocURL && <div className="event-single-buttons">
+                    {/* {oneEvent?.rulesDocURL && <div className="event-single-buttons">
                         <Button
                             innerText={isGoogleForm(oneEvent?.rulesDocURL) ? "Google Form" : "View Rules"}
                             onClick={() => window.open(oneEvent?.rulesDocURL, "_blank")}
@@ -147,7 +147,10 @@ const EventSingle = () => {
                         >
                             This event accepts registration only through <b>google forms</b>.
                         </Alert>
-                    )}
+                    )} */}
+                    <Alert className="event-alert" variant="outlined" severity="info" color="info" sx={{ mt: 1 }}>
+                        Event has concluded.
+                    </Alert>
                 </div>
             </div>
 
