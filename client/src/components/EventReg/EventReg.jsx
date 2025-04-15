@@ -63,6 +63,7 @@ const CompletedContent = () => {
     );
 };
 const NoUserLoggedIn = () => {
+    const navigate = useNavigate();
     return (
         <Card sx={{ width: "min(100%, 400px)" }}>
             <CardContent style={{ display: "flex", alignItems: "center", flexDirection: "column", width: "100%" }}>
