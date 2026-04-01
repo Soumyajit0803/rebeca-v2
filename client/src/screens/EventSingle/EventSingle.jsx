@@ -58,7 +58,6 @@ const EventSingle = () => {
     if (!oneEvent) {
         return <PageNotFound />;
     }
-
     return (
         <div className="event-single-container">
             {/* Background Image with Overlay */}
